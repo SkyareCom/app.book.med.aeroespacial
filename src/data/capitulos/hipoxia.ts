@@ -18,6 +18,7 @@ export const hipoxia: Capitulo = {
   topicos: [
     {
       id: '3.1',
+      midias: ['simulador-o2'],
       titulo: 'Como o oxigênio chega às células',
       pergunta: 'O que acontece com o oxigênio do ar até chegar ao cérebro?',
       conteudo: {
@@ -36,6 +37,7 @@ export const hipoxia: Capitulo = {
     },
     {
       id: '3.2',
+      midias: ['classificar-hipoxia'],
       titulo: 'Os quatro tipos de hipóxia',
       pergunta: 'Falta de oxigênio é sempre por causa da altitude?',
       conteudo: {
@@ -54,6 +56,7 @@ export const hipoxia: Capitulo = {
     },
     {
       id: '3.3',
+      midias: ['grafico-tuc'],
       titulo: 'Tempo de consciência útil',
       pergunta: 'Quanto tempo uma pessoa continua lúcida sem oxigênio a 35.000 pés?',
       conteudo: {
@@ -73,6 +76,7 @@ export const hipoxia: Capitulo = {
     },
     {
       id: '3.4',
+      midias: ['simulador-visao'],
       titulo: 'Sinais, sintomas e treinamento',
       pergunta: 'Como perceber que está faltando oxigênio?',
       conteudo: {

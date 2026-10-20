@@ -1,69 +1,88 @@
+import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { CartaoImagem } from '@/components/cartoes';
-import { IconeCheck, IconeSeta } from '@/components/icones';
-import { Tela } from '@/components/tela';
+import { IconeCheck } from '@/components/icones';
+import { disponivel, duracao, GUTTER, rotaEpisodio, Selo } from '@/components/streaming';
+import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
-import { ImagemSecao } from '@/constants/imagens';
-import { Cores, Espaco, Raio } from '@/constants/theme';
+import { ArteTemporada, CapaEpisodio } from '@/constants/capas';
+import { Cores, Espaco } from '@/constants/theme';
 import { chaveCapitulo, obterSecao } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 
+// Página da temporada: arte grande, sinopse e a lista de episódios.
 export function TelaSecao({ id }: { id: SecaoId }) {
   const secao = obterSecao(id)!;
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { concluidos } = useProgresso();
+  const prontos = secao.capitulos.filter(disponivel).length;
+  const interativos = secao.capitulos.filter((c) => c.laboratorio?.length || c.topicos.some((t) => t.midias?.length)).length;
+  const primeiro = secao.capitulos.find(disponivel) ?? secao.capitulos.find((c) => c.laboratorio?.length) ?? secao.capitulos[0];
 
   return (
-    <Tela>
-      <CartaoImagem imagem={ImagemSecao[id]} altura={220}>
-        <Texto t="rotulo" cor={Cores.destaque}>Seção {secao.numeral}</Texto>
-        <Texto t="titulo">{secao.titulo}</Texto>
-        <Texto cor={Cores.textoSuave}>{secao.subtitulo} · {secao.capitulos.length} capítulos</Texto>
-      </CartaoImagem>
+    <TelaCheia>
+      <View style={{ height: 440 + insets.top }}>
+        <Image source={ArteTemporada[id]} style={StyleSheet.absoluteFill} contentFit="cover" />
+        <LinearGradient colors={['rgba(3,5,10,0.4)', 'rgba(3,5,10,0)', Cores.fundo]} locations={[0, 0.35, 1]} style={StyleSheet.absoluteFill} />
+        <View style={styles.textoHero}>
+          <Texto t="rotulo" cor={Cores.dourado}>Temporada {secao.numeral}</Texto>
+          <Texto t="titulo">{secao.titulo}</Texto>
+          <Texto cor={Cores.textoSuave}>{secao.sinopse}</Texto>
+          <Texto t="rotulo" cor={Cores.textoApagado}>
+            {secao.capitulos.length} episódios · {prontos} disponível{prontos === 1 ? '' : 'is'} · {interativos} com interativos
+          </Texto>
+          <Pressable accessibilityRole="button" onPress={() => router.push(rotaEpisodio(id, primeiro.numero))} style={({ pressed }) => [styles.botao, pressed && { opacity: 0.85 }]}>
+            <Texto t="item" maiusculo espacado cor={Cores.fundo}>▶  Episódio {primeiro.numero}</Texto>
+          </Pressable>
+        </View>
+      </View>
 
-      <View style={{ gap: Espaco.sm }}>
+      <View style={{ paddingHorizontal: GUTTER, gap: Espaco.lg }}>
+        <Texto t="rotulo" cor={Cores.textoApagado}>Episódios</Texto>
         {secao.capitulos.map((c) => {
           const feito = concluidos.includes(chaveCapitulo(id, c.numero));
-          const pronto = c.topicos.some((t) => t.conteudo);
+          const pronto = disponivel(c);
+          const lab = !!c.laboratorio?.length || c.topicos.some((t) => t.midias?.length);
           return (
             <Pressable
               key={c.numero}
               accessibilityRole="button"
-              accessibilityLabel={`Capítulo ${c.numero}: ${c.titulo}`}
-              onPress={() => router.push({ pathname: '/capitulo/[secao]/[numero]', params: { secao: id, numero: String(c.numero) } })}
-              style={({ pressed }) => [styles.linha, pressed && { opacity: 0.85 }]}>
-              <View style={[styles.numero, feito && { backgroundColor: Cores.destaque, borderColor: Cores.destaque }]}>
-                {feito ? <IconeCheck cor={Cores.fundo} tamanho={16} /> : <Texto t="item">{String(c.numero).padStart(2, '0')}</Texto>}
+              accessibilityLabel={`Episódio ${c.numero}: ${c.titulo}`}
+              onPress={() => router.push(rotaEpisodio(id, c.numero))}
+              style={({ pressed }) => [styles.episodio, pressed && { opacity: 0.85 }]}>
+              <View style={styles.linha}>
+                <View style={styles.miniatura}>
+                  <Image source={CapaEpisodio[`${id}-${c.numero}`]} style={StyleSheet.absoluteFill} contentFit="cover" />
+                  {feito ? <View style={styles.feito}><IconeCheck cor={Cores.fundo} tamanho={14} /></View> : null}
+                </View>
+                <View style={{ flex: 1, gap: 4 }}>
+                  <Texto t="item">{c.numero}. {c.titulo}</Texto>
+                  <Texto cor={Cores.textoApagado}>{pronto ? `${duracao(c)} min` : 'Em produção'}</Texto>
+                  <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
+                    {pronto ? <Selo texto="Disponível" cor={Cores.destaque} /> : null}
+                    {lab ? <Selo texto="Interativo" cor={Cores.dourado} /> : null}
+                  </View>
+                </View>
               </View>
-              <View style={{ flex: 1, gap: 2 }}>
-                <Texto t="item">{c.titulo}</Texto>
-                <Texto cor={pronto ? Cores.destaque : Cores.textoApagado}>
-                  {c.topicos.length} tópicos · {pronto ? `${c.tempoLeituraMin ?? 20} min de leitura` : 'em produção'}
-                </Texto>
-              </View>
-              <IconeSeta cor={Cores.textoApagado} tamanho={18} />
+              <Texto cor={Cores.textoSuave} numberOfLines={2}>{c.resumo ?? c.topicos.map((t) => t.titulo).join(' · ')}</Texto>
             </Pressable>
           );
         })}
       </View>
-    </Tela>
+    </TelaCheia>
   );
 }
 
 const styles = StyleSheet.create({
-  linha: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Espaco.md,
-    minHeight: 64,
-    padding: Espaco.md,
-    borderRadius: Raio,
-    borderWidth: 1,
-    borderColor: Cores.linha,
-    backgroundColor: Cores.painel,
-  },
-  numero: { width: 40, height: 40, borderRadius: 20, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
+  textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 10, gap: 8 },
+  botao: { alignSelf: 'flex-start', minHeight: 46, paddingHorizontal: 22, borderRadius: 23, backgroundColor: Cores.texto, justifyContent: 'center', marginTop: 4 },
+  episodio: { gap: 8 },
+  linha: { flexDirection: 'row', gap: Espaco.md, alignItems: 'center' },
+  miniatura: { width: 140, height: 79, borderRadius: 8, overflow: 'hidden', backgroundColor: '#000' },
+  feito: { position: 'absolute', right: 6, bottom: 6, width: 22, height: 22, borderRadius: 11, backgroundColor: Cores.acerto, alignItems: 'center', justifyContent: 'center' },
 });

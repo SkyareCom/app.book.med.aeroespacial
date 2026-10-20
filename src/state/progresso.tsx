@@ -10,14 +10,20 @@ export const NOTA_MINIMA = 0.7;
 interface Progresso {
   concluidos: string[];
   melhoresNotas: Record<string, number>;
+  ultimos: string[]; // episódios abertos recentemente, o mais recente primeiro
 }
 
 interface ContextoProgresso extends Progresso {
   registrarTeste: (chave: string, acertos: number, total: number) => void;
+  registrarVisita: (chave: string) => void;
 }
 
-const vazio: Progresso = { concluidos: [], melhoresNotas: {} };
-const Ctx = createContext<ContextoProgresso>({ ...vazio, registrarTeste: () => {} });
+const vazio: Progresso = { concluidos: [], melhoresNotas: {}, ultimos: [] };
+const Ctx = createContext<ContextoProgresso>({ ...vazio, registrarTeste: () => {}, registrarVisita: () => {} });
+
+function salvar(p: Progresso) {
+  AsyncStorage.setItem(CHAVE, JSON.stringify(p)).catch(() => {});
+}
 
 export function ProvedorProgresso({ children }: { children: ReactNode }) {
   const [estado, setEstado] = useState<Progresso>(vazio);
@@ -35,15 +41,25 @@ export function ProvedorProgresso({ children }: { children: ReactNode }) {
       const melhor = Math.max(nota, atual.melhoresNotas[chave] ?? 0);
       const concluido = melhor >= NOTA_MINIMA;
       const novo: Progresso = {
+        ...atual,
         melhoresNotas: { ...atual.melhoresNotas, [chave]: melhor },
         concluidos: concluido && !atual.concluidos.includes(chave) ? [...atual.concluidos, chave] : atual.concluidos,
       };
-      AsyncStorage.setItem(CHAVE, JSON.stringify(novo)).catch(() => {});
+      salvar(novo);
       return novo;
     });
   }
 
-  return <Ctx.Provider value={{ ...estado, registrarTeste }}>{children}</Ctx.Provider>;
+  function registrarVisita(chave: string) {
+    setEstado((atual) => {
+      if (atual.ultimos[0] === chave) return atual;
+      const novo = { ...atual, ultimos: [chave, ...atual.ultimos.filter((c) => c !== chave)].slice(0, 10) };
+      salvar(novo);
+      return novo;
+    });
+  }
+
+  return <Ctx.Provider value={{ ...estado, registrarTeste, registrarVisita }}>{children}</Ctx.Provider>;
 }
 
 export function useProgresso() {

@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Medicina Aeroespacial",
-    "slug": "app-book-medicina-aeroespacial",
+    "name": "Papos de Altitude",
+    "slug": "papos-de-altitude",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "medaeroespacial",
+    "scheme": "paposdealtitude",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#03050A",
     "ios": {

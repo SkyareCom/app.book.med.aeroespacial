@@ -5,7 +5,7 @@ import { BotaoPrincipal } from '@/components/botao';
 import { CartaoImagem, Painel } from '@/components/cartoes';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
-import { Imagens } from '@/constants/imagens';
+import { ArteEspecialVoo } from '@/constants/capas';
 import { Cores, Espaco } from '@/constants/theme';
 import { eras } from '@/data/historia';
 
@@ -14,7 +14,7 @@ export default function Historia() {
   const router = useRouter();
   return (
     <Tela titulo="O Voo e a Medicina" rotulo="Especial · 1783 → hoje">
-      <CartaoImagem imagem={Imagens.voo} altura={140} direcao="esquerda">
+      <CartaoImagem imagem={ArteEspecialVoo} altura={140} direcao="esquerda">
         <Texto t="item" style={{ maxWidth: 260 }}>Cada vez que o ser humano voou mais alto, mais rápido ou mais longe, o corpo revelou um novo limite.</Texto>
       </CartaoImagem>
 

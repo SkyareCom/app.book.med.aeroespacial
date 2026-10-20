@@ -68,3 +68,30 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(3,5,10,0.6)',
   },
 });
+
+// Tela sem margens, para capas de ponta a ponta (Home, temporadas e episódios).
+// O conteúdo cuida das próprias margens; a largura máxima mantém a leitura confortável em telas grandes.
+export function TelaCheia({ children, refRolagem }: { children: ReactNode; refRolagem?: RefObject<ScrollViewInstance | null> }) {
+  return (
+    <View style={styles.raiz}>
+      <Image source={fundo} style={StyleSheet.absoluteFill} contentFit="cover" />
+      <ScrollView ref={refRolagem} contentContainerStyle={{ paddingBottom: Espaco.xl * 2 }}>
+        <View style={{ width: '100%', maxWidth: LarguraMaxima, alignSelf: 'center', gap: Espaco.xl }}>{children}</View>
+      </ScrollView>
+    </View>
+  );
+}
+
+export function BotaoVoltarFlutuante() {
+  const insets = useSafeAreaInsets();
+  const router = useRouter();
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Voltar"
+      onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+      style={[styles.voltar, { position: 'absolute', top: insets.top + 12, left: Espaco.lg, zIndex: 5 }]}>
+      <IconeVoltar cor={Cores.texto} />
+    </Pressable>
+  );
+}

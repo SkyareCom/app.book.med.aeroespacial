@@ -5,6 +5,20 @@
 export type SecaoId = 'fisiologia' | 'clinica' | 'operacao' | 'espaco';
 export type NivelLeitura = 'essencial' | 'explicacao' | 'clinico';
 
+// Mídias interativas disponíveis (componentes em src/components/midia).
+export type TipoMidia =
+  | 'simulador-o2'
+  | 'simulador-visao'
+  | 'grafico-tuc'
+  | 'classificar-hipoxia'
+  | 'leis-gases'
+  | 'forcas-g'
+  | 'adaptacao-escuro'
+  | 'regua-ruido'
+  | 'radiacao-voo'
+  | 'risco-aeromedico'
+  | 'perda-ossea';
+
 export interface ConteudoTopico {
   essencial: string;
   explicacao: string;
@@ -18,6 +32,7 @@ export interface Topico {
   titulo: string;
   pergunta?: string;
   conteudo?: ConteudoTopico;
+  midias?: TipoMidia[];
 }
 
 export interface Questao {
@@ -36,6 +51,8 @@ export interface Capitulo {
   objetivos?: string[];
   topicos: Topico[];
   teste?: Questao[];
+  // Mídias do episódio inteiro, mostradas mesmo antes de o texto ficar pronto.
+  laboratorio?: TipoMidia[];
 }
 
 export interface Secao {
@@ -43,6 +60,7 @@ export interface Secao {
   numeral: string;
   titulo: string;
   subtitulo: string;
+  sinopse: string;
   capitulos: Capitulo[];
 }
 
