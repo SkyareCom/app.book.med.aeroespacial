@@ -1,7 +1,8 @@
-// Tokens visuais do app. Tema sideral, fonte única Acme.
+// Tokens visuais do app. Tema sideral, fonte única: Acme com o circunflexo corrigido,
+// renomeada para "AppBook Display" como pede a licença SIL OFL (o nome "Acme" é reservado).
 // Regra de tipografia: apenas os tamanhos abaixo. O 9px é exclusivo do rodapé, sempre em maiúsculas.
 
-export const Fonte = 'Acme_400Regular';
+export const Fonte = 'AppBookDisplay';
 
 export const Tamanho = {
   titulo: 18,

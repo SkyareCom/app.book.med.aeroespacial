@@ -50,11 +50,13 @@ npm run export:web  # gera a versão web estática em dist/
 | `src/constants/theme.ts` | Cores, fonte e tamanhos |
 | `assets/images/cenas/` | Imagens de fundo dos cards |
 | `tools/cenas/` | Scripts Python que geram as imagens de fundo e os ícones |
+| `tools/fonte/` | Script que corrige o circunflexo da fonte |
+| `assets/fonts/` | Fonte do app e a licença SIL OFL |
 | `docs/estrutura-completa.md` | Estrutura editorial completa e regras do projeto |
 
 ## Regras de design
 
-- Fonte única: **Acme** (Google Fonts). A família só tem o peso 400.
+- Fonte única: **Acme** (Google Fonts), em uma versão corrigida. A Acme original desenha o acento circunflexo (â, ê, ô) de cabeça para baixo; o script `tools/fonte/corrigir_circunflexo.py` corrige o acento e gera `assets/fonts/AppBookDisplay-Regular.ttf`. Pela licença SIL OFL, o nome "Acme" é reservado, então a versão corrigida se chama "AppBook Display". A família só tem o peso 400.
 - Tamanhos permitidos: 18, 14, 12, 10 e 9px. O 9px é usado **somente no rodapé, em maiúsculas**.
 - Tema escuro sideral. O destaque padrão é o azul "holograma"; a variação vermelha "sabre" está pronta em `src/constants/theme.ts`.
 
