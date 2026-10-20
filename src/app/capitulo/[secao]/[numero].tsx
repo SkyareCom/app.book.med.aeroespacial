@@ -2,7 +2,7 @@ import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useRef } from 'react';
-import { StyleSheet, View, useWindowDimensions, type ScrollViewInstance } from 'react-native';
+import { StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { Painel } from '@/components/cartoes';
@@ -15,6 +15,7 @@ import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
 import type { Topico } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
+import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
 // Na versão web, gera uma página estática para cada um dos 50 capítulos.
 export async function generateStaticParams() {
@@ -25,7 +26,7 @@ export async function generateStaticParams() {
 export default function TelaCapitulo() {
   const { secao: secaoId, numero, topico: foco } = useLocalSearchParams<{ secao: string; numero: string; topico?: string }>();
   const router = useRouter();
-  const { width } = useWindowDimensions();
+  const width = useLarguraJanela();
   const rolagem = useRef<ScrollViewInstance>(null);
   const { registrarVisita } = useProgresso();
   const secao = obterSecao(secaoId);

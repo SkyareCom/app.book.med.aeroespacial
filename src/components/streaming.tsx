@@ -4,7 +4,7 @@ import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Pressable, ScrollView, StyleSheet, View, useWindowDimensions, type ScrollViewInstance } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { IconeCheck } from '@/components/icones';
 import { Texto } from '@/components/texto';
@@ -13,6 +13,7 @@ import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
 import { chaveCapitulo } from '@/data/secoes';
 import type { Capitulo, Secao } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
+import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
 export const GUTTER = Espaco.lg;
 
@@ -102,7 +103,7 @@ export interface ItemDestaque {
 
 // Destaques rotativos no topo da Home, com troca automática a cada 7 segundos.
 export function Destaques({ itens, altura = 460 }: { itens: ItemDestaque[]; altura?: number }) {
-  const { width } = useWindowDimensions();
+  const width = useLarguraJanela();
   const larg = Math.min(width, LarguraMaxima);
   const [ativo, setAtivo] = useState(0);
   const ref = useRef<ScrollViewInstance>(null);

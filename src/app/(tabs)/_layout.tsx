@@ -1,11 +1,12 @@
 import { TabList, TabSlot, TabTrigger, Tabs, type TabTriggerSlotProps } from 'expo-router/ui';
 import type { ComponentType } from 'react';
-import { Pressable, StyleSheet, useWindowDimensions } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IconeClinica, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao } from '@/components/icones';
 import { Texto } from '@/components/texto';
 import { Cores, LarguraMaxima } from '@/constants/theme';
+import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
 // Rodapé: HOME · FISIOLOGIA · CLÍNICA · OPERAÇÃO · ESPAÇO (9px, maiúsculas).
 const abas: { nome: string; href: '/' | '/fisiologia' | '/clinica' | '/operacao' | '/espaco'; rotulo: string; Icone: ComponentType<{ cor: string }> }[] = [
@@ -18,7 +19,7 @@ const abas: { nome: string; href: '/' | '/fisiologia' | '/clinica' | '/operacao'
 
 export default function LayoutAbas() {
   const insets = useSafeAreaInsets();
-  const { width: largura } = useWindowDimensions();
+  const largura = useLarguraJanela();
   return (
     <Tabs style={{ flex: 1, backgroundColor: Cores.fundo }}>
       <TabSlot style={{ flex: 1 }} />
