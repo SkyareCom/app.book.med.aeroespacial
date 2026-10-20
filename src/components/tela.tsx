@@ -65,7 +65,11 @@ const styles = StyleSheet.create({
     borderColor: Cores.linha,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(3,5,10,0.6)',
+    backgroundColor: 'rgba(3,5,10,0.94)',
+    shadowColor: '#000',
+    shadowOpacity: 0.6,
+    shadowRadius: 10,
+    elevation: 6,
   },
 });
 

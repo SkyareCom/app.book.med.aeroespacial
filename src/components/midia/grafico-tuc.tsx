@@ -17,7 +17,7 @@ const DADOS: [number, number, number][] = [
   [40000, 15, 20],
   [45000, 9, 15],
 ];
-const TICKS: [number, string][] = [[10, '10 s'], [30, '30 s'], [60, '1 min'], [300, '5 min'], [1800, '30 min']];
+const TICKS: [number, string][] = [[10, '10 s'], [60, '1 min'], [300, '5 min'], [1800, '30 min']];
 
 export function GraficoTUC() {
   const [rapida, setRapida] = useState(false);
@@ -34,7 +34,7 @@ export function GraficoTUC() {
       <View style={styles.alternar}>
         {[false, true].map((v) => (
           <Pressable key={String(v)} accessibilityRole="button" accessibilityState={{ selected: rapida === v }} onPress={() => setRapida(v)} style={[styles.opcao, rapida === v && styles.ativa]}>
-            <Texto t="rotulo" cor={rapida === v ? Cores.fundo : Cores.texto}>{v ? 'Descompressão rápida' : 'Perda gradual'}</Texto>
+            <Texto t="item" cor={rapida === v ? Cores.fundo : Cores.texto} numberOfLines={1} style={{ textAlign: 'center' }}>{v ? 'Descompressão rápida' : 'Perda gradual'}</Texto>
           </Pressable>
         ))}
       </View>
@@ -69,6 +69,6 @@ export function GraficoTUC() {
 
 const styles = StyleSheet.create({
   alternar: { flexDirection: 'row', gap: Espaco.sm },
-  opcao: { flex: 1, minHeight: 40, alignItems: 'center', justifyContent: 'center', borderRadius: Raio - 6, borderWidth: 1, borderColor: Cores.linha },
+  opcao: { flex: 1, minHeight: 40, alignItems: 'center', justifyContent: 'center', borderRadius: Raio - 6, borderWidth: 1, borderColor: Cores.linha, paddingHorizontal: 8 },
   ativa: { backgroundColor: Cores.destaque, borderColor: Cores.destaque },
 });

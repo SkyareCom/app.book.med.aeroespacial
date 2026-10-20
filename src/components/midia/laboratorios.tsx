@@ -21,7 +21,7 @@ function Alternar<T extends string>({ opcoes, valor, onChange }: { opcoes: [T, s
     <View style={styles.alternar}>
       {opcoes.map(([v, r]) => (
         <Pressable key={v} accessibilityRole="button" accessibilityState={{ selected: valor === v }} onPress={() => onChange(v)} style={[styles.opcao, valor === v && styles.ativa]}>
-          <Texto t="rotulo" cor={valor === v ? Cores.fundo : Cores.texto} style={{ textAlign: 'center' }}>{r}</Texto>
+          <Texto t="item" cor={valor === v ? Cores.fundo : Cores.texto} style={{ textAlign: 'center' }}>{r}</Texto>
         </Pressable>
       ))}
     </View>
