@@ -9,6 +9,7 @@ import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
+import { useConta } from '@/state/conta';
 
 // Cabeçalho e rodapé fixos, presentes em todas as telas do app.
 
@@ -16,6 +17,7 @@ export function Cabecalho() {
   const insets = useSafeAreaInsets();
   const largura = useLarguraJanela();
   const lateral = Math.max(Espaco.lg, (largura - LarguraMaxima) / 2 + Espaco.lg);
+  const { modo, sair } = useConta();
   return (
     <View style={[styles.cabecalho, { paddingTop: insets.top + 8, paddingLeft: lateral, paddingRight: lateral }]}>
       <Link href="/" replace asChild>
@@ -27,6 +29,11 @@ export function Cabecalho() {
           </View>
         </Pressable>
       </Link>
+      {modo === 'convidado' ? (
+        <Pressable accessibilityRole="button" accessibilityLabel="Entrar na sua conta" onPress={sair} style={styles.entrar}>
+          <Texto t="rotulo" cor={Cores.destaque}>Entrar</Texto>
+        </Pressable>
+      ) : null}
     </View>
   );
 }
@@ -74,7 +81,8 @@ export function Rodape() {
 }
 
 const styles = StyleSheet.create({
-  cabecalho: { backgroundColor: 'rgba(3,5,10,0.96)', borderBottomWidth: 1, borderBottomColor: Cores.linha, paddingBottom: 8, zIndex: 10 },
+  cabecalho: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'rgba(3,5,10,0.96)', borderBottomWidth: 1, borderBottomColor: Cores.linha, paddingBottom: 8, zIndex: 10 },
+  entrar: { minHeight: 36, paddingHorizontal: 14, borderRadius: 18, borderWidth: 1, borderColor: Cores.destaque, justifyContent: 'center' },
   marca: { flexDirection: 'row', alignItems: 'center', gap: 10, alignSelf: 'flex-start' },
   logo: { width: 40, height: 40 },
   rodape: { flexDirection: 'row', backgroundColor: 'rgba(3,5,10,0.96)', borderTopWidth: 1, borderTopColor: Cores.linha, paddingTop: 8, zIndex: 10 },

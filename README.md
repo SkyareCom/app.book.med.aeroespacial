@@ -80,6 +80,12 @@ npm run export:web  # versão web estática em dist/
 | `tools/fonte/` | Correção do circunflexo da fonte |
 | `docs/estrutura-completa.md` | Estrutura editorial completa e regras do projeto |
 
+## Entrada no app
+
+Depois da abertura, quem ainda não escolheu como entrar vê a tela de entrada (`src/components/entrar.tsx`): **Continuar com Google**, **Continuar com a Apple** (iPhone e web) e **Entrar com biometria** (Face ID, Touch ID ou digital, no app instalado), além de **Continuar sem conta**. A escolha fica salva no aparelho (`src/state/conta.tsx`); quem entrou sem conta tem o botão **Entrar** no cabeçalho.
+
+O login com Google e Apple ainda depende das credenciais das contas de desenvolvedor (Google Cloud e Apple Developer) e de um serviço de contas, como o Supabase. Até lá, `LOGIN_SOCIAL_ATIVO` fica desligado e os botões avisam que o login será liberado em breve. A App Store exige o login com a Apple sempre que o app oferece login com Google.
+
 ## Regras de design
 
 - Fonte única: **Acme** (Google Fonts), em uma versão corrigida. A Acme original desenha o acento circunflexo (â, ê, ô) de cabeça para baixo; `tools/fonte/corrigir_circunflexo.py` corrige o acento e gera `assets/fonts/AppBookDisplay-Regular.ttf`. Pela licença SIL OFL, o nome "Acme" é reservado, então a versão corrigida se chama "AppBook Display". A família só tem o peso 400.

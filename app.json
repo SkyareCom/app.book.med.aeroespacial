@@ -42,6 +42,12 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 120
         }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "O Papos de Altitude usa o Face ID para você entrar no app com segurança."
+        }
       ]
     ],
     "experiments": {
