@@ -61,7 +61,7 @@ export function CartaoEpisodio({ secao, capitulo, largura = 230 }: { secao: Seca
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`Temporada ${secao.numeral}, episódio ${capitulo.numero}: ${capitulo.titulo}`}
+      accessibilityLabel={`Missão ${secao.numeral}, voo ${capitulo.numero}: ${capitulo.titulo}`}
       onPress={() => router.push(rotaEpisodio(secao.id, capitulo.numero))}
       style={({ pressed }) => [{ width: largura, gap: 6 }, pressed && { opacity: 0.85 }]}>
       <View style={[styles.capa, { height: largura * 0.5625 }]}>
@@ -72,7 +72,7 @@ export function CartaoEpisodio({ secao, capitulo, largura = 230 }: { secao: Seca
           {temLab ? <Selo texto="Interativo" cor={Cores.dourado} /> : null}
         </View>
         <View style={styles.rodapeCapa}>
-          <Texto t="rotulo" cor={Cores.texto}>Ep {String(capitulo.numero).padStart(2, '0')}</Texto>
+          <Texto t="rotulo" cor={Cores.texto}>Voo {String(capitulo.numero).padStart(2, '0')}</Texto>
           {feito ? <IconeCheck cor={Cores.acerto} tamanho={16} /> : null}
         </View>
         {feito ? <View style={styles.progresso} /> : null}

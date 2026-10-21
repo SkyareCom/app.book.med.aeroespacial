@@ -39,9 +39,9 @@ export default function Home() {
   const pctGeral = concluidos.length / totalCapitulos;
 
   const destaques: ItemDestaque[] = [
-    { id: 'voo', imagem: ArteEspecialVoo, rotulo: 'Série especial', titulo: 'O Voo e a Medicina', sinopse: 'Dos balões de 1783 ao turismo espacial: como cada conquista do céu revelou um novo limite do corpo humano.', meta: '5 eras · 20 eventos', botao: 'Assistir', onPress: () => router.push('/historia') },
-    { id: 'hipoxia', imagem: CapaEpisodio['fisiologia-3'], rotulo: 'Temporada I · Episódio 3', titulo: 'Respiração e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores de visão e da curva do oxigênio.', meta: '25 min · 4 interativos', botao: 'Assistir', onPress: () => router.push(rotaEpisodio('fisiologia', 3)) },
-    { id: 'espaco', imagem: ArteTemporada.espaco, rotulo: 'Temporada IV', titulo: 'Espaço', sinopse: obterSecao('espaco')!.sinopse, meta: '8 episódios', botao: 'Ver temporada', onPress: () => router.push('/espaco') },
+    { id: 'voo', imagem: ArteEspecialVoo, rotulo: 'Missão especial', titulo: 'O Voo e a Medicina', sinopse: 'Dos balões de 1783 ao turismo espacial: como cada conquista do céu revelou um novo limite do corpo humano.', meta: '5 eras · 20 eventos', botao: 'Decolar', onPress: () => router.push('/historia') },
+    { id: 'hipoxia', imagem: CapaEpisodio['fisiologia-3'], rotulo: 'Missão I · Voo 3', titulo: 'Respiração e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores de visão e da curva do oxigênio.', meta: '25 min · 4 interativos', botao: 'Decolar', onPress: () => router.push(rotaEpisodio('fisiologia', 3)) },
+    { id: 'espaco', imagem: ArteTemporada.espaco, rotulo: 'Missão IV', titulo: 'Espaço', sinopse: obterSecao('espaco')!.sinopse, meta: '8 episódios', botao: 'Ver missão', onPress: () => router.push('/espaco') },
     { id: 'lab', imagem: CapaEpisodio['fisiologia-6'], rotulo: 'Laboratório aeroespacial', titulo: 'Sinta as forças G', sinopse: 'Puxe G, suba sem oxigênio, veja o gás se expandir e calcule a radiação de um ano de voos.', meta: '11 interativos', botao: 'Abrir', onPress: () => router.push('/laboratorio') },
   ];
 
@@ -74,7 +74,7 @@ export default function Home() {
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: Espaco.md }}>
             <Texto t="titulo">{Math.round(pctGeral * 100)}%</Texto>
-            <Texto cor={Cores.textoApagado}>{concluidos.length} de {totalCapitulos} episódios concluídos</Texto>
+            <Texto cor={Cores.textoApagado}>{concluidos.length} de {totalCapitulos} voos concluídos</Texto>
           </View>
           <Barra valor={pctGeral} />
           <View style={styles.grade}>
@@ -95,14 +95,14 @@ export default function Home() {
       </View>
 
       {secoes.map((s) => (
-        <Fileira key={s.id} rotulo={`Temporada ${s.numeral}`} titulo={s.titulo} acao="Ver todos" onAcao={() => router.push(`/${s.id}`)}>
+        <Fileira key={s.id} rotulo={`Missão ${s.numeral}`} titulo={s.titulo} acao="Ver todos" onAcao={() => router.push(`/${s.id}`)}>
           {s.capitulos.map((c) => (
             <CartaoEpisodio key={c.numero} secao={s} capitulo={c} />
           ))}
         </Fileira>
       ))}
 
-      <Fileira rotulo="Série especial" titulo="O Voo e a Medicina" acao="Abrir" onAcao={() => router.push('/historia')}>
+      <Fileira rotulo="Missão especial" titulo="O Voo e a Medicina" acao="Abrir" onAcao={() => router.push('/historia')}>
         {eras.map((e, i) => (
           <Pressable key={e.id} accessibilityRole="button" onPress={() => router.push('/historia')} style={{ width: 200, gap: 6 }}>
             <View style={styles.capaEra}>

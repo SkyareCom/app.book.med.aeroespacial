@@ -52,7 +52,7 @@ export function Abertura({ onFim }: { onFim: () => void }) {
         </Animated.View>
         <Animated.View style={{ opacity: titulo, transform: [{ translateY: titulo.interpolate({ inputRange: [0, 1], outputRange: [12, 0] }) }], alignItems: 'center', gap: 4 }}>
           <Texto t="rotulo" cor={Cores.destaque}>App-book de medicina aeroespacial</Texto>
-          <Texto t="item" cor={Cores.textoSuave}>4 temporadas · 50 episódios</Texto>
+          <Texto t="item" cor={Cores.textoSuave}>4 missões · 50 voos</Texto>
         </Animated.View>
       </View>
       <Pressable accessibilityRole="button" accessibilityLabel="Pular abertura" onPress={fechar} style={[styles.pular, { top: insets.top + 12 }]}>

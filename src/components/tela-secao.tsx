@@ -28,20 +28,20 @@ export function TelaSecao({ id }: { id: SecaoId }) {
         <Image source={ArteTemporada[id]} style={StyleSheet.absoluteFill} contentFit="cover" />
         <LinearGradient colors={['rgba(3,5,10,0.4)', 'rgba(3,5,10,0)', Cores.fundo]} locations={[0, 0.35, 1]} style={StyleSheet.absoluteFill} />
         <View style={styles.textoHero}>
-          <Texto t="rotulo" cor={Cores.dourado}>Temporada {secao.numeral}</Texto>
+          <Texto t="rotulo" cor={Cores.dourado}>Missão {secao.numeral}</Texto>
           <Texto t="titulo">{secao.titulo}</Texto>
           <Texto cor={Cores.textoSuave}>{secao.sinopse}</Texto>
           <Texto t="rotulo" cor={Cores.textoApagado}>
-            {secao.capitulos.length} episódios · {prontos} disponível{prontos === 1 ? '' : 'is'} · {interativos} com interativos
+            {secao.capitulos.length} voos · {prontos} disponível{prontos === 1 ? '' : 'is'} · {interativos} com interativos
           </Texto>
           <Pressable accessibilityRole="button" onPress={() => router.push(rotaEpisodio(id, primeiro.numero))} style={({ pressed }) => [styles.botao, pressed && { opacity: 0.85 }]}>
-            <Texto t="item" maiusculo espacado cor={Cores.fundo}>▶  Episódio {primeiro.numero}</Texto>
+            <Texto t="item" maiusculo espacado cor={Cores.fundo}>▶  Voo {primeiro.numero}</Texto>
           </Pressable>
         </View>
       </View>
 
       <View style={{ paddingHorizontal: GUTTER, gap: Espaco.lg }}>
-        <Texto t="rotulo" cor={Cores.textoApagado}>Episódios</Texto>
+        <Texto t="rotulo" cor={Cores.textoApagado}>Voos</Texto>
         {secao.capitulos.map((c) => {
           const feito = concluidos.includes(chaveCapitulo(id, c.numero));
           const pronto = disponivel(c);
@@ -50,7 +50,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
             <Pressable
               key={c.numero}
               accessibilityRole="button"
-              accessibilityLabel={`Episódio ${c.numero}: ${c.titulo}`}
+              accessibilityLabel={`Voo ${c.numero}: ${c.titulo}`}
               onPress={() => router.push(rotaEpisodio(id, c.numero))}
               style={({ pressed }) => [styles.episodio, pressed && { opacity: 0.85 }]}>
               <View style={styles.linha}>

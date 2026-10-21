@@ -39,8 +39,8 @@ export default function TelaCapitulo() {
 
   if (!secao || !capitulo) {
     return (
-      <Tela titulo="Episódio não encontrado">
-        <Texto cor={Cores.textoSuave}>Volte e escolha outro episódio.</Texto>
+      <Tela titulo="Voo não encontrado">
+        <Texto cor={Cores.textoSuave}>Volte e escolha outro voo.</Texto>
       </Tela>
     );
   }
@@ -57,10 +57,10 @@ export default function TelaCapitulo() {
           <Image source={CapaEpisodio[`${secao.id}-${capitulo.numero}`]} style={{ width: largura, height: largura * 0.5625 + 60 }} contentFit="cover" />
           <LinearGradient colors={['rgba(3,5,10,0.5)', 'rgba(3,5,10,0)', Cores.fundo]} locations={[0, 0.3, 0.92]} style={StyleSheet.absoluteFill} />
           <View style={styles.textoHero}>
-            <Texto t="rotulo" cor={Cores.destaque}>Temporada {secao.numeral} · Episódio {capitulo.numero}</Texto>
+            <Texto t="rotulo" cor={Cores.destaque}>Missão {secao.numeral} · Voo {capitulo.numero}</Texto>
             <Texto t="titulo" style={TituloDestaque}>{capitulo.titulo}</Texto>
             <Texto t="rotulo" cor={Cores.textoApagado}>
-              {pronto ? `${duracao(capitulo)} min` : 'Em produção'} · {capitulo.topicos.length} cenas{nInterativos ? ` · ${nInterativos} interativo${nInterativos > 1 ? 's' : ''}` : ''}
+              {pronto ? `${duracao(capitulo)} min` : 'Em produção'} · {capitulo.topicos.length} fases{nInterativos ? ` · ${nInterativos} interativo${nInterativos > 1 ? 's' : ''}` : ''}
             </Texto>
           </View>
         </View>
@@ -70,7 +70,7 @@ export default function TelaCapitulo() {
 
           {capitulo.objetivos ? (
             <Painel>
-              <Texto t="rotulo" cor={Cores.destaque}>Neste episódio você vai</Texto>
+              <Texto t="rotulo" cor={Cores.destaque}>Neste voo você vai</Texto>
               {capitulo.objetivos.map((o) => (
                 <Texto key={o} cor={Cores.textoSuave}>· {o}</Texto>
               ))}
@@ -84,7 +84,7 @@ export default function TelaCapitulo() {
           {!pronto ? (
             <Painel>
               <Texto t="rotulo" cor={Cores.destaque}>Em produção</Texto>
-              <Texto cor={Cores.textoSuave}>Os textos deste episódio estão sendo escritos. Estas são as cenas que ele vai cobrir:</Texto>
+              <Texto cor={Cores.textoSuave}>Os textos deste voo estão sendo escritos. Estas são as fases que ele vai cobrir:</Texto>
             </Painel>
           ) : null}
 
@@ -107,7 +107,7 @@ export default function TelaCapitulo() {
         </View>
 
         {proximos.length ? (
-          <Fileira titulo="Próximos episódios" rotulo={`Temporada ${secao.numeral}`}>
+          <Fileira titulo="Próximos voos" rotulo={`Missão ${secao.numeral}`}>
             {proximos.map((c) => (
               <CartaoEpisodio key={c.numero} secao={secao} capitulo={c} largura={210} />
             ))}
@@ -125,7 +125,7 @@ function BlocoTopico({ topico, cena, destacado }: { topico: Topico; cena: number
   return (
     <Painel style={destacado ? { borderColor: Cores.destaque } : undefined}>
       <View style={{ gap: 2 }}>
-        <Texto t="rotulo" cor={Cores.destaque}>Cena {cena} · Tópico {topico.id}</Texto>
+        <Texto t="rotulo" cor={Cores.destaque}>Fase {cena} · Tópico {topico.id}</Texto>
         <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
         {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
       </View>

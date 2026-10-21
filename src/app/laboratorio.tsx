@@ -19,7 +19,7 @@ export default function Laboratorio() {
   return (
     <Tela titulo="Laboratório aeroespacial" rotulo="Simuladores, gráficos e atividades">
       <CartaoImagem imagem={Imagens.lab} altura={120}>
-        <Texto t="item">Experimente o que acontece com o corpo em cada condição de voo. Cada simulador também aparece no episódio do tema.</Texto>
+        <Texto t="item">Experimente o que acontece com o corpo em cada condição de voo. Cada simulador também aparece no voo do tema.</Texto>
       </CartaoImagem>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: Espaco.sm }}>
         {ORDEM.map((m) => (
