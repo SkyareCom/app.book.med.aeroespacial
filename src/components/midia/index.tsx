@@ -4,6 +4,7 @@ import { AtividadeClassificar } from '@/components/midia/atividade-classificar';
 import { CamadasAtmosfera } from '@/components/midia/camadas-atmosfera';
 import { ComposicaoAr } from '@/components/midia/composicao-ar';
 import { GasesNoCorpo } from '@/components/midia/gases-corpo';
+import { GraficoBoyle, GraficoCharles, GraficoDalton, GraficoHenry } from '@/components/midia/leis-gases-graficos';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -34,6 +35,10 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'composicao-ar': () => <ComposicaoAr />,
   'camadas-atmosfera': () => <CamadasAtmosfera />,
   'gases-corpo': () => <GasesNoCorpo />,
+  'grafico-boyle': () => <GraficoBoyle />,
+  'grafico-dalton': () => <GraficoDalton />,
+  'grafico-henry': () => <GraficoHenry />,
+  'grafico-charles': () => <GraficoCharles />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -51,6 +56,10 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'composicao-ar': 'Composição do ar',
   'camadas-atmosfera': 'Camadas da atmosfera',
   'gases-corpo': 'Gases no corpo em voo',
+  'grafico-boyle': 'Lei de Boyle',
+  'grafico-dalton': 'Lei de Dalton',
+  'grafico-henry': 'Lei de Henry',
+  'grafico-charles': 'Lei de Charles',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

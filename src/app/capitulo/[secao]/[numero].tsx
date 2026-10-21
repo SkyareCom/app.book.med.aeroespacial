@@ -184,11 +184,11 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
 
       {aberto && c ? (
         <Animated.View style={{ gap: Espaco.md, opacity: entrada, transform: [{ translateY: entrada.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }] }}>
-          <Nivel rotulo="Essencial" texto={c.essencial} />
+          <Nivel rotulo="Essencial" texto={c.essencial} recursos={c.recursos} apos="essencial" />
           <Recursos lista={c.recursos} apos="essencial" />
-          <Nivel rotulo="Entenda" texto={c.explicacao} />
+          <Nivel rotulo="Entenda" texto={c.explicacao} recursos={c.recursos} apos="entenda" />
           <Recursos lista={c.recursos} apos="entenda" />
-          <Nivel rotulo="Para profissionais" texto={c.clinico} />
+          <Nivel rotulo="Para profissionais" texto={c.clinico} recursos={c.recursos} apos="profissionais" />
           <Recursos lista={c.recursos} apos="profissionais" />
           {topico.midias?.map((m) => (
             <Midia key={m} tipo={m} />
@@ -218,19 +218,40 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
 }
 
 // Cada linha em branco no texto vira um parágrafo, para o leitor ter pausas.
-function Nivel({ rotulo, texto }: { rotulo: string; texto: string }) {
+// Recursos com `paragrafo` entram entre os parágrafos: o texto nunca corre sem um visual.
+function Nivel({ rotulo, texto, recursos, apos }: { rotulo: string; texto: string; recursos?: Recurso[]; apos: Recurso['apos'] }) {
+  const paragrafos = texto.split(/\n\s*\n/).map((p) => p.trim());
+  const blocos: { inicio: number; fim: number }[] = [];
+  let inicio = 0;
+  paragrafos.forEach((_, i) => {
+    const corte = recursos?.some((r) => r.apos === apos && r.paragrafo === i + 1);
+    if (corte || i === paragrafos.length - 1) {
+      blocos.push({ inicio, fim: i + 1 });
+      inicio = i + 1;
+    }
+  });
   return (
-    <View style={styles.nivel}>
-      <Texto t="rotulo" cor={Cores.destaque}>{rotulo}</Texto>
-      {texto.split(/\n\s*\n/).map((p, i) => (
-        <Texto key={i} cor={Cores.textoSuave}>{p.trim()}</Texto>
+    <>
+      {blocos.map((b, k) => (
+        <View key={k} style={{ gap: Espaco.md }}>
+          <View style={styles.nivel}>
+            {k === 0 ? <Texto t="rotulo" cor={Cores.destaque}>{rotulo}</Texto> : null}
+            {paragrafos.slice(b.inicio, b.fim).map((p, i) => (
+              <Texto key={i} cor={Cores.textoSuave}>{p}</Texto>
+            ))}
+          </View>
+          {b.fim < paragrafos.length || recursos?.some((r) => r.apos === apos && r.paragrafo === b.fim) ? (
+            <Recursos lista={recursos?.filter((r) => r.paragrafo === b.fim)} apos={apos} entre />
+          ) : null}
+        </View>
       ))}
-    </View>
+    </>
   );
 }
 
-function Recursos({ lista, apos }: { lista?: Recurso[]; apos: Recurso['apos'] }) {
-  const itens = lista?.filter((r) => r.apos === apos) ?? [];
+function Recursos({ lista, apos, entre = false }: { lista?: Recurso[]; apos: Recurso['apos']; entre?: boolean }) {
+  // Sem `entre`, só os recursos do fim do nível (sem parágrafo marcado).
+  const itens = lista?.filter((r) => r.apos === apos && (entre || !r.paragrafo)) ?? [];
   return (
     <>
       {itens.map((r, i) =>

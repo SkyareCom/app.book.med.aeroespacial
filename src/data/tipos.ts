@@ -20,7 +20,11 @@ export type TipoMidia =
   | 'perda-ossea'
   | 'composicao-ar'
   | 'camadas-atmosfera'
-  | 'gases-corpo';
+  | 'gases-corpo'
+  | 'grafico-boyle'
+  | 'grafico-dalton'
+  | 'grafico-henry'
+  | 'grafico-charles';
 
 export interface ConteudoTopico {
   essencial: string;
@@ -34,6 +38,8 @@ export interface ConteudoTopico {
 
 export interface Recurso {
   apos: 'essencial' | 'entenda' | 'profissionais';
+  // Opcional: entra logo depois deste parágrafo do nível (1 = primeiro), quebrando o texto.
+  paragrafo?: number;
   midia?: TipoMidia;
   figura?: { imagem: number; legenda: string };
   // Tabela: no celular cada linha vira um cartão (1ª coluna como título, as outras como rótulo e valor).

@@ -33,8 +33,10 @@
 // - Doença descompressiva de altitude rara abaixo de 18.000 ft; mergulho antes do voo aumenta o risco:
 //   Fundamentals of Aerospace Medicine, 5ª ed. [confirmar página]. Intervalos de superfície ficam para o voo de DD.
 // - Tensão de N₂ nos tecidos ao nível do mar aproximada por 0,7808 × (760 − 47) ≈ 557 mmHg (cálculo didático).
-// Recursos: tabela das leis, simulação gases-corpo (Boyle, Dalton, Henry) e tabela dos locais de gás preso.
-// Imagem fotográfica pendente: pacote fechado estufado na bandeja do avião (prompt enviado ao autor).
+// Recursos: tabela das leis; um gráfico por lei entre os parágrafos do Entenda (grafico-boyle, -dalton, -henry, -charles);
+// tabela dos locais de gás preso. Charles: exemplo de cilindro fechado cheio a 20 °C, pressão ∝ temperatura absoluta.
+// Fotos premium pendentes (prompts enviados ao autor): passageiro com pontos de gás preso, pacote estufado,
+// passageira na descida, alpinista em altitude, garrafa abrindo, cilindro de oxigênio no frio.
 
 import type { Capitulo } from '../tipos';
 
@@ -104,9 +106,14 @@ export const atmosfera: Capitulo = {
               ],
             },
           },
-          { apos: 'entenda', midia: 'gases-corpo' },
+          // Entenda: cada lei com o seu visual logo depois do parágrafo.
+          { apos: 'entenda', paragrafo: 2, midia: 'grafico-boyle' },
+          { apos: 'entenda', paragrafo: 3, midia: 'grafico-dalton' },
+          { apos: 'entenda', paragrafo: 4, midia: 'grafico-henry' },
+          { apos: 'entenda', paragrafo: 5, midia: 'grafico-charles' },
           {
             apos: 'profissionais',
+            paragrafo: 2,
             tabela: {
               titulo: 'Onde o gás fica preso',
               colunas: ['Local', 'Quando incomoda', 'O que se sente'],
