@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import Svg, { Defs, Ellipse, G, Line, LinearGradient, Path, Stop, Text as SvgText } from 'react-native-svg';
+import Svg, { Defs, Ellipse, G, Line, LinearGradient, Path, RadialGradient, Stop, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
@@ -23,6 +23,7 @@ const ponto = (cx: number, cy: number, rx: number, ry: number, t: number): [numb
 
 // Cores 3D: topo claro e lateral escura de cada gás.
 const LATERAL: Record<string, string> = { n2: '#2C7FAE', o2: '#A9852E', ar: '#6F52B8', co2: '#2E8F62' };
+const CORTE: Record<string, string> = { n2: '#1F5F86', o2: '#7F6322', ar: '#523C8C', co2: '#22694A' };
 
 export function ComposicaoAr() {
   const [sel, setSel] = useState<(typeof GASES)[number]['id']>('o2');
@@ -35,11 +36,11 @@ export function ComposicaoAr() {
   const escala = Math.max(0.55, Math.sqrt(pb / 760));
   const rx = Math.min(larg / 2 - 20, 150) * escala;
   const ry = rx * 0.52;
-  const prof = 30 * escala;
+  const prof = 40 * escala;
   const ryMax = 0.52 * Math.min(larg / 2 - 20, 150);
   const cx = larg / 2;
   const cy = 44 + ryMax;
-  const H = cy + ryMax + 30 + 22;
+  const H = cy + ryMax + 40 + 26;
 
   let acc = 0;
   const fatias = GASES.map((g) => {
@@ -48,7 +49,14 @@ export function ComposicaoAr() {
     return { g, a0, a1: acc, meio: (a0 + acc) / 2 };
   });
   // Fatia escolhida sai do conjunto, como na apresentação de um gráfico de cinema.
-  const deslocar = (meio: number, id: string) => (id === sel ? [Math.sin(meio * 2 * Math.PI) * 12, -Math.cos(meio * 2 * Math.PI) * 6] : [0, 0]);
+  const deslocar = (meio: number, id: string) => (id === sel ? [Math.sin(meio * 2 * Math.PI) * 16, -Math.cos(meio * 2 * Math.PI) * 9] : [0, 0]);
+  // Parede do corte (do centro até a borda) num ângulo, para a fatia destacada ter volume.
+  const corte = (x: number, y: number, t: number) => {
+    const [px, py] = ponto(x, y, rx, ry, t);
+    return `M${x} ${y}L${px} ${py}L${px} ${py + prof}L${x} ${y + prof}Z`;
+  };
+  // Desenho de trás para a frente: fatias com o meio mais ao fundo primeiro.
+  const ordem = [...fatias].sort((p, q) => Math.cos(q.meio * 2 * Math.PI) - Math.cos(p.meio * 2 * Math.PI));
 
   const topo = (x: number, y: number, a0: number, a1: number) => {
     const [x0, y0] = ponto(x, y, rx, ry, a0);
@@ -78,17 +86,32 @@ export function ComposicaoAr() {
                 <Stop offset="1" stopColor={g.cor} stopOpacity={0.85} />
               </LinearGradient>
             ))}
+            {GASES.map((g) => (
+              <LinearGradient key={`l-${g.id}`} id={`lat-${g.id}`} x1="0" y1="0" x2="1" y2="0">
+                <Stop offset="0" stopColor={CORTE[g.id]} />
+                <Stop offset="0.45" stopColor={LATERAL[g.id]} />
+                <Stop offset="1" stopColor={CORTE[g.id]} />
+              </LinearGradient>
+            ))}
+            <RadialGradient id="sombra" cx="0.5" cy="0.5" r="0.5">
+              <Stop offset="0" stopColor="#000000" stopOpacity={0.7} />
+              <Stop offset="1" stopColor="#000000" stopOpacity={0} />
+            </RadialGradient>
           </Defs>
-          <Ellipse cx={cx} cy={cy + prof + 10} rx={rx * 1.02} ry={ry * 0.9} fill="#000000" fillOpacity={0.45} />
-          {fatias.map(({ g, a0, a1, meio }) => {
+          <Ellipse cx={cx} cy={cy + prof + 12} rx={rx * 1.25} ry={ry * 1.05} fill="url(#sombra)" />
+          {ordem.map(({ g, a0, a1, meio }) => {
             const [dx, dy] = deslocar(meio, g.id);
-            const d = lateral(cx + dx, cy + dy, a0, a1);
-            return d ? <Path key={`l-${g.id}`} d={d} fill={LATERAL[g.id]} onPress={() => setSel(g.id)} /> : null;
-          })}
-          {fatias.map(({ g, a0, a1, meio }) => {
-            const [dx, dy] = deslocar(meio, g.id);
+            const x = cx + dx;
+            const y = cy + dy;
+            const parede = lateral(x, y, a0, a1);
+            const destacada = g.id === sel && a1 - a0 < 0.5;
             return (
-              <Path key={`t-${g.id}`} d={topo(cx + dx, cy + dy, a0, a1)} fill={`url(#topo-${g.id})`} stroke="#03050A" strokeOpacity={0.5} strokeWidth={0.8} onPress={() => setSel(g.id)} />
+              <G key={g.id} onPress={() => setSel(g.id)}>
+                {destacada ? <Path d={corte(x, y, a0)} fill={CORTE[g.id]} /> : null}
+                {destacada ? <Path d={corte(x, y, a1)} fill={CORTE[g.id]} /> : null}
+                {parede ? <Path d={parede} fill={`url(#lat-${g.id})`} /> : null}
+                <Path d={topo(x, y, a0, a1)} fill={`url(#topo-${g.id})`} stroke="#FFFFFF" strokeOpacity={0.35} strokeWidth={0.8} />
+              </G>
             );
           })}
           {fatias.filter(({ g }) => !fatiaPeq(g.id)).map(({ g, meio }) => {
