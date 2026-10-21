@@ -9,6 +9,7 @@ import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, TituloDestaque, BordaCapa } from '@/constants/theme';
+import { DESCRICOES } from '@/data/descricoes';
 import { chaveCapitulo, obterSecao } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -54,7 +55,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
               onPress={() => router.push(rotaEpisodio(id, c.numero))}
               style={({ pressed }) => [styles.episodio, pressed && { opacity: 0.85 }]}>
               {/* Todos os cartões têm a mesma altura e estrutura, em duas colunas:
-                  1) capa, duração (ou "em produção") e selo interativo; 2) título e resumo dos tópicos. */}
+                  1) capa, duração (ou "em produção") e selo interativo; 2) título e descrição de 3 linhas (data/descricoes.ts). */}
               <View style={styles.coluna1}>
                 <View style={styles.miniatura}>
                   <Image source={CapaEpisodio[`${id}-${c.numero}`]} style={StyleSheet.absoluteFill} contentFit="cover" />
@@ -67,7 +68,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
                 <View style={styles.titulo}>
                   <Texto t="item" style={TituloDestaque} numberOfLines={2}>{c.numero}. {c.titulo}</Texto>
                 </View>
-                <Texto cor={Cores.textoSuave} numberOfLines={4}>{c.resumo ?? c.topicos.map((t) => t.titulo).join(' · ')}</Texto>
+                <Texto cor={Cores.textoSuave} numberOfLines={3}>{DESCRICOES[`${id}-${c.numero}`] ?? c.resumo}</Texto>
               </View>
             </Pressable>
           );
