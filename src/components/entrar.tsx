@@ -14,7 +14,7 @@ import type { ModoEntrada } from '@/state/conta';
 const LOGIN_SOCIAL_ATIVO = false;
 // Provisório: enquanto o login real não existe, qualquer opção libera a entrada direto.
 // Para voltar a exigir Google, Apple ou biometria de verdade, troque para false.
-const ENTRADA_LIVRE = true;
+export const ENTRADA_LIVRE = true;
 
 const nomeBiometria = Platform.OS === 'ios' ? 'Face ID ou Touch ID' : Platform.OS === 'android' ? 'Digital ou reconhecimento facial' : 'Face ID, Touch ID ou digital';
 
