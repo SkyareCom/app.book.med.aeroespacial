@@ -151,6 +151,17 @@ export default function Home() {
           </View>
         </CartaoImagem>
       </View>
+
+      <Pressable style={{ paddingHorizontal: GUTTER }} accessibilityRole="link" accessibilityLabel="Abrir referências" onPress={() => router.push('/referencias')}>
+        <Painel>
+          <Texto t="rotulo" cor={Cores.destaque}>Referências</Texto>
+          <Texto t="item">Obras e normas que embasam todo o conteúdo</Texto>
+          <View style={styles.abrir}>
+            <Texto t="rotulo" cor={Cores.dourado}>Ver lista</Texto>
+            <IconeSeta cor={Cores.dourado} tamanho={16} />
+          </View>
+        </Painel>
+      </Pressable>
     </TelaCheia>
   );
 }

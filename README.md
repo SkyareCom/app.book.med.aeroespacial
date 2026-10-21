@@ -64,6 +64,7 @@ npm run export:web  # versão web estática em dist/
 | `src/components/moldura-app.tsx` | Cabeçalho e rodapé fixos em todas as telas |
 | `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
 | `src/app/curiosidades.tsx` · `src/data/extras.ts` | Página de Curiosidades aeronáuticas (a Home mostra só o cartão de acesso) |
+| `src/app/referencias.tsx` · `src/data/referencias.ts` | Lista única de referências (atalho na Home, abaixo de Curiosidades); as fontes não aparecem nos voos |
 | `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
 | `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
 | `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
