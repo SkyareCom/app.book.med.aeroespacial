@@ -15,7 +15,7 @@ App-book de medicina aeroespacial em React Native (Expo), com a experiência de 
 - **Home em estilo série:** destaques rotativos no topo, "Continue de onde parou", sua evolução, uma fileira de episódios por temporada, a série especial O Voo e a Medicina, o Laboratório, os modos quiz e prova e as curiosidades.
 - **Temporadas** (as 4 seções do rodapé: Fisiologia, Clínica, Operação, Espaço) com arte própria, sinopse e lista de episódios com capa, duração e selos "Disponível" e "Interativo".
 - **Episódios** (os capítulos) com capa de cinema, cenas (tópicos) nos três níveis de leitura sempre visíveis, interativos dentro das cenas, o botão **TESTE O CONHECIMENTO** no final e os próximos episódios.
-- **Capa própria para cada um dos 50 episódios** e arte para cada temporada, geradas por `tools/cenas/capas.py`.
+- **Capa própria para cada um dos 50 episódios**, arte para cada temporada e para a série especial: imagens cinematográficas fotorrealistas geradas por IA, sem texto nem marcas.
 
 ## Interativos
 
@@ -94,7 +94,7 @@ O episódio passa a aparecer como "Disponível", e o teste entra no Modo quiz e 
 
 ## Imagens
 
-As capas são cenas geradas por código (silhuetas, a Terra vista da órbita, macros e luz de cinema). Para usar fotos ou imagens geradas por IA, substitua os arquivos em `assets/images/capas/` mantendo os mesmos nomes.
+As capas, artes e cenas são imagens fotorrealistas de cinema geradas por IA, com pessoas fictícias e sem texto, logotipos ou marcas. Ficam em `assets/images/capas/` (episódios `fis-01`…`esp-08`, `temporada-*` e `especial-voo`) e `assets/images/cenas/` (fundo, abertura, laboratório, quiz, prova e curiosidades), em JPG de até 1600 px de largura. Para trocar uma imagem, substitua o arquivo mantendo o mesmo nome. Os geradores antigos de `tools/cenas/` não são mais usados.
 
 ## Obras de referência
 
