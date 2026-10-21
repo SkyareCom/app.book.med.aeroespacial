@@ -4,12 +4,12 @@ import type { ComponentType } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { IconeClinica, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao } from '@/components/icones';
+import { IconeClinica, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao, IconePerfil, IconeSino } from '@/components/icones';
 import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
-import { useConta } from '@/state/conta';
+import { useNotificacoes } from '@/state/notificacoes';
 
 // Cabeçalho e rodapé fixos, presentes em todas as telas do app.
 
@@ -17,7 +17,7 @@ export function Cabecalho() {
   const insets = useSafeAreaInsets();
   const largura = useLarguraJanela();
   const lateral = Math.max(Espaco.lg, (largura - LarguraMaxima) / 2 + Espaco.lg);
-  const { modo, sair } = useConta();
+  const { naoLidas } = useNotificacoes();
   return (
     <View style={[styles.cabecalho, { paddingTop: insets.top + 8, paddingLeft: lateral, paddingRight: lateral }]}>
       <Link href="/" replace asChild>
@@ -29,11 +29,19 @@ export function Cabecalho() {
           </View>
         </Pressable>
       </Link>
-      {modo === 'convidado' ? (
-        <Pressable accessibilityRole="button" accessibilityLabel="Entrar na sua conta" onPress={sair} style={styles.entrar}>
-          <Texto t="rotulo" cor={Cores.destaque}>Entrar</Texto>
-        </Pressable>
-      ) : null}
+      <View style={styles.acoes}>
+        <Link href="/notificacoes" asChild>
+          <Pressable accessibilityRole="link" accessibilityLabel={naoLidas ? 'Notificações, há novidades' : 'Notificações'} style={styles.acao}>
+            <IconeSino cor={Cores.texto} tamanho={22} />
+            {naoLidas ? <View style={styles.ponto} /> : null}
+          </Pressable>
+        </Link>
+        <Link href="/perfil" asChild>
+          <Pressable accessibilityRole="link" accessibilityLabel="Perfil" style={styles.acao}>
+            <IconePerfil cor={Cores.texto} tamanho={22} />
+          </Pressable>
+        </Link>
+      </View>
     </View>
   );
 }
@@ -82,7 +90,9 @@ export function Rodape() {
 
 const styles = StyleSheet.create({
   cabecalho: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'rgba(3,5,10,0.96)', borderBottomWidth: 1, borderBottomColor: Cores.linha, paddingBottom: 8, zIndex: 10 },
-  entrar: { minHeight: 36, paddingHorizontal: 14, borderRadius: 18, borderWidth: 1, borderColor: Cores.destaque, justifyContent: 'center' },
+  acoes: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  acao: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  ponto: { position: 'absolute', top: 9, right: 10, width: 8, height: 8, borderRadius: 4, backgroundColor: Cores.dourado, borderWidth: 1, borderColor: Cores.fundo },
   marca: { flexDirection: 'row', alignItems: 'center', gap: 10, alignSelf: 'flex-start' },
   logo: { width: 40, height: 40 },
   rodape: { flexDirection: 'row', backgroundColor: 'rgba(3,5,10,0.96)', borderTopWidth: 1, borderTopColor: Cores.linha, paddingTop: 8, zIndex: 10 },

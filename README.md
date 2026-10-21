@@ -62,6 +62,8 @@ npm run export:web  # versão web estática em dist/
 | `src/app/` | Telas e rotas (Expo Router) |
 | `src/app/(tabs)/` | Home e as 4 missões do rodapé |
 | `src/components/moldura-app.tsx` | Cabeçalho e rodapé fixos em todas as telas |
+| `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
+| `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
 | `src/app/capitulo/[secao]/[numero].tsx` | Tela do voo (capítulo) |
 | `src/app/teste.tsx` | Testes de voo, de era, modo quiz e modo prova |
 | `src/app/laboratorio.tsx` | Laboratório com todos os interativos |
@@ -82,7 +84,7 @@ npm run export:web  # versão web estática em dist/
 
 ## Entrada no app
 
-Depois da abertura, quem ainda não escolheu como entrar vê a tela de entrada (`src/components/entrar.tsx`): **Continuar com Google**, **Continuar com a Apple** (iPhone e web) e **Entrar com biometria** (Face ID, Touch ID ou digital, no app instalado), além de **Continuar sem conta**. A escolha fica salva no aparelho (`src/state/conta.tsx`); quem entrou sem conta tem o botão **Entrar** no cabeçalho.
+Depois da abertura, quem ainda não escolheu como entrar vê a tela de entrada (`src/components/entrar.tsx`): **Continuar com Google**, **Continuar com a Apple** (iPhone e web) e **Entrar com biometria** (Face ID, Touch ID ou digital, no app instalado), além de **Continuar sem conta**. A escolha fica salva no aparelho (`src/state/conta.tsx`); quem entrou sem conta tem o botão **Entrar na conta** no Perfil.
 
 O login com Google e Apple ainda depende das credenciais das contas de desenvolvedor (Google Cloud e Apple Developer) e de um serviço de contas, como o Supabase. Os símbolos do Google e da Apple nos botões vêm do projeto Devicon (licença MIT), em `src/components/marcas.tsx`; as marcas pertencem às respectivas empresas e serão trocadas pelos botões oficiais quando o login real for ligado. Por enquanto, `ENTRADA_LIVRE` (em `src/components/entrar.tsx`) está ligado: qualquer opção libera a entrada direto, sem verificar a conta. Quem entra sem conta volta a ver as formas de login a cada abertura do app. A App Store exige o login com a Apple sempre que o app oferece login com Google.
 
@@ -90,7 +92,7 @@ O login com Google e Apple ainda depende das credenciais das contas de desenvolv
 
 - Fonte única: **Acme** (Google Fonts), em uma versão corrigida. A Acme original desenha o acento circunflexo (â, ê, ô) de cabeça para baixo; `tools/fonte/corrigir_circunflexo.py` corrige o acento e gera `assets/fonts/AppBookDisplay-Regular.ttf`. Pela licença SIL OFL, o nome "Acme" é reservado, então a versão corrigida se chama "AppBook Display". A família só tem o peso 400.
 - Tamanhos permitidos: 18, 14, 12, 10 e 9px. O 9px é usado **somente no rodapé e nos selos (Interativo, Disponível, tipo de mídia), sempre em maiúsculas**.
-- Cabeçalho e rodapé sempre fixos na tela: logotipo à esquerda com PAPOS DE ALTITUDE e, abaixo, MEDICINA AEROESPACIAL; no rodapé, as 5 abas.
+- Cabeçalho e rodapé sempre fixos na tela: logotipo à esquerda com PAPOS DE ALTITUDE e, abaixo, MEDICINA AEROESPACIAL; à direita, **Notificações** (sino, com ponto dourado quando há novidade) e **Perfil**; no rodapé, as 5 abas.
 - Tema escuro sideral. O destaque padrão é o azul "holograma"; a variação vermelha "sabre" está pronta em `src/constants/theme.ts`.
 
 ## Como adicionar um voo

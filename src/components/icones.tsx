@@ -29,3 +29,15 @@ export const IconeCadeado = (p: Props) => (
   </Base>
 );
 export const IconeCheck = (p: Props) => <Base {...p}><Path d="M5 12l5 5 9-10" /></Base>;
+export const IconeSino = (p: Props) => (
+  <Base {...p}>
+    <Path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" />
+    <Path d="M10 20.5a2.2 2.2 0 0 0 4 0" />
+  </Base>
+);
+export const IconePerfil = (p: Props) => (
+  <Base {...p}>
+    <Circle cx={12} cy={8.5} r={3.8} />
+    <Path d="M4.5 20.5c1.2-3.8 4-5.8 7.5-5.8s6.3 2 7.5 5.8" />
+  </Base>
+);

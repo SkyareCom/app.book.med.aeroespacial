@@ -9,6 +9,7 @@ import { Abertura } from '@/components/abertura';
 import { Cabecalho, Rodape } from '@/components/moldura-app';
 import { Cores, Fonte } from '@/constants/theme';
 import { ProvedorConta, useConta } from '@/state/conta';
+import { ProvedorNotificacoes } from '@/state/notificacoes';
 import { ProvedorProgresso } from '@/state/progresso';
 
 SplashScreen.preventAutoHideAsync();
@@ -26,6 +27,7 @@ export default function RootLayout() {
   return (
     <ProvedorConta>
       <ProvedorProgresso>
+      <ProvedorNotificacoes>
         <StatusBar style="light" />
         <View style={{ flex: 1, backgroundColor: Cores.fundo }}>
           <Cabecalho />
@@ -35,6 +37,7 @@ export default function RootLayout() {
           <Rodape />
           <AberturaEEntrada />
         </View>
+      </ProvedorNotificacoes>
       </ProvedorProgresso>
     </ProvedorConta>
   );
