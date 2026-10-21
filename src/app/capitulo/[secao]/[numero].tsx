@@ -2,7 +2,7 @@ import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
-import { Pressable, StyleSheet, View, type ScrollViewInstance } from 'react-native';
+import { Animated, Platform, Pressable, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { Painel } from '@/components/cartoes';
@@ -30,6 +30,8 @@ export default function TelaCapitulo() {
   const width = useLarguraJanela();
   const rolagem = useRef<ScrollViewInstance>(null);
   const { registrarVisita } = useProgresso();
+  // Posição de cada tópico na página, para voltar ao topo da gaveta quando ela é fechada lá embaixo.
+  const posTopicos = useRef<Record<string, number>>({});
   const secao = obterSecao(secaoId);
   const capitulo = obterCapitulo(secaoId, Number(numero));
 
@@ -93,9 +95,15 @@ export default function TelaCapitulo() {
             <View
               key={t.id}
               onLayout={(e) => {
+                posTopicos.current[t.id] = e.nativeEvent.layout.y;
                 if (foco === t.id) rolagem.current?.scrollTo({ y: Math.max(0, e.nativeEvent.layout.y + largura * 0.5625), animated: true });
               }}>
-              <BlocoTopico topico={t} codigo={`M${secoes.indexOf(secao) + 1}V${capitulo.numero}`} destacado={foco === t.id} />
+              <BlocoTopico
+                topico={t}
+                codigo={`M${secoes.indexOf(secao) + 1}V${capitulo.numero}`}
+                destacado={foco === t.id}
+                voltarAoTopo={() => rolagem.current?.scrollTo({ y: Math.max(0, (posTopicos.current[t.id] ?? 0) + largura * 0.5625 + 120 - 12), animated: true })}
+              />
             </View>
           ))}
 
@@ -131,19 +139,32 @@ function romano(n: number) {
 
 // Cada tópico é uma gaveta: fechado mostra código, título e pergunta; ao tocar, abre com os três níveis juntos.
 // Tópico ainda sem texto não abre. Um tópico vindo de link direto (busca, teste) já chega aberto.
-function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: string; destacado: boolean }) {
+// O topo do card é o puxador da gaveta: um toque abre, outro fecha, com a seta girando e o conteúdo deslizando.
+const NATIVO = Platform.OS !== 'web';
+function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topico; codigo: string; destacado: boolean; voltarAoTopo: () => void }) {
   const c = topico.conteudo;
   const [aberto, setAberto] = useState(destacado);
   const pode = !!c;
+  const giro = useRef(new Animated.Value(destacado ? 1 : 0)).current;
+  const entrada = useRef(new Animated.Value(destacado ? 1 : 0)).current;
+  useEffect(() => {
+    Animated.timing(giro, { toValue: aberto ? 1 : 0, duration: 240, useNativeDriver: NATIVO }).start();
+    if (aberto) {
+      entrada.setValue(0);
+      Animated.timing(entrada, { toValue: 1, duration: 320, useNativeDriver: NATIVO }).start();
+    }
+  }, [aberto, giro, entrada]);
+  const rotacao = giro.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '180deg'] });
   return (
     <Painel style={destacado || aberto ? { borderColor: Cores.destaque } : undefined}>
       <Pressable
         accessibilityRole="button"
         accessibilityState={{ expanded: aberto, disabled: !pode }}
         accessibilityLabel={`${codigo} - ${romano(Number(topico.id.split('.').pop()))}: ${topico.titulo}`}
+        accessibilityHint={aberto ? 'Toque para fechar o tópico' : 'Toque para abrir o tópico'}
         disabled={!pode}
         onPress={() => setAberto((v) => !v)}
-        style={styles.cabecaTopico}>
+        style={({ pressed }) => [styles.cabecaTopico, pressed && styles.cabecaPressionada]}>
         <View style={{ flex: 1, gap: 2 }}>
           <Texto t="rotulo" cor={Cores.destaque}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
           <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
@@ -151,14 +172,17 @@ function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: st
           {!pode ? <Texto t="rotulo" cor={Cores.textoApagado}>Em produção</Texto> : null}
         </View>
         {pode ? (
-          <View style={[styles.seta, aberto && { transform: [{ rotate: '180deg' }] }]}>
-            <IconeAbrir cor={Cores.destaque} tamanho={20} />
+          <View style={styles.puxador}>
+            <Animated.View style={[styles.seta, aberto && styles.setaAberta, { transform: [{ rotate: rotacao }] }]}>
+              <IconeAbrir cor={Cores.destaque} tamanho={20} />
+            </Animated.View>
+            <Texto t="rodape" cor={Cores.textoApagado}>{aberto ? 'Fechar' : 'Abrir'}</Texto>
           </View>
         ) : null}
       </Pressable>
 
       {aberto && c ? (
-        <>
+        <Animated.View style={{ gap: Espaco.md, opacity: entrada, transform: [{ translateY: entrada.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }] }}>
           <Nivel rotulo="Essencial" texto={c.essencial} />
           <Recursos lista={c.recursos} apos="essencial" />
           <Nivel rotulo="Entenda" texto={c.explicacao} />
@@ -174,13 +198,19 @@ function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: st
               <Texto>{c.alerta}</Texto>
             </View>
           ) : null}
-          <Pressable accessibilityRole="button" onPress={() => setAberto(false)} style={styles.fechar}>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => {
+              setAberto(false);
+              voltarAoTopo();
+            }}
+            style={({ pressed }) => [styles.fechar, pressed && { opacity: 0.6 }]}>
             <Texto t="rotulo" cor={Cores.destaque}>Fechar tópico</Texto>
             <View style={{ transform: [{ rotate: '180deg' }] }}>
               <IconeAbrir cor={Cores.destaque} tamanho={16} />
             </View>
           </Pressable>
-        </>
+        </Animated.View>
       ) : null}
     </Painel>
   );
@@ -220,7 +250,10 @@ const styles = StyleSheet.create({
   textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 6, gap: 6 },
   figura: { gap: 6 },
   figuraImagem: { width: '100%', aspectRatio: 16 / 9, borderRadius: 10, borderWidth: 1, borderColor: Cores.linha },
-  cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md },
+  cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, marginHorizontal: -8, marginVertical: -6, paddingHorizontal: 8, paddingVertical: 6, borderRadius: 12 },
+  cabecaPressionada: { backgroundColor: 'rgba(111,211,255,0.08)' },
+  puxador: { alignItems: 'center', gap: 4 },
+  setaAberta: { borderColor: Cores.destaque, backgroundColor: 'rgba(111,211,255,0.1)' },
   seta: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
   fechar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, minHeight: 44, borderTopWidth: 1, borderTopColor: Cores.linha },
   nivel: { gap: 8, paddingLeft: Espaco.md, borderLeftWidth: 1, borderLeftColor: Cores.linha },
