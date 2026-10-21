@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { Selo } from '@/components/selo';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Raio } from '@/constants/theme';
 
@@ -8,8 +9,8 @@ import { Cores, Espaco, Raio } from '@/constants/theme';
 export function MolduraMidia({ tipo, titulo, instrucao, children }: { tipo: string; titulo: string; instrucao?: string; children: ReactNode }) {
   return (
     <View style={styles.moldura}>
-      <View style={{ gap: 2 }}>
-        <Texto t="rotulo" cor={Cores.dourado}>{tipo}</Texto>
+      <View style={{ gap: 6 }}>
+        <Selo texto={tipo} cor={Cores.dourado} />
         <Texto t="item">{titulo}</Texto>
         {instrucao ? <Texto cor={Cores.textoApagado}>{instrucao}</Texto> : null}
       </View>

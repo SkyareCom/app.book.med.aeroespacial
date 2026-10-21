@@ -6,6 +6,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
 import { NOME_MIDIA } from '@/components/midia';
+import { Selo } from '@/components/selo';
 import { CartaoEpisodio, Destaques, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
 import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
@@ -123,7 +124,7 @@ export default function Home() {
               <Image source={CapaEpisodio[IMAGEM_LAB[m] ?? 'fisiologia-1']} style={StyleSheet.absoluteFill} contentFit="cover" />
               <LinearGradient colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.75)']} style={StyleSheet.absoluteFill} />
               <View style={{ position: 'absolute', left: 10, top: 8 }}>
-                <Texto t="rotulo" cor={Cores.dourado}>Interativo</Texto>
+                <Selo texto="Interativo" cor={Cores.dourado} />
               </View>
             </View>
             <Texto t="item" numberOfLines={2}>{NOME_MIDIA[m]}</Texto>

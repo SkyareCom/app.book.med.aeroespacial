@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { IconeCheck } from '@/components/icones';
+import { Selo } from '@/components/selo';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque, BordaCapa } from '@/constants/theme';
@@ -82,13 +83,7 @@ export function CartaoEpisodio({ secao, capitulo, largura = 230 }: { secao: Seca
   );
 }
 
-export function Selo({ texto, cor }: { texto: string; cor: string }) {
-  return (
-    <View style={[styles.selo, { borderColor: cor }]}>
-      <Texto t="rotulo" cor={cor}>{texto}</Texto>
-    </View>
-  );
-}
+export { Selo } from '@/components/selo';
 
 export interface ItemDestaque {
   id: string;
@@ -157,7 +152,6 @@ const styles = StyleSheet.create({
   acao: { minHeight: 44, justifyContent: 'flex-end', paddingBottom: 2 },
   capa: { borderRadius: 10, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },
   selos: { position: 'absolute', top: 8, left: 8, flexDirection: 'row', gap: 6 },
-  selo: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6, borderWidth: 1, backgroundColor: 'rgba(3,5,10,0.65)' },
   rodapeCapa: { position: 'absolute', left: 10, right: 10, bottom: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   progresso: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 3, backgroundColor: Cores.acerto },
   textoDestaque: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 34, gap: 8 },
