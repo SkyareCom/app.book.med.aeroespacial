@@ -41,3 +41,4 @@ export const IconePerfil = (p: Props) => (
     <Path d="M4.5 20.5c1.2-3.8 4-5.8 7.5-5.8s6.3 2 7.5 5.8" />
   </Base>
 );
+export const IconeAbrir = (p: Props) => <Base {...p}><Path d="M6 9l6 6 6-6" /></Base>;

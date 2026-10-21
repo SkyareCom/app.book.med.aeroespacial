@@ -1,11 +1,12 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useEffect, useRef } from 'react';
-import { StyleSheet, View, type ScrollViewInstance } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Pressable, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { Painel } from '@/components/cartoes';
+import { IconeAbrir } from '@/components/icones';
 import { Midia } from '@/components/midia';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
 import { BotaoVoltarFlutuante, Tela, TelaCheia } from '@/components/tela';
@@ -128,17 +129,35 @@ function romano(n: number) {
   return r;
 }
 
+// Cada tópico é uma gaveta: fechado mostra código, título e pergunta; ao tocar, abre com os três níveis juntos.
+// Tópico ainda sem texto não abre. Um tópico vindo de link direto (busca, teste) já chega aberto.
 function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: string; destacado: boolean }) {
   const c = topico.conteudo;
+  const [aberto, setAberto] = useState(destacado);
+  const pode = !!c;
   return (
-    <Painel style={destacado ? { borderColor: Cores.destaque } : undefined}>
-      <View style={{ gap: 2 }}>
-        <Texto t="rotulo" cor={Cores.destaque}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
-        <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
-        {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
-      </View>
+    <Painel style={destacado || aberto ? { borderColor: Cores.destaque } : undefined}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityState={{ expanded: aberto, disabled: !pode }}
+        accessibilityLabel={`${codigo} - ${romano(Number(topico.id.split('.').pop()))}: ${topico.titulo}`}
+        disabled={!pode}
+        onPress={() => setAberto((v) => !v)}
+        style={styles.cabecaTopico}>
+        <View style={{ flex: 1, gap: 2 }}>
+          <Texto t="rotulo" cor={Cores.destaque}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
+          <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
+          {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
+          {!pode ? <Texto t="rotulo" cor={Cores.textoApagado}>Em produção</Texto> : null}
+        </View>
+        {pode ? (
+          <View style={[styles.seta, aberto && { transform: [{ rotate: '180deg' }] }]}>
+            <IconeAbrir cor={Cores.destaque} tamanho={20} />
+          </View>
+        ) : null}
+      </Pressable>
 
-      {c ? (
+      {aberto && c ? (
         <>
           <Nivel rotulo="Essencial" texto={c.essencial} />
           <Recursos lista={c.recursos} apos="essencial" />
@@ -146,26 +165,22 @@ function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: st
           <Recursos lista={c.recursos} apos="entenda" />
           <Nivel rotulo="Para profissionais" texto={c.clinico} />
           <Recursos lista={c.recursos} apos="profissionais" />
-        </>
-      ) : null}
-
-      {topico.midias?.map((m) => (
-        <Midia key={m} tipo={m} />
-      ))}
-
-      {c?.alerta ? (
-        <View style={styles.alerta}>
-          <Texto t="rotulo" cor={Cores.dourado}>Atenção</Texto>
-          <Texto>{c.alerta}</Texto>
-        </View>
-      ) : null}
-      {c?.pontosChave?.length ? (
-        <View style={{ gap: 4 }}>
-          <Texto t="rotulo" cor={Cores.textoApagado}>Pontos-chave</Texto>
-          {c.pontosChave.map((p) => (
-            <Texto key={p}>· {p}</Texto>
+          {topico.midias?.map((m) => (
+            <Midia key={m} tipo={m} />
           ))}
-        </View>
+          {c.alerta ? (
+            <View style={styles.alerta}>
+              <Texto t="rotulo" cor={Cores.dourado}>Atenção</Texto>
+              <Texto>{c.alerta}</Texto>
+            </View>
+          ) : null}
+          <Pressable accessibilityRole="button" onPress={() => setAberto(false)} style={styles.fechar}>
+            <Texto t="rotulo" cor={Cores.destaque}>Fechar tópico</Texto>
+            <View style={{ transform: [{ rotate: '180deg' }] }}>
+              <IconeAbrir cor={Cores.destaque} tamanho={16} />
+            </View>
+          </Pressable>
+        </>
       ) : null}
     </Painel>
   );
@@ -205,6 +220,9 @@ const styles = StyleSheet.create({
   textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 6, gap: 6 },
   figura: { gap: 6 },
   figuraImagem: { width: '100%', aspectRatio: 16 / 9, borderRadius: 10, borderWidth: 1, borderColor: Cores.linha },
+  cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md },
+  seta: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
+  fechar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, minHeight: 44, borderTopWidth: 1, borderTopColor: Cores.linha },
   nivel: { gap: 8, paddingLeft: Espaco.md, borderLeftWidth: 1, borderLeftColor: Cores.linha },
   alerta: { gap: 4, padding: Espaco.md, borderRadius: 12, backgroundColor: 'rgba(232,196,106,0.1)' },
 });
