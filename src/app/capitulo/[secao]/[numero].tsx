@@ -60,7 +60,7 @@ export default function TelaCapitulo() {
             <Texto t="rotulo" cor={Cores.destaque}>Missão {secao.numeral} · Voo {capitulo.numero}</Texto>
             <Texto t="titulo" style={TituloDestaque}>{capitulo.titulo}</Texto>
             <Texto t="rotulo" cor={Cores.textoApagado}>
-              {pronto ? `${duracao(capitulo)} min` : 'Em produção'} · {capitulo.topicos.length} fases{nInterativos ? ` · ${nInterativos} interativo${nInterativos > 1 ? 's' : ''}` : ''}
+              {pronto ? `${duracao(capitulo)} min` : 'Em produção'} · {capitulo.topicos.length} tópicos{nInterativos ? ` · ${nInterativos} interativo${nInterativos > 1 ? 's' : ''}` : ''}
             </Texto>
           </View>
         </View>
@@ -84,7 +84,7 @@ export default function TelaCapitulo() {
           {!pronto ? (
             <Painel>
               <Texto t="rotulo" cor={Cores.destaque}>Em produção</Texto>
-              <Texto cor={Cores.textoSuave}>Os textos deste voo estão sendo escritos. Estas são as fases que ele vai cobrir:</Texto>
+              <Texto cor={Cores.textoSuave}>Os textos deste voo estão sendo escritos. Estes são os tópicos que ele vai cobrir:</Texto>
             </Painel>
           ) : null}
 
@@ -94,7 +94,7 @@ export default function TelaCapitulo() {
               onLayout={(e) => {
                 if (foco === t.id) rolagem.current?.scrollTo({ y: Math.max(0, e.nativeEvent.layout.y + largura * 0.5625), animated: true });
               }}>
-              <BlocoTopico topico={t} cena={i + 1} destacado={foco === t.id} />
+              <BlocoTopico topico={t} codigo={`M${secoes.indexOf(secao) + 1}V${capitulo.numero}`} destacado={foco === t.id} />
             </View>
           ))}
 
@@ -120,12 +120,13 @@ export default function TelaCapitulo() {
 }
 
 // Uma cena = um tópico. Três níveis de leitura sempre visíveis, depois os interativos e os pontos-chave.
-function BlocoTopico({ topico, cena, destacado }: { topico: Topico; cena: number; destacado: boolean }) {
+// Código do tópico: M = missão, V = voo (ex.: M1V3 · Tópico 3.1).
+function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: string; destacado: boolean }) {
   const c = topico.conteudo;
   return (
     <Painel style={destacado ? { borderColor: Cores.destaque } : undefined}>
       <View style={{ gap: 2 }}>
-        <Texto t="rotulo" cor={Cores.destaque}>Fase {cena} · Tópico {topico.id}</Texto>
+        <Texto t="rotulo" cor={Cores.destaque}>{codigo} · Tópico {topico.id}</Texto>
         <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
         {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
       </View>
