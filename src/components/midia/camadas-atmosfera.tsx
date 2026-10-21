@@ -39,12 +39,10 @@ const CAMADAS = [
 
 type IdCamada = (typeof CAMADAS)[number]['id'];
 
-// Altitude (km) → posição na foto (fração da altura, de cima para baixo), casada com o que a foto mostra.
-// A troposfera ocupa o brilho laranja e a base da faixa clara; os meteoros caem na mesosfera e a aurora acima de Kármán.
-const PONTOS: [number, number][] = [[0, 0.678], [12, 0.6], [50, 0.5], [85, 0.43], [100, 0.41], [260, 0.37], [400, 0.29], [600, 0.17], [700, 0.1]];
-// A foto começa um pouco acima da exosfera (o céu estrelado do topo fica de fora) e é enquadrada à direita do centro, onde está a aurora.
-const CORTE_TOPO = 0.085;
-const CENTRO_X = 0.62;
+// Altitude (km) → posição na foto (fração da altura, de cima para baixo).
+// Cada camada tem uma faixa própria, com espaço para os marcos ficarem dentro da camada certa.
+// A foto é casada em três pontos: o horizonte (chão), os meteoros (mesosfera) e a aurora (termosfera).
+const PONTOS: [number, number][] = [[0, 0.678], [12, 0.592], [50, 0.52], [85, 0.43], [100, 0.415], [260, 0.38], [400, 0.34], [600, 0.3], [700, 0.25]];
 function naFoto(km: number) {
   for (let i = 1; i < PONTOS.length; i++) {
     const [k0, f0] = PONTOS[i - 1];
@@ -53,25 +51,29 @@ function naFoto(km: number) {
   }
   return PONTOS[PONTOS.length - 1][1];
 }
+// A foto começa logo acima da exosfera e é enquadrada à direita do centro, onde estão a aurora e os meteoros.
+const CORTE_TOPO = 0.243;
+const CENTRO_X = 0.62;
 
 const MARCOS: { km: number; rotulo: string; cor: string }[] = [
   { km: 8.8, rotulo: 'Everest · 8,8 km', cor: Cores.texto },
-  { km: 11, rotulo: 'Aviões de linha · 9–12 km', cor: Cores.dourado },
+  { km: 10.5, rotulo: 'Aviões de linha · 9–12 km', cor: Cores.dourado },
   { km: 19.2, rotulo: 'Linha de Armstrong · 19 km', cor: '#FF8A7A' },
-  { km: 25, rotulo: 'Camada de ozônio', cor: Cores.dourado },
+  { km: 28, rotulo: 'Camada de ozônio', cor: Cores.dourado },
   { km: 75, rotulo: 'Meteoros se queimam', cor: Cores.texto },
   { km: 100, rotulo: 'Linha de Kármán · 100 km', cor: Cores.destaque },
   { km: 260, rotulo: 'Auroras', cor: '#7DF0B4' },
   { km: 400, rotulo: 'Estação Espacial · 400 km', cor: Cores.texto },
 ];
 
-const TEMPERATURAS: [number, string][] = [[0, '15 °C'], [12, '−56,5 °C'], [50, '0 °C'], [85, '−86 °C'], [400, '+1.000 °C']];
+// Temperatura nos limites entre as camadas (e uma na termosfera).
+const TEMPERATURAS: [number, string][] = [[0, '15 °C'], [12, '−56,5 °C'], [50, '0 °C'], [85, '−86 °C'], [520, '+1.000 °C']];
 
 // Texto sobre a foto com uma tarja escura atrás, para ler bem em qualquer faixa do céu.
 function Rotulo({ x, y, texto, cor, tam = 10, fim = false }: { x: number; y: number; texto: string; cor: string; tam?: number; fim?: boolean }) {
   const w = texto.length * tam * 0.5 + 12;
-  const h = tam + 7;
-  const x0 = fim ? x - w + 5 : x - 5;
+  const h = tam + 5;
+  const x0 = fim ? x - w + 6 : x - 6;
   return (
     <G>
       <Rect x={x0} y={y - h / 2} width={w} height={h} rx={h / 2} fill="#03050A" fillOpacity={0.62} />
@@ -83,38 +85,15 @@ function Rotulo({ x, y, texto, cor, tam = 10, fim = false }: { x: number; y: num
 export function CamadasAtmosfera() {
   const [sel, setSel] = useState<IdCamada>('troposfera');
   const [larg, setLarg] = useState(320);
-  // A foto cobre a largura; a altura mínima garante espaço para as camadas baixas, perto do horizonte.
-  const alturaFoto = Math.max(900, larg * PROPORCAO_FOTO);
+  // Altura da foto escolhida para as camadas baixas terem espaço; a largura sobra e é cortada.
+  const alturaFoto = Math.max(1392, larg * PROPORCAO_FOTO);
   const larguraFoto = alturaFoto / PROPORCAO_FOTO;
   const esquerdaFoto = Math.min(0, Math.max(larg - larguraFoto, larg / 2 - CENTRO_X * larguraFoto));
   const y = (km: number) => (naFoto(km) - CORTE_TOPO) * alturaFoto;
   const chao = y(0);
-  const H = Math.round(chao + 56);
-  const xe = 78; // à esquerda, a coluna de temperaturas
-  const xd = larg - 6;
+  const H = Math.round(chao + 40);
+  const xe = 84; // coluna da esquerda: nomes das camadas
   const camada = CAMADAS.find((c) => c.id === sel)!;
-
-  // Marcos: o ponto fica na altitude real; o rótulo desce ou sobe o mínimo para não encostar no vizinho.
-  const posicoes: { y: number; ly: number; m: (typeof MARCOS)[number] }[] = [];
-  let ultimo = Infinity;
-  for (const m of [...MARCOS].sort((a, b) => a.km - b.km)) {
-    const yv = y(m.km);
-    const ly = Math.min(yv, ultimo - 17);
-    posicoes.push({ y: yv, ly, m });
-    ultimo = ly;
-  }
-  // Nome de cada camada: dentro da faixa, na altura mais longe dos rótulos dos marcos.
-  const yNome = (de: number, ate: number) => {
-    const y0 = y(ate) + 12;
-    const y1 = y(de) - 12;
-    let melhor = (y0 + y1) / 2;
-    let folga = -1;
-    for (let yy = y0; yy <= y1; yy += 2) {
-      const d = Math.min(...posicoes.map((q) => Math.abs(q.ly - yy)));
-      if (d > folga + 0.5) { folga = d; melhor = yy; }
-    }
-    return melhor;
-  };
 
   return (
     <MolduraMidia tipo="Ilustração" titulo="As camadas da atmosfera" instrucao="Toque em uma camada. As camadas altas estão comprimidas para caber na tela.">
@@ -123,42 +102,40 @@ export function CamadasAtmosfera() {
         <Svg width={larg} height={H} style={StyleSheet.absoluteFill}>
           <Defs>
             <LinearGradient id="veu" x1="0" y1="0" x2="1" y2="0">
-              <Stop offset="0" stopColor="#03050A" stopOpacity={0.7} />
+              <Stop offset="0" stopColor="#03050A" stopOpacity={0.75} />
+              <Stop offset="0.7" stopColor="#03050A" stopOpacity={0.35} />
               <Stop offset="1" stopColor="#03050A" stopOpacity={0} />
             </LinearGradient>
           </Defs>
-          {/* Véu escuro à esquerda, sob as temperaturas */}
-          <Rect x={0} y={0} width={xe + 10} height={H} fill="url(#veu)" />
+          {/* Véu escuro à esquerda, sob os nomes das camadas */}
+          <Rect x={0} y={0} width={xe + 16} height={H} fill="url(#veu)" />
 
-          {/* Camada de ozônio */}
-          <Rect x={xe} y={y(35)} width={xd - xe} height={y(15) - y(35)} fill={Cores.dourado} fillOpacity={0.14} />
+          {/* Camada de ozônio (15 a 35 km) */}
+          <Rect x={xe} y={y(35)} width={larg - xe} height={y(15) - y(35)} fill={Cores.dourado} fillOpacity={0.14} />
 
-          {/* Limites e toque por camada */}
-          {CAMADAS.map((c) => (
-            <G key={c.id} onPress={() => setSel(c.id)}>
-              <Rect x={xe} y={y(c.ate)} width={xd - xe} height={y(c.de) - y(c.ate)} fill="#FFFFFF" fillOpacity={sel === c.id ? 0.1 : 0.001} stroke={sel === c.id ? Cores.destaque : 'none'} strokeWidth={1.5} />
-              <Line x1={xe} y1={y(c.ate)} x2={xd} y2={y(c.ate)} stroke="#FFFFFF" strokeOpacity={0.4} strokeDasharray="4 4" />
-            </G>
-          ))}
-          {CAMADAS.map((c) => (
-            <G key={`n-${c.id}`} onPress={() => setSel(c.id)}>
-              <Rotulo x={xd - 10} y={yNome(c.de, c.ate)} texto={c.nome.toUpperCase()} cor={sel === c.id ? Cores.destaque : Cores.texto} tam={11} fim />
-            </G>
-          ))}
+          {/* Faixas das camadas: toque, limite e nome */}
+          {CAMADAS.map((c) => {
+            const ativa = sel === c.id;
+            return (
+              <G key={c.id} onPress={() => setSel(c.id)}>
+                <Rect x={1} y={y(c.ate)} width={larg - 2} height={y(c.de) - y(c.ate)} fill="#FFFFFF" fillOpacity={ativa ? 0.08 : 0.001} stroke={ativa ? Cores.destaque : 'none'} strokeWidth={1.5} rx={4} />
+                <Line x1={0} y1={y(c.ate)} x2={larg} y2={y(c.ate)} stroke="#FFFFFF" strokeOpacity={0.45} strokeDasharray="4 4" />
+                <SvgText x={8} y={(y(c.de) + y(c.ate)) / 2 + 4} fill={ativa ? Cores.destaque : Cores.texto} fontSize={11} fontFamily={Fonte}>{c.nome.toUpperCase()}</SvgText>
+              </G>
+            );
+          })}
 
-          {/* Marcos */}
-          {posicoes.map(({ y: yv, ly, m }) => (
+          {/* Marcos, cada um na sua altitude, dentro da camada */}
+          {MARCOS.map((m) => (
             <G key={m.rotulo}>
-              <Circle cx={xe + 12} cy={yv} r={3} fill={m.cor} stroke="#03050A" strokeWidth={1} />
-              <Line x1={xe + 15} y1={yv} x2={xe + 28} y2={ly} stroke={m.cor} strokeOpacity={0.8} />
-              <Rotulo x={xe + 34} y={ly} texto={m.rotulo} cor={m.cor} />
+              <Circle cx={xe + 6} cy={y(m.km)} r={3} fill={m.cor} stroke="#03050A" strokeWidth={1} />
+              <Rotulo x={xe + 20} y={y(m.km)} texto={m.rotulo} cor={m.cor} />
             </G>
           ))}
 
-          {/* Temperaturas (coluna à esquerda) */}
-          <SvgText x={6} y={16} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte}>TEMP.</SvgText>
+          {/* Temperaturas, à direita, sobre os limites */}
           {TEMPERATURAS.map(([km, t]) => (
-            <SvgText key={t} x={6} y={y(km) + 4} fill={Cores.texto} fontSize={10} fontFamily={Fonte}>{t}</SvgText>
+            <Rotulo key={t} x={larg - 8} y={km === 0 ? chao - 10 : y(km)} texto={t} cor={Cores.textoSuave} tam={9} fim />
           ))}
 
           <SvgText x={larg / 2} y={H - 10} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">SUPERFÍCIE DA TERRA</SvgText>
