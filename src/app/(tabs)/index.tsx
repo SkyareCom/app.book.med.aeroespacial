@@ -22,7 +22,7 @@ import { nivelPorConcluidos, useProgresso } from '@/state/progresso';
 const LABORATORIO: TipoMidia[] = ['simulador-o2', 'simulador-visao', 'forcas-g', 'leis-gases', 'adaptacao-escuro', 'regua-ruido', 'radiacao-voo', 'risco-aeromedico', 'perda-ossea'];
 const IMAGEM_LAB: Partial<Record<TipoMidia, string>> = {
   'simulador-o2': 'fisiologia-3',
-  'simulador-visao': 'operacao-4',
+  'simulador-visao': 'fisiologia-9',
   'forcas-g': 'fisiologia-6',
   'leis-gases': 'fisiologia-5',
   'adaptacao-escuro': 'fisiologia-9',
