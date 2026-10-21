@@ -2,7 +2,6 @@ import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import type { ReactNode, RefObject } from 'react';
 import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IconeVoltar } from '@/components/icones';
 import { Texto } from '@/components/texto';
@@ -23,12 +22,11 @@ export function Tela({
   rotulo?: string;
   refRolagem?: RefObject<ScrollViewInstance | null>;
 }) {
-  const insets = useSafeAreaInsets();
   const router = useRouter();
   return (
     <View style={styles.raiz}>
       <Image source={fundo} style={StyleSheet.absoluteFill} contentFit="cover" />
-      <ScrollView ref={refRolagem} contentContainerStyle={[styles.conteudo, { paddingTop: insets.top + Espaco.lg }]}>
+      <ScrollView ref={refRolagem} contentContainerStyle={[styles.conteudo, { paddingTop: Espaco.lg }]}>
         <View style={styles.coluna}>
           {titulo ? (
             <View style={styles.cabecalho}>
@@ -87,14 +85,13 @@ export function TelaCheia({ children, refRolagem }: { children: ReactNode; refRo
 }
 
 export function BotaoVoltarFlutuante() {
-  const insets = useSafeAreaInsets();
   const router = useRouter();
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel="Voltar"
       onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
-      style={[styles.voltar, { position: 'absolute', top: insets.top + 12, left: Espaco.lg, zIndex: 5 }]}>
+      style={[styles.voltar, { position: 'absolute', top: 12, left: Espaco.lg, zIndex: 5 }]}>
       <IconeVoltar cor={Cores.texto} />
     </Pressable>
   );

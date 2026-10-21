@@ -3,7 +3,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
 import { NOME_MIDIA } from '@/components/midia';
@@ -34,7 +33,6 @@ const IMAGEM_LAB: Partial<Record<TipoMidia, string>> = {
 
 export default function Home() {
   const router = useRouter();
-  const insets = useSafeAreaInsets();
   const { concluidos, ultimos } = useProgresso();
   const [curiosidade, setCuriosidade] = useState(0);
   const pctGeral = concluidos.length / totalCapitulos;
@@ -59,13 +57,6 @@ export default function Home() {
     <TelaCheia>
       <View>
         <Destaques itens={destaques} />
-        <LinearGradient colors={['rgba(3,5,10,0.85)', 'rgba(3,5,10,0)']} style={[styles.topo, { paddingTop: insets.top + 10 }]}>
-          <Image source={Imagens.logo} style={styles.logo} contentFit="contain" accessibilityLabel="Papos de Altitude" />
-          <View style={{ gap: 0 }}>
-            <Texto t="item" maiusculo espacado>Papos de Altitude</Texto>
-            <Texto t="rotulo" cor={Cores.destaque}>Medicina aeroespacial</Texto>
-          </View>
-        </LinearGradient>
       </View>
 
       <Fileira titulo={continuar.length ? 'Continue de onde parou' : 'Comece por aqui'}>
@@ -165,8 +156,6 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
-  topo: { position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: GUTTER, paddingBottom: 30 },
-  logo: { width: 44, height: 44 },
   linhaEntre: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   grade: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   celula: { flexBasis: '45%', flexGrow: 1, gap: 4 },

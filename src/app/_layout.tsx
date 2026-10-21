@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 
 import { Abertura } from '@/components/abertura';
+import { Cabecalho, Rodape } from '@/components/moldura-app';
 import { Cores, Fonte } from '@/constants/theme';
 import { ProvedorProgresso } from '@/state/progresso';
 
@@ -27,9 +28,11 @@ export default function RootLayout() {
     <ProvedorProgresso>
       <StatusBar style="light" />
       <View style={{ flex: 1, backgroundColor: Cores.fundo }}>
-        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: Cores.fundo } }}>
-          <Stack.Screen name="(tabs)" />
-        </Stack>
+        <Cabecalho />
+        <View style={{ flex: 1 }}>
+          <Stack screenOptions={{ headerShown: false, animation: 'fade', contentStyle: { backgroundColor: Cores.fundo } }} />
+        </View>
+        <Rodape />
         {abertura ? <Abertura onFim={() => setAbertura(false)} /> : null}
       </View>
     </ProvedorProgresso>

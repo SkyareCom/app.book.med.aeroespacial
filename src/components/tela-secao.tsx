@@ -2,7 +2,6 @@ import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IconeCheck } from '@/components/icones';
 import { disponivel, duracao, GUTTER, rotaEpisodio, Selo } from '@/components/streaming';
@@ -18,7 +17,6 @@ import { useProgresso } from '@/state/progresso';
 export function TelaSecao({ id }: { id: SecaoId }) {
   const secao = obterSecao(id)!;
   const router = useRouter();
-  const insets = useSafeAreaInsets();
   const { concluidos } = useProgresso();
   const prontos = secao.capitulos.filter(disponivel).length;
   const interativos = secao.capitulos.filter((c) => c.laboratorio?.length || c.topicos.some((t) => t.midias?.length)).length;
@@ -26,7 +24,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
 
   return (
     <TelaCheia>
-      <View style={{ height: 440 + insets.top }}>
+      <View style={{ height: 420 }}>
         <Image source={ArteTemporada[id]} style={StyleSheet.absoluteFill} contentFit="cover" />
         <LinearGradient colors={['rgba(3,5,10,0.4)', 'rgba(3,5,10,0)', Cores.fundo]} locations={[0, 0.35, 1]} style={StyleSheet.absoluteFill} />
         <View style={styles.textoHero}>
