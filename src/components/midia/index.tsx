@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 import { AtividadeClassificar } from '@/components/midia/atividade-classificar';
 import { CamadasAtmosfera } from '@/components/midia/camadas-atmosfera';
 import { ComposicaoAr } from '@/components/midia/composicao-ar';
+import { GasesNoCorpo } from '@/components/midia/gases-corpo';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -32,6 +33,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'perda-ossea': () => <PerdaOssea />,
   'composicao-ar': () => <ComposicaoAr />,
   'camadas-atmosfera': () => <CamadasAtmosfera />,
+  'gases-corpo': () => <GasesNoCorpo />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -48,6 +50,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'perda-ossea': 'Perda óssea no espaço',
   'composicao-ar': 'Composição do ar',
   'camadas-atmosfera': 'Camadas da atmosfera',
+  'gases-corpo': 'Gases no corpo em voo',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

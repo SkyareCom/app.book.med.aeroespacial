@@ -19,7 +19,8 @@ export type TipoMidia =
   | 'risco-aeromedico'
   | 'perda-ossea'
   | 'composicao-ar'
-  | 'camadas-atmosfera';
+  | 'camadas-atmosfera'
+  | 'gases-corpo';
 
 export interface ConteudoTopico {
   essencial: string;
@@ -35,6 +36,8 @@ export interface Recurso {
   apos: 'essencial' | 'entenda' | 'profissionais';
   midia?: TipoMidia;
   figura?: { imagem: number; legenda: string };
+  // Tabela: no celular cada linha vira um cartão (1ª coluna como título, as outras como rótulo e valor).
+  tabela?: { titulo: string; colunas: string[]; linhas: string[][] };
 }
 
 export interface Topico {

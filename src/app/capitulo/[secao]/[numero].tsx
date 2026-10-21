@@ -8,6 +8,7 @@ import { BotaoPrincipal } from '@/components/botao';
 import { Painel } from '@/components/cartoes';
 import { IconeAbrir } from '@/components/icones';
 import { Midia } from '@/components/midia';
+import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
 import { BotaoVoltarFlutuante, Tela, TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
@@ -235,6 +236,20 @@ function Recursos({ lista, apos }: { lista?: Recurso[]; apos: Recurso['apos'] })
       {itens.map((r, i) =>
         r.midia ? (
           <Midia key={`${r.midia}-${i}`} tipo={r.midia} />
+        ) : r.tabela ? (
+          <MolduraMidia key={`tab-${i}`} tipo="Tabela" titulo={r.tabela.titulo}>
+            {r.tabela.linhas.map((l) => (
+              <View key={l[0]} style={styles.linhaTabela}>
+                <Texto t="item" cor={Cores.destaque}>{l[0]}</Texto>
+                {l.slice(1).map((v, k) => (
+                  <View key={k} style={{ gap: 1 }}>
+                    <Texto t="rotulo" cor={Cores.textoApagado}>{r.tabela!.colunas[k + 1]}</Texto>
+                    <Texto cor={Cores.textoSuave}>{v}</Texto>
+                  </View>
+                ))}
+              </View>
+            ))}
+          </MolduraMidia>
         ) : r.figura ? (
           <View key={`fig-${i}`} style={styles.figura}>
             <Image source={r.figura.imagem} style={styles.figuraImagem} contentFit="cover" accessibilityLabel={r.figura.legenda} />
@@ -249,6 +264,7 @@ function Recursos({ lista, apos }: { lista?: Recurso[]; apos: Recurso['apos'] })
 const styles = StyleSheet.create({
   textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 6, gap: 6 },
   figura: { gap: 6 },
+  linhaTabela: { gap: 6, paddingTop: Espaco.sm, borderTopWidth: 1, borderTopColor: Cores.linha },
   figuraImagem: { width: '100%', aspectRatio: 16 / 9, borderRadius: 10, borderWidth: 1, borderColor: Cores.linha },
   cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, marginHorizontal: -8, marginVertical: -6, paddingHorizontal: 8, paddingVertical: 6, borderRadius: 12 },
   cabecaPressionada: { backgroundColor: 'rgba(111,211,255,0.08)' },
