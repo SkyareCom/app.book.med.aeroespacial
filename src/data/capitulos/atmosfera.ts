@@ -35,8 +35,8 @@
 // - Tensão de N₂ nos tecidos ao nível do mar aproximada por 0,7808 × (760 − 47) ≈ 557 mmHg (cálculo didático).
 // Recursos: tabela das leis; um gráfico por lei entre os parágrafos do Entenda (grafico-boyle, -dalton, -henry, -charles);
 // tabela dos locais de gás preso. Charles: exemplo de cilindro fechado cheio a 20 °C, pressão ∝ temperatura absoluta.
-// Fotos premium pendentes (prompts enviados ao autor): passageiro com pontos de gás preso, pacote estufado,
-// passageira na descida, alpinista em altitude, garrafa abrindo, cilindro de oxigênio no frio.
+// Fotos premium (geradas por IA pelo autor, pessoas fictícias): topicos/m1v1-2-passageiro (com marcadores),
+// -pacote, -alpinista, -garrafa, -cilindro. Tabela-resumo das leis no fim do Para profissionais.
 
 import type { Capitulo } from '../tipos';
 
@@ -95,21 +95,27 @@ export const atmosfera: Capitulo = {
         recursos: [
           {
             apos: 'essencial',
-            tabela: {
-              titulo: 'As leis dos gases em voo',
-              colunas: ['Lei', 'O que diz', 'No corpo em voo'],
-              linhas: [
-                ['Boyle', 'Menos pressão, mais volume.', 'O gás preso se expande: ouvido, seios da face, dentes, intestino e pulmões.'],
-                ['Dalton', 'Cada gás responde por uma parte da pressão total.', 'O oxigênio entra com menos força: hipóxia.'],
-                ['Henry', 'O gás dissolvido acompanha a pressão.', 'O nitrogênio pode formar bolhas: doença descompressiva.'],
-                ['Charles', 'Mais calor, mais volume.', 'Pouco efeito no corpo; no frio, cai a pressão dos cilindros de oxigênio.'],
+            figura: {
+              imagem: require('@/assets/images/topicos/m1v1-2-passageiro.jpg'),
+              proporcao: 1100 / 1052,
+              legenda: 'Onde o corpo guarda gás durante o voo. Na subida esse gás se expande; na descida, precisa voltar a entrar.',
+              marcadores: [
+                { x: 0.468, y: 0.299, rotulo: 'Ouvido médio' },
+                { x: 0.343, y: 0.326, rotulo: 'Seios da face' },
+                { x: 0.314, y: 0.407, rotulo: 'Dentes' },
+                { x: 0.455, y: 0.616, rotulo: 'Pulmões' },
+                { x: 0.468, y: 0.868, rotulo: 'Estômago e intestino' },
               ],
             },
           },
           // Entenda: cada lei com o seu visual logo depois do parágrafo.
+          { apos: 'entenda', paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v1-2-pacote.jpg'), legenda: 'Lei de Boyle na prática: o pacote foi lacrado no chão; com a pressão menor da cabine, o ar de dentro se expande e estufa a embalagem.' } },
           { apos: 'entenda', paragrafo: 2, midia: 'grafico-boyle' },
+          { apos: 'entenda', paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v1-2-alpinista.jpg'), legenda: 'Lei de Dalton: no alto da montanha o ar continua com 21% de oxigênio, mas a pressão é tão baixa que cada respiração leva menos oxigênio ao sangue.' } },
           { apos: 'entenda', paragrafo: 3, midia: 'grafico-dalton' },
+          { apos: 'entenda', paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-2-garrafa.jpg'), legenda: 'Lei de Henry: ao abrir a garrafa, a pressão cai e o gás que estava dissolvido escapa em bolhas.' } },
           { apos: 'entenda', paragrafo: 4, midia: 'grafico-henry' },
+          { apos: 'entenda', paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v1-2-cilindro.jpg'), legenda: 'Lei de Charles: no frio, o gás do cilindro empurra menos as paredes e o manômetro marca menos, sem que o oxigênio tenha vazado.' } },
           { apos: 'entenda', paragrafo: 5, midia: 'grafico-charles' },
           {
             apos: 'profissionais',
@@ -123,6 +129,19 @@ export const atmosfera: Capitulo = {
                 ['Dentes', 'Na subida.', 'Dor em dente com cárie, restauração mal adaptada ou ar preso.'],
                 ['Estômago e intestino', 'Na subida.', 'Estufamento, cólica e gases.'],
                 ['Pulmões e pleura', 'Descompressão rápida ou pneumotórax prévio.', 'Falta de ar e dor no peito.'],
+              ],
+            },
+          },
+          {
+            apos: 'profissionais',
+            tabela: {
+              titulo: 'As leis dos gases em voo',
+              colunas: ['Lei', 'O que diz', 'No corpo em voo'],
+              linhas: [
+                ['Boyle', 'Menos pressão, mais volume.', 'O gás preso se expande: ouvido, seios da face, dentes, intestino e pulmões.'],
+                ['Dalton', 'Cada gás responde por uma parte da pressão total.', 'O oxigênio entra com menos força: hipóxia.'],
+                ['Henry', 'O gás dissolvido acompanha a pressão.', 'O nitrogênio pode formar bolhas: doença descompressiva.'],
+                ['Charles', 'Mais calor, mais volume.', 'Pouco efeito no corpo; no frio, cai a pressão dos cilindros de oxigênio.'],
               ],
             },
           },

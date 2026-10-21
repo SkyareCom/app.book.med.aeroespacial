@@ -273,7 +273,26 @@ function Recursos({ lista, apos, entre = false }: { lista?: Recurso[]; apos: Rec
           </MolduraMidia>
         ) : r.figura ? (
           <View key={`fig-${i}`} style={styles.figura}>
-            <Image source={r.figura.imagem} style={styles.figuraImagem} contentFit="cover" accessibilityLabel={r.figura.legenda} />
+            <View style={[styles.figuraImagem, { aspectRatio: r.figura.proporcao ?? 16 / 9 }]}>
+              <Image source={r.figura.imagem} style={StyleSheet.absoluteFill} contentFit="cover" accessibilityLabel={r.figura.legenda} />
+              {r.figura.marcadores?.map((m, k) => (
+                <View key={k} style={[styles.marcador, { left: `${m.x * 100}%`, top: `${m.y * 100}%` }]}>
+                  <Texto t="rodape" cor={Cores.fundo}>{k + 1}</Texto>
+                </View>
+              ))}
+            </View>
+            {r.figura.marcadores ? (
+              <View style={styles.marcadores}>
+                {r.figura.marcadores.map((m, k) => (
+                  <View key={k} style={styles.itemMarcador}>
+                    <View style={styles.marcadorLegenda}>
+                      <Texto t="rodape" cor={Cores.fundo}>{k + 1}</Texto>
+                    </View>
+                    <Texto cor={Cores.textoSuave}>{m.rotulo}</Texto>
+                  </View>
+                ))}
+              </View>
+            ) : null}
             <Texto cor={Cores.textoApagado}>{r.figura.legenda}</Texto>
           </View>
         ) : null,
@@ -286,7 +305,11 @@ const styles = StyleSheet.create({
   textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 6, gap: 6 },
   figura: { gap: 6 },
   linhaTabela: { gap: 6, paddingTop: Espaco.sm, borderTopWidth: 1, borderTopColor: Cores.linha },
-  figuraImagem: { width: '100%', aspectRatio: 16 / 9, borderRadius: 10, borderWidth: 1, borderColor: Cores.linha },
+  figuraImagem: { width: '100%', borderRadius: 10, borderWidth: 1, borderColor: Cores.linha, overflow: 'hidden' },
+  marcador: { position: 'absolute', width: 24, height: 24, marginLeft: -12, marginTop: -12, borderRadius: 12, backgroundColor: Cores.destaque, borderWidth: 2, borderColor: '#FFFFFF', alignItems: 'center', justifyContent: 'center' },
+  marcadores: { flexDirection: 'row', flexWrap: 'wrap', gap: Espaco.sm },
+  itemMarcador: { flexDirection: 'row', alignItems: 'center', gap: 6, flexBasis: '45%', flexGrow: 1 },
+  marcadorLegenda: { width: 20, height: 20, borderRadius: 10, backgroundColor: Cores.destaque, alignItems: 'center', justifyContent: 'center' },
   cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, marginHorizontal: -8, marginVertical: -6, paddingHorizontal: 8, paddingVertical: 6, borderRadius: 12 },
   cabecaPressionada: { backgroundColor: 'rgba(111,211,255,0.08)' },
   puxador: { alignItems: 'center', gap: 4 },
