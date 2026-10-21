@@ -50,13 +50,6 @@ export const atmosfera: Capitulo = {
           { apos: 'essencial', midia: 'composicao-ar' },
           { apos: 'entenda', midia: 'camadas-atmosfera' },
         ],
-        pontosChave: [
-          'O ar tem cerca de 21% de oxigênio em qualquer altitude de voo.',
-          'A pressão cai com a altitude e chega à metade perto de 18.000 ft.',
-          'Na troposfera a temperatura cai cerca de 2 °C a cada 1.000 ft.',
-          'Acima de 10.000 ft o corpo já precisa de proteção para voar com segurança.',
-          'A 100 km, na linha de Kármán, começa convencionalmente o espaço.',
-        ],
       },
     },
     { id: '1.2', titulo: 'Leis dos gases aplicadas ao corpo' },

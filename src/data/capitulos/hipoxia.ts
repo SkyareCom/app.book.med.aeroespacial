@@ -28,11 +28,6 @@ export const hipoxia: Capitulo = {
           'O oxigênio passa do ar para os alvéolos (pequenos sacos no fim das vias respiratórias), depois para o sangue, onde a hemoglobina (proteína que carrega oxigênio) o leva até as células. O que empurra o oxigênio nessa passagem é a pressão parcial (a parte da pressão total que cabe ao oxigênio). Quanto mais alto, menor a pressão do ar e menor esse "empurrão".',
         clinico:
           'A pressão parcial de O₂ inspirada é FiO₂ × (pressão barométrica − 47 mmHg), descontando o vapor d’água a 37 °C. Ao nível do mar a PAO₂ é de cerca de 100 mmHg. A 8.000 ft (cerca de 2.400 m) cai para cerca de 65–70 mmHg, ainda na parte plana da curva de dissociação, com saturação perto de 90–93%. Acima de 10.000 ft a curva entra na porção íngreme e a saturação cai rapidamente.',
-        pontosChave: [
-          'A porcentagem de oxigênio não muda com a altitude; a pressão, sim.',
-          'O que importa é a pressão parcial de oxigênio.',
-          'A partir de 10.000 ft a saturação cai depressa.',
-        ],
       },
     },
     {
@@ -44,14 +39,9 @@ export const hipoxia: Capitulo = {
         essencial:
           'Não. O oxigênio pode faltar porque o ar está rarefeito, porque o sangue não consegue carregá-lo, porque a circulação está lenta ou porque as células não conseguem usá-lo.',
         explicacao:
-          'A hipóxia hipóxica vem do ar com pouca pressão de oxigênio, típica da altitude. A hipêmica (ou anêmica) acontece quando o sangue carrega pouco oxigênio, como na anemia ou na intoxicação por monóxido de carbono. A estagnante (ou circulatória) ocorre quando o sangue circula devagar, por exemplo sob forças G ou no frio intenso. A histotóxica acontece quando as células não conseguem usar o oxigênio, como na intoxicação por cianeto ou pelo álcool.',
+          'A hipóxia hipóxica vem do ar com pouca pressão de oxigênio, típica da altitude. A hipêmica (ou anêmica) acontece quando o sangue carrega pouco oxigênio, como na anemia ou na intoxicação por monóxido de carbono. A estagnante (ou circulatória) ocorre quando o sangue circula devagar, por exemplo sob forças G ou no frio intenso. A histotóxica acontece quando as células não conseguem usar o oxigênio, como na intoxicação por cianeto ou pelo álcool. Os tipos podem se somar no mesmo tripulante.',
         clinico:
           'Na prática, os tipos se somam: um piloto fumante (carboxi-hemoglobina elevada) e anêmico tem tolerância menor à altitude. O monóxido de carbono tem afinidade pela hemoglobina cerca de 200 a 250 vezes maior que a do oxigênio e desvia a curva de dissociação para a esquerda. Em vazamentos de escapamento em aeronaves a pistão, a hipóxia hipêmica pode ocorrer em baixa altitude.',
-        pontosChave: [
-          'Hipóxica, hipêmica, estagnante e histotóxica.',
-          'Os tipos podem se somar no mesmo tripulante.',
-          'Monóxido de carbono causa hipóxia mesmo em baixa altitude.',
-        ],
       },
     },
     {
@@ -66,11 +56,6 @@ export const hipoxia: Capitulo = {
           'Não é o tempo até desmaiar, e sim o tempo em que ainda dá para colocar a máscara, avisar a tripulação e iniciar a descida. Quanto mais alto, menor esse tempo: cerca de 20 a 30 minutos a 18.000 pés, de 3 a 5 minutos a 25.000 pés, de 1 a 2 minutos a 30.000 pés e de 15 a 20 segundos a 40.000 pés.',
         clinico:
           'Os valores são médias de tripulantes em repouso. Exercício, fadiga, fumo, doença e descompressão rápida encurtam o tempo; a descompressão rápida pode reduzi-lo a cerca da metade. Por isso os procedimentos determinam colocar o oxigênio imediatamente, antes de qualquer diagnóstico da pane.',
-        pontosChave: [
-          '35.000 ft: de 30 segundos a 1 minuto.',
-          'Descompressão rápida encurta o tempo.',
-          'Primeiro a máscara, depois o resto.',
-        ],
         alerta: 'Em uma despressurização, coloque sua máscara antes de ajudar qualquer outra pessoa.',
       },
     },
@@ -86,11 +71,6 @@ export const hipoxia: Capitulo = {
           'Os sintomas que a própria pessoa sente incluem calor, tontura, formigamento, visão embaçada e falsa sensação de bem-estar. Os sinais que outros podem ver são lábios e unhas arroxeados (cianose), respiração acelerada, confusão e falta de coordenação. Cada pessoa tem uma combinação própria e repetível de sintomas, e o treinamento em câmara ensina a reconhecê-la.',
         clinico:
           'A visão noturna é afetada já a partir de cerca de 5.000 ft. Julgamento, memória recente e coordenação fina se degradam antes dos sinais objetivos. O treinamento em câmara hipobárica ou com dispositivos de respiração com mistura reduzida de oxigênio permite identificar a "assinatura" individual. Conduta: oxigênio a 100%, verificar o sistema e descer para altitude segura.',
-        pontosChave: [
-          'Euforia e julgamento alterado vêm antes dos sinais visíveis.',
-          'Cada pessoa tem sua própria assinatura de sintomas.',
-          'Oxigênio a 100% e descida.',
-        ],
       },
     },
     {
@@ -104,11 +84,6 @@ export const hipoxia: Capitulo = {
           'O gás carbônico ajuda a regular o fluxo de sangue para o cérebro. Quando ele cai demais (hipocapnia), os vasos do cérebro se contraem e surgem tontura, formigamento nas mãos e ao redor da boca e, em casos intensos, espasmos musculares.',
         clinico:
           'A hipocapnia leva à alcalose respiratória, com vasoconstrição cerebral e redução do cálcio ionizado, o que explica parestesias e tetania. Como os quadros se confundem, a regra em voo é tratar primeiro como hipóxia: oxigênio a 100% e checagem do sistema. Só depois, descartada a hipóxia, controlar o ritmo respiratório.',
-        pontosChave: [
-          'Hiperventilação e hipóxia têm sintomas parecidos.',
-          'Na dúvida, trate como hipóxia.',
-          'Depois, controle o ritmo da respiração.',
-        ],
       },
     },
   ],
