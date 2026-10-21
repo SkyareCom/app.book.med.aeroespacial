@@ -3,6 +3,7 @@
 // Handbook of Aviation and Space Medicine, Russomano (Fisiologia Aeroespacial) e Vernikos & Russomano.
 // Capítulos com conteúdo redigido importam seus tópicos e testes; os demais trazem só os títulos.
 
+import { atmosfera } from './capitulos/atmosfera';
 import { hipoxia } from './capitulos/hipoxia';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
@@ -18,7 +19,7 @@ export const secoes: Secao[] = [
     subtitulo: 'Como o corpo humano reage ao ambiente de voo',
     sinopse: 'Do ar rarefeito às forças G: o que acontece com o corpo humano quando ele sai do chão.',
     capitulos: [
-      cap(1, 'Atmosfera e ambiente de voo', ['Composição e camadas da atmosfera', 'Leis dos gases aplicadas ao corpo', 'Atmosfera padrão e tipos de altitude', 'Temperatura, umidade e radiação em altitude'], ['leis-gases']),
+      atmosfera,
       cap(2, 'Fisiologia cardiovascular em voo', ['Débito cardíaco e controle da pressão', 'Resposta cardiovascular à altitude', 'Resposta cardiovascular à aceleração', 'Postura, imobilidade e circulação']),
       hipoxia,
       cap(4, 'Pressurização e oxigênio suplementar', ['Como funciona a pressurização', 'Altitude de cabine', 'Sistemas de oxigênio e máscaras', 'Pressão positiva e proteção em alta altitude']),
