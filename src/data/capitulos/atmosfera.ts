@@ -149,7 +149,8 @@ export const atmosfera: Capitulo = {
       },
     },
     { id: '1.3', titulo: 'Atmosfera padrão' },
-    { id: '1.4', titulo: 'Temperatura, umidade e radiação' },
+    // A radiação em altitude fica toda no Voo 12 (Radiação cósmica), não aqui.
+    { id: '1.4', titulo: 'Temperatura e umidade' },
   ],
   teste: [
     {
