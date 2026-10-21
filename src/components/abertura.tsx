@@ -36,12 +36,13 @@ export function Abertura({ onFim }: { onFim: () => void }) {
 
   function fechar() {
     if (terminou) return;
+    saida.stopAnimation();
     setTerminou(true);
     onFim();
   }
 
   return (
-    <Animated.View style={[StyleSheet.absoluteFill, styles.raiz, { opacity: saida }]}>
+    <Animated.View pointerEvents={terminou ? 'none' : 'auto'} style={[StyleSheet.absoluteFill, styles.raiz, { opacity: saida }]}>
       <Animated.View style={[StyleSheet.absoluteFill, { opacity: fundo, transform: [{ scale: fundo.interpolate({ inputRange: [0, 1], outputRange: [1.25, 1] }) }] }]}>
         <Image source={Imagens.fundo} style={StyleSheet.absoluteFill} contentFit="cover" />
       </Animated.View>

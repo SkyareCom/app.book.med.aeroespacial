@@ -3,7 +3,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 
 import { Abertura } from '@/components/abertura';
 import { Cabecalho, Rodape } from '@/components/moldura-app';
@@ -20,7 +20,17 @@ export default function RootLayout() {
     if (fontesProntas) SplashScreen.hideAsync();
   }, [fontesProntas]);
 
-  const [abertura, setAbertura] = useState(true);
+  // No app nativo a abertura aparece a cada início. Na web, só uma vez por visita e só depois de a página
+  // carregar: assim ela não cobre o site pré-renderizado nem engole os toques ao abrir um link.
+  const [abertura, setAbertura] = useState(Platform.OS !== 'web');
+  useEffect(() => {
+    if (Platform.OS !== 'web') return;
+    try {
+      if (sessionStorage.getItem('abertura-vista')) return;
+      sessionStorage.setItem('abertura-vista', '1');
+    } catch {}
+    setAbertura(true);
+  }, []);
 
   if (!fontesProntas) return null;
 

@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { usePathname, useRouter, type Href } from 'expo-router';
+import { Link, usePathname, type Href } from 'expo-router';
 import type { ComponentType } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -14,18 +14,19 @@ import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
 export function Cabecalho() {
   const insets = useSafeAreaInsets();
-  const router = useRouter();
   const largura = useLarguraJanela();
   const lateral = Math.max(Espaco.lg, (largura - LarguraMaxima) / 2 + Espaco.lg);
   return (
     <View style={[styles.cabecalho, { paddingTop: insets.top + 8, paddingLeft: lateral, paddingRight: lateral }]}>
-      <Pressable accessibilityRole="link" accessibilityLabel="Papos de Altitude, ir para a Home" onPress={() => router.navigate('/')} style={styles.marca}>
-        <Image source={Imagens.logo} style={styles.logo} contentFit="contain" />
-        <View>
-          <Texto t="item" maiusculo espacado>Papos de Altitude</Texto>
-          <Texto t="rotulo" cor={Cores.destaque}>Medicina aeroespacial</Texto>
-        </View>
-      </Pressable>
+      <Link href="/" replace asChild>
+        <Pressable accessibilityLabel="Papos de Altitude, ir para a Home" style={styles.marca}>
+          <Image source={Imagens.logo} style={styles.logo} contentFit="contain" />
+          <View>
+            <Texto t="item" maiusculo espacado>Papos de Altitude</Texto>
+            <Texto t="rotulo" cor={Cores.destaque}>Medicina aeroespacial</Texto>
+          </View>
+        </Pressable>
+      </Link>
     </View>
   );
 }
@@ -49,7 +50,6 @@ function abaAtiva(caminho: string) {
 
 export function Rodape() {
   const insets = useSafeAreaInsets();
-  const router = useRouter();
   const largura = useLarguraJanela();
   const ativa = abaAtiva(usePathname());
   return (
@@ -60,16 +60,13 @@ export function Rodape() {
         const foco = ativa === secao;
         const cor = foco ? Cores.destaque : Cores.textoApagado;
         return (
-          <Pressable
-            key={rotulo}
-            accessibilityRole="tab"
-            accessibilityLabel={rotulo}
-            accessibilityState={{ selected: foco }}
-            onPress={() => router.navigate(href)}
-            style={styles.aba}>
-            <Icone cor={cor} />
-            <Texto t="rodape" cor={cor}>{rotulo}</Texto>
-          </Pressable>
+          // Link de verdade: abre mesmo antes de o app terminar de carregar no navegador.
+          <Link key={rotulo} href={href} replace asChild>
+            <Pressable accessibilityRole="tab" accessibilityLabel={rotulo} accessibilityState={{ selected: foco }} style={styles.aba}>
+              <Icone cor={cor} />
+              <Texto t="rodape" cor={cor}>{rotulo}</Texto>
+            </Pressable>
+          </Link>
         );
       })}
     </View>
