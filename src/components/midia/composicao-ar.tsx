@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import Svg, { Circle, G, Path, Text as SvgText } from 'react-native-svg';
+import Svg, { Defs, Ellipse, G, Line, LinearGradient, Path, Stop, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
@@ -18,55 +18,102 @@ const GASES = [
 
 const fmt = (n: number, c = 0) => n.toLocaleString('pt-BR', { minimumFractionDigits: c, maximumFractionDigits: c });
 
-// Arco de rosca entre dois ângulos (em voltas, 0 = topo, sentido horário).
-function arco(cx: number, cy: number, r: number, esp: number, a0: number, a1: number) {
-  const p = (a: number, rr: number) => [cx + rr * Math.sin(a * 2 * Math.PI), cy - rr * Math.cos(a * 2 * Math.PI)];
-  const grande = a1 - a0 > 0.5 ? 1 : 0;
-  const [x0, y0] = p(a0, r);
-  const [x1, y1] = p(a1, r);
-  const [x2, y2] = p(a1, r - esp);
-  const [x3, y3] = p(a0, r - esp);
-  return `M${x0} ${y0}A${r} ${r} 0 ${grande} 1 ${x1} ${y1}L${x2} ${y2}A${r - esp} ${r - esp} 0 ${grande} 0 ${x3} ${y3}Z`;
-}
+// Ponto na borda da elipse para uma fração de volta (0 = topo, sentido horário).
+const ponto = (cx: number, cy: number, rx: number, ry: number, t: number): [number, number] => [cx + rx * Math.sin(t * 2 * Math.PI), cy - ry * Math.cos(t * 2 * Math.PI)];
+
+// Cores 3D: topo claro e lateral escura de cada gás.
+const LATERAL: Record<string, string> = { n2: '#2C7FAE', o2: '#A9852E', ar: '#6F52B8', co2: '#2E8F62' };
 
 export function ComposicaoAr() {
   const [sel, setSel] = useState<(typeof GASES)[number]['id']>('o2');
   const [alt, setAlt] = useState(0);
   const pb = pressaoBarometrica(alt);
-  const escala = Math.sqrt(pb / 760); // área da rosca proporcional à pressão: menos ar, mesma receita
-  const R = 96 * escala;
-  const esp = Math.max(14, 34 * escala);
   const gas = GASES.find((g) => g.id === sel)!;
+  const [larg, setLarg] = useState(320);
 
-  // Fatias visíveis: as menores ganham um mínimo de ângulo só para poderem ser tocadas.
-  const minimo = 0.012;
-  const pesos = GASES.map((g) => Math.max(g.pct / 100, minimo));
-  const soma = pesos.reduce((a, b) => a + b, 0);
+  // Pizza 3D: o tamanho acompanha a pressão do ar (menos ar, mesma receita); as fatias, as proporções reais.
+  const escala = Math.max(0.55, Math.sqrt(pb / 760));
+  const rx = Math.min(larg / 2 - 20, 150) * escala;
+  const ry = rx * 0.52;
+  const prof = 30 * escala;
+  const ryMax = 0.52 * Math.min(larg / 2 - 20, 150);
+  const cx = larg / 2;
+  const cy = 44 + ryMax;
+  const H = cy + ryMax + 30 + 22;
+
   let acc = 0;
-  const fatias = GASES.map((g, i) => {
+  const fatias = GASES.map((g) => {
     const a0 = acc;
-    acc += pesos[i] / soma;
-    return { g, a0, a1: acc };
+    acc += g.pct / 100;
+    return { g, a0, a1: acc, meio: (a0 + acc) / 2 };
   });
+  // Fatia escolhida sai do conjunto, como na apresentação de um gráfico de cinema.
+  const deslocar = (meio: number, id: string) => (id === sel ? [Math.sin(meio * 2 * Math.PI) * 12, -Math.cos(meio * 2 * Math.PI) * 6] : [0, 0]);
+
+  const topo = (x: number, y: number, a0: number, a1: number) => {
+    const [x0, y0] = ponto(x, y, rx, ry, a0);
+    const [x1, y1] = ponto(x, y, rx, ry, a1);
+    return `M${x} ${y}L${x0} ${y0}A${rx} ${ry} 0 ${a1 - a0 > 0.5 ? 1 : 0} 1 ${x1} ${y1}Z`;
+  };
+  // Parede lateral só na metade da frente (de 1/4 a 3/4 de volta).
+  const lateral = (x: number, y: number, a0: number, a1: number) => {
+    const b0 = Math.max(a0, 0.25);
+    const b1 = Math.min(a1, 0.75);
+    if (b1 <= b0) return null;
+    const [x0, y0] = ponto(x, y, rx, ry, b0);
+    const [x1, y1] = ponto(x, y, rx, ry, b1);
+    return `M${x0} ${y0}A${rx} ${ry} 0 0 1 ${x1} ${y1}L${x1} ${y1 + prof}A${rx} ${ry} 0 0 0 ${x0} ${y0 + prof}Z`;
+  };
+  const fatiaPeq = (id: string) => id === 'ar' || id === 'co2';
 
   return (
-    <MolduraMidia tipo="Gráfico" titulo="Do que é feito o ar" instrucao="Toque em cada gás. Depois suba de altitude: a receita do ar continua igual, só há menos ar.">
-      <View style={styles.centro}>
-        <Svg width={220} height={220}>
-          <Circle cx={110} cy={110} r={96} stroke={Cores.trilha} strokeDasharray="3 5" fill="none" />
-          <G>
-            {fatias.map(({ g, a0, a1 }) => (
-              <Path
-                key={g.id}
-                d={arco(110, 110, R, esp, a0 + 0.002, a1 - 0.002)}
-                fill={g.cor}
-                fillOpacity={sel === g.id ? 1 : 0.55}
-                onPress={() => setSel(g.id)}
-              />
+    <MolduraMidia tipo="Gráfico" titulo="Do que é feito o ar" instrucao="Toque em cada gás. Depois suba de altitude: a pizza encolhe com a pressão, mas as fatias continuam iguais.">
+      <View onLayout={(e) => setLarg(e.nativeEvent.layout.width)}>
+        <Svg width={larg} height={H}>
+          <Defs>
+            {GASES.map((g) => (
+              <LinearGradient key={g.id} id={`topo-${g.id}`} x1="0" y1="0" x2="1" y2="1">
+                <Stop offset="0" stopColor="#FFFFFF" stopOpacity={0.35} />
+                <Stop offset="0.35" stopColor={g.cor} stopOpacity={1} />
+                <Stop offset="1" stopColor={g.cor} stopOpacity={0.85} />
+              </LinearGradient>
             ))}
-          </G>
-          <SvgText x={110} y={106} fill={Cores.texto} fontSize={18} fontFamily={Fonte} textAnchor="middle">{fmt(gas.pct, 2)}%</SvgText>
-          <SvgText x={110} y={124} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte} textAnchor="middle">{gas.id === 'co2' ? 'CO₂ E OUTROS' : gas.nome.split(' ')[0].toUpperCase()}</SvgText>
+          </Defs>
+          <Ellipse cx={cx} cy={cy + prof + 10} rx={rx * 1.02} ry={ry * 0.9} fill="#000000" fillOpacity={0.45} />
+          {fatias.map(({ g, a0, a1, meio }) => {
+            const [dx, dy] = deslocar(meio, g.id);
+            const d = lateral(cx + dx, cy + dy, a0, a1);
+            return d ? <Path key={`l-${g.id}`} d={d} fill={LATERAL[g.id]} onPress={() => setSel(g.id)} /> : null;
+          })}
+          {fatias.map(({ g, a0, a1, meio }) => {
+            const [dx, dy] = deslocar(meio, g.id);
+            return (
+              <Path key={`t-${g.id}`} d={topo(cx + dx, cy + dy, a0, a1)} fill={`url(#topo-${g.id})`} stroke="#03050A" strokeOpacity={0.5} strokeWidth={0.8} onPress={() => setSel(g.id)} />
+            );
+          })}
+          {fatias.filter(({ g }) => !fatiaPeq(g.id)).map(({ g, meio }) => {
+            const [dx, dy] = deslocar(meio, g.id);
+            const [tx, ty] = ponto(cx + dx, cy + dy, rx * 0.58, ry * 0.58, meio);
+            return (
+              <G key={`r-${g.id}`}>
+                <SvgText x={tx} y={ty} fill="#03050A" fontSize={18} fontFamily={Fonte} textAnchor="middle">{fmt(g.pct, 2)}%</SvgText>
+                <SvgText x={tx} y={ty + 14} fill="#03050A" fontSize={10} fontFamily={Fonte} textAnchor="middle">{g.id === 'n2' ? 'NITROGÊNIO' : 'OXIGÊNIO'}</SvgText>
+              </G>
+            );
+          })}
+          {/* Chamadas para as fatias finas (argônio e gás carbônico), no topo da pizza */}
+          {fatias.filter(({ g }) => fatiaPeq(g.id)).map(({ g, meio }, i) => {
+            const [dx, dy] = deslocar(meio, g.id);
+            const [px, py] = ponto(cx + dx, cy + dy, rx, ry, meio);
+            const lx = cx + 34;
+            const ly = 8 + i * 16;
+            return (
+              <G key={`c-${g.id}`} onPress={() => setSel(g.id)}>
+                <Line x1={px} y1={py} x2={lx - 4} y2={ly + 1} stroke={g.cor} strokeWidth={1} />
+                <SvgText x={lx} y={ly + 4} fill={g.cor} fontSize={10} fontFamily={Fonte} textAnchor="start">{g.id === 'ar' ? 'ARGÔNIO' : 'CO₂ E OUTROS'} {fmt(g.pct, 2)}%</SvgText>
+              </G>
+            );
+          })}
         </Svg>
       </View>
 
