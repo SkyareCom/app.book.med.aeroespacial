@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { Link, usePathname, type Href } from 'expo-router';
+import { Link, usePathname } from 'expo-router';
 import type { ComponentType } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -9,6 +9,7 @@ import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
+import { ROTAS_RODAPE } from '@/lib/swipe-rodape';
 import { useNotificacoes } from '@/state/notificacoes';
 
 // Cabeçalho e rodapé fixos, presentes em todas as telas do app.
@@ -47,12 +48,12 @@ export function Cabecalho() {
 }
 
 // Rodapé: HOME · CONCEITOS · SISTEMAS · AVIAÇÃO · ESPAÇO (9px, maiúsculas).
-const abas: { secao: string; href: Href; rotulo: string; Icone: ComponentType<{ cor: string }> }[] = [
-  { secao: '', href: '/', rotulo: 'Home', Icone: IconeHome },
-  { secao: 'conceitos', href: '/conceitos', rotulo: 'Conceitos', Icone: IconeConceitos },
-  { secao: 'sistemas', href: '/sistemas', rotulo: 'Sistemas', Icone: IconeFisiologia },
-  { secao: 'aviacao', href: '/aviacao', rotulo: 'Aviação', Icone: IconeOperacao },
-  { secao: 'espaco', href: '/espaco', rotulo: 'Espaço', Icone: IconeEspaco },
+const abas: { secao: string; rotulo: string; Icone: ComponentType<{ cor: string }> }[] = [
+  { secao: '', rotulo: 'Home', Icone: IconeHome },
+  { secao: 'conceitos', rotulo: 'Conceitos', Icone: IconeConceitos },
+  { secao: 'sistemas', rotulo: 'Sistemas', Icone: IconeFisiologia },
+  { secao: 'aviacao', rotulo: 'Aviação', Icone: IconeOperacao },
+  { secao: 'espaco', rotulo: 'Espaço', Icone: IconeEspaco },
 ];
 
 // A aba fica acesa na temporada e também dentro dos episódios dela.
@@ -71,12 +72,12 @@ export function Rodape() {
     <View
       accessibilityRole="tablist"
       style={[styles.rodape, { paddingBottom: Math.max(insets.bottom, 12), paddingHorizontal: Math.max(0, (largura - LarguraMaxima) / 2) }]}>
-      {abas.map(({ secao, href, rotulo, Icone }) => {
+      {abas.map(({ secao, rotulo, Icone }, indice) => {
         const foco = ativa === secao;
         const cor = foco ? Cores.destaque : Cores.textoApagado;
         return (
           // Link de verdade: abre mesmo antes de o app terminar de carregar no navegador.
-          <Link key={rotulo} href={href} replace asChild>
+          <Link key={rotulo} href={ROTAS_RODAPE[indice]} replace asChild>
             <Pressable accessibilityRole="tab" accessibilityLabel={rotulo} accessibilityState={{ selected: foco }} style={styles.aba}>
               <Icone cor={cor} />
               <Texto t="rodape" cor={cor}>{rotulo}</Texto>
