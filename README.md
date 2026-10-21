@@ -65,6 +65,7 @@ npm run export:web  # versão web estática em dist/
 | `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
 | `src/app/curiosidades.tsx` · `src/data/extras.ts` | Página de Curiosidades aeronáuticas (a Home mostra só o cartão de acesso) |
 | `src/app/referencias.tsx` · `src/data/referencias.ts` | Lista única de referências (atalho na Home, abaixo de Curiosidades); as fontes não aparecem nos voos |
+| `src/components/midia/composicao-ar.tsx` · `camadas-atmosfera.tsx` | Gráfico da composição do ar e ilustração das camadas da atmosfera (M1V1 - I) |
 | `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
 | `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
 | `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
@@ -102,6 +103,7 @@ O login com Google e Apple ainda depende das credenciais das contas de desenvolv
 ## Como adicionar um voo
 
 1. Crie `src/data/capitulos/<nome>.ts` seguindo o modelo de `hipoxia.ts`: cada tópico com `essencial`, `explicacao`, `clinico` e `pontosChave`, os `midias` que fizerem sentido, e o `teste` com uma questão por tópico, indicando o `topico` de origem.
+Use `recursos` (em cada tópico) para pôr gráficos, interativos e imagens no meio do texto, logo após um nível de leitura; uma linha em branco no texto separa parágrafos.
 2. Em `src/data/secoes.ts`, troque a linha `cap(...)` do capítulo pelo objeto importado.
 
 O voo passa a aparecer como "Disponível", e o teste entra no Modo quiz e no Modo prova.

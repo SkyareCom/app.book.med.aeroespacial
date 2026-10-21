@@ -13,7 +13,7 @@ import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
-import type { Topico } from '@/data/tipos';
+import type { Recurso, Topico } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
@@ -141,8 +141,11 @@ function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: st
       {c ? (
         <>
           <Nivel rotulo="Essencial" texto={c.essencial} />
+          <Recursos lista={c.recursos} apos="essencial" />
           <Nivel rotulo="Entenda" texto={c.explicacao} />
+          <Recursos lista={c.recursos} apos="entenda" />
           <Nivel rotulo="Para profissionais" texto={c.clinico} />
+          <Recursos lista={c.recursos} apos="profissionais" />
         </>
       ) : null}
 
@@ -168,17 +171,40 @@ function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: st
   );
 }
 
+// Cada linha em branco no texto vira um parágrafo, para o leitor ter pausas.
 function Nivel({ rotulo, texto }: { rotulo: string; texto: string }) {
   return (
     <View style={styles.nivel}>
       <Texto t="rotulo" cor={Cores.destaque}>{rotulo}</Texto>
-      <Texto cor={Cores.textoSuave}>{texto}</Texto>
+      {texto.split(/\n\s*\n/).map((p, i) => (
+        <Texto key={i} cor={Cores.textoSuave}>{p.trim()}</Texto>
+      ))}
     </View>
+  );
+}
+
+function Recursos({ lista, apos }: { lista?: Recurso[]; apos: Recurso['apos'] }) {
+  const itens = lista?.filter((r) => r.apos === apos) ?? [];
+  return (
+    <>
+      {itens.map((r, i) =>
+        r.midia ? (
+          <Midia key={`${r.midia}-${i}`} tipo={r.midia} />
+        ) : r.figura ? (
+          <View key={`fig-${i}`} style={styles.figura}>
+            <Image source={r.figura.imagem} style={styles.figuraImagem} contentFit="cover" accessibilityLabel={r.figura.legenda} />
+            <Texto cor={Cores.textoApagado}>{r.figura.legenda}</Texto>
+          </View>
+        ) : null,
+      )}
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 6, gap: 6 },
-  nivel: { gap: 4, paddingLeft: Espaco.md, borderLeftWidth: 1, borderLeftColor: Cores.linha },
+  figura: { gap: 6 },
+  figuraImagem: { width: '100%', aspectRatio: 16 / 9, borderRadius: 10, borderWidth: 1, borderColor: Cores.linha },
+  nivel: { gap: 8, paddingLeft: Espaco.md, borderLeftWidth: 1, borderLeftColor: Cores.linha },
   alerta: { gap: 4, padding: Espaco.md, borderRadius: 12, backgroundColor: 'rgba(232,196,106,0.1)' },
 });

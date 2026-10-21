@@ -17,7 +17,9 @@ export type TipoMidia =
   | 'regua-ruido'
   | 'radiacao-voo'
   | 'risco-aeromedico'
-  | 'perda-ossea';
+  | 'perda-ossea'
+  | 'composicao-ar'
+  | 'camadas-atmosfera';
 
 export interface ConteudoTopico {
   essencial: string;
@@ -25,6 +27,14 @@ export interface ConteudoTopico {
   clinico: string;
   pontosChave?: string[];
   alerta?: string;
+  // Recursos no meio do texto, logo depois do nível indicado: um interativo/gráfico/ilustração ou uma imagem com legenda.
+  recursos?: Recurso[];
+}
+
+export interface Recurso {
+  apos: 'essencial' | 'entenda' | 'profissionais';
+  midia?: TipoMidia;
+  figura?: { imagem: number; legenda: string };
 }
 
 export interface Topico {
