@@ -1,4 +1,5 @@
 export const Imagens = {
+  perfil: require('@/assets/images/perfil.jpg'),
   logo: require('@/assets/images/logo-app.webp'),
   fundo: require('@/assets/images/cenas/bg.jpg'),
   hero: require('@/assets/images/cenas/hero.jpg'),

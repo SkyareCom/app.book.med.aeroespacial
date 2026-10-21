@@ -64,6 +64,8 @@ npm run export:web  # versão web estática em dist/
 | `src/components/moldura-app.tsx` | Cabeçalho e rodapé fixos em todas as telas |
 | `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
 | `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
+| `src/app/notificacoes.tsx` · `src/data/notificacoes.ts` | Notificações (novidades do app); aumente `VERSAO_NOTIFICACOES` ao incluir uma |
+| `src/app/perfil.tsx` | Perfil: conta, nível, progresso e entrar ou sair |
 | `src/app/capitulo/[secao]/[numero].tsx` | Tela do voo (capítulo) |
 | `src/app/teste.tsx` | Testes de voo, de era, modo quiz e modo prova |
 | `src/app/laboratorio.tsx` | Laboratório com todos os interativos |

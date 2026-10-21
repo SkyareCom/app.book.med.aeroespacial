@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { IconeClinica, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao, IconePerfil, IconeSino } from '@/components/icones';
+import { IconeClinica, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao, IconeSino } from '@/components/icones';
 import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
@@ -38,7 +38,7 @@ export function Cabecalho() {
         </Link>
         <Link href="/perfil" asChild>
           <Pressable accessibilityRole="link" accessibilityLabel="Perfil" style={styles.acao}>
-            <IconePerfil cor={Cores.texto} tamanho={22} />
+            <Image source={Imagens.perfil} style={styles.avatar} contentFit="cover" />
           </Pressable>
         </Link>
       </View>
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   cabecalho: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'rgba(3,5,10,0.96)', borderBottomWidth: 1, borderBottomColor: Cores.linha, paddingBottom: 8, zIndex: 10 },
   acoes: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   acao: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  avatar: { width: 32, height: 32, borderRadius: 16, borderWidth: 1, borderColor: Cores.destaque },
   ponto: { position: 'absolute', top: 9, right: 10, width: 8, height: 8, borderRadius: 4, backgroundColor: Cores.dourado, borderWidth: 1, borderColor: Cores.fundo },
   marca: { flexDirection: 'row', alignItems: 'center', gap: 10, alignSelf: 'flex-start' },
   logo: { width: 40, height: 40 },

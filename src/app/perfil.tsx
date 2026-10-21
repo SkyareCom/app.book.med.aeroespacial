@@ -1,10 +1,11 @@
+import { Image } from 'expo-image';
 import { StyleSheet, View } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { Barra, Painel } from '@/components/cartoes';
-import { IconePerfil } from '@/components/icones';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
+import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco } from '@/constants/theme';
 import { totalCapitulos } from '@/data/secoes';
 import { useConta, type ModoEntrada } from '@/state/conta';
@@ -28,9 +29,7 @@ export default function Perfil() {
     <Tela titulo="Perfil" rotulo="Sua conta e seu progresso">
       <Painel>
         <View style={styles.linha}>
-          <View style={styles.avatar}>
-            <IconePerfil cor={Cores.destaque} tamanho={26} />
-          </View>
+          <Image source={Imagens.perfil} style={styles.avatar} contentFit="cover" accessibilityLabel="Capacete de astronauta" />
           <View style={{ flex: 1, gap: 2 }}>
             <Texto t="rotulo" cor={Cores.destaque}>Conta</Texto>
             <Texto t="item">{conta.titulo}</Texto>
@@ -64,5 +63,5 @@ export default function Perfil() {
 const styles = StyleSheet.create({
   linha: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md },
   entre: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  avatar: { width: 52, height: 52, borderRadius: 26, borderWidth: 1, borderColor: Cores.destaque, alignItems: 'center', justifyContent: 'center' },
+  avatar: { width: 64, height: 64, borderRadius: 32, borderWidth: 1, borderColor: Cores.destaque },
 });
