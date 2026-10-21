@@ -17,7 +17,7 @@ export const notificacoes: Notificacao[] = [
     id: 'hipoxia',
     rotulo: 'Voo disponível',
     titulo: 'Respiração e hipóxia',
-    texto: 'O voo 3 da Missão I está completo, com 4 interativos e o teste no final.',
+    texto: 'O voo 3 da Missão 1 está completo, com 4 interativos e o teste no final.',
     destino: '/capitulo/fisiologia/3',
   },
   {

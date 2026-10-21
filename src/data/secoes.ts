@@ -14,7 +14,7 @@ function cap(numero: number, titulo: string, topicos: string[], laboratorio?: Ti
 export const secoes: Secao[] = [
   {
     id: 'fisiologia',
-    numeral: 'I',
+    numeral: '1',
     titulo: 'Fisiologia',
     subtitulo: 'Como o corpo humano reage ao ambiente de voo',
     sinopse: 'Do ar rarefeito às forças G: o que acontece com o corpo humano quando ele sai do chão.',
@@ -36,7 +36,7 @@ export const secoes: Secao[] = [
   },
   {
     id: 'clinica',
-    numeral: 'II',
+    numeral: '2',
     titulo: 'Clínica',
     subtitulo: 'Doenças, aptidão e certificação de quem voa',
     sinopse: 'Quem pode voar, com quais limites e por qual norma: a medicina de quem pilota e de quem viaja.',
@@ -58,7 +58,7 @@ export const secoes: Secao[] = [
   },
   {
     id: 'operacao',
-    numeral: 'III',
+    numeral: '3',
     titulo: 'Operação',
     subtitulo: 'Segurança, saúde no trabalho, emergências e perícias',
     sinopse: 'A medicina dentro da operação real: cabine, pátio, emergências a bordo, acidentes e perícias.',
@@ -83,7 +83,7 @@ export const secoes: Secao[] = [
   },
   {
     id: 'espaco',
-    numeral: 'IV',
+    numeral: '4',
     titulo: 'Espaço',
     subtitulo: 'O corpo humano além da atmosfera',
     sinopse: 'Microgravidade, radiação e isolamento: o corpo humano a caminho da Lua e de Marte.',

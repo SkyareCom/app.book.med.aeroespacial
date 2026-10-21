@@ -1,4 +1,4 @@
-// Missão I (Fisiologia) · Voo 1 — Atmosfera e ambiente de voo.
+// Missão 1 (Fisiologia) · Voo 1 — Atmosfera e ambiente de voo.
 // Segue o Padrão Editorial dos Voos. Tópicos sem `conteudo` ainda estão em produção.
 //
 // REGISTRO DE REVISÃO (não aparece no app)
