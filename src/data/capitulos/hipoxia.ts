@@ -19,7 +19,7 @@ export const hipoxia: Capitulo = {
     {
       id: '3.1',
       midias: ['simulador-o2'],
-      titulo: 'Como o oxigênio chega às células',
+      titulo: 'Transporte de oxigênio',
       pergunta: 'O que acontece com o oxigênio do ar até chegar ao cérebro?',
       conteudo: {
         essencial:
@@ -33,7 +33,7 @@ export const hipoxia: Capitulo = {
     {
       id: '3.2',
       midias: ['classificar-hipoxia'],
-      titulo: 'Os quatro tipos de hipóxia',
+      titulo: 'Tipos de hipóxia',
       pergunta: 'Falta de oxigênio é sempre por causa da altitude?',
       conteudo: {
         essencial:
@@ -62,7 +62,7 @@ export const hipoxia: Capitulo = {
     {
       id: '3.4',
       midias: ['simulador-visao'],
-      titulo: 'Sinais, sintomas e treinamento',
+      titulo: 'Sinais e sintomas',
       pergunta: 'Como perceber que está faltando oxigênio?',
       conteudo: {
         essencial:
@@ -75,7 +75,7 @@ export const hipoxia: Capitulo = {
     },
     {
       id: '3.5',
-      titulo: 'Hiperventilação e hipocapnia',
+      titulo: 'Hiperventilação',
       pergunta: 'Respirar demais também pode fazer mal?',
       conteudo: {
         essencial:

@@ -46,7 +46,7 @@ export const atmosfera: Capitulo = {
   topicos: [
     {
       id: '1.1',
-      titulo: 'Composição e camadas da atmosfera',
+      titulo: 'Camadas da atmosfera',
       pergunta: 'Do que é feito o ar que respiramos, e o que muda quando subimos?',
       conteudo: {
         essencial:
@@ -72,7 +72,7 @@ export const atmosfera: Capitulo = {
     },
     {
       id: '1.2',
-      titulo: 'Leis dos gases aplicadas ao corpo',
+      titulo: 'Leis dos gases',
       pergunta: 'Por que o ouvido dói na descida, falta oxigênio lá em cima e o mergulhador não pode voar logo depois?',
       conteudo: {
         essencial:
@@ -148,8 +148,8 @@ export const atmosfera: Capitulo = {
         ],
       },
     },
-    { id: '1.3', titulo: 'Atmosfera padrão e tipos de altitude' },
-    { id: '1.4', titulo: 'Temperatura, umidade e radiação em altitude' },
+    { id: '1.3', titulo: 'Atmosfera padrão' },
+    { id: '1.4', titulo: 'Temperatura, umidade e radiação' },
   ],
   teste: [
     {

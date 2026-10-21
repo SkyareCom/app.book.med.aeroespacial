@@ -167,20 +167,25 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
         disabled={!pode}
         onPress={() => setAberto((v) => !v)}
         style={({ pressed }) => [styles.cabecaTopico, pressed && styles.cabecaPressionada]}>
-        <View style={{ flex: 1, gap: 2 }}>
-          <Texto t="rotulo" cor={Cores.destaque}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
-          <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
-          {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
-          {!pode ? <Texto t="rotulo" cor={Cores.textoApagado}>Em produção</Texto> : null}
-        </View>
-        {pode ? (
-          <View style={styles.puxador}>
-            <Animated.View style={[styles.seta, aberto && styles.setaAberta, { transform: [{ rotate: rotacao }] }]}>
-              <IconeAbrir cor={Cores.destaque} tamanho={20} />
-            </Animated.View>
-            <Texto t="rodape" cor={Cores.textoApagado}>{aberto ? 'Fechar' : 'Abrir'}</Texto>
+        {/* Estrutura fixa em todos os tópicos do app: código, título numa linha, pergunta em duas linhas
+            (ou "em produção") e o puxador à direita. A altura é sempre a mesma. */}
+        <View style={styles.textosTopico}>
+          <Texto t="rotulo" cor={Cores.destaque} numberOfLines={1}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
+          <Texto t="titulo" style={TituloDestaque} numberOfLines={1}>{topico.titulo}</Texto>
+          <View style={styles.perguntaTopico}>
+            {pode ? (
+              <Texto cor={Cores.textoApagado} numberOfLines={2}>{topico.pergunta}</Texto>
+            ) : (
+              <Texto t="rotulo" cor={Cores.textoApagado}>Em produção</Texto>
+            )}
           </View>
-        ) : null}
+        </View>
+        <View style={[styles.puxador, !pode && { opacity: 0.35 }]}>
+          <Animated.View style={[styles.seta, aberto && styles.setaAberta, { transform: [{ rotate: rotacao }] }]}>
+            <IconeAbrir cor={Cores.destaque} tamanho={20} />
+          </Animated.View>
+          <Texto t="rodape" cor={Cores.textoApagado}>{!pode ? 'Em breve' : aberto ? 'Fechar' : 'Abrir'}</Texto>
+        </View>
       </Pressable>
 
       {aberto && c ? (
@@ -292,7 +297,9 @@ const styles = StyleSheet.create({
   figuraImagem: { width: '100%', borderRadius: 10, borderWidth: 1, borderColor: Cores.linha, overflow: 'hidden' },
   cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, marginHorizontal: -8, marginVertical: -6, paddingHorizontal: 8, paddingVertical: 6, borderRadius: 12 },
   cabecaPressionada: { backgroundColor: 'rgba(111,211,255,0.08)' },
-  puxador: { alignItems: 'center', gap: 4 },
+  puxador: { alignItems: 'center', gap: 4, width: 60 },
+  textosTopico: { flex: 1, height: 84, gap: 2 },
+  perguntaTopico: { height: 36, justifyContent: 'center' },
   setaAberta: { borderColor: Cores.destaque, backgroundColor: 'rgba(111,211,255,0.1)' },
   seta: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
   fechar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, minHeight: 44, borderTopWidth: 1, borderTopColor: Cores.linha },
