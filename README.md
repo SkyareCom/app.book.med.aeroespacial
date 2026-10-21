@@ -81,7 +81,7 @@ npm run export:web  # versão web estática em dist/
 ## Regras de design
 
 - Fonte única: **Acme** (Google Fonts), em uma versão corrigida. A Acme original desenha o acento circunflexo (â, ê, ô) de cabeça para baixo; `tools/fonte/corrigir_circunflexo.py` corrige o acento e gera `assets/fonts/AppBookDisplay-Regular.ttf`. Pela licença SIL OFL, o nome "Acme" é reservado, então a versão corrigida se chama "AppBook Display". A família só tem o peso 400.
-- Tamanhos permitidos: 18, 14, 12, 10 e 9px. O 9px é usado **somente no rodapé, em maiúsculas**.
+- Tamanhos permitidos: 18, 14, 12, 10 e 9px. O 9px é usado **somente no rodapé e nos selos (Interativo, Disponível, tipo de mídia), sempre em maiúsculas**.
 - Cabeçalho e rodapé sempre fixos na tela: logotipo à esquerda com PAPOS DE ALTITUDE e, abaixo, MEDICINA AEROESPACIAL; no rodapé, as 5 abas.
 - Tema escuro sideral. O destaque padrão é o azul "holograma"; a variação vermelha "sabre" está pronta em `src/constants/theme.ts`.
 
