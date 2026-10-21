@@ -53,21 +53,26 @@ export function TelaSecao({ id }: { id: SecaoId }) {
               accessibilityLabel={`Voo ${c.numero}: ${c.titulo}`}
               onPress={() => router.push(rotaEpisodio(id, c.numero))}
               style={({ pressed }) => [styles.episodio, pressed && { opacity: 0.85 }]}>
+              {/* Todos os cartões têm a mesma altura e estrutura: capa, título em até 2 linhas,
+                  linha de estado (duração ou "em produção" + selo interativo) e os tópicos em 2 linhas. */}
               <View style={styles.linha}>
                 <View style={styles.miniatura}>
                   <Image source={CapaEpisodio[`${id}-${c.numero}`]} style={StyleSheet.absoluteFill} contentFit="cover" />
                   {feito ? <View style={styles.feito}><IconeCheck cor={Cores.fundo} tamanho={14} /></View> : null}
                 </View>
-                <View style={{ flex: 1, gap: 4 }}>
-                  <Texto t="item" style={TituloDestaque}>{c.numero}. {c.titulo}</Texto>
-                  <Texto cor={Cores.textoApagado}>{pronto ? `${duracao(c)} min` : 'Em produção'}</Texto>
-                  <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
-                    {pronto ? <Selo texto="Disponível" cor={Cores.destaque} /> : null}
+                <View style={styles.infos}>
+                  <View style={styles.titulo}>
+                    <Texto t="item" style={TituloDestaque} numberOfLines={2}>{c.numero}. {c.titulo}</Texto>
+                  </View>
+                  <View style={styles.estado}>
+                    <Texto t="rotulo" cor={pronto ? Cores.destaque : Cores.textoApagado} numberOfLines={1}>{pronto ? `${duracao(c)} min` : 'Em produção'}</Texto>
                     {lab ? <Selo texto="Interativo" cor={Cores.dourado} /> : null}
                   </View>
                 </View>
               </View>
-              <Texto cor={Cores.textoSuave} numberOfLines={2}>{c.resumo ?? c.topicos.map((t) => t.titulo).join(' · ')}</Texto>
+              <View style={styles.resumo}>
+                <Texto cor={Cores.textoSuave} numberOfLines={2}>{c.resumo ?? c.topicos.map((t) => t.titulo).join(' · ')}</Texto>
+              </View>
             </Pressable>
           );
         })}
@@ -79,8 +84,12 @@ export function TelaSecao({ id }: { id: SecaoId }) {
 const styles = StyleSheet.create({
   textoHero: { position: 'absolute', left: GUTTER, right: GUTTER, bottom: 10, gap: 8 },
   botao: { alignSelf: 'flex-start', minHeight: 46, paddingHorizontal: 22, borderRadius: 23, backgroundColor: Cores.texto, justifyContent: 'center', marginTop: 4 },
-  episodio: { gap: 8 },
-  linha: { flexDirection: 'row', gap: Espaco.md, alignItems: 'center' },
+  episodio: { height: 143, gap: 8, padding: 10, borderRadius: 14, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(6,10,18,0.6)' },
+  linha: { height: 79, flexDirection: 'row', gap: Espaco.md },
+  infos: { flex: 1, justifyContent: 'space-between' },
+  titulo: { height: 36 },
+  estado: { flexDirection: 'row', alignItems: 'center', gap: 8, height: 22, overflow: 'hidden' },
+  resumo: { height: 36 },
   miniatura: { width: 140, height: 79, borderRadius: 8, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },
   feito: { position: 'absolute', right: 6, bottom: 6, width: 22, height: 22, borderRadius: 11, backgroundColor: Cores.acerto, alignItems: 'center', justifyContent: 'center' },
 });
