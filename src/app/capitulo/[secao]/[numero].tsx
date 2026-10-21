@@ -120,13 +120,20 @@ export default function TelaCapitulo() {
 }
 
 // Uma cena = um tópico. Três níveis de leitura sempre visíveis, depois os interativos e os pontos-chave.
-// Código do tópico: M = missão, V = voo (ex.: M1V3 · Tópico 3.1).
+// Código do tópico: M = missão, V = voo e o número do tópico em romanos (ex.: M1V3 - II).
+function romano(n: number) {
+  const tabela: [number, string][] = [[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+  let r = '';
+  for (const [v, s] of tabela) while (n >= v) { r += s; n -= v; }
+  return r;
+}
+
 function BlocoTopico({ topico, codigo, destacado }: { topico: Topico; codigo: string; destacado: boolean }) {
   const c = topico.conteudo;
   return (
     <Painel style={destacado ? { borderColor: Cores.destaque } : undefined}>
       <View style={{ gap: 2 }}>
-        <Texto t="rotulo" cor={Cores.destaque}>{codigo} · Tópico {topico.id}</Texto>
+        <Texto t="rotulo" cor={Cores.destaque}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
         <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
         {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
       </View>
