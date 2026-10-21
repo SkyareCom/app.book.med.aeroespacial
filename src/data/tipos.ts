@@ -41,9 +41,9 @@ export interface Recurso {
   // Opcional: entra logo depois deste parágrafo do nível (1 = primeiro), quebrando o texto.
   paragrafo?: number;
   midia?: TipoMidia;
-  // Figura fotográfica. `proporcao` = largura/altura (padrão 16:9). `marcadores`: pontos numerados por cima da foto
-  // (x e y em fração da imagem), explicados numa legenda logo abaixo.
-  figura?: { imagem: number; legenda: string; proporcao?: number; marcadores?: { x: number; y: number; rotulo: string }[] };
+  // Figura fotográfica. `proporcao` = largura/altura (padrão 16:9). `marcadores`: estruturas que só se destacam quando
+  // o leitor toca na legenda (x, y e raio em fração da imagem).
+  figura?: { imagem: number; legenda: string; proporcao?: number; marcadores?: { x: number; y: number; rotulo: string; raio?: number }[] };
   // Tabela: no celular cada linha vira um cartão (1ª coluna como título, as outras como rótulo e valor).
   tabela?: { titulo: string; colunas: string[]; linhas: string[][] };
 }
