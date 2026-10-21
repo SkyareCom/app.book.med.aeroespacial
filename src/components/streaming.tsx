@@ -9,7 +9,7 @@ import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from
 import { IconeCheck } from '@/components/icones';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
-import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
+import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo } from '@/data/secoes';
 import type { Capitulo, Secao } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -76,7 +76,7 @@ export function CartaoEpisodio({ secao, capitulo, largura = 230 }: { secao: Seca
         </View>
         {feito ? <View style={styles.progresso} /> : null}
       </View>
-      <Texto t="item" numberOfLines={2}>{capitulo.titulo}</Texto>
+      <Texto t="item" numberOfLines={2} style={TituloDestaque}>{capitulo.titulo}</Texto>
       <Texto cor={Cores.textoApagado}>{pronto ? `${duracao(capitulo)} min` : 'Em produção'}</Texto>
     </Pressable>
   );

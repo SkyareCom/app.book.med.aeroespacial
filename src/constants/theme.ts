@@ -38,3 +38,6 @@ export const Cores = {
 export const Espaco = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24 } as const;
 export const Raio = 16;
 export const LarguraMaxima = 480;
+
+// Títulos de episódio e de cena: dourado com um leve brilho, para se destacarem do texto.
+export const TituloDestaque = { color: '#E8C46A', textShadowColor: 'rgba(232,196,106,0.45)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 10 } as const;

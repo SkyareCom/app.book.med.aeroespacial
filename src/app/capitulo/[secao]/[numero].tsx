@@ -11,7 +11,7 @@ import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/componen
 import { BotaoVoltarFlutuante, Tela, TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
-import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
+import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
 import type { Topico } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -57,8 +57,8 @@ export default function TelaCapitulo() {
           <Image source={CapaEpisodio[`${secao.id}-${capitulo.numero}`]} style={{ width: largura, height: largura * 0.5625 + 60 }} contentFit="cover" />
           <LinearGradient colors={['rgba(3,5,10,0.5)', 'rgba(3,5,10,0)', Cores.fundo]} locations={[0, 0.3, 0.92]} style={StyleSheet.absoluteFill} />
           <View style={styles.textoHero}>
-            <Texto t="rotulo" cor={Cores.dourado}>Temporada {secao.numeral} · Episódio {capitulo.numero}</Texto>
-            <Texto t="titulo">{capitulo.titulo}</Texto>
+            <Texto t="rotulo" cor={Cores.destaque}>Temporada {secao.numeral} · Episódio {capitulo.numero}</Texto>
+            <Texto t="titulo" style={TituloDestaque}>{capitulo.titulo}</Texto>
             <Texto t="rotulo" cor={Cores.textoApagado}>
               {pronto ? `${duracao(capitulo)} min` : 'Em produção'} · {capitulo.topicos.length} cenas{nInterativos ? ` · ${nInterativos} interativo${nInterativos > 1 ? 's' : ''}` : ''}
             </Texto>
@@ -126,7 +126,7 @@ function BlocoTopico({ topico, cena, destacado }: { topico: Topico; cena: number
     <Painel style={destacado ? { borderColor: Cores.destaque } : undefined}>
       <View style={{ gap: 2 }}>
         <Texto t="rotulo" cor={Cores.destaque}>Cena {cena} · Tópico {topico.id}</Texto>
-        <Texto t="titulo">{topico.titulo}</Texto>
+        <Texto t="titulo" style={TituloDestaque}>{topico.titulo}</Texto>
         {topico.pergunta ? <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto> : null}
       </View>
 

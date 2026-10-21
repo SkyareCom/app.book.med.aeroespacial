@@ -8,7 +8,7 @@ import { disponivel, duracao, GUTTER, rotaEpisodio, Selo } from '@/components/st
 import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteTemporada, CapaEpisodio } from '@/constants/capas';
-import { Cores, Espaco } from '@/constants/theme';
+import { Cores, Espaco, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo, obterSecao } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -59,7 +59,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
                   {feito ? <View style={styles.feito}><IconeCheck cor={Cores.fundo} tamanho={14} /></View> : null}
                 </View>
                 <View style={{ flex: 1, gap: 4 }}>
-                  <Texto t="item">{c.numero}. {c.titulo}</Texto>
+                  <Texto t="item" style={TituloDestaque}>{c.numero}. {c.titulo}</Texto>
                   <Texto cor={Cores.textoApagado}>{pronto ? `${duracao(c)} min` : 'Em produção'}</Texto>
                   <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
                     {pronto ? <Selo texto="Disponível" cor={Cores.destaque} /> : null}
