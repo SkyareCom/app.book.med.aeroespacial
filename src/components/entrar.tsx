@@ -10,6 +10,9 @@ import type { ModoEntrada } from '@/state/conta';
 // Google e Apple dependem das credenciais das contas de desenvolvedor; enquanto não existem,
 // o botão explica isso e a pessoa segue sem conta. A biometria funciona no app instalado.
 const LOGIN_SOCIAL_ATIVO = false;
+// Provisório: enquanto o login real não existe, qualquer opção libera a entrada direto.
+// Para voltar a exigir Google, Apple ou biometria de verdade, troque para false.
+const ENTRADA_LIVRE = true;
 
 const nomeBiometria = Platform.OS === 'ios' ? 'Face ID ou Touch ID' : Platform.OS === 'android' ? 'Digital ou reconhecimento facial' : 'Face ID, Touch ID ou digital';
 
@@ -18,6 +21,10 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
   const mostrarApple = Platform.OS !== 'android';
 
   function social(provedor: 'Google' | 'Apple') {
+    if (ENTRADA_LIVRE) {
+      aoEscolher(provedor === 'Google' ? 'google' : 'apple');
+      return;
+    }
     if (!LOGIN_SOCIAL_ATIVO) {
       setAviso(`O login com ${provedor} está sendo configurado e será liberado em breve. Por enquanto, continue sem conta: seu progresso fica salvo neste aparelho.`);
       return;
@@ -26,6 +33,10 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
   }
 
   async function biometria() {
+    if (ENTRADA_LIVRE) {
+      aoEscolher('biometria');
+      return;
+    }
     if (Platform.OS === 'web') {
       setAviso('A biometria funciona no app instalado no celular (Face ID, Touch ID ou digital). No navegador, continue sem conta por enquanto.');
       return;

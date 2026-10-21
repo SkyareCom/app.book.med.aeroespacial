@@ -41,7 +41,7 @@ export default function RootLayout() {
 }
 
 // Abertura e tela de entrada são a mesma tela.
-// - Quem ainda não entrou: a abertura mostra as formas de login e espera a escolha.
+// - Quem ainda não entrou (ou entrou sem conta): a abertura mostra as formas de login e espera a escolha.
 // - Quem já entrou: no app nativo a abertura passa a cada início; na web, uma vez por visita.
 // Tudo só aparece depois de a página carregar, então nunca cobre o site pré-renderizado.
 function AberturaEEntrada() {
@@ -56,7 +56,8 @@ function AberturaEEntrada() {
     setAbertura(true);
   }, []);
 
-  const entrada = carregado && !modo;
+  // Quem entrou sem conta volta a ver as formas de login a cada abertura do app (uma vez por visita na web).
+  const entrada = carregado && (!modo || (modo === 'convidado' && abertura));
   if (!carregado || (!abertura && !entrada)) return null;
   return <Abertura entrada={entrada} onFim={() => setAbertura(false)} />;
 }

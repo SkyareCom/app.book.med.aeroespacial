@@ -84,7 +84,7 @@ npm run export:web  # versão web estática em dist/
 
 Depois da abertura, quem ainda não escolheu como entrar vê a tela de entrada (`src/components/entrar.tsx`): **Continuar com Google**, **Continuar com a Apple** (iPhone e web) e **Entrar com biometria** (Face ID, Touch ID ou digital, no app instalado), além de **Continuar sem conta**. A escolha fica salva no aparelho (`src/state/conta.tsx`); quem entrou sem conta tem o botão **Entrar** no cabeçalho.
 
-O login com Google e Apple ainda depende das credenciais das contas de desenvolvedor (Google Cloud e Apple Developer) e de um serviço de contas, como o Supabase. Até lá, `LOGIN_SOCIAL_ATIVO` fica desligado e os botões avisam que o login será liberado em breve. A App Store exige o login com a Apple sempre que o app oferece login com Google.
+O login com Google e Apple ainda depende das credenciais das contas de desenvolvedor (Google Cloud e Apple Developer) e de um serviço de contas, como o Supabase. Por enquanto, `ENTRADA_LIVRE` (em `src/components/entrar.tsx`) está ligado: qualquer opção libera a entrada direto, sem verificar a conta. Quem entra sem conta volta a ver as formas de login a cada abertura do app. A App Store exige o login com a Apple sempre que o app oferece login com Google.
 
 ## Regras de design
 
