@@ -41,3 +41,6 @@ export const LarguraMaxima = 480;
 
 // Títulos de episódio e de cena: dourado com um leve brilho, para se destacarem do texto.
 export const TituloDestaque = { color: '#E8C46A', textShadowColor: 'rgba(232,196,106,0.45)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 10 } as const;
+
+// Borda discreta das capas de episódio (e das miniaturas de era e do laboratório): separa a imagem do fundo estrelado.
+export const BordaCapa = { borderWidth: 1, borderColor: 'rgba(111,211,255,0.32)' } as const;

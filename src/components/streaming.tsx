@@ -9,7 +9,7 @@ import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from
 import { IconeCheck } from '@/components/icones';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
-import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
+import { Cores, Espaco, LarguraMaxima, TituloDestaque, BordaCapa } from '@/constants/theme';
 import { chaveCapitulo } from '@/data/secoes';
 import type { Capitulo, Secao } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -155,7 +155,7 @@ export function Destaques({ itens, altura = 460 }: { itens: ItemDestaque[]; altu
 const styles = StyleSheet.create({
   cabecalhoFileira: { flexDirection: 'row', alignItems: 'flex-end', paddingHorizontal: GUTTER, gap: Espaco.md },
   acao: { minHeight: 44, justifyContent: 'flex-end', paddingBottom: 2 },
-  capa: { borderRadius: 10, overflow: 'hidden', backgroundColor: '#000', borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
+  capa: { borderRadius: 10, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },
   selos: { position: 'absolute', top: 8, left: 8, flexDirection: 'row', gap: 6 },
   selo: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6, borderWidth: 1, backgroundColor: 'rgba(3,5,10,0.65)' },
   rodapeCapa: { position: 'absolute', left: 10, right: 10, bottom: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },

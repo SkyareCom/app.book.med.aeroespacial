@@ -8,7 +8,7 @@ import { disponivel, duracao, GUTTER, rotaEpisodio, Selo } from '@/components/st
 import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteTemporada, CapaEpisodio } from '@/constants/capas';
-import { Cores, Espaco, TituloDestaque } from '@/constants/theme';
+import { Cores, Espaco, TituloDestaque, BordaCapa } from '@/constants/theme';
 import { chaveCapitulo, obterSecao } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -81,6 +81,6 @@ const styles = StyleSheet.create({
   botao: { alignSelf: 'flex-start', minHeight: 46, paddingHorizontal: 22, borderRadius: 23, backgroundColor: Cores.texto, justifyContent: 'center', marginTop: 4 },
   episodio: { gap: 8 },
   linha: { flexDirection: 'row', gap: Espaco.md, alignItems: 'center' },
-  miniatura: { width: 140, height: 79, borderRadius: 8, overflow: 'hidden', backgroundColor: '#000' },
+  miniatura: { width: 140, height: 79, borderRadius: 8, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },
   feito: { position: 'absolute', right: 6, bottom: 6, width: 22, height: 22, borderRadius: 11, backgroundColor: Cores.acerto, alignItems: 'center', justifyContent: 'center' },
 });

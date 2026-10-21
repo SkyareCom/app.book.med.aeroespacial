@@ -11,7 +11,7 @@ import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Imagens } from '@/constants/imagens';
-import { Cores, Espaco } from '@/constants/theme';
+import { BordaCapa, Cores, Espaco } from '@/constants/theme';
 import { curiosidades } from '@/data/extras';
 import { eras } from '@/data/historia';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
@@ -159,6 +159,6 @@ const styles = StyleSheet.create({
   linhaEntre: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   grade: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   celula: { flexBasis: '45%', flexGrow: 1, gap: 4 },
-  capaEra: { height: 112, borderRadius: 10, overflow: 'hidden', backgroundColor: '#000' },
-  capaLab: { height: 96, borderRadius: 10, overflow: 'hidden', backgroundColor: '#000' },
+  capaEra: { height: 112, borderRadius: 10, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },
+  capaLab: { height: 96, borderRadius: 10, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },
 });
