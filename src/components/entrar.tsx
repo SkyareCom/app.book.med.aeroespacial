@@ -3,6 +3,7 @@ import { useState, type ReactNode } from 'react';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
+import { SimboloApple, SimboloGoogle } from '@/components/marcas';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Raio } from '@/constants/theme';
 import type { ModoEntrada } from '@/state/conta';
@@ -60,9 +61,9 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
   return (
     <View style={{ gap: Espaco.md, width: '100%' }}>
       <View style={{ gap: 10 }}>
-        <BotaoEntrar rotulo="Continuar com Google" fundo={Cores.texto} cor={Cores.fundo} onPress={() => social('Google')} />
-        {mostrarApple ? <BotaoEntrar rotulo="Continuar com a Apple" fundo="#000000" cor="#FFFFFF" borda="rgba(255,255,255,0.35)" onPress={() => social('Apple')} /> : null}
-        <BotaoEntrar rotulo="Entrar com biometria" detalhe={nomeBiometria} fundo="rgba(3,5,10,0.6)" cor={Cores.destaque} borda={Cores.destaque} onPress={biometria} icone={<IconeDigital cor={Cores.destaque} />} />
+        <BotaoEntrar rotulo="Continuar com Google" icone={<SimboloGoogle />} onPress={() => social('Google')} />
+        {mostrarApple ? <BotaoEntrar rotulo="Continuar com a Apple" icone={<SimboloApple />} onPress={() => social('Apple')} /> : null}
+        <BotaoEntrar rotulo="Entrar com biometria" detalhe={nomeBiometria} icone={<IconeDigital cor={Cores.destaque} />} onPress={biometria} />
       </View>
 
       {aviso ? (
@@ -79,20 +80,21 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
   );
 }
 
-function BotaoEntrar({ rotulo, detalhe, fundo, cor, borda, onPress, icone }: { rotulo: string; detalhe?: string; fundo: string; cor: string; borda?: string; onPress: () => void; icone?: ReactNode }) {
+// Os três botões são iguais: sem fundo, mesma borda e texto de 12px em maiúsculas.
+function BotaoEntrar({ rotulo, detalhe, onPress, icone }: { rotulo: string; detalhe?: string; onPress: () => void; icone?: ReactNode }) {
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={detalhe ? `${rotulo}, ${detalhe}` : rotulo}
       onPress={onPress}
-      style={({ pressed }) => [styles.botao, { backgroundColor: fundo, borderColor: borda ?? fundo }, pressed && { opacity: 0.85 }]}>
+      style={({ pressed }) => [styles.botao, pressed && { backgroundColor: 'rgba(255,255,255,0.06)' }]}>
       {/* Espaço fixo de ícone em todos os botões: os textos começam na mesma linha (e os logos oficiais
           do Google e da Apple entram aqui quando o login real for ligado). */}
       <View style={styles.linhaBotao}>
         <View style={styles.slotIcone}>{icone}</View>
         <View style={{ gap: 2 }}>
-          <Texto t="item" maiusculo espacado cor={cor}>{rotulo}</Texto>
-          {detalhe ? <Texto t="rotulo" cor={cor}>{detalhe}</Texto> : null}
+          <Texto maiusculo espacado cor={Cores.texto}>{rotulo}</Texto>
+          {detalhe ? <Texto t="rotulo" cor={Cores.textoApagado}>{detalhe}</Texto> : null}
         </View>
       </View>
     </Pressable>
@@ -116,7 +118,7 @@ function IconeDigital({ cor }: { cor: string }) {
 const styles = StyleSheet.create({
   linhaBotao: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   slotIcone: { width: 22, alignItems: 'center' },
-  botao: { minHeight: 52, borderRadius: Raio, borderWidth: 1, alignItems: 'flex-start', justifyContent: 'center', paddingHorizontal: 18, paddingVertical: 8, gap: 2 },
+  botao: { minHeight: 52, borderRadius: Raio, borderWidth: 1, borderColor: 'rgba(255,255,255,0.35)', backgroundColor: 'transparent', alignItems: 'flex-start', justifyContent: 'center', paddingHorizontal: 18, paddingVertical: 8, gap: 2 },
   aviso: { borderRadius: Raio - 4, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(6,10,18,0.9)', padding: Espaco.md },
   semConta: { alignItems: 'center', gap: 2, minHeight: 48, justifyContent: 'center' },
 });
