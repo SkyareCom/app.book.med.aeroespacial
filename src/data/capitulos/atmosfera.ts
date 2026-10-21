@@ -35,7 +35,7 @@
 // - Tensão de N₂ nos tecidos ao nível do mar aproximada por 0,7808 × (760 − 47) ≈ 557 mmHg (cálculo didático).
 // Recursos: tabela das leis; um gráfico por lei entre os parágrafos do Entenda (grafico-boyle, -dalton, -henry, -charles);
 // tabela dos locais de gás preso. Charles: exemplo de cilindro fechado cheio a 20 °C, pressão ∝ temperatura absoluta.
-// Fotos premium (geradas por IA pelo autor, pessoas fictícias): topicos/m1v1-2-passageiro (com marcadores),
+// Fotos premium (geradas por IA pelo autor, pessoas fictícias): topicos/m1v1-2-corpo (corpo translúcido com estruturas que acendem ao toque),
 // -pacote, -alpinista, -garrafa, -cilindro. Tabela-resumo das leis no fim do Para profissionais.
 
 import type { Capitulo } from '../tipos';
@@ -96,15 +96,15 @@ export const atmosfera: Capitulo = {
           {
             apos: 'essencial',
             figura: {
-              imagem: require('@/assets/images/topicos/m1v1-2-passageiro.jpg'),
-              proporcao: 1100 / 1052,
+              imagem: require('@/assets/images/topicos/m1v1-2-corpo.jpg'),
+              proporcao: 1100 / 1091,
               legenda: 'Onde o corpo guarda gás durante o voo. Na subida esse gás se expande; na descida, precisa voltar a entrar.',
               marcadores: [
-                { x: 0.468, y: 0.299, rotulo: 'Ouvido médio' },
-                { x: 0.343, y: 0.326, rotulo: 'Seios da face' },
-                { x: 0.314, y: 0.407, rotulo: 'Dentes' },
-                { x: 0.455, y: 0.616, rotulo: 'Pulmões' },
-                { x: 0.468, y: 0.868, rotulo: 'Estômago e intestino' },
+                { x: 0.305, y: 0.193, raio: 0.05, rotulo: 'Ouvido médio' },
+                { x: 0.445, y: 0.205, raio: 0.045, rotulo: 'Seios da face' },
+                { x: 0.473, y: 0.266, raio: 0.045, rotulo: 'Dentes' },
+                { x: 0.38, y: 0.5, raio: 0.13, rotulo: 'Pulmões' },
+                { x: 0.45, y: 0.74, raio: 0.12, rotulo: 'Estômago e intestino' },
               ],
             },
           },
