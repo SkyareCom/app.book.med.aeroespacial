@@ -1,4 +1,4 @@
-// Fisiologia · Capítulo 3 — Respiração e hipóxia.
+// Missão 2 (Sistemas) · Voo 1 — Respiração e hipóxia (o número do voo é definido em secoes.ts).
 // Capítulo-modelo: mostra o padrão de redação dos três níveis de leitura e do teste.
 // Valores de tempo de consciência útil: FAA Advisory Circular 61-107 (tabela de TUC).
 

@@ -1,4 +1,4 @@
-// Missão 1 (Fisiologia) · Voo 1 — Atmosfera e ambiente de voo.
+// Missão 1 (Conceitos) · Voo 1 — Atmosfera e ambiente de voo.
 // Segue o Padrão Editorial dos Voos. Tópicos sem `conteudo` ainda estão em produção.
 //
 // REGISTRO DE REVISÃO (não aparece no app)
@@ -149,7 +149,7 @@ export const atmosfera: Capitulo = {
       },
     },
     { id: '1.3', titulo: 'Atmosfera padrão' },
-    // A radiação em altitude fica toda no Voo 12 (Radiação cósmica), não aqui.
+    // A radiação fica toda no M1V5 (Radiação cósmica), não aqui.
     { id: '1.4', titulo: 'Temperatura e umidade' },
   ],
   teste: [

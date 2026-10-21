@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { IconeClinica, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao, IconeSino } from '@/components/icones';
+import { IconeConceitos, IconeEspaco, IconeFisiologia, IconeHome, IconeOperacao, IconeSino } from '@/components/icones';
 import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
@@ -46,12 +46,12 @@ export function Cabecalho() {
   );
 }
 
-// Rodapé: HOME · FISIOLOGIA · CLÍNICA · OPERAÇÃO · ESPAÇO (9px, maiúsculas).
+// Rodapé: HOME · CONCEITOS · SISTEMAS · AVIAÇÃO · ESPAÇO (9px, maiúsculas).
 const abas: { secao: string; href: Href; rotulo: string; Icone: ComponentType<{ cor: string }> }[] = [
   { secao: '', href: '/', rotulo: 'Home', Icone: IconeHome },
-  { secao: 'fisiologia', href: '/fisiologia', rotulo: 'Fisiologia', Icone: IconeFisiologia },
-  { secao: 'clinica', href: '/clinica', rotulo: 'Clínica', Icone: IconeClinica },
-  { secao: 'operacao', href: '/operacao', rotulo: 'Operação', Icone: IconeOperacao },
+  { secao: 'conceitos', href: '/conceitos', rotulo: 'Conceitos', Icone: IconeConceitos },
+  { secao: 'sistemas', href: '/sistemas', rotulo: 'Sistemas', Icone: IconeFisiologia },
+  { secao: 'aviacao', href: '/aviacao', rotulo: 'Aviação', Icone: IconeOperacao },
   { secao: 'espaco', href: '/espaco', rotulo: 'Espaço', Icone: IconeEspaco },
 ];
 

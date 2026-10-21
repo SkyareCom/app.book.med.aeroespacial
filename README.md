@@ -1,6 +1,6 @@
 # Papos de Altitude
 
-App-book de medicina aeroespacial em React Native (Expo), com a experiência de uma série com nomes de aviação: 4 missões, 50 voos, uma missão especial de história e um laboratório de simuladores. Feito para médicos e leigos.
+App-book de medicina aeroespacial em React Native (Expo), com a experiência de uma série com nomes de aviação: 4 missões, 44 voos, uma missão especial de história e um laboratório de simuladores. Feito para médicos e leigos.
 
 <p>
   <img src="docs/tela-home.jpg" alt="Home" width="190">
@@ -15,24 +15,24 @@ Nomes de aviação: cada seção é uma **Missão**, cada capítulo um **Voo** e
 
 - **Abertura de cinema** com o logotipo do Papos de Altitude (toque em "Pular" para ir direto).
 - **Home em estilo série:** destaques rotativos no topo, "Continue de onde parou", sua evolução, uma fileira de voos por missão, a missão especial O Voo e a Medicina, o Laboratório, os modos quiz e prova e as curiosidades.
-- **Missões** (as 4 seções do rodapé: Fisiologia, Clínica, Operação, Espaço) com arte própria, sinopse e lista de voos com capa, duração e selos "Disponível" e "Interativo".
+- **Missões** (as 4 seções do rodapé: Conceitos, Sistemas, Aviação, Espaço). Cada tema mora num só lugar e o aprendizado é progressivo: Conceitos (o ambiente e seus agentes) → Sistemas (cada sistema do corpo, do normal à doença) → Aviação (aptidão, segurança e operação) → Espaço. Cada missão tem arte própria, sinopse e cartões dos voos em duas colunas (capa, duração e selo "Interativo" | título e descrição de 3 linhas, em `src/data/descricoes.ts`).
 - **Voos** (os capítulos) com capa de cinema, fases (tópicos) nos três níveis de leitura sempre visíveis, interativos dentro das fases, o botão **TESTE O CONHECIMENTO** no final e os próximos voos.
-- **Capa própria para cada um dos 50 voos**, arte para cada missão e para a missão especial: imagens cinematográficas fotorrealistas geradas por IA, sem texto nem marcas.
+- **Capa própria para cada voo**, arte para cada missão e para a missão especial: imagens cinematográficas fotorrealistas geradas por IA, sem texto nem marcas.
 
 ## Interativos
 
 | Interativo | Onde aparece |
 | --- | --- |
-| Curva do oxigênio e cascata do O₂ por altitude | Fisiologia › Ep 3, Hipóxia |
-| Tipos de hipóxia (atividade com casos) | Fisiologia › Ep 3 |
-| Tempo de consciência útil (gráfico, com descompressão rápida) | Fisiologia › Ep 3 |
-| Visão sob hipóxia, com os estágios clássicos | Fisiologia › Ep 3 |
-| Expansão dos gases com a altitude (Lei de Boyle) | Fisiologia › Ep 1 e Ep 5 |
-| Forças G, com e sem proteção | Fisiologia › Ep 6 |
-| Adaptação ao escuro | Fisiologia › Ep 9 |
-| Ruído e tempo máximo de exposição (NR-15) | Fisiologia › Ep 10 e Operação › Ep 6 |
-| Radiação cósmica por ano de voo | Fisiologia › Ep 12 |
-| Regra do 1% | Clínica › Ep 1 |
+| Curva do oxigênio e cascata do O₂ por altitude | Sistemas › Voo 1, Hipóxia |
+| Tipos de hipóxia (atividade com casos) | Sistemas › Voo 1 |
+| Tempo de consciência útil (gráfico, com descompressão rápida) | Sistemas › Voo 1 |
+| Visão sob hipóxia, com os estágios clássicos | Sistemas › Voo 1 |
+| Expansão dos gases com a altitude (Lei de Boyle) | Conceitos › Voo 1 e Voo 3 |
+| Forças G, com e sem proteção | Conceitos › Voo 7 |
+| Adaptação ao escuro | Sistemas › Voo 4 |
+| Ruído e tempo máximo de exposição (NR-15) | Conceitos › Voo 6 e Aviação › Voo 7 |
+| Radiação cósmica por ano de voo | Conceitos › Voo 5 |
+| Regra do 1% | Aviação › Voo 1 |
 | Perda óssea no espaço | Espaço › Ep 2 |
 
 Todos ficam também no **Laboratório aeroespacial**. Os componentes estão em `src/components/midia/`; para pôr um interativo num voo, use o campo `laboratorio` do capítulo ou `midias` do tópico em `src/data/`.
@@ -76,7 +76,7 @@ npm run export:web  # versão web estática em dist/
 | `src/components/abertura.tsx` | Abertura animada |
 | `src/components/midia/` | Simuladores, gráficos e atividades |
 | `src/lib/fisiologia.ts` | Cálculos de fisiologia usados nos interativos |
-| `src/data/secoes.ts` | Estrutura: 4 missões, 50 voos e tópicos |
+| `src/data/secoes.ts` | Estrutura: 4 missões, 44 voos e tópicos |
 | `src/data/capitulos/` | Voos já redigidos (um arquivo por voo) |
 | `src/data/historia.ts` | Missão especial O Voo e a Medicina |
 | `src/constants/capas.ts` | Índice das capas dos voos e artes das missões |

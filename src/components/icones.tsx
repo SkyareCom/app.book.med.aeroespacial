@@ -10,6 +10,8 @@ function Base({ cor, tamanho = 20, children }: Props & { children: React.ReactNo
   );
 }
 
+// Conceitos: três linhas de ar em movimento (o ambiente de voo).
+export const IconeConceitos = (p: Props) => <Base {...p}><Path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8" /></Base>;
 export const IconeHome = (p: Props) => <Base {...p}><Path d="M3 11l9-7 9 7v9H3z" /></Base>;
 export const IconeFisiologia = (p: Props) => <Base {...p}><Path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></Base>;
 export const IconeClinica = (p: Props) => <Base {...p}><Path d="M3 12h4l2-5 4 10 2-5h6" /></Base>;

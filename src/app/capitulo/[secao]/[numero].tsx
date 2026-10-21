@@ -20,7 +20,7 @@ import type { Recurso, Topico } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
-// Na versão web, gera uma página estática para cada um dos 50 capítulos.
+// Na versão web, gera uma página estática para cada um dos voos.
 export async function generateStaticParams() {
   return secoes.flatMap((s) => s.capitulos.map((c) => ({ secao: s.id, numero: String(c.numero) })));
 }

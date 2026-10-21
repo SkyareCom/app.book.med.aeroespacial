@@ -2,7 +2,7 @@
 // Cada tópico tem três níveis de leitura, sempre visíveis e em sequência.
 // O teste fica no final do capítulo, no botão "TESTE O CONHECIMENTO".
 
-export type SecaoId = 'fisiologia' | 'clinica' | 'operacao' | 'espaco';
+export type SecaoId = 'conceitos' | 'sistemas' | 'aviacao' | 'espaco';
 export type NivelLeitura = 'essencial' | 'explicacao' | 'clinico';
 
 // Mídias interativas disponíveis (componentes em src/components/midia).

@@ -20,14 +20,14 @@ import { nivelPorConcluidos, useProgresso } from '@/state/progresso';
 
 const LABORATORIO: TipoMidia[] = ['simulador-o2', 'simulador-visao', 'forcas-g', 'leis-gases', 'adaptacao-escuro', 'regua-ruido', 'radiacao-voo', 'risco-aeromedico', 'perda-ossea'];
 const IMAGEM_LAB: Partial<Record<TipoMidia, string>> = {
-  'simulador-o2': 'fisiologia-3',
-  'simulador-visao': 'fisiologia-9',
-  'forcas-g': 'fisiologia-6',
-  'leis-gases': 'fisiologia-5',
-  'adaptacao-escuro': 'fisiologia-9',
-  'regua-ruido': 'fisiologia-10',
-  'radiacao-voo': 'fisiologia-12',
-  'risco-aeromedico': 'clinica-1',
+  'simulador-o2': 'sistemas-1',
+  'simulador-visao': 'sistemas-4',
+  'forcas-g': 'conceitos-7',
+  'leis-gases': 'conceitos-3',
+  'adaptacao-escuro': 'sistemas-4',
+  'regua-ruido': 'conceitos-6',
+  'radiacao-voo': 'conceitos-5',
+  'risco-aeromedico': 'aviacao-1',
   'perda-ossea': 'espaco-2',
 };
 
@@ -38,9 +38,9 @@ export default function Home() {
 
   const destaques: ItemDestaque[] = [
     { id: 'voo', imagem: ArteEspecialVoo, rotulo: 'Missão especial', titulo: 'O Voo e a Medicina', sinopse: 'Dos balões de 1783 ao turismo espacial: como cada conquista do céu revelou um novo limite do corpo humano.', meta: '5 eras · 20 eventos', botao: 'Decolar', onPress: () => router.push('/historia') },
-    { id: 'hipoxia', imagem: CapaEpisodio['fisiologia-3'], rotulo: 'Missão 1 · Voo 3', titulo: 'Respiração e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores de visão e da curva do oxigênio.', meta: '25 min · 4 interativos', botao: 'Decolar', onPress: () => router.push(rotaEpisodio('fisiologia', 3)) },
+    { id: 'hipoxia', imagem: CapaEpisodio['sistemas-1'], rotulo: 'Missão 2 · Voo 1', titulo: 'Respiração e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores de visão e da curva do oxigênio.', meta: '25 min · 4 interativos', botao: 'Decolar', onPress: () => router.push(rotaEpisodio('sistemas', 1)) },
     { id: 'espaco', imagem: ArteTemporada.espaco, rotulo: 'Missão 4', titulo: 'Espaço', sinopse: obterSecao('espaco')!.sinopse, meta: '8 voos', botao: 'Ver missão', onPress: () => router.push('/espaco') },
-    { id: 'lab', imagem: CapaEpisodio['fisiologia-6'], rotulo: 'Laboratório aeroespacial', titulo: 'Sinta as forças G', sinopse: 'Puxe G, suba sem oxigênio, veja o gás se expandir e calcule a radiação de um ano de voos.', meta: '11 interativos', botao: 'Abrir', onPress: () => router.push('/laboratorio') },
+    { id: 'lab', imagem: CapaEpisodio['conceitos-7'], rotulo: 'Laboratório aeroespacial', titulo: 'Sinta as forças G', sinopse: 'Puxe G, suba sem oxigênio, veja o gás se expandir e calcule a radiação de um ano de voos.', meta: '11 interativos', botao: 'Abrir', onPress: () => router.push('/laboratorio') },
   ];
 
   const continuar = ultimos
@@ -59,7 +59,7 @@ export default function Home() {
       </View>
 
       <Fileira titulo={continuar.length ? 'Continue de onde parou' : 'Comece por aqui'}>
-        {(continuar.length ? continuar : [{ s: obterSecao('fisiologia')!, c: obterCapitulo('fisiologia', 3)! }]).map(({ s, c }) => (
+        {(continuar.length ? continuar : [{ s: obterSecao('sistemas')!, c: obterCapitulo('sistemas', 1)! }]).map(({ s, c }) => (
           <CartaoEpisodio key={`${s.id}-${c.numero}`} secao={s} capitulo={c} largura={260} />
         ))}
       </Fileira>
@@ -119,7 +119,7 @@ export default function Home() {
         {LABORATORIO.map((m) => (
           <Pressable key={m} accessibilityRole="button" onPress={() => router.push({ pathname: '/laboratorio', params: { midia: m } })} style={{ width: 170, gap: 6 }}>
             <View style={styles.capaLab}>
-              <Image source={CapaEpisodio[IMAGEM_LAB[m] ?? 'fisiologia-1']} style={StyleSheet.absoluteFill} contentFit="cover" />
+              <Image source={CapaEpisodio[IMAGEM_LAB[m] ?? 'conceitos-1']} style={StyleSheet.absoluteFill} contentFit="cover" />
               <LinearGradient colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.75)']} style={StyleSheet.absoluteFill} />
               <View style={{ position: 'absolute', left: 10, top: 8 }}>
                 <Selo texto="Interativo" cor={Cores.dourado} />

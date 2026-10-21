@@ -23,7 +23,7 @@ export function SimuladorVisao() {
   return (
     <MolduraMidia tipo="Simulação" titulo="O que a hipóxia faz com a sua visão" instrucao="Respirando ar, sem máscara. Arraste para subir.">
       <View style={styles.tela}>
-        <Image source={CapaEpisodio['operacao-4']} style={StyleSheet.absoluteFill} contentFit="cover" blurRadius={blur} />
+        <Image source={CapaEpisodio['aviacao-6']} style={StyleSheet.absoluteFill} contentFit="cover" blurRadius={blur} />
         <View style={[StyleSheet.absoluteFill, { backgroundColor: `rgba(0,0,0,${(t * 0.6).toFixed(2)})` }]} />
         <LinearGradient colors={['rgba(0,0,0,1)', 'rgba(0,0,0,0)']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={[styles.lado, { left: 0, width: `${tunel * 45}%` }]} />
         <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={[styles.lado, { right: 0, width: `${tunel * 45}%` }]} />
