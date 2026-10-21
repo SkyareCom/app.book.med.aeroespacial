@@ -102,7 +102,7 @@ O login com Google e Apple ainda depende das credenciais das contas de desenvolv
 
 ## Como adicionar um voo
 
-1. Crie `src/data/capitulos/<nome>.ts` seguindo o modelo de `hipoxia.ts`: cada tópico com `essencial`, `explicacao`, `clinico` e `pontosChave`, os `midias` que fizerem sentido, e o `teste` com uma questão por tópico, indicando o `topico` de origem.
+1. Crie `src/data/capitulos/<nome>.ts` seguindo o modelo de `hipoxia.ts`: cada tópico com `essencial`, `explicacao` e `clinico` (sem pontos-chave: a informação fica no texto), os `midias` que fizerem sentido, e o `teste` com uma questão por tópico, indicando o `topico` de origem.
 Use `recursos` (em cada tópico) para pôr gráficos, interativos e imagens no meio do texto, logo após um nível de leitura; uma linha em branco no texto separa parágrafos.
 2. Em `src/data/secoes.ts`, troque a linha `cap(...)` do capítulo pelo objeto importado.
 
