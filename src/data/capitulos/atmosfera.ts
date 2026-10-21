@@ -17,7 +17,8 @@
 //   termosfera até ~600 km, exosfera acima), linha de Kármán a 100 km, auroras e Estação Espacial (~400 km):
 //   US Standard Atmosphere 1976 e Ernsting's, 5ª ed. [confirmar página].
 // - Concorde em cruzeiro a cerca de 60.000 ft; Everest 8.849 m [confirmar referência].
-// Recursos: foto da Terra vista da órbita (cenas/hero.jpg), gráfico composicao-ar e ilustração camadas-atmosfera.
+// Recursos: foto da Terra vista da órbita (cenas/hero.jpg), gráfico composicao-ar e camadas-atmosfera
+// (rótulos sobre a foto cenas/camadas.jpg, gerada por IA).
 
 import type { Capitulo } from '../tipos';
 
