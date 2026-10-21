@@ -1,10 +1,10 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
+import { IconeSeta } from '@/components/icones';
 import { NOME_MIDIA } from '@/components/midia';
 import { Selo } from '@/components/selo';
 import { CartaoEpisodio, Destaques, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
@@ -13,7 +13,6 @@ import { Texto } from '@/components/texto';
 import { ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Imagens } from '@/constants/imagens';
 import { BordaCapa, Cores, Espaco } from '@/constants/theme';
-import { curiosidades } from '@/data/extras';
 import { eras } from '@/data/historia';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
 import type { TipoMidia } from '@/data/tipos';
@@ -35,7 +34,6 @@ const IMAGEM_LAB: Partial<Record<TipoMidia, string>> = {
 export default function Home() {
   const router = useRouter();
   const { concluidos, ultimos } = useProgresso();
-  const [curiosidade, setCuriosidade] = useState(0);
   const pctGeral = concluidos.length / totalCapitulos;
 
   const destaques: ItemDestaque[] = [
@@ -143,20 +141,22 @@ export default function Home() {
         </CartaoImagem>
       </View>
 
-      <Pressable style={{ paddingHorizontal: GUTTER }} accessibilityRole="button" accessibilityLabel="Próxima curiosidade" onPress={() => setCuriosidade((i) => (i + 1) % curiosidades.length)}>
-        <CartaoImagem imagem={Imagens.curiosidades} altura={140} direcao="topo">
-          <View style={styles.linhaEntre}>
-            <Texto t="rotulo" cor={Cores.destaque}>Curiosidades aeronáuticas</Texto>
-            <Texto t="rotulo" cor={Cores.textoApagado}>{curiosidade + 1}/{curiosidades.length}</Texto>
+      <View style={{ paddingHorizontal: GUTTER }}>
+        <CartaoImagem imagem={Imagens.curiosidades} altura={150} direcao="topo" onPress={() => router.push('/curiosidades')} rotuloAcessivel="Abrir curiosidades aeronáuticas">
+          <Texto t="rotulo" cor={Cores.destaque}>Curiosidades aeronáuticas</Texto>
+          <Texto t="item">Fatos surpreendentes sobre o corpo no céu e no espaço</Texto>
+          <View style={styles.abrir}>
+            <Texto t="rotulo" cor={Cores.dourado}>Explorar</Texto>
+            <IconeSeta cor={Cores.dourado} tamanho={16} />
           </View>
-          <Texto t="item">{curiosidades[curiosidade]}</Texto>
         </CartaoImagem>
-      </Pressable>
+      </View>
     </TelaCheia>
   );
 }
 
 const styles = StyleSheet.create({
+  abrir: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 2 },
   linhaEntre: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   grade: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   celula: { flexBasis: '45%', flexGrow: 1, gap: 4 },
