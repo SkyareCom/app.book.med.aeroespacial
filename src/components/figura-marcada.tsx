@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Animated, Platform, Pressable, StyleSheet, View } from 'react-native';
 import Svg, { Circle, Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
 
@@ -14,7 +14,7 @@ export function FiguraMarcada({ imagem, legenda, proporcao = 16 / 9, marcadores 
   const [sel, setSel] = useState<number | null>(null);
   const [larg, setLarg] = useState(300);
   const alt = larg / proporcao;
-  const pulso = useRef(new Animated.Value(0)).current;
+  const [pulso] = useState(() => new Animated.Value(0));
   useEffect(() => {
     if (sel === null) return;
     pulso.setValue(0);

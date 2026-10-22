@@ -147,8 +147,8 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
   const c = topico.conteudo;
   const [aberto, setAberto] = useState(destacado);
   const pode = !!c;
-  const giro = useRef(new Animated.Value(destacado ? 1 : 0)).current;
-  const entrada = useRef(new Animated.Value(destacado ? 1 : 0)).current;
+  const [giro] = useState(() => new Animated.Value(destacado ? 1 : 0));
+  const [entrada] = useState(() => new Animated.Value(destacado ? 1 : 0));
   useEffect(() => {
     Animated.timing(giro, { toValue: aberto ? 1 : 0, duration: 240, useNativeDriver: NATIVO }).start();
     if (aberto) {
