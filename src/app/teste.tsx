@@ -10,8 +10,8 @@ import { chaveCapitulo, obterCapitulo, obterSecao, secoes } from '@/data/secoes'
 import type { Questao } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 
-// Uma única tela de teste para três origens:
-// capitulo (fim do capítulo), era (card O Voo e a Medicina) e geral (Modo quiz / Modo prova da Home).
+// Teste no fim do capítulo, história completa e Modo quiz / Modo prova da Home.
+// A origem era continua aceitando os links antigos.
 export default function TelaTeste() {
   const p = useLocalSearchParams<{ origem?: string; secao?: string; numero?: string; era?: string; modo?: string }>();
   const router = useRouter();
@@ -23,6 +23,9 @@ export default function TelaTeste() {
     if (p.origem === 'capitulo' && p.secao && p.numero) {
       const c = obterCapitulo(p.secao, Number(p.numero));
       return { questoes: c?.teste ?? [], titulo: c?.titulo ?? '', rotulo: `Teste · ${obterSecao(p.secao)?.titulo ?? ''}`, chave: chaveCapitulo(p.secao, Number(p.numero)) };
+    }
+    if (p.origem === 'historia') {
+      return { questoes: eras.flatMap((era) => era.teste), titulo: 'O Voo e a Medicina', rotulo: 'Teste · Missão especial', chave: undefined };
     }
     if (p.origem === 'era' && p.era) {
       const e = eras.find((x) => x.id === p.era);
@@ -54,7 +57,7 @@ export default function TelaTeste() {
         onRevisar={
           p.origem === 'capitulo' && p.secao && p.numero
             ? (topico) => router.replace({ pathname: '/capitulo/[secao]/[numero]', params: { secao: p.secao!, numero: p.numero!, topico } })
-            : p.origem === 'era'
+            : p.origem === 'era' || p.origem === 'historia'
               ? () => router.back()
               : undefined
         }

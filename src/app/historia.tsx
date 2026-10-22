@@ -9,7 +9,7 @@ import { ArteEspecialVoo } from '@/constants/capas';
 import { Cores, Espaco } from '@/constants/theme';
 import { eras } from '@/data/historia';
 
-// Linha do tempo em 5 eras. O teste fica no final de cada era.
+// Linha do tempo em 5 eras, com um único teste ao final de todo o capítulo.
 export default function Historia() {
   const router = useRouter();
   return (
@@ -36,12 +36,12 @@ export default function Historia() {
               </View>
             ))}
           </View>
-          <BotaoPrincipal
-            rotulo="Teste o conhecimento"
-            onPress={() => router.push({ pathname: '/teste', params: { origem: 'era', era: era.id, modo: 'quiz' } })}
-          />
         </View>
       ))}
+      <BotaoPrincipal
+        rotulo="Teste o conteúdo"
+        onPress={() => router.push({ pathname: '/teste', params: { origem: 'historia', modo: 'quiz' } })}
+      />
     </Tela>
   );
 }

@@ -111,7 +111,7 @@ export default function TelaCapitulo() {
 
           {capitulo.teste?.length ? (
             <BotaoPrincipal
-              rotulo="Teste o conhecimento"
+              rotulo="Teste o conteúdo"
               onPress={() => router.push({ pathname: '/teste', params: { origem: 'capitulo', secao: secao.id, numero: String(capitulo.numero), modo: 'quiz' } })}
             />
           ) : null}
