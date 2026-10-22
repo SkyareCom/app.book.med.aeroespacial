@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
 import { AtividadeClassificar } from '@/components/midia/atividade-classificar';
+import { AltitudePressao, CompararAtmosferaPadrao } from '@/components/midia/atmosfera-padrao';
 import { CamadasAtmosfera } from '@/components/midia/camadas-atmosfera';
 import { ComposicaoAr } from '@/components/midia/composicao-ar';
 import { GasesNoCorpo } from '@/components/midia/gases-corpo';
@@ -39,6 +40,8 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'grafico-dalton': () => <GraficoDalton />,
   'grafico-henry': () => <GraficoHenry />,
   'grafico-charles': () => <GraficoCharles />,
+  'comparar-atmosfera-padrao': () => <CompararAtmosferaPadrao />,
+  'altitude-pressao': () => <AltitudePressao />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -60,6 +63,8 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'grafico-dalton': 'Lei de Dalton',
   'grafico-henry': 'Lei de Henry',
   'grafico-charles': 'Lei de Charles',
+  'comparar-atmosfera-padrao': 'Modelo e medição',
+  'altitude-pressao': 'Altitude-pressão',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

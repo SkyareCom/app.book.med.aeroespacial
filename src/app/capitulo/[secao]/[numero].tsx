@@ -13,6 +13,7 @@ import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
 import { BotaoVoltarFlutuante, Tela, TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
+import { VejaTambem } from '@/components/veja-tambem';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
@@ -205,6 +206,7 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
               <Texto>{c.alerta}</Texto>
             </View>
           ) : null}
+          {c.vejaTambem?.length ? <VejaTambem voos={c.vejaTambem} /> : null}
           <Pressable
             accessibilityRole="button"
             onPress={() => {

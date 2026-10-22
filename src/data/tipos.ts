@@ -24,7 +24,9 @@ export type TipoMidia =
   | 'grafico-boyle'
   | 'grafico-dalton'
   | 'grafico-henry'
-  | 'grafico-charles';
+  | 'grafico-charles'
+  | 'comparar-atmosfera-padrao'
+  | 'altitude-pressao';
 
 export interface ConteudoTopico {
   essencial: string;
@@ -32,6 +34,7 @@ export interface ConteudoTopico {
   clinico: string;
   pontosChave?: string[];
   alerta?: string;
+  vejaTambem?: { codigo: string; titulo: string; secao: SecaoId; voo: number }[];
   // Recursos no meio do texto, logo depois do nível indicado: um interativo/gráfico/ilustração ou uma imagem com legenda.
   recursos?: Recurso[];
 }
