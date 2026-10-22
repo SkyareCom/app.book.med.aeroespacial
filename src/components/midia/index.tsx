@@ -63,8 +63,8 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'grafico-dalton': 'Lei de Dalton',
   'grafico-henry': 'Lei de Henry',
   'grafico-charles': 'Lei de Charles',
-  'comparar-atmosfera-padrao': 'Modelo e medição',
-  'altitude-pressao': 'Altitude-pressão',
+  'comparar-atmosfera-padrao': 'Modelo ou medição?',
+  'altitude-pressao': 'Pressão e altitude no modelo',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

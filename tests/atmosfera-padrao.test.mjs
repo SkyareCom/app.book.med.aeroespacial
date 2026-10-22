@@ -29,7 +29,7 @@ test('III abre com os três níveis e intercala duas fotos e os dois interativos
     assert.ok(c.recursos.some((r) => r.apos === 'entenda' && r.paragrafo === paragrafo));
   }
   assert.ok(c.clinico.includes('[confirmar na referência]'));
-  assert.equal(c.vejaTambem.length, 3);
+  assert.equal(c.vejaTambem, undefined, 'Veja também foi removido por solicitação do autor');
 });
 
 test('a questão do tópico III participa do teste do voo, com quatro alternativas e explicação', () => {

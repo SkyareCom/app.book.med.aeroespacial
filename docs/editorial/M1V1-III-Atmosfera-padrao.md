@@ -19,14 +19,14 @@ Legenda do app (1 frase): O cenário muda; uma referência comum permite compara
 Parágrafo 1: Imagine comparar receitas usando xícaras de tamanhos diferentes. Uma medida comum resolve o problema: a atmosfera padrão estabelece condições de referência para cálculos, ensaios e instrumentos.
 
 [VISUAL 2 · após o parágrafo 1]
-Tipo: gráfico/animação
+Tipo: atividade interativa
 Prompt ou descrição:
-Título: Uma referência para comparar.
-O leitor toca em “Modelo” e “Medição”. O primeiro mostra as condições de referência; o segundo abre campos para dados efetivamente medidos.
-Ao arrastar o controle de altitude, o leitor acompanha pressão e temperatura em painéis separados, evitando comparar unidades diferentes.
-Dados usados: equações, coeficientes, faixa de validade e valores de referência [confirmar na referência].
-As medições precisam trazer local, momento e procedência; nenhum valor observado será inventado.
-Legenda do app (1 frase): Compare o modelo com uma medição identificada, usando a mesma altitude e as mesmas unidades. [confirmar na referência]
+Título: Modelo ou medição?
+O leitor recebe quatro situações curtas, uma por vez, e escolhe entre Modelo e Medição.
+Cada escolha revela a resposta correta e uma explicação; o botão Próximo caso avança e Ver resultado encerra a atividade.
+Os exemplos distinguem condições de referência, consulta a tabelas, leitura de barômetro e leitura de termômetro.
+Não há formulário, campo vazio ou dado físico fictício.
+Legenda do app (1 frase): Reconheça o que pertence ao modelo e o que foi observado no ambiente.
 
 Parágrafo 2: Um manequim ajuda a comparar tamanhos, mas não descreve todas as pessoas. Da mesma forma, o modelo não reproduz cada condição meteorológica encontrada em voo. [confirmar na referência]
 
@@ -39,14 +39,14 @@ Legenda do app (1 frase): Observar e medir o ambiente permite confrontar a refer
 Parágrafo 3: Uma tabela de conversão associa uma medida à outra. A altitude-pressão (altitude correspondente a uma pressão na atmosfera padrão) faz essa associação: expressa pressão em termos de altitude.
 
 [VISUAL 4 · após o parágrafo 3]
-Tipo: gráfico/animação
+Tipo: demonstração interativa
 Prompt ou descrição:
-Título: Da pressão à altitude-pressão.
-O leitor arrasta um marcador em uma escala de pressão, expressa em mmHg.
-Uma segunda escala mostra a altitude-pressão correspondente, em ft com metros entre parênteses.
-Uma linha liga as duas posições e destaca que representam a mesma condição no modelo.
-Dados usados: relação entre pressão e altitude, domínio da função e conversão de unidades [confirmar na referência].
-Legenda do app (1 frase): A altitude-pressão traduz uma pressão para a escala de altitudes do modelo.
+Título: Pressão e altitude no modelo.
+O leitor toca em Menor pressão ou Maior pressão.
+O marcador sobe ou desce e uma frase explica a mudança da altitude-pressão na mesma atmosfera padrão.
+A figura é qualitativa e não apresenta uma escala numérica, uma curva calculada ou um valor de altitude inventado.
+Dados usados: relação entre pressão e altura; referência no registro complementar abaixo.
+Legenda do app (1 frase): Menor pressão corresponde a maior altitude-pressão; maior pressão corresponde a menor altitude-pressão.
 
 3. PARA PROFISSIONAIS
 Parágrafo 1: Para reproduzir um cálculo, identifique a pressão e a temperatura de referência, além da relação adotada entre pressão e altitude. Pressão basal: [confirmar na referência] mmHg; temperatura basal: [confirmar na referência] °C; equações e faixa de validade: [confirmar na referência].
@@ -57,11 +57,6 @@ Parágrafo 3: A padronização permite apresentar resultados de ensaios e avalia
 
 4. ATENÇÃO (opcional)
 Um valor do modelo não comprova as condições reais da cabine nem determina, isoladamente, a segurança clínica de uma exposição. [confirmar na referência]
-
-5. VEJA TAMBÉM
-M1V2 · Pressurização e oxigênio suplementar.
-M2V1 · Sistema respiratório e hipóxia.
-M3V1 · Certificação e risco aeromédico.
 
 6. QUESTÃO DO TESTE
 Enunciado: Uma equipe precisa comparar dois ensaios de equipamentos realizados sob condições atmosféricas diferentes. Qual é o papel da atmosfera padrão?
@@ -88,7 +83,6 @@ Status: minuta editorial com conferência bibliográfica pendente; trechos dos l
 | Interpretação clínica, documentação da exposição e alerta | Fundamentals of Aerospace Medicine, 5ª edição; capítulo [confirmar na referência]; [confirmar página]. Trecho não recebido. |
 | Requisitos específicos de certificação e aptidão | Normas ICAO, EASA, FAA e ANAC: documento, versão, dispositivo e aplicabilidade [confirmar na referência]. Nenhum limite ou requisito médico foi atribuído a uma norma. |
 | Analogias da xícara, do manequim e da tabela de conversão | Recursos editoriais autorais; as afirmações técnicas associadas seguem as referências e pendências acima. |
-| Remissões em Veja também | Organização atual do app-book; não constitui evidência científica. |
 | Fotos e animações | Propostas autorais de produção; imagens ainda não geradas e gráficos ainda não implementados. |
 | Valores calculados | Nenhum valor numérico calculado nesta minuta. Fórmulas, coeficientes e conversões dos gráficos aguardam confirmação. |
 
@@ -104,7 +98,16 @@ CHECAGEM FINAL
 
 - Somente M1V1 - III foi preenchido. Os dados e as questões de I e II permanecem idênticos.
 - Fotografias geradas por IA, convertidas para JPEG sem mudar a composição: assets/images/topicos/m1v1-3-voo.jpg e m1v1-3-observacao.jpg.
-- Os interativos distinguem modelo e medição e apresentam a associação entre pressão e altitude-pressão. Campos vazios não geram valores.
+- Atividades substituídas por classificação guiada com feedback e demonstração visual qualitativa; os formulários foram retirados.
 - Equações, coeficientes e dados normativos ainda não confirmados permanecem pendentes; nenhuma curva ou conversão numérica foi inventada.
-- As remissões abrem os voos correspondentes. A questão foi acrescentada ao teste do voo M1V1.
+- A seção de remissões foi removida a pedido do autor. A questão de III continua no teste do voo M1V1.
 - Este registro e os prompts ficam no código-fonte; não integram o texto exibido no app.
+
+
+## Registro complementar das atividades revisadas
+
+- Modelo versus observação: finalidades do ICAO Doc 7488 e definição de atmosfera padrão no RBAC 01 já registradas acima. Os quatro casos são exemplos pedagógicos autorais.
+- Relação qualitativa entre pressão e altura: FAA, AC 00-6B, Aviation Weather, edição datada de 23/08/2016, seção 5.3.3, figura 5-12, página 61 do PDF. O texto oficial declara que a pressão diminui com a altura. URL: https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00-6B.pdf
+- Aplicação à altitude-pressão: definição do RBAC 01, seção 01.1, já registrada acima. A demonstração mantém o mesmo modelo e apresenta apenas o sentido da correspondência.
+- Nenhum novo valor físico ou cálculo foi incluído. As coordenadas do desenho representam somente posições gráficas, sem escala científica.
+- M1V1 - I e II, suas imagens e suas questões permanecem congelados.

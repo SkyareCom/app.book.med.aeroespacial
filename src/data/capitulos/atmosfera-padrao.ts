@@ -37,11 +37,6 @@ export const topicoAtmosferaPadrao: Topico = {
       },
       { apos: 'entenda', paragrafo: 3, midia: 'altitude-pressao' },
     ],
-    vejaTambem: [
-      { codigo: 'M1V2', titulo: 'Pressurização e oxigênio suplementar', secao: 'conceitos', voo: 2 },
-      { codigo: 'M2V1', titulo: 'Sistema respiratório e hipóxia', secao: 'sistemas', voo: 1 },
-      { codigo: 'M3V1', titulo: 'Certificação e risco aeromédico', secao: 'aviacao', voo: 1 },
-    ],
   },
 };
 
