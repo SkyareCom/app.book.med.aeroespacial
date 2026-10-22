@@ -5,6 +5,7 @@ import { CamadasAtmosfera } from '@/components/midia/camadas-atmosfera';
 import { ComposicaoAr } from '@/components/midia/composicao-ar';
 import { GasesNoCorpo } from '@/components/midia/gases-corpo';
 import { GraficoBoyle, GraficoCharles, GraficoDalton, GraficoHenry } from '@/components/midia/leis-gases-graficos';
+import { GraficoAtmosferaPadrao, SimuladorAltitudeDensidade } from '@/components/midia/atmosfera-padrao';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -39,6 +40,8 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'grafico-dalton': () => <GraficoDalton />,
   'grafico-henry': () => <GraficoHenry />,
   'grafico-charles': () => <GraficoCharles />,
+  'atmosfera-padrao': () => <GraficoAtmosferaPadrao />,
+  'altitude-densidade': () => <SimuladorAltitudeDensidade />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -60,6 +63,8 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'grafico-dalton': 'Lei de Dalton',
   'grafico-henry': 'Lei de Henry',
   'grafico-charles': 'Lei de Charles',
+  'atmosfera-padrao': 'Atmosfera padrão',
+  'altitude-densidade': 'Altitude-densidade',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

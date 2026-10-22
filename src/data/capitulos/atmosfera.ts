@@ -17,6 +17,18 @@
 //   termosfera até ~600 km, exosfera acima), linha de Kármán a 100 km, auroras e Estação Espacial (~400 km):
 //   US Standard Atmosphere 1976 e Ernsting's, 5ª ed. [confirmar página].
 // - Concorde em cruzeiro a cerca de 60.000 ft; Everest 8.849 m [confirmar referência].
+// M1V1 - III · Atmosfera padrão
+// - Definição e valores ao nível do mar (288,15 K; 101.325 Pa = 1.013,25 hPa = 760 mmHg; 1,225 kg/m³), 6,5 °C/km,
+//   tropopausa a 11 km com −56,5 °C; padrão de 1976 (COESA) derivado do padrão ICAO de 1962:
+//   AMS Glossary of Meteorology, verbete "standard atmosphere"; ICAO Doc 7488 [confirmar edição e página].
+// - 15 °C e 29,92 inHg ao nível do mar; cerca de 2 °C/1.000 ft até 36.000 ft; cerca de 1 inHg/1.000 ft até 10.000 ft;
+//   altitude-pressão e altitude-densidade; densidade ∝ pressão e ∝ 1/temperatura; umidade torna o ar menos denso;
+//   exemplo 8.000 ft, 80 °F, ponto de orvalho 75 °F → 11.564 ft, quase 500 ft a menos sem umidade:
+//   FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C), cap. 4, p. 4-3 a 4-5.
+// - Ernsting's, 5ª ed., capítulo da atmosfera [confirmar página].
+// - Conversões 80 °F ≈ 27 °C e 75 °F ≈ 24 °C; simulador de altitude-densidade calcula a densidade do ar seco
+//   (P/T) e a altitude da troposfera padrão com a mesma densidade: σ = (1 − 6,8756·10⁻⁶·h)^4,2559 (cálculo).
+// Fotos premium pendentes (prompts enviados ao autor): balão meteorológico, avião em cruzeiro, aeroporto de altitude em dia quente.
 // Recursos: foto da Terra vista da órbita (cenas/hero.jpg), gráfico composicao-ar e camadas-atmosfera
 // (rótulos sobre a foto cenas/camadas.jpg, gerada por IA).
 //
@@ -148,7 +160,42 @@ export const atmosfera: Capitulo = {
         ],
       },
     },
-    { id: '1.3', titulo: 'Atmosfera padrão' },
+    {
+      id: '1.3',
+      titulo: 'Atmosfera padrão',
+      pergunta: 'Se o ar muda todo dia, como o piloto sabe a que altura está?',
+      conteudo: {
+        essencial:
+          'A atmosfera padrão é uma atmosfera de referência, combinada entre os países, que define a temperatura, a pressão e a densidade do ar em cada altitude. Ela não descreve o tempo de hoje: é a régua comum que calibra altímetros, cálculos de desempenho e tabelas de fisiologia.',
+        explicacao: [
+          'Ao nível do mar, a atmosfera padrão tem 15 °C e pressão de 1.013,25 hPa, o mesmo que 760 mmHg. Subindo, a temperatura cai cerca de 2 °C a cada 1.000 ft, até a tropopausa, a cerca de 36.000 ft (11 km), onde chega a −56,5 °C. A pressão cai junto: perto de 1 polegada de mercúrio a cada 1.000 ft nos primeiros 10.000 ft.',
+          'O altímetro funciona como um barômetro: ele mede a pressão do ar e a traduz em altitude usando essa régua. Ajustado para 1.013,25 hPa, ele mostra a altitude-pressão, usada nos cálculos de desempenho e nos níveis de voo.',
+          'Num dia quente, o ar fica menos denso, e o avião se comporta como se estivesse mais alto: é a altitude-densidade. A umidade também deixa o ar mais leve. Com menos ar, o motor rende menos potência e a asa e a hélice produzem menos sustentação e tração.',
+        ].join('\n\n'),
+        clinico: [
+          'Atmosfera Padrão ICAO, base da U.S. Standard Atmosphere 1976: ao nível do mar, 288,15 K (15 °C), 101.325 Pa (1.013,25 hPa; 760 mmHg; 29,92 inHg) e densidade de 1,225 kg/m³. Gradiente térmico de 6,5 °C/km (cerca de 2 °C/1.000 ft) até a tropopausa padrão, a 11 km (36.089 ft), com −56,5 °C.',
+          'Altitude-pressão é a altura acima do plano de referência de 1.013,25 hPa (29,92 inHg), lida com o altímetro ajustado nesse valor. Altitude-densidade é a altitude-pressão corrigida para a temperatura fora do padrão: a altitude da atmosfera padrão em que se encontra a mesma densidade do ar.',
+          'A densidade varia na razão direta da pressão e na razão inversa da temperatura. Exemplo do manual da FAA: a 8.000 ft, com 27 °C e ponto de orvalho de 24 °C, a altitude-densidade chega a 11.564 ft; sem a umidade, ficaria quase 500 ft abaixo.',
+          'Os valores fisiológicos calculados neste app, como a pressão parcial de oxigênio e a expansão dos gases, usam a atmosfera padrão como referência. Em dias e lugares reais, os valores mudam com a pressão e a temperatura locais.',
+        ].join('\n\n'),
+        recursos: [
+          { apos: 'entenda', paragrafo: 1, midia: 'atmosfera-padrao' },
+          { apos: 'entenda', paragrafo: 3, midia: 'altitude-densidade' },
+          {
+            apos: 'entenda',
+            paragrafo: 2,
+            tabela: {
+              titulo: 'Dois jeitos de medir a altitude',
+              colunas: ['Altitude', 'O que é', 'Para que serve'],
+              linhas: [
+                ['Altitude-pressão', 'Altura acima do nível de 1.013,25 hPa, com o altímetro ajustado em 29,92 inHg.', 'Cálculos de desempenho e níveis de voo.'],
+                ['Altitude-densidade', 'Altitude-pressão corrigida para a temperatura fora do padrão.', 'Saber como o avião e o motor vão render naquele dia.'],
+              ],
+            },
+          },
+        ],
+      },
+    },
     // A radiação fica toda no M1V5 (Radiação cósmica), não aqui.
     { id: '1.4', titulo: 'Temperatura e umidade' },
   ],
@@ -164,6 +211,18 @@ export const atmosfera: Capitulo = {
       ],
       correta: 1,
       explicacao: 'A proporção dos gases se mantém na faixa de voo; o que cai é a pressão, que perto de 18.000 ft é metade da do nível do mar.',
+    },
+    {
+      topico: '1.3',
+      pergunta: 'Num dia de 35 °C, um avião decola de um aeroporto a 5.000 ft. O que acontece?',
+      opcoes: [
+        'Nada: o avião só depende da altitude do aeroporto.',
+        'O ar mais quente é mais denso, e o avião rende mais.',
+        'A altitude-densidade fica acima de 5.000 ft, e motor, hélice e asa rendem menos.',
+        'O altímetro passa a marcar a altitude-densidade.',
+      ],
+      correta: 2,
+      explicacao: 'O ar quente é menos denso. O avião se comporta como se estivesse mais alto, com menos potência, tração e sustentação.',
     },
     {
       topico: '1.2',
