@@ -15,7 +15,7 @@ test('os tópicos I e II e suas questões permanecem integralmente congelados', 
   assert.equal(hash(atmosfera.teste[1]), '0c809060029bb0af7c6498bbef83a3a2435be134b1201f253d071ec2e5752ef4');
 });
 
-test('III abre com os três níveis e intercala duas fotos e os dois interativos', () => {
+test('III define o modelo, compara seus parâmetros e intercala os visuais', () => {
   const topico = atmosfera.topicos.find((t) => t.id === '1.3');
   assert.ok(topico.conteudo, 'O tópico Atmosfera padrão precisa deixar de ser um cartão em produção');
   const c = topico.conteudo;
@@ -23,12 +23,17 @@ test('III abre com os três níveis e intercala duas fotos e os dois interativos
   assert.equal(c.explicacao.split('\n\n').length, 3);
   assert.equal(c.clinico.split('\n\n').length, 3);
   assert.equal(c.recursos.filter((r) => r.figura).length, 2);
-  assert.equal(c.recursos.filter((r) => r.midia).length, 2);
+  assert.equal(c.recursos.filter((r) => r.midia).length, 1);
+  assert.equal(c.recursos.filter((r) => r.tabela).length, 2);
   assert.ok(c.recursos.some((r) => r.apos === 'essencial' && r.figura));
   for (const paragrafo of [1, 2, 3]) {
     assert.ok(c.recursos.some((r) => r.apos === 'entenda' && r.paragrafo === paragrafo));
   }
-  assert.ok(c.clinico.includes('[confirmar na referência]'));
+  const parametros = c.recursos.find((r) => r.tabela?.titulo === 'Parâmetros: padrão × atmosfera real').tabela;
+  assert.ok(parametros.linhas.some((l) => l[0].includes('Temperatura ao nível do mar') && l[1].includes('15 °C')));
+  assert.ok(parametros.linhas.some((l) => l[0].includes('Pressão ao nível do mar') && l[1].includes('1.013,25 hPa')));
+  assert.ok(parametros.linhas.some((l) => l[0].includes('Densidade ao nível do mar') && l[1].includes('1,225 kg/m³')));
+  assert.ok(!JSON.stringify(c).includes('[confirmar na referência]'), 'As informações exibidas devem ter referência conferida');
   assert.equal(c.vejaTambem, undefined, 'Veja também foi removido por solicitação do autor');
 });
 
