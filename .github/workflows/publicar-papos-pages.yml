@@ -29,6 +29,9 @@ jobs:
           node-version: '22'
           cache: npm
 
+      - name: Verificar congelamento editorial de M1V1 I-IV
+        run: node scripts/check-m1v1-frozen.cjs
+
       - name: Instalar dependências
         run: npm ci
 
