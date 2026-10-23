@@ -18,12 +18,8 @@ App-book de medicina aeroespacial que pretende ser referência mundial. É unive
 ---
 
 ## 2. Regras de conteúdo
-1. **Três níveis de leitura por tópico, sempre visíveis e em sequência, sem botão de "ler mais":**
-   - **Essencial:** 1 a 2 frases simples, para todos.
-   - **Entenda:** um parágrafo curto, com os termos técnicos explicados entre parênteses.
-   - **Para profissionais:** um parágrafo curto com fisiopatologia, valores, condutas e normas.
-   Cada nível acrescenta informação nova, sem repetir o anterior.
-2. Depois dos níveis vêm até 3 pontos-chave.
+1. **Texto único por tópico:** sequência editorial didática, técnica e fluida. Começa pelo conceito, apresenta o mecanismo, mostra os efeitos e fecha com implicações clínicas ou operacionais. Não separar em "Essencial", "Entenda" e "Para profissionais".
+2. **Destaques dentro da própria narrativa:** marcar fórmulas, mecanismos e alertas relevantes em negrito/cor, sem listas de pontos-chave redundantes. Figuras, tabelas e atividades devem entrar ao lado do parágrafo que explicam.
 3. **Quiz e testes ficam sempre no final do capítulo,** num botão "TESTE O CONHECIMENTO". Nunca dentro dos tópicos. Cada questão indica o tópico de origem, para o app mandar o leitor revisar o trecho certo.
 4. Português do Brasil, frases curtas, sem emojis. Valores incertos com "cerca de". Somente fatos verificáveis.
 
@@ -92,7 +88,7 @@ App-book de medicina aeroespacial que pretende ser referência mundial. É unive
 ---
 
 ## 4. Card especial — O VOO E A MEDICINA
-Fica fora das 4 seções. É a história da medicina aeroespacial em 20 eventos cronológicos, divididos em 5 eras, com os mesmos 3 níveis de leitura e o botão "TESTE O CONHECIMENTO" no final de cada era. Só fatos históricos relevantes, sem homenagens a pessoas da atualidade.
+Fica fora das 4 seções. É a história da medicina aeroespacial em 20 eventos cronológicos, divididos em 5 eras, com narrativa direta em cada evento e o botão "TESTE O CONHECIMENTO" no final de cada era. Só fatos históricos relevantes, sem homenagens a pessoas da atualidade.
 
 1. **Os Balões (1783–1902):** 1783 primeiros voos de balão · 1862 Glaisher e Coxwell descrevem a hipóxia · 1875 tragédia do balão Zénith · 1878 Paul Bert e a pressão parcial de oxigênio.
 2. **O Avião e a Primeira Guerra (1903–1918):** 1903/1906 Wright e Santos-Dumont · 1908 Selfridge, primeira morte em acidente de avião · 1914–1918 primeiros exames médicos de pilotos e o médico de voo.
@@ -113,7 +109,7 @@ Fica fora das 4 seções. É a história da medicina aeroespacial em 20 eventos 
 ## 6. Formato dos dados (JSON)
 - **Seção:** `id`, `titulo`, `subtitulo`, `resumo`, `capitulos[]`.
 - **Capítulo:** `id`, `numero`, `slug`, `titulo`, `tituloCurto`, `resumo`, `tempoLeituraMin`, `objetivos[]`, `recursos[]`, `topicos[]`, `teste`.
-- **Tópico:** `id`, `slug`, `titulo`, `pergunta` (pergunta-guia em linguagem leiga), `nivel` (`basico`, `intermediario` ou `avancado`), `recursos[]` e `conteudo` com `essencial`, `explicacao`, `clinico`, `analogia`, `pontosChave[]`, `glossario[]`, `alerta`, `midia[]` e `referencias[]`.
+- **Tópico:** `id`, `titulo`, `pergunta` (pergunta-guia) e `conteudo.texto` como narrativa única. `conteudo.recursos[]` intercala imagens, gráficos e tabelas por posição de parágrafo; `midias[]` oferece atividades integradas. Os testes permanecem no fim do voo.
 - **Teste:** `rotuloBotao: "TESTE O CONHECIMENTO"` e `questoes[]`, cada uma com `pergunta`, `opcoes[4]`, `correta`, `explicacao`, `nivel` e `topico`.
 
 ---
