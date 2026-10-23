@@ -1,5 +1,5 @@
 // Tipos de conteúdo do app-book.
-// Cada tópico tem três níveis de leitura, sempre visíveis e em sequência.
+// Cada tópico apresenta um texto único, em parágrafos progressivos com destaques editoriais.
 // O teste fica no final do capítulo, no botão "TESTE O CONHECIMENTO".
 
 export type SecaoId = 'conceitos' | 'sistemas' | 'aviacao' | 'espaco';
@@ -29,18 +29,15 @@ export type TipoMidia =
   | 'altitude-densidade';
 
 export interface ConteudoTopico {
-  essencial: string;
-  explicacao: string;
-  clinico: string;
-  pontosChave?: string[];
-  alerta?: string;
-  // Recursos no meio do texto, logo depois do nível indicado: um interativo/gráfico/ilustração ou uma imagem com legenda.
+  // Prosa contínua; dois saltos de linha separam parágrafos.
+  // **Termos ou conclusões importantes** recebem destaque inline, sem cabeçalhos.
+  texto: string;
   recursos?: Recurso[];
 }
 
 export interface Recurso {
-  apos: 'essencial' | 'entenda' | 'profissionais';
-  // Opcional: entra logo depois deste parágrafo do nível (1 = primeiro), quebrando o texto.
+  // Um recurso com paragrafo aparece imediatamente após o parágrafo correspondente.
+  // Sem paragrafo, aparece ao final do texto; a contagem começa em 1.
   paragrafo?: number;
   midia?: TipoMidia;
   // Figura fotográfica. `proporcao` = largura/altura (padrão 16:9). `marcadores`: estruturas que só se destacam quando
