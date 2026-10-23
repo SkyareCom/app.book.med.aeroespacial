@@ -24,7 +24,10 @@ export type TipoMidia =
   | 'grafico-boyle'
   | 'grafico-dalton'
   | 'grafico-henry'
-  | 'grafico-charles';
+  | 'grafico-charles'
+  | 'comparar-atmosfera-padrao'
+  | 'altitude-pressao'
+  | 'aquecimento-umidade';
 
 export interface ConteudoTopico {
   essencial: string;

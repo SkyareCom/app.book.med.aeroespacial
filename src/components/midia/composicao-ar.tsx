@@ -42,11 +42,10 @@ export function ComposicaoAr() {
   const cy = 44 + ryMax;
   const H = cy + ryMax + 40 + 26;
 
-  let acc = 0;
-  const fatias = GASES.map((g) => {
-    const a0 = acc;
-    acc += g.pct / 100;
-    return { g, a0, a1: acc, meio: (a0 + acc) / 2 };
+  const fatias = GASES.map((g, i) => {
+    const a0 = GASES.slice(0, i).reduce((soma, anterior) => soma + anterior.pct / 100, 0);
+    const a1 = a0 + g.pct / 100;
+    return { g, a0, a1, meio: (a0 + a1) / 2 };
   });
   // Fatia escolhida sai do conjunto, como na apresentação de um gráfico de cinema.
   const deslocar = (meio: number, id: string) => (id === sel ? [Math.sin(meio * 2 * Math.PI) * 16, -Math.cos(meio * 2 * Math.PI) * 9] : [0, 0]);

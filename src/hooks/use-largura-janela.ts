@@ -1,15 +1,24 @@
-import { useEffect, useState } from 'react';
-import { Platform, useWindowDimensions } from 'react-native';
+import { useSyncExternalStore } from 'react';
+import { Dimensions } from 'react-native';
 
 import { LarguraMaxima } from '@/constants/theme';
 
-// Largura da janela segura para a versão web pré-renderizada.
-// No site estático as páginas são geradas sem tela (largura 0) e o navegador
-// não corrige estilos divergentes na hidratação. Por isso, na web, a primeira
-// renderização usa a largura máxima do app e a largura real entra após montar.
+function assinarLargura(atualizar: () => void) {
+  const assinatura = Dimensions.addEventListener('change', atualizar);
+  return () => assinatura.remove();
+}
+
+function lerLargura() {
+  const largura = Dimensions.get('window').width;
+  return largura > 0 ? largura : LarguraMaxima;
+}
+
+function lerLarguraServidor() {
+  return LarguraMaxima;
+}
+
+// O servidor e a primeira renderização da hidratação usam a mesma largura.
+// Depois, a assinatura acompanha a largura real e as mudanças da janela.
 export function useLarguraJanela() {
-  const { width } = useWindowDimensions();
-  const [montado, setMontado] = useState(Platform.OS !== 'web');
-  useEffect(() => setMontado(true), []);
-  return montado && width > 0 ? width : LarguraMaxima;
+  return useSyncExternalStore(assinarLargura, lerLargura, lerLarguraServidor);
 }

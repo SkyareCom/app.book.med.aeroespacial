@@ -65,7 +65,7 @@ export function LeisDosGases() {
         <Leitura rotulo="Gás no ouvido e no intestino" valor={`${fmt(umido, 2)}×`} cor={umido > 2 ? Cores.erro : umido > 1.3 ? Cores.dourado : Cores.texto} />
         <Leitura rotulo="Ar seco, como num pacote" valor={`${fmt(seco, 2)}×`} />
       </View>
-      <Texto cor={Cores.textoApagado}>O gás dentro do corpo está saturado de vapor d'água a 37 °C, por isso se expande mais que o ar seco.</Texto>
+      <Texto cor={Cores.textoApagado}>O gás dentro do corpo está saturado de vapor d&apos;água a 37 °C, por isso se expande mais que o ar seco.</Texto>
     </MolduraMidia>
   );
 }

@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
 import { AtividadeClassificar } from '@/components/midia/atividade-classificar';
+import { AltitudePressao, CompararAtmosferaPadrao } from '@/components/midia/atmosfera-padrao';
 import { CamadasAtmosfera } from '@/components/midia/camadas-atmosfera';
 import { ComposicaoAr } from '@/components/midia/composicao-ar';
 import { GasesNoCorpo } from '@/components/midia/gases-corpo';
@@ -9,6 +10,7 @@ import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
 import { SimuladorVisao } from '@/components/midia/simulador-visao';
+import { AquecimentoUmidade } from '@/components/midia/temperatura-umidade';
 import type { TipoMidia } from '@/data/tipos';
 
 const CASOS_HIPOXIA = [
@@ -39,6 +41,9 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'grafico-dalton': () => <GraficoDalton />,
   'grafico-henry': () => <GraficoHenry />,
   'grafico-charles': () => <GraficoCharles />,
+  'comparar-atmosfera-padrao': () => <CompararAtmosferaPadrao />,
+  'altitude-pressao': () => <AltitudePressao />,
+  'aquecimento-umidade': () => <AquecimentoUmidade />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -60,6 +65,9 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'grafico-dalton': 'Lei de Dalton',
   'grafico-henry': 'Lei de Henry',
   'grafico-charles': 'Lei de Charles',
+  'comparar-atmosfera-padrao': 'Modelo ou medição?',
+  'altitude-pressao': 'Pressão e altitude no modelo',
+  'aquecimento-umidade': 'Temperatura e umidade relativa',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

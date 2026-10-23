@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Animated, Easing, Platform, Pressable, StyleSheet, View } from 'react-native';
 import Svg, { Circle, Defs, G, Line, LinearGradient, Path, RadialGradient, Rect, Stop, Text as SvgText } from 'react-native-svg';
 
@@ -169,7 +169,7 @@ const BOLHAS = Array.from({ length: 22 }, (_, i) => ({ x: fr(i * 0.618034 + 0.1)
 
 export function GraficoHenry() {
   const [aberta, setAberta] = useState(false);
-  const t = useRef(new Animated.Value(0)).current;
+  const [t] = useState(() => new Animated.Value(0));
   useEffect(() => {
     if (!aberta) {
       t.stopAnimation();
