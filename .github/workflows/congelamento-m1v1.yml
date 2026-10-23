@@ -1,0 +1,26 @@
+# Bloqueio de regressão editorial para os quatro tópicos finalizados.
+# O status falha se qualquer tópico ou questão do teste final for alterado.
+name: Verificar congelamento M1V1 I-IV
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  congelamento:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter arquivos do projeto
+        uses: actions/checkout@v4
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Conferir tópicos e questões congelados
+        run: node scripts/check-m1v1-frozen.cjs
