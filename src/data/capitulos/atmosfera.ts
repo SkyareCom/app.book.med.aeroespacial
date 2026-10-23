@@ -1,8 +1,8 @@
 // Missão 1 (Conceitos) · Voo 1 — Atmosfera e ambiente de voo.
-// Segue o Padrão Editorial dos Voos. Tópicos sem `conteudo` ainda estão em produção.
+// Segue o Padrão Editorial dos Voos. Tópicos com `texto` apresentam prosa contínua; os demais seguem em produção.
 //
 // REGISTRO DE REVISÃO (não aparece no app)
-// M1V1 - I · Composição e camadas da atmosfera — CONGELADO em 21/10/2026: não alterar sem pedido do autor.
+// M1V1 - I · Composição e camadas da atmosfera — texto integrado conforme pedido editorial de 23/10/2026.
 // - Composição do ar seco (N₂ 78,08%, O₂ 20,95%, Ar 0,93%, CO₂ cerca de 0,04%) e proporção constante com a altitude:
 //   Ernsting's Aviation and Space Medicine, 5ª ed., cap. sobre a atmosfera [confirmar capítulo e página];
 //   Fundamentals of Aerospace Medicine, 5ª ed., cap. sobre o ambiente físico [confirmar capítulo e página].
@@ -60,7 +60,7 @@
 // - Contexto fisiológico adicional: Ernsting's Aviation and Space Medicine, 5ª ed.,
 //   e Fundamentals of Aerospace Medicine, 5ª ed. [confirmar capítulo e página].
 //
-//import type { Capitulo } from '../tipos';
+import type { Capitulo } from '../tipos';
 
 export const atmosfera: Capitulo = {
   numero: 1,
@@ -71,24 +71,18 @@ export const atmosfera: Capitulo = {
       titulo: 'Camadas da atmosfera',
       pergunta: 'Do que é feito o ar que respiramos, e o que muda quando subimos?',
       conteudo: {
-        essencial:
-          'A atmosfera é a camada de gases que envolve a Terra: cerca de 78% de nitrogênio e 21% de oxigênio. Essa proporção quase não muda com a altitude. O que muda é a pressão, que cai à medida que subimos.',
-        explicacao: [
-          'O ar é uma mistura. Quase quatro quintos são nitrogênio, que o corpo não usa para respirar. Um quinto é oxigênio, o gás que cada célula usa para produzir energia. O resto é argônio, gás carbônico e traços de outros gases, além do vapor d’água, que varia com o clima.',
-          'O ar tem peso. Como numa pilha de cobertores, as camadas de baixo são comprimidas pelas de cima, por isso a pressão é maior perto do chão e cai com a altura. Perto de 18.000 ft (cerca de 5.500 m) ela já é metade da do nível do mar.',
-          'Subindo, a atmosfera muda de comportamento e se divide em camadas. A troposfera, onde vivemos e voamos, tem nuvens e tempo, e a temperatura cai cerca de 2 °C a cada 1.000 ft. Ela termina na tropopausa, mais alta no equador que nos polos.',
-          'Acima vêm a estratosfera, com a camada de ozônio, a mesosfera, a mais fria, onde os meteoros se queimam, e a termosfera, onde ficam as auroras e a Estação Espacial. Na linha de Kármán, a 100 km, começa convencionalmente o espaço.',
-        ].join('\n\n'),
-        clinico: [
-          'Ar seco: N₂ 78,08%, O₂ 20,95%, argônio 0,93% e CO₂ cerca de 0,04%, proporções constantes na faixa de voo. O vapor d’água varia e fica quase todo na troposfera.',
-          'Atmosfera Padrão ICAO: 760 mmHg (1.013,25 hPa) e 15 °C ao nível do mar, gradiente de 1,98 °C/1.000 ft e tropopausa a 36.089 ft (11 km) com −56,5 °C. A pressão parcial de O₂ é 0,2095 × pressão total: cerca de 159 mmHg ao nível do mar e 80 mmHg a 18.000 ft.',
-          'Divisão fisiológica clássica: zona fisiológica até 10.000 ft; zona fisiologicamente deficiente de 10.000 a 50.000 ft, que exige oxigênio suplementar e pressurização; acima de 50.000 ft, zona equivalente ao espaço.',
-          'Na Linha de Armstrong, cerca de 63.000 ft (19 km), a pressão ambiente iguala 47 mmHg, a pressão do vapor d’água a 37 °C: sem traje pressurizado, os líquidos expostos do corpo fervem.',
+        texto: [
+          "A **atmosfera** é o envoltório gasoso da Terra. No ar seco, predominam o nitrogênio (78,08%) e o oxigênio (20,95%); há também argônio (0,93%), dióxido de carbono (cerca de 0,04%) e outros gases. O vapor de água varia conforme as condições meteorológicas. Na faixa usual de voo, a proporção de oxigênio permanece praticamente constante.",
+          "O ar tem massa e exerce pressão. Perto da superfície, uma coluna maior de atmosfera comprime as camadas inferiores. À medida que a altitude aumenta, a pressão diminui e o ar fica menos denso. **Por volta de 18.000 ft (5.500 m), a pressão atmosférica é aproximadamente metade da observada ao nível do mar.**",
+          "A quantidade de oxigênio disponível ao organismo não depende apenas de sua porcentagem. Depende também da **pressão parcial de oxigênio**, a parcela de pressão atribuída a esse gás. Na atmosfera padrão, ela passa de aproximadamente 159 mmHg ao nível do mar para 80 mmHg a 18.000 ft. Essa redução ajuda a explicar a hipóxia de altitude.",
+          "A **troposfera** contém a maior parte do vapor de água e concentra os fenômenos meteorológicos. Nela, a temperatura geralmente diminui com a altura. Na atmosfera padrão, a queda é de cerca de 2 °C por 1.000 ft até a tropopausa, situada em torno de 36.000 ft (11 km). Sua altitude real varia com a latitude e a estação.",
+          "Acima da tropopausa ficam a estratosfera, onde se concentra parte importante do ozônio, e a mesosfera, onde muitos meteoros se desintegram. A termosfera inclui regiões das auroras e a órbita da Estação Espacial Internacional. Mais além está a exosfera. **A linha de Kármán, a 100 km, é uma referência convencional para o início do espaço**, não uma fronteira onde o ar desaparece subitamente.",
+          "Para compreender a exposição humana, costuma-se distinguir a zona fisiológica até cerca de 10.000 ft, a faixa de deficiência fisiológica entre 10.000 e 50.000 ft e as altitudes ainda mais extremas. A necessidade de proteção respiratória e de pressurização aumenta com a exposição. Perto da **linha de Armstrong, a 63.000 ft (19 km)**, a pressão ambiente se aproxima de 47 mmHg, pressão de vapor da água a 37 °C. Sem pressurização, líquidos corporais expostos podem entrar em ebulição.",
         ].join('\n\n'),
         recursos: [
-          { apos: 'essencial', figura: { imagem: require('@/assets/images/cenas/hero.jpg'), legenda: 'A atmosfera vista da órbita: a faixa azul fina no horizonte concentra quase todo o ar do planeta.' } },
-          { apos: 'essencial', midia: 'composicao-ar' },
-          { apos: 'entenda', midia: 'camadas-atmosfera' },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/cenas/hero.jpg'), legenda: 'A atmosfera vista da órbita: a faixa azul fina no horizonte concentra quase todo o ar do planeta.' } },
+          { paragrafo: 1, midia: 'composicao-ar' },
+          { paragrafo: 5, midia: 'camadas-atmosfera' },
         ],
       },
     },
@@ -97,26 +91,18 @@ export const atmosfera: Capitulo = {
       titulo: 'Leis dos gases',
       pergunta: 'Por que o ouvido dói na descida, falta oxigênio lá em cima e o mergulhador não pode voar logo depois?',
       conteudo: {
-        essencial:
-          'O corpo carrega gases: no ouvido, nos seios da face, no intestino, nos pulmões e dissolvidos no sangue. Quando a pressão cai na subida, três leis da física explicam o que acontece com eles: o gás preso se expande, o oxigênio entra com menos força e o nitrogênio dissolvido tende a sair em bolhas.',
-        explicacao: [
-          'Lei de Boyle: quanto menor a pressão, maior o volume de um gás. É o pacote de salgadinho que estufa durante o voo. No corpo, o gás preso em cavidades fechadas faz o mesmo e pressiona as paredes ao redor.',
-          'Na subida, o ar do ouvido médio e dos seios da face precisa sair, e normalmente sai sozinho. Na descida, ele precisa entrar: se a passagem estiver fechada, como num resfriado, a pressão de fora empurra o tímpano e dói. Os gases do intestino também crescem e causam desconforto.',
-          'Lei de Dalton: a pressão do ar é a soma das pressões de cada gás. O oxigênio responde por cerca de 21% dela em qualquer altitude. Quando a pressão total cai, a parte do oxigênio cai junto, e é ela que empurra o oxigênio dos pulmões para o sangue: daí a hipóxia em altitude.',
-          'Lei de Henry: a quantidade de gás dissolvida num líquido acompanha a pressão desse gás. Ao abrir um refrigerante, a pressão cai e o gás sai em bolhas. O nitrogênio dissolvido no sangue e nos tecidos pode fazer o mesmo se a pressão cair rápido demais: é a doença descompressiva.',
-          'Lei de Charles: o gás aquecido se expande e o resfriado se contrai. Dentro do corpo, cuja temperatura quase não muda, ela pesa pouco. Pesa mais nos equipamentos: no frio, a pressão de um cilindro de oxigênio fechado cai.',
+        texto: [
+          "Durante o voo, o organismo contém gases nos pulmões, no ouvido médio, nos seios da face, no trato digestivo e dissolvidos nos tecidos. Quando a pressão ambiente muda, esses gases respondem de maneiras diferentes. **As leis de Boyle, Dalton, Henry e Charles, associadas à relação pressão–temperatura, explicam os efeitos mais importantes.**",
+          "Pela **lei de Boyle**, mantendo a temperatura constante, pressão e volume variam em sentido inverso: P₁V₁ = P₂V₂. É por isso que uma embalagem fechada se estufa durante a subida. Nos espaços corporais, o ar retido também tende a se expandir quando a pressão externa diminui.",
+          "No ouvido e nos seios da face, o ar normalmente sai durante a subida e precisa retornar na descida. Se uma inflamação obstrui essa comunicação, a diferença de pressão pode provocar barotrauma, especialmente no ouvido médio. Também podem ocorrer barossinusite, dor em dentes e distensão intestinal. Para o gás úmido do organismo, o cálculo didático de expansão considera o vapor de água a 37 °C (47 mmHg): (760 − 47) ÷ (PB − 47). Na atmosfera padrão, o fator aproximado é 1,4 a 8.000 ft, 2,1 a 18.000 ft e 3 a 25.000 ft.",
+          "A **lei de Dalton** estabelece que a pressão total equivale à soma das pressões parciais dos gases. Como o oxigênio representa aproximadamente 20,95% do ar seco, sua pressão parcial diminui quando cai a pressão atmosférica. Após a umidificação nas vias aéreas, a pressão inspirada aproximada é 0,2095 × (PB − 47): 149 mmHg ao nível do mar, 108 mmHg a 8.000 ft e 70 mmHg a 18.000 ft. Essa é uma das bases da hipóxia hipóxica e do uso de oxigênio suplementar.",
+          "Pela **lei de Henry**, a quantidade de gás dissolvida num líquido depende de sua pressão parcial. Quando a pressão ambiente cai, os tecidos podem ficar supersaturados de nitrogênio, favorecendo a formação de bolhas. É o mecanismo da doença descompressiva. O risco cresce com determinados perfis de exposição, com descompressões acentuadas e após mergulho com gás comprimido. Por isso, o intervalo entre mergulho e voo exige avaliação específica.",
+          "A **lei de Charles** relaciona o volume à temperatura absoluta quando a pressão permanece constante. Num recipiente rígido, a relação entre pressão e temperatura é descrita por Gay-Lussac. Como a temperatura do organismo costuma ser regulada, essas relações são mais visíveis nos equipamentos: ao esfriar, um cilindro fechado pode indicar pressão menor sem perda de gás.",
+          "Na avaliação para voo, merecem atenção **resfriados e sinusites**, que dificultam a equalização da pressão, e situações de gás retido, como pneumotórax não drenado ou bolhas intraoculares após certas cirurgias. A interpretação correta depende da cavidade afetada, do sentido da variação de pressão e da condição clínica. **Oxigenação, expansão de gases e doença descompressiva são problemas diferentes**, embora compartilhem a mesma origem física.",
         ].join('\n\n'),
-        clinico: [
-          'Boyle (P₁V₁ = P₂V₂, temperatura constante). O gás das cavidades corporais está saturado de vapor d’água a 37 °C (47 mmHg), que não se expande com a queda de pressão; por isso a expansão é (760 − 47) ÷ (P − 47). Na atmosfera padrão: cerca de 1,4× a 8.000 ft, a altitude máxima de cabine em operação normal; 2,1× a 18.000 ft; 3× a 25.000 ft.',
-          'Gás preso: barotrauma de ouvido médio, mais frequente na descida; barossinusite; barodontalgia; distensão gastrointestinal. Gases patológicos ou iatrogênicos pedem atenção na avaliação para voo: pneumotórax não drenado, gás intraocular após cirurgia de retina e ar em balonetes de cânulas e sondas.',
-          'Dalton (P total = soma das pressões parciais). PO₂ inspirado = 0,2095 × (PB − 47): cerca de 149 mmHg ao nível do mar, 108 mmHg a 8.000 ft e 70 mmHg a 18.000 ft. É a base da hipóxia hipóxica e do cálculo do oxigênio suplementar.',
-          'Henry (gás dissolvido proporcional à sua pressão parcial). Tecidos saturados de N₂ ao nível do mar ficam supersaturados quando a pressão ambiente cai; com descompressão rápida ou exposição a grandes altitudes podem se formar bolhas. A doença descompressiva de altitude é rara abaixo de 18.000 ft, e mergulho com ar comprimido antes do voo aumenta o risco.',
-          'Charles e Gay-Lussac (volume e pressão proporcionais à temperatura absoluta). Pouco relevantes no corpo, de temperatura estável; explicam a queda de pressão de cilindros de oxigênio no frio.',
-        ].join('\n\n'),
-        alerta: 'Com gripe, resfriado ou sinusite, a dor de ouvido e dos seios da face na descida é mais provável. Quem mergulhou com cilindro deve respeitar o intervalo antes de voar.',
         recursos: [
           {
-            apos: 'essencial',
+            paragrafo: 1,
             figura: {
               imagem: require('@/assets/images/topicos/m1v1-2-corpo.jpg'),
               proporcao: 1100 / 1091,
@@ -131,17 +117,16 @@ export const atmosfera: Capitulo = {
             },
           },
           // Entenda: cada lei com o seu visual logo depois do parágrafo.
-          { apos: 'entenda', paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v1-2-pacote.jpg'), legenda: 'Lei de Boyle na prática: o pacote foi lacrado no chão; com a pressão menor da cabine, o ar de dentro se expande e estufa a embalagem.' } },
-          { apos: 'entenda', paragrafo: 2, midia: 'grafico-boyle' },
-          { apos: 'entenda', paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v1-2-alpinista.jpg'), legenda: 'Lei de Dalton: no alto da montanha o ar continua com 21% de oxigênio, mas a pressão é tão baixa que cada respiração leva menos oxigênio ao sangue.' } },
-          { apos: 'entenda', paragrafo: 3, midia: 'grafico-dalton' },
-          { apos: 'entenda', paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-2-garrafa.jpg'), legenda: 'Lei de Henry: ao abrir a garrafa, a pressão cai e o gás que estava dissolvido escapa em bolhas.' } },
-          { apos: 'entenda', paragrafo: 4, midia: 'grafico-henry' },
-          { apos: 'entenda', paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v1-2-cilindro.jpg'), legenda: 'Lei de Charles: no frio, o gás do cilindro empurra menos as paredes e o manômetro marca menos, sem que o oxigênio tenha vazado.' } },
-          { apos: 'entenda', paragrafo: 5, midia: 'grafico-charles' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v1-2-pacote.jpg'), legenda: 'Lei de Boyle na prática: o pacote foi lacrado no chão; com a pressão menor da cabine, o ar de dentro se expande e estufa a embalagem.' } },
+          { paragrafo: 3, midia: 'grafico-boyle' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-2-alpinista.jpg'), legenda: 'Lei de Dalton: no alto da montanha o ar continua com 21% de oxigênio, mas a pressão é tão baixa que cada respiração leva menos oxigênio ao sangue.' } },
+          { paragrafo: 4, midia: 'grafico-dalton' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v1-2-garrafa.jpg'), legenda: 'Lei de Henry: ao abrir a garrafa, a pressão cai e o gás que estava dissolvido escapa em bolhas.' } },
+          { paragrafo: 5, midia: 'grafico-henry' },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m1v1-2-cilindro.jpg'), legenda: 'Lei de Charles: no frio, o gás do cilindro empurra menos as paredes e o manômetro marca menos, sem que o oxigênio tenha vazado.' } },
+          { paragrafo: 6, midia: 'grafico-charles' },
           {
-            apos: 'profissionais',
-            paragrafo: 2,
+            paragrafo: 3,
             tabela: {
               titulo: 'Onde o gás fica preso',
               colunas: ['Local', 'Quando incomoda', 'O que se sente'],
@@ -154,9 +139,7 @@ export const atmosfera: Capitulo = {
               ],
             },
           },
-          {
-            apos: 'profissionais',
-            tabela: {
+          { tabela: {
               titulo: 'As leis dos gases em voo',
               colunas: ['Lei', 'O que diz', 'No corpo em voo'],
               linhas: [
@@ -175,25 +158,18 @@ export const atmosfera: Capitulo = {
       titulo: 'Atmosfera padrão',
       pergunta: 'Se o ar muda todo dia, como o piloto sabe a que altura está?',
       conteudo: {
-        essencial:
-          'A atmosfera padrão é uma atmosfera de referência, combinada entre os países, que define a temperatura, a pressão e a densidade do ar em cada altitude. Ela não descreve o tempo de hoje: é a régua comum que calibra altímetros, cálculos de desempenho e tabelas de fisiologia.',
-        explicacao: [
-          'Ao nível do mar, a atmosfera padrão tem 15 °C e pressão de 1.013,25 hPa, o mesmo que 760 mmHg. Subindo, a temperatura cai cerca de 2 °C a cada 1.000 ft, até a tropopausa, a cerca de 36.000 ft (11 km), onde chega a −56,5 °C. A pressão cai junto: perto de 1 polegada de mercúrio a cada 1.000 ft nos primeiros 10.000 ft.',
-          'O altímetro funciona como um barômetro: ele mede a pressão do ar e a traduz em altitude usando essa régua. Ajustado para 1.013,25 hPa, ele mostra a altitude-pressão, usada nos cálculos de desempenho e nos níveis de voo.',
-          'Num dia quente, o ar fica menos denso, e o avião se comporta como se estivesse mais alto: é a altitude-densidade. A umidade também deixa o ar mais leve. Com menos ar, o motor rende menos potência e a asa e a hélice produzem menos sustentação e tração.',
-        ].join('\n\n'),
-        clinico: [
-          'Atmosfera Padrão ICAO, base da U.S. Standard Atmosphere 1976: ao nível do mar, 288,15 K (15 °C), 101.325 Pa (1.013,25 hPa; 760 mmHg; 29,92 inHg) e densidade de 1,225 kg/m³. Gradiente térmico de 6,5 °C/km (cerca de 2 °C/1.000 ft) até a tropopausa padrão, a 11 km (36.089 ft), com −56,5 °C.',
-          'Altitude-pressão é a altura acima do plano de referência de 1.013,25 hPa (29,92 inHg), lida com o altímetro ajustado nesse valor. Altitude-densidade é a altitude-pressão corrigida para a temperatura fora do padrão: a altitude da atmosfera padrão em que se encontra a mesma densidade do ar.',
-          'A densidade varia na razão direta da pressão e na razão inversa da temperatura. Exemplo do manual da FAA: a 8.000 ft, com 27 °C e ponto de orvalho de 24 °C, a altitude-densidade chega a 11.564 ft; sem a umidade, ficaria quase 500 ft abaixo.',
-          'Os valores fisiológicos calculados neste app, como a pressão parcial de oxigênio e a expansão dos gases, usam a atmosfera padrão como referência. Em dias e lugares reais, os valores mudam com a pressão e a temperatura locais.',
+        texto: [
+          "A **atmosfera padrão** é um modelo internacional de referência para relacionar pressão, temperatura e densidade do ar com a altitude. Ela não representa necessariamente o tempo de um dia específico. Funciona como uma régua comum para interpretar altímetros, calcular desempenho de aeronaves e comparar exposições fisiológicas.",
+          "No nível do mar, o modelo adotado usa **15 °C, 1.013,25 hPa (760 mmHg ou 29,92 inHg) e densidade de 1,225 kg/m³**. Na troposfera padrão, a temperatura diminui cerca de 6,5 °C por quilômetro, ou aproximadamente 2 °C a cada 1.000 ft, chegando a −56,5 °C na tropopausa de referência, a 36.089 ft (11 km). A pressão atmosférica também diminui, mas não de forma linear ao longo de toda a subida.",
+          "O altímetro barométrico transforma a pressão ambiente em uma indicação de altitude. Quando ajustado para **1.013,25 hPa**, indica a **altitude-pressão**, referência usada nos níveis de voo e em cálculos operacionais. A altitude geométrica real pode ser diferente: o altímetro depende das condições atmosféricas e do ajuste empregado.",
+          "A **altitude-densidade** expressa a altitude da atmosfera padrão que teria a mesma densidade do ar observado. Quando o ar está mais quente, fica menos denso; a umidade também pode diminuir sua densidade. Isso reduz o desempenho disponível de motor, hélice e asa. No exemplo apresentado pela FAA, a 8.000 ft, com 27 °C e ponto de orvalho de 24 °C, a altitude-densidade chega a 11.564 ft — quase 500 ft acima do valor correspondente sem a umidade.",
+          "Os cálculos fisiológicos, como pressão parcial inspirada de oxigênio e expansão de gases, usam condições padronizadas para permitir comparações. **A condição real de voo depende da pressão, da temperatura e da umidade efetivamente presentes.** Separar referência e ambiente observado evita confundir uma medida operacional com a exposição física do organismo.",
         ].join('\n\n'),
         recursos: [
-          { apos: 'entenda', paragrafo: 1, midia: 'atmosfera-padrao' },
-          { apos: 'entenda', paragrafo: 3, midia: 'altitude-densidade' },
+          { paragrafo: 2, midia: 'atmosfera-padrao' },
+          { paragrafo: 4, midia: 'altitude-densidade' },
           {
-            apos: 'entenda',
-            paragrafo: 2,
+            paragrafo: 3,
             tabela: {
               titulo: 'Dois jeitos de medir a altitude',
               colunas: ['Altitude', 'O que é', 'Para que serve'],
@@ -212,23 +188,15 @@ export const atmosfera: Capitulo = {
       titulo: 'Temperatura e umidade',
       pergunta: 'Por que o ar é tão frio lá fora, tão seco na cabine e mais difícil de suportar no calor úmido?',
       conteudo: {
-        essencial:
-          'Temperatura indica quão quente ou frio está o ar; umidade indica a presença de vapor de água. Em voo, esses fatores afetam o ambiente, o desempenho da aeronave e o conforto do organismo.',
-        explicacao: [
-          'Fora do avião, a temperatura geralmente diminui com a altitude na troposfera. Dentro da cabine, o sistema de climatização controla a temperatura. Por isso, o frio intenso do ambiente externo não é a temperatura sentida pelos passageiros.',
-          'Umidade relativa é a porcentagem de vapor presente em relação à saturação possível naquela temperatura. Se o ar aquece sem ganhar vapor, essa porcentagem diminui. O ponto de orvalho é a temperatura na qual o ar atinge a saturação ao ser resfriado. Quando a temperatura se aproxima do ponto de orvalho, aumenta a possibilidade de condensação, nevoeiro e nuvens.',
-          'O ar de grandes altitudes contém pouco vapor de água. Em muitas cabines, a umidade relativa fica perto de 10% a 20% durante o cruzeiro. Olhos, nariz, boca e garganta podem ficar ressecados. A sensação de sede não significa, por si só, desidratação importante.',
-          'Em ambiente quente e úmido, o suor evapora mais devagar e o corpo perde calor com maior dificuldade. Para a aeronave, ar quente e úmido é menos denso: a decolagem e a subida podem ficar mais exigentes. O desconforto térmico do corpo e a perda de desempenho do avião são efeitos distintos.',
-        ].join('\n\n'),
-        clinico: [
-          'A umidade relativa depende da pressão de vapor de água e da pressão de saturação na temperatura observada. O ponto de orvalho expressa melhor o teor efetivo de vapor do que a umidade relativa isolada. Temperatura e ponto de orvalho próximos favorecem saturação, mas não determinam, sozinhos, nevoeiro ou formação de gelo.',
-          'Em cabines secas, pode haver irritação da superfície ocular e das mucosas, especialmente em usuários de lentes de contato. O aumento das perdas insensíveis de água costuma ser pequeno. A baixa umidade, isoladamente, não deve ser confundida com desidratação sistêmica. A conduta depende dos sintomas e da avaliação individual.',
-          'No calor úmido, a menor evaporação do suor reduz a dissipação térmica e aumenta a sobrecarga fisiológica. Isso importa para tripulantes e equipes em solo, sobretudo durante trabalho físico. Em situações de exposição ao frio, vento e roupas inadequadas podem intensificar a perda de calor.',
-          'Sob a mesma pressão, o aquecimento diminui a densidade do ar; o vapor de água também reduz a densidade quando substitui parte do ar seco. No planejamento do voo, temperatura, pressão e umidade entram na avaliação de desempenho. Umidade e temperatura também ajudam a reconhecer condições favoráveis à condensação e ao gelo.',
+        texto: [
+          "A **temperatura** descreve o estado térmico do ar; a **umidade** expressa a presença de vapor de água nessa mistura. Na troposfera, a temperatura geralmente cai com a altitude, mas varia com o tempo e a localização. Esses dois fatores influenciam as condições meteorológicas, o conforto humano e a densidade do ar.",
+          "A **umidade relativa** indica quanto o vapor presente representa da quantidade necessária para saturar o ar naquela temperatura. Se o ar for aquecido sem receber mais vapor, sua umidade relativa diminui. O **ponto de orvalho** é a temperatura na qual o ar alcança a saturação ao ser resfriado. Quanto menor a diferença entre temperatura e ponto de orvalho, maior a proximidade da saturação, sem que isso garanta a formação de nevoeiro.",
+          "Em grandes altitudes, o ar externo costuma conter pouco vapor de água. A cabine pressurizada recebe ar condicionado e tem temperatura controlada, independentemente do frio externo. Contudo, a umidade relativa pode permanecer baixa, frequentemente próxima de 10% a 20% em cruzeiro, conforme a aeronave e a operação.",
+          "A **baixa umidade de cabine** favorece ressecamento dos olhos, das vias aéreas superiores e da boca, especialmente em pessoas suscetíveis e usuárias de lentes de contato. A sensação de sede ou de mucosa seca não comprova desidratação sistêmica. A avaliação clínica deve considerar sintomas, exposição e condições individuais.",
+          "Em ambientes quentes e úmidos, o suor evapora mais lentamente e o organismo perde calor com maior dificuldade. Em frio intenso, vento e vestuário inadequado podem aumentar a perda térmica. Para a aeronave, o aquecimento do ar e a maior proporção de vapor de água reduzem a densidade em condições comparáveis de pressão. **Conforto térmico, fisiologia e desempenho aerodinâmico são consequências relacionadas, mas distintas.**",
         ].join('\n\n'),
         recursos: [
           {
-            apos: 'entenda',
             paragrafo: 2,
             tabela: {
               titulo: 'Como ler temperatura e umidade',
