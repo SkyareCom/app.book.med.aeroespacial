@@ -40,6 +40,7 @@
 
 import type { Capitulo } from '../tipos';
 import { questaoAtmosferaPadrao, topicoAtmosferaPadrao } from './atmosfera-padrao';
+import { questaoTemperaturaUmidade, topicoTemperaturaUmidade } from './temperatura-umidade';
 
 export const atmosfera: Capitulo = {
   numero: 1,
@@ -151,7 +152,7 @@ export const atmosfera: Capitulo = {
     },
     topicoAtmosferaPadrao,
     // A radiação fica toda no M1V5 (Radiação cósmica), não aqui.
-    { id: '1.4', titulo: 'Temperatura e umidade' },
+    topicoTemperaturaUmidade,
   ],
   teste: [
     {
@@ -179,5 +180,6 @@ export const atmosfera: Capitulo = {
       explicacao: 'Lei de Boyle: na descida a pressão de fora aumenta; se a passagem do ouvido está fechada, o ar não entra e o tímpano é empurrado para dentro.',
     },
     questaoAtmosferaPadrao,
+    questaoTemperaturaUmidade,
   ],
 };

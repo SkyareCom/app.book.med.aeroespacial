@@ -26,7 +26,8 @@ export type TipoMidia =
   | 'grafico-henry'
   | 'grafico-charles'
   | 'comparar-atmosfera-padrao'
-  | 'altitude-pressao';
+  | 'altitude-pressao'
+  | 'aquecimento-umidade';
 
 export interface ConteudoTopico {
   essencial: string;
