@@ -1,0 +1,62 @@
+# Compile and publish the actual Expo web bundle, not the TypeScript source.
+# GitHub Pages must use the gh-pages branch at / (root).
+name: Publicar PAPOS DE ALTITUDE no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: papos-de-altitude-gh-pages
+  cancel-in-progress: false
+
+jobs:
+  web:
+    name: Validar, compilar e publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Verificar tipos
+        run: npm run typecheck
+
+      - name: Gerar HTML de produção
+        run: npm run export:web
+
+      - name: Conferir conteúdo e navegação exportados
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -d dist/_expo
+          if ! grep -R -q 'Temperatura e umidade' dist; then
+            echo 'ERRO: M1V1 IV não está no pacote HTML exportado.'
+            exit 1
+          fi
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+
+      - name: Publicar arquivos reais na branch gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          enable_jekyll: false
+          keep_files: false
+          commit_message: 'Publicar HTML: ${{ github.sha }}'
