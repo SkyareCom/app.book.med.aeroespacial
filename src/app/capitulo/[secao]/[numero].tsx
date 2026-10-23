@@ -25,7 +25,7 @@ export async function generateStaticParams() {
   return secoes.flatMap((s) => s.capitulos.map((c) => ({ secao: s.id, numero: String(c.numero) })));
 }
 
-// Página do episódio: capa de cinema, cenas (tópicos) com os três níveis de leitura, interativos e o teste no final.
+// Página do episódio: capa de cinema, tópicos em prosa didática contínua, interativos e teste ao final.
 export default function TelaCapitulo() {
   const { secao: secaoId, numero, topico: foco } = useLocalSearchParams<{ secao: string; numero: string; topico?: string }>();
   const router = useRouter();
@@ -130,7 +130,7 @@ export default function TelaCapitulo() {
   );
 }
 
-// Uma cena = um tópico. Três níveis de leitura sempre visíveis, depois os interativos e os pontos-chave.
+// Uma cena = um tópico. O texto segue uma progressão didática, com recursos integrados entre os parágrafos.
 // Código do tópico: M = missão, V = voo e o número do tópico em romanos (ex.: M1V3 - II).
 function romano(n: number) {
   const tabela: [number, string][] = [[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
@@ -139,7 +139,7 @@ function romano(n: number) {
   return r;
 }
 
-// Cada tópico é uma gaveta: fechado mostra código, título e pergunta; ao tocar, abre com os três níveis juntos.
+// Cada tópico é uma gaveta: fechado mostra código, título e pergunta; ao tocar, abre com o texto único.
 // Tópico ainda sem texto não abre. Um tópico vindo de link direto (busca, teste) já chega aberto.
 // O topo do card é o puxador da gaveta: um toque abre, outro fecha, com a seta girando e o conteúdo deslizando.
 const NATIVO = Platform.OS !== 'web';
@@ -190,21 +190,10 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
 
       {aberto && c ? (
         <Animated.View style={{ gap: Espaco.md, opacity: entrada, transform: [{ translateY: entrada.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }] }}>
-          <Nivel rotulo="Essencial" texto={c.essencial} recursos={c.recursos} apos="essencial" />
-          <Recursos lista={c.recursos} apos="essencial" />
-          <Nivel rotulo="Entenda" texto={c.explicacao} recursos={c.recursos} apos="entenda" />
-          <Recursos lista={c.recursos} apos="entenda" />
-          <Nivel rotulo="Para profissionais" texto={c.clinico} recursos={c.recursos} apos="profissionais" />
-          <Recursos lista={c.recursos} apos="profissionais" />
+          <TextoCorrente texto={c.texto} recursos={c.recursos} />
           {topico.midias?.map((m) => (
             <Midia key={m} tipo={m} />
           ))}
-          {c.alerta ? (
-            <View style={styles.alerta}>
-              <Texto t="rotulo" cor={Cores.dourado}>Atenção</Texto>
-              <Texto>{c.alerta}</Texto>
-            </View>
-          ) : null}
           <Pressable
             accessibilityRole="button"
             onPress={() => {
@@ -223,41 +212,31 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
   );
 }
 
-// Cada linha em branco no texto vira um parágrafo, para o leitor ter pausas.
-// Recursos com `paragrafo` entram entre os parágrafos: o texto nunca corre sem um visual.
-function Nivel({ rotulo, texto, recursos, apos }: { rotulo: string; texto: string; recursos?: Recurso[]; apos: Recurso['apos'] }) {
-  const paragrafos = texto.split(/\n\s*\n/).map((p) => p.trim());
-  const blocos: { inicio: number; fim: number }[] = [];
-  let inicio = 0;
-  paragrafos.forEach((_, i) => {
-    const corte = recursos?.some((r) => r.apos === apos && r.paragrafo === i + 1);
-    if (corte || i === paragrafos.length - 1) {
-      blocos.push({ inicio, fim: i + 1 });
-      inicio = i + 1;
-    }
-  });
+// Prosa contínua: cada parágrafo pode destacar uma nuance entre **asteriscos duplos**.
+// Figuras, tabelas e simuladores entram após o parágrafo indicado, sem divisões por nível de leitura.
+function TextoCorrente({ texto, recursos }: { texto: string; recursos?: Recurso[] }) {
+  const paragrafos = texto.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   return (
-    <>
-      {blocos.map((b, k) => (
-        <View key={k} style={{ gap: Espaco.md }}>
-          <View style={styles.nivel}>
-            {k === 0 ? <Texto t="rotulo" cor={Cores.destaque}>{rotulo}</Texto> : null}
-            {paragrafos.slice(b.inicio, b.fim).map((p, i) => (
-              <Texto key={i} cor={Cores.textoSuave}>{p}</Texto>
-            ))}
-          </View>
-          {b.fim < paragrafos.length || recursos?.some((r) => r.apos === apos && r.paragrafo === b.fim) ? (
-            <Recursos lista={recursos?.filter((r) => r.paragrafo === b.fim)} apos={apos} entre />
-          ) : null}
+    <View style={{ gap: Espaco.md }}>
+      {paragrafos.map((p, i) => (
+        <View key={i} style={{ gap: Espaco.md }}>
+          <Texto cor={Cores.textoSuave}>
+            {p.split(/(\*\*[^*]+\*\*)/g).map((parte, j) =>
+              parte.startsWith('**') && parte.endsWith('**')
+                ? <Texto key={j} cor={Cores.destaque}>{parte.slice(2, -2)}</Texto>
+                : parte,
+            )}
+          </Texto>
+          <Recursos lista={recursos?.filter((r) => r.paragrafo === i + 1)} />
         </View>
       ))}
-    </>
+      <Recursos lista={recursos?.filter((r) => !r.paragrafo)} />
+    </View>
   );
 }
 
-function Recursos({ lista, apos, entre = false }: { lista?: Recurso[]; apos: Recurso['apos']; entre?: boolean }) {
-  // Sem `entre`, só os recursos do fim do nível (sem parágrafo marcado).
-  const itens = lista?.filter((r) => r.apos === apos && (entre || !r.paragrafo)) ?? [];
+function Recursos({ lista }: { lista?: Recurso[] }) {
+  const itens = lista ?? [];
   return (
     <>
       {itens.map((r, i) =>
@@ -303,6 +282,4 @@ const styles = StyleSheet.create({
   setaAberta: { borderColor: Cores.destaque, backgroundColor: 'rgba(111,211,255,0.1)' },
   seta: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
   fechar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, minHeight: 44, borderTopWidth: 1, borderTopColor: Cores.linha },
-  nivel: { gap: 8, paddingLeft: Espaco.md, borderLeftWidth: 1, borderLeftColor: Cores.linha },
-  alerta: { gap: 4, padding: Espaco.md, borderRadius: 12, backgroundColor: 'rgba(232,196,106,0.1)' },
 });
