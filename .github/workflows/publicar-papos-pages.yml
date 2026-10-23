@@ -47,8 +47,20 @@ jobs:
           set -euo pipefail
           test -s dist/index.html
           test -d dist/_expo
-          if ! grep -R -q 'Temperatura e umidade' dist; then
-            echo 'ERRO: M1V1 IV não está no pacote HTML exportado.'
+          test -s dist/capitulo/conceitos/1.html
+          # A entrada deve ser a Home, nunca uma tela de capítulo inválido.
+          grep -q 'Sua evolução' dist/index.html
+          if grep -q 'Voo não encontrado' dist/index.html; then
+            echo 'ERRO: a entrada do app está renderizando uma tela de erro.'
+            exit 1
+          fi
+          # O M1V1 precisa abrir com todos os tópicos, inclusive o IV congelado.
+          if ! grep -q 'M1V1 - IV: Temperatura e umidade' dist/capitulo/conceitos/1.html; then
+            echo 'ERRO: o quarto tópico não está presente no HTML do M1V1.'
+            exit 1
+          fi
+          if grep -q 'Voo não encontrado' dist/capitulo/conceitos/1.html; then
+            echo 'ERRO: a rota do M1V1 está renderizando um voo inexistente.'
             exit 1
           fi
           cp dist/index.html dist/404.html
