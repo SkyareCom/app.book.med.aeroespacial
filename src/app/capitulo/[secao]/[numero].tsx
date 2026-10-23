@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { Redirect, useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { Animated, Platform, Pressable, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
@@ -11,7 +11,7 @@ import { FiguraMarcada } from '@/components/figura-marcada';
 import { Midia } from '@/components/midia';
 import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
-import { BotaoVoltarFlutuante, Tela, TelaCheia } from '@/components/tela';
+import { BotaoVoltarFlutuante, TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
@@ -35,19 +35,22 @@ export default function TelaCapitulo() {
   // Posição de cada tópico na página, para voltar ao topo da gaveta quando ela é fechada lá embaixo.
   const posTopicos = useRef<Record<string, number>>({});
   const secao = obterSecao(secaoId);
-  const capitulo = obterCapitulo(secaoId, Number(numero));
+  // A exportação estática do Expo usa URLs como /capitulo/conceitos/1.html.
+  // No navegador o parâmetro pode chegar como "1.html": Number("1.html") seria NaN.
+  const numeroNormalizado = typeof numero === 'string' && /^[1-9]\d*(?:\.html)?$/i.test(numero)
+    ? Number.parseInt(numero, 10)
+    : NaN;
+  const capitulo = obterCapitulo(secaoId, numeroNormalizado);
 
   useEffect(() => {
     if (secao && capitulo) registrarVisita(chaveCapitulo(secao.id, capitulo.numero));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [secaoId, numero]);
 
+  // Links antigos, rota inválida ou capítulo inexistente retornam à Home.
+  // Nunca abrir um painel de erro como tela inicial do aplicativo.
   if (!secao || !capitulo) {
-    return (
-      <Tela titulo="Voo não encontrado">
-        <Texto cor={Cores.textoSuave}>Volte e escolha outro voo.</Texto>
-      </Tela>
-    );
+    return <Redirect href="/" />;
   }
 
   const pronto = disponivel(capitulo);
