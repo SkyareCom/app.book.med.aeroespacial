@@ -1,5 +1,5 @@
 // Missão 2 (Sistemas) · Voo 1 — Respiração e hipóxia (o número do voo é definido em secoes.ts).
-// Capítulo-modelo: mostra o padrão de redação dos três níveis de leitura e do teste.
+// Conteúdo reorganizado em narrativa técnica contínua, com conceitos encadeados e destaques.
 // Valores de tempo de consciência útil: FAA Advisory Circular 61-107 (tabela de TUC).
 
 import type { Capitulo } from '../tipos';
@@ -22,12 +22,12 @@ export const hipoxia: Capitulo = {
       titulo: 'Transporte de oxigênio',
       pergunta: 'O que acontece com o oxigênio do ar até chegar ao cérebro?',
       conteudo: {
-        essencial:
-          'Em altitude, o ar tem a mesma proporção de oxigênio, cerca de 21%, mas a pressão é menor. Com menos pressão, menos oxigênio entra no sangue.',
-        explicacao:
-          'O oxigênio passa do ar para os alvéolos (pequenos sacos no fim das vias respiratórias), depois para o sangue, onde a hemoglobina (proteína que carrega oxigênio) o leva até as células. O que empurra o oxigênio nessa passagem é a pressão parcial (a parte da pressão total que cabe ao oxigênio). Quanto mais alto, menor a pressão do ar e menor esse "empurrão".',
-        clinico:
-          'A pressão parcial de O₂ inspirada é FiO₂ × (pressão barométrica − 47 mmHg), descontando o vapor d’água a 37 °C. Ao nível do mar a PAO₂ é de cerca de 100 mmHg. A 8.000 ft (cerca de 2.400 m) cai para cerca de 65–70 mmHg, ainda na parte plana da curva de dissociação, com saturação perto de 90–93%. Acima de 10.000 ft a curva entra na porção íngreme e a saturação cai rapidamente.',
+        texto: [
+          "A oxigenação começa nos pulmões, mas depende de toda a circulação. O ar contém cerca de **20,95% de oxigênio** na faixa habitual de voo. Quando a altitude aumenta, a pressão atmosférica cai e, com ela, a pressão parcial desse gás. É essa redução de pressão, e não uma mudança importante da porcentagem de oxigênio, que limita sua entrada no organismo.",
+          "Na inspiração, o oxigênio alcança os **alvéolos**, estruturas pulmonares onde ocorre a troca gasosa. Dali, atravessa a membrana alvéolo-capilar e entra no sangue. A **hemoglobina**, presente nas hemácias, transporta grande parte desse oxigênio até os tecidos, que dependem também de uma circulação adequada para utilizá-lo.",
+          "A pressão inspirada de oxigênio pode ser estimada por **FiO₂ × (PB − 47 mmHg)**, descontando a pressão do vapor de água nas vias respiratórias a 37 °C. Ao nível do mar, a pressão alveolar de oxigênio é aproximadamente 100 mmHg em condições usuais. A 8.000 ft (2.400 m), pode cair para cerca de 65 a 70 mmHg, com saturação frequentemente próxima de 90% a 93% em pessoas saudáveis, conforme a resposta ventilatória.",
+          "A **curva de dissociação da oxi-hemoglobina** explica por que uma queda adicional na pressão de oxigênio pode provocar redução progressivamente mais acentuada da saturação. A resposta depende de altitude, duração da exposição, ventilação e condições clínicas. A compreensão dessa sequência — ar, alvéolo, sangue e tecido — permite identificar em qual etapa ocorre a falha de oxigenação.",
+        ].join('\n\n'),
       },
     },
     {
@@ -36,12 +36,13 @@ export const hipoxia: Capitulo = {
       titulo: 'Tipos de hipóxia',
       pergunta: 'Falta de oxigênio é sempre por causa da altitude?',
       conteudo: {
-        essencial:
-          'Não. O oxigênio pode faltar porque o ar está rarefeito, porque o sangue não consegue carregá-lo, porque a circulação está lenta ou porque as células não conseguem usá-lo.',
-        explicacao:
-          'A hipóxia hipóxica vem do ar com pouca pressão de oxigênio, típica da altitude. A hipêmica (ou anêmica) acontece quando o sangue carrega pouco oxigênio, como na anemia ou na intoxicação por monóxido de carbono. A estagnante (ou circulatória) ocorre quando o sangue circula devagar, por exemplo sob forças G ou no frio intenso. A histotóxica acontece quando as células não conseguem usar o oxigênio, como na intoxicação por cianeto ou pelo álcool. Os tipos podem se somar no mesmo tripulante.',
-        clinico:
-          'Na prática, os tipos se somam: um piloto fumante (carboxi-hemoglobina elevada) e anêmico tem tolerância menor à altitude. O monóxido de carbono tem afinidade pela hemoglobina cerca de 200 a 250 vezes maior que a do oxigênio e desvia a curva de dissociação para a esquerda. Em vazamentos de escapamento em aeronaves a pistão, a hipóxia hipêmica pode ocorrer em baixa altitude.',
+        texto: [
+          "**Hipóxia** significa oferta ou utilização insuficiente de oxigênio nos tecidos. Nem toda hipóxia é causada pela altitude: ela pode surgir em qualquer etapa entre a atmosfera e a célula. Na medicina aeroespacial, a classificação em quatro mecanismos ajuda a compreender causas diferentes que podem coexistir.",
+          "Na **hipóxia hipóxica**, a pressão de oxigênio disponível para o pulmão é insuficiente. É o mecanismo clássico da exposição a grandes altitudes sem proteção adequada. Na **hipóxia hipêmica**, o sangue perde capacidade de transportar oxigênio, como ocorre em anemias relevantes ou na intoxicação por monóxido de carbono.",
+          "A **hipóxia estagnante ou circulatória** resulta de perfusão insuficiente: o sangue não chega aos tecidos com o fluxo necessário. Pode ocorrer em distúrbios circulatórios ou sob acelerações que reduzam a perfusão cerebral. A **hipóxia histotóxica** acontece quando a célula não consegue utilizar o oxigênio adequadamente; a intoxicação por cianeto é um exemplo clássico.",
+          "Os mecanismos podem se somar. Um piloto anêmico ou exposto a monóxido de carbono tem menor reserva para tolerar a queda da pressão parcial de oxigênio em altitude. **O monóxido de carbono liga-se fortemente à hemoglobina**, reduz a capacidade de transporte e modifica a liberação de oxigênio aos tecidos. Vazamentos de gases de escapamento em aeronaves a pistão são uma situação operacional que exige atenção, mesmo perto do solo.",
+          "A identificação do mecanismo orienta prevenção e resposta. Oxigênio suplementar pode ser necessário em diferentes situações, mas **não substitui o reconhecimento e a correção da causa**: pressurização inadequada, contaminação da cabine, anemia, distúrbio circulatório ou exposição tóxica.",
+        ].join('\n\n'),
       },
     },
     {
@@ -50,13 +51,12 @@ export const hipoxia: Capitulo = {
       titulo: 'Tempo de consciência útil',
       pergunta: 'Quanto tempo uma pessoa continua lúcida sem oxigênio a 35.000 pés?',
       conteudo: {
-        essencial:
-          'Tempo de consciência útil é o intervalo em que você ainda consegue agir corretamente depois de perder o oxigênio. A 35.000 pés, ele dura de 30 segundos a 1 minuto.',
-        explicacao:
-          'Não é o tempo até desmaiar, e sim o tempo em que ainda dá para colocar a máscara, avisar a tripulação e iniciar a descida. Quanto mais alto, menor esse tempo: cerca de 20 a 30 minutos a 18.000 pés, de 3 a 5 minutos a 25.000 pés, de 1 a 2 minutos a 30.000 pés e de 15 a 20 segundos a 40.000 pés.',
-        clinico:
-          'Os valores são médias de tripulantes em repouso. Exercício, fadiga, fumo, doença e descompressão rápida encurtam o tempo; a descompressão rápida pode reduzi-lo a cerca da metade. Por isso os procedimentos determinam colocar o oxigênio imediatamente, antes de qualquer diagnóstico da pane.',
-        alerta: 'Em uma despressurização, coloque sua máscara antes de ajudar qualquer outra pessoa.',
+        texto: [
+          "O **tempo de consciência útil (TCU)** é o intervalo, após uma queda importante da oxigenação, durante o qual uma pessoa ainda consegue perceber o problema e executar ações adequadas. **Não equivale ao tempo até perder completamente a consciência.** Julgamento e coordenação podem se deteriorar antes do desmaio.",
+          "Em exposição súbita sem oxigênio suplementar, os valores de referência tornam-se menores com a altitude: cerca de 20 a 30 minutos a 18.000 ft, 3 a 5 minutos a 25.000 ft, 1 a 2 minutos a 30.000 ft, **30 segundos a 1 minuto a 35.000 ft** e 15 a 20 segundos a 40.000 ft. São estimativas, não prazos seguros garantidos.",
+          "Esses intervalos dependem da velocidade da despressurização, do esforço, da condição clínica e de características individuais. Exercício, fadiga e doenças podem reduzir a capacidade de agir. **Uma descompressão rápida pode encurtar o TCU de forma importante**, inclusive para aproximadamente metade de certos valores estimados em repouso.",
+          "A aplicação operacional é imediata: diante de suspeita de perda de pressurização ou falha de oxigenação, **colocar e assegurar a própria máscara de oxigênio antes de outras tarefas**, verificar o suprimento e executar os procedimentos previstos para a aeronave. A demora em reconhecer os sintomas pode consumir todo o tempo disponível para uma resposta segura.",
+        ].join('\n\n'),
       },
     },
     {
@@ -65,12 +65,12 @@ export const hipoxia: Capitulo = {
       titulo: 'Sinais e sintomas',
       pergunta: 'Como perceber que está faltando oxigênio?',
       conteudo: {
-        essencial:
-          'A hipóxia costuma começar sem dor: euforia, formigamento, visão turva e dificuldade de pensar. O perigo é que ela tira justamente a capacidade de perceber o problema.',
-        explicacao:
-          'Os sintomas que a própria pessoa sente incluem calor, tontura, formigamento, visão embaçada e falsa sensação de bem-estar. Os sinais que outros podem ver são lábios e unhas arroxeados (cianose), respiração acelerada, confusão e falta de coordenação. Cada pessoa tem uma combinação própria e repetível de sintomas, e o treinamento em câmara ensina a reconhecê-la.',
-        clinico:
-          'A visão noturna é afetada já a partir de cerca de 5.000 ft. Julgamento, memória recente e coordenação fina se degradam antes dos sinais objetivos. O treinamento em câmara hipobárica ou com dispositivos de respiração com mistura reduzida de oxigênio permite identificar a "assinatura" individual. Conduta: oxigênio a 100%, verificar o sistema e descer para altitude segura.',
+        texto: [
+          "A **hipóxia pode começar sem dor e sem sensação clara de falta de ar**. Alterações do julgamento, da atenção e da coordenação podem surgir enquanto a pessoa ainda acredita estar em boas condições. Esse descompasso entre desempenho real e percepção pessoal é um dos riscos mais importantes no voo.",
+          "Os sintomas podem incluir euforia, tontura, calor, formigamento e alterações visuais. Outras pessoas podem perceber confusão, dificuldade para executar tarefas, respiração alterada ou cianose, quando presente. **A ausência de cianose não exclui hipóxia.** A manifestação varia entre indivíduos e com a gravidade da exposição.",
+          "A visão noturna é particularmente sensível à redução da disponibilidade de oxigênio e pode apresentar prejuízo mesmo em altitudes moderadas. Memória recente, raciocínio e movimentos finos podem piorar progressivamente. Durante treinamento fisiológico supervisionado, algumas pessoas reconhecem um conjunto relativamente característico de sintomas, chamado de **assinatura individual de hipóxia**.",
+          "Em voo, a prioridade é **reconhecer a possibilidade de hipóxia e restabelecer a oxigenação imediatamente**, utilizando o sistema apropriado e seguindo os procedimentos da aeronave, inclusive descida quando indicada. Não se deve esperar pela confirmação de sinais tardios para agir.",
+        ].join('\n\n'),
       },
     },
     {
@@ -78,12 +78,12 @@ export const hipoxia: Capitulo = {
       titulo: 'Hiperventilação',
       pergunta: 'Respirar demais também pode fazer mal?',
       conteudo: {
-        essencial:
-          'Sim. Respirar rápido demais, por ansiedade ou estresse, elimina gás carbônico em excesso e causa tontura e formigamento, sintomas parecidos com os da hipóxia.',
-        explicacao:
-          'O gás carbônico ajuda a regular o fluxo de sangue para o cérebro. Quando ele cai demais (hipocapnia), os vasos do cérebro se contraem e surgem tontura, formigamento nas mãos e ao redor da boca e, em casos intensos, espasmos musculares.',
-        clinico:
-          'A hipocapnia leva à alcalose respiratória, com vasoconstrição cerebral e redução do cálcio ionizado, o que explica parestesias e tetania. Como os quadros se confundem, a regra em voo é tratar primeiro como hipóxia: oxigênio a 100% e checagem do sistema. Só depois, descartada a hipóxia, controlar o ritmo respiratório.',
+        texto: [
+          "A **hiperventilação** ocorre quando a ventilação elimina dióxido de carbono além do necessário para o metabolismo naquele momento. Pode surgir por ansiedade, dor, estresse ou por respostas fisiológicas à altitude. Tontura e formigamento podem lembrar sintomas de hipóxia, embora os mecanismos sejam diferentes.",
+          "A queda excessiva do dióxido de carbono no sangue é chamada de **hipocapnia**. Ela provoca vasoconstrição cerebral, reduzindo o fluxo de sangue no cérebro, e favorece a alcalose respiratória. Em casos mais intensos, a diminuição do cálcio ionizado contribui para formigamento ao redor da boca e das mãos, espasmos musculares e sensação de mal-estar.",
+          "Em ambiente aeronáutico, **hipóxia e hiperventilação podem coexistir ou ser confundidas**. Tratar um quadro potencialmente hipóxico como simples ansiedade atrasa uma intervenção crítica. Por isso, sintomas neurológicos ou respiratórios inexplicados em altitude exigem primeiro avaliação do suprimento de oxigênio e dos sistemas de pressurização.",
+          "A conduta inicial segue os procedimentos de segurança da aeronave: **assegurar oxigênio adequado, verificar o sistema e corrigir a exposição à altitude quando necessário**. Somente depois de excluída a hipóxia é apropriado orientar a redução controlada da frequência respiratória. Respirar em saco de papel não é uma estratégia segura diante dessa incerteza.",
+        ].join('\n\n'),
       },
     },
   ],
