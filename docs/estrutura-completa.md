@@ -1,3 +1,13 @@
+## CONGELAMENTO EDITORIAL — M1V1 I, II, III e IV (23/10/2026)
+
+**Status: CONGELADOS mediante solicitação expressa do autor.** Preservar integralmente a versão atual dos quatro tópicos de *Atmosfera e ambiente de voo*: M1V1 I — Camadas da atmosfera; II — Leis dos gases; III — Atmosfera padrão; IV — Temperatura e umidade.
+
+- Não reescrever, revisar, corrigir, reorganizar, substituir, remover nem ampliar textos, destaques, imagens, tabelas, gráficos, interativos ou suas posições nesses quatro tópicos sem ordem expressa do autor para descongelar.
+- Preservar as quatro questões correspondentes e as respostas/explicações do teste final do voo.
+- O arquivo de origem é `src/data/capitulos/atmosfera.ts`. O verificador `scripts/check-m1v1-frozen.cjs` compara assinaturas do conteúdo atual e das quatro questões. Uma divergência faz falhar o CI e impede o novo build automático do GitHub Pages.
+- A proteção de CI identifica alterações; não substitui as permissões e regras de proteção de branch do GitHub. Uma autorização posterior explícita do autor será necessária para atualizar os registros congelados.
+- Novos voos e conteúdos fora de M1V1 podem continuar a ser desenvolvidos sem alterar estes trechos.
+
 # CONTEXTO DO PROJETO — App-Book de Medicina Aeroespacial
 
 Você vai trabalhar comigo neste projeto. Abaixo está tudo o que já foi decidido. Siga estas definições à risca e não mude a estrutura sem me perguntar.
