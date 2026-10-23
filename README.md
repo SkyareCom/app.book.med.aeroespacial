@@ -16,7 +16,7 @@ Nomes de aviação: cada seção é uma **Missão**, cada capítulo um **Voo** e
 - **Abertura de cinema** com o logotipo do Papos de Altitude (toque em "Pular" para ir direto).
 - **Home em estilo série:** destaques rotativos no topo, "Continue de onde parou", sua evolução, uma fileira de voos por missão, a missão especial O Voo e a Medicina, o Laboratório, os modos quiz e prova e as curiosidades.
 - **Missões** (as 4 seções do rodapé: Conceitos, Sistemas, Aviação, Espaço). Cada tema mora num só lugar e o aprendizado é progressivo: Conceitos (o ambiente e seus agentes) → Sistemas (cada sistema do corpo, do normal à doença) → Aviação (aptidão, segurança e operação) → Espaço. Cada missão tem arte própria, sinopse e cartões dos voos em duas colunas (capa, duração e selo "Interativo" | título e descrição de 3 linhas, em `src/data/descricoes.ts`).
-- **Voos** (os capítulos) com capa de cinema, fases (tópicos) nos três níveis de leitura sempre visíveis, interativos dentro das fases, o botão **TESTE O CONHECIMENTO** no final e os próximos voos.
+- **Voos** (os capítulos) com capa de cinema, fases (tópicos) em narrativa contínua, do conceito às consequências clínicas e operacionais, interativos dentro das fases, o botão **TESTE O CONHECIMENTO** no final e os próximos voos.
 - **Capa própria para cada voo**, arte para cada missão e para a missão especial: imagens cinematográficas fotorrealistas geradas por IA, sem texto nem marcas.
 
 ## Interativos
@@ -39,7 +39,7 @@ Todos ficam também no **Laboratório aeroespacial**. Os componentes estão em `
 
 ## O que já tem texto
 
-O voo de Hipóxia está completo e serve de modelo. Os outros 49 voos mostram capa, fases e interativos, com a marcação "Em produção" até receberem texto. A missão especial O Voo e a Medicina tem os 20 eventos e um teste por era.
+Os voos **Atmosfera e ambiente de voo** e **Respiração e hipóxia** têm tópicos redigidos em texto único. Os demais voos ainda possuem, em grande parte, estrutura e atividades, mas aparecem como "Em produção" até receberem conteúdo científico. A missão especial O Voo e a Medicina mantém sua linha do tempo e o teste por era.
 
 ## Rodar o projeto
 
@@ -102,8 +102,8 @@ O login com Google e Apple ainda depende das credenciais das contas de desenvolv
 
 ## Como adicionar um voo
 
-1. Crie `src/data/capitulos/<nome>.ts` seguindo o modelo de `hipoxia.ts`: cada tópico com `essencial`, `explicacao` e `clinico` (sem pontos-chave: a informação fica no texto), os `midias` que fizerem sentido, e o `teste` com uma questão por tópico, indicando o `topico` de origem.
-Use `recursos` (em cada tópico) para pôr gráficos, interativos e imagens no meio do texto, logo após um nível de leitura; uma linha em branco no texto separa parágrafos.
+1. Crie `src/data/capitulos/<nome>.ts` seguindo o modelo de `hipoxia.ts`: cada tópico contém um único campo `texto`, com parágrafos ligados por `\n\n`. A exposição progride de definição e mecanismo para aplicações, limites e condutas, sem blocos Essencial/Entenda/Para profissionais. Trechos entre `**asteriscos duplos**` recebem destaque discreto. Use `recursos` com `paragrafo` para integrar figuras e tabelas, e `teste` com questões associadas ao `topico` de origem.
+Use `recursos` para pôr gráficos, interativos e imagens após o parágrafo correspondente. Não repita explicações nem insira cabeçalhos por público.
 2. Em `src/data/secoes.ts`, troque a linha `cap(...)` do capítulo pelo objeto importado.
 
 O voo passa a aparecer como "Disponível", e o teste entra no Modo quiz e no Modo prova.
