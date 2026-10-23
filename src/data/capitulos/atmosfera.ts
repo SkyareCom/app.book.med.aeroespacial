@@ -50,7 +50,17 @@
 // Fotos premium (geradas por IA pelo autor, pessoas fictícias): topicos/m1v1-2-corpo (corpo translúcido com estruturas que acendem ao toque),
 // -pacote, -alpinista, -garrafa, -cilindro. Tabela-resumo das leis no fim do Para profissionais.
 
-import type { Capitulo } from '../tipos';
+// M1V1 - IV · Temperatura e umidade — fontes verificadas para esta redação
+// - Temperatura, umidade, densidade do ar e desempenho: FAA, Pilot's Handbook of Aeronautical Knowledge,
+//   FAA-H-8083-25C, cap. 4, princípios de voo; FAA AIP, efeitos da altitude-densidade.
+// - Umidade relativa e ponto de orvalho: NOAA NESDIS, What Is Humidity?;
+//   FAA, Aviation Weather, AC 00-6B, seções 3.4 a 3.6.
+// - Ar seco de cabine e lentes de contato: FAA, Contact Lens Use in the Civil Airman Population,
+//   relatório de pesquisa 02/06; valores variam conforme aeronave e fase de voo.
+// - Contexto fisiológico adicional: Ernsting's Aviation and Space Medicine, 5ª ed.,
+//   e Fundamentals of Aerospace Medicine, 5ª ed. [confirmar capítulo e página].
+//
+//import type { Capitulo } from '../tipos';
 
 export const atmosfera: Capitulo = {
   numero: 1,
@@ -197,7 +207,43 @@ export const atmosfera: Capitulo = {
       },
     },
     // A radiação fica toda no M1V5 (Radiação cósmica), não aqui.
-    { id: '1.4', titulo: 'Temperatura e umidade' },
+    {
+      id: '1.4',
+      titulo: 'Temperatura e umidade',
+      pergunta: 'Por que o ar é tão frio lá fora, tão seco na cabine e mais difícil de suportar no calor úmido?',
+      conteudo: {
+        essencial:
+          'Temperatura indica quão quente ou frio está o ar; umidade indica a presença de vapor de água. Em voo, esses fatores afetam o ambiente, o desempenho da aeronave e o conforto do organismo.',
+        explicacao: [
+          'Fora do avião, a temperatura geralmente diminui com a altitude na troposfera. Dentro da cabine, o sistema de climatização controla a temperatura. Por isso, o frio intenso do ambiente externo não é a temperatura sentida pelos passageiros.',
+          'Umidade relativa é a porcentagem de vapor presente em relação à saturação possível naquela temperatura. Se o ar aquece sem ganhar vapor, essa porcentagem diminui. O ponto de orvalho é a temperatura na qual o ar atinge a saturação ao ser resfriado. Quando a temperatura se aproxima do ponto de orvalho, aumenta a possibilidade de condensação, nevoeiro e nuvens.',
+          'O ar de grandes altitudes contém pouco vapor de água. Em muitas cabines, a umidade relativa fica perto de 10% a 20% durante o cruzeiro. Olhos, nariz, boca e garganta podem ficar ressecados. A sensação de sede não significa, por si só, desidratação importante.',
+          'Em ambiente quente e úmido, o suor evapora mais devagar e o corpo perde calor com maior dificuldade. Para a aeronave, ar quente e úmido é menos denso: a decolagem e a subida podem ficar mais exigentes. O desconforto térmico do corpo e a perda de desempenho do avião são efeitos distintos.',
+        ].join('\n\n'),
+        clinico: [
+          'A umidade relativa depende da pressão de vapor de água e da pressão de saturação na temperatura observada. O ponto de orvalho expressa melhor o teor efetivo de vapor do que a umidade relativa isolada. Temperatura e ponto de orvalho próximos favorecem saturação, mas não determinam, sozinhos, nevoeiro ou formação de gelo.',
+          'Em cabines secas, pode haver irritação da superfície ocular e das mucosas, especialmente em usuários de lentes de contato. O aumento das perdas insensíveis de água costuma ser pequeno. A baixa umidade, isoladamente, não deve ser confundida com desidratação sistêmica. A conduta depende dos sintomas e da avaliação individual.',
+          'No calor úmido, a menor evaporação do suor reduz a dissipação térmica e aumenta a sobrecarga fisiológica. Isso importa para tripulantes e equipes em solo, sobretudo durante trabalho físico. Em situações de exposição ao frio, vento e roupas inadequadas podem intensificar a perda de calor.',
+          'Sob a mesma pressão, o aquecimento diminui a densidade do ar; o vapor de água também reduz a densidade quando substitui parte do ar seco. No planejamento do voo, temperatura, pressão e umidade entram na avaliação de desempenho. Umidade e temperatura também ajudam a reconhecer condições favoráveis à condensação e ao gelo.',
+        ].join('\n\n'),
+        recursos: [
+          {
+            apos: 'entenda',
+            paragrafo: 2,
+            tabela: {
+              titulo: 'Como ler temperatura e umidade',
+              colunas: ['Medida', 'O que informa', 'Aplicação no voo'],
+              linhas: [
+                ['Temperatura externa', 'O calor ou frio do ar fora da aeronave, em °C.', 'Densidade do ar, desempenho e condições de gelo.'],
+                ['Temperatura da cabine', 'O ambiente térmico regulado pelo sistema de climatização.', 'Conforto e proteção durante o cruzeiro.'],
+                ['Umidade relativa', 'Quanto o vapor presente representa da saturação possível, em %.', 'Conforto das mucosas e avaliação meteorológica.'],
+                ['Ponto de orvalho', 'A temperatura em que o ar se satura ao ser resfriado.', 'Indício de condensação, nuvens ou nevoeiro.'],
+              ],
+            },
+          },
+        ],
+      },
+    },
   ],
   teste: [
     {
@@ -235,6 +281,18 @@ export const atmosfera: Capitulo = {
       ],
       correta: 1,
       explicacao: 'Lei de Boyle: na descida a pressão de fora aumenta; se a passagem do ouvido está fechada, o ar não entra e o tímpano é empurrado para dentro.',
+    },
+    {
+      topico: '1.4',
+      pergunta: 'Em cruzeiro, a cabine está confortável, mas os olhos e a garganta ficam ressecados. Qual é a explicação mais provável?',
+      opcoes: [
+        'A cabine apresenta necessariamente a mesma temperatura do ar externo.',
+        'O ar vindo de grandes altitudes contém pouco vapor, e a umidade da cabine pode permanecer baixa.',
+        'O oxigênio é retirado do ar para diminuir a umidade.',
+        'O ar aquecido sempre apresenta maior umidade relativa, mesmo sem receber vapor.',
+      ],
+      correta: 1,
+      explicacao: 'O ar externo de altitude é pobre em vapor de água. A climatização mantém o conforto térmico, mas a umidade pode continuar baixa e irritar olhos e mucosas.',
     },
   ],
 };
