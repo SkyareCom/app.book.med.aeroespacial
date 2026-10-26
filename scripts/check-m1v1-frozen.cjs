@@ -1,6 +1,7 @@
 'use strict';
 
-// Congelamento editorial M1V1 I–IV — autorizado em 23/10/2026.
+// Congelamento editorial M1V1 I–IV — autorizado em 23/10/2026; revisão de texto autorizada pelo autor em 26/10/2026
+// (remoção de repetições entre tópicos, cadência e destaques; recursos e teste inalterados).
 // Protege os quatro tópicos, imagens, gráficos, tabelas e o teste final associado.
 // Não atualize estas assinaturas sem autorização explícita do autor.
 // A verificação compara o conteúdo exato (inclusive espaços e pontuação).
@@ -9,10 +10,10 @@ const path = require('node:path');
 
 const fonte = fs.readFileSync(path.resolve(__dirname, '../src/data/capitulos/atmosfera.ts'), 'utf8');
 const ASSINATURAS = Object.freeze({
-  '1.1': '35ad96b677ba7490', // M1V1 - I: Camadas da atmosfera
-  '1.2': 'f969230fb84f2d9e', // M1V1 - II: Leis dos gases
-  '1.3': '5a0fb17c9a87a7bb', // M1V1 - III: Atmosfera padrão
-  '1.4': '5e25be7ea7bb45a3', // M1V1 - IV: Temperatura e umidade
+  '1.1': '2c67cfba7f40545a', // M1V1 - I: Camadas da atmosfera
+  '1.2': '431b933e6534e6aa', // M1V1 - II: Leis dos gases
+  '1.3': '9ed34fdc4760bbcb', // M1V1 - III: Atmosfera padrão
+  '1.4': 'f3a697c515c48e4e', // M1V1 - IV: Temperatura e umidade
 });
 const ASSINATURA_TESTE = '47754a8bbeb02cb4';
 
