@@ -42,8 +42,8 @@ const TIPOS: Record<Tipo, { nome: string; tempo: string; pulmao: string; perigo:
     tempo: 'Segundos',
     pulmao: 'Os pulmões esvaziam mais rápido do que a cabine perde pressão.',
     perigo: 'Menor risco para os pulmões; a hipóxia chega quase de imediato.',
-    cabine: (t) => 1 - Math.exp(-t / 0.18),
-    pulmoes: (t) => 1 - Math.exp(-t / 0.16),
+    cabine: (t) => 1 - Math.exp(-t / 0.22),
+    pulmoes: (t) => 1 - Math.exp(-t / 0.12),
   },
   lenta: {
     nome: 'Lenta',
@@ -59,8 +59,8 @@ export function GraficoTiposDescompressao() {
   const [tipo, setTipo] = useState<Tipo>('explosiva');
   const [larg, setLarg] = useState(300);
   const d = TIPOS[tipo];
-  const H = 180;
-  const x0 = 34, x1 = larg - 10, yT = 16, yB = H - 28;
+  const H = 200;
+  const x0 = 52, x1 = larg - 12, yT = 22, yB = H - 26;
   const X = (t: number) => x0 + t * (x1 - x0);
   const Y = (f: number) => yB - f * (yB - yT);
   const curva = (fn: (t: number) => number) => {
@@ -72,25 +72,35 @@ export function GraficoTiposDescompressao() {
     return s;
   };
   return (
-    <MolduraMidia tipo="Gráfico" titulo="Três velocidades, três perigos" instrucao="Escolha o tipo. Esquema ilustrativo: a linha azul é a altitude da cabine; a dourada, a dos pulmões.">
+    <MolduraMidia tipo="Gráfico" titulo="Três velocidades, três perigos" instrucao="Escolha o tipo. Esquema ilustrativo, sem escala de tempo.">
       <Escolhas<Tipo> opcoes={[['explosiva', 'Explosiva'], ['rapida', 'Rápida'], ['lenta', 'Lenta']]} valor={tipo} onChange={setTipo} />
       <View onLayout={(e) => setLarg(e.nativeEvent.layout.width)}>
         <Svg width={larg} height={H}>
+          {/* Eixo vertical: rótulos à esquerda, fora da área das curvas. */}
           <Line x1={x0} y1={Y(1)} x2={x1} y2={Y(1)} stroke={Cores.erro} strokeDasharray="4 4" />
-          <SvgText x={x1} y={Y(1) - 5} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="end">ALTITUDE DE VOO</SvgText>
+          <SvgText x={x0 - 6} y={Y(1) - 2} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="end">ALTITUDE</SvgText>
+          <SvgText x={x0 - 6} y={Y(1) + 9} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="end">DE VOO</SvgText>
           <Line x1={x0} y1={Y(0)} x2={x1} y2={Y(0)} stroke={Cores.linha} />
-          <SvgText x={x0} y={Y(0) - 5} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>CABINE PRESSURIZADA</SvgText>
-          <Path d={curva(d.pulmoes)} stroke={Cores.dourado} strokeWidth={2.4} fill="none" strokeDasharray={tipo === 'lenta' ? '6 4' : undefined} />
+          <SvgText x={x0 - 6} y={Y(0) - 2} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">CABINE</SvgText>
+          <SvgText x={x0 - 6} y={Y(0) + 9} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">ANTES</SvgText>
           <Path d={curva(d.cabine)} stroke={Cores.destaque} strokeWidth={2.4} fill="none" />
+          <Path d={curva(d.pulmoes)} stroke={Cores.dourado} strokeWidth={2.4} fill="none" strokeDasharray={tipo === 'lenta' ? '6 4' : undefined} />
           {tipo === 'explosiva' ? (
             <G>
-              <Rect x={X(0.04)} y={Y(1)} width={X(0.3) - X(0.04)} height={Y(0.25) - Y(1)} fill={Cores.erro} fillOpacity={0.12} />
-              <SvgText x={X(0.18)} y={Y(0.55)} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="middle">PULMÃO</SvgText>
-              <SvgText x={X(0.18)} y={Y(0.55) + 11} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="middle">ATRASADO</SvgText>
+              {/* Área entre a cabine (já no alto) e os pulmões (ainda subindo): a pressão presa no peito. */}
+              <Path d={`${curva(d.cabine).split('L').slice(0, 19).join('L')}L${X(0.3)} ${Y(1)}L${X(0.3)} ${Y(d.pulmoes(0.3))}${curva(d.pulmoes).split('L').slice(0, 19).reverse().map((c) => 'L' + c.replace('M', '')).join('')}Z`} fill={Cores.erro} fillOpacity={0.18} />
+              <Line x1={X(0.12)} y1={Y(0.75)} x2={X(0.42)} y2={Y(0.4)} stroke={Cores.erro} strokeWidth={1} />
+              <Circle cx={X(0.12)} cy={Y(0.75)} r={2.5} fill={Cores.erro} />
+              <SvgText x={X(0.43)} y={Y(0.4)} fill={Cores.erro} fontSize={9} fontFamily={Fonte}>PULMÕES ATRASADOS:</SvgText>
+              <SvgText x={X(0.43)} y={Y(0.4) + 12} fill={Cores.erro} fontSize={9} fontFamily={Fonte}>PRESSÃO PRESA NO PEITO</SvgText>
             </G>
           ) : null}
           <SvgText x={x1} y={H - 8} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">TEMPO →</SvgText>
         </Svg>
+      </View>
+      <View style={styles.legenda}>
+        <View style={styles.itemLegenda}><View style={[styles.traco, { backgroundColor: Cores.destaque }]} /><Texto t="rotulo" cor={Cores.textoSuave}>Cabine</Texto></View>
+        <View style={styles.itemLegenda}><View style={[styles.traco, { backgroundColor: Cores.dourado }]} /><Texto t="rotulo" cor={Cores.textoSuave}>Pulmões</Texto></View>
       </View>
       <View style={styles.leituras}>
         <Leitura rotulo="Duração" valor={d.tempo} cor={Cores.dourado} />
@@ -203,7 +213,7 @@ export function SimuladorCamara() {
       </View>
       <Deslizante min={0.3} max={3} passo={0.05} valor={ata} onChange={(v) => setAta(Math.round(v * 100) / 100)} rotulo="Pressão da câmara em atmosferas" formatar={(v) => `${fmt(v, 2)} atmosferas`} />
       <View style={styles.leituras}>
-        <Leitura rotulo="Pressão" valor={`${fmt(ata, 2)} ATA · ${fmt(ata * 760)} mmHg`} />
+        <Leitura rotulo={`Pressão · ${fmt(ata * 760)} mmHg`} valor={`${fmt(ata, 2)} ATA`} />
         <Leitura rotulo={hipo ? 'Equivale à altitude' : 'Equivale à profundidade'} valor={hipo ? `${fmt(Math.round(alt / 100) * 100)} ft` : `${fmt(prof, 0)} m de mar`} cor={hipo ? Cores.destaque : Cores.dourado} />
         <Leitura rotulo="Volume da bolha" valor={`${fmt(volume, 2)}×`} cor={Cores.texto} />
       </View>
@@ -222,5 +232,8 @@ const styles = StyleSheet.create({
   escolhas: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   escolha: { minHeight: 34, paddingHorizontal: 12, borderRadius: 17, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
   escolhaAtiva: { backgroundColor: Cores.destaque, borderColor: Cores.destaque },
+  legenda: { flexDirection: 'row', gap: Espaco.lg },
+  itemLegenda: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  traco: { width: 18, height: 3, borderRadius: 2 },
   marca: { gap: 2, paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });
