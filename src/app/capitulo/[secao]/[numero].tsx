@@ -74,17 +74,7 @@ export default function TelaCapitulo() {
         </View>
 
         <View style={{ paddingHorizontal: GUTTER, gap: Espaco.md }}>
-          {capitulo.resumo ? <Texto t="item" cor={Cores.textoSuave}>{capitulo.resumo}</Texto> : null}
-
-          {capitulo.objetivos ? (
-            <Painel>
-              <Texto t="rotulo" cor={Cores.destaque}>Neste voo você vai</Texto>
-              {capitulo.objetivos.map((o) => (
-                <Texto key={o} cor={Cores.textoSuave}>· {o}</Texto>
-              ))}
-            </Painel>
-          ) : null}
-
+          {/* Padrão do app: o voo começa direto nos tópicos, sem texto de abertura nem "Neste voo você vai". */}
           {capitulo.laboratorio?.map((m) => (
             <Midia key={m} tipo={m} />
           ))}

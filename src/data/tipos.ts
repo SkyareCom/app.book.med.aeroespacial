@@ -70,9 +70,7 @@ export interface Questao {
 export interface Capitulo {
   numero: number;
   titulo: string;
-  resumo?: string;
   tempoLeituraMin?: number;
-  objetivos?: string[];
   topicos: Topico[];
   teste?: Questao[];
   // Mídias do episódio inteiro, mostradas mesmo antes de o texto ficar pronto.

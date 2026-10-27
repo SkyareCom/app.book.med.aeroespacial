@@ -118,7 +118,7 @@ Fica fora das 4 seções. É a história da medicina aeroespacial em 20 eventos 
 
 ## 6. Formato dos dados (JSON)
 - **Seção:** `id`, `titulo`, `subtitulo`, `resumo`, `capitulos[]`.
-- **Capítulo:** `id`, `numero`, `slug`, `titulo`, `tituloCurto`, `resumo`, `tempoLeituraMin`, `objetivos[]`, `recursos[]`, `topicos[]`, `teste`.
+- **Capítulo** (sem texto de abertura nem objetivos: o voo começa direto nos tópicos): `id`, `numero`, `slug`, `titulo`, `tituloCurto`, `tempoLeituraMin`, `recursos[]`, `topicos[]`, `teste`.
 - **Tópico:** `id`, `titulo`, `pergunta` (pergunta-guia) e `conteudo.texto` como narrativa única. `conteudo.recursos[]` intercala imagens, gráficos e tabelas por posição de parágrafo; `midias[]` oferece atividades integradas. Os testes permanecem no fim do voo.
 - **Teste:** `rotuloBotao: "TESTE O CONHECIMENTO"` e `questoes[]`, cada uma com `pergunta`, `opcoes[4]`, `correta`, `explicacao`, `nivel` e `topico`.
 
