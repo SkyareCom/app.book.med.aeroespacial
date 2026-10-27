@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { IconeCheck } from '@/components/icones';
+import { useSwipeInterno } from '@/components/paginas-rodape';
 import { Selo } from '@/components/selo';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
@@ -32,6 +33,7 @@ export function rotaEpisodio(secao: string, numero: number) {
 
 // Fileira horizontal com título, como as fileiras de um catálogo de séries.
 export function Fileira({ titulo, rotulo, acao, onAcao, children }: { titulo: string; rotulo?: string; acao?: string; onAcao?: () => void; children: ReactNode }) {
+  const gestoInterno = useSwipeInterno();
   return (
     <View style={{ gap: Espaco.sm }}>
       <View style={styles.cabecalhoFileira}>
@@ -45,7 +47,7 @@ export function Fileira({ titulo, rotulo, acao, onAcao, children }: { titulo: st
           </Pressable>
         ) : null}
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: GUTTER, gap: 10 }}>
+      <ScrollView {...gestoInterno} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: GUTTER, gap: 10 }}>
         {children}
       </ScrollView>
     </View>
@@ -98,6 +100,7 @@ export interface ItemDestaque {
 
 // Destaques rotativos no topo da Home, com troca automática a cada 7 segundos.
 export function Destaques({ itens, altura = 460 }: { itens: ItemDestaque[]; altura?: number }) {
+  const gestoInterno = useSwipeInterno();
   const width = useLarguraJanela();
   const larg = Math.min(width, LarguraMaxima);
   const [ativo, setAtivo] = useState(0);
@@ -117,6 +120,7 @@ export function Destaques({ itens, altura = 460 }: { itens: ItemDestaque[]; altu
   return (
     <View style={{ height: altura, width: larg, alignSelf: 'center' }}>
       <ScrollView
+        {...gestoInterno}
         ref={ref}
         horizontal
         pagingEnabled

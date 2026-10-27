@@ -1,5 +1,5 @@
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Stack, usePathname } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
@@ -8,7 +8,9 @@ import { StyleSheet, View } from 'react-native';
 import { Abertura } from '@/components/abertura';
 import { ENTRADA_LIVRE } from '@/components/entrar';
 import { Cabecalho, Rodape } from '@/components/moldura-app';
+import { PaginasRodape } from '@/components/paginas-rodape';
 import { Cores, Fonte } from '@/constants/theme';
+import { indiceAbaRodape } from '@/lib/swipe-rodape';
 import { ProvedorConta, useConta } from '@/state/conta';
 import { ProvedorNotificacoes } from '@/state/notificacoes';
 import { ProvedorProgresso } from '@/state/progresso';
@@ -16,6 +18,7 @@ import { ProvedorProgresso } from '@/state/progresso';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const caminho = usePathname();
   // Acme com o acento circunflexo corrigido (ver tools/fonte/corrigir_circunflexo.py).
   const [fontesProntas] = useFonts({ [Fonte]: require('@/assets/fonts/AppBookDisplay-Regular.ttf') });
 
@@ -32,10 +35,9 @@ export default function RootLayout() {
         <StatusBar style="light" />
         <View style={{ flex: 1, backgroundColor: Cores.fundo }}>
           <Cabecalho />
-          <View style={{ flex: 1 }}>
-            <Stack screenOptions={{ headerShown: false, animation: 'fade', contentStyle: { backgroundColor: Cores.fundo } }} />
-          </View>
-          <Rodape />
+          <PaginasRodape rodape={<Rodape />}>
+            <Stack screenOptions={{ headerShown: false, animation: indiceAbaRodape(caminho) >= 0 ? 'none' : 'fade', contentStyle: { backgroundColor: Cores.fundo } }} />
+          </PaginasRodape>
           <AberturaEEntrada />
         </View>
       </ProvedorNotificacoes>
