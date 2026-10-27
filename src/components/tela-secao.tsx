@@ -32,7 +32,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
           <Texto t="titulo">{secao.titulo}</Texto>
           <Texto cor={Cores.textoSuave}>{secao.sinopse}</Texto>
           <Texto t="rotulo" cor={Cores.textoApagado}>
-            {secao.capitulos.length} voos · {prontos} disponível{prontos === 1 ? '' : 'is'} · {interativos} com interativos
+            {secao.capitulos.length} voos · {prontos} {prontos === 1 ? 'disponível' : 'disponíveis'} · {interativos} com interativos
           </Texto>
           <Pressable accessibilityRole="button" onPress={() => router.push(rotaEpisodio(id, primeiro.numero))} style={({ pressed }) => [styles.botao, pressed && { opacity: 0.85 }]}>
             <Texto t="item" maiusculo espacado cor={Cores.fundo}>▶  Voo {primeiro.numero}</Texto>
