@@ -26,7 +26,11 @@ export type TipoMidia =
   | 'grafico-henry'
   | 'grafico-charles'
   | 'atmosfera-padrao'
-  | 'altitude-densidade';
+  | 'altitude-densidade'
+  | 'pressao-diferencial'
+  | 'perfil-cabine'
+  | 'sistemas-oxigenio'
+  | 'oxigenio-100';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

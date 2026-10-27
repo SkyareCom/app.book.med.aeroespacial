@@ -5,6 +5,7 @@
 
 import { atmosfera } from './capitulos/atmosfera';
 import { hipoxia } from './capitulos/hipoxia';
+import { pressurizacao } from './capitulos/pressurizacao';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
 function cap(numero: number, titulo: string, topicos: string[], laboratorio?: TipoMidia[]): Capitulo {
@@ -30,7 +31,7 @@ export const secoes: Secao[] = [
     sinopse: 'Ar, pressão, frio, radiação, ruído e forças G: o ambiente de voo e o que ele faz com quem está a bordo.',
     capitulos: [
       atmosfera,
-      cap(2, 'Pressurização e oxigênio suplementar', ['Pressurização', 'Altitude de cabine', 'Oxigênio e máscaras', 'Pressão positiva']),
+      pressurizacao,
       cap(3, 'Descompressão', ['Tipos de descompressão', 'Doença descompressiva', 'Mergulho e voo', 'Câmaras de pressão'], ['leis-gases']),
       cap(4, 'Temperatura e sobrevivência', ['Calor', 'Hipotermia', 'Sobrevivência']),
       cap(5, 'Radiação cósmica', ['Radiação ionizante', 'Doses por rota', 'Gestação', 'Limites de dose', 'Raios cósmicos', 'Blindagem', 'Câncer e sistema nervoso'], ['radiacao-voo']),
