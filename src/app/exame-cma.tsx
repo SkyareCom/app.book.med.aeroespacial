@@ -118,14 +118,23 @@ const n = (v: Valores, id: string) => {
 
 export default function ExameCMA() {
   const [aba, setAba] = useState<Aba>('avaliacao');
+  const router = useRouter();
   const rolagem = useRef<ScrollViewInstance | null>(null);
   return (
-    <Tela titulo="Exame CMA" rotulo="Certificado Médico Aeronáutico · RBAC 67" refRolagem={rolagem}>
+    <Tela titulo="Exame CMA" rotulo="Complemento · Missão 3 · Voo 1" refRolagem={rolagem}>
       <CartaoImagem imagem={IMG.hero} altura={190} style={BordaCapa}>
         <Selo texto="Ferramenta do examinador" cor={Cores.dourado} />
         <Texto t="titulo">Da anamnese ao veredito</Texto>
         <Texto cor={Cores.textoSuave}>Classe, parâmetros por sistema, gráficos ao vivo, validade e a justificativa da decisão.</Texto>
       </CartaoImagem>
+
+      <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: '/capitulo/[secao]/[numero]', params: { secao: 'aviacao', numero: '1' } })} style={styles.voo}>
+        <View style={{ flex: 1, gap: 2 }}>
+          <Texto t="rotulo" cor={Cores.destaque}>Missão 3 · Voo 1</Texto>
+          <Texto t="item">Certificação e risco aeromédico</Texto>
+        </View>
+        <Texto t="rotulo" cor={Cores.dourado}>Ir ao voo</Texto>
+      </Pressable>
 
       <View style={styles.abas}>
         {(
@@ -591,6 +600,7 @@ function Entrada({ rotulo, placeholder, unidade, valor, onChange }: { rotulo: st
 }
 
 const styles = StyleSheet.create({
+  voo: { flexDirection: 'row', alignItems: 'center', gap: Espaco.sm, padding: Espaco.md, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, backgroundColor: Cores.painel },
   abas: { flexDirection: 'row', gap: 6, padding: 4, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, backgroundColor: Cores.painel },
   aba: { flex: 1, minHeight: 40, borderRadius: Raio - 4, alignItems: 'center', justifyContent: 'center' },
   abaAtiva: { backgroundColor: Cores.destaque },

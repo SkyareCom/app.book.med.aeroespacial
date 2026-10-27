@@ -169,11 +169,12 @@ export default function Home() {
         </Painel>
       </Pressable>
 
-      {/* Último card da Home: Exame CMA (Certificado Médico Aeronáutico). */}
+      {/* Último card da Home: Exame CMA, complemento da Missão 3 · Voo 1. */}
       <View style={{ paddingHorizontal: GUTTER }}>
         <CartaoImagem imagem={CapaEpisodio['aviacao-1']} altura={150} direcao="topo" onPress={() => router.push('/exame-cma')} rotuloAcessivel="Abrir Exame CMA">
           <Texto t="rotulo" cor={Cores.destaque}>Exame CMA</Texto>
           <Texto t="item">Certificado Médico Aeronáutico: tudo o que você precisa para o exame</Texto>
+          <Texto cor={Cores.textoSuave}>Complemento da Missão 3 · Voo 1</Texto>
           <View style={styles.abrir}>
             <Texto t="rotulo" cor={Cores.dourado}>Abrir</Texto>
             <IconeSeta cor={Cores.dourado} tamanho={16} />
