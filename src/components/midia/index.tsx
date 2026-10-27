@@ -7,6 +7,7 @@ import { GasesNoCorpo } from '@/components/midia/gases-corpo';
 import { GraficoBoyle, GraficoCharles, GraficoDalton, GraficoHenry } from '@/components/midia/leis-gases-graficos';
 import { GraficoAtmosferaPadrao, SimuladorAltitudeDensidade } from '@/components/midia/atmosfera-padrao';
 import { GraficoOxigenio100, GraficoPerfilCabine, GraficoSistemasOxigenio, SimuladorPressaoDiferencial } from '@/components/midia/m1v2-graficos';
+import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } from '@/components/midia/m1v3-graficos';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -47,6 +48,9 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'perfil-cabine': () => <GraficoPerfilCabine />,
   'sistemas-oxigenio': () => <GraficoSistemasOxigenio />,
   'oxigenio-100': () => <GraficoOxigenio100 />,
+  'tipos-descompressao': () => <GraficoTiposDescompressao />,
+  'mergulho-voo': () => <CalculadoraMergulhoVoo />,
+  'camara-pressao': () => <SimuladorCamara />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -74,6 +78,9 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'perfil-cabine': 'Avião × cabine',
   'sistemas-oxigenio': 'Sistemas de oxigênio',
   'oxigenio-100': 'Ar × oxigênio puro',
+  'tipos-descompressao': 'Tipos de descompressão',
+  'mergulho-voo': 'Mergulho e voo',
+  'camara-pressao': 'Câmaras de pressão',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 2;
+export const VERSAO_NOTIFICACOES = 3;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'descompressao',
+    rotulo: 'Voo disponível',
+    titulo: 'Descompressão',
+    texto: 'O voo 3 da Missão 1 chegou: tipos de descompressão, doença descompressiva, mergulho e voo, câmaras de pressão. Com 3 simuladores e o teste no final.',
+    destino: '/capitulo/conceitos/3',
+  },
   {
     id: 'organizacao',
     rotulo: 'Novidade',
@@ -45,6 +52,6 @@ export const notificacoes: Notificacao[] = [
     id: 'producao',
     rotulo: 'Em produção',
     titulo: 'Novos voos a caminho',
-    texto: 'Os textos dos outros 41 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
+    texto: 'Os textos dos outros 40 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
   },
 ];

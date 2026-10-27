@@ -30,7 +30,10 @@ export type TipoMidia =
   | 'pressao-diferencial'
   | 'perfil-cabine'
   | 'sistemas-oxigenio'
-  | 'oxigenio-100';
+  | 'oxigenio-100'
+  | 'tipos-descompressao'
+  | 'mergulho-voo'
+  | 'camara-pressao';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

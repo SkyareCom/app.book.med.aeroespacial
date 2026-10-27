@@ -4,6 +4,7 @@
 // Capítulos com conteúdo redigido importam seus tópicos e testes; os demais trazem só os títulos.
 
 import { atmosfera } from './capitulos/atmosfera';
+import { descompressao } from './capitulos/descompressao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
@@ -32,7 +33,7 @@ export const secoes: Secao[] = [
     capitulos: [
       atmosfera,
       pressurizacao,
-      cap(3, 'Descompressão', ['Tipos de descompressão', 'Doença descompressiva', 'Mergulho e voo', 'Câmaras de pressão'], ['leis-gases']),
+      descompressao,
       cap(4, 'Temperatura e sobrevivência', ['Calor', 'Hipotermia', 'Sobrevivência']),
       cap(5, 'Radiação cósmica', ['Radiação ionizante', 'Doses por rota', 'Gestação', 'Limites de dose', 'Raios cósmicos', 'Blindagem', 'Câncer e sistema nervoso'], ['radiacao-voo']),
       cap(6, 'Ruído e vibração', ['Perda auditiva', 'Proteção auditiva', 'Vibração'], ['regua-ruido']),
