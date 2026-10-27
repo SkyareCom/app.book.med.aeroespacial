@@ -8,6 +8,7 @@ import { Questionario, type Modo } from '@/components/questionario';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco } from '@/constants/theme';
+import { questoesCMA } from '@/data/cma-questoes';
 import { eras } from '@/data/historia';
 import { catalogo } from '@/data/questoes';
 import { chaveCapitulo, obterCapitulo, obterSecao } from '@/data/secoes';
@@ -34,6 +35,9 @@ export default function TelaTeste() {
       const e = eras.find((x) => x.id === p.era);
       return { todas: e?.teste ?? [], titulo: e?.titulo ?? '', rotulo: 'Teste · O Voo e a Medicina', chave: undefined };
     }
+    if (p.origem === 'cma') {
+      return { todas: questoesCMA, titulo: 'Simulado CMA', rotulo: 'Requisitos do RBAC 67', chave: undefined };
+    }
     return {
       todas: catalogo.map((i) => i.q),
       titulo: modo === 'prova' ? 'Modo prova' : 'Modo quiz',
@@ -45,7 +49,7 @@ export default function TelaTeste() {
   // A lista da rodada é fixada quando a rodada começa, para não mudar enquanto a pessoa responde.
   const questoes = useMemo(() => {
     const livres = rankingAtivo ? todas.filter((q) => !respostas[idQuestao(q)]) : todas;
-    if (p.origem === 'capitulo' || p.origem === 'era') return livres;
+    if (p.origem === 'capitulo' || p.origem === 'era' || p.origem === 'cma') return livres;
     return embaralhar(livres).slice(0, modo === 'prova' ? 10 : 8);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todas, rodada, rankingAtivo, carregado]);

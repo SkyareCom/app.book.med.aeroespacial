@@ -3,11 +3,12 @@
 
 import { dificuldadeDe, idQuestao, PONTOS } from '@/lib/xp';
 
+import { questoesCMA } from './cma-questoes';
 import { eras } from './historia';
 import { secoes } from './secoes';
 import type { Questao } from './tipos';
 
-export type GrupoQuestao = 'conceitos' | 'sistemas' | 'aviacao' | 'espaco' | 'historia';
+export type GrupoQuestao = 'conceitos' | 'sistemas' | 'aviacao' | 'espaco' | 'historia' | 'cma';
 
 export interface ItemCatalogo {
   id: string;
@@ -22,6 +23,7 @@ export const NOME_GRUPO: Record<GrupoQuestao, string> = {
   aviacao: 'Aviação',
   espaco: 'Espaço',
   historia: 'Missão especial',
+  cma: 'Exame CMA',
 };
 
 export const catalogo: ItemCatalogo[] = [

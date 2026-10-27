@@ -8,7 +8,7 @@ import { catalogo, NOME_GRUPO, type GrupoQuestao } from '@/data/questoes';
 import { nivelDominio, NIVEIS_DOMINIO, PATENTES, patentePorXp, PESO_PROVA, PONTOS } from '@/lib/xp';
 import { useProgresso } from '@/state/progresso';
 
-const GRUPOS: GrupoQuestao[] = ['conceitos', 'sistemas', 'aviacao', 'espaco', 'historia'];
+const GRUPOS: GrupoQuestao[] = ['conceitos', 'sistemas', 'aviacao', 'espaco', 'historia', 'cma'];
 
 // Domínio de cada missão: pontos das questões acertadas ÷ pontos de todas as questões já escritas nela.
 function useDominio() {
