@@ -103,15 +103,15 @@ export function GraficoPerfilCabine() {
             </G>
           ))}
           <Line x1={x0} y1={Y(10000)} x2={x1} y2={Y(10000)} stroke={Cores.dourado} strokeDasharray="5 4" />
-          <SvgText x={x1} y={Y(10000) - 4} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="end">10.000 FT · ALERTA NA CABINE DE COMANDO</SvgText>
+          <SvgText x={X(60)} y={Y(10000) - 4} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="middle">10.000 FT · ALERTA NA CABINE DE COMANDO</SvgText>
           <Line x1={x0} y1={Y(15000)} x2={x1} y2={Y(15000)} stroke={Cores.erro} strokeDasharray="5 4" />
-          <SvgText x={x1} y={Y(15000) - 4} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="end">15.000 FT · MÁSCARAS JÁ CAÍRAM</SvgText>
+          <SvgText x={X(60)} y={Y(15000) - 4} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="middle">15.000 FT · MÁSCARAS JÁ CAÍRAM</SvgText>
           <Path d={linha(PERFIL_AVIAO)} stroke="#8A93A6" strokeWidth={2.5} fill="none" />
           <Path d={linha(PERFIL_CABINE)} stroke={Cores.destaque} strokeWidth={3} fill="none" />
           <SvgText x={X(60)} y={Y(38000) - 6} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">AVIÃO · 38.000 FT</SvgText>
           <SvgText x={X(60)} y={Y(8000) + 14} fill={Cores.destaque} fontSize={10} fontFamily={Fonte} textAnchor="middle">CABINE · ATÉ 8.000 FT</SvgText>
           {[0, 30, 60, 90, 120].map((m) => (
-            <SvgText key={m} x={X(m)} y={yB + 14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{m} min</SvgText>
+            <SvgText key={m} x={X(m)} y={yB + 14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor={m === 0 ? 'start' : m === 120 ? 'end' : 'middle'}>{m} min</SvgText>
           ))}
         </Svg>
       </View>
