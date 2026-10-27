@@ -110,7 +110,7 @@ export function PainelRanking() {
         <View style={styles.entre}>
           <View style={{ flex: 1, gap: 2 }}>
             <Texto t="item">Ranking ativo</Texto>
-            <Texto cor={Cores.textoApagado}>Desativado, as questões podem ser refeitas à vontade, sem XP.</Texto>
+            <Texto cor={Cores.textoApagado}>Desativado: as questões podem ser refeitas à vontade, sem XP.</Texto>
           </View>
           <Switch value={rankingAtivo} onValueChange={definirRankingAtivo} trackColor={{ true: Cores.destaque, false: Cores.linha }} accessibilityLabel="Ranking ativo" />
         </View>

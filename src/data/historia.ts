@@ -6,7 +6,7 @@ import type { Era } from './tipos';
 export const eras: Era[] = [
   {
     id: 'baloes',
-    titulo: 'Os Balões',
+    titulo: 'Os balões',
     periodo: '1783–1902',
     eventos: [
       { id: 'h1.1', ano: '1783', titulo: 'Os primeiros voos de balão', essencial: 'Em setembro, um carneiro, um pato e um galo voam num balão dos irmãos Montgolfier e voltam vivos. Em novembro, Pilâtre de Rozier e o Marquês d’Arlandes fazem o primeiro voo tripulado livre, em Paris.' },
@@ -23,7 +23,7 @@ export const eras: Era[] = [
   },
   {
     id: 'aviao',
-    titulo: 'O Avião e a Primeira Guerra',
+    titulo: 'O avião e a Primeira Guerra',
     periodo: '1903–1918',
     eventos: [
       { id: 'h2.1', ano: '1903/1906', titulo: 'O voo motorizado', essencial: 'Os irmãos Wright voam o Flyer em 1903, nos Estados Unidos. Em 1906, em Paris, Santos-Dumont decola com o 14-bis por meios próprios, diante de público e de uma comissão oficial.' },
@@ -38,7 +38,7 @@ export const eras: Era[] = [
   },
   {
     id: 'altitude',
-    titulo: 'Altitude e Proteção',
+    titulo: 'Altitude e proteção',
     periodo: '1919–1945',
     eventos: [
       { id: 'h3.1', ano: '1929', titulo: 'A especialidade se organiza', essencial: 'Louis Bauer funda a Aero Medical Association, hoje Aerospace Medical Association, três anos depois de publicar o primeiro grande livro-texto da área.' },
@@ -55,7 +55,7 @@ export const eras: Era[] = [
   },
   {
     id: 'jatos',
-    titulo: 'Jatos e Espaço',
+    titulo: 'Jatos e espaço',
     periodo: '1946–1975',
     eventos: [
       { id: 'h4.1', ano: '1947', titulo: 'Nasce a ICAO', essencial: 'A Organização da Aviação Civil Internacional começa a funcionar e cria padrões médicos internacionais para tripulantes.' },
@@ -74,7 +74,7 @@ export const eras: Era[] = [
   },
   {
     id: 'seguranca',
-    titulo: 'Segurança e Longa Duração',
+    titulo: 'Segurança e longa duração',
     periodo: '1976–hoje',
     eventos: [
       { id: 'h5.1', ano: '1977–1981', titulo: 'Tenerife e o CRM', essencial: 'A colisão de dois Boeing 747 em Tenerife mata 583 pessoas. A resposta é o treinamento de gestão de recursos da tripulação (CRM), adotado a partir de 1981.' },

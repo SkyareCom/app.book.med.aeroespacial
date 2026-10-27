@@ -22,7 +22,7 @@ const MAPA: Record<string, Dificuldade> = {
   // Missão 2 · Sistemas
   'Por que há menos oxigênio disponível em altitude?': 'facil',
   'Intoxicação por monóxido de carbono causa qual tipo de hipóxia?': 'media',
-  'Qual é o tempo de consciência útil aproximado a 35.000 pés?': 'media',
+  'Qual é o tempo de consciência útil aproximado a 35.000 ft?': 'media',
   'O que acontece com o tempo de consciência útil em uma descompressão rápida?': 'dificil',
   'Qual é o principal perigo da hipóxia para quem está voando?': 'facil',
   'Em voo, um tripulante sente tontura e formigamento. Qual é a primeira conduta?': 'media',
@@ -65,13 +65,13 @@ export function xpDaQuestao(q: Questao, modo: 'quiz' | 'prova') {
 
 // Patentes: escala progressiva de XP, cada uma com o objetivo que leva à seguinte.
 export const PATENTES = [
-  { nome: 'Passageiro', xp: 0, objetivo: 'Responda suas primeiras questões e conheça o ambiente de voo.' },
+  { nome: 'Passageiro', xp: 0, objetivo: 'Responda às suas primeiras questões e conheça o ambiente de voo.' },
   { nome: 'Aluno-piloto', xp: 100, objetivo: 'Domine os conceitos: atmosfera, gases e pressurização.' },
   { nome: 'Piloto privado', xp: 300, objetivo: 'Entenda como cada sistema do corpo reage ao voo.' },
   { nome: 'Piloto comercial', xp: 600, objetivo: 'Encare o Modo prova: cada acerto vale o dobro.' },
   { nome: 'Piloto de linha aérea', xp: 1000, objetivo: 'Leve o conhecimento para a operação: aptidão, segurança e emergências.' },
   { nome: 'Comandante', xp: 1600, objetivo: 'Chegue a Avançado em todas as missões.' },
-  { nome: 'Médico de voo', xp: 2400, objetivo: 'Explore o espaço: microgravidade, suporte de vida e exploração.' },
+  { nome: 'Médico de voo', xp: 2400, objetivo: 'Explore o espaço: microgravidade, suporte de vida e missões longas.' },
   { nome: 'Astronauta', xp: 3500, objetivo: 'Topo do ranking. Mantenha-se Especialista em cada missão.' },
 ] as const;
 

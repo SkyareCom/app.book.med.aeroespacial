@@ -427,7 +427,7 @@ function PainelResultado({ r, classe, valores }: { r: Resultado; classe: string;
 
       {r.pendentes.length ? (
         <Painel>
-          <Texto t="rotulo" cor={Cores.textoApagado}>Faltam preencher</Texto>
+          <Texto t="rotulo" cor={Cores.textoApagado}>Falta preencher</Texto>
           <Texto cor={Cores.textoSuave}>{r.pendentes.join(' · ')}</Texto>
         </Painel>
       ) : null}

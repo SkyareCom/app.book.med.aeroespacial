@@ -27,7 +27,7 @@ export const CLASSES: { id: ClasseCMA; nome: string; quem: string; funcoes: { id
   {
     id: '2',
     nome: '2ª classe',
-    quem: 'Piloto privado (PP e PP-IFR), comissário, mecânico de voo, piloto de balão livre e aluno piloto.',
+    quem: 'Piloto privado (PP e PP-IFR), comissário, mecânico de voo, piloto de balão livre e aluno-piloto.',
     funcoes: [
       { id: 'pp', nome: 'PP, PP-IFR, balão ou aluno' },
       { id: 'comissario', nome: 'Comissário de voo' },
@@ -177,7 +177,7 @@ export const SISTEMAS: { id: string; nome: string; ref: string; campos: Campo[] 
       { id: 'exoforia', tipo: 'num', rotulo: 'Exoforia', placeholder: 'ex.: 2', unidade: 'DP' },
       { id: 'esoforia', tipo: 'num', rotulo: 'Esoforia', placeholder: 'ex.: 4', unidade: 'DP' },
       { id: 'heterotropia', tipo: 'sn', rotulo: 'Heterotropia' },
-      { id: 'refrativaMeses', tipo: 'num', rotulo: 'Cirurgia refrativa há (deixe vazio se não fez)', placeholder: 'ex.: 9', unidade: 'meses' },
+      { id: 'refrativaMeses', tipo: 'num', rotulo: 'Tempo desde a cirurgia refrativa (vazio se não fez)', placeholder: 'ex.: 9', unidade: 'meses' },
       { id: 'lenteMulti', tipo: 'sn', rotulo: 'Usa lente de contato multifocal' },
     ],
   },
@@ -368,8 +368,8 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
   const hip = num(v, 'hiperforia');
   const exo = num(v, 'exoforia');
   const eso = num(v, 'esoforia');
-  if ((hip ?? 0) > 1 || (exo ?? 0) > 5 || (eso ?? 0) > 10) add('Oftalmológico', 'inapto', 'Fória acima do limite (hiperforia ≤ 1, exoforia ≤ 5, esoforia ≤ 10 DP).', '67.99(c)(7)');
-  else if (hip !== undefined || exo !== undefined || eso !== undefined) add('Oftalmológico', 'ok', 'Fórias dentro dos limites.', '67.99(c)(7)');
+  if ((hip ?? 0) > 1 || (exo ?? 0) > 5 || (eso ?? 0) > 10) add('Oftalmológico', 'inapto', 'Foria acima do limite (hiperforia ≤ 1, exoforia ≤ 5, esoforia ≤ 10 DP).', '67.99(c)(7)');
+  else if (hip !== undefined || exo !== undefined || eso !== undefined) add('Oftalmológico', 'ok', 'Forias dentro dos limites.', '67.99(c)(7)');
   const ref = num(v, 'refrativaMeses');
   if (ref !== undefined) {
     if (ref <= 6) add('Oftalmológico', 'inapto', `Cirurgia refrativa há ${ref} meses: exige mais de 6. Reavaliar depois do prazo.`, '67.99');
@@ -436,7 +436,7 @@ function comentar(classe: ClasseCMA, ver: Veredito, a: Achado[], restricoes: str
     p.push(`Candidato julgado não apto para a ${classe}ª classe porque ${inaptos.length > 1 ? 'não cumpre os seguintes requisitos' : 'não cumpre o requisito'}: ${inaptos.join('; ')}.`);
     p.push('Pelo RBAC 67.71(g), o examinador não emite o CMA e informa ao candidato o direito de recorrer à ANAC. Condições temporárias, como gestação, prazo após infarto, revascularização ou cirurgia refrativa, permitem novo exame quando resolvidas.');
   } else if (ver === 'incompleto') {
-    p.push(`Ainda não é possível fechar o julgamento: faltam ${pendentes.length} parâmetro${pendentes.length > 1 ? 's' : ''} obrigatório${pendentes.length > 1 ? 's' : ''} (${pendentes.join('; ')}).`);
+    p.push(`Ainda não é possível fechar o julgamento: falta${pendentes.length > 1 ? 'm' : ''} ${pendentes.length} parâmetro${pendentes.length > 1 ? 's' : ''} obrigatório${pendentes.length > 1 ? 's' : ''} (${pendentes.join('; ')}).`);
     if (inaptos.length === 0 && conf.length === 0) p.push('Nenhum critério de inaptidão apareceu entre os itens já preenchidos.');
   } else if (ver === 'confirmar') {
     p.push(`Para a ${classe}ª classe, os limiares específicos não foram consultados no texto integral do RBAC 67. Os itens a seguir não atendem ao critério da 1ª classe, usado aqui como referência, e precisam ser conferidos na subparte da classe: ${conf.join('; ')}.`);

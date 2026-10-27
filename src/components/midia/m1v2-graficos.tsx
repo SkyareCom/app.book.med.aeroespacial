@@ -122,7 +122,7 @@ export function GraficoPerfilCabine() {
 
 // ---------------------------------------------------------------- Sistemas de oxigênio
 const SISTEMAS = [
-  { id: 'continuo', nome: 'Fluxo contínuo', ate: 41000, atencao: 25000, cor: '#6FD3FF', texto: 'Oxigênio sai sem parar, numa vazão definida, e se mistura ao ar; a máscara tem bolsa reservatória. Certificado até 41.000 ft, exige muita atenção acima de 25.000 ft.' },
+  { id: 'continuo', nome: 'Fluxo contínuo', ate: 41000, atencao: 25000, cor: '#6FD3FF', texto: 'Oxigênio sai sem parar, numa vazão definida, e se mistura ao ar; a máscara tem bolsa reservatória. É certificado até 41.000 ft, mas exige muita atenção acima de 25.000 ft.' },
   { id: 'diluidor', nome: 'Demanda diluidora', ate: 40000, atencao: 40000, cor: '#E8C46A', texto: 'Oxigênio só na inspiração, misturado ao ar da cabine ou a 100%. Seguro até 40.000 ft, com a máscara bem vedada: barba e bigode atrapalham.' },
   { id: 'pressao', nome: 'Pressão de demanda', ate: 50000, atencao: 50000, cor: '#5BD69B', texto: 'Oxigênio na inspiração com pressão positiva na máscara. É o sistema seguro acima de 40.000 ft.' },
 ] as const;

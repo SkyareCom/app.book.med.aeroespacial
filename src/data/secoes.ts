@@ -81,7 +81,7 @@ export const secoes: Secao[] = [
       cap(10, 'Emergências médicas a bordo', ['Epidemiologia', 'Kits médicos', 'Telemedicina', 'Protocolos', 'Ética e lei', 'Desvio']),
       cap(11, 'Transporte aeromédico', ['Asa fixa e asa rotativa', 'UTI aérea', 'Planejamento', 'Transferências prolongadas', 'Evacuação militar']),
       cap(12, 'Aviação militar', ['Aviação de caça', 'Trajes de proteção', 'Sobrevivência', 'Operações especiais']),
-      cap(13, 'Aeronaves e ambientes especiais', ['Helicópteros', 'Aviação geral', 'Offshore', 'Paraquedismo', 'Aerobática', 'Aviação agrícola', 'Balões e planadores']),
+      cap(13, 'Aeronaves e ambientes especiais', ['Helicópteros', 'Aviação geral', 'Offshore', 'Paraquedismo', 'Acrobacia aérea', 'Aviação agrícola', 'Balões e planadores']),
       cap(14, 'Saúde pública e aeroportos', ['Regulamento Sanitário', 'Pandemias', 'Vigilância', 'Saúde do viajante']),
       cap(15, 'Investigação e perícia', ['Investigação', 'Fatores humanos', 'Biomecânica do impacto', 'Recomendações', 'Perícia judicial', 'Necropsia', 'Toxicologia forense', 'Identificação de vítimas', 'Sobreviventes', 'Nexo causal', 'Perícia trabalhista', 'Laudo']),
       cap(16, 'Drones e eVTOL', ['Pilotos remotos', 'eVTOL', 'Piloto único e IA']),

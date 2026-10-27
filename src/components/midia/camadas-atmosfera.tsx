@@ -29,7 +29,7 @@ const CAMADAS = [
   },
   {
     id: 'termosfera', nome: 'Termosfera', de: 85, ate: 600, faixa: '85 a cerca de 600 km',
-    texto: 'O ar é tão rarefeito que quase não há ar. As poucas moléculas absorvem radiação solar e passam de 1.000 °C, mas um termômetro não esquentaria: não há moléculas suficientes para aquecê-lo. A linha de Kármán, a 100 km, é a fronteira convencional do espaço. Aqui ficam as auroras e a órbita da Estação Espacial, a cerca de 400 km.',
+    texto: 'O ar é extremamente rarefeito. As poucas moléculas absorvem radiação solar e passam de 1.000 °C, mas um termômetro não esquentaria: não há moléculas suficientes para aquecê-lo. A linha de Kármán, a 100 km, é a fronteira convencional do espaço. Aqui ficam as auroras e a órbita da Estação Espacial, a cerca de 400 km.',
   },
   {
     id: 'exosfera', nome: 'Exosfera', de: 600, ate: 700, faixa: 'Acima de cerca de 600 km',

@@ -42,7 +42,7 @@ export const hipoxia: Capitulo = {
       id: '3.3',
       midias: ['grafico-tuc'],
       titulo: 'Tempo de consciência útil',
-      pergunta: 'Quanto tempo uma pessoa continua lúcida sem oxigênio a 35.000 pés?',
+      pergunta: 'Quanto tempo uma pessoa continua lúcida sem oxigênio a 35.000 ft?',
       conteudo: {
         texto: [
           "O **tempo de consciência útil (TCU)** é o tempo que uma pessoa ainda tem, depois que o oxigênio cai, para perceber o problema e agir certo. **Não é o tempo até desmaiar**: o julgamento e a coordenação falham antes.",
@@ -101,10 +101,10 @@ export const hipoxia: Capitulo = {
       topico: '3.2',
     },
     {
-      pergunta: 'Qual é o tempo de consciência útil aproximado a 35.000 pés?',
+      pergunta: 'Qual é o tempo de consciência útil aproximado a 35.000 ft?',
       opcoes: ['De 5 a 10 minutos', 'De 3 a 5 minutos', 'De 30 segundos a 1 minuto', 'Menos de 5 segundos'],
       correta: 2,
-      explicacao: 'A 35.000 pés, o tempo de consciência útil é de cerca de 30 segundos a 1 minuto.',
+      explicacao: 'A 35.000 ft, o tempo de consciência útil é de cerca de 30 segundos a 1 minuto.',
       topico: '3.3',
     },
     {

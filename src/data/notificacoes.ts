@@ -45,6 +45,6 @@ export const notificacoes: Notificacao[] = [
     id: 'producao',
     rotulo: 'Em produção',
     titulo: 'Novos voos a caminho',
-    texto: 'Os textos dos outros 49 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
+    texto: 'Os textos dos outros 41 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
   },
 ];

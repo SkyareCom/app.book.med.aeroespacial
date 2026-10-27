@@ -14,7 +14,7 @@ import { SimuladorVisao } from '@/components/midia/simulador-visao';
 import type { TipoMidia } from '@/data/tipos';
 
 const CASOS_HIPOXIA = [
-  { texto: 'Um piloto sobe a 14.000 pés sem oxigênio suplementar.', resposta: 'Hipóxica', explicacao: 'O ar rarefeito reduz a pressão parcial de oxigênio inspirado.' },
+  { texto: 'Um piloto sobe a 14.000 ft sem oxigênio suplementar.', resposta: 'Hipóxica', explicacao: 'O ar rarefeito reduz a pressão parcial de oxigênio inspirado.' },
   { texto: 'Num monomotor, o aquecedor da cabine deixa passar gás do escapamento.', resposta: 'Hipêmica', explicacao: 'O monóxido de carbono ocupa a hemoglobina, que passa a carregar menos oxigênio.' },
   { texto: 'Numa curva a 6 G, a visão do piloto de caça fica cinza.', resposta: 'Estagnante', explicacao: 'O sangue é empurrado para longe da cabeça e a circulação no olho e no cérebro cai.' },
   { texto: 'Uma comissária com anemia importante sente falta de ar em voo.', resposta: 'Hipêmica', explicacao: 'Com menos hemoglobina, o sangue transporta menos oxigênio.' },
