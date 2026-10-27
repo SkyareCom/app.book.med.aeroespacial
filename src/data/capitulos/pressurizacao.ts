@@ -42,14 +42,7 @@ import type { Capitulo } from '../tipos';
 export const pressurizacao: Capitulo = {
   numero: 2,
   titulo: 'Pressurização e oxigênio suplementar',
-  resumo: 'Lá fora, o ar não sustenta a vida. Dentro, uma bolha pressurizada e uma máscara pronta para cair.',
   tempoLeituraMin: 20,
-  objetivos: [
-    'Explicar como a cabine é pressurizada',
-    'Diferenciar altitude de voo e altitude de cabine',
-    'Reconhecer os sistemas de oxigênio e seus limites',
-    'Entender por que a pressão positiva é necessária acima de 40.000 ft',
-  ],
   topicos: [
     {
       id: '2.1',

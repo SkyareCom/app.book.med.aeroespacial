@@ -7,14 +7,7 @@ import type { Capitulo } from '../tipos';
 export const hipoxia: Capitulo = {
   numero: 3,
   titulo: 'Respiração e hipóxia',
-  resumo: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber.',
   tempoLeituraMin: 25,
-  objetivos: [
-    'Explicar como o oxigênio chega às células',
-    'Diferenciar os quatro tipos de hipóxia',
-    'Conhecer o tempo de consciência útil em cada altitude',
-    'Reconhecer os sinais de hipóxia e de hiperventilação',
-  ],
   topicos: [
     {
       id: '3.1',
