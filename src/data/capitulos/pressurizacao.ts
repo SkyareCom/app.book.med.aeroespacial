@@ -35,7 +35,7 @@
 //   40.000 ft ≈ 140 mmHg → cerca de 93 mmHg).
 // - Ernsting's (5ª ed.) e Fundamentals (5ª ed.), capítulos de cabine pressurizada e sistemas de oxigênio
 //   [confirmar capítulo e página].
-// Fotos premium pendentes (prompts enviados ao autor).
+// Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v2-*.jpg.
 
 import type { Capitulo } from '../tipos';
 
@@ -62,7 +62,11 @@ export const pressurizacao: Capitulo = {
           "A cabine funciona como um balão rígido. Cada avião suporta uma diferença máxima entre a pressão de dentro e a de fora: a **pressão diferencial**, mostrada num indicador. Algumas aeronaves têm **válvulas de alívio** que protegem a estrutura quando essa diferença sai do limite.",
           "**Pressurizar não dispensa o oxigênio.** Uma falha ou uma descompressão é sempre possível, e por isso o oxigênio suplementar continua a bordo (Veja M1V3).",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 3, midia: 'pressao-diferencial' }],
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v2-aviao-cruzeiro.jpg'), legenda: 'Lá fora, o ar é rarefeito demais para o corpo; dentro da fuselagem, a pressurização cria uma bolha de ar respirável.' } },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v2-valvula-saida.jpg'), legenda: 'A válvula de saída abre e fecha para soltar o excesso de ar e manter a pressão da cabine estável.' } },
+          { paragrafo: 3, midia: 'pressao-diferencial' },
+        ],
       },
     },
     {
@@ -76,7 +80,12 @@ export const pressurizacao: Capitulo = {
           "A regra também prevê a falha. Num defeito provável, os ocupantes não podem ficar acima de **15.000 ft** de cabine; numa descompressão, a cabine não pode passar de **25.000 ft por mais de 2 minutos** nem jamais de **40.000 ft**. A tripulação recebe um **alerta quando a cabine passa de 10.000 ft**, e as máscaras dos passageiros caem antes de 15.000 ft.",
           "Na descida, a cabine também desce, mas devagar: em geral, **no máximo 500 a 600 ft por minuto**, para poupar os ouvidos (Veja M2V3). Antes do pouso, a pressão de dentro iguala a de fora.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 2, midia: 'perfil-cabine' }],
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v2-aviao-quadrado.jpg'), legenda: 'O avião cruza a mais de 10 km de altura, mas o corpo de quem está dentro vive na altitude de cabine.' } },
+          { paragrafo: 2, midia: 'perfil-cabine' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v2-mascaras-cabine.jpg'), legenda: 'Se a cabine perde pressão, as máscaras dos passageiros caem antes de a altitude de cabine passar de 15.000 ft.' } },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v2-painel-pressurizacao.jpg'), legenda: 'No painel de pressurização, a tripulação escolhe a altitude de cabine e a velocidade com que ela sobe ou desce.' } },
+        ],
       },
     },
     {
@@ -92,6 +101,7 @@ export const pressurizacao: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, midia: 'sistemas-oxigenio' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v2-piloto-mascara.jpg'), legenda: 'A máscara de colocação rápida dos pilotos: vestida com uma só mão, em até 5 segundos.' } },
           {
             paragrafo: 4,
             tabela: {
@@ -118,7 +128,11 @@ export const pressurizacao: Capitulo = {
           "A pressão positiva tem custo: **respirar sob pressão positiva por muito tempo pode causar hipóxia estagnante** (Veja M2V1 - II). Por isso ela é uma proteção para altitudes extremas, não um modo de respirar confortável.",
           "Mais acima, perto da **linha de Armstrong** (Veja M1V1 - I), a proteção deixa de ser só respiratória e passa a envolver o corpo inteiro, com trajes pressurizados (Veja M3V12).",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 1, midia: 'oxigenio-100' }],
+        recursos: [
+          { paragrafo: 1, midia: 'oxigenio-100' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v2-regulador.jpg'), legenda: 'O regulador de pressão de demanda empurra o oxigênio para dentro da máscara a cada inspiração.' } },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v2-traje-pressurizado.jpg'), legenda: 'Nas altitudes extremas, a proteção passa a envolver o corpo inteiro, com capacete e traje pressurizado.' } },
+        ],
       },
     },
   ],
