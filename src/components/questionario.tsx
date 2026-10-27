@@ -6,6 +6,7 @@ import { Barra, Painel } from '@/components/cartoes';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Raio } from '@/constants/theme';
 import type { Questao } from '@/data/tipos';
+import { dificuldadeDe, NOME_DIFICULDADE, PESO_PROVA, xpDaQuestao } from '@/lib/xp';
 
 export type Modo = 'quiz' | 'prova';
 
@@ -17,18 +18,26 @@ export function Questionario({
   onConcluir,
   onRefazer,
   onRevisar,
+  aoResponder,
+  rankingAtivo = false,
+  podeRefazer = true,
 }: {
   questoes: Questao[];
   modo: Modo;
   onConcluir?: (acertos: number, total: number) => void;
   onRefazer: () => void;
   onRevisar?: (topico: string) => void;
+  // Registra a resposta no ranking e devolve o XP ganho.
+  aoResponder?: (q: Questao, certa: boolean) => number;
+  rankingAtivo?: boolean;
+  podeRefazer?: boolean;
 }) {
   const [indice, setIndice] = useState(0);
   const [escolhas, setEscolhas] = useState<(number | null)[]>(() => questoes.map(() => null));
   const [confirmada, setConfirmada] = useState(false);
   const [fim, setFim] = useState(false);
   const [segundos, setSegundos] = useState(0);
+  const [ganhos, setGanhos] = useState<number[]>(() => questoes.map(() => 0));
 
   useEffect(() => {
     if (modo !== 'prova' || fim) return;
@@ -48,6 +57,8 @@ export function Questionario({
   function avancar() {
     if (modo === 'quiz' && !confirmada) {
       setConfirmada(true);
+      const ganho = aoResponder?.(q, escolha === q.correta) ?? 0;
+      setGanhos((g) => g.map((v, k) => (k === indice ? ganho : v)));
       return;
     }
     setConfirmada(false);
@@ -55,6 +66,8 @@ export function Questionario({
       setIndice(indice + 1);
     } else {
       setFim(true);
+      // No Modo prova, a correção (e o XP) só acontece no fim.
+      if (modo === 'prova') setGanhos(questoes.map((qq, k) => aoResponder?.(qq, escolhas[k] === qq.correta) ?? 0));
       onConcluir?.(acertos, questoes.length);
     }
   }
@@ -69,8 +82,16 @@ export function Questionario({
           <Texto t="titulo">{acertos} de {questoes.length} · {pct}%</Texto>
           {modo === 'prova' ? <Texto cor={Cores.textoApagado}>Tempo: {formatar(segundos)}</Texto> : null}
           <Barra valor={acertos / questoes.length} />
+          {rankingAtivo ? (
+            <View style={styles.xp}>
+              <Texto t="titulo" cor={Cores.dourado}>+{ganhos.reduce((a, b) => a + b, 0)} XP</Texto>
+              {modo === 'prova' ? <Texto t="rotulo" cor={Cores.dourado}>Peso {PESO_PROVA} no Modo prova</Texto> : null}
+            </View>
+          ) : (
+            <Texto t="rotulo" cor={Cores.textoApagado}>Ranking desativado: sem XP</Texto>
+          )}
           <Texto cor={Cores.textoSuave}>
-            {pct >= 70 ? 'Aprovado. O capítulo conta como concluído na sua evolução.' : 'Faça de novo para chegar a 70% e concluir.'}
+            {pct >= 70 ? 'Aprovado. O capítulo conta como concluído na sua evolução.' : rankingAtivo ? 'Revise os tópicos abaixo: cada questão só pontua uma vez.' : 'Faça de novo para chegar a 70% e concluir.'}
           </Texto>
         </Painel>
         {erradas.length > 0 ? (
@@ -90,7 +111,7 @@ export function Questionario({
             ))}
           </Painel>
         ) : null}
-        <BotaoPrincipal rotulo="Refazer" onPress={onRefazer} secundario />
+        {podeRefazer ? <BotaoPrincipal rotulo={rankingAtivo ? 'Mais questões' : 'Refazer'} onPress={onRefazer} secundario /> : null}
       </View>
     );
   }
@@ -105,6 +126,10 @@ export function Questionario({
       </View>
       <Barra valor={indice / questoes.length} altura={2} />
       <Painel>
+        <View style={styles.selos}>
+          <Texto t="rotulo" cor={Cores.textoApagado}>{NOME_DIFICULDADE[dificuldadeDe(q)]}</Texto>
+          {rankingAtivo ? <Texto t="rotulo" cor={Cores.dourado}>{xpDaQuestao(q, modo)} XP</Texto> : null}
+        </View>
         <Texto t="item">{q.pergunta}</Texto>
         <View style={{ gap: Espaco.sm }}>
           {q.opcoes.map((opcao, i) => {
@@ -133,6 +158,7 @@ export function Questionario({
           <View style={{ gap: 4 }}>
             <Texto t="rotulo" cor={escolha === q.correta ? Cores.acerto : Cores.erro}>
               {escolha === q.correta ? 'Correto' : 'Não foi dessa vez'}
+              {rankingAtivo ? `  ·  +${ganhos[indice]} XP` : ''}
             </Texto>
             <Texto cor={Cores.textoSuave}>{q.explicacao}</Texto>
           </View>
@@ -157,6 +183,8 @@ function formatar(s: number) {
 
 const styles = StyleSheet.create({
   topo: { flexDirection: 'row', justifyContent: 'space-between' },
+  selos: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  xp: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', gap: Espaco.sm },
   opcao: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -59,7 +59,10 @@ export interface Topico {
   midias?: TipoMidia[];
 }
 
+export type Dificuldade = 'facil' | 'media' | 'dificil';
+
 export interface Questao {
+  dificuldade?: Dificuldade; // vale XP: fácil 10, média 20, difícil 30 (peso 2 no Modo prova)
   pergunta: string;
   opcoes: [string, string, string, string];
   correta: 0 | 1 | 2 | 3;

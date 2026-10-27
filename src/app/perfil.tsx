@@ -5,11 +5,12 @@ import { BotaoPrincipal } from '@/components/botao';
 import { Barra, Painel } from '@/components/cartoes';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
+import { PainelRanking } from '@/components/ranking';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco } from '@/constants/theme';
 import { totalCapitulos } from '@/data/secoes';
 import { useConta, type ModoEntrada } from '@/state/conta';
-import { nivelPorConcluidos, useProgresso } from '@/state/progresso';
+import { useProgresso } from '@/state/progresso';
 
 const DESCRICAO: Record<ModoEntrada, { titulo: string; texto: string }> = {
   google: { titulo: 'Conta Google', texto: 'Você entrou com o Google.' },
@@ -18,7 +19,7 @@ const DESCRICAO: Record<ModoEntrada, { titulo: string; texto: string }> = {
   convidado: { titulo: 'Sem conta', texto: 'Seu progresso fica salvo só neste aparelho.' },
 };
 
-// Perfil: como a pessoa entrou, nível e progresso nas missões, e a opção de entrar ou sair.
+// Perfil: como a pessoa entrou, progresso nas missões, ranking de conhecimento (XP) e a opção de entrar ou sair.
 export default function Perfil() {
   const { modo, sair } = useConta();
   const { concluidos, melhoresNotas } = useProgresso();
@@ -41,7 +42,6 @@ export default function Perfil() {
       <Painel>
         <View style={styles.entre}>
           <Texto t="rotulo" cor={Cores.destaque}>Seu progresso</Texto>
-          <Texto t="rotulo" cor={Cores.textoApagado}>Nível · {nivelPorConcluidos(concluidos.length)}</Texto>
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: Espaco.md }}>
           <Texto t="titulo">{Math.round(pct * 100)}%</Texto>
@@ -50,6 +50,8 @@ export default function Perfil() {
         <Barra valor={pct} />
         <Texto cor={Cores.textoSuave}>{Object.keys(melhoresNotas).length} testes feitos</Texto>
       </Painel>
+
+      <PainelRanking />
 
       {modo === 'convidado' || !modo ? (
         <BotaoPrincipal rotulo="Entrar na conta" onPress={sair} />

@@ -1,11 +1,12 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
 import { IconeSeta } from '@/components/icones';
 import { NOME_MIDIA } from '@/components/midia';
+import { ResumoRanking } from '@/components/ranking';
 import { Selo } from '@/components/selo';
 import { CartaoEpisodio, Destaques, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
 import { TelaCheia } from '@/components/tela';
@@ -16,7 +17,7 @@ import { BordaCapa, Cores, Espaco } from '@/constants/theme';
 import { eras } from '@/data/historia';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
 import type { TipoMidia } from '@/data/tipos';
-import { nivelPorConcluidos, useProgresso } from '@/state/progresso';
+import { useProgresso } from '@/state/progresso';
 
 const LABORATORIO: TipoMidia[] = ['simulador-o2', 'simulador-visao', 'forcas-g', 'leis-gases', 'adaptacao-escuro', 'regua-ruido', 'radiacao-voo', 'risco-aeromedico', 'perda-ossea'];
 const IMAGEM_LAB: Partial<Record<TipoMidia, string>> = {
@@ -68,13 +69,18 @@ export default function Home() {
         <Painel>
           <View style={styles.linhaEntre}>
             <Texto t="rotulo" cor={Cores.destaque}>Sua evolução</Texto>
-            <Texto t="rotulo" cor={Cores.textoApagado}>Nível · {nivelPorConcluidos(concluidos.length)}</Texto>
+
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: Espaco.md }}>
             <Texto t="titulo">{Math.round(pctGeral * 100)}%</Texto>
             <Texto cor={Cores.textoApagado}>{concluidos.length} de {totalCapitulos} voos concluídos</Texto>
           </View>
           <Barra valor={pctGeral} />
+          <Link href="/perfil" asChild>
+            <Pressable accessibilityRole="link" accessibilityLabel="Ver ranking de conhecimento">
+              <ResumoRanking />
+            </Pressable>
+          </Link>
           <View style={styles.grade}>
             {secoes.map((s) => {
               const feitos = s.capitulos.filter((c) => concluidos.includes(chaveCapitulo(s.id, c.numero))).length;
@@ -133,11 +139,11 @@ export default function Home() {
       <View style={[styles.grade, { paddingHorizontal: GUTTER }]}>
         <CartaoImagem imagem={Imagens.quiz} altura={130} style={styles.celula} onPress={() => router.push({ pathname: '/teste', params: { origem: 'geral', modo: 'quiz' } })} rotuloAcessivel="Abrir modo quiz">
           <Texto t="item">Modo quiz</Texto>
-          <Texto cor={Cores.textoSuave}>Treine com explicação a cada resposta</Texto>
+          <Texto cor={Cores.textoSuave}>Explicação a cada resposta e XP por dificuldade</Texto>
         </CartaoImagem>
         <CartaoImagem imagem={Imagens.prova} altura={130} style={styles.celula} onPress={() => router.push({ pathname: '/teste', params: { origem: 'geral', modo: 'prova' } })} rotuloAcessivel="Abrir modo prova">
           <Texto t="item">Modo prova</Texto>
-          <Texto cor={Cores.textoSuave}>Simulado cronometrado com nota final</Texto>
+          <Texto cor={Cores.textoSuave}>Simulado cronometrado: cada acerto vale XP em dobro</Texto>
         </CartaoImagem>
       </View>
 
