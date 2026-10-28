@@ -34,7 +34,7 @@
 //   mais fresca, trabalhar à noite, roupas claras, folgadas e em camadas, p. 36; ficar perto da aeronave, p. 130:
 //   FAA CAMI, Basic Survival for Aviation (OK-06-033).
 // - Ernsting's (5ª ed.) e Fundamentals (5ª ed.), capítulos de estresse térmico e sobrevivência [confirmar capítulo e página].
-// Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v4-*.jpg. Pendente: foto da cabine ao sol (Calor, parágrafo 1).
+// Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v4-*.jpg.
 
 import type { Capitulo } from '../tipos';
 
@@ -55,6 +55,7 @@ export const temperatura: Capitulo = {
           "A prevenção é simples e diária: **beber antes da sede**, cerca de **1,9 litro por dia** como base, mais no calor e no esforço, e **manter a urina clara**. Álcool e cafeína aumentam a perda de água. Quem muda para um clima quente leva **uma a duas semanas para se aclimatar**.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v4-cabine-sol.jpg'), legenda: 'Avião parado ao sol, cabine abafada e macacão encharcado: o calor começa a pesar antes mesmo da decolagem.' } },
           { paragrafo: 2, midia: 'termometro-corpo' },
           { paragrafo: 3, midia: 'desidratacao' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v4-hidratacao.jpg'), legenda: 'Beber antes da sede, ainda no solo: a hidratação começa antes da decolagem.' } },
