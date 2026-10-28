@@ -24,6 +24,7 @@ export const hipoxia: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-cascata' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-1-alveolos.jpg'), legenda: 'Nos alvéolos, cachos de pequenos sacos envolvidos por capilares, o oxigênio passa do ar para o sangue.' } },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m2v1-1-oximetro.jpg'), legenda: 'O oxímetro de dedo mostra a saturação: em cruzeiro, um pouco abaixo da do solo em pessoas saudáveis.' } },
           { paragrafo: 4, midia: 'simulador-o2' },
         ],
@@ -56,6 +57,7 @@ export const hipoxia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-2-escapamento.jpg'), legenda: 'Inverno num monomotor: gás do escapamento entrando pela ventilação do aquecedor causa sonolência e dor de cabeça.' } },
           { paragrafo: 5, midia: 'classificar-hipoxia' },
         ],
       },
@@ -74,6 +76,7 @@ export const hipoxia: Capitulo = {
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-3-cronometro.jpg'), legenda: 'Quando o alarme acende, o relógio passa a correr contra o piloto: o tempo útil é medido em segundos ou minutos.' } },
           { paragrafo: 2, midia: 'grafico-tuc' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-3-mascara-primeiro.jpg'), legenda: 'Alarme de cabine: a máscara de colocação rápida vem antes de qualquer outra tarefa.' } },
         ],
       },
     },
