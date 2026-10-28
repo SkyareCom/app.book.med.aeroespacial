@@ -34,7 +34,7 @@
 //   mais fresca, trabalhar à noite, roupas claras, folgadas e em camadas, p. 36; ficar perto da aeronave, p. 130:
 //   FAA CAMI, Basic Survival for Aviation (OK-06-033).
 // - Ernsting's (5ª ed.) e Fundamentals (5ª ed.), capítulos de estresse térmico e sobrevivência [confirmar capítulo e página].
-// Fotos premium pendentes (prompts enviados ao autor em 27/10/2026).
+// Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v4-*.jpg. Pendente: foto da cabine ao sol (Calor, parágrafo 1).
 
 import type { Capitulo } from '../tipos';
 
@@ -57,6 +57,7 @@ export const temperatura: Capitulo = {
         recursos: [
           { paragrafo: 2, midia: 'termometro-corpo' },
           { paragrafo: 3, midia: 'desidratacao' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v4-hidratacao.jpg'), legenda: 'Beber antes da sede, ainda no solo: a hidratação começa antes da decolagem.' } },
         ],
       },
     },
@@ -72,7 +73,11 @@ export const temperatura: Capitulo = {
           "O resgate pede delicadeza. **Isole do chão, proteja cabeça e pescoço** e use uma **barreira contra vento e umidade**; a roupa molhada só sai num ambiente aquecido. Na forma leve, a pessoa fica sentada ou deitada por 30 minutos, recebe **bebida quente e calórica** se estiver alerta e **calor nas axilas, no tórax e nas costas**. Nas formas moderada e grave, **sempre deitada**, sem comida, com evacuação cuidadosa.",
           "Aquecer braços e pernas primeiro, ou mover demais o corpo, devolve sangue frio ao centro e baixa ainda mais a temperatura: é o **afterdrop**, que pode desencadear arritmia. Pela mesma razão, a vítima retirada da água fria pode **colapsar no próprio resgate**. E os sinais habituais de morte não valem aqui: **pupilas fixas e rigidez podem existir em quem ainda pode ser reanimado**.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 3, midia: 'agua-fria' }],
+        recursos: [
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v4-agua-gelada.jpg'), legenda: 'O primeiro minuto na água gelada: o choque frio força a respiração, e controlá-la evita aspirar água.' } },
+          { paragrafo: 3, midia: 'agua-fria' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v4-resgate-frio.jpg'), legenda: 'No resgate, a vítima fica deitada, isolada do chão e envolta numa barreira contra vento e umidade, com cabeça e pescoço protegidos.' } },
+        ],
       },
     },
     {
@@ -89,6 +94,8 @@ export const temperatura: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, midia: 'regra-tres' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v4-sinal-espelho.jpg'), legenda: 'Perto da aeronave, o espelho de sinalização aponta o sol para a busca; ao fundo, fogueiras de sinalização.' } },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v4-sinal-solo.jpg'), legenda: 'Visto do alto: um X grande e contrastante no chão avisa às aeronaves de busca que o grupo não consegue seguir.' } },
           {
             paragrafo: 3,
             tabela: {
