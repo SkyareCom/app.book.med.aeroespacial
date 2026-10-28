@@ -38,7 +38,13 @@ export type TipoMidia =
   | 'desidratacao'
   | 'agua-fria'
   | 'regra-tres'
-  | 'umidade-cabine';
+  | 'umidade-cabine'
+  | 'animacao-balao'
+  | 'animacao-pressao-positiva'
+  | 'animacao-bolhas'
+  | 'animacao-afterdrop'
+  | 'animacao-cascata'
+  | 'animacao-hiperventilacao';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.
@@ -55,6 +61,8 @@ export interface Recurso {
   // Figura fotográfica. `proporcao` = largura/altura (padrão 16:9). `marcadores`: estruturas que só se destacam quando
   // o leitor toca na legenda (x, y e raio em fração da imagem).
   figura?: { imagem: number; legenda: string; proporcao?: number; marcadores?: { x: number; y: number; rotulo: string; raio?: number }[] };
+  // Vídeo curto em laço, sem som (assets/videos, MP4).
+  video?: { fonte: number; legenda: string; proporcao?: number };
   // Tabela: no celular cada linha vira um cartão (1ª coluna como título, as outras como rótulo e valor).
   tabela?: { titulo: string; colunas: string[]; linhas: string[][] };
 }

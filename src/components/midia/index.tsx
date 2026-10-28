@@ -10,6 +10,7 @@ import { GraficoOxigenio100, GraficoPerfilCabine, GraficoSistemasOxigenio, Simul
 import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } from '@/components/midia/m1v3-graficos';
 import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '@/components/midia/m1v4-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -58,6 +59,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'agua-fria': () => <AguaFria />,
   'regra-tres': () => <RegraDosTres />,
   'umidade-cabine': () => <UmidadeCabine />,
+  'animacao-balao': () => <AnimacaoBalao />,
+  'animacao-pressao-positiva': () => <AnimacaoPressaoPositiva />,
+  'animacao-bolhas': () => <AnimacaoBolhas />,
+  'animacao-afterdrop': () => <AnimacaoAfterdrop />,
+  'animacao-cascata': () => <AnimacaoCascata />,
+  'animacao-hiperventilacao': () => <AnimacaoHiperventilacao />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -93,6 +100,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'agua-fria': 'Água fria 1-10-1',
   'regra-tres': 'Regra dos três',
   'umidade-cabine': 'Umidade da cabine',
+  'animacao-balao': 'O balão que sobe',
+  'animacao-pressao-positiva': 'Pressão positiva',
+  'animacao-bolhas': 'Como nascem as bolhas',
+  'animacao-afterdrop': 'Afterdrop',
+  'animacao-cascata': 'Cascata do oxigênio',
+  'animacao-hiperventilacao': 'Hiperventilação',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

@@ -10,6 +10,11 @@ import { pressurizacao } from './capitulos/pressurizacao';
 import { temperatura } from './capitulos/temperatura';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
+// Quantos recursos interativos (simuladores, gráficos, animações) um voo traz: laboratório, mídias dos tópicos e recursos do texto.
+export function interativosDe(c: Capitulo) {
+  return (c.laboratorio?.length ?? 0) + c.topicos.reduce((n, t) => n + (t.midias?.length ?? 0) + (t.conteudo?.recursos?.filter((r) => r.midia).length ?? 0), 0);
+}
+
 function cap(numero: number, titulo: string, topicos: string[], laboratorio?: TipoMidia[]): Capitulo {
   return { numero, titulo, laboratorio, topicos: topicos.map((t, i) => ({ id: `${numero}.${i + 1}`, titulo: t })) };
 }

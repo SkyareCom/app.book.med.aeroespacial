@@ -75,9 +75,22 @@ export const temperatura: Capitulo = {
           "Aquecer braços e pernas primeiro, ou mover demais o corpo, devolve sangue frio ao centro e baixa ainda mais a temperatura: é o **afterdrop**, que pode desencadear arritmia. Pela mesma razão, a vítima retirada da água fria pode **colapsar no próprio resgate**. E os sinais habituais de morte não valem aqui: **pupilas fixas e rigidez podem existir em quem ainda pode ser reanimado**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 2,
+            tabela: {
+              titulo: 'Hipotermia: classificar pelos sinais',
+              colunas: ['Estágio', 'Temperatura central', 'Sinais', 'No resgate'],
+              linhas: [
+                ['Leve', '35 a 32 °C', 'Treme, alerta, movimentos prejudicados', 'Sentado ou deitado; bebida quente e calórica se alerta'],
+                ['Moderada', '32 a 28 °C', 'Tremor diminui ou para', 'Sempre deitado, sem comida; evacuar com cuidado'],
+                ['Grave', 'Abaixo de 28 °C', 'Sem movimento, sem tremor, inconsciente', 'Sempre deitado; manuseio delicado; evacuar'],
+              ],
+            },
+          },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v4-agua-gelada.jpg'), legenda: 'O primeiro minuto na água gelada: o choque frio força a respiração, e controlá-la evita aspirar água.' } },
           { paragrafo: 3, midia: 'agua-fria' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v4-resgate-frio.jpg'), legenda: 'No resgate, a vítima fica deitada, isolada do chão e envolta numa barreira contra vento e umidade, com cabeça e pescoço protegidos.' } },
+          { paragrafo: 5, midia: 'animacao-afterdrop' },
         ],
       },
     },
@@ -109,6 +122,23 @@ export const temperatura: Capitulo = {
                 ['F', 'Preciso de água e comida'],
                 ['K', 'Para que lado devo ir?'],
                 ['LL', 'Está tudo bem'],
+              ],
+            },
+          },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'O kit que cabe num colete',
+              colunas: ['Item', 'Para quê'],
+              linhas: [
+                ['Sinalizador e espelho', 'Ser visto pela busca'],
+                ['Lanterna com pilhas extras', 'Trabalhar e sinalizar à noite'],
+                ['Canivete ou ferramenta, corda', 'Abrigo, reparos e amarração'],
+                ['Fósforos à prova d\'água', 'Fogo para calor e sinal'],
+                ['Bússola', 'Orientação'],
+                ['Primeiros socorros', 'Ferimentos'],
+                ['Repelente e luvas', 'Proteção da pele e das mãos'],
+                ['Água e comida', 'Reserva para esperar o resgate'],
               ],
             },
           },

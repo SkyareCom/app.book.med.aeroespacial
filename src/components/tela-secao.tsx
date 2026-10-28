@@ -9,7 +9,7 @@ import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, TituloDestaque, BordaCapa } from '@/constants/theme';
-import { chaveCapitulo, obterSecao } from '@/data/secoes';
+import { chaveCapitulo, interativosDe, obterSecao } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 
@@ -19,7 +19,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
   const router = useRouter();
   const { concluidos } = useProgresso();
   const prontos = secao.capitulos.filter(disponivel).length;
-  const interativos = secao.capitulos.filter((c) => c.laboratorio?.length || c.topicos.some((t) => t.midias?.length)).length;
+  const interativos = secao.capitulos.filter((c) => interativosDe(c) > 0).length;
   const primeiro = secao.capitulos.find(disponivel) ?? secao.capitulos.find((c) => c.laboratorio?.length) ?? secao.capitulos[0];
 
   return (
@@ -45,7 +45,7 @@ export function TelaSecao({ id }: { id: SecaoId }) {
         {secao.capitulos.map((c) => {
           const feito = concluidos.includes(chaveCapitulo(id, c.numero));
           const pronto = disponivel(c);
-          const lab = !!c.laboratorio?.length || c.topicos.some((t) => t.midias?.length);
+          const lab = interativosDe(c) > 0;
           return (
             <Pressable
               key={c.numero}

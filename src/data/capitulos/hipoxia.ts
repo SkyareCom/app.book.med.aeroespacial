@@ -1,6 +1,8 @@
 // Missão 2 (Sistemas) · Voo 1 — Respiração e hipóxia (o número do voo é definido em secoes.ts).
 // Conteúdo reorganizado em narrativa técnica contínua, com conceitos encadeados e destaques.
 // Valores de tempo de consciência útil: FAA Advisory Circular 61-107 (tabela de TUC).
+// Padrão de mídias (27/10/2026): recursos posicionados por parágrafo; tabelas-resumo montadas a partir do próprio texto;
+// animações esquemáticas (cascata do oxigênio, hiperventilação). Fotos premium pendentes (prompts enviados ao autor).
 
 import type { Capitulo } from '../tipos';
 
@@ -11,7 +13,6 @@ export const hipoxia: Capitulo = {
   topicos: [
     {
       id: '3.1',
-      midias: ['simulador-o2'],
       titulo: 'Transporte de oxigênio',
       pergunta: 'O que acontece com o oxigênio do ar até chegar ao cérebro?',
       conteudo: {
@@ -21,11 +22,14 @@ export const hipoxia: Capitulo = {
           "Ao nível do mar, a **pressão alveolar de oxigênio** fica perto de **100 mmHg**. A 8.000 ft (2.400 m), cai para **65 a 70 mmHg**, e a saturação de pessoas saudáveis costuma ficar entre **90% e 93%**, conforme a resposta da respiração.",
           "A **curva de dissociação da oxi-hemoglobina** explica o perigo: no início, a saturação resiste; depois de certo ponto, cada nova queda de pressão derruba a saturação cada vez mais rápido. Altitude, tempo de exposição, respiração e doenças mudam essa resposta. Descobrir em qual das quatro etapas o oxigênio falhou é o primeiro passo para corrigir.",
         ].join('\n\n'),
+        recursos: [
+          { paragrafo: 1, midia: 'animacao-cascata' },
+          { paragrafo: 4, midia: 'simulador-o2' },
+        ],
       },
     },
     {
       id: '3.2',
-      midias: ['classificar-hipoxia'],
       titulo: 'Tipos de hipóxia',
       pergunta: 'Falta de oxigênio é sempre por causa da altitude?',
       conteudo: {
@@ -36,11 +40,26 @@ export const hipoxia: Capitulo = {
           "Os mecanismos se somam. Um piloto anêmico, ou exposto a monóxido de carbono, tem menos reserva para enfrentar a altitude. Em aviões a pistão, **vazamentos do escapamento** são um risco real, mesmo perto do solo.",
           "Reconhecer o mecanismo orienta a resposta. O oxigênio suplementar ajuda em muitas situações, mas **não substitui corrigir a causa**: pressurização falha, cabine contaminada, anemia, problema circulatório ou exposição tóxica.",
         ].join('\n\n'),
+        recursos: [
+          {
+            paragrafo: 3,
+            tabela: {
+              titulo: 'Os quatro mecanismos da hipóxia',
+              colunas: ['Tipo', 'Onde falha', 'Exemplos'],
+              linhas: [
+                ['Hipóxica', 'Pressão de oxigênio no pulmão', 'Altitude sem proteção'],
+                ['Hipêmica', 'Transporte pelo sangue', 'Anemia, monóxido de carbono'],
+                ['Estagnante', 'Fluxo de sangue', 'Distúrbios circulatórios, acelerações'],
+                ['Histotóxica', 'Uso pela célula', 'Cianeto'],
+              ],
+            },
+          },
+          { paragrafo: 5, midia: 'classificar-hipoxia' },
+        ],
       },
     },
     {
       id: '3.3',
-      midias: ['grafico-tuc'],
       titulo: 'Tempo de consciência útil',
       pergunta: 'Quanto tempo uma pessoa continua lúcida sem oxigênio a 35.000 ft?',
       conteudo: {
@@ -50,11 +69,11 @@ export const hipoxia: Capitulo = {
           "Esforço físico, fadiga, doenças e diferenças individuais encurtam esse tempo. **Numa descompressão rápida, o TCU pode cair para cerca da metade.**",
           "Por isso a regra é imediata: diante de perda de pressurização, **coloque e ajuste a própria máscara de oxigênio antes de qualquer outra tarefa**, depois siga os procedimentos da aeronave. Cada segundo de dúvida consome o tempo disponível.",
         ].join('\n\n'),
+        recursos: [{ paragrafo: 2, midia: 'grafico-tuc' }],
       },
     },
     {
       id: '3.4',
-      midias: ['simulador-visao'],
       titulo: 'Sinais e sintomas',
       pergunta: 'Como perceber que está faltando oxigênio?',
       conteudo: {
@@ -64,6 +83,7 @@ export const hipoxia: Capitulo = {
           "A **visão noturna** é das mais sensíveis e pode piorar já em altitudes moderadas. Depois sofrem a memória recente, o raciocínio e os movimentos finos. No treinamento em câmara, cada pessoa aprende a reconhecer o próprio conjunto de sintomas: a **assinatura individual de hipóxia**.",
           "A conduta é a mesma do tempo de consciência útil (Veja M2V1 - III): **ao suspeitar de hipóxia, restabelecer o oxigênio na hora**, sem esperar sinais tardios.",
         ].join('\n\n'),
+        recursos: [{ paragrafo: 3, midia: 'simulador-visao' }],
       },
     },
     {
@@ -77,6 +97,22 @@ export const hipoxia: Capitulo = {
           "No voo, **hipóxia e hiperventilação podem coexistir ou ser confundidas**. Tratar hipóxia como ansiedade atrasa uma intervenção vital. Por isso, sintoma inexplicado em altitude pede primeiro a checagem do oxigênio e da pressurização.",
           "A ordem é fixa: **oxigênio adequado primeiro, sistema verificado e altitude corrigida, se preciso**. Só depois de excluir a hipóxia vale orientar a respiração mais lenta. **Respirar em saco de papel não é seguro** diante dessa dúvida.",
         ].join('\n\n'),
+        recursos: [
+          { paragrafo: 2, midia: 'animacao-hiperventilacao' },
+          {
+            paragrafo: 3,
+            tabela: {
+              titulo: 'Hipóxia ou hiperventilação?',
+              colunas: ['', 'Hipóxia', 'Hiperventilação'],
+              linhas: [
+                ['Causa', 'Falta de oxigênio nos tecidos', 'Gás carbônico eliminado demais'],
+                ['Sintomas em comum', 'Tontura e formigamento', 'Tontura e formigamento'],
+                ['Sinais próprios', 'Julgamento e visão pioram sem alarde', 'Formigamento em volta da boca, espasmos'],
+                ['Primeira conduta', 'Oxigênio adequado e checar o sistema', 'Só depois de excluir a hipóxia: respirar mais devagar'],
+              ],
+            },
+          },
+        ],
       },
     },
   ],

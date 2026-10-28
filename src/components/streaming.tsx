@@ -12,7 +12,7 @@ import { Selo } from '@/components/selo';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque, BordaCapa } from '@/constants/theme';
-import { chaveCapitulo } from '@/data/secoes';
+import { chaveCapitulo, interativosDe } from '@/data/secoes';
 import type { Capitulo, Secao } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
@@ -59,7 +59,7 @@ export function CartaoEpisodio({ secao, capitulo, largura = 230 }: { secao: Seca
   const { concluidos } = useProgresso();
   const feito = concluidos.includes(chaveCapitulo(secao.id, capitulo.numero));
   const pronto = disponivel(capitulo);
-  const temLab = !!capitulo.laboratorio?.length || capitulo.topicos.some((t) => t.midias?.length);
+  const temLab = interativosDe(capitulo) > 0;
   return (
     <Pressable
       accessibilityRole="button"

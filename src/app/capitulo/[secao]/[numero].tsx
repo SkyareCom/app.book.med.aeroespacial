@@ -9,6 +9,7 @@ import { CartaoImagem, Painel } from '@/components/cartoes';
 import { IconeAbrir, IconeSeta } from '@/components/icones';
 import { FiguraMarcada } from '@/components/figura-marcada';
 import { Midia } from '@/components/midia';
+import { VideoLaco } from '@/components/midia/video-laco';
 import { Selo } from '@/components/selo';
 import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
@@ -16,7 +17,7 @@ import { BotaoVoltarFlutuante, TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
-import { chaveCapitulo, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
+import { chaveCapitulo, interativosDe, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
 import type { Recurso, Topico } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
@@ -68,7 +69,7 @@ export default function TelaCapitulo() {
   }
 
   const pronto = disponivel(capitulo);
-  const nInterativos = (capitulo.laboratorio?.length ?? 0) + capitulo.topicos.reduce((n, t) => n + (t.midias?.length ?? 0), 0);
+  const nInterativos = interativosDe(capitulo);
   const largura = Math.min(width, LarguraMaxima);
   const proximos = secao.capitulos.filter((c) => c.numero > capitulo.numero).slice(0, 4);
 
@@ -261,6 +262,8 @@ function Recursos({ lista }: { lista?: Recurso[] }) {
       {itens.map((r, i) =>
         r.midia ? (
           <Midia key={`${r.midia}-${i}`} tipo={r.midia} />
+        ) : r.video ? (
+          <VideoLaco key={`vid-${i}`} fonte={r.video.fonte} legenda={r.video.legenda} proporcao={r.video.proporcao} />
         ) : r.tabela ? (
           <MolduraMidia key={`tab-${i}`} tipo="Tabela" titulo={r.tabela.titulo}>
             {r.tabela.linhas.map((l) => (

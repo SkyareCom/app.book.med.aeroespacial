@@ -123,6 +123,7 @@ export const pressurizacao: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'oxigenio-100' },
+          { paragrafo: 3, midia: 'animacao-pressao-positiva' },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v2-regulador.jpg'), legenda: 'O regulador de pressão de demanda empurra o oxigênio para dentro da máscara a cada inspiração.' } },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v2-traje-pressurizado.jpg'), legenda: 'Nas altitudes extremas, a proteção passa a envolver o corpo inteiro, com capacete e traje pressurizado.' } },
         ],

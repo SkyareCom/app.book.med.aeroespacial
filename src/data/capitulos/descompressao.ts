@@ -79,6 +79,7 @@ export const descompressao: Capitulo = {
           "A conduta não espera: **máscara, oxigênio a 100%, descida de emergência e pouso** o quanto antes, com a articulação dolorida imóvel. **Mesmo que os sintomas sumam na descida, a pessoa precisa de avaliação médica**, respirando oxigênio. Se persistirem, o tratamento é na **câmara hiperbárica** (Veja M1V3 - IV). E um alerta: **oxigênio a 100% durante o voo não previne a doença** se não houve pré-respiração antes da decolagem.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, midia: 'animacao-bolhas' },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v3-piloto-dor.jpg'), legenda: 'Dor profunda no ombro em pleno voo sem pressurização: a forma mais comum da doença descompressiva.' } },
           {
             paragrafo: 3,
@@ -96,6 +97,20 @@ export const descompressao: Capitulo = {
             },
           },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v3-pele-marmorizada.jpg'), legenda: 'Pele marmorizada: manchas arroxeadas que podem acompanhar a doença descompressiva e pedem avaliação.' } },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Doença descompressiva em voo: passo a passo',
+              colunas: ['Passo', 'O que fazer'],
+              linhas: [
+                ['1', 'Máscara e oxigênio a 100% imediatamente.'],
+                ['2', 'Descida de emergência e pouso o quanto antes.'],
+                ['3', 'Manter imóvel a articulação dolorida.'],
+                ['4', 'Avaliação médica mesmo que os sintomas sumam, respirando oxigênio.'],
+                ['5', 'Se persistirem ou voltarem: câmara hiperbárica (Veja M1V3 - IV).'],
+              ],
+            },
+          },
         ],
       },
     },

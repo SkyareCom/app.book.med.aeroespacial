@@ -84,6 +84,7 @@ export const atmosfera: Capitulo = {
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/cenas/hero.jpg'), legenda: 'A atmosfera vista da órbita: a faixa azul fina no horizonte concentra quase todo o ar do planeta.' } },
           { paragrafo: 1, midia: 'composicao-ar' },
+          { paragrafo: 2, midia: 'animacao-balao' },
           { paragrafo: 5, midia: 'camadas-atmosfera' },
         ],
       },

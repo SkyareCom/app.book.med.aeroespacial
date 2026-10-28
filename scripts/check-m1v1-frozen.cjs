@@ -10,7 +10,7 @@ const path = require('node:path');
 
 const fonte = fs.readFileSync(path.resolve(__dirname, '../src/data/capitulos/atmosfera.ts'), 'utf8');
 const ASSINATURAS = Object.freeze({
-  '1.1': '2c67cfba7f40545a', // M1V1 - I: Camadas da atmosfera
+  '1.1': '3502dad96ac79652', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
   '1.2': '431b933e6534e6aa', // M1V1 - II: Leis dos gases
   '1.3': '9ed34fdc4760bbcb', // M1V1 - III: Atmosfera padrão
   '1.4': 'e7f504ae57a131ac', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine, padrão de recursos pedido pelo autor)
@@ -63,13 +63,13 @@ if (assinatura(teste) !== ASSINATURA_TESTE) {
   console.error('CONGELAMENTO VIOLADO: questões e respostas do teste final de M1V1.');
   diferente = true;
 }
-// Congelamento editorial M1V2 e M1V3 — autorizado pelo autor em 27/10/2026.
+// Congelamento editorial M1V2 e M1V3 — autorizado pelo autor em 27/10/2026; padrão de mídias (animações e tabelas) incluído a pedido do autor no mesmo dia.
 // Protege o texto, recursos e testes (arquivos de dados), os gráficos e simuladores e as fotos de cada voo.
 const crypto = require('node:crypto');
 const ARQUIVOS = Object.freeze({
-  'src/data/capitulos/pressurizacao.ts': '7484037e0bd2a0ff',
+  'src/data/capitulos/pressurizacao.ts': 'c799b52c87776ab2',
   'src/components/midia/m1v2-graficos.tsx': 'a24c3febbacf3176',
-  'src/data/capitulos/descompressao.ts': '26ed048161495b77',
+  'src/data/capitulos/descompressao.ts': 'f74d9b3167e8f83f',
   'src/components/midia/m1v3-graficos.tsx': 'bffbed4b28aaff08',
   'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
   'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
