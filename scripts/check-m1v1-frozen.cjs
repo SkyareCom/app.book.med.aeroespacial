@@ -13,7 +13,7 @@ const ASSINATURAS = Object.freeze({
   '1.1': '2c67cfba7f40545a', // M1V1 - I: Camadas da atmosfera
   '1.2': '431b933e6534e6aa', // M1V1 - II: Leis dos gases
   '1.3': '9ed34fdc4760bbcb', // M1V1 - III: Atmosfera padrão
-  '1.4': 'f3a697c515c48e4e', // M1V1 - IV: Temperatura e umidade
+  '1.4': 'e7f504ae57a131ac', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine, padrão de recursos pedido pelo autor)
 });
 const ASSINATURA_TESTE = '47754a8bbeb02cb4';
 

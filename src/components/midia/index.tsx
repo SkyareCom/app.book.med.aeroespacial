@@ -9,6 +9,7 @@ import { GraficoAtmosferaPadrao, SimuladorAltitudeDensidade } from '@/components
 import { GraficoOxigenio100, GraficoPerfilCabine, GraficoSistemasOxigenio, SimuladorPressaoDiferencial } from '@/components/midia/m1v2-graficos';
 import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } from '@/components/midia/m1v3-graficos';
 import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '@/components/midia/m1v4-graficos';
+import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -56,6 +57,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'desidratacao': () => <SimuladorDesidratacao />,
   'agua-fria': () => <AguaFria />,
   'regra-tres': () => <RegraDosTres />,
+  'umidade-cabine': () => <UmidadeCabine />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -90,6 +92,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'desidratacao': 'Desidratação',
   'agua-fria': 'Água fria 1-10-1',
   'regra-tres': 'Regra dos três',
+  'umidade-cabine': 'Umidade da cabine',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

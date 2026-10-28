@@ -37,7 +37,8 @@ export type TipoMidia =
   | 'termometro-corpo'
   | 'desidratacao'
   | 'agua-fria'
-  | 'regra-tres';
+  | 'regra-tres'
+  | 'umidade-cabine';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

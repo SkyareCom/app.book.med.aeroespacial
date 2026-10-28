@@ -59,6 +59,8 @@
 //   relatório de pesquisa 02/06; valores variam conforme aeronave e fase de voo.
 // - Contexto fisiológico adicional: Ernsting's Aviation and Space Medicine, 5ª ed.,
 //   e Fundamentals of Aerospace Medicine, 5ª ed. [confirmar capítulo e página].
+// - Simulador umidade-cabine (27/10/2026, padrão de recursos autorizado pelo autor): fórmula de Magnus, ar externo
+//   saturado na atmosfera padrão, comprimido à cabine de 8.000 ft e aquecido a 22 °C (cálculo; detalhes no componente).
 //
 import type { Capitulo } from '../tipos';
 
@@ -198,6 +200,7 @@ export const atmosfera: Capitulo = {
               ],
             },
           },
+          { paragrafo: 3, midia: 'umidade-cabine' },
         ],
       },
     },
