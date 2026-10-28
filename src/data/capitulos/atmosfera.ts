@@ -28,7 +28,8 @@
 // - Ernsting's, 5ª ed., capítulo da atmosfera [confirmar página].
 // - Conversões 80 °F ≈ 27 °C e 75 °F ≈ 24 °C; simulador de altitude-densidade calcula a densidade do ar seco
 //   (P/T) e a altitude da troposfera padrão com a mesma densidade: σ = (1 − 6,8756·10⁻⁶·h)^4,2559 (cálculo).
-// Fotos premium pendentes (prompts enviados ao autor): balão meteorológico, avião em cruzeiro, aeroporto de altitude em dia quente.
+// Fotos premium (geradas por IA pelo autor, pessoas fictícias): topicos/m1v1-1-balao, m1v1-3-altimetro, m1v1-3-aeroporto-quente,
+// m1v1-4-olhos-secos, m1v1-4-calor-umido (27/10/2026, padrão de mídias pedido pelo autor).
 // Recursos: foto da Terra vista da órbita (cenas/hero.jpg), gráfico composicao-ar e camadas-atmosfera
 // (rótulos sobre a foto cenas/camadas.jpg, gerada por IA).
 //
@@ -85,6 +86,7 @@ export const atmosfera: Capitulo = {
           { paragrafo: 1, figura: { imagem: require('@/assets/images/cenas/hero.jpg'), legenda: 'A atmosfera vista da órbita: a faixa azul fina no horizonte concentra quase todo o ar do planeta.' } },
           { paragrafo: 1, midia: 'composicao-ar' },
           { paragrafo: 2, midia: 'animacao-balao' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-1-balao.jpg'), legenda: 'Acima da tropopausa, um balão meteorológico chega à estratosfera: o ar é tão rarefeito que ele se estica até ficar enorme.' } },
           { paragrafo: 5, midia: 'camadas-atmosfera' },
         ],
       },
@@ -159,7 +161,9 @@ export const atmosfera: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, midia: 'atmosfera-padrao' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v1-3-altimetro.jpg'), legenda: 'O altímetro é um barômetro: o botão de ajuste escolhe a pressão de referência que ele vai converter em altitude.' } },
           { paragrafo: 4, midia: 'altitude-densidade' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-3-aeroporto-quente.jpg'), legenda: 'Aeroporto alto num dia quente: o ar menos denso faz o avião correr mais na pista antes de sair do chão.' } },
           {
             paragrafo: 3,
             tabela: {
@@ -202,6 +206,8 @@ export const atmosfera: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'umidade-cabine' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-4-olhos-secos.jpg'), legenda: 'Horas de cruzeiro no ar seco da cabine: olhos ardendo e garganta seca, mesmo com a cabine confortável.' } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v1-4-calor-umido.jpg'), legenda: 'No calor úmido da pista tropical, o ar saturado não deixa o suor evaporar, e o corpo perde calor com dificuldade.' } },
         ],
       },
     },

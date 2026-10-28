@@ -10,10 +10,10 @@ const path = require('node:path');
 
 const fonte = fs.readFileSync(path.resolve(__dirname, '../src/data/capitulos/atmosfera.ts'), 'utf8');
 const ASSINATURAS = Object.freeze({
-  '1.1': '3502dad96ac79652', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
+  '1.1': 'c5604d6959e0f83e', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
   '1.2': '431b933e6534e6aa', // M1V1 - II: Leis dos gases
-  '1.3': '9ed34fdc4760bbcb', // M1V1 - III: Atmosfera padrão
-  '1.4': 'e7f504ae57a131ac', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine, padrão de recursos pedido pelo autor)
+  '1.3': '7c922a881de5d4d1', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor)
+  '1.4': '56038b959b150ed6', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine, padrão de recursos pedido pelo autor)
 });
 const ASSINATURA_TESTE = '47754a8bbeb02cb4';
 
