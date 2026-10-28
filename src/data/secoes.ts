@@ -7,6 +7,7 @@ import { atmosfera } from './capitulos/atmosfera';
 import { descompressao } from './capitulos/descompressao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
+import { temperatura } from './capitulos/temperatura';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
 function cap(numero: number, titulo: string, topicos: string[], laboratorio?: TipoMidia[]): Capitulo {
@@ -34,7 +35,7 @@ export const secoes: Secao[] = [
       atmosfera,
       pressurizacao,
       descompressao,
-      cap(4, 'Temperatura e sobrevivência', ['Calor', 'Hipotermia', 'Sobrevivência']),
+      temperatura,
       cap(5, 'Radiação cósmica', ['Radiação ionizante', 'Doses por rota', 'Gestação', 'Limites de dose', 'Raios cósmicos', 'Blindagem', 'Câncer e sistema nervoso'], ['radiacao-voo']),
       cap(6, 'Ruído e vibração', ['Perda auditiva', 'Proteção auditiva', 'Vibração'], ['regua-ruido']),
       cap(7, 'Forças G', ['Eixos G', 'G-LOC e A-LOC', 'Manobra anti-G', 'Centrífuga'], ['forcas-g']),

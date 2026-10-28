@@ -33,7 +33,11 @@ export type TipoMidia =
   | 'oxigenio-100'
   | 'tipos-descompressao'
   | 'mergulho-voo'
-  | 'camara-pressao';
+  | 'camara-pressao'
+  | 'termometro-corpo'
+  | 'desidratacao'
+  | 'agua-fria'
+  | 'regra-tres';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

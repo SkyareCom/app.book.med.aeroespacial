@@ -8,6 +8,7 @@ import { GraficoBoyle, GraficoCharles, GraficoDalton, GraficoHenry } from '@/com
 import { GraficoAtmosferaPadrao, SimuladorAltitudeDensidade } from '@/components/midia/atmosfera-padrao';
 import { GraficoOxigenio100, GraficoPerfilCabine, GraficoSistemasOxigenio, SimuladorPressaoDiferencial } from '@/components/midia/m1v2-graficos';
 import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } from '@/components/midia/m1v3-graficos';
+import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '@/components/midia/m1v4-graficos';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -51,6 +52,10 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'tipos-descompressao': () => <GraficoTiposDescompressao />,
   'mergulho-voo': () => <CalculadoraMergulhoVoo />,
   'camara-pressao': () => <SimuladorCamara />,
+  'termometro-corpo': () => <TermometroCorpo />,
+  'desidratacao': () => <SimuladorDesidratacao />,
+  'agua-fria': () => <AguaFria />,
+  'regra-tres': () => <RegraDosTres />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -81,6 +86,10 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'tipos-descompressao': 'Tipos de descompressão',
   'mergulho-voo': 'Mergulho e voo',
   'camara-pressao': 'Câmaras de pressão',
+  'termometro-corpo': 'Da hipotermia à insolação',
+  'desidratacao': 'Desidratação',
+  'agua-fria': 'Água fria 1-10-1',
+  'regra-tres': 'Regra dos três',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

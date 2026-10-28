@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 3;
+export const VERSAO_NOTIFICACOES = 4;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'temperatura',
+    rotulo: 'Voo disponível',
+    titulo: 'Temperatura e sobrevivência',
+    texto: 'O voo 4 da Missão 1 chegou: calor e desidratação, hipotermia e água fria, e as prioridades de sobrevivência. Com 4 simuladores e o teste no final.',
+    destino: '/capitulo/conceitos/4',
+  },
   {
     id: 'descompressao',
     rotulo: 'Voo disponível',
@@ -52,6 +59,6 @@ export const notificacoes: Notificacao[] = [
     id: 'producao',
     rotulo: 'Em produção',
     titulo: 'Novos voos a caminho',
-    texto: 'Os textos dos outros 40 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
+    texto: 'Os textos dos outros 39 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
   },
 ];

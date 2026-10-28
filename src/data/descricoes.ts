@@ -4,7 +4,7 @@ export const DESCRICOES: Record<string, string> = {
   'conceitos-1': 'Do que o ar é feito, como ele se divide em camadas e por que pressão, frio e umidade mudam ao subir.',
   'conceitos-2': 'Como a cabine é pressurizada, o que é altitude de cabine e quando entram o oxigênio e as máscaras.',
   'conceitos-3': 'O que acontece quando a cabine perde pressão, a doença descompressiva, o mergulho antes do voo e as câmaras.',
-  'conceitos-4': 'Calor, frio e desidratação em voo, e as regras para sobreviver no mar, na selva, no deserto e no gelo.',
+  'conceitos-4': 'Calor, frio e desidratação em voo, a água gelada e as prioridades para sobreviver depois de um pouso forçado.',
   'conceitos-5': 'A radiação cósmica nas rotas aéreas e no espaço: doses por voo, gestação, blindagem e riscos à saúde.',
   'conceitos-6': 'Ruído e vibração a bordo: como afetam a audição e o desempenho, e quais proteções funcionam.',
   'conceitos-7': 'Por que a visão apaga em curvas fortes, o que é G-LOC e como os pilotos se protegem das forças G.',
