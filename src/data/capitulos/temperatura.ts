@@ -75,6 +75,7 @@ export const temperatura: Capitulo = {
           "Aquecer braços e pernas primeiro, ou mover demais o corpo, devolve sangue frio ao centro e baixa ainda mais a temperatura: é o **afterdrop**, que pode desencadear arritmia. Pela mesma razão, a vítima retirada da água fria pode **colapsar no próprio resgate**. E os sinais habituais de morte não valem aqui: **pupilas fixas e rigidez podem existir em quem ainda pode ser reanimado**.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, video: { fonte: require('@/assets/videos/m1v4-frio.mp4'), legenda: 'No frio intenso, o corpo treme para gerar calor e cada respiração vira vapor: o tremor é a primeira defesa.' } },
           {
             paragrafo: 2,
             tabela: {

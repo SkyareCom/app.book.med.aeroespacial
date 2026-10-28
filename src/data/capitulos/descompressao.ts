@@ -62,6 +62,7 @@ export const descompressao: Capitulo = {
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v3-cabine-nevoa.jpg'), legenda: 'Segundos depois da descompressão: névoa súbita, papéis e poeira no ar e as máscaras já caídas.' } },
           { paragrafo: 2, midia: 'tipos-descompressao' },
+          { paragrafo: 3, video: { fonte: require('@/assets/videos/m1v3-nevoa.mp4'), legenda: 'A névoa da descompressão: a queda brusca de pressão e de temperatura condensa a umidade do ar em segundos.' } },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v3-jato-executivo.jpg'), legenda: 'Num jato executivo, a cabine pequena se enche de névoa quase de uma vez: o sinal mais visível da queda de pressão.' } },
         ],
       },

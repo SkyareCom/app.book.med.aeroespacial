@@ -67,11 +67,12 @@ if (assinatura(teste) !== ASSINATURA_TESTE) {
 // Protege o texto, recursos e testes (arquivos de dados), os gráficos e simuladores e as fotos de cada voo.
 const crypto = require('node:crypto');
 const ARQUIVOS = Object.freeze({
+  'assets/videos/m1v3-nevoa.mp4': 'fce798b38067d0c3',
   'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
   'assets/videos/m1v2-mascaras.mp4': 'e7d116eebd6b1581',
   'src/data/capitulos/pressurizacao.ts': '6240097f9df5f621',
   'src/components/midia/m1v2-graficos.tsx': 'a24c3febbacf3176',
-  'src/data/capitulos/descompressao.ts': 'f74d9b3167e8f83f',
+  'src/data/capitulos/descompressao.ts': 'cf860c8fcc89431d',
   'src/components/midia/m1v3-graficos.tsx': 'bffbed4b28aaff08',
   'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
   'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
