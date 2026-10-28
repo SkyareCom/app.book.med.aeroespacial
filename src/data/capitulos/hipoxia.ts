@@ -2,7 +2,7 @@
 // Conteúdo reorganizado em narrativa técnica contínua, com conceitos encadeados e destaques.
 // Valores de tempo de consciência útil: FAA Advisory Circular 61-107 (tabela de TUC).
 // Padrão de mídias (27/10/2026): recursos posicionados por parágrafo; tabelas-resumo montadas a partir do próprio texto;
-// animações esquemáticas (cascata do oxigênio, hiperventilação). Fotos premium pendentes (prompts enviados ao autor).
+// animações esquemáticas (cascata do oxigênio, hiperventilação). Fotos e vídeo do autor (pessoas fictícias): topicos/m2v1-*.jpg; m2v1-5-oxigenio é quadro do vídeo enviado em 28/10/2026.
 
 import type { Capitulo } from '../tipos';
 
@@ -24,6 +24,7 @@ export const hipoxia: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-cascata' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m2v1-1-oximetro.jpg'), legenda: 'O oxímetro de dedo mostra a saturação: em cruzeiro, um pouco abaixo da do solo em pessoas saudáveis.' } },
           { paragrafo: 4, midia: 'simulador-o2' },
         ],
       },
@@ -41,6 +42,7 @@ export const hipoxia: Capitulo = {
           "Reconhecer o mecanismo orienta a resposta. O oxigênio suplementar ajuda em muitas situações, mas **não substitui corrigir a causa**: pressurização falha, cabine contaminada, anemia, problema circulatório ou exposição tóxica.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-2-fumaca.jpg'), legenda: 'Fumaça na cabine: monóxido de carbono e outros tóxicos podem roubar o oxigênio do sangue e das células.' } },
           {
             paragrafo: 3,
             tabela: {
@@ -69,7 +71,10 @@ export const hipoxia: Capitulo = {
           "Esforço físico, fadiga, doenças e diferenças individuais encurtam esse tempo. **Numa descompressão rápida, o TCU pode cair para cerca da metade.**",
           "Por isso a regra é imediata: diante de perda de pressurização, **coloque e ajuste a própria máscara de oxigênio antes de qualquer outra tarefa**, depois siga os procedimentos da aeronave. Cada segundo de dúvida consome o tempo disponível.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 2, midia: 'grafico-tuc' }],
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-3-cronometro.jpg'), legenda: 'Quando o alarme acende, o relógio passa a correr contra o piloto: o tempo útil é medido em segundos ou minutos.' } },
+          { paragrafo: 2, midia: 'grafico-tuc' },
+        ],
       },
     },
     {
@@ -83,7 +88,11 @@ export const hipoxia: Capitulo = {
           "A **visão noturna** é das mais sensíveis e pode piorar já em altitudes moderadas. Depois sofrem a memória recente, o raciocínio e os movimentos finos. No treinamento em câmara, cada pessoa aprende a reconhecer o próprio conjunto de sintomas: a **assinatura individual de hipóxia**.",
           "A conduta é a mesma do tempo de consciência útil (Veja M2V1 - III): **ao suspeitar de hipóxia, restabelecer o oxigênio na hora**, sem esperar sinais tardios.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 3, midia: 'simulador-visao' }],
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-4-euforia.jpg'), legenda: 'Na câmara, sem máscara, o aluno sorri e acha que está tudo bem enquanto a escrita desanda: a armadilha da hipóxia.' } },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-4-cianose.jpg'), legenda: 'Lábios e unhas azulados denunciam pouco oxigênio no sangue, mas a ausência deles não exclui a hipóxia.' } },
+          { paragrafo: 3, midia: 'simulador-visao' },
+        ],
       },
     },
     {
@@ -98,6 +107,7 @@ export const hipoxia: Capitulo = {
           "A ordem é fixa: **oxigênio adequado primeiro, sistema verificado e altitude corrigida, se preciso**. Só depois de excluir a hipóxia vale orientar a respiração mais lenta. **Respirar em saco de papel não é seguro** diante dessa dúvida.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-5-maos.jpg'), legenda: 'Mãos tensas e dedos em leve espasmo: o formigamento da hiperventilação lembra o da hipóxia.' } },
           { paragrafo: 2, midia: 'animacao-hiperventilacao' },
           {
             paragrafo: 3,
@@ -112,6 +122,7 @@ export const hipoxia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-5-oxigenio.jpg'), legenda: 'Na dúvida entre ansiedade e hipóxia, primeiro o oxigênio; só depois se orienta a respiração mais lenta.' } },
         ],
       },
     },

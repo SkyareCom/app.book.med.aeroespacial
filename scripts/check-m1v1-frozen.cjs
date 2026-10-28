@@ -10,7 +10,7 @@ const path = require('node:path');
 
 const fonte = fs.readFileSync(path.resolve(__dirname, '../src/data/capitulos/atmosfera.ts'), 'utf8');
 const ASSINATURAS = Object.freeze({
-  '1.1': 'c5604d6959e0f83e', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
+  '1.1': '380ad402c604b256', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
   '1.2': '431b933e6534e6aa', // M1V1 - II: Leis dos gases
   '1.3': '7c922a881de5d4d1', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor)
   '1.4': '56038b959b150ed6', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine, padrão de recursos pedido pelo autor)
@@ -67,7 +67,9 @@ if (assinatura(teste) !== ASSINATURA_TESTE) {
 // Protege o texto, recursos e testes (arquivos de dados), os gráficos e simuladores e as fotos de cada voo.
 const crypto = require('node:crypto');
 const ARQUIVOS = Object.freeze({
-  'src/data/capitulos/pressurizacao.ts': 'c799b52c87776ab2',
+  'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
+  'assets/videos/m1v2-mascaras.mp4': 'e7d116eebd6b1581',
+  'src/data/capitulos/pressurizacao.ts': '6240097f9df5f621',
   'src/components/midia/m1v2-graficos.tsx': 'a24c3febbacf3176',
   'src/data/capitulos/descompressao.ts': 'f74d9b3167e8f83f',
   'src/components/midia/m1v3-graficos.tsx': 'bffbed4b28aaff08',

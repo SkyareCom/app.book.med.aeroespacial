@@ -59,6 +59,7 @@ export const pressurizacao: Capitulo = {
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v2-aviao-cruzeiro.jpg'), legenda: 'Lá fora, o ar é rarefeito demais para o corpo; dentro da fuselagem, a pressurização cria uma bolha de ar respirável.' } },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v2-valvula-saida.jpg'), legenda: 'A válvula de saída abre e fecha para soltar o excesso de ar e manter a pressão da cabine estável.' } },
           { paragrafo: 3, midia: 'pressao-diferencial' },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m1v2-mascaras.mp4'), legenda: 'Se a cabine perde pressão, as máscaras caem: o oxigênio suplementar é a proteção que a pressurização não dispensa.' } },
         ],
       },
     },
@@ -93,6 +94,7 @@ export const pressurizacao: Capitulo = {
           "As regras da FAA escalonam o uso. Entre **12.500 e 14.000 ft** de cabine, a tripulação usa oxigênio se ficar mais de 30 minutos; acima de **14.000 ft**, o tempo todo; acima de **15.000 ft**, **todos a bordo** recebem oxigênio. Em aviões pressurizados, acima do **FL250** deve haver ao menos **10 minutos de oxigênio por ocupante** para a descida de emergência; acima do **FL350**, um piloto voa de máscara, salvo quando dois pilotos têm máscaras de colocação rápida, vestidas com uma mão em até 5 segundos, até o FL410.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v2-cilindro-oxigenio.jpg'), legenda: 'O cilindro de oxigênio de bordo é inspecionado com o manômetro à vista e longe de óleo e graxa.' } },
           { paragrafo: 2, midia: 'sistemas-oxigenio' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v2-piloto-mascara.jpg'), legenda: 'A máscara de colocação rápida dos pilotos: vestida com uma só mão, em até 5 segundos.' } },
           {
