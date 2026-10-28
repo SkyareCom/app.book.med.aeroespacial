@@ -39,7 +39,7 @@
 //   atmosfera padrão ICAO; 10 m de água do mar ≈ 1 atmosfera.
 // - Ernsting's (5ª ed.) e Fundamentals (5ª ed.), capítulos de descompressão e doença descompressiva
 //   [confirmar capítulo e página].
-// Fotos premium pendentes (prompts enviados ao autor em 27/10/2026).
+// Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v3-*.jpg.
 
 import type { Capitulo } from '../tipos';
 
@@ -59,7 +59,11 @@ export const descompressao: Capitulo = {
           "O corpo e a cabine dão sinais. Há **estrondo ou chiado**, **névoa** súbita causada pela queda de temperatura e de umidade, **poeira e objetos voando**, **rajada de vento** e **frio**. Ao mesmo tempo, os gases do corpo se expandem: **ouvidos estalam e o abdômen estufa** (Veja M1V1 - II).",
           "O inimigo principal é a **hipóxia**, que começa quase de imediato. Numa descompressão rápida, o tempo de consciência útil cai pela metade (Veja M2V1 - III); **acima de 43.000 ft, sobram cerca de 9 a 12 segundos**. A ordem é sempre a mesma: **máscara primeiro, depois a descida de emergência**. Quem passou por uma descompressão rápida em voo deve ficar **24 horas sem voar**.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 2, midia: 'tipos-descompressao' }],
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v3-cabine-nevoa.jpg'), legenda: 'Segundos depois da descompressão: névoa súbita, papéis e poeira no ar e as máscaras já caídas.' } },
+          { paragrafo: 2, midia: 'tipos-descompressao' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v3-jato-executivo.jpg'), legenda: 'Num jato executivo, a cabine pequena se enche de névoa quase de uma vez: o sinal mais visível da queda de pressão.' } },
+        ],
       },
     },
     {
@@ -75,6 +79,7 @@ export const descompressao: Capitulo = {
           "A conduta não espera: **máscara, oxigênio a 100%, descida de emergência e pouso** o quanto antes, com a articulação dolorida imóvel. **Mesmo que os sintomas sumam na descida, a pessoa precisa de avaliação médica**, respirando oxigênio. Se persistirem, o tratamento é na **câmara hiperbárica** (Veja M1V3 - IV). E um alerta: **oxigênio a 100% durante o voo não previne a doença** se não houve pré-respiração antes da decolagem.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v3-piloto-dor.jpg'), legenda: 'Dor profunda no ombro em pleno voo sem pressurização: a forma mais comum da doença descompressiva.' } },
           {
             paragrafo: 3,
             figura: {
@@ -90,6 +95,7 @@ export const descompressao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v3-pele-marmorizada.jpg'), legenda: 'Pele marmorizada: manchas arroxeadas que podem acompanhar a doença descompressiva e pedem avaliação.' } },
         ],
       },
     },
@@ -104,7 +110,11 @@ export const descompressao: Capitulo = {
           "Por isso a FAA fixa esperas mínimas. Depois de **mergulho sem parada de descompressão**, **12 horas** antes de voar até 8.000 ft. Depois de **mergulho com parada de descompressão**, **24 horas**. Para voar **acima de 8.000 ft**, **24 horas após qualquer mergulho**. São mínimos: **esperar mais é mais seguro**.",
           "A mesma lógica vale para outras exposições à pressão. Depois de um treino em **câmara hipobárica**, também se esperam **24 horas** para voar. E depois de um voo sem pressurização acima de 18.000 ft, o ideal é **evitar esforço físico por 24 horas**.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 3, midia: 'mergulho-voo' }],
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v3-mergulhador-subida.jpg'), legenda: 'A subida ao fim do mergulho começa a liberar o nitrogênio absorvido no fundo, mas parte dele continua nos tecidos por horas.' } },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v3-mergulhador-aviao.jpg'), legenda: 'Depois do mergulho, até a cabine de um avião de linha pode ser altitude demais para quem ainda carrega nitrogênio.' } },
+          { paragrafo: 3, midia: 'mergulho-voo' },
+        ],
       },
     },
     {
@@ -118,7 +128,11 @@ export const descompressao: Capitulo = {
           "A câmara **hiperbárica** é o tratamento da doença descompressiva. A mais usada é a **Tabela 6 da Marinha dos EUA**: **2,8 atmosferas, o equivalente a 18 metros de mar, respirando oxigênio a 100%**. A pressão encolhe a bolha para cerca de **um terço do volume** (lei de Boyle), e o oxigênio puro tira o nitrogênio do caminho.",
           "O segredo está no gradiente. Com oxigênio puro a 2,8 atmosferas, a diferença de pressão de nitrogênio entre a bolha e o tecido chega a **2.086 mmHg, contra 142 mmHg na superfície**: o nitrogênio sai da bolha muito mais depressa. Nem todo centro hiperbárico trata a doença descompressiva de altitude, e **localizar o serviço certo faz parte da conduta**.",
         ].join('\n\n'),
-        recursos: [{ paragrafo: 3, midia: 'camara-pressao' }],
+        recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v3-camara-hipobarica.jpg'), legenda: 'Na câmara hipobárica, os alunos sobem sem sair do chão e aprendem a reconhecer a própria hipóxia, sob o olhar do instrutor.' } },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v3-camara-hiperbarica.jpg'), legenda: 'Na câmara hiperbárica, o paciente respira oxigênio puro sob pressão enquanto o operador controla a profundidade e o tempo.' } },
+          { paragrafo: 3, midia: 'camara-pressao' },
+        ],
       },
     },
   ],
