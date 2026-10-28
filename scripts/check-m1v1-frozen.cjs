@@ -63,9 +63,43 @@ if (assinatura(teste) !== ASSINATURA_TESTE) {
   console.error('CONGELAMENTO VIOLADO: questões e respostas do teste final de M1V1.');
   diferente = true;
 }
+// Congelamento editorial M1V2 e M1V3 — autorizado pelo autor em 27/10/2026.
+// Protege o texto, recursos e testes (arquivos de dados), os gráficos e simuladores e as fotos de cada voo.
+const crypto = require('node:crypto');
+const ARQUIVOS = Object.freeze({
+  'src/data/capitulos/pressurizacao.ts': '7484037e0bd2a0ff',
+  'src/components/midia/m1v2-graficos.tsx': 'a24c3febbacf3176',
+  'src/data/capitulos/descompressao.ts': '26ed048161495b77',
+  'src/components/midia/m1v3-graficos.tsx': 'bffbed4b28aaff08',
+  'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
+  'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
+  'assets/images/topicos/m1v2-mascaras-cabine.jpg': '11bd27cc724154e7',
+  'assets/images/topicos/m1v2-painel-pressurizacao.jpg': '03524be1749bf625',
+  'assets/images/topicos/m1v2-piloto-mascara.jpg': '3f24651c16114376',
+  'assets/images/topicos/m1v2-regulador.jpg': 'b74e0c0c66f4fda7',
+  'assets/images/topicos/m1v2-traje-pressurizado.jpg': '78843fde8429aa4d',
+  'assets/images/topicos/m1v2-valvula-saida.jpg': '2d6d73b39f91d24c',
+  'assets/images/topicos/m1v3-cabine-nevoa.jpg': 'adf405291a2ccd88',
+  'assets/images/topicos/m1v3-camara-hiperbarica.jpg': 'd448ef242cd93e92',
+  'assets/images/topicos/m1v3-camara-hipobarica.jpg': 'e07de879e933a453',
+  'assets/images/topicos/m1v3-jato-executivo.jpg': '80255ce43de6f9d1',
+  'assets/images/topicos/m1v3-mergulhador-aviao.jpg': '641e8ba93dcccb9c',
+  'assets/images/topicos/m1v3-mergulhador-subida.jpg': 'aaffbc821671f604',
+  'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
+  'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
+});
+for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
+  const caminho = path.resolve(__dirname, '..', arquivo);
+  const atual = fs.existsSync(caminho) ? crypto.createHash('sha256').update(fs.readFileSync(caminho)).digest('hex').slice(0, 16) : 'ausente';
+  if (atual !== esperado) {
+    console.error('CONGELAMENTO VIOLADO: ' + arquivo + '. Esperado: ' + esperado + '; recebido: ' + atual);
+    diferente = true;
+  }
+}
+
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1 I–IV.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2 ou M1V3.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1 I–IV e teste final preservados. Nenhum conteúdo congelado mudou.');
+  console.log('M1V1, M1V2 e M1V3 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }
