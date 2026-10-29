@@ -2,6 +2,12 @@
 
 Objetivo: ilustrar cada tema com formatos variados, posicionados para quebrar a leitura e não cansar.
 
+## Foco: aviação civil
+- Fotos, vídeos e capas mostram **aviação civil**: linhas aéreas, executiva, aviação geral, táxi aéreo, aeromédico civil,
+  aeroportos, tripulantes e passageiros. Nada de caças, macacões de voo verdes, capacetes militares ou bases aéreas.
+- Exceções: o voo **Aviação militar** (M3V12) e a Missão 4 (Espaço).
+- Câmara hipobárica, treinamento e sobrevivência: alunos civis (pilotos de linha, comissários), roupas civis ou uniforme de companhia aérea sem marca.
+
 ## Regras por tópico
 - **Pelo menos 2 fotos** cinematográficas (geradas pelo autor, pessoas fictícias, sem texto, logos ou marcas).
 - **Pelo menos 1 recurso interativo**: simulação, gráfico tocável ou animação.
