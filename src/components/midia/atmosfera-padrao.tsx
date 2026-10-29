@@ -46,7 +46,7 @@ export function GraficoAtmosferaPadrao() {
           {[0, 10000, 20000, 30000, 40000].map((a) => (
             <G key={a}>
               <Line x1={x0} y1={Y(a)} x2={x1} y2={Y(a)} stroke={Cores.linha} />
-              <SvgText x={x0 - 6} y={Y(a) + 3} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">{a / 1000}k</SvgText>
+              <SvgText x={x0 - 6} y={a ? Y(a) + 3 : Y(a) - 2} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">{a / 1000}k</SvgText>
             </G>
           ))}
           {/* Tropopausa padrão */}

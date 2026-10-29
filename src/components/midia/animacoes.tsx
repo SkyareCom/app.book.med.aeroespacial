@@ -96,7 +96,8 @@ export function AnimacaoBalao() {
             <Rect x={cx - 4} y={Y(ft) + r + 14} width={8} height={6} fill="#d9e6f2" />
             <Ellipse cx={cx} cy={Y(ft)} rx={r} ry={r * 1.08} fill="#f4f7fb" fillOpacity={0.92} />
             <SvgText x={x0 + 10} y={yT + 16} fill={Cores.texto} fontSize={11} fontFamily={Fonte}>{fmt(Math.round(ft / 100) * 100)} ft</SvgText>
-            <SvgText x={x0 + 10} y={yT + 30} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte}>{fmt(pb)} mmHg · balão {fmt(vol, 1)}×</SvgText>
+            <SvgText x={x0 + 10} y={yT + 30} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte}>{fmt(pb)} mmHg</SvgText>
+            <SvgText x={x0 + 10} y={yT + 43} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte}>balão {fmt(vol, 1)}×</SvgText>
           </G>
         );
       }}
@@ -226,7 +227,7 @@ export function AnimacaoAfterdrop() {
                 <SvgText x={cx - 70} y={82} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="end">BRAÇOS</SvgText>
               </G>
             ) : null}
-            <SvgText x={cx + 66} y={80} fill={retorno > 0.6 ? frio : Cores.textoSuave} fontSize={10} fontFamily={Fonte}>
+            <SvgText x={w - 4} y={38} fill={retorno > 0.6 ? frio : Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="end">
               {retorno < 0.05 ? 'Centro morno' : retorno < 1 ? 'Sangue frio volta' : 'Centro esfria mais'}
             </SvgText>
           </G>
@@ -294,7 +295,8 @@ export function AnimacaoHiperventilacao() {
         return (
           <G>
             <Ellipse cx={cx} cy={90} rx={30 + 10 * peito} ry={44 + 8 * peito} fill="#7fb7ff" fillOpacity={0.5} stroke="#9cc8ff" />
-            <SvgText x={cx} y={160} fill={rapida ? Cores.dourado : Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">{rapida ? 'RESPIRAÇÃO ACELERADA' : 'RESPIRAÇÃO NORMAL'}</SvgText>
+            <SvgText x={cx} y={158} fill={rapida ? Cores.dourado : Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">RESPIRAÇÃO</SvgText>
+            <SvgText x={cx} y={171} fill={rapida ? Cores.dourado : Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">{rapida ? 'ACELERADA' : 'NORMAL'}</SvgText>
             <Rect x={w * 0.42} y={40} width={16} height={100} rx={8} fill={Cores.trilha} />
             <Rect x={w * 0.42} y={40 + 100 * (1 - co2)} width={16} height={100 * co2} rx={8} fill={Cores.dourado} />
             <SvgText x={w * 0.42 + 8} y={160} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="middle">CO₂</SvgText>

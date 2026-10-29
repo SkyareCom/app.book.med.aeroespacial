@@ -45,7 +45,7 @@ export function UmidadeCabine() {
       <View onLayout={(e) => setLarg(e.nativeEvent.layout.width)}>
         <Svg width={larg} height={H}>
           <Rect x={x0} y={Y(20)} width={x1 - x0} height={Y(10) - Y(20)} fill={Cores.dourado} fillOpacity={0.14} />
-          <SvgText x={x0 + 4} y={Y(10) + 12} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>FAIXA DAS CABINES REAIS: 10–20%</SvgText>
+          <SvgText x={x1} y={Y(20) - 4} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="end">FAIXA DAS CABINES REAIS: 10–20%</SvgText>
           {[0.1, 1, 10, 100].map((u) => (
             <SvgText key={u} x={x0 - 6} y={Y(u) + 3} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">{fmt(u, u < 1 ? 1 : 0)}%</SvgText>
           ))}
@@ -54,7 +54,7 @@ export function UmidadeCabine() {
             <SvgText key={f} x={X(f)} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor={f === 0 ? 'start' : f === 40000 ? 'end' : 'middle'}>{f ? `${f / 1000} mil` : '0'}</SvgText>
           ))}
           <Path d={d} stroke={Cores.destaque} strokeWidth={2.4} fill="none" />
-          <Line x1={X(ft)} y1={yT} x2={X(ft)} y2={yB} stroke={Cores.texto} strokeDasharray="3 3" />
+          <Line x1={X(ft)} y1={Y(ur)} x2={X(ft)} y2={yB} stroke={Cores.texto} strokeDasharray="3 3" />
           <Circle cx={X(ft)} cy={Y(ur)} r={6} fill={Cores.destaque} stroke={Cores.fundo} strokeWidth={2} />
         </Svg>
       </View>

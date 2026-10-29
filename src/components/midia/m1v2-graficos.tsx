@@ -103,12 +103,12 @@ export function GraficoPerfilCabine() {
             </G>
           ))}
           <Line x1={x0} y1={Y(10000)} x2={x1} y2={Y(10000)} stroke={Cores.dourado} strokeDasharray="5 4" />
-          <SvgText x={X(60)} y={Y(10000) - 4} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="middle">10.000 FT · ALERTA NA CABINE DE COMANDO</SvgText>
+          <SvgText x={X(60)} y={Y(10000) - 4} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{larg < 340 ? '10.000 FT · ALERTA' : '10.000 FT · ALERTA NA CABINE DE COMANDO'}</SvgText>
           <Line x1={x0} y1={Y(15000)} x2={x1} y2={Y(15000)} stroke={Cores.erro} strokeDasharray="5 4" />
           <SvgText x={X(60)} y={Y(15000) - 4} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="middle">15.000 FT · MÁSCARAS JÁ CAÍRAM</SvgText>
           <Path d={linha(PERFIL_AVIAO)} stroke="#8A93A6" strokeWidth={2.5} fill="none" />
           <Path d={linha(PERFIL_CABINE)} stroke={Cores.destaque} strokeWidth={3} fill="none" />
-          <SvgText x={X(60)} y={Y(38000) - 6} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">AVIÃO · 38.000 FT</SvgText>
+          <SvgText x={X(60)} y={Y(38000) + 16} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="middle">AVIÃO · 38.000 FT</SvgText>
           <SvgText x={X(60)} y={Y(8000) + 14} fill={Cores.destaque} fontSize={10} fontFamily={Fonte} textAnchor="middle">CABINE · ATÉ 8.000 FT</SvgText>
           {[0, 30, 60, 90, 120].map((m) => (
             <SvgText key={m} x={X(m)} y={yB + 14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor={m === 0 ? 'start' : m === 120 ? 'end' : 'middle'}>{m} min</SvgText>
@@ -143,7 +143,7 @@ export function GraficoSistemasOxigenio() {
         <Svg width={larg} height={H}>
           {[0, 10000, 20000, 30000, 40000, 50000].map((f) => (
             <G key={f}>
-              <Line x1={X(f)} y1={topo - 6} x2={X(f)} y2={H - 26} stroke={Cores.linha} />
+              <Line x1={X(f)} y1={topo + SISTEMAS.length * linhaH - 4} x2={X(f)} y2={H - 26} stroke={Cores.linha} />
               <SvgText x={X(f)} y={H - 12} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{f / 1000}k</SvgText>
             </G>
           ))}
@@ -208,10 +208,10 @@ export function GraficoOxigenio100() {
             </G>
           ))}
           <Line x1={x0} y1={Y(149)} x2={x1} y2={Y(149)} stroke={Cores.texto} strokeOpacity={0.6} strokeDasharray="5 4" />
-          <SvgText x={x1} y={Y(149) - 4} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">AR AO NÍVEL DO MAR · 149 mmHg</SvgText>
+          <SvgText x={x1} y={yT + 10} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">TRACEJADO: AR AO NÍVEL DO MAR · 149 mmHg</SvgText>
           <Path d={dP} stroke={Cores.acerto} strokeWidth={2.5} fill="none" />
           <Path d={dA} stroke={Cores.dourado} strokeWidth={2.5} fill="none" />
-          <Line x1={X(ft)} y1={yT} x2={X(ft)} y2={yB} stroke={Cores.texto} strokeOpacity={0.5} />
+          <Line x1={X(ft)} y1={yT + 16} x2={X(ft)} y2={yB} stroke={Cores.texto} strokeOpacity={0.5} />
           <Circle cx={X(ft)} cy={Y(vPuro)} r={5} fill={Cores.acerto} stroke={Cores.fundo} strokeWidth={2} />
           <Circle cx={X(ft)} cy={Y(ar(ft))} r={5} fill={Cores.dourado} stroke={Cores.fundo} strokeWidth={2} />
           {[0, 10000, 20000, 30000, 40000, 50000].map((a) => (

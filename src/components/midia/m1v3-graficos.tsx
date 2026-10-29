@@ -203,12 +203,13 @@ export function SimuladorCamara() {
             <Line key={m.rotulo} x1={X(m.ata)} y1={64} x2={X(m.ata)} y2={88} stroke={Cores.textoSuave} strokeWidth={1.5} />
           ))}
           {[0.5, 1, 2, 3].map((a) => (
-            <SvgText key={a} x={X(a)} y={116} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{fmt(a, a % 1 ? 1 : 0)} ATA</SvgText>
+            <SvgText key={a} x={X(a)} y={116} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor={a === 3 ? 'end' : 'middle'}>{fmt(a, a % 1 ? 1 : 0)} ATA</SvgText>
           ))}
           <Circle cx={X(ata)} cy={76} r={7} fill={Cores.texto} />
           <Circle cx={larg / 2} cy={32} r={rBase} stroke={Cores.textoApagado} strokeDasharray="3 3" fill="none" />
           <Circle cx={larg / 2} cy={32} r={r} fill={hipo ? Cores.destaque : Cores.dourado} fillOpacity={0.55} stroke={hipo ? Cores.destaque : Cores.dourado} />
-          <SvgText x={larg / 2 + rBase + 8} y={36} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>BOLHA (TRACEJADO: 1 ATM)</SvgText>
+          <SvgText x={larg / 2 + 34} y={29} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>BOLHA</SvgText>
+          <SvgText x={larg / 2 + 34} y={41} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte}>TRACEJADO: 1 ATM</SvgText>
         </Svg>
       </View>
       <Deslizante min={0.3} max={3} passo={0.05} valor={ata} onChange={(v) => setAta(Math.round(v * 100) / 100)} rotulo="Pressão da câmara em atmosferas" formatar={(v) => `${fmt(v, 2)} atmosferas`} />

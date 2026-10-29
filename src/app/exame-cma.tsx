@@ -562,7 +562,7 @@ function Simulado() {
 function Chip({ rotulo, ativo, onPress }: { rotulo: string; ativo: boolean; onPress: () => void }) {
   return (
     <Pressable accessibilityRole="radio" accessibilityState={{ checked: ativo }} onPress={onPress} style={[styles.chip, ativo && styles.chipAtivo]}>
-      <Texto t="rotulo" cor={ativo ? Cores.fundo : Cores.texto}>{rotulo}</Texto>
+      <Texto t="rotulo" cor={ativo ? Cores.fundo : Cores.texto} style={{ flexShrink: 1, textAlign: 'center' }}>{rotulo}</Texto>
     </Pressable>
   );
 }
@@ -612,7 +612,7 @@ const styles = StyleSheet.create({
   celula: { flexBasis: '47%', flexGrow: 1 },
   celulaAtiva: { borderColor: Cores.destaque, borderWidth: 2 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  chip: { minHeight: 34, paddingHorizontal: 12, borderRadius: 17, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
+  chip: { minHeight: 34, maxWidth: '100%', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 17, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
   chipAtivo: { backgroundColor: Cores.destaque, borderColor: Cores.destaque },
   marca: { gap: 2, paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
   cabSistema: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, minHeight: 56 },

@@ -86,8 +86,10 @@ export function GraficoBoyle() {
           <Circle cx={bx} cy={H / 2 - 10} r={r} fill="url(#balaoB)" />
           <Path d={`M${bx} ${H / 2 - 10 + r}l-4 8h8z`} fill="#173C73" />
           <SvgText x={bx} y={H / 2 - 4} fill={Cores.fundo} fontSize={16} fontFamily={Fonte} textAnchor="middle">{fmt(e, 1)}×</SvgText>
-          <SvgText x={bx} y={14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">BALÃO DE GÁS PRESO</SvgText>
-          <SvgText x={bx} y={26} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">(TRACEJADO: NÍVEL DO MAR)</SvgText>
+          {/* Legenda do balão, na coluna dele, abaixo do balão (não cruza a curva em telas estreitas). */}
+          <SvgText x={bx - 6} y={H - 26} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">GÁS PRESO</SvgText>
+          <SvgText x={bx - 6} y={H - 14} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">TRACEJADO:</SvgText>
+          <SvgText x={bx - 6} y={H - 3} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">NÍVEL DO MAR</SvgText>
         </Svg>
       </View>
       <Escolhas itens={PONTOS_BOYLE} valor={ft} onChange={setFt} />
@@ -137,7 +139,7 @@ export function GraficoDalton() {
             );
           })}
           <Line x1={6} y1={base} x2={larg - 6} y2={base} stroke={Cores.linha} />
-          <SvgText x={larg / 2} y={H - 2} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">ALTITUDE (PÉS) · NÚMERO DOURADO = O₂ INSPIRADO EM mmHg</SvgText>
+          <SvgText x={larg / 2} y={H - 2} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">PÉS · EM DOURADO: O₂ INSPIRADO (mmHg)</SvgText>
         </Svg>
       </View>
       <View style={styles.legenda}>
@@ -238,7 +240,7 @@ export function GraficoCharles() {
   const H = 190;
   const cx = larg / 2;
   const cy = 120;
-  const R = 88;
+  const R = Math.min(88, larg / 2 - 40);
   // Mostrador de 60% a 120%, num arco de 180°.
   const ang = (v: number) => Math.PI * (1 - (Math.max(60, Math.min(120, v)) - 60) / 60);
   const p = (v: number, rr: number): [number, number] => [cx + rr * Math.cos(ang(v)), cy - rr * Math.sin(ang(v))];

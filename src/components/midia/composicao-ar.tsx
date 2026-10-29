@@ -116,11 +116,17 @@ export function ComposicaoAr() {
           })}
           {fatias.filter(({ g }) => !fatiaPeq(g.id)).map(({ g, meio }) => {
             const [dx, dy] = deslocar(meio, g.id);
-            const [tx, ty] = ponto(cx + dx, cy + dy, rx * 0.58, ry * 0.58, meio);
+            // Pizza pequena (grande altitude): os rótulos saem da fatia para não transbordar.
+            const fora = escala < 0.85;
+            const [tx, ty] = fora
+              ? [cx + (g.id === 'o2' ? -1 : 1) * Math.max(rx * 0.6, 62), cy + ry + prof + 26]
+              : ponto(cx + dx, cy + dy - (larg < 340 && g.id === 'n2' ? 6 : 0), rx * 0.58, ry * 0.58, meio);
+            const ancora = 'middle';
+            const cor = fora ? g.cor : '#03050A';
             return (
               <G key={`r-${g.id}`}>
-                <SvgText x={tx} y={ty} fill="#03050A" fontSize={18} fontFamily={Fonte} textAnchor="middle">{fmt(g.pct, 2)}%</SvgText>
-                <SvgText x={tx} y={ty + 14} fill="#03050A" fontSize={10} fontFamily={Fonte} textAnchor="middle">{g.id === 'n2' ? 'NITROGÊNIO' : 'OXIGÊNIO'}</SvgText>
+                <SvgText x={tx} y={ty} fill={cor} fontSize={larg < 340 ? 15 : 18} fontFamily={Fonte} textAnchor={ancora}>{fmt(g.pct, 2)}%</SvgText>
+                <SvgText x={tx} y={ty + 14} fill={cor} fontSize={10} fontFamily={Fonte} textAnchor={ancora}>{g.id === 'n2' ? 'NITROGÊNIO' : 'OXIGÊNIO'}</SvgText>
               </G>
             );
           })}
@@ -128,7 +134,7 @@ export function ComposicaoAr() {
           {fatias.filter(({ g }) => fatiaPeq(g.id)).map(({ g, meio }, i) => {
             const [dx, dy] = deslocar(meio, g.id);
             const [px, py] = ponto(cx + dx, cy + dy, rx, ry, meio);
-            const lx = cx + 34;
+            const lx = Math.min(cx + 34, larg - 116);
             const ly = 8 + i * 16;
             return (
               <G key={`c-${g.id}`} onPress={() => setSel(g.id)}>

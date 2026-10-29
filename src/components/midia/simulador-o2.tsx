@@ -22,7 +22,7 @@ export function SimuladorO2() {
 
   // Gráfico: PO₂ 0–110 mmHg no eixo x, saturação 0–100% no eixo y.
   const h = 190;
-  const m = { e: 30, d: 10, t: 10, b: 24 };
+  const m = { e: 38, d: 10, t: 10, b: 24 };
   const gx = (p: number) => m.e + (p / 110) * (larg - m.e - m.d);
   const gy = (s: number) => m.t + (1 - s / 100) * (h - m.t - m.b);
   let curva = '';

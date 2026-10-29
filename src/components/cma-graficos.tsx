@@ -47,7 +47,7 @@ export function GraficoPA({ pas, pad }: { pas?: number; pad?: number }) {
               <Line x1={X(90)} y1={y0} x2={X(90)} y2={y1} stroke={AMARELO} strokeDasharray="4 4" />
               <Line x1={x0} y1={Y(140)} x2={x1} y2={Y(140)} stroke={AMARELO} strokeDasharray="4 4" />
               {[100, 140, 180].map((s) => <G key={s}>{rot(x0 - 6, Y(s) + 3, String(s), Cores.textoApagado, 'end')}</G>)}
-              {[60, 90, 110].map((d) => <G key={d}>{rot(X(d), H - 10, String(d))}</G>)}
+              {[60, 90, 110].map((d) => <G key={d}>{rot(X(d), H - 13, String(d))}</G>)}
               {rot(x0 + 6, y0 + 14, 'SISTÓLICA', Cores.textoApagado, 'start')}
               {rot(x1, H - 1, 'DIASTÓLICA (mmHg)', Cores.textoApagado, 'end')}
               {ok !== undefined ? (
@@ -237,7 +237,7 @@ export function GraficoValidade({ series, idade, titulo, instrucao }: { series: 
                   {rot(x0 - 5, Y(m) + 3, String(m), Cores.textoApagado, 'end')}
                 </G>
               ))}
-              {[20, 30, 40, 50, 60, 70].map((a) => <G key={a}>{rot(X(a), H - 10, `${a}`)}</G>)}
+              {[20, 30, 40, 50, 60, 70].map((a) => <G key={a}>{rot(X(a), H - 13, `${a}`)}</G>)}
               {rot(x1, H - 1, 'IDADE (ANOS)', Cores.textoApagado, 'end')}
               {rot(x0 + 4, y0 - 2, 'MESES', Cores.textoApagado, 'start')}
               {series.map((s, k) => {
