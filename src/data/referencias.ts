@@ -19,4 +19,7 @@ export const normas: Referencia[] = [
   { titulo: 'EASA', detalhe: 'Agência Europeia para a Segurança da Aviação' },
   { titulo: 'FAA', detalhe: 'Administração Federal de Aviação dos EUA' },
   { titulo: 'ANAC', detalhe: 'Agência Nacional de Aviação Civil (Brasil)' },
+  { titulo: 'ICRP', detalhe: 'Comissão Internacional de Proteção Radiológica (Publicações 103 e 132)' },
+  { titulo: 'CNEN', detalhe: 'Comissão Nacional de Energia Nuclear (Brasil), norma NN 3.01' },
+  { titulo: 'União Europeia', detalhe: 'Diretiva 2013/59/Euratom (proteção contra radiações ionizantes)' },
 ];

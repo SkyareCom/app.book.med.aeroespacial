@@ -310,6 +310,72 @@ export function AnimacaoHiperventilacao() {
   );
 }
 
+// ---------------------------------------------------------------- M1V5 · Chuveiro de raios cósmicos
+// Esquema: uma partícula primária bate num átomo do alto da atmosfera e se parte numa cascata de partículas
+// secundárias (nêutrons, prótons, elétrons, múons...); o ar absorve a maior parte antes do solo (FAA AC 120-61B;
+// Radioprotection 2017;52(3)). Trajetórias e alturas são ilustrativas.
+const RAMOS = Array.from({ length: 16 }, (_, i) => ({
+  ang: ((i / 15) * 2 - 1) * 0.62 + (((i * 7) % 5) - 2) * 0.03,
+  // Fração do caminho até o solo em que a partícula é absorvida pelo ar (só algumas chegam ao chão).
+  fim: i % 5 === 0 ? 1 : 0.42 + (((i * 13) % 7) / 7) * 0.4,
+  atraso: ((i * 11) % 6) * 0.03,
+}));
+
+export function AnimacaoChuveiro() {
+  const c = useCiclo(6000);
+  const H = 230;
+  const yC = 46; // colisão no alto da atmosfera
+  const yCruz = 128;
+  const ySolo = 204;
+  return (
+    <Quadro titulo="O chuveiro de partículas" instrucao="Esquema: a partícula que vem do espaço se parte ao bater no ar. O avião em cruzeiro fica no meio da cascata; no solo, quase tudo já foi absorvido." ciclo={c} altura={H}>
+      {(w) => {
+        const cx = w * 0.56;
+        const chegada = Math.min(1, c.fase / 0.22);
+        const px = cx + 70 * (1 - chegada);
+        const py = yC - 46 * (1 - chegada);
+        const s = Math.max(0, (c.fase - 0.22) / 0.78);
+        const L = ySolo - yC;
+        return (
+          <G>
+            <Defs>
+              <LinearGradient id="ceuChuveiro" x1="0" y1="0" x2="0" y2="1">
+                <Stop offset="0" stopColor="#02040A" />
+                <Stop offset="0.45" stopColor="#0B2142" />
+                <Stop offset="1" stopColor="#2C6BAE" />
+              </LinearGradient>
+            </Defs>
+            <Rect x={0} y={0} width={w} height={ySolo} rx={8} fill="url(#ceuChuveiro)" />
+            <Rect x={0} y={ySolo} width={w} height={H - ySolo} fill="#1A2A1F" />
+            <Line x1={0} y1={yCruz} x2={w} y2={yCruz} stroke={Cores.dourado} strokeOpacity={0.6} strokeDasharray="4 4" strokeWidth={1} />
+            <SvgText x={8} y={yCruz - 5} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>CRUZEIRO</SvgText>
+            <SvgText x={8} y={16} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>ESPAÇO</SvgText>
+            <SvgText x={8} y={H - 10} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>SOLO</SvgText>
+            {/* Avião em cruzeiro, de perfil */}
+            <G>
+              <Ellipse cx={cx - 18} cy={yCruz} rx={36} ry={5} fill="#E8EEF5" />
+              <Path d={`M${cx - 50} ${yCruz - 2}l-8 -12h6l12 10z`} fill="#E8EEF5" />
+              <Path d={`M${cx - 26} ${yCruz + 1}l14 0l-12 10h-6z`} fill="#C9D4E0" />
+            </G>
+            {chegada < 1 ? <Circle cx={px} cy={py} r={4} fill={Cores.dourado} /> : null}
+            {chegada >= 1 && s < 0.12 ? <Circle cx={cx} cy={yC} r={6 + 40 * s} fill={Cores.dourado} fillOpacity={0.5 * (1 - s / 0.12)} /> : null}
+            {RAMOS.map((r, i) => {
+              const t = Math.max(0, Math.min(r.fim, (s - r.atraso) * 1.25));
+              if (t <= 0) return null;
+              const x = cx + Math.sin(r.ang) * L * t * 0.9;
+              const y = yC + Math.cos(r.ang) * L * t;
+              const absorvida = t >= r.fim && r.fim < 1;
+              return <Circle key={i} cx={x} cy={Math.min(y, ySolo - 2)} r={absorvida ? 2 : 2.8} fill={i % 3 === 0 ? '#9CF0C5' : '#BFE0FF'} fillOpacity={absorvida ? 0.25 : 0.95} />;
+            })}
+            <SvgText x={w - 8} y={16} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="end">PARTÍCULA PRIMÁRIA</SvgText>
+            {s > 0.1 ? <SvgText x={w - 8} y={ySolo + 16} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">NÊUTRONS, PRÓTONS, ELÉTRONS, MÚONS...</SvgText> : null}
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

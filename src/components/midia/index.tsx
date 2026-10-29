@@ -9,10 +9,11 @@ import { GraficoAtmosferaPadrao, SimuladorAltitudeDensidade } from '@/components
 import { GraficoOxigenio100, GraficoPerfilCabine, GraficoSistemasOxigenio, SimuladorPressaoDiferencial } from '@/components/midia/m1v2-graficos';
 import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } from '@/components/midia/m1v3-graficos';
 import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '@/components/midia/m1v4-graficos';
+import { GestacaoRadiacao, GraficoDosePorRota, RadiacaoAnual, RiscoCarreira } from '@/components/midia/m1v5-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
-import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RadiacaoVoo, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
+import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
 import { SimuladorVisao } from '@/components/midia/simulador-visao';
 import type { TipoMidia } from '@/data/tipos';
@@ -35,7 +36,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'forcas-g': () => <SimuladorForcasG />,
   'adaptacao-escuro': () => <AdaptacaoEscuro />,
   'regua-ruido': () => <ReguaRuido />,
-  'radiacao-voo': () => <RadiacaoVoo />,
+  'radiacao-voo': () => <RadiacaoAnual />,
   'risco-aeromedico': () => <RiscoAeromedico />,
   'perda-ossea': () => <PerdaOssea />,
   'composicao-ar': () => <ComposicaoAr />,
@@ -65,6 +66,10 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'animacao-afterdrop': () => <AnimacaoAfterdrop />,
   'animacao-cascata': () => <AnimacaoCascata />,
   'animacao-hiperventilacao': () => <AnimacaoHiperventilacao />,
+  'animacao-chuveiro': () => <AnimacaoChuveiro />,
+  'dose-rota': () => <GraficoDosePorRota />,
+  'risco-carreira': () => <RiscoCarreira />,
+  'gestacao-radiacao': () => <GestacaoRadiacao />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -106,6 +111,10 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'animacao-afterdrop': 'Afterdrop',
   'animacao-cascata': 'Cascata do oxigênio',
   'animacao-hiperventilacao': 'Hiperventilação',
+  'animacao-chuveiro': 'Chuveiro cósmico',
+  'dose-rota': 'Dose por rota',
+  'risco-carreira': 'Risco na carreira',
+  'gestacao-radiacao': 'Gestação e radiação',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

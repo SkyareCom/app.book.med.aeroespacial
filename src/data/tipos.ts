@@ -44,7 +44,11 @@ export type TipoMidia =
   | 'animacao-bolhas'
   | 'animacao-afterdrop'
   | 'animacao-cascata'
-  | 'animacao-hiperventilacao';
+  | 'animacao-hiperventilacao'
+  | 'animacao-chuveiro'
+  | 'dose-rota'
+  | 'risco-carreira'
+  | 'gestacao-radiacao';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

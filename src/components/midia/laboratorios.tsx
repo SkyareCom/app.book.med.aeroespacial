@@ -179,32 +179,7 @@ export function ReguaRuido() {
   );
 }
 
-// ---------------------------------------------------------------- Radiação cósmica
-const ROTAS = { baixa: 2, media: 4, polar: 6 } as const;
-
-export function RadiacaoVoo() {
-  const [horas, setHoras] = useState(700);
-  const [rota, setRota] = useState<keyof typeof ROTAS>('media');
-  const msv = (horas * ROTAS[rota]) / 1000;
-  return (
-    <MolduraMidia tipo="Calculadora" titulo="Quanta radiação um ano de voos soma" instrucao="Taxas aproximadas em cruzeiro; variam com altitude, latitude e ciclo solar.">
-      <Alternar opcoes={[['baixa', 'Baixa latitude'], ['media', 'Média latitude'], ['polar', 'Rota polar']]} valor={rota} onChange={setRota} />
-      <View>
-        <Cabecalho rotulo="Horas de voo por ano" valor={`${fmt(horas)} h`} />
-        <Deslizante min={0} max={1000} passo={10} valor={horas} onChange={setHoras} rotulo="Horas de voo por ano" />
-      </View>
-      <View style={styles.leituras}>
-        <Leitura rotulo="Dose estimada no ano" valor={`${fmt(msv, 1)} mSv`} cor={msv > 6 ? Cores.dourado : Cores.texto} />
-        <Leitura rotulo="Equivale a radiografias de tórax" valor={`${fmt(msv / 0.02)}`} />
-      </View>
-      <View style={{ gap: 4 }}>
-        <Comparar rotulo="Radiação natural média no mundo, por ano" valor="cerca de 2,4 mSv" />
-        <Comparar rotulo="Limite ocupacional (média em 5 anos)" valor="20 mSv por ano" />
-        <Comparar rotulo="Limite para o público em geral" valor="1 mSv por ano" />
-      </View>
-    </MolduraMidia>
-  );
-}
+// Radiação cósmica: a calculadora do laboratório é a RadiacaoAnual (m1v5-graficos.tsx), com dados da FAA.
 
 function Comparar({ rotulo, valor }: { rotulo: string; valor: string }) {
   return (
