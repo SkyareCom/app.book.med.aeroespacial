@@ -10,6 +10,15 @@ Objetivo: ilustrar cada tema com formatos variados, posicionados para quebrar a 
   pressão positiva, câmara hipobárica e treinamento fisiológico, dor cervical do piloto de caça, aviação militar.
 - **Ambos**: sobrevivência, ruído, desorientação, hipóxia; usar o que melhor ilustra o parágrafo.
 
+### Vídeos (um por voo), mapeados pelo mesmo critério (29/10/2026)
+- Prontos, todos civis e adequados: M1V1 curvatura da Terra (neutro), M1V2 máscaras na cabine de passageiros,
+  M1V3 névoa num jato executivo, M1V4 frio. Pendente: M1V5 auroras vistas da cabine de comando (civil).
+- Militar: M1V7 Forças G, M1V8 Impacto e ejeção, M3V12 Aviação militar.
+- Ambos (escolher pela cena do texto): M1V6 Ruído e vibração, M2V5 Equilíbrio e orientação, M2V12 Ossos e músculos,
+  M3V3 Seleção e treinamento.
+- Civil: todos os demais voos das Missões 2 e 3.
+- Missão 4: espacial.
+
 ## Regras por tópico
 - **Pelo menos 2 fotos** cinematográficas (geradas pelo autor, pessoas fictícias, sem texto, logos ou marcas).
 - **Pelo menos 1 recurso interativo**: simulação, gráfico tocável ou animação.
