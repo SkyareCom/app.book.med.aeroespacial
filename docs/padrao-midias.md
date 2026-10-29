@@ -15,6 +15,9 @@ Objetivo: ilustrar cada tema com formatos variados, posicionados para quebrar a 
 - **Animação** (o "GIF" do app): laço em SVG, leve, que pausa ao toque (src/components/midia/animacoes.tsx).
 - **Vídeo**: MP4 curto (até ~8 s), sem som, em laço, em assets/videos, como recurso `video` (src/components/midia/video-laco.tsx).
 
+## Exceções
+- M2V1: vídeo substituído por foto (28/10/2026, decisão do autor; gerador de vídeo indisponível).
+
 ## Verificação
 `npm run auditar:midias` lista, por tópico, fotos, interativos, tabelas e vídeos, o maior trecho de texto sem mídia
 e os formatos que faltam em cada voo.

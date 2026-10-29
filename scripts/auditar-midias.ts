@@ -4,13 +4,16 @@ import { secoes } from '../src/data/secoes';
 
 const MIN_FOTOS = 2;
 const MAX_SEM_MIDIA = 1;
+// Voos em que o vídeo foi trocado por foto, por decisão do autor (gerador de vídeo indisponível).
+const VIDEO_DISPENSADO = new Set(['M2V1']);
 let pendencias = 0;
 for (const s of secoes) {
   s.capitulos.forEach((c, ic) => {
     const comTexto = c.topicos.filter((t) => t.conteudo);
     if (!comTexto.length) return;
     const tipos = new Set<string>();
-    console.log(`\nM${secoes.indexOf(s) + 1}V${ic + 1} · ${c.titulo}`);
+    const codigo = `M${secoes.indexOf(s) + 1}V${ic + 1}`;
+    console.log(`\n${codigo} · ${c.titulo}`);
     for (const t of comTexto) {
       const n = t.conteudo!.texto.split('\n\n').length;
       const r = t.conteudo!.recursos ?? [];
@@ -31,6 +34,7 @@ for (const s of secoes) {
       pendencias += falhas.length;
       console.log(`  ${t.titulo.padEnd(28)} fotos ${fotos} · interativos ${interativos} · tabelas ${tabelas} · vídeos ${videos}${falhas.length ? '  ⚠ ' + falhas.join('; ') : '  ✓'}`);
     }
+    if (VIDEO_DISPENSADO.has(codigo)) tipos.add('vídeo');
     const faltam = ['foto', 'interativo', 'animação', 'tabela', 'vídeo'].filter((x) => !tipos.has(x));
     if (faltam.length) console.log(`  Formatos ausentes no voo: ${faltam.join(', ')}`);
   });
