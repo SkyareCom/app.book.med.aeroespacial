@@ -76,6 +76,7 @@ export const hipoxia: Capitulo = {
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-3-cronometro.jpg'), legenda: 'Quando o alarme acende, o relógio passa a correr contra o piloto: o tempo útil é medido em segundos ou minutos.' } },
           { paragrafo: 2, midia: 'grafico-tuc' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m2v1-3-descompressao-cabine.jpg'), legenda: 'Descompressão rápida na cabine de comando: névoa, papéis voando e alarmes. O tempo útil cai pela metade, e a máscara vem antes de tudo.' } },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-3-mascara-primeiro.jpg'), legenda: 'Alarme de cabine: a máscara de colocação rápida vem antes de qualquer outra tarefa.' } },
         ],
       },
