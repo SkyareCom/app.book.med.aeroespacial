@@ -21,7 +21,7 @@ import type { TipoMidia } from '@/data/tipos';
 const CASOS_HIPOXIA = [
   { texto: 'Um piloto sobe a 14.000 ft sem oxigênio suplementar.', resposta: 'Hipóxica', explicacao: 'O ar rarefeito reduz a pressão parcial de oxigênio inspirado.' },
   { texto: 'Num monomotor, o aquecedor da cabine deixa passar gás do escapamento.', resposta: 'Hipêmica', explicacao: 'O monóxido de carbono ocupa a hemoglobina, que passa a carregar menos oxigênio.' },
-  { texto: 'Numa manobra acrobática a 6 G, a visão do piloto fica cinza.', resposta: 'Estagnante', explicacao: 'O sangue é empurrado para longe da cabeça e a circulação no olho e no cérebro cai.' },
+  { texto: 'Numa curva a 6 G, a visão do piloto de caça fica cinza.', resposta: 'Estagnante', explicacao: 'O sangue é empurrado para longe da cabeça e a circulação no olho e no cérebro cai.' },
   { texto: 'Uma comissária com anemia importante sente falta de ar em voo.', resposta: 'Hipêmica', explicacao: 'Com menos hemoglobina, o sangue transporta menos oxigênio.' },
   { texto: 'Num incêndio a bordo, a fumaça contém cianeto.', resposta: 'Histotóxica', explicacao: 'O cianeto impede as células de usar o oxigênio que chega até elas.' },
   { texto: 'Após muito álcool na noite anterior, o piloto tolera menos a altitude.', resposta: 'Histotóxica', explicacao: 'O álcool prejudica o uso do oxigênio pelas células.' },

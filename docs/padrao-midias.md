@@ -2,11 +2,13 @@
 
 Objetivo: ilustrar cada tema com formatos variados, posicionados para quebrar a leitura e não cansar.
 
-## Foco: aviação civil
-- Fotos, vídeos e capas mostram **aviação civil**: linhas aéreas, executiva, aviação geral, táxi aéreo, aeromédico civil,
-  aeroportos, tripulantes e passageiros. Nada de caças, macacões de voo verdes, capacetes militares ou bases aéreas.
-- Exceções: o voo **Aviação militar** (M3V12) e a Missão 4 (Espaço).
-- Câmara hipobárica, treinamento e sobrevivência: alunos civis (pilotos de linha, comissários), roupas civis ou uniforme de companhia aérea sem marca.
+## Civil ou militar: a imagem segue o contexto mais frequente do tema
+- **Civil** (linha aérea, executiva, aviação geral, aeromédico civil, passageiros e tripulantes): pressurização,
+  descompressão, umidade, radiação cósmica, certificação e exame médico (CMA), sistemas do corpo na avaliação do
+  piloto (coração, cérebro, metabolismo...), toxicologia da cabine, saúde do passageiro, emergências a bordo, CRM.
+- **Militar quando o tema é típico dele**: forças G e manobra anti-G, ejeção, trajes pressurizados e respiração com
+  pressão positiva, câmara hipobárica e treinamento fisiológico, dor cervical do piloto de caça, aviação militar.
+- **Ambos**: sobrevivência, ruído, desorientação, hipóxia; usar o que melhor ilustra o parágrafo.
 
 ## Regras por tópico
 - **Pelo menos 2 fotos** cinematográficas (geradas pelo autor, pessoas fictícias, sem texto, logos ou marcas).
