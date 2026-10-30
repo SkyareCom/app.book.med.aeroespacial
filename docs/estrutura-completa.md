@@ -21,6 +21,12 @@ Em todos os voos, cada tópico enfatiza as **consequências para o organismo hum
 números entram para explicar o que acontece com o corpo: o que lesa, que sinais e sintomas aparecem, em que nível ou
 tempo, quem é mais vulnerável e como se protege. Um tópico técnico ou regulatório traz sempre o efeito no corpo junto
 de cada número.
+Em todos os casos, agregar também:
+- **Fatores de proteção e prevenção**: o que reduz a exposição ou o dano (equipamento, conduta, escala, exame).
+- **Consequências por sistema do corpo**: nomear os sistemas mais atingidos pelo tema (ex.: vibração → sistema
+  osteomuscular, coluna; ruído → sistema auditivo; radiação → medula óssea, mama, pele, cristalino; hipóxia → sistema
+  nervoso central e visão). Cada voo traz uma tabela "Sistemas do corpo mais atingidos" com sistema, consequência e
+  proteção, só com dados já registrados nas fontes do voo.
 
 # CONTEXTO DO PROJETO — App-Book de Medicina Aeroespacial
 

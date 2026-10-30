@@ -2,6 +2,8 @@
 // Segue o Padrão Editorial dos Voos. Tópicos com `texto` apresentam prosa contínua; os demais seguem em produção.
 //
 // REGISTRO DE REVISÃO (não aparece no app)
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo; acréscimos de texto com as fontes abaixo.
 // M1V1 - I · Composição e camadas da atmosfera — texto integrado conforme pedido editorial de 23/10/2026.
 // - Composição do ar seco (N₂ 78,08%, O₂ 20,95%, Ar 0,93%, CO₂ cerca de 0,04%) e proporção constante com a altitude:
 //   Ernsting's Aviation and Space Medicine, 5ª ed., cap. sobre a atmosfera [confirmar capítulo e página];
@@ -157,8 +159,8 @@ export const atmosfera: Capitulo = {
         texto: [
           "Se o ar muda todo dia, os pilotos precisam de uma régua fixa. Essa régua é a **atmosfera padrão**: um modelo internacional que define a pressão, a temperatura e a densidade do ar em cada altitude. Ela não descreve o tempo de hoje; serve para **calibrar altímetros, calcular o desempenho das aeronaves e comparar exposições fisiológicas**.",
           "Ao nível do mar, o modelo fixa **15 °C, 1.013,25 hPa (760 mmHg ou 29,92 inHg) e densidade de 1,225 kg/m³**. Subindo, a temperatura cai **6,5 °C por quilômetro, cerca de 2 °C a cada 1.000 ft**, até **−56,5 °C na tropopausa de referência, a 36.089 ft (11 km)**. A pressão também cai, mas não em linha reta.",
-          "O **altímetro** é um barômetro: mede a pressão e a converte em altitude usando essa régua. Ajustado em **1.013,25 hPa**, mostra a **altitude-pressão**, a referência dos níveis de voo e dos cálculos operacionais. A altura real pode ser outra, porque depende do ar daquele dia e do ajuste usado.",
-          "Num dia quente, o ar fica menos denso, e a umidade o deixa ainda mais leve. O avião então se comporta como se estivesse mais alto: é a **altitude-densidade**, a altitude padrão que teria a mesma densidade do ar real. **Motor, hélice e asa rendem menos.** No exemplo da FAA, a 8.000 ft, com 27 °C e ponto de orvalho de 24 °C, a altitude-densidade chega a **11.564 ft**, quase 500 ft a mais do que sem a umidade.",
+          "O **altímetro** é um barômetro: mede a pressão e a converte em altitude usando essa régua. Ajustado em **1.013,25 hPa**, mostra a **altitude-pressão**, a referência dos níveis de voo e dos cálculos operacionais. A altura real pode ser outra, porque depende do ar daquele dia e do ajuste usado. **Para o corpo, conta a pressão real**: é ela que define quanto oxigênio chega ao pulmão e quanto o gás preso se expande (Veja M1V1 - II).",
+          "Num dia quente, o ar fica menos denso, e a umidade o deixa ainda mais leve. O avião então se comporta como se estivesse mais alto: é a **altitude-densidade**, a altitude padrão que teria a mesma densidade do ar real. **Motor, hélice e asa rendem menos.** No exemplo da FAA, a 8.000 ft, com 27 °C e ponto de orvalho de 24 °C, a altitude-densidade chega a **11.564 ft**, quase 500 ft a mais do que sem a umidade. No corpo, o mesmo dia quente e úmido pesa de outro jeito: **o suor evapora mal e o calor se acumula** (Veja M1V1 - IV).",
           "Os números fisiológicos deste app, como a pressão do oxigênio e a expansão dos gases, usam a atmosfera padrão para poderem ser comparados. **No voo real, valem a pressão, a temperatura e a umidade do momento.**",
         ].join('\n\n'),
         recursos: [
@@ -210,6 +212,21 @@ export const atmosfera: Capitulo = {
           { paragrafo: 3, midia: 'umidade-cabine' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-4-olhos-secos.jpg'), legenda: 'Horas de cruzeiro no ar seco da cabine: olhos ardendo e garganta seca, mesmo com a cabine confortável.' } },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v1-4-calor-umido.jpg'), legenda: 'No calor úmido da pista tropical, o ar saturado não deixa o suor evaporar, e o corpo perde calor com dificuldade.' } },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Respiratório e nervoso', 'A pressão do oxigênio cai: 108 mmHg a 8.000 ft e 70 mmHg a 18.000 ft; começa a hipóxia', 'Pressurização e oxigênio suplementar (Veja M1V2)'],
+                ['Ouvido, seios da face e intestino', 'O gás preso cresce 1,4 vez a 8.000 ft e 3 vezes a 25.000 ft; barotrauma, mais no ouvido médio', 'Atenção a resfriado e sinusite antes do voo e a gás retido após cirurgias'],
+                ['Sangue e tecidos', 'O nitrogênio dissolvido forma bolhas: doença descompressiva', 'Evitar descompressões rápidas e voo logo após mergulho (Veja M1V3)'],
+                ['Olhos, nariz, garganta e boca', 'Ressecamento com a umidade de 10% a 20% em cruzeiro', 'Mais atenção em quem usa lentes de contato'],
+                ['Regulação da temperatura', 'No calor úmido, o suor evapora mal e o corpo perde calor com dificuldade', 'Veja M1V4'],
+                ['Corpo inteiro', 'Na linha de Armstrong, a 63.000 ft, os líquidos expostos podem ferver', 'Pressurização ou traje pressurizado'],
+              ],
+            },
+          },
         ],
       },
     },

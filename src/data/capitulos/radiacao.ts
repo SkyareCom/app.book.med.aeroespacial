@@ -3,6 +3,13 @@
 // A radiação no espaço, sem a blindagem do ar, fica no M4V3.
 //
 // REGISTRO DE REVISÃO (não aparece no app)
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo; acréscimos de texto com as fontes abaixo.
+// - Pesos de tecido da ICRP 103: 0,12 medula óssea vermelha, cólon, pulmão, estômago, mama e restantes; 0,08 gônadas;
+//   0,04 bexiga, esôfago, fígado e tireoide; 0,01 superfície óssea, cérebro, glândulas salivares e pele.
+// - Reações de tecido com limiar e efeitos estocásticos sem limiar (ICRP 103). Cristalino: limiar de catarata de cerca
+//   de 0,5 Gy; limite ocupacional de 20 mSv/ano em média de 5 anos, máx. 50 mSv; antes, 150 mSv: ICRP 118 (2012),
+//   apresentação Bouffler, ICRP 2013.
 // M1V5 - I · Raios cósmicos
 // - Radiação ionizante: partículas com energia para arrancar elétrons dos átomos; altera DNA e proteínas: FAA AC 120-61B
 //   (2014), ¶3d e ¶8a. Origem galáctica (provavelmente supernovas) e solar: AC 120-61B, ¶3e–f.
@@ -98,10 +105,10 @@ export const radiacao: Capitulo = {
       pergunta: 'Quanta radiação um voo soma, e quanto soma um ano de trabalho a bordo?',
       conteudo: {
         texto: [
-          "A dose no corpo inteiro se mede em **sievert (Sv)**, como **dose efetiva**: ela pondera o tipo de radiação e a sensibilidade de cada órgão. As doses de voo são pequenas, por isso se usam o **milissievert (mSv)**, a milésima parte, e o **microssievert (µSv)**, a milionésima. Como referência, nos EUA a radiação natural soma em média **3,11 mSv por ano**; quase três quartos vêm do **radônio**, um gás do solo, e a parte cósmica é de **0,33 mSv**.",
+          "A dose no corpo inteiro se mede em **sievert (Sv)**, como **dose efetiva**: ela pondera o tipo de radiação e a sensibilidade de cada órgão. As doses de voo são pequenas, por isso se usam o **milissievert (mSv)**, a milésima parte, e o **microssievert (µSv)**, a milionésima. Como referência, nos EUA a radiação natural soma em média **3,11 mSv por ano**; quase três quartos vêm do **radônio**, um gás do solo, e a parte cósmica é de **0,33 mSv**. Na dose efetiva, os órgãos mais sensíveis pesam mais: **medula óssea, intestino grosso, pulmão, estômago e mama** têm o maior peso, seguidos das **gônadas**; pele, cérebro e superfície dos ossos, o menor.",
           "Cada voo soma uma dose que cresce com o **tempo no ar**, a **altitude** e a **latitude**. Um voo curto e baixo, como Houston–Austin, de meia hora a 20.000 pés, fica abaixo de **0,2 µSv**. Um voo longo, alto e perto do polo, como **Nova York–Tóquio**, 13 horas a até 43.000 pés, passa de **55 µSv**.",
           "Na mesma altitude, a latitude pesa. A 37.000 pés, **Nova York–San Juan**, rumo ao Caribe, soma cerca de **2,7 µSv por hora**; **Londres–Nova York**, sobre o Atlântico Norte, cerca de **4,0**. A 35.000 pés, Los Angeles–Honolulu fica perto de 2,3 µSv por hora, e Seattle–Anchorage, rumo ao Alasca, perto de 3,6.",
-          "Para quem voa por profissão, as horas se acumulam. O comitê científico da ONU para os efeitos da radiação (**UNSCEAR**) coloca os **tripulantes** como o **quarto grupo de trabalhadores mais expostos**, com média de cerca de **3 mSv por ano**. Na Europa, as médias dos países ficaram entre **menos de 1 e 2,6 mSv por ano**, com máximos individuais de até **7 mSv**. No Brasil, o grupo de trabalho da **CNEN** sobre o tema (GT-Aero) estimou de **1,46 a 3,37 mSv por ano**.",
+          "Para quem voa por profissão, as horas se acumulam. O comitê científico da ONU para os efeitos da radiação (**UNSCEAR**) coloca os **tripulantes** como o **quarto grupo de trabalhadores mais expostos**, com média de cerca de **3 mSv por ano**. Na Europa, as médias dos países ficaram entre **menos de 1 e 2,6 mSv por ano**, com máximos individuais de até **7 mSv**. No Brasil, o grupo de trabalho da **CNEN** sobre o tema (GT-Aero) estimou de **1,46 a 3,37 mSv por ano**. Nenhum voo causa sintoma: o que pesa para o corpo é essa **soma ao longo da carreira** (Veja M1V5 - III).",
           "O Brasil fica longe dos polos, e isso ajuda. Sobre a **América do Sul e o Caribe**, entre 29.000 e 41.000 pés, a taxa média calculada fica entre **2,65 e 2,95 µSv por hora**, conforme o ciclo solar, abaixo dos cerca de 4,0 de Londres–Nova York. Num ano típico de voos na região, a dose soma de **1,45 a 1,67 mSv**. Nos voos domésticos, **Rio–São Paulo** soma cerca de **1,8 µSv**, e os trechos mais longos chegam a **8,8 µSv**; quem voa só no país fica, em média, perto de **0,76 mSv por ano**.",
         ].join('\n\n'),
         recursos: [
@@ -184,10 +191,10 @@ export const radiacao: Capitulo = {
       pergunta: 'Quais são os limites, e o que se faz para manter a dose baixa?',
       conteudo: {
         texto: [
-          "A **ICRP**, comissão internacional de proteção radiológica, recomenda para trabalhadores expostos uma dose efetiva de **20 mSv por ano, em média de 5 anos**, sem passar de **50 mSv num único ano**; a **FAA** adota os mesmos valores. Para o público em geral, o limite é de **1 mSv por ano**. Esses números não separam o seguro do perigoso: são o **teto do aceitável**. Exames médicos não entram nessa conta.",
+          "A **ICRP**, comissão internacional de proteção radiológica, recomenda para trabalhadores expostos uma dose efetiva de **20 mSv por ano, em média de 5 anos**, sem passar de **50 mSv num único ano**; a **FAA** adota os mesmos valores. Para o público em geral, o limite é de **1 mSv por ano**. Esses números não separam o seguro do perigoso: são o **teto do aceitável**. Exames médicos não entram nessa conta. Os limites servem a dois fins: evitar as **reações de tecido**, que só aparecem acima de um limiar, e manter baixo o risco de **câncer**, que não tem limiar. No **cristalino**, a ICRP baixou o limiar estimado da **catarata** para cerca de **0,5 Gy** e o limite ocupacional do olho de 150 para **20 mSv por ano**, em média de 5 anos; as doses de voo ficam muito abaixo disso.",
           "Para a aviação, a ICRP trata os tripulantes como **trabalhadores expostos** e propõe um **nível de referência entre 5 e 10 mSv por ano**, com a dose mantida **tão baixa quanto razoavelmente possível**, o princípio **ALARA**. Não exige **dosímetro** individual: a dose é **calculada** por programas validados, a partir das rotas voadas, e registrada.",
           "Na **União Europeia**, quando a dose pode passar de **1 mSv por ano**, a empresa aérea precisa **avaliar a exposição**, **levá-la em conta na escala** para reduzir as doses mais altas, **informar** cada tripulante da sua dose e dos riscos, e proteger a **gestante**; acima de **6 mSv**, valem as regras completas de trabalhador exposto. No **Brasil**, desde 2024 a norma básica de proteção radiológica da **CNEN**, a **NN 3.01**, reconhece a exposição dos aeronautas: para quem voa acima de **28.000 pés**, a empresa precisa **estimar a dose anual** de cada tripulante pelas rotas e horas de voo, **manter e disponibilizar os registros**, **informar os riscos** e orientar a **gestante** a comunicar a gravidez de imediato, com **nível de referência de 5 mSv por ano**.",
-          "Há ferramentas práticas. Os programas **CARI** da FAA, com o **CARI-7** como versão recomendada, calculam a dose de um voo pela rota, altitude e data. Os eventos solares, porém, não são previstos com antecedência: o instituto médico da FAA emite **alertas de radiação solar** com dados da agência americana de clima espacial (**NOAA**). Num alerta, **descer** em altas latitudes reduz bastante a dose, sobretudo se a resposta for rápida.",
+          "Há ferramentas práticas. Os programas **CARI** da FAA, com o **CARI-7** como versão recomendada, calculam a dose de um voo pela rota, altitude e data. Os eventos solares, porém, não são previstos com antecedência: o instituto médico da FAA emite **alertas de radiação solar** com dados da agência americana de clima espacial (**NOAA**). Num alerta, **descer** em altas latitudes reduz bastante a dose, sobretudo se a resposta for rápida. Para o corpo, a regra é sempre a mesma: **menos tempo, menos altitude e menos latitude somam menos dose**.",
           "Para o **passageiro** eventual, a dose é pequena. A ICRP recomenda **informar os passageiros** sobre a exposição e como estimá-la. Quem voa muito pode adotar um **nível de referência pessoal** e ajustar a frequência dos voos, e quem viaja a trabalho pode, caso a caso, ser tratado como trabalhador exposto.",
         ].join('\n\n'),
         recursos: [
@@ -210,6 +217,20 @@ export const radiacao: Capitulo = {
           },
           { paragrafo: 3, midia: 'radiacao-voo' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v5-4-planejamento.jpg'), legenda: 'No planejamento do voo, rota, altitude e alertas de radiação solar podem pesar na escolha do trajeto.' } },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Medula óssea, intestino grosso, pulmão, estômago e mama', 'Os tecidos de maior peso no risco de câncer: cada mSv soma 12 casos em 100.000', 'Dose tão baixa quanto possível: escala, rota e altitude'],
+                ['Mama e pele', 'Em comissárias, mais câncer de mama (1,5 vez), melanoma (2,3) e pele não melanoma (4,1); a radiação não explica tudo', 'Atenção ao ultravioleta A que atravessa o para-brisa'],
+                ['Gônadas e descendência', 'Defeito genético grave: 1,2 por milhão por mSv', 'Mesma redução da dose'],
+                ['Embrião e feto', 'Nas três primeiras semanas, pode haver perda do embrião; depois, câncer fatal 1 em 10.000 por mSv', 'Comunicar cedo a gravidez; no máximo 1 mSv na gestação e 0,5 mSv por mês'],
+                ['Cristalino', 'Catarata acima de cerca de 0,5 Gy, dose muito acima da de voo', 'Limite ocupacional de 20 mSv por ano no olho'],
+              ],
+            },
+          },
         ],
       },
     },

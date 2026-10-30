@@ -4,6 +4,10 @@
 // o acompanhamento ocupacional, no M3V7.
 //
 // REGISTRO DE REVISÃO (não aparece no app)
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo; acréscimos de texto com as fontes abaixo.
+// - Ruído da cabine importa para saúde, conforto e bem-estar, sobretudo em voos longos: Canadian Acoustics,
+//   artigo 1854 [confirmar autores].
 // M1V6 - I · Som e decibel
 // - Faixa audível de cerca de 20 a 20.000 Hz, maior sensibilidade de 500 a 4.000 Hz, conversa de 500 a 3.000 Hz;
 //   receptores ciliados da cóclea convertem o som em sinal elétrico; níveis em dB (sussurro 20–30; conversa 60–65;
@@ -81,8 +85,8 @@ export const ruido: Capitulo = {
         texto: [
           "O som é uma **onda de pressão** que faz o tímpano vibrar. Dentro da **cóclea**, as **células ciliadas** transformam essa vibração em sinal elétrico para o cérebro. O ouvido humano capta de cerca de **20 a 20.000 hertz (Hz)**, as vibrações por segundo, e é mais sensível entre **500 e 4.000 Hz**; a **conversa** fica entre **500 e 3.000 Hz**.",
           "A intensidade se mede em **decibéis (dB)**, numa escala **logarítmica**: cada **3 dB** a mais dobram a energia do som, e cada **10 dB** a multiplicam por dez. Para avaliar o risco ao ouvido, usa-se a **curva A**, o **dB(A)**, que pesa as frequências como o ouvido as percebe. No Brasil, a norma de insalubridade, a **NR-15**, manda medir em dB(A), com resposta lenta, perto do ouvido do trabalhador.",
-          "A bordo, o nível depende da aeronave. Pelos dados da **FAA**, a cabine de um **jato de transporte** fica entre **60 e 88 dB**; a cabine de comando de um **monomotor pequeno**, entre **70 e 90**; a de um **helicóptero de rotor único**, entre **80 e 102**. Perto de um **motor a jato**, no pátio, o som vai de **130 a 160 dB**. Para comparar, a conversa fica entre 60 e 65 dB.",
-          "As medições em voo mostram o mesmo quadro. Num jato comercial, a cabine de passageiros ficou entre **60 e 65 dB(A)** antes da decolagem, **80 a 85** em cruzeiro e **75 a 80** no pouso. Nas cabines de comando de jatos e turboélices de linha aérea, a média do voo ficou entre **70 e 79 dB(A)**. O som que chega ao ouvido do piloto pelo **fone**, porém, pode passar do ruído da própria cabine (Veja M1V6 - III).",
+          "A bordo, o nível depende da aeronave. Pelos dados da **FAA**, a cabine de um **jato de transporte** fica entre **60 e 88 dB**; a cabine de comando de um **monomotor pequeno**, entre **70 e 90**; a de um **helicóptero de rotor único**, entre **80 e 102**. Perto de um **motor a jato**, no pátio, o som vai de **130 a 160 dB**. Para comparar, a conversa fica entre 60 e 65 dB. Nas cabines do monomotor e do helicóptero, o topo da faixa passa de **85 dB(A)**, o nível em que o tempo seguro por dia começa a encolher (Veja M1V6 - III).",
+          "As medições em voo mostram o mesmo quadro. Num jato comercial, a cabine de passageiros ficou entre **60 e 65 dB(A)** antes da decolagem, **80 a 85** em cruzeiro e **75 a 80** no pouso. Nas cabines de comando de jatos e turboélices de linha aérea, a média do voo ficou entre **70 e 79 dB(A)**. O som que chega ao ouvido do piloto pelo **fone**, porém, pode passar do ruído da própria cabine (Veja M1V6 - III). Em voos longos, esse ruído pesa no **conforto** e no **bem-estar** de passageiros e tripulantes.",
           "Além do ruído contínuo, há o **ruído de impacto**, que dura menos de **1 segundo** e costuma passar de **140 dB**, como uma explosão. O ouvido sente **desconforto** a partir de cerca de **120 dB** e **dor** a **130 dB**; a **140 dB**, o **tímpano** pode se romper.",
         ].join('\n\n'),
         recursos: [
@@ -159,9 +163,9 @@ export const ruido: Capitulo = {
       pergunta: 'Quanto tempo de ruído o ouvido aguenta, e como protegê-lo?',
       conteudo: {
         texto: [
-          "No Brasil, o limite legal está no **Anexo 1 da NR-15**: **85 dB(A) por 8 horas** por dia. A cada **5 dB** a mais, o tempo cai mais ou menos pela metade: **90 dB(A), 4 horas**; **100 dB(A), 1 hora**; **115 dB(A), 7 minutos**. Acima de **115 dB(A)**, ninguém pode ficar **sem proteção adequada**. Quando o dia mistura níveis diferentes, somam-se as frações, o tempo em cada nível dividido pelo tempo permitido; se a soma passa de **1**, o limite foi ultrapassado.",
+          "No Brasil, o limite legal está no **Anexo 1 da NR-15**: **85 dB(A) por 8 horas** por dia. A cada **5 dB** a mais, o tempo cai mais ou menos pela metade: **90 dB(A), 4 horas**; **100 dB(A), 1 hora**; **115 dB(A), 7 minutos**. Acima de **115 dB(A)**, ninguém pode ficar **sem proteção adequada**. Quando o dia mistura níveis diferentes, somam-se as frações, o tempo em cada nível dividido pelo tempo permitido; se a soma passa de **1**, o limite foi ultrapassado. A conta existe porque a lesão das **células ciliadas** depende da energia sonora somada ao longo do dia (Veja M1V6 - II).",
           "Outros critérios são mais rigorosos. O **NIOSH** recomenda os mesmos **85 dB(A) em 8 horas**, mas o tempo cai pela metade a cada **3 dB**, a regra da **igual energia**, e não admite exposição acima de **140 dB(A)**. Pelas estimativas do NIOSH, 40 anos de trabalho a 85 dB(A) deixam **8%** dos trabalhadores com perda auditiva importante; a **90 dB(A)**, **25%**. Esse é o limite da **OSHA**, a agência americana de segurança do trabalho, que usa a regra dos 5 dB e exige programa de conservação auditiva a partir de 85 dB(A). No Brasil, a norma técnica da **Fundacentro**, a **NHO 01**, também usa os 3 dB: a 91 dB(A), a NR-15 permite 3 horas e meia; a regra dos 3 dB, **2 horas**.",
-          "Na cabine de comando, o risco maior pode vir do próprio **fone**. Num estudo britânico em voos de linha aérea, o ruído da cabine ficou entre 70 e 79 dB(A), mas o som no ouvido, pelo fone, ficou entre **77 e 89 dB(A)**: **80 dB(A) ou mais em 80% dos voos** e **85 ou mais em 40%**. Com isso, a exposição diária passaria de **85 dB(A)** em **30% a 40% das jornadas**. Todo o risco veio do **fone aberto**, que não veda o ouvido; nos voos curtos, os autores não previram risco.",
+          "Na cabine de comando, o risco maior pode vir do próprio **fone**. Num estudo britânico em voos de linha aérea, o ruído da cabine ficou entre 70 e 79 dB(A), mas o som no ouvido, pelo fone, ficou entre **77 e 89 dB(A)**: **80 dB(A) ou mais em 80% dos voos** e **85 ou mais em 40%**. Com isso, a exposição diária passaria de **85 dB(A)** em **30% a 40% das jornadas**. Todo o risco veio do **fone aberto**, que não veda o ouvido; nos voos curtos, os autores não previram risco. Ou seja, o ouvido do piloto pode sofrer mais com o fone do que com a cabine.",
           "Proteger é **vedar** ou **cancelar** o som. Pela FAA, **plugues de espuma moldável** atenuam **30 a 35 dB**, e o **fone de comunicação** protege mais ou menos como um **abafador**. A maioria dos protetores atenua bem acima de **1.000 Hz**; nos **graves**, funciona melhor o fone com **cancelamento ativo de ruído (ANR)**, que gera um som inverso ao do ambiente. No estudo britânico, os melhores fones ANR reduziram o som em **10 a 13 dB** em voo, e os fones de concha e os ANR mantiveram o som no ouvido em até **80 dB(A)**. Acima de **115 dB**, a FAA recomenda **plugue mais abafador**; **plugue mais ANR** dá a maior proteção individual.",
           "O número do rótulo exagera a proteção real. O NIOSH recomenda descontar do **índice de redução de ruído (NRR)** **25%** nos abafadores, **50%** nos plugues moldáveis e **70%** nos demais plugues; a OSHA desconta a metade de todos. Quem trabalha exposto faz **audiometrias periódicas** no programa de saúde ocupacional da empresa (Veja M3V7). E o ouvido não separa o trabalho do lazer: o ruído em **casa**, no **carro** e em **festas** soma ao do voo.",
         ].join('\n\n'),
@@ -230,6 +234,20 @@ export const ruido: Capitulo = {
             },
           },
           { paragrafo: 5, video: { fonte: require('@/assets/videos/m1v6-rotor.mp4'), legenda: 'As pás do rotor passam pelo alto da cabine de 20 a 25 vezes por segundo; o tremor que chega ao assento e ao painel vem delas.' } },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Auditivo (cóclea)', 'Perda temporária e, com os anos, perda permanente que começa perto de 4.000 Hz; a 140 dB, ruptura do tímpano', 'Limitar o tempo exposto; plugue, abafador ou fone ANR; audiometria periódica'],
+                ['Sistema nervoso e desempenho', 'Acima de 90 dB pioram vigilância, concentração, cálculo e noção de tempo; estresse', 'Baixar o ruído que chega ao ouvido, inclusive o volume do fone'],
+                ['Coração e circulação', 'Possível aumento da pressão arterial; os dados ainda não permitem fixar limites', 'Mesma proteção auditiva'],
+                ['Visão', 'Vibração de 12,5 a 31,5 Hz embaça a visão e a leitura dos instrumentos', 'Reduzir a vibração que chega ao corpo'],
+                ['Osteomuscular (coluna lombar)', 'Dor lombar frequente em pilotos de helicóptero; ressonância do corpo de 4 a 8 Hz', 'Postura, assento que não amplifique a vibração e menos horas expostas'],
+              ],
+            },
+          },
         ],
       },
     },

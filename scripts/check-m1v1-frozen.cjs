@@ -12,8 +12,8 @@ const fonte = fs.readFileSync(path.resolve(__dirname, '../src/data/capitulos/atm
 const ASSINATURAS = Object.freeze({
   '1.1': '380ad402c604b256', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
   '1.2': '431b933e6534e6aa', // M1V1 - II: Leis dos gases
-  '1.3': '7c922a881de5d4d1', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor)
-  '1.4': '56038b959b150ed6', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine, padrão de recursos pedido pelo autor)
+  '1.3': '45f7429c4481c833', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor; 30/10/2026: foco no organismo, autorizado pelo autor)
+  '1.4': '32496c6e6ff10573', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine; 30/10/2026: tabela de sistemas do corpo, autorizada pelo autor)
 });
 const ASSINATURA_TESTE = '47754a8bbeb02cb4';
 
@@ -70,9 +70,9 @@ const ARQUIVOS = Object.freeze({
   'assets/videos/m1v3-nevoa.mp4': 'fce798b38067d0c3',
   'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
   'assets/videos/m1v2-mascaras.mp4': 'e7d116eebd6b1581',
-  'src/data/capitulos/pressurizacao.ts': '6240097f9df5f621',
+  'src/data/capitulos/pressurizacao.ts': '9d267d0171d23fbf',
   'src/components/midia/m1v2-graficos.tsx': '9db2a56a5c49e6f1',
-  'src/data/capitulos/descompressao.ts': 'cf860c8fcc89431d',
+  'src/data/capitulos/descompressao.ts': 'b82e22fdfa722c05',
   'src/components/midia/m1v3-graficos.tsx': '72f6a9da424c2d4c',
   'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
   'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
@@ -90,7 +90,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-mergulhador-subida.jpg': 'aaffbc821671f604',
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
   // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
-  'src/data/capitulos/temperatura.ts': '61f0156a73e72a1c',
+  'src/data/capitulos/temperatura.ts': 'afd33ab38997d975',
   'src/components/midia/m1v4-graficos.tsx': '4e9f29412e025140',
   'assets/videos/m1v4-frio.mp4': '9ff51913ab0e9c92',
   'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
@@ -99,7 +99,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-resgate-frio.jpg': '99def23e990d2d6b',
   'assets/images/topicos/m1v4-sinal-espelho.jpg': '6bf5f5eb96ab34e7',
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
-  'src/data/capitulos/hipoxia.ts': 'c375ef085a08b82d',
+  'src/data/capitulos/hipoxia.ts': 'a6ef9c03332ec39f',
   'src/components/midia/simulador-o2.tsx': 'c1212fc4e05924f6',
   'src/components/midia/grafico-tuc.tsx': '463aa9c2e6251149',
   'src/components/midia/atividade-classificar.tsx': '8146ad4f3bb8828d',
@@ -116,7 +116,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m2v1-5-oxigenio.jpg': 'ddd5800b87eddbd3',
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
   // Congelamento M1V5 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
-  'src/data/capitulos/radiacao.ts': 'a18eb842c0983d02',
+  'src/data/capitulos/radiacao.ts': 'f7eb0031733caf97',
   'src/components/midia/m1v5-graficos.tsx': '3c6ada562db1ac4b',
   'assets/videos/m1v5-aurora.mp4': 'aea16e089624393c',
   'assets/images/topicos/m1v5-1-cruzeiro-noite.jpg': '7ec0d4b39b7a6198',
@@ -127,8 +127,9 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v5-3-para-brisa.jpg': '45898a0b2f62c790',
   'assets/images/topicos/m1v5-4-operacoes.jpg': '64268d5a879428c3',
   'assets/images/topicos/m1v5-4-planejamento.jpg': '0525bb6ba153e074',
+  // Revisão 30/10/2026 (foco no organismo e tabela de sistemas do corpo em todos os voos) — autorizada pelo autor; hashes refeitos.
   // Congelamento M1V6 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
-  'src/data/capitulos/ruido.ts': '867c1b390142aace',
+  'src/data/capitulos/ruido.ts': '16d24cf05b0e28fb',
   'src/components/midia/m1v6-graficos.tsx': 'd4c3073e7e0bf9ca',
   'assets/videos/m1v6-rotor.mp4': '64a9bd58c322df4f',
   'assets/images/topicos/m1v6-1-fone-cabine.jpg': '455a68cd3c837465',

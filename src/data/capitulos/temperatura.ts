@@ -2,6 +2,8 @@
 // Prosa única e progressiva, com destaques; cada tema num só lugar (referências cruzadas "Veja M_V_").
 //
 // REGISTRO DE REVISÃO (não aparece no app)
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo; acréscimos de texto com as fontes abaixo.
 // M1V4 - I · Calor
 // - Estresse térmico 37,5–37,8 °C (queda de desempenho, coordenação, decisão, atenção, visão e cautela); exaustão
 //   38,3–40,6 °C (fadiga, náusea ou vômito, tontura, cãibras, respiração rápida, perda de consciência); insolação acima
@@ -140,6 +142,21 @@ export const temperatura: Capitulo = {
                 ['Primeiros socorros', 'Ferimentos'],
                 ['Repelente e luvas', 'Proteção da pele e das mãos'],
                 ['Água e comida', 'Reserva para esperar o resgate'],
+              ],
+            },
+          },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Sistema nervoso (calor)', 'A partir de 37,5 °C caem atenção, visão e decisão; acima de 40,6 °C, insolação com confusão e coma', 'Beber antes da sede; aclimatar-se por 1 a 2 semanas'],
+                ['Rins e água do corpo', 'Sede só com 2% do peso perdido; 5%, fadiga e náusea; depois, confusão e falência dos rins', 'Cerca de 1,9 litro por dia como base; urina clara; menos álcool e cafeína'],
+                ['Sistema nervoso (frio)', 'Por volta de 34 °C, o cérebro fica mais lento', 'Isolar do chão e barrar vento e umidade'],
+                ['Coração (frio)', 'Abaixo de 30 °C, coração lento e risco de arritmia; o afterdrop pode desencadeá-la', 'Aquecer o tronco, manter deitado e mover pouco'],
+                ['Respiratório (água fria)', 'No primeiro minuto, o choque frio faz ofegar e aspirar água', 'Controlar a respiração primeiro: regra 1-10-1'],
+                ['Músculos (água fria)', 'Cerca de 10 minutos de movimentos úteis antes de falharem', 'Usar esses minutos para sair da água ou se proteger'],
               ],
             },
           },

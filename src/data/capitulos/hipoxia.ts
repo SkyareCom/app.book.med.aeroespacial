@@ -3,6 +3,8 @@
 // Valores de tempo de consciência útil: FAA Advisory Circular 61-107 (tabela de TUC).
 // Padrão de mídias (27/10/2026): recursos posicionados por parágrafo; tabelas-resumo montadas a partir do próprio texto;
 // animações esquemáticas (cascata do oxigênio, hiperventilação). Fotos e vídeo do autor (pessoas fictícias): topicos/m2v1-*.jpg; m2v1-5-oxigenio é quadro do vídeo enviado em 28/10/2026.
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo.
 
 import type { Capitulo } from '../tipos';
 
@@ -127,6 +129,21 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-5-oxigenio.jpg'), legenda: 'Na dúvida entre ansiedade e hipóxia, primeiro o oxigênio; só depois se orienta a respiração mais lenta.' } },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Sistema nervoso central', 'Julgamento, atenção e coordenação falham antes de a pessoa notar; depois, memória, raciocínio e movimentos finos', 'Máscara antes de qualquer tarefa; conhecer a própria assinatura de hipóxia'],
+                ['Visão', 'A visão noturna piora já em altitudes moderadas', 'Oxigênio à noite acima de 5.000 ft em voo não pressurizado'],
+                ['Sangue', 'Anemia e monóxido de carbono reduzem o oxigênio transportado', 'Corrigir a causa; atenção a vazamentos do escapamento'],
+                ['Circulação', 'Fluxo insuficiente, como nas acelerações, causa hipóxia estagnante', 'Veja M1V7'],
+                ['Respiratório', 'A hiperventilação baixa o gás carbônico e causa formigamento e espasmos', 'Oxigênio primeiro; só depois respirar mais devagar'],
+                ['Pele e mucosas', 'Lábios azulados podem aparecer, mas sua falta não exclui hipóxia', 'Checar oxigênio e pressurização diante de qualquer sintoma'],
+              ],
+            },
+          },
         ],
       },
     },

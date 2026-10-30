@@ -2,6 +2,11 @@
 // Prosa única e progressiva, com destaques; cada tema num só lugar (referências cruzadas "Veja M_V_").
 //
 // REGISTRO DE REVISÃO (não aparece no app)
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo; acréscimos de texto com as fontes abaixo.
+// - 502 voluntários em câmara (650 a 8.000 ft, voo simulado de 20 h): SpO₂ caiu no máximo 4,4 pontos a 8.000 ft;
+//   desconforto maior a 7.000–8.000 ft, aparente após 3 a 9 h; mal agudo da montanha em 7,4%, sem diferença entre
+//   altitudes: Muhm JM et al. N Engl J Med 2007;357(1):18-27.
 // M1V2 - I · Pressurização
 // - Pressurização comprime o ar para manter a altitude de cabine abaixo da altitude de voo; oxigênio suplementar
 //   continua necessário porque a descompressão é sempre possível; ar de sangria (turbina) ou turbocompressor /
@@ -50,9 +55,9 @@ export const pressurizacao: Capitulo = {
       pergunta: 'Como um avião mantém o ar respirável a mais de 10 km de altura?',
       conteudo: {
         texto: [
-          "Na altitude de cruzeiro, a pressão lá fora é baixa demais para o corpo (Veja M1V1 - I). A **pressurização** resolve isso comprimindo ar dentro da cabine, para que o corpo viva numa **altitude de cabine** muito menor que a altitude de voo.",
-          "O ar vem dos motores. Nos aviões a turbina, chega como **ar de sangria** do motor; nos aviões leves pressurizados, vem do **turbocompressor** ou de uma **bomba pneumática**. Esse ar entra sem parar, e a **válvula de saída** solta o excesso para fora, mantendo a pressão da cabine estável.",
-          "A cabine funciona como um balão rígido. Cada avião suporta uma diferença máxima entre a pressão de dentro e a de fora: a **pressão diferencial**, mostrada num indicador. Algumas aeronaves têm **válvulas de alívio** que protegem a estrutura quando essa diferença sai do limite.",
+          "Na altitude de cruzeiro, a pressão lá fora é baixa demais para o corpo (Veja M1V1 - I). A **pressurização** resolve isso comprimindo ar dentro da cabine, para que o corpo viva numa **altitude de cabine** muito menor que a altitude de voo. Mas a cabine não fica ao nível do mar: num estudo com **502 voluntários** em câmara, a **saturação de oxigênio** caiu cerca de **4 pontos** a 8.000 ft e, depois de **3 a 9 horas** a 7.000 ou 8.000 ft, cresceram as queixas de **desconforto**, sem aumento do mal da montanha.",
+          "O ar vem dos motores. Nos aviões a turbina, chega como **ar de sangria** do motor; nos aviões leves pressurizados, vem do **turbocompressor** ou de uma **bomba pneumática**. Esse ar entra sem parar, e a **válvula de saída** solta o excesso para fora, mantendo a pressão da cabine estável. Vindo de grandes altitudes, esse ar é muito seco e **resseca olhos, nariz e garganta** (Veja M1V1 - IV).",
+          "A cabine funciona como um balão rígido. Cada avião suporta uma diferença máxima entre a pressão de dentro e a de fora: a **pressão diferencial**, mostrada num indicador. Algumas aeronaves têm **válvulas de alívio** que protegem a estrutura quando essa diferença sai do limite. Se a estrutura ou o sistema falham, a cabine sobe, e o corpo fica exposto à altitude real (Veja M1V3 - I).",
           "**Pressurizar não dispensa o oxigênio.** Uma falha ou uma descompressão é sempre possível, e por isso o oxigênio suplementar continua a bordo (Veja M1V3).",
         ].join('\n\n'),
         recursos: [
@@ -89,9 +94,9 @@ export const pressurizacao: Capitulo = {
       conteudo: {
         texto: [
           "O oxigênio de bordo não é qualquer oxigênio: é o **oxigênio respiratório de aviação**, com pureza definida por norma, guardado em cilindros a **1.800 a 2.200 psi**. Perto dele, **óleo, graxa e cigarro são proibidos**: o risco de fogo é real.",
-          "Cada sistema tem um teto. No **fluxo contínuo**, o oxigênio sai sem parar e se mistura ao ar, com uma bolsa reservatória na máscara: é certificado até 41.000 ft, mas exige muita atenção acima de **25.000 ft**. Na **demanda diluidora**, o oxigênio flui só na inspiração, misturado ou a 100%, e é seguro até **40.000 ft**, desde que a máscara vede bem: **barba e bigode atrapalham**. Acima disso, só a **pressão de demanda** (Veja M1V2 - IV).",
-          "A máscara dos pilotos pode entregar mais oxigênio que a dos passageiros; por isso, cada um usa a sua. Em voo não pressurizado, o oxigênio é **recomendado a partir de 10.000 ft de dia e acima de 5.000 ft à noite**.",
-          "As regras da FAA escalonam o uso. Entre **12.500 e 14.000 ft** de cabine, a tripulação usa oxigênio se ficar mais de 30 minutos; acima de **14.000 ft**, o tempo todo; acima de **15.000 ft**, **todos a bordo** recebem oxigênio. Em aviões pressurizados, acima do **FL250** deve haver ao menos **10 minutos de oxigênio por ocupante** para a descida de emergência; acima do **FL350**, um piloto voa de máscara, salvo quando dois pilotos têm máscaras de colocação rápida, vestidas com uma mão em até 5 segundos, até o FL410.",
+          "Cada sistema tem um teto. No **fluxo contínuo**, o oxigênio sai sem parar e se mistura ao ar, com uma bolsa reservatória na máscara: é certificado até 41.000 ft, mas exige muita atenção acima de **25.000 ft**. Na **demanda diluidora**, o oxigênio flui só na inspiração, misturado ou a 100%, e é seguro até **40.000 ft**, desde que a máscara vede bem: **barba e bigode atrapalham**, e a máscara que vaza deixa entrar ar da cabine, e o oxigênio no pulmão cai sem aviso. Acima disso, só a **pressão de demanda** (Veja M1V2 - IV).",
+          "A máscara dos pilotos pode entregar mais oxigênio que a dos passageiros; por isso, cada um usa a sua. Em voo não pressurizado, o oxigênio é **recomendado a partir de 10.000 ft de dia e acima de 5.000 ft à noite**. A diferença vem do corpo: a **visão noturna** é das primeiras funções a piorar com a falta de oxigênio (Veja M2V1 - IV).",
+          "As regras da FAA escalonam o uso. Entre **12.500 e 14.000 ft** de cabine, a tripulação usa oxigênio se ficar mais de 30 minutos; acima de **14.000 ft**, o tempo todo; acima de **15.000 ft**, **todos a bordo** recebem oxigênio. Em aviões pressurizados, acima do **FL250** deve haver ao menos **10 minutos de oxigênio por ocupante** para a descida de emergência; acima do **FL350**, um piloto voa de máscara, salvo quando dois pilotos têm máscaras de colocação rápida, vestidas com uma mão em até 5 segundos, até o FL410. Os degraus seguem a fisiologia: quanto mais alta a cabine, **menor o tempo de consciência útil** sem oxigênio (Veja M2V1 - III).",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v2-cilindro-oxigenio.jpg'), legenda: 'O cilindro de oxigênio de bordo é inspecionado com o manômetro à vista e longe de óleo e graxa.' } },
@@ -128,6 +133,21 @@ export const pressurizacao: Capitulo = {
           { paragrafo: 3, midia: 'animacao-pressao-positiva' },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v2-regulador.jpg'), legenda: 'O regulador de pressão de demanda empurra o oxigênio para dentro da máscara a cada inspiração.' } },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v2-traje-pressurizado.jpg'), legenda: 'Nas altitudes extremas, a proteção passa a envolver o corpo inteiro, com capacete e traje pressurizado.' } },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Nervoso e visão', 'Na cabine a 8.000 ft, a saturação cai cerca de 4 pontos; acima de 10.000 ft, cresce a hipóxia; à noite, a visão piora antes', 'Cabine até 8.000 ft; alerta aos 10.000 ft; oxigênio pelos degraus da FAA'],
+                ['Ouvidos e seios da face', 'Mudanças de pressão na subida e na descida', 'Descida da cabine de no máximo 500 a 600 ft por minuto'],
+                ['Respiratório', 'A máscara que vaza deixa entrar ar da cabine e o oxigênio cai', 'Máscara bem ajustada; barba e bigode atrapalham a vedação'],
+                ['Circulação', 'Respirar sob pressão positiva por muito tempo causa hipóxia estagnante', 'Pressão positiva só nas altitudes extremas'],
+                ['Olhos, nariz e garganta', 'O ar da cabine é seco e resseca as mucosas', 'Veja M1V1 - IV'],
+                ['Corpo inteiro', 'Perto da linha de Armstrong, a respiração já não basta', 'Traje pressurizado (Veja M3V12)'],
+              ],
+            },
+          },
         ],
       },
     },

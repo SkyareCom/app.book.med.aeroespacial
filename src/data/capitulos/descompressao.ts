@@ -2,6 +2,14 @@
 // Prosa única e progressiva, com destaques; cada tema num só lugar (referências cruzadas "Veja M_V_").
 //
 // REGISTRO DE REVISÃO (não aparece no app)
+// REVISÃO 30/10/2026 (foco no organismo, pedido do autor): tabela "Sistemas do corpo mais atingidos" montada só com
+//   dados já registrados neste voo; acréscimos de texto com as fontes abaixo.
+// - 1.627 alunos (Força Aérea de Israel, 2015–2019): efeito adverso em 5,59%; barotrauma de ouvido e seios 69,3%,
+//   problemas respiratórios 14,3%, doença descompressiva 9,9% dos casos; recomendação de pré-oxigenação de 45 min e
+//   subida máxima de 3.000 ft/min: Nakdimon I, Ben-Ari O. Aerosp Med Hum Perform 2022;93(11):811-5.
+// - Câmara hiperbárica: barotrauma de ouvido como complicação mais frequente (dor, ruptura do tímpano); convulsão por
+//   toxicidade do oxigênio rara, cessa ao retirar o oxigênio; miopia regride em 6 a 8 semanas: University of Iowa
+//   Health Care, Medical risks of hyperbaric oxygen therapy (uihc.org).
 // Fonte principal: FAA, AC 61-107B (Aeronautical Information Manual / Operations of Aircraft at Altitudes Above
 // 25,000 Feet MSL and/or Mach Numbers Greater Than .75).
 // M1V3 - I · Tipos de descompressão
@@ -140,14 +148,31 @@ export const descompressao: Capitulo = {
       conteudo: {
         texto: [
           "Uma **câmara de pressão** é um compartimento fechado em que se controla a pressão do ar. Ela trabalha nos dois sentidos: a **câmara hipobárica** tira ar e simula a altitude; a **câmara hiperbárica** põe ar e simula a profundidade do mar.",
-          "A câmara **hipobárica** ensina sem risco de voo. Num curso de um dia, o aluno vive uma **descompressão rápida de 8.000 para 18.000 ft** e, depois, a **hipóxia a 25.000 ft**, para reconhecer os próprios sintomas sob supervisão. O treinamento é recomendado a todos os pilotos (Veja M3V3).",
-          "A câmara **hiperbárica** é o tratamento da doença descompressiva. A mais usada é a **Tabela 6 da Marinha dos EUA**: **2,8 atmosferas, o equivalente a 18 metros de mar, respirando oxigênio a 100%**. A pressão encolhe a bolha para cerca de **um terço do volume** (lei de Boyle), e o oxigênio puro tira o nitrogênio do caminho.",
+          "A câmara **hipobárica** ensina sem risco de voo. Num curso de um dia, o aluno vive uma **descompressão rápida de 8.000 para 18.000 ft** e, depois, a **hipóxia a 25.000 ft**, para reconhecer os próprios sintomas sob supervisão. O treinamento é recomendado a todos os pilotos (Veja M3V3). O treino também cobra do corpo: num estudo com **1.627 alunos**, **5,6%** tiveram algum efeito adverso; o mais comum foi o **barotrauma do ouvido e dos seios da face** (69% desses casos), seguido de problemas respiratórios e de **doença descompressiva**. Os autores recomendam **pré-respirar oxigênio por 45 minutos** e subir no máximo **3.000 ft por minuto**.",
+          "A câmara **hiperbárica** é o tratamento da doença descompressiva. A mais usada é a **Tabela 6 da Marinha dos EUA**: **2,8 atmosferas, o equivalente a 18 metros de mar, respirando oxigênio a 100%**. A pressão encolhe a bolha para cerca de **um terço do volume** (lei de Boyle), e o oxigênio puro tira o nitrogênio do caminho. A câmara também tem efeitos no corpo: o mais frequente é o **barotrauma do ouvido**, quando a pressão não se equaliza, que pode **romper o tímpano**; raramente, o oxigênio sob pressão causa **convulsão**, que cessa ao retirá-lo; e a **miopia** que surge com as sessões costuma regredir em **6 a 8 semanas**.",
           "O segredo está no gradiente. Com oxigênio puro a 2,8 atmosferas, a diferença de pressão de nitrogênio entre a bolha e o tecido chega a **2.086 mmHg, contra 142 mmHg na superfície**: o nitrogênio sai da bolha muito mais depressa. Nem todo centro hiperbárico trata a doença descompressiva de altitude, e **localizar o serviço certo faz parte da conduta**.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v3-camara-hipobarica.jpg'), legenda: 'Na câmara hipobárica, os alunos sobem sem sair do chão e aprendem a reconhecer a própria hipóxia, sob o olhar do instrutor.' } },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v3-camara-hiperbarica.jpg'), legenda: 'Na câmara hiperbárica, o paciente respira oxigênio puro sob pressão enquanto o operador controla a profundidade e o tempo.' } },
           { paragrafo: 3, midia: 'camara-pressao' },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: 'Sistemas do corpo mais atingidos',
+              colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
+              linhas: [
+                ['Pulmões', 'Na descompressão explosiva, o ar preso no peito pode lesar o pulmão', 'Prevenção pela integridade da cabine; conduta: máscara e descida'],
+                ['Sistema nervoso central', 'Hipóxia quase imediata; acima de 43.000 ft, 9 a 12 segundos úteis; na doença descompressiva, confusão, convulsões e perda de consciência', 'Máscara primeiro, depois a descida de emergência'],
+                ['Articulações e músculos', 'Dor profunda nas grandes articulações, a forma mais comum da doença descompressiva', 'Oxigênio a 100%, descida, articulação imóvel e câmara hiperbárica'],
+                ['Nervos periféricos', 'Dormência, ardor e formigamento', 'Avaliação médica mesmo se os sintomas sumirem na descida'],
+                ['Respiratório (sufocação)', 'Dor em queimação, tosse seca e falta de ar; pode matar sem tratamento', 'Pouso o quanto antes e câmara hiperbárica'],
+                ['Pele', 'Coceira e pele marmorizada', 'Mesma conduta da doença descompressiva'],
+                ['Ouvidos e abdômen', 'Os gases se expandem: ouvidos estalam e o abdômen estufa', 'Veja M1V1 - II'],
+                ['Corpo inteiro após mergulho', 'Voar a 8.000 ft após mergulhar equivale a subir a 40.000 ft sem pressurização', 'Esperar 12 ou 24 horas após mergulhar; 24 horas após câmara hipobárica'],
+              ],
+            },
+          },
         ],
       },
     },
