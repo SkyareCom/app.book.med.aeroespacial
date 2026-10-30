@@ -85,7 +85,10 @@ export const radiacao: Capitulo = {
           "De vez em quando, o Sol dispara uma **tempestade de partículas**, o **evento de partículas solares**, que dura de **minutos a mais de um dia**. Quase sempre ela soma pouco à dose; raramente, muito. Pelas estimativas, um evento intenso chega a cerca de **0,1 mSv por hora** a 12.000 metros, e um extremo, dos que ocorrem uma vez por século, a cerca de **10 mSv por hora**. Perto do equador, o efeito é desprezível. No espaço, sem a blindagem do ar, a história é outra (Veja M4V3).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-1-cruzeiro-noite.jpg'), legenda: 'Num cruzeiro noturno, a radiação que chega do espaço é invisível: o avião voa sob uma camada de ar bem mais fina que a do solo.' } },
           { paragrafo: 3, midia: 'animacao-chuveiro' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v5-1-rota-polar.jpg'), legenda: 'Sobre o Ártico, o campo magnético da Terra protege pouco: nas rotas polares, a taxa de radiação chega a cerca do dobro da do equador.' } },
+          { paragrafo: 5, video: { fonte: require('@/assets/videos/m1v5-aurora.mp4'), legenda: 'A aurora nasce das partículas do Sol que o campo magnético conduz para perto dos polos, as mesmas regiões onde a dose de voo é maior.' } },
         ],
       },
     },
@@ -102,6 +105,7 @@ export const radiacao: Capitulo = {
           "O Brasil fica longe dos polos, e isso ajuda. Sobre a **América do Sul e o Caribe**, entre 29.000 e 41.000 pés, a taxa média calculada fica entre **2,65 e 2,95 µSv por hora**, conforme o ciclo solar, abaixo dos cerca de 4,0 de Londres–Nova York. Num ano típico de voos na região, a dose soma de **1,45 a 1,67 mSv**. Nos voos domésticos, **Rio–São Paulo** soma cerca de **1,8 µSv**, e os trechos mais longos chegam a **8,8 µSv**; quem voa só no país fica, em média, perto de **0,76 mSv por ano**.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-2-cabine-longo.jpg'), legenda: 'Num voo longo e noturno, a dose se soma hora após hora, sem nada que se veja ou se sinta a bordo.' } },
           { paragrafo: 2, midia: 'dose-rota' },
           {
             paragrafo: 3,
@@ -120,6 +124,7 @@ export const radiacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v5-2-tripulacao.jpg'), legenda: 'Para a tripulação, os voos se repetem: são as horas acumuladas no ano que fazem dos aeronautas um dos grupos mais expostos.' } },
           {
             paragrafo: 5,
             tabela: {
@@ -152,7 +157,9 @@ export const radiacao: Capitulo = {
           "Por isso, **comunicar cedo** a gravidez faz diferença: com a escala ajustada, em voos mais curtos, mais baixos ou em latitudes menores, a dose do feto fica abaixo do limite. A questão da tripulante grávida vai além da radiação (Veja M2V13).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-3-consulta.jpg'), legenda: 'Na consulta de saúde ocupacional, a dose acumulada e os riscos entram na conversa como qualquer outro fator do trabalho a bordo.' } },
           { paragrafo: 2, midia: 'risco-carreira' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v5-3-para-brisa.jpg'), legenda: 'Acima das nuvens, o sol forte atravessa o para-brisa: o ultravioleta A é outro fator de risco para a pele de quem voa.' } },
           { paragrafo: 4, midia: 'gestacao-radiacao' },
           {
             paragrafo: 5,
@@ -201,6 +208,7 @@ export const radiacao: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'radiacao-voo' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v5-4-planejamento.jpg'), legenda: 'No planejamento do voo, rota, altitude e alertas de radiação solar podem pesar na escolha do trajeto.' } },
         ],
       },
     },
