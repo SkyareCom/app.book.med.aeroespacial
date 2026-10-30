@@ -127,6 +127,18 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v5-3-para-brisa.jpg': '45898a0b2f62c790',
   'assets/images/topicos/m1v5-4-operacoes.jpg': '64268d5a879428c3',
   'assets/images/topicos/m1v5-4-planejamento.jpg': '0525bb6ba153e074',
+  // Congelamento M1V6 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
+  'src/data/capitulos/ruido.ts': '867c1b390142aace',
+  'src/components/midia/m1v6-graficos.tsx': 'd4c3073e7e0bf9ca',
+  'assets/videos/m1v6-rotor.mp4': '64a9bd58c322df4f',
+  'assets/images/topicos/m1v6-1-fone-cabine.jpg': '455a68cd3c837465',
+  'assets/images/topicos/m1v6-1-medicao-cabine.jpg': '77a359f5c3660705',
+  'assets/images/topicos/m1v6-2-audiometria.jpg': 'e4334bf9ee698163',
+  'assets/images/topicos/m1v6-2-turboelice.jpg': 'd339e5d42bfe2d10',
+  'assets/images/topicos/m1v6-3-fones.jpg': '06cf2fcdafaf2fcf',
+  'assets/images/topicos/m1v6-3-patio.jpg': '057fb846cae517fe',
+  'assets/images/topicos/m1v6-4-offshore.jpg': '3255b4d92cf407d0',
+  'assets/images/topicos/m1v6-4-painel.jpg': '07e5ceb8d4239077',
 });
 for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
   const caminho = path.resolve(__dirname, '..', arquivo);
@@ -138,8 +150,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5 ou M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5, M1V6 ou M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1, M1V2, M1V3, M1V4, M1V5 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('M1V1, M1V2, M1V3, M1V4, M1V5, M1V6 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }

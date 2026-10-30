@@ -120,6 +120,7 @@ export const ruido: Capitulo = {
           "A audição faz parte do **exame para o certificado médico**. A **FAA** aceita ouvir uma **voz de conversa** a cerca de **2 metros**, de costas para o examinador, ou uma **audiometria** dentro de limites por frequência. A **ANAC** pede **audiometria de 250 a 8.000 Hz**, sem aparelho auditivo; na 2ª e na 4ª classe, aceita o **teste de voz a 2 metros**, e na 1ª classe o exame do ouvido é feito por **otorrinolaringologista**. A avaliação clínica do ouvido fica em outro voo (Veja M2V3).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-2-audiometria.jpg'), legenda: 'Na cabine de audiometria, o piloto aperta o botão a cada som que ouve; o exame mostra a perda antes que ele a perceba.' } },
           { paragrafo: 2, midia: 'faixas-audicao' },
           {
             paragrafo: 3,
