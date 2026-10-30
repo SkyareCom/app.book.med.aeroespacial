@@ -16,6 +16,12 @@ Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das auto
 e da **FAA**, ao lado das obras de referência. Buscar a fonte primária; quando só houver fonte secundária, registrar
 no comentário do arquivo e marcar "[confirmar na referência]".
 
+## FOCO NO ORGANISMO (30/10/2026)
+Em todos os voos, cada tópico enfatiza as **consequências para o organismo humano**. Física, equipamentos, normas e
+números entram para explicar o que acontece com o corpo: o que lesa, que sinais e sintomas aparecem, em que nível ou
+tempo, quem é mais vulnerável e como se protege. Um tópico técnico ou regulatório traz sempre o efeito no corpo junto
+de cada número.
+
 # CONTEXTO DO PROJETO — App-Book de Medicina Aeroespacial
 
 Você vai trabalhar comigo neste projeto. Abaixo está tudo o que já foi decidido. Siga estas definições à risca e não mude a estrutura sem me perguntar.
