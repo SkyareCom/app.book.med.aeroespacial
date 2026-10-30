@@ -16,6 +16,7 @@ import { Cores, Espaco, Fonte } from '@/constants/theme';
 // gestação: 1 mSv até o fim da gravidez e no máximo 0,5 mSv por mês.
 // Limites: ICRP (20 mSv/ano em média de 5 anos, máx. 50); ICRP 132 (nível de referência de 5 a 10 mSv/ano);
 // Diretiva 2013/59/Euratom, art. 35(3) (1 mSv: avaliar, escalar, informar; 6 mSv: regras do capítulo).
+// CNEN NN 3.01 (Res. 323/24), arts. 146 a 148: nível de referência de 5 mSv/ano para tripulantes (SNA; ABRAPAC).
 const fmt = (n: number, c = 0) => n.toLocaleString('pt-BR', { minimumFractionDigits: c, maximumFractionDigits: c });
 
 export interface VooRadiacao {
@@ -229,10 +230,12 @@ export function RadiacaoAnual() {
   const H = 74;
   const x0 = 12, x1 = larg - 12;
   const X = (d: number) => x0 + (Math.min(d, 20) / 20) * (x1 - x0);
-  const cor = msv > 6 ? Cores.erro : msv > 1 ? Cores.dourado : Cores.acerto;
+  const cor = msv > 5 ? Cores.erro : msv > 1 ? Cores.dourado : Cores.acerto;
   const situacao = msv > 6
-    ? 'Acima de 6 mSv: na União Europeia, a empresa passa a seguir todas as regras de trabalhador exposto.'
-    : msv > 1
+    ? 'Acima de 6 mSv: passa do nível de referência da CNEN e, na União Europeia, a empresa segue todas as regras de trabalhador exposto.'
+    : msv > 5
+      ? 'Acima de 5 mSv: passa do nível de referência da CNEN para tripulantes no Brasil.'
+      : msv > 1
       ? 'Acima de 1 mSv: na União Europeia, a empresa precisa avaliar a dose, considerá-la na escala e informar o tripulante.'
       : 'Até 1 mSv por ano: na faixa de dose do público em geral.';
   return (
@@ -262,6 +265,7 @@ export function RadiacaoAnual() {
       <View style={{ gap: 4 }}>
         <Comparar rotulo="Radiação natural média nos EUA, por ano" valor="3,11 mSv" />
         <Comparar rotulo="Média dos tripulantes (UNSCEAR)" valor="cerca de 3 mSv" />
+        <Comparar rotulo="Nível de referência da CNEN (Brasil) para tripulantes" valor="5 mSv" />
         <Comparar rotulo="Nível de referência da ICRP para tripulantes" valor="5 a 10 mSv" />
         <Comparar rotulo="Limite ocupacional (média em 5 anos)" valor="20 mSv" />
       </View>

@@ -25,7 +25,14 @@
 // - UNSCEAR: tripulantes como o 4º grupo de trabalhadores mais expostos, média de cerca de 3 mSv/ano (AC 120-61B, ¶5b);
 //   2,7 mSv/ano (CAMI 2026, p. 6). Europa 2009–2014: médias nacionais de menos de 1 a 2,6 mSv/ano, máximo individual de
 //   7 mSv (Alemanha, 2009): Radioprotection 2017, Tabela 1. Brasil: 1,46 a 3,37 mSv/ano, relatório final do GT-Aero
-//   (CNEN, criado em 2018), citado pelo Sindicato Nacional dos Aeronautas (aeronautas.org.br).
+//   (CNEN, criado em 2018; relatório finalizado em 9 out. 2018, segundo a ABRAPAC), citado pelo Sindicato Nacional dos
+//   Aeronautas (aeronautas.org.br). O relatório não está publicado on-line [confirmar na referência].
+// - América do Sul e Caribe, 29.000–41.000 ft, 80.548 rotas calculadas (mar. 2009): 2,65 a 2,95 µSv/h conforme o ciclo
+//   solar; 1,45 a 1,67 mSv/ano para tripulações brasileiras típicas: Federico CA, Gonçalez OL, Pazianotto MT et al.,
+//   ICDA-3, Lisboa, 2019 (repositorio.ipen.br). Londres–Nova York 4,0 µSv/h: AC 120-61B, Tabela 2 (métodos diferentes).
+// - Voos domésticos (CARI-6, dados de nov. 2011): Rio–São Paulo 1,8 µSv; São Paulo–Brasília 3,24; Rio–Brasília 3,37;
+//   até 8,8 µSv; tripulante doméstico 0,76 mSv/ano (850 h): Rochedo ERR, Alves VA, Wasserman MAV. Braz J Radiat Sci
+//   2020;8(1):1-10.
 // M1V5 - III · Riscos e gestação
 // - Risco estocástico, sem limiar: "qualquer exposição pode aumentar o risco", muito pequeno em doses baixas (AC
 //   120-61B, ¶8b); dados incertos abaixo de 100 mSv e fator de redução para dose baixa e lenta (CAMI 2026, pp. 5–6).
@@ -49,7 +56,10 @@
 // - Diretiva 2013/59/Euratom, art. 35(3): acima de 1 mSv/ano, avaliar, considerar na escala, informar dose e riscos,
 //   proteger a gestante; acima de 6 mSv/ano, aplicar as regras do capítulo. Air France: referência de 6 mSv/ano
 //   (Radioprotection 2017).
-// - CNEN NN 3.01 (diretrizes básicas de proteção radiológica) em revisão; GT-Aero criado pela CNEN em 2018: SNA.
+// - CNEN NN 3.01 (Res. CNEN 323/24, DOU 18 abr. 2024; revisão Res. 344/25), arts. 146 a 148 (Subseção III): voos acima
+//   de 28.000 ft; estimar a dose anual por rotas e horas, manter base de dados e disponibilizá-la, informar riscos e
+//   orientar a gestante a comunicar a gravidez: ABRAPAC (pilotos.org.br, 26 abr. 2024). Nível de referência de 5 mSv/ano:
+//   SNA (aeronautas.org.br, 11 set. 2024). Texto dos arts. 146–148 não lido na íntegra [confirmar na referência].
 // - CARI (CARI-7 recomendado); eventos solares não são previstos com antecedência; alertas de radiação solar do CAMI com
 //   dados da NOAA (SWPC); descer em altas latitudes reduz a dose, sobretudo com resposta rápida; ALARA: AC 120-61B,
 //   ¶3a, ¶6a(1), ¶9a–b; CAMI 2026, p. 9.
@@ -89,6 +99,7 @@ export const radiacao: Capitulo = {
           "Cada voo soma uma dose que cresce com o **tempo no ar**, a **altitude** e a **latitude**. Um voo curto e baixo, como Houston–Austin, de meia hora a 20.000 pés, fica abaixo de **0,2 µSv**. Um voo longo, alto e perto do polo, como **Nova York–Tóquio**, 13 horas a até 43.000 pés, passa de **55 µSv**.",
           "Na mesma altitude, a latitude pesa. A 37.000 pés, **Nova York–San Juan**, rumo ao Caribe, soma cerca de **2,7 µSv por hora**; **Londres–Nova York**, sobre o Atlântico Norte, cerca de **4,0**. A 35.000 pés, Los Angeles–Honolulu fica perto de 2,3 µSv por hora, e Seattle–Anchorage, rumo ao Alasca, perto de 3,6.",
           "Para quem voa por profissão, as horas se acumulam. O comitê científico da ONU para os efeitos da radiação (**UNSCEAR**) coloca os **tripulantes** como o **quarto grupo de trabalhadores mais expostos**, com média de cerca de **3 mSv por ano**. Na Europa, as médias dos países ficaram entre **menos de 1 e 2,6 mSv por ano**, com máximos individuais de até **7 mSv**. No Brasil, o grupo de trabalho da **CNEN** sobre o tema (GT-Aero) estimou de **1,46 a 3,37 mSv por ano**.",
+          "O Brasil fica longe dos polos, e isso ajuda. Sobre a **América do Sul e o Caribe**, entre 29.000 e 41.000 pés, a taxa média calculada fica entre **2,65 e 2,95 µSv por hora**, conforme o ciclo solar, abaixo dos cerca de 4,0 de Londres–Nova York. Num ano típico de voos na região, a dose soma de **1,45 a 1,67 mSv**. Nos voos domésticos, **Rio–São Paulo** soma cerca de **1,8 µSv**, e os trechos mais longos chegam a **8,8 µSv**; quem voa só no país fica, em média, perto de **0,76 mSv por ano**.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, midia: 'dose-rota' },
@@ -106,6 +117,22 @@ export const radiacao: Capitulo = {
                 ['Los Angeles–Tóquio', '40.000 ft', '11,7 h', '35,1 µSv'],
                 ['Atenas–Nova York', '41.000 ft', '9,4 h', '44,6 µSv'],
                 ['Nova York–Tóquio', '43.000 ft', '13,0 h', '55,1 µSv'],
+              ],
+            },
+          },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Radiação nos voos do Brasil',
+              colunas: ['Situação', 'Dose'],
+              linhas: [
+                ['Rio de Janeiro–São Paulo', 'cerca de 1,8 µSv por voo'],
+                ['São Paulo–Brasília', 'cerca de 3,2 µSv por voo'],
+                ['Rio de Janeiro–Brasília', 'cerca de 3,4 µSv por voo'],
+                ['Trechos domésticos mais longos', 'até 8,8 µSv por voo'],
+                ['Cruzeiro sobre a América do Sul e o Caribe', '2,65 a 2,95 µSv por hora'],
+                ['Tripulante só em voos domésticos', 'cerca de 0,76 mSv por ano'],
+                ['Tripulante na região (ano típico)', '1,45 a 1,67 mSv por ano'],
               ],
             },
           },
@@ -152,7 +179,7 @@ export const radiacao: Capitulo = {
         texto: [
           "A **ICRP**, comissão internacional de proteção radiológica, recomenda para trabalhadores expostos uma dose efetiva de **20 mSv por ano, em média de 5 anos**, sem passar de **50 mSv num único ano**; a **FAA** adota os mesmos valores. Para o público em geral, o limite é de **1 mSv por ano**. Esses números não separam o seguro do perigoso: são o **teto do aceitável**. Exames médicos não entram nessa conta.",
           "Para a aviação, a ICRP trata os tripulantes como **trabalhadores expostos** e propõe um **nível de referência entre 5 e 10 mSv por ano**, com a dose mantida **tão baixa quanto razoavelmente possível**, o princípio **ALARA**. Não exige **dosímetro** individual: a dose é **calculada** por programas validados, a partir das rotas voadas, e registrada.",
-          "Na **União Europeia**, quando a dose pode passar de **1 mSv por ano**, a empresa aérea precisa **avaliar a exposição**, **levá-la em conta na escala** para reduzir as doses mais altas, **informar** cada tripulante da sua dose e dos riscos, e proteger a **gestante**; acima de **6 mSv**, valem as regras completas de trabalhador exposto. No **Brasil**, a norma básica de proteção radiológica é a **CNEN NN 3.01**, em revisão, e a CNEN criou em 2018 o **GT-Aero** para estudar a exposição das tripulações.",
+          "Na **União Europeia**, quando a dose pode passar de **1 mSv por ano**, a empresa aérea precisa **avaliar a exposição**, **levá-la em conta na escala** para reduzir as doses mais altas, **informar** cada tripulante da sua dose e dos riscos, e proteger a **gestante**; acima de **6 mSv**, valem as regras completas de trabalhador exposto. No **Brasil**, desde 2024 a norma básica de proteção radiológica da **CNEN**, a **NN 3.01**, reconhece a exposição dos aeronautas: para quem voa acima de **28.000 pés**, a empresa precisa **estimar a dose anual** de cada tripulante pelas rotas e horas de voo, **manter e disponibilizar os registros**, **informar os riscos** e orientar a **gestante** a comunicar a gravidez de imediato, com **nível de referência de 5 mSv por ano**.",
           "Há ferramentas práticas. Os programas **CARI** da FAA, com o **CARI-7** como versão recomendada, calculam a dose de um voo pela rota, altitude e data. Os eventos solares, porém, não são previstos com antecedência: o instituto médico da FAA emite **alertas de radiação solar** com dados da agência americana de clima espacial (**NOAA**). Num alerta, **descer** em altas latitudes reduz bastante a dose, sobretudo se a resposta for rápida.",
           "Para o **passageiro** eventual, a dose é pequena. A ICRP recomenda **informar os passageiros** sobre a exposição e como estimá-la. Quem voa muito pode adotar um **nível de referência pessoal** e ajustar a frequência dos voos, e quem viaja a trabalho pode, caso a caso, ser tratado como trabalhador exposto.",
         ].join('\n\n'),
@@ -165,6 +192,7 @@ export const radiacao: Capitulo = {
               linhas: [
                 ['ICRP e FAA, trabalhador', '20 mSv/ano em 5 anos', 'Nunca mais de 50 mSv num ano'],
                 ['ICRP, tripulantes', '5 a 10 mSv/ano', 'Nível de referência; manter abaixo e o mais baixo possível'],
+                ['CNEN (Brasil), tripulantes', '5 mSv/ano', 'Nível de referência; estimar, registrar e informar'],
                 ['União Europeia', 'Acima de 6 mSv/ano', 'Regras completas de trabalhador exposto'],
                 ['União Europeia', 'Acima de 1 mSv/ano', 'Avaliar, ajustar a escala e informar'],
                 ['Público em geral', '1 mSv/ano', 'Limite para quem não trabalha com radiação'],

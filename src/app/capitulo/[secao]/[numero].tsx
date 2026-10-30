@@ -46,6 +46,15 @@ export default function TelaCapitulo() {
   const router = useRouter();
   const width = useLarguraJanela();
   const rolagem = useRef<ScrollViewInstance>(null);
+  // Botão de voltar: some ao rolar para baixo e reaparece ao rolar para cima ou perto do topo.
+  const [voltarVisivel, setVoltarVisivel] = useState(true);
+  const ultimoY = useRef(0);
+  const aoRolar = (y: number) => {
+    const delta = y - ultimoY.current;
+    if (Math.abs(delta) < 8) return;
+    ultimoY.current = y;
+    setVoltarVisivel(y < 80 || delta < 0);
+  };
   const { registrarVisita } = useProgresso();
   // Posição de cada tópico na página, para voltar ao topo da gaveta quando ela é fechada lá embaixo.
   const posTopicos = useRef<Record<string, number>>({});
@@ -75,7 +84,7 @@ export default function TelaCapitulo() {
 
   return (
     <View style={{ flex: 1 }}>
-      <TelaCheia refRolagem={rolagem}>
+      <TelaCheia refRolagem={rolagem} aoRolar={aoRolar}>
         <View style={{ height: largura * 0.5625 + 120 }}>
           <Image source={CapaEpisodio[`${secao.id}-${capitulo.numero}`]} style={{ width: largura, height: largura * 0.5625 + 60 }} contentFit="cover" />
           <LinearGradient colors={['rgba(3,5,10,0.5)', 'rgba(3,5,10,0)', Cores.fundo]} locations={[0, 0.3, 0.92]} style={StyleSheet.absoluteFill} />
@@ -145,7 +154,7 @@ export default function TelaCapitulo() {
           </Fileira>
         ) : null}
       </TelaCheia>
-      <BotaoVoltarFlutuante />
+      <BotaoVoltarFlutuante visivel={voltarVisivel} />
     </View>
   );
 }

@@ -8,6 +8,14 @@
 - A proteção de CI identifica alterações; não substitui as permissões e regras de proteção de branch do GitHub. Uma autorização posterior explícita do autor será necessária para atualizar os registros congelados.
 - Novos voos e conteúdos fora de M1V1 podem continuar a ser desenvolvidos sem alterar estes trechos.
 
+## CONGELAMENTO EDITORIAL — M1V2, M1V3 (27/10/2026), M1V4 e M2V1 (29/10/2026)
+Mesmas regras acima; arquivos e fotos protegidos pelo mapa ARQUIVOS em `scripts/check-m1v1-frozen.cjs`.
+
+## FONTES — padrão ANAC e FAA (29/10/2026)
+Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
+e da **FAA**, ao lado das obras de referência. Buscar a fonte primária; quando só houver fonte secundária, registrar
+no comentário do arquivo e marcar "[confirmar na referência]".
+
 # CONTEXTO DO PROJETO — App-Book de Medicina Aeroespacial
 
 Você vai trabalhar comigo neste projeto. Abaixo está tudo o que já foi decidido. Siga estas definições à risca e não mude a estrutura sem me perguntar.

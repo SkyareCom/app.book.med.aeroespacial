@@ -89,6 +89,31 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-mergulhador-aviao.jpg': '641e8ba93dcccb9c',
   'assets/images/topicos/m1v3-mergulhador-subida.jpg': 'aaffbc821671f604',
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
+  // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
+  'src/data/capitulos/temperatura.ts': '61f0156a73e72a1c',
+  'src/components/midia/m1v4-graficos.tsx': '4e9f29412e025140',
+  'assets/videos/m1v4-frio.mp4': '9ff51913ab0e9c92',
+  'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
+  'assets/images/topicos/m1v4-cabine-sol.jpg': '996fde119fe58715',
+  'assets/images/topicos/m1v4-hidratacao.jpg': '259d4dc8e730e935',
+  'assets/images/topicos/m1v4-resgate-frio.jpg': '99def23e990d2d6b',
+  'assets/images/topicos/m1v4-sinal-espelho.jpg': '6bf5f5eb96ab34e7',
+  'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
+  'src/data/capitulos/hipoxia.ts': 'c375ef085a08b82d',
+  'src/components/midia/simulador-o2.tsx': 'c1212fc4e05924f6',
+  'src/components/midia/grafico-tuc.tsx': '463aa9c2e6251149',
+  'src/components/midia/atividade-classificar.tsx': '8146ad4f3bb8828d',
+  'assets/images/topicos/m2v1-1-alveolos.jpg': '3309a261ef43a193',
+  'assets/images/topicos/m2v1-1-oximetro.jpg': '6a5bac6bcf360508',
+  'assets/images/topicos/m2v1-2-escapamento.jpg': 'a9df8b7a25934b8e',
+  'assets/images/topicos/m2v1-2-fumaca.jpg': '8da21d8160c1cdb6',
+  'assets/images/topicos/m2v1-3-cronometro.jpg': 'e89bee755f338cd1',
+  'assets/images/topicos/m2v1-3-descompressao-cabine.jpg': 'f14d2cad44145d3e',
+  'assets/images/topicos/m2v1-3-mascara-primeiro.jpg': 'd2bbb68d79695784',
+  'assets/images/topicos/m2v1-4-cianose.jpg': '0ba748d7b9e0d585',
+  'assets/images/topicos/m2v1-4-euforia.jpg': '812f1407e3f90c48',
+  'assets/images/topicos/m2v1-5-maos.jpg': '751d6a943a2173c1',
+  'assets/images/topicos/m2v1-5-oxigenio.jpg': 'ddd5800b87eddbd3',
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
 });
 for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
@@ -101,8 +126,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2 ou M1V3.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4 ou M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1, M1V2 e M1V3 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('M1V1, M1V2, M1V3, M1V4 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }

@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
-import type { ReactNode, RefObject } from 'react';
-import { Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from 'react-native';
+import { useEffect, useRef, type ReactNode, type RefObject } from 'react';
+import { Animated, Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { IconeVoltar } from '@/components/icones';
 import { Texto } from '@/components/texto';
@@ -73,26 +73,40 @@ const styles = StyleSheet.create({
 
 // Tela sem margens, para capas de ponta a ponta (Home, temporadas e episódios).
 // O conteúdo cuida das próprias margens; a largura máxima mantém a leitura confortável em telas grandes.
-export function TelaCheia({ children, refRolagem }: { children: ReactNode; refRolagem?: RefObject<ScrollViewInstance | null> }) {
+export function TelaCheia({ children, refRolagem, aoRolar }: { children: ReactNode; refRolagem?: RefObject<ScrollViewInstance | null>; aoRolar?: (y: number) => void }) {
   return (
     <View style={styles.raiz}>
       <Image source={fundo} style={StyleSheet.absoluteFill} contentFit="cover" />
-      <ScrollView ref={refRolagem} contentContainerStyle={{ paddingBottom: Espaco.xl * 2 }}>
+      <ScrollView
+        ref={refRolagem}
+        onScroll={aoRolar ? (e) => aoRolar(e.nativeEvent.contentOffset.y) : undefined}
+        scrollEventThrottle={aoRolar ? 32 : undefined}
+        contentContainerStyle={{ paddingBottom: Espaco.xl * 2 }}>
         <View style={{ width: '100%', maxWidth: LarguraMaxima, alignSelf: 'center', gap: Espaco.xl }}>{children}</View>
       </ScrollView>
     </View>
   );
 }
 
-export function BotaoVoltarFlutuante() {
+// Botão de voltar sobre a capa. Com "visivel" falso (leitor rolando para baixo), some para não cobrir o conteúdo;
+// volta assim que o leitor rola para cima ou retorna ao topo.
+export function BotaoVoltarFlutuante({ visivel = true }: { visivel?: boolean }) {
   const router = useRouter();
+  const anim = useRef(new Animated.Value(visivel ? 1 : 0)).current;
+  useEffect(() => {
+    Animated.timing(anim, { toValue: visivel ? 1 : 0, duration: 180, useNativeDriver: false }).start();
+  }, [visivel, anim]);
   return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel="Voltar"
-      onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
-      style={[styles.voltar, { position: 'absolute', top: 12, left: Espaco.lg, zIndex: 5 }]}>
-      <IconeVoltar cor={Cores.texto} />
-    </Pressable>
+    <Animated.View
+      pointerEvents={visivel ? 'auto' : 'none'}
+      style={{ position: 'absolute', top: 12, left: Espaco.lg, zIndex: 5, opacity: anim, transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [-60, 0] }) }] }}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Voltar"
+        onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+        style={styles.voltar}>
+        <IconeVoltar cor={Cores.texto} />
+      </Pressable>
+    </Animated.View>
   );
 }
