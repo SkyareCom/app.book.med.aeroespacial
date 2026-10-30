@@ -10,10 +10,11 @@ import { GraficoOxigenio100, GraficoPerfilCabine, GraficoSistemasOxigenio, Simul
 import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } from '@/components/midia/m1v3-graficos';
 import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '@/components/midia/m1v4-graficos';
 import { GestacaoRadiacao, GraficoDosePorRota, RadiacaoAnual, RiscoCarreira } from '@/components/midia/m1v5-graficos';
+import { CalculadoraRuido, FaixasAudicao, ReguaDecibeis, VibracaoA8 } from '@/components/midia/m1v6-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
-import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, ReguaRuido, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
+import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
 import { SimuladorVisao } from '@/components/midia/simulador-visao';
 import type { TipoMidia } from '@/data/tipos';
@@ -35,7 +36,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'leis-gases': () => <LeisDosGases />,
   'forcas-g': () => <SimuladorForcasG />,
   'adaptacao-escuro': () => <AdaptacaoEscuro />,
-  'regua-ruido': () => <ReguaRuido />,
+  'regua-ruido': () => <CalculadoraRuido />,
   'radiacao-voo': () => <RadiacaoAnual />,
   'risco-aeromedico': () => <RiscoAeromedico />,
   'perda-ossea': () => <PerdaOssea />,
@@ -68,6 +69,10 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'animacao-hiperventilacao': () => <AnimacaoHiperventilacao />,
   'animacao-chuveiro': () => <AnimacaoChuveiro />,
   'dose-rota': () => <GraficoDosePorRota />,
+  'regua-decibeis': () => <ReguaDecibeis />,
+  'faixas-audicao': () => <FaixasAudicao />,
+  'animacao-vibracao': () => <AnimacaoVibracao />,
+  'vibracao-a8': () => <VibracaoA8 />,
   'risco-carreira': () => <RiscoCarreira />,
   'gestacao-radiacao': () => <GestacaoRadiacao />,
 };
@@ -113,6 +118,10 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'animacao-hiperventilacao': 'Hiperventilação',
   'animacao-chuveiro': 'Chuveiro cósmico',
   'dose-rota': 'Dose por rota',
+  'regua-decibeis': 'Régua de decibéis',
+  'faixas-audicao': 'Faixas de audição',
+  'animacao-vibracao': 'Do rotor ao olho',
+  'vibracao-a8': 'Dose de vibração',
   'risco-carreira': 'Risco na carreira',
   'gestacao-radiacao': 'Gestação e radiação',
 };

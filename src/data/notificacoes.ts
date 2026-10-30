@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 5;
+export const VERSAO_NOTIFICACOES = 6;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'ruido',
+    rotulo: 'Voo disponível',
+    titulo: 'Ruído e vibração',
+    texto: 'O voo 6 da Missão 1 chegou: som e decibel, perda auditiva, limites e proteção, e vibração. Com 5 interativos e o teste no final.',
+    destino: '/capitulo/conceitos/6',
+  },
   {
     id: 'radiacao',
     rotulo: 'Voo disponível',
@@ -66,6 +73,6 @@ export const notificacoes: Notificacao[] = [
     id: 'producao',
     rotulo: 'Em produção',
     titulo: 'Novos voos a caminho',
-    texto: 'Os textos dos outros 38 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
+    texto: 'Os textos dos outros 37 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
   },
 ];

@@ -48,7 +48,11 @@ export type TipoMidia =
   | 'animacao-chuveiro'
   | 'dose-rota'
   | 'risco-carreira'
-  | 'gestacao-radiacao';
+  | 'gestacao-radiacao'
+  | 'regua-decibeis'
+  | 'faixas-audicao'
+  | 'animacao-vibracao'
+  | 'vibracao-a8';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

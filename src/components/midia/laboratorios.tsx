@@ -145,40 +145,7 @@ export function AdaptacaoEscuro() {
   );
 }
 
-// ---------------------------------------------------------------- Ruído (NR-15)
-const FONTES_RUIDO: [number, string][] = [
-  [60, 'Conversa normal'],
-  [80, 'Cabine de passageiros em cruzeiro, cerca de'],
-  [100, 'Cabine de helicóptero, cerca de'],
-  [120, 'Pátio perto de jato em operação, acima de'],
-];
-
-export function ReguaRuido() {
-  const [db, setDb] = useState(90);
-  const horas = 8 / Math.pow(2, (db - 85) / 5);
-  const tempo = horas >= 1 ? `${fmt(horas, horas % 1 ? 1 : 0)} h` : `${fmt(horas * 60)} min`;
-  return (
-    <MolduraMidia tipo="Calculadora" titulo="Quanto tempo de ruído o ouvido aguenta" instrucao="Limite de exposição diária sem proteção pela NR-15 (Anexo 1): a cada 5 dB a mais, o tempo cai pela metade.">
-      <View>
-        <Cabecalho rotulo="Nível de ruído" valor={`${fmt(db)} dB(A)`} />
-        <Deslizante min={85} max={115} passo={1} valor={db} onChange={setDb} rotulo="Nível de ruído em decibéis" />
-      </View>
-      <View style={styles.leituras}>
-        <Leitura rotulo="Exposição máxima por dia" valor={tempo} cor={horas < 1 ? Cores.erro : horas < 4 ? Cores.dourado : Cores.texto} />
-      </View>
-      <View style={{ gap: 4 }}>
-        {FONTES_RUIDO.map(([v, r]) => (
-          <View key={v} style={styles.linha}>
-            <Texto cor={Cores.textoSuave}>{r}</Texto>
-            <Texto>{v} dB</Texto>
-          </View>
-        ))}
-      </View>
-      <Texto cor={Cores.textoApagado}>A NR-15 não permite exposição acima de 115 dB(A) sem proteção adequada.</Texto>
-    </MolduraMidia>
-  );
-}
-
+// Ruído: a calculadora do laboratório é a CalculadoraRuido (m1v6-graficos.tsx), com o quadro da NR-15.
 // Radiação cósmica: a calculadora do laboratório é a RadiacaoAnual (m1v5-graficos.tsx), com dados da FAA.
 
 function Comparar({ rotulo, valor }: { rotulo: string; valor: string }) {

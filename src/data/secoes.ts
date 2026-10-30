@@ -8,6 +8,7 @@ import { descompressao } from './capitulos/descompressao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
 import { radiacao } from './capitulos/radiacao';
+import { ruido } from './capitulos/ruido';
 import { temperatura } from './capitulos/temperatura';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
@@ -43,7 +44,7 @@ export const secoes: Secao[] = [
       descompressao,
       temperatura,
       radiacao,
-      cap(6, 'Ruído e vibração', ['Perda auditiva', 'Proteção auditiva', 'Vibração'], ['regua-ruido']),
+      ruido,
       cap(7, 'Forças G', ['Eixos G', 'G-LOC e A-LOC', 'Manobra anti-G', 'Centrífuga'], ['forcas-g']),
       cap(8, 'Impacto e ejeção', ['Tolerância ao impacto', 'Retenção e assentos', 'Ejeção', 'Capacetes']),
     ],

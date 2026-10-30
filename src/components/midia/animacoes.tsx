@@ -376,6 +376,66 @@ export function AnimacaoChuveiro() {
   );
 }
 
+// ---------------------------------------------------------------- M1V6 · Do rotor ao olho
+// Esquema (o movimento real é rápido demais para a tela). Frequências: rotor de 2 a 8 voltas por segundo, em geral
+// 4 a 6; passagem das pás de 10 a 30 Hz, em geral 20 a 25; olho mais sensível de 12,5 a 31,5 Hz (Tamer A et al.,
+// CEAS Aeronaut J 2021;12:427-40). Corpo mais sensível de 4 a 8 Hz no eixo vertical (ISO 2631).
+export function AnimacaoVibracao() {
+  const c = useCiclo(4000);
+  const H = 220;
+  const giro = 2 * Math.PI * 8 * c.fase;
+  const tremor = Math.sin(2 * Math.PI * 40 * c.fase);
+  return (
+    <Quadro titulo="Do rotor ao olho" instrucao="Esquema: a cada volta do rotor, as pás empurram a estrutura; a vibração chega ao corpo pelo assento e faz tremer a leitura dos instrumentos." ciclo={c} altura={H}>
+      {(w) => {
+        const cx = w * 0.34;
+        const cy = 112 + 1.6 * tremor;
+        const rx = w * 0.19;
+        const L = w * 0.27;
+        const gx = w * 0.79;
+        const gy = 96;
+        const mostrador = (dx: number, dy: number, op: number, k: string) => (
+          <G key={k} opacity={op}>
+            <Circle cx={gx + dx} cy={gy + dy} r={26} fill="#0B1626" stroke={Cores.textoSuave} strokeWidth={2} />
+            {[-120, -60, 0, 60, 120].map((a) => {
+              const r = (a - 90) * (Math.PI / 180);
+              return <Line key={a} x1={gx + dx + Math.cos(r) * 19} y1={gy + dy + Math.sin(r) * 19} x2={gx + dx + Math.cos(r) * 24} y2={gy + dy + Math.sin(r) * 24} stroke={Cores.textoSuave} strokeWidth={1.5} />;
+            })}
+            <Line x1={gx + dx} y1={gy + dy} x2={gx + dx + 15} y2={gy + dy - 11} stroke={Cores.dourado} strokeWidth={2.4} strokeLinecap="round" />
+          </G>
+        );
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1A2E" />
+            <SvgText x={8} y={16} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>ROTOR: 4 A 6 VOLTAS POR SEGUNDO</SvgText>
+            <SvgText x={8} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>PÁS: 20 A 25 Hz</SvgText>
+            {/* Helicóptero de perfil, tremendo */}
+            <Line x1={cx - rx * 0.6} y1={cy} x2={10} y2={cy - 6} stroke="#C9D4E0" strokeWidth={5} strokeLinecap="round" />
+            <Circle cx={14} cy={cy - 8} r={7} fill="none" stroke="#C9D4E0" strokeOpacity={0.6} strokeWidth={1.5} />
+            <Ellipse cx={cx} cy={cy} rx={rx} ry={26} fill="#E8EEF5" />
+            <Path d={`M${cx + rx * 0.15} ${cy - 22}Q${cx + rx * 0.95} ${cy - 18} ${cx + rx * 0.98} ${cy + 2}L${cx + rx * 0.15} ${cy + 2}z`} fill="#7FB2E5" fillOpacity={0.55} />
+            <Circle cx={cx + rx * 0.42} cy={cy - 8} r={6} fill="#2B3A4F" />
+            <Rect x={cx + rx * 0.3} y={cy - 2} width={rx * 0.26} height={16} rx={3} fill="#2B3A4F" />
+            <Line x1={cx} y1={cy - 26} x2={cx} y2={cy - 40} stroke="#C9D4E0" strokeWidth={3} />
+            <Line x1={cx - L * Math.cos(giro)} y1={cy - 41} x2={cx + L * Math.cos(giro)} y2={cy - 41} stroke="#E8EEF5" strokeWidth={3} strokeLinecap="round" />
+            <Line x1={cx - L * Math.sin(giro)} y1={cy - 41} x2={cx + L * Math.sin(giro)} y2={cy - 41} stroke="#E8EEF5" strokeOpacity={0.5} strokeWidth={3} strokeLinecap="round" />
+            <Line x1={cx - rx * 0.7} y1={cy + 38} x2={cx + rx * 0.8} y2={cy + 38} stroke="#C9D4E0" strokeWidth={3} strokeLinecap="round" />
+            <Line x1={cx - rx * 0.4} y1={cy + 24} x2={cx - rx * 0.45} y2={cy + 38} stroke="#C9D4E0" strokeWidth={2} />
+            <Line x1={cx + rx * 0.4} y1={cy + 24} x2={cx + rx * 0.45} y2={cy + 38} stroke="#C9D4E0" strokeWidth={2} />
+            {/* Instrumento: a imagem se desdobra com o tremor */}
+            {mostrador(-3 * tremor, 2.5 * tremor, 0.35, 'a')}
+            {mostrador(3 * tremor, -2.5 * tremor, 0.35, 'b')}
+            {mostrador(0, 0, 0.75, 'c')}
+            <SvgText x={gx} y={gy + 44} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="middle">OLHOS: 12,5 A 31,5 Hz</SvgText>
+            <SvgText x={gx} y={gy + 56} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="middle">LEITURA TREMIDA</SvgText>
+            <SvgText x={8} y={H - 12} fill={Cores.destaque} fontSize={9} fontFamily={Fonte}>CORPO: MAIS SENSÍVEL DE 4 A 8 Hz</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
