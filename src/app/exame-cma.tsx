@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from 'react';
-import { Pressable, StyleSheet, TextInput, View, type ScrollViewInstance } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, TextInput, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
@@ -331,8 +331,13 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
           </>
         ) : null}
 
+        {atual.tipo === 'pergunta' || atual.tipo === 'resultado' ? (
+          <NavSistemas passos={passos} valores={valores} achados={aoVivo.achados} atual={atual.tipo === 'pergunta' ? atual.sistema.id : undefined} ir={(k) => setPasso(k)} />
+        ) : null}
+
         {atual.tipo === 'pergunta' ? (
           <Pergunta
+            avancar={() => setPasso(i + 1)}
             passo={atual}
             valores={valores}
             achados={aoVivo.achados.filter((a) => a.campos.includes(atual.campo.id))}
@@ -384,6 +389,7 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
 }
 
 function Pergunta({
+  avancar,
   passo,
   valores,
   achados,
@@ -391,6 +397,7 @@ function Pergunta({
   totalSistema,
   grafico,
 }: {
+  avancar: () => void;
   passo: Extract<Passo, { tipo: 'pergunta' }>;
   valores: Valores;
   achados: Achado[];
@@ -403,6 +410,8 @@ function Pergunta({
   const feito = respondido(valores, campo.id);
   const status = pior(achados);
   const cor = status ? COR_NIVEL[status] : feito ? Cores.acerto : Cores.linha;
+  const x = campo.tipo === 'num' ? n(valores, campo.id) : undefined;
+  const foraDaFaixa = campo.tipo === 'num' && campo.faixa && x !== undefined && (x < campo.faixa[0] || x > campo.faixa[1]);
   return (
     <>
       <CartaoImagem imagem={IMG_SISTEMA[sistema.id]} altura={110} style={BordaCapa}>
@@ -443,7 +452,9 @@ function Pergunta({
           <View style={styles.entradaGrande}>
             <TextInput
               value={(valor as string) ?? ''}
-              onChangeText={(t) => definir(campo.id, t.replace(/[^0-9.,]/g, ''))}
+              onChangeText={(t) => definir(campo.id, t.replace(/[^0-9.,-]/g, ''))}
+              onSubmitEditing={avancar}
+              returnKeyType="next"
               placeholder={campo.placeholder}
               placeholderTextColor={Cores.textoApagado}
               keyboardType="decimal-pad"
@@ -453,6 +464,9 @@ function Pergunta({
             {campo.unidade ? <Texto t="item" cor={Cores.textoSuave}>{campo.unidade}</Texto> : null}
           </View>
         )}
+        {foraDaFaixa ? (
+          <Texto cor={Cores.dourado}>Valor fora do esperado para este item ({campo.tipo === 'num' && campo.faixa ? `${campo.faixa[0]} a ${campo.faixa[1]}` : ''}{campo.tipo === 'num' && campo.unidade ? ` ${campo.unidade}` : ''}). Confira a medida.</Texto>
+        ) : null}
         {grafico}
       </Painel>
 
@@ -477,6 +491,29 @@ function Pergunta({
         )}
       </Painel>
     </>
+  );
+}
+
+// Atalho por sistema: cor da pior resposta, quantas foram respondidas e salto para a primeira pergunta.
+function NavSistemas({ passos, valores, achados, atual, ir }: { passos: Passo[]; valores: Valores; achados: Achado[]; atual?: string; ir: (k: number) => void }) {
+  return (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.navSistemas}>
+      {SISTEMAS.map((s) => {
+        const ks = passos.map((p, k) => (p.tipo === 'pergunta' && p.sistema.id === s.id ? k : -1)).filter((k) => k >= 0);
+        if (!ks.length) return null;
+        const feitas = ks.filter((k) => { const p = passos[k]; return p.tipo === 'pergunta' && respondido(valores, p.campo.id); }).length;
+        const st = pior(achados.filter((a) => idSistema(a) === s.id));
+        const cor = st ? COR_NIVEL[st] : feitas ? Cores.acerto : Cores.textoApagado;
+        const ativo = atual === s.id;
+        return (
+          <Pressable key={s.id} accessibilityRole="button" accessibilityLabel={`Ir para ${s.nome}`} onPress={() => ir(ks[0])} style={[styles.navChip, ativo && styles.navChipAtivo]}>
+            <View style={[styles.ponto, { backgroundColor: cor, marginTop: 0 }]} />
+            <Texto t="rotulo" cor={ativo ? Cores.destaque : Cores.texto}>{CURTO[s.id]}</Texto>
+            <Texto t="rodape" cor={Cores.textoApagado}>{feitas}/{ks.length}</Texto>
+          </Pressable>
+        );
+      })}
+    </ScrollView>
   );
 }
 
@@ -802,6 +839,9 @@ const styles = StyleSheet.create({
   linhaTabela: { flexDirection: 'row', gap: Espaco.sm, paddingVertical: 6, borderBottomWidth: 1, borderBottomColor: Cores.trilha },
   resultados: { flexDirection: 'row', gap: Espaco.sm },
   nav: { flexDirection: 'row', gap: Espaco.sm },
+  navSistemas: { gap: 6, paddingVertical: 2 },
+  navChip: { flexDirection: 'row', alignItems: 'center', gap: 6, minHeight: 36, paddingHorizontal: 10, borderRadius: 18, borderWidth: 1, borderColor: Cores.linha, backgroundColor: Cores.painel },
+  navChipAtivo: { borderColor: Cores.destaque },
   atalho: { alignSelf: 'center', paddingVertical: 8, paddingHorizontal: 12 },
   respostas: { flexDirection: 'row', flexWrap: 'wrap', gap: Espaco.sm },
   resposta: { flexGrow: 1, flexBasis: '40%', minHeight: 48, borderRadius: 12, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 12 },
