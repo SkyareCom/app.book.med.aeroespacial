@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
-import { useMemo, useRef, useState, type RefObject } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { Pressable, StyleSheet, TextInput, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
@@ -11,12 +11,13 @@ import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { BordaCapa, Cores, Espaco, Fonte, Raio, Tamanho } from '@/constants/theme';
 import { questoesCMA } from '@/data/cma-questoes';
-import { avaliar, CLASSES, EXAMES_1A, NOME_VEREDITO, SISTEMAS, validadeMeses, type Achado, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
+import { avaliar, CLASSES, EXAMES_1A, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
 import { idQuestao } from '@/lib/xp';
 import { useProgresso } from '@/state/progresso';
 
 // Exame CMA: página de apoio à decisão do médico examinador.
-// Três abas: Avaliação (formulário por sistema com gráficos ao vivo, veredito, validade e justificativa),
+// Três abas: Avaliação (entrevista com uma pergunta por vez, a resposta do RBAC 67 logo abaixo, gráficos ao vivo,
+// veredito, validade e justificativa),
 // Guia (classes, validade, onde fazer, o que levar, como se preparar) e Simulado (questões do ranking).
 // Regras e fontes em src/lib/cma.ts; gráficos em src/components/cma-graficos.tsx.
 
@@ -41,40 +42,28 @@ const IMG_SISTEMA: Record<string, number> = {
   metabolico: require('@/assets/images/capas/cli-13.jpg'),
   cardio: require('@/assets/images/capas/cli-02.jpg'),
   pneumo: require('@/assets/images/topicos/m1v1-2-corpo.jpg'),
+  digestivo: require('@/assets/images/capas/cli-09.jpg'),
+  renal: require('@/assets/images/capas/cli-09.jpg'),
   hemato: require('@/assets/images/capas/cli-10.jpg'),
   neuro: require('@/assets/images/capas/cli-04.jpg'),
   mental: require('@/assets/images/capas/cli-05.jpg'),
-  obst: require('@/assets/images/capas/cli-09.jpg'),
+  obst: require('@/assets/images/capas/cli-12.jpg'),
+  osteo: require('@/assets/images/capas/cli-11.jpg'),
   visao: require('@/assets/images/capas/fis-09.jpg'),
   audicao: require('@/assets/images/capas/cli-07.jpg'),
   orl: require('@/assets/images/capas/fis-02.jpg'),
   odonto: require('@/assets/images/capas/cli-11.jpg'),
 };
 
-// Nome do sistema nos achados do motor → gaveta do formulário.
-const SISTEMA_DO_ACHADO: Record<string, string> = {
-  Cardiovascular: 'cardio',
-  Metabólico: 'metabolico',
-  Respiratório: 'pneumo',
-  Hematológico: 'hemato',
-  Neurológico: 'neuro',
-  Mental: 'mental',
-  Obstétrico: 'obst',
-  Oftalmológico: 'visao',
-  Auditivo: 'audicao',
-  ORL: 'orl',
-  Odontológico: 'odonto',
-};
-
+// Cada achado aponta as perguntas que o geraram; o sistema é o da primeira delas.
+const SISTEMA_DO_CAMPO: Record<string, string> = Object.fromEntries(SISTEMAS.flatMap((s) => s.campos.map((c) => [c.id, s.id])));
 function idSistema(a: Achado) {
-  // PA e IMC são medidos na gaveta de sinais vitais.
-  if (a.ref === '67.79(a)' || a.ref === '67.85(a)(2)') return 'vitais';
-  return SISTEMA_DO_ACHADO[a.sistema];
+  return SISTEMA_DO_CAMPO[a.campos[0]];
 }
 
 const CURTO: Record<string, string> = {
-  vitais: 'Vitais', metabolico: 'Metabólico', cardio: 'Cardio', pneumo: 'Pulmão', hemato: 'Sangue', neuro: 'Neuro',
-  mental: 'Mental', obst: 'Gestação', visao: 'Visão', audicao: 'Audição', orl: 'ORL', odonto: 'Dentes',
+  vitais: 'Vitais', metabolico: 'Metabólico', cardio: 'Cardio', pneumo: 'Pulmão', digestivo: 'Digestivo', renal: 'Rins', hemato: 'Sangue',
+  neuro: 'Neuro', mental: 'Mental', obst: 'Gestação', osteo: 'Ossos', visao: 'Visão', audicao: 'Audição', orl: 'ORL', odonto: 'Dentes',
 };
 
 const ORDEM: Achado['nivel'][] = ['inapto', 'restricao', 'confirmar', 'julgamento', 'ok'];
@@ -107,8 +96,6 @@ const NOME_NIVEL: Record<Achado['nivel'], string> = {
   ok: 'Dentro do limite',
 };
 
-const TOTAL_CAMPOS = SISTEMAS.reduce((n, s) => n + s.campos.length, 0);
-
 const n = (v: Valores, id: string) => {
   const s = v[id];
   if (typeof s !== 'string' || !s.trim()) return undefined;
@@ -125,7 +112,7 @@ export default function ExameCMA() {
       <CartaoImagem imagem={IMG.hero} altura={190} style={BordaCapa}>
         <Selo texto="Ferramenta do examinador" cor={Cores.dourado} />
         <Texto t="titulo">Da anamnese ao veredito</Texto>
-        <Texto cor={Cores.textoSuave}>Classe, parâmetros por sistema, gráficos ao vivo, validade e a justificativa da decisão.</Texto>
+        <Texto cor={Cores.textoSuave}>Uma pergunta por vez, sistema por sistema, com a regra do RBAC 67 em cada resposta e o veredito no final.</Texto>
       </CartaoImagem>
 
       <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: '/capitulo/[secao]/[numero]', params: { secao: 'aviacao', numero: '1' } })} style={styles.voo}>
@@ -160,7 +147,24 @@ export default function ExameCMA() {
   );
 }
 
-// ---------- Avaliação ----------
+// ---------- Avaliação: entrevista, uma pergunta por vez ----------
+
+type Passo =
+  | { tipo: 'classe' }
+  | { tipo: 'candidato' }
+  | { tipo: 'exames' }
+  | { tipo: 'pergunta'; sistema: (typeof SISTEMAS)[number]; campo: Campo; ordem: number; doSistema: number }
+  | { tipo: 'resultado' };
+
+const respondido = (v: Valores, id: string) => v[id] !== undefined && v[id] !== '';
+
+function respostaTexto(c: Campo, v: Valores) {
+  const x = v[c.id];
+  if (x === undefined || x === '') return 'Sem resposta';
+  if (c.tipo === 'sn') return x === true ? 'Sim' : 'Não';
+  if (c.tipo === 'opcao') return c.opcoes.find((o) => o.id === x)?.nome ?? String(x);
+  return `${x}${c.unidade ? ` ${c.unidade}` : ''}`;
+}
 
 function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> }) {
   const [classe, setClasse] = useState<ClasseCMA>('1');
@@ -169,52 +173,77 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
   const [publico, setPublico] = useState(true);
   const [inicial, setInicial] = useState(false);
   const [valores, setValores] = useState<Valores>({});
-  const [abertos, setAbertos] = useState<Record<string, boolean>>({ vitais: true });
-  const [resultado, setResultado] = useState<Resultado | null>(null);
-  const rolar = useRef(false);
+  const [passo, setPasso] = useState(0);
+  const yCartao = useRef(0);
+  const primeiro = useRef(true);
 
   const c = CLASSES.find((x) => x.id === classe)!;
   const idadeN = idade.trim() && Number.isFinite(Number(idade)) ? Number(idade) : undefined;
   const previa = idadeN !== undefined ? validadeMeses(funcao, idadeN, publico) : undefined;
   const serie = SERIES_VALIDADE.find((s) => s.funcao === funcao) ?? { funcao, publico, nome: '', cor: Cores.destaque };
+  const ctx = { inicial };
 
-  // Análise ao vivo: alimenta o status de cada sistema enquanto o formulário é preenchido.
-  const aoVivo = useMemo(() => avaliar(classe, funcao, idadeN, publico, valores), [classe, funcao, idadeN, publico, valores]);
-  const preenchidos = Object.values(valores).filter((v) => v !== undefined && v !== '').length;
+  // As perguntas condicionais entram e saem conforme as respostas anteriores.
+  const passos = useMemo<Passo[]>(() => {
+    const lista: Passo[] = [{ tipo: 'classe' }, { tipo: 'candidato' }, { tipo: 'exames' }];
+    let ordem = 0;
+    for (const s of SISTEMAS) {
+      let doSistema = 0;
+      for (const campo of s.campos) if (visivel(campo, valores, { inicial })) lista.push({ tipo: 'pergunta', sistema: s, campo, ordem: ++ordem, doSistema: ++doSistema });
+    }
+    lista.push({ tipo: 'resultado' });
+    return lista;
+  }, [valores, inicial]);
+  const totalPerguntas = passos.filter((p) => p.tipo === 'pergunta').length;
+  const respondidas = passos.filter((p) => p.tipo === 'pergunta' && respondido(valores, p.campo.id)).length;
+  const i = Math.min(passo, passos.length - 1);
+  const atual = passos[i];
 
+  const aoVivo = useMemo(() => avaliar(classe, funcao, idadeN, publico, valores, { inicial }), [classe, funcao, idadeN, publico, valores, inicial]);
+
+  // A cada passo, a tela volta ao topo do cartão da pergunta.
+  useEffect(() => {
+    if (primeiro.current) {
+      primeiro.current = false;
+      return;
+    }
+    rolagem.current?.scrollTo({ y: Math.max(0, yCartao.current - 12), animated: true });
+  }, [i, rolagem]);
+
+  function definir(id: string, v: string | boolean | undefined) {
+    setValores((x) => ({ ...x, [id]: v }));
+  }
   function trocarClasse(id: ClasseCMA) {
     setClasse(id);
     setFuncao(CLASSES.find((x) => x.id === id)!.funcoes[0].id);
-    setResultado(null);
   }
-
-  function definir(id: string, v: string | boolean | undefined) {
-    setValores((atual) => ({ ...atual, [id]: v }));
-    setResultado(null);
-  }
-
-  function analisar() {
-    setResultado(aoVivo);
-    rolar.current = true;
-  }
-
-  function limpar() {
+  function recomecar() {
     setValores({});
     setIdade('');
-    setResultado(null);
+    setPasso(0);
   }
+  const irPara = (id: string) => {
+    const k = passos.findIndex((p) => p.tipo === 'pergunta' && p.campo.id === id);
+    if (k >= 0) setPasso(k);
+  };
 
   const od = ['500', '1000', '2000', '3000'].map((f) => n(valores, `od${f}`));
   const oe = ['500', '1000', '2000', '3000'].map((f) => n(valores, `oe${f}`));
+
+  const ultimaPergunta = i === passos.length - 2;
+  const rotuloProxima =
+    atual.tipo === 'pergunta' && !respondido(valores, atual.campo.id) ? (ultimaPergunta ? 'Pular e ver o veredito' : 'Pular') : ultimaPergunta ? 'Ver o veredito' : 'Próxima';
 
   return (
     <>
       <Painel>
         <View style={styles.entre}>
-          <Texto t="rotulo" cor={Cores.destaque}>Formulário</Texto>
-          <Texto t="rotulo" cor={Cores.textoApagado}>{preenchidos} de {TOTAL_CAMPOS} campos</Texto>
+          <Texto t="rotulo" cor={Cores.destaque}>
+            {atual.tipo === 'pergunta' ? `Pergunta ${atual.ordem} de ${totalPerguntas}` : atual.tipo === 'resultado' ? 'Veredito' : `Preparação · passo ${i + 1} de 3`}
+          </Texto>
+          <Texto t="rotulo" cor={Cores.textoApagado}>{respondidas} respondidas</Texto>
         </View>
-        <Barra valor={preenchidos / TOTAL_CAMPOS} />
+        <Barra valor={i / (passos.length - 1)} />
         <View style={styles.entre}>
           <Texto cor={Cores.textoSuave}>Prévia ao vivo</Texto>
           <View style={[styles.pilula, { borderColor: COR_VEREDITO[aoVivo.veredito] }]}>
@@ -224,126 +253,260 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
         </View>
       </Painel>
 
-      <Etapa numero="1" titulo="Classe do CMA" />
-      <View style={styles.grade}>
-        {CLASSES.map((x) => (
-          <CartaoImagem
-            key={x.id}
-            imagem={IMG_CLASSE[x.id]}
-            altura={96}
-            onPress={() => trocarClasse(x.id)}
-            rotuloAcessivel={`Selecionar ${x.nome}`}
-            style={{ ...styles.celula, ...BordaCapa, ...(classe === x.id ? styles.celulaAtiva : null) }}>
-            <Texto t="item" cor={classe === x.id ? Cores.destaque : Cores.texto}>{x.nome}</Texto>
-            <Texto t="rotulo" cor={Cores.textoSuave} numberOfLines={1}>{x.funcoes.map((f) => f.nome.split(',')[0]).join(' · ')}</Texto>
-          </CartaoImagem>
-        ))}
-      </View>
-      <Painel>
-        <Texto cor={Cores.textoSuave}>{c.quem}</Texto>
-        {classe !== '1' ? (
-          <Texto cor={Cores.destaque}>
-            Limiares específicos da {c.nome}: [confirmar na referência]. A análise usa os critérios da 1ª classe como referência e marca para conferência o que não passar.
-          </Texto>
+      <View style={{ gap: Espaco.md }} onLayout={(e) => (yCartao.current = e.nativeEvent.layout.y)}>
+        {atual.tipo === 'classe' ? (
+          <>
+            <Etapa numero="1" titulo="Qual é a classe do CMA?" />
+            <View style={styles.grade}>
+              {CLASSES.map((x) => (
+                <CartaoImagem
+                  key={x.id}
+                  imagem={IMG_CLASSE[x.id]}
+                  altura={96}
+                  onPress={() => trocarClasse(x.id)}
+                  rotuloAcessivel={`Selecionar ${x.nome}`}
+                  style={{ ...styles.celula, ...BordaCapa, ...(classe === x.id ? styles.celulaAtiva : null) }}>
+                  <Texto t="item" cor={classe === x.id ? Cores.destaque : Cores.texto}>{x.nome}</Texto>
+                  <Texto t="rotulo" cor={Cores.textoSuave} numberOfLines={1}>{x.funcoes.map((f) => f.nome.split(',')[0]).join(' · ')}</Texto>
+                </CartaoImagem>
+              ))}
+            </View>
+            <Painel>
+              <Texto cor={Cores.textoSuave}>{c.quem}</Texto>
+              {classe !== '1' ? (
+                <Texto cor={Cores.destaque}>
+                  Limiares específicos da {c.nome}: [confirmar na referência]. A entrevista usa os critérios da 1ª classe como referência e marca para conferência o que não passar.
+                </Texto>
+              ) : null}
+              <Texto cor={Cores.textoApagado}>A 3ª classe (controle de tráfego aéreo) não é regida pela ANAC.</Texto>
+            </Painel>
+          </>
         ) : null}
-        <Texto cor={Cores.textoApagado}>A 3ª classe (controle de tráfego aéreo) não é regida pela ANAC.</Texto>
+
+        {atual.tipo === 'candidato' ? (
+          <>
+            <Etapa numero="2" titulo="Quem é o candidato?" />
+            <Painel>
+              <Texto t="item">Função</Texto>
+              <View style={styles.chips}>
+                {c.funcoes.map((f) => (
+                  <Chip key={f.id} rotulo={f.nome} ativo={funcao === f.id} onPress={() => setFuncao(f.id)} />
+                ))}
+              </View>
+              {funcao === 'pla-multi' ? <LinhaSN rotulo="Atua em transporte aéreo público?" valor={publico} onChange={(v) => setPublico(v ?? false)} /> : null}
+              <Entrada rotulo="Idade" placeholder="ex.: 42" unidade="anos" valor={idade} onChange={setIdade} />
+              <Texto t="item">Tipo de exame</Texto>
+              <View style={styles.chips}>
+                <Chip rotulo="Revalidação" ativo={!inicial} onPress={() => setInicial(false)} />
+                <Chip rotulo="Inicial" ativo={inicial} onPress={() => setInicial(true)} />
+              </View>
+              <Texto cor={Cores.textoApagado}>O tipo de exame muda regras como a visão monocular e a audição em uma só orelha.</Texto>
+              <GraficoValidade
+                series={[{ ...serie, publico }]}
+                idade={idadeN}
+                titulo={previa ? `Validade prevista: ${previa.meses} meses` : 'Validade por idade'}
+                instrucao={previa ? previa.regra : 'Informe a idade para marcar o candidato na curva.'}
+              />
+            </Painel>
+          </>
+        ) : null}
+
+        {atual.tipo === 'exames' ? (
+          <>
+            <Etapa numero="3" titulo="Quais exames o candidato traz?" />
+            <Painel>
+              {classe === '1' ? (
+                EXAMES_1A.map((e) => (
+                  <View key={e.exame} style={styles.marca}>
+                    <Texto t="item">{e.exame}</Texto>
+                    <Texto cor={Cores.textoSuave}>{e.quando}</Texto>
+                  </View>
+                ))
+              ) : (
+                <Texto cor={Cores.textoSuave}>Lista de exames da {c.nome}: [confirmar na referência].</Texto>
+              )}
+              {inicial ? <Texto cor={Cores.textoApagado}>Exame inicial: confira os itens marcados como "no inicial".</Texto> : null}
+              <Texto cor={Cores.textoSuave}>A seguir, {totalPerguntas} perguntas em {SISTEMAS.length} sistemas. Algumas só aparecem quando a resposta anterior pede detalhe.</Texto>
+            </Painel>
+          </>
+        ) : null}
+
+        {atual.tipo === 'pergunta' ? (
+          <Pergunta
+            passo={atual}
+            valores={valores}
+            achados={aoVivo.achados.filter((a) => a.campos.includes(atual.campo.id))}
+            definir={definir}
+            totalSistema={atual.sistema.campos.filter((x) => visivel(x, valores, ctx)).length}
+            grafico={
+              ['pas', 'pad'].includes(atual.campo.id) ? <GraficoPA pas={n(valores, 'pas')} pad={n(valores, 'pad')} />
+              : atual.campo.id === 'glicemia' ? <EscalaGlicemia gli={n(valores, 'glicemia')} />
+              : ['avOD', 'avOE', 'avBin'].includes(atual.campo.id) ? <GraficoAcuidade od={n(valores, 'avOD')} oe={n(valores, 'avOE')} bin={n(valores, 'avBin')} />
+              : atual.sistema.id === 'audicao' && atual.campo.id !== 'fala' ? <Audiograma od={od} oe={oe} />
+              : atual.campo.id === 'altura' && n(valores, 'peso') && n(valores, 'altura') ? (
+                <Texto cor={Cores.dourado}>IMC {(n(valores, 'peso')! / (n(valores, 'altura')! / 100) ** 2).toFixed(1).replace('.', ',')} kg/m² · limite: menor que 40</Texto>
+              ) : null
+            }
+          />
+        ) : null}
+
+        {atual.tipo === 'resultado' ? (
+          <>
+            <PainelResultado r={aoVivo} classe={c.nome} valores={valores} />
+            <Revisao passos={passos} valores={valores} irPara={irPara} />
+          </>
+        ) : null}
+
+        <View style={styles.nav}>
+          {i > 0 ? (
+            <View style={{ flex: 1 }}>
+              <BotaoPrincipal rotulo="Voltar" secundario onPress={() => setPasso(i - 1)} />
+            </View>
+          ) : null}
+          {atual.tipo !== 'resultado' ? (
+            <View style={{ flex: 1.4 }}>
+              <BotaoPrincipal rotulo={rotuloProxima} onPress={() => setPasso(i + 1)} />
+            </View>
+          ) : (
+            <View style={{ flex: 1.4 }}>
+              <BotaoPrincipal rotulo="Recomeçar" onPress={recomecar} />
+            </View>
+          )}
+        </View>
+        {atual.tipo !== 'resultado' && i >= 3 ? (
+          <Pressable accessibilityRole="button" onPress={() => setPasso(passos.length - 1)} style={styles.atalho}>
+            <Texto t="rotulo" cor={Cores.dourado}>Ir direto ao veredito</Texto>
+          </Pressable>
+        ) : null}
+      </View>
+    </>
+  );
+}
+
+function Pergunta({
+  passo,
+  valores,
+  achados,
+  definir,
+  totalSistema,
+  grafico,
+}: {
+  passo: Extract<Passo, { tipo: 'pergunta' }>;
+  valores: Valores;
+  achados: Achado[];
+  definir: (id: string, v: string | boolean | undefined) => void;
+  totalSistema: number;
+  grafico: ReactNode;
+}) {
+  const { sistema, campo } = passo;
+  const valor = valores[campo.id];
+  const feito = respondido(valores, campo.id);
+  const status = pior(achados);
+  const cor = status ? COR_NIVEL[status] : feito ? Cores.acerto : Cores.linha;
+  return (
+    <>
+      <CartaoImagem imagem={IMG_SISTEMA[sistema.id]} altura={110} style={BordaCapa}>
+        <Texto t="rotulo" cor={Cores.destaque}>{sistema.nome}</Texto>
+        <Texto t="rodape" cor={Cores.textoSuave}>RBAC {sistema.ref} · pergunta {passo.doSistema} de {totalSistema} deste sistema</Texto>
+      </CartaoImagem>
+      <Painel>
+        <Texto t="titulo">{campo.rotulo}</Texto>
+        {campo.ajuda ? <Texto cor={Cores.textoSuave}>{campo.ajuda}</Texto> : null}
+        <Texto t="rotulo" cor={Cores.textoApagado}>RBAC {campo.ref}</Texto>
+        {campo.tipo === 'sn' ? (
+          <View style={styles.respostas}>
+            {([false, true] as const).map((b) => (
+              <Pressable
+                key={String(b)}
+                accessibilityRole="radio"
+                accessibilityState={{ checked: valor === b }}
+                onPress={() => definir(campo.id, valor === b ? undefined : b)}
+                style={[styles.resposta, valor === b && styles.respostaAtiva]}>
+                <Texto t="item" cor={valor === b ? Cores.fundo : Cores.texto}>{b ? 'Sim' : 'Não'}</Texto>
+              </Pressable>
+            ))}
+          </View>
+        ) : campo.tipo === 'opcao' ? (
+          <View style={styles.respostas}>
+            {campo.opcoes.map((o) => (
+              <Pressable
+                key={o.id}
+                accessibilityRole="radio"
+                accessibilityState={{ checked: valor === o.id }}
+                onPress={() => definir(campo.id, valor === o.id ? undefined : o.id)}
+                style={[styles.resposta, valor === o.id && styles.respostaAtiva]}>
+                <Texto t="item" cor={valor === o.id ? Cores.fundo : Cores.texto}>{o.nome}</Texto>
+              </Pressable>
+            ))}
+          </View>
+        ) : (
+          <View style={styles.entradaGrande}>
+            <TextInput
+              value={(valor as string) ?? ''}
+              onChangeText={(t) => definir(campo.id, t.replace(/[^0-9.,]/g, ''))}
+              placeholder={campo.placeholder}
+              placeholderTextColor={Cores.textoApagado}
+              keyboardType="decimal-pad"
+              accessibilityLabel={campo.rotulo}
+              style={[styles.entrada, styles.entradaLarga, valor ? { borderColor: Cores.destaque } : null]}
+            />
+            {campo.unidade ? <Texto t="item" cor={Cores.textoSuave}>{campo.unidade}</Texto> : null}
+          </View>
+        )}
+        {grafico}
       </Painel>
 
-      <Etapa numero="2" titulo="Candidato" />
-      <Painel>
-        <Texto t="item">Função</Texto>
-        <View style={styles.chips}>
-          {c.funcoes.map((f) => (
-            <Chip key={f.id} rotulo={f.nome} ativo={funcao === f.id} onPress={() => { setFuncao(f.id); setResultado(null); }} />
-          ))}
-        </View>
-        {funcao === 'pla-multi' ? <LinhaSN rotulo="Atua em transporte aéreo público" valor={publico} onChange={(v) => setPublico(v ?? false)} /> : null}
-        <Entrada rotulo="Idade" placeholder="ex.: 42" unidade="anos" valor={idade} onChange={(t) => { setIdade(t); setResultado(null); }} />
-        <Texto t="item">Tipo de exame</Texto>
-        <View style={styles.chips}>
-          <Chip rotulo="Revalidação" ativo={!inicial} onPress={() => setInicial(false)} />
-          <Chip rotulo="Inicial" ativo={inicial} onPress={() => setInicial(true)} />
-        </View>
-        <GraficoValidade
-          series={[{ ...serie, publico }]}
-          idade={idadeN}
-          titulo={previa ? `Validade prevista: ${previa.meses} meses` : 'Validade por idade'}
-          instrucao={previa ? previa.regra : 'Informe a idade para marcar o candidato na curva.'}
-        />
-      </Painel>
-
-      <Etapa numero="3" titulo="Exames exigidos" />
-      <Painel>
-        {classe === '1' ? (
-          EXAMES_1A.map((e) => (
-            <View key={e.exame} style={styles.marca}>
-              <Texto t="item">{e.exame}</Texto>
-              <Texto cor={Cores.textoSuave}>{e.quando}</Texto>
+      <Painel style={{ borderLeftWidth: 3, borderLeftColor: cor }}>
+        <Texto t="rotulo" cor={status ? COR_NIVEL[status] : feito ? Cores.acerto : Cores.textoApagado}>
+          Resposta{status ? ` · ${NOME_NIVEL[status]}` : feito ? ' · Registrada' : ''}
+        </Texto>
+        {achados.length ? (
+          achados.map((a, k) => (
+            <View key={k} style={styles.achado}>
+              <View style={[styles.ponto, { backgroundColor: COR_NIVEL[a.nivel] }]} />
+              <View style={{ flex: 1, gap: 2 }}>
+                <Texto>{a.texto}</Texto>
+                <Texto t="rodape" cor={Cores.textoApagado}>RBAC {a.ref}</Texto>
+              </View>
             </View>
           ))
         ) : (
-          <Texto cor={Cores.textoSuave}>Lista de exames da {c.nome}: [confirmar na referência].</Texto>
+          <Texto cor={Cores.textoSuave}>
+            {feito ? 'Nada a restringir com esta resposta. Se ela abrir um detalhe, a próxima pergunta vai pedir.' : 'Responda para ver o que o RBAC 67 diz sobre este item.'}
+          </Texto>
         )}
-        {inicial ? <Texto cor={Cores.textoApagado}>Exame inicial: confira os itens marcados como "no inicial".</Texto> : null}
       </Painel>
-
-      <Etapa numero="4" titulo="Parâmetros por sistema" />
-      {SISTEMAS.map((s) => {
-        const aberto = !!abertos[s.id];
-        const feitos = s.campos.filter((f) => valores[f.id] !== undefined && valores[f.id] !== '').length;
-        const status = pior(aoVivo.achados.filter((a) => idSistema(a) === s.id));
-        const cor = status ? COR_NIVEL[status] : Cores.linha;
-        return (
-          <Painel key={s.id} style={{ borderColor: status && status !== 'ok' ? cor : Cores.linha }}>
-            <Pressable accessibilityRole="button" accessibilityState={{ expanded: aberto }} onPress={() => setAbertos((a) => ({ ...a, [s.id]: !aberto }))} style={styles.cabSistema}>
-              <Image source={IMG_SISTEMA[s.id]} style={[styles.miniatura, BordaCapa]} contentFit="cover" />
-              <View style={{ flex: 1, gap: 4 }}>
-                <Texto t="item">{s.nome}</Texto>
-                <Texto t="rotulo" cor={Cores.textoApagado}>RBAC {s.ref} · {feitos}/{s.campos.length}</Texto>
-                <Barra valor={feitos / s.campos.length} altura={2} />
-              </View>
-              <View style={{ alignItems: 'flex-end', gap: 6 }}>
-                {status ? <Texto t="rodape" cor={cor}>{NOME_NIVEL[status]}</Texto> : <Texto t="rodape" cor={Cores.textoApagado}>Vazio</Texto>}
-                <Texto t="rotulo" cor={Cores.destaque}>{aberto ? 'Fechar' : 'Abrir'}</Texto>
-              </View>
-            </Pressable>
-            {aberto ? (
-              <View style={{ gap: Espaco.sm }}>
-                {s.id === 'vitais' ? <GraficoPA pas={n(valores, 'pas')} pad={n(valores, 'pad')} /> : null}
-                {s.id === 'metabolico' ? <EscalaGlicemia gli={n(valores, 'glicemia')} /> : null}
-                {s.id === 'visao' ? <GraficoAcuidade od={n(valores, 'avOD')} oe={n(valores, 'avOE')} bin={n(valores, 'avBin')} /> : null}
-                {s.id === 'audicao' ? <Audiograma od={od} oe={oe} /> : null}
-                {s.campos.map((f) =>
-                  f.tipo === 'num' ? (
-                    <Entrada key={f.id} rotulo={f.rotulo} placeholder={f.placeholder} unidade={f.unidade} valor={(valores[f.id] as string) ?? ''} onChange={(t) => definir(f.id, t)} />
-                  ) : (
-                    <LinhaSN key={f.id} rotulo={f.rotulo} valor={valores[f.id] as boolean | undefined} onChange={(v) => definir(f.id, v)} />
-                  ),
-                )}
-                {s.id === 'vitais' && n(valores, 'peso') && n(valores, 'altura') ? (
-                  <Texto cor={Cores.dourado}>IMC {(n(valores, 'peso')! / (n(valores, 'altura')! / 100) ** 2).toFixed(1).replace('.', ',')} kg/m² · limite: menor que 40</Texto>
-                ) : null}
-              </View>
-            ) : null}
-          </Painel>
-        );
-      })}
-
-      <View style={{ gap: Espaco.sm }}>
-        <BotaoPrincipal rotulo="Gerar veredito" onPress={analisar} />
-        <BotaoPrincipal rotulo="Limpar formulário" secundario onPress={limpar} />
-      </View>
-
-      <View
-        onLayout={(e) => {
-          // Depois de gerar o veredito, a tela desce até o resultado.
-          if (!rolar.current) return;
-          rolar.current = false;
-          rolagem.current?.scrollTo({ y: e.nativeEvent.layout.y + 200, animated: true });
-        }}>
-        {resultado ? <PainelResultado r={resultado} classe={c.nome} valores={valores} /> : null}
-      </View>
     </>
+  );
+}
+
+function Revisao({ passos, valores, irPara }: { passos: Passo[]; valores: Valores; irPara: (id: string) => void }) {
+  const [aberto, setAberto] = useState(false);
+  const perguntas = passos.filter((p): p is Extract<Passo, { tipo: 'pergunta' }> => p.tipo === 'pergunta');
+  return (
+    <Painel>
+      <Pressable accessibilityRole="button" accessibilityState={{ expanded: aberto }} onPress={() => setAberto(!aberto)} style={styles.entre}>
+        <Texto t="rotulo" cor={Cores.destaque}>Revisar as respostas</Texto>
+        <Texto t="rotulo" cor={Cores.dourado}>{aberto ? 'Fechar' : 'Abrir'}</Texto>
+      </Pressable>
+      {aberto
+        ? SISTEMAS.map((s) => {
+            const doSistema = perguntas.filter((p) => p.sistema.id === s.id);
+            if (!doSistema.length) return null;
+            return (
+              <View key={s.id} style={{ gap: 4 }}>
+                <Texto t="item" cor={Cores.dourado}>{s.nome}</Texto>
+                {doSistema.map((p) => (
+                  <Pressable key={p.campo.id} accessibilityRole="button" onPress={() => irPara(p.campo.id)} style={styles.linhaRevisao}>
+                    <Texto cor={Cores.textoSuave} style={{ flex: 1 }}>{p.campo.rotulo}</Texto>
+                    <Texto t="rotulo" cor={respondido(valores, p.campo.id) ? Cores.texto : Cores.textoApagado}>{respostaTexto(p.campo, valores)}</Texto>
+                  </Pressable>
+                ))}
+              </View>
+            );
+          })
+        : null}
+    </Painel>
   );
 }
 
@@ -353,7 +516,7 @@ function Etapa({ numero, titulo }: { numero: string; titulo: string }) {
       <View style={styles.numero}>
         <Texto t="item" cor={Cores.fundo}>{numero}</Texto>
       </View>
-      <Texto t="item">{titulo}</Texto>
+      <Texto t="item" style={{ flex: 1 }}>{titulo}</Texto>
     </View>
   );
 }
@@ -638,5 +801,13 @@ const styles = StyleSheet.create({
   ponto: { width: 8, height: 8, borderRadius: 4, marginTop: 4 },
   linhaTabela: { flexDirection: 'row', gap: Espaco.sm, paddingVertical: 6, borderBottomWidth: 1, borderBottomColor: Cores.trilha },
   resultados: { flexDirection: 'row', gap: Espaco.sm },
+  nav: { flexDirection: 'row', gap: Espaco.sm },
+  atalho: { alignSelf: 'center', paddingVertical: 8, paddingHorizontal: 12 },
+  respostas: { flexDirection: 'row', flexWrap: 'wrap', gap: Espaco.sm },
+  resposta: { flexGrow: 1, flexBasis: '40%', minHeight: 48, borderRadius: 12, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 12 },
+  respostaAtiva: { backgroundColor: Cores.destaque, borderColor: Cores.destaque },
+  entradaGrande: { flexDirection: 'row', alignItems: 'center', gap: Espaco.sm },
+  entradaLarga: { flex: 1, minHeight: 48, fontSize: Tamanho.titulo },
+  linhaRevisao: { flexDirection: 'row', gap: Espaco.sm, alignItems: 'center', paddingVertical: 6, borderBottomWidth: 1, borderBottomColor: Cores.trilha },
   resultadoItem: { flex: 1, alignItems: 'center', gap: 6, paddingVertical: Espaco.md, borderRadius: 12, borderWidth: 1, backgroundColor: Cores.painel },
 });
