@@ -86,7 +86,9 @@ export const ruido: Capitulo = {
           "Além do ruído contínuo, há o **ruído de impacto**, que dura menos de **1 segundo** e costuma passar de **140 dB**, como uma explosão. O ouvido sente **desconforto** a partir de cerca de **120 dB** e **dor** a **130 dB**; a **140 dB**, o **tímpano** pode se romper.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-1-fone-cabine.jpg'), legenda: 'Na cabine de comando, o fone leva ao ouvido as mensagens e, junto, uma parte do ruído do voo.' } },
           { paragrafo: 3, midia: 'regua-decibeis' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v6-1-medicao-cabine.jpg'), legenda: 'O medidor de nível sonoro, perto da altura da cabeça, mostra quanto ruído chega a quem está a bordo.' } },
           {
             paragrafo: 5,
             tabela: {
@@ -133,6 +135,7 @@ export const ruido: Capitulo = {
               ],
             },
           },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v6-2-turboelice.jpg'), legenda: 'Com a hélice girando ao lado, entender uma mensagem pelo rádio exige atenção e volume.' } },
           {
             paragrafo: 5,
             tabela: {
@@ -176,6 +179,7 @@ export const ruido: Capitulo = {
               ],
             },
           },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v6-3-fones.jpg'), legenda: 'Dois tipos de fone: o leve, que não veda o ouvido, e o de concha com cancelamento ativo de ruído.' } },
           {
             paragrafo: 4,
             tabela: {
@@ -190,6 +194,7 @@ export const ruido: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v6-3-patio.jpg'), legenda: 'No pátio, perto dos motores, o abafador é parte do uniforme de quem trabalha no chão.' } },
         ],
       },
     },
@@ -206,7 +211,9 @@ export const ruido: Capitulo = {
           "No Brasil, a vibração de corpo inteiro tem **nível de ação** de **0,5 m/s²** e **limite de exposição** de **1,1 m/s²**, ambos para a jornada de 8 horas, no **Anexo 1 da NR-9**; acima do limite, a **NR-15** caracteriza **insalubridade** de grau médio. A norma também avalia o **valor da dose de vibração (VDV)**, que pesa os solavancos: ação em **9,1** e limite em **21 m/s¹·⁷⁵**. A **União Europeia** usa 0,5 e **1,15 m/s²**. Como a dose cresce com a vibração e com o tempo, reduzi-la depende do **assento**, da **postura** e das **horas expostas**.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-4-offshore.jpg'), legenda: 'No voo para as plataformas de petróleo, a tripulação passa horas sentada sobre a vibração do rotor.' } },
           { paragrafo: 2, midia: 'animacao-vibracao' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v6-4-painel.jpg'), legenda: 'Com a vibração, ponteiros e telas tremem diante dos olhos, e a leitura dos instrumentos fica mais difícil.' } },
           { paragrafo: 4, midia: 'vibracao-a8' },
           {
             paragrafo: 5,
@@ -221,6 +228,7 @@ export const ruido: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, video: { fonte: require('@/assets/videos/m1v6-rotor.mp4'), legenda: 'As pás do rotor passam pelo alto da cabine de 20 a 25 vezes por segundo; o tremor que chega ao assento e ao painel vem delas.' } },
         ],
       },
     },
