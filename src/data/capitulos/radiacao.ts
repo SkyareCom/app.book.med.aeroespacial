@@ -191,6 +191,7 @@ export const radiacao: Capitulo = {
           "Para o **passageiro** eventual, a dose é pequena. A ICRP recomenda **informar os passageiros** sobre a exposição e como estimá-la. Quem voa muito pode adotar um **nível de referência pessoal** e ajustar a frequência dos voos, e quem viaja a trabalho pode, caso a caso, ser tratado como trabalhador exposto.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-4-operacoes.jpg'), legenda: 'No centro de operações, as rotas sobre o polo são as que mais somam dose; é ali que a escala e os alertas solares entram no planejamento.' } },
           {
             paragrafo: 2,
             tabela: {

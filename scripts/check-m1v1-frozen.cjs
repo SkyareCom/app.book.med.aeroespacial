@@ -115,6 +115,18 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m2v1-5-maos.jpg': '751d6a943a2173c1',
   'assets/images/topicos/m2v1-5-oxigenio.jpg': 'ddd5800b87eddbd3',
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
+  // Congelamento M1V5 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
+  'src/data/capitulos/radiacao.ts': 'a18eb842c0983d02',
+  'src/components/midia/m1v5-graficos.tsx': '3c6ada562db1ac4b',
+  'assets/videos/m1v5-aurora.mp4': 'aea16e089624393c',
+  'assets/images/topicos/m1v5-1-cruzeiro-noite.jpg': '7ec0d4b39b7a6198',
+  'assets/images/topicos/m1v5-1-rota-polar.jpg': '7af72615acf337f7',
+  'assets/images/topicos/m1v5-2-cabine-longo.jpg': '6874b0d601cbb790',
+  'assets/images/topicos/m1v5-2-tripulacao.jpg': 'c9c3114e8fea1438',
+  'assets/images/topicos/m1v5-3-consulta.jpg': '5726c780a76aa2c0',
+  'assets/images/topicos/m1v5-3-para-brisa.jpg': '45898a0b2f62c790',
+  'assets/images/topicos/m1v5-4-operacoes.jpg': '64268d5a879428c3',
+  'assets/images/topicos/m1v5-4-planejamento.jpg': '0525bb6ba153e074',
 });
 for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
   const caminho = path.resolve(__dirname, '..', arquivo);
@@ -126,8 +138,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4 ou M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5 ou M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1, M1V2, M1V3, M1V4 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('M1V1, M1V2, M1V3, M1V4, M1V5 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }

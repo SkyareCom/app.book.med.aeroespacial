@@ -8,7 +8,7 @@
 - A proteção de CI identifica alterações; não substitui as permissões e regras de proteção de branch do GitHub. Uma autorização posterior explícita do autor será necessária para atualizar os registros congelados.
 - Novos voos e conteúdos fora de M1V1 podem continuar a ser desenvolvidos sem alterar estes trechos.
 
-## CONGELAMENTO EDITORIAL — M1V2, M1V3 (27/10/2026), M1V4 e M2V1 (29/10/2026)
+## CONGELAMENTO EDITORIAL — M1V2, M1V3 (27/10/2026), M1V4 e M2V1 (29/10/2026), M1V5 (30/10/2026)
 Mesmas regras acima; arquivos e fotos protegidos pelo mapa ARQUIVOS em `scripts/check-m1v1-frozen.cjs`.
 
 ## FONTES — padrão ANAC e FAA (29/10/2026)
