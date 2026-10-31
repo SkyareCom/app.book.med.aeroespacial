@@ -4,6 +4,7 @@ import { useMemo, useRef, useState, type RefObject } from 'react';
 import { Pressable, StyleSheet, TextInput, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
+import { AnaliseIA } from '@/components/cma-ia';
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
 import { AnelValidade, Audiograma, EscalaGlicemia, GraficoAcuidade, GraficoPA, GraficoValidade, SERIES_VALIDADE } from '@/components/cma-graficos';
 import { Selo } from '@/components/selo';
@@ -194,6 +195,13 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
     setValores((atual) => ({ ...atual, [id]: v }));
     setResultado(null);
   }
+  // Valores lidos pela IA e aprovados pelo examinador: entram no formulário e abrem as gavetas correspondentes.
+  function aplicarIA(v: Valores) {
+    setValores((atual) => ({ ...atual, ...v }));
+    const ids = new Set(Object.keys(v));
+    setAbertos((a) => ({ ...a, ...Object.fromEntries(SISTEMAS.filter((s) => s.campos.some((c) => ids.has(c.id))).map((s) => [s.id, true])) }));
+    setResultado(null);
+  }
   function analisar() {
     setResultado(aoVivo);
     rolar.current = true;
@@ -287,7 +295,10 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
         {inicial ? <Texto cor={Cores.textoApagado}>Exame inicial: confira os itens marcados como "no inicial".</Texto> : null}
       </Painel>
 
-      <Etapa numero="4" titulo="Perguntas por sistema" />
+      <Etapa numero="4" titulo="Exames por IA" />
+      <AnaliseIA aplicar={aplicarIA} />
+
+      <Etapa numero="5" titulo="Perguntas por sistema" />
       <Texto cor={Cores.textoSuave}>Cada pergunta trata de uma só condição. Algumas só aparecem quando a resposta anterior pede detalhe.</Texto>
       {visiveis.map(({ s, campos }) => {
         if (!campos.length) return null;
@@ -393,7 +404,7 @@ function PainelResultado({ r, classe, valores }: { r: Resultado; classe: string;
   const achados = [...r.achados].sort((a, b) => ORDEM.indexOf(a.nivel) - ORDEM.indexOf(b.nivel));
   return (
     <View style={{ gap: Espaco.md }}>
-      <Etapa numero="5" titulo="Veredito" />
+      <Etapa numero="6" titulo="Veredito" />
       <Painel style={{ borderColor: cor, borderWidth: 1.5 }}>
         <View style={styles.veredito}>
           <AnelValidade meses={r.validade?.meses} cor={cor} rotulo={r.validade ? 'MESES' : 'SEM VALIDADE'} />
