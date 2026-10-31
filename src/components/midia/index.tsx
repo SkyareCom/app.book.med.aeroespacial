@@ -12,8 +12,9 @@ import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '
 import { GestacaoRadiacao, GraficoDosePorRota, RadiacaoAnual, RiscoCarreira } from '@/components/midia/m1v5-graficos';
 import { CalculadoraRuido, FaixasAudicao, ReguaDecibeis, VibracaoA8 } from '@/components/midia/m1v6-graficos';
 import { CalculadoraCentrifuga, CurvaCarga, LinhaGLOC, PilhaTolerancia } from '@/components/midia/m1v7-graficos';
+import { EnvelopeEjecao, LimitesImpacto, PosicaoImpacto, RiscoCapacete, TesteAssento } from '@/components/midia/m1v8-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -79,6 +80,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'pilha-tolerancia': () => <PilhaTolerancia />,
   'animacao-coluna-sangue': () => <AnimacaoColunaSangue />,
   'centrifuga': () => <CalculadoraCentrifuga />,
+  'limites-impacto': () => <LimitesImpacto />,
+  'teste-assento': () => <TesteAssento />,
+  'posicao-impacto': () => <PosicaoImpacto />,
+  'animacao-ejecao': () => <AnimacaoEjecao />,
+  'envelope-ejecao': () => <EnvelopeEjecao />,
+  'risco-capacete': () => <RiscoCapacete />,
   'risco-carreira': () => <RiscoCarreira />,
   'gestacao-radiacao': () => <GestacaoRadiacao />,
 };
@@ -133,6 +140,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'pilha-tolerancia': 'Tolerância ao G',
   'animacao-coluna-sangue': 'A coluna de sangue',
   'centrifuga': 'Centrífuga',
+  'limites-impacto': 'Limites de impacto',
+  'teste-assento': 'Teste de assento',
+  'posicao-impacto': 'Posição de impacto',
+  'animacao-ejecao': 'A ejeção',
+  'envelope-ejecao': 'Envelope da ejeção',
+  'risco-capacete': 'Risco sem capacete',
   'risco-carreira': 'Risco na carreira',
   'gestacao-radiacao': 'Gestação e radiação',
 };

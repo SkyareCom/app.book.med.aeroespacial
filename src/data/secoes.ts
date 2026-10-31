@@ -10,6 +10,7 @@ import { pressurizacao } from './capitulos/pressurizacao';
 import { radiacao } from './capitulos/radiacao';
 import { ruido } from './capitulos/ruido';
 import { forcasg } from './capitulos/forcasg';
+import { impacto } from './capitulos/impacto';
 import { temperatura } from './capitulos/temperatura';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
@@ -47,7 +48,7 @@ export const secoes: Secao[] = [
       radiacao,
       ruido,
       forcasg,
-      cap(8, 'Impacto e ejeção', ['Tolerância ao impacto', 'Retenção e assentos', 'Ejeção', 'Capacetes']),
+      impacto,
     ],
   },
   {

@@ -485,6 +485,73 @@ export function AnimacaoColunaSangue() {
   );
 }
 
+// ---------------------------------------------------------------- M1V8 · A ejeção
+// Esquema da sequência (canopi, catapulta, foguete, paraquedas); tempos de cada fase ilustrativos. Total de cerca de
+// 1,8 s até o paraquedas no Gripen da FAB (Defesa Aérea & Naval); fratura da coluna em 20% a 30% das ejeções
+// (Zivkovic MM et al., Aerosp Med Hum Perform 2024).
+export function AnimacaoEjecao() {
+  const c = useCiclo(7000);
+  const H = 270;
+  const f = c.fase;
+  const etapa = f < 0.12 ? 0 : f < 0.22 ? 1 : f < 0.34 ? 2 : f < 0.48 ? 3 : 4;
+  const ETAPAS = [
+    { t: 'VOO SEM CONTROLE', cor: Cores.textoSuave },
+    { t: '1 · O CANOPI É LANÇADO', cor: Cores.textoSuave },
+    { t: '2 · CATAPULTA: CARGA NA COLUNA', cor: Cores.erro },
+    { t: '3 · FOGUETE: LONGE DO AVIÃO', cor: Cores.dourado },
+    { t: '4 · PARAQUEDAS ABERTO', cor: Cores.acerto },
+  ];
+  return (
+    <Quadro titulo="A ejeção" instrucao="Esquema da sequência do assento ejetável. No Gripen da FAB, do comando ao paraquedas aberto, cerca de 1,8 segundo." ciclo={c} altura={H}>
+      {(w) => {
+        const ax = Math.max(w * 0.3, 92), ay = 186;
+        // canopi
+        const tc = suave((f - 0.12) / 0.12);
+        const canX = ax + 6 - 70 * tc, canY = ay - 22 - 70 * tc;
+        // assento: sobe na catapulta e no foguete; depois desce com o paraquedas, à deriva
+        const subida = suave((f - 0.22) / 0.26);
+        const descida = suave((f - 0.48) / 0.52);
+        const sx = ax + 4 + 50 * subida + 30 * descida;
+        const sy = ay - 20 - 92 * subida + 60 * descida;
+        const chute = suave((f - 0.48) / 0.1);
+        const fogo = f >= 0.26 && f < 0.48;
+        const carga = f >= 0.22 && f < 0.34;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1A2E" />
+            <SvgText x={8} y={H - 30} fill={ETAPAS[etapa].cor} fontSize={10} fontFamily={Fonte}>{ETAPAS[etapa].t}</SvgText>
+            {/* avião de perfil */}
+            <Path d={`M${ax - 70} ${ay} L${ax + 70} ${ay - 4} Q${ax + 96} ${ay} ${ax + 70} ${ay + 6} L${ax - 70} ${ay + 8} z`} fill="#C9D4E0" />
+            <Path d={`M${ax - 60} ${ay} L${ax - 78} ${ay - 24} L${ax - 64} ${ay - 24} L${ax - 40} ${ay}`} fill="#C9D4E0" />
+            <Path d={`M${ax - 10} ${ay + 4} L${ax + 30} ${ay + 18} L${ax + 40} ${ay + 18} L${ax + 20} ${ay + 4}`} fill="#9FB0C4" />
+            {/* canopi */}
+            {f >= 0.24 ? null : f >= 0.12 ? (
+              <Path d={`M${canX - 14} ${canY + 10} Q${canX} ${canY - 6} ${canX + 18} ${canY + 10} z`} fill="#7FB2E5" fillOpacity={0.7 * (1 - tc)} />
+            ) : (
+              <Path d={`M${ax - 8} ${ay - 2} Q${ax + 6} ${ay - 20} ${ax + 26} ${ay - 2} z`} fill="#7FB2E5" fillOpacity={0.7} />
+            )}
+            {/* paraquedas */}
+            {chute > 0 ? (
+              <G opacity={chute}>
+                <Path d={`M${sx - 30 * chute} ${sy - 40} Q${sx} ${sy - 40 - 34 * chute} ${sx + 30 * chute} ${sy - 40} z`} fill={Cores.dourado} />
+                <Line x1={sx - 30 * chute} y1={sy - 40} x2={sx} y2={sy - 6} stroke="#C9D4E0" strokeWidth={1} />
+                <Line x1={sx + 30 * chute} y1={sy - 40} x2={sx} y2={sy - 6} stroke="#C9D4E0" strokeWidth={1} />
+              </G>
+            ) : null}
+            {/* assento com o piloto */}
+            <Rect x={sx - 6} y={sy - 10} width={6} height={22} rx={2} fill="#3A4A60" />
+            <Circle cx={sx + 4} cy={sy - 6} r={5} fill={carga ? Cores.erro : '#E8EEF5'} />
+            <Rect x={sx} y={sy} width={8} height={12} rx={2} fill={carga ? Cores.erro : '#E8EEF5'} />
+            {fogo ? <Path d={`M${sx - 4} ${sy + 12} L${sx - 1} ${sy + 32} L${sx + 4} ${sy + 12} z`} fill={Cores.dourado} /> : null}
+            {carga ? <SvgText x={sx + 16} y={sy + 6} fill={Cores.erro} fontSize={9} fontFamily={Fonte}>VÉRTEBRAS</SvgText> : null}
+            <SvgText x={8} y={H - 12} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>FRATURA DA COLUNA EM 20% A 30%</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

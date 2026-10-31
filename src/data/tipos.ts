@@ -57,7 +57,13 @@ export type TipoMidia =
   | 'linha-gloc'
   | 'pilha-tolerancia'
   | 'animacao-coluna-sangue'
-  | 'centrifuga';
+  | 'centrifuga'
+  | 'limites-impacto'
+  | 'teste-assento'
+  | 'posicao-impacto'
+  | 'animacao-ejecao'
+  | 'envelope-ejecao'
+  | 'risco-capacete';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.
