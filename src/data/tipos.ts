@@ -52,7 +52,12 @@ export type TipoMidia =
   | 'regua-decibeis'
   | 'faixas-audicao'
   | 'animacao-vibracao'
-  | 'vibracao-a8';
+  | 'vibracao-a8'
+  | 'curva-carga'
+  | 'linha-gloc'
+  | 'pilha-tolerancia'
+  | 'animacao-coluna-sangue'
+  | 'centrifuga';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

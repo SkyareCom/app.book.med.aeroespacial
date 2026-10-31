@@ -71,9 +71,12 @@ export function LeisDosGases() {
 }
 
 // ---------------------------------------------------------------- Forças G
+// Ponto médio das faixas de +Gz (StatPearls, Aerospace Gravitational Effects, 2023): perda periférica 3,4–4,8 G;
+// apagamento 4–5,6 G; G-LOC 4,5–6,3 G. Com proteção: + cerca de 1 G do traje e + cerca de 3 G da manobra treinada
+// (Renjhen e Agarwal, Ind J Aerospace Med 2011). Registro completo em src/data/capitulos/forcasg.ts.
 const LIMIARES = {
-  sem: { cinza: 3.5, preto: 4.5, gloc: 5.0 },
-  com: { cinza: 7.0, preto: 8.0, gloc: 9.0 },
+  sem: { cinza: 4.1, preto: 4.8, gloc: 5.4 },
+  com: { cinza: 8.1, preto: 8.8, gloc: 9.4 },
 };
 
 export function SimuladorForcasG() {
@@ -84,7 +87,7 @@ export function SimuladorForcasG() {
   const t = Math.max(0, Math.min(1, (g - l.cinza + 1) / (l.gloc - l.cinza + 1)));
   const cor = g >= l.preto ? Cores.erro : g >= l.cinza ? Cores.dourado : Cores.acerto;
   return (
-    <MolduraMidia tipo="Simulação" titulo="Puxe G e veja a visão apagar" instrucao="O sangue é empurrado para longe da cabeça. Valores típicos e aproximados; variam muito entre pessoas.">
+    <MolduraMidia tipo="Simulação" titulo="Puxe G e veja a visão apagar" instrucao="O sangue é empurrado para longe da cabeça. Valores médios das faixas medidas em centrífuga; variam muito entre pessoas.">
       <Alternar opcoes={[['sem', 'Sem proteção'], ['com', 'Traje anti-G e manobra']]} valor={prot} onChange={setProt} />
       <View style={styles.tela}>
         <Image source={Imagens.hero} style={StyleSheet.absoluteFill} contentFit="cover" />
@@ -95,7 +98,7 @@ export function SimuladorForcasG() {
       </View>
       <View>
         <Cabecalho rotulo="Aceleração" valor={`${fmt(g, 1)} G`} />
-        <Deslizante min={1} max={9} passo={0.5} valor={g} onChange={setG} rotulo="Força G" />
+        <Deslizante min={1} max={10} passo={0.5} valor={g} onChange={setG} rotulo="Força G" />
       </View>
       <View style={styles.leituras}>
         <Leitura rotulo="O que acontece" valor={estado} cor={cor} />

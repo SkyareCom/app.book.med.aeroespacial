@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 6;
+export const VERSAO_NOTIFICACOES = 7;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'forcasg',
+    rotulo: 'Voo disponível',
+    titulo: 'Forças G',
+    texto: 'O voo 7 da Missão 1 chegou: eixos G, G-LOC e A-LOC, manobra anti-G e centrífuga. Com 5 interativos e o teste no final.',
+    destino: '/capitulo/conceitos/7',
+  },
   {
     id: 'ruido',
     rotulo: 'Voo disponível',
@@ -73,6 +80,6 @@ export const notificacoes: Notificacao[] = [
     id: 'producao',
     rotulo: 'Em produção',
     titulo: 'Novos voos a caminho',
-    texto: 'Os textos dos outros 37 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
+    texto: 'Os textos dos outros 36 voos estão sendo escritos. Eles aparecem aqui assim que ficarem prontos.',
   },
 ];

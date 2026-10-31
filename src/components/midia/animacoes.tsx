@@ -436,6 +436,55 @@ export function AnimacaoVibracao() {
   );
 }
 
+// ---------------------------------------------------------------- M1V7 · A coluna de sangue
+// Esquema: o G sobe de 1 a 7 e volta. Queda da pressão no nível dos olhos de cerca de 22 mmHg por G (Pollock RD et al.,
+// Aerosp Med Hum Perform 2019); sintomas pelos pontos médios das faixas sem proteção (StatPearls, 2023).
+export function AnimacaoColunaSangue() {
+  const c = useCiclo(8000);
+  const H = 230;
+  const sobe = c.fase < 0.6 ? suave(c.fase / 0.6) : 1 - suave((c.fase - 0.6) / 0.4);
+  const g = 1 + 6 * sobe;
+  const queda = Math.round(22 * (g - 1));
+  const visao = g >= 4.8 ? 'VISÃO APAGADA' : g >= 4.1 ? 'VISÃO CINZA E EM TÚNEL' : 'VISÃO NORMAL';
+  const corVisao = g >= 4.8 ? Cores.erro : g >= 4.1 ? Cores.dourado : Cores.acerto;
+  const esvazia = Math.min(1, (g - 1) / 4); // fração do vaso da cabeça sem sangue
+  return (
+    <Quadro titulo="A coluna de sangue" instrucao="Esquema: com o +Gz, o sangue desce do cérebro e dos olhos para as pernas. O coração não consegue empurrá-lo de volta a tempo." ciclo={c} altura={H}>
+      {(w) => {
+        const cx = w * 0.3;
+        const yCab = 40, yCor = 112, yPe = 200;
+        const larVaso = 10;
+        const topoSangue = yCab + (yCor - yCab) * esvazia;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            {/* corpo sentado, de perfil esquemático */}
+            <Circle cx={cx} cy={yCab} r={22} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1.5} />
+            <Circle cx={cx + 9} cy={yCab - 4} r={4} fill={g >= 4.8 ? '#111' : g >= 4.1 ? '#777' : '#E8EEF5'} />
+            <Rect x={cx - 18} y={yCab + 24} width={36} height={yCor - yCab + 10} rx={10} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1.5} />
+            <Rect x={cx - 18} y={yCor + 30} width={70} height={18} rx={8} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1.5} />
+            <Rect x={cx + 34} y={yCor + 40} width={18} height={yPe - yCor - 40} rx={8} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1.5} />
+            {/* vaso da cabeça ao coração e às pernas */}
+            <Rect x={cx - larVaso / 2} y={yCab} width={larVaso} height={yCor - yCab} rx={4} fill="#3A1418" />
+            <Rect x={cx - larVaso / 2} y={topoSangue} width={larVaso} height={yCor - topoSangue} rx={4} fill={Cores.erro} />
+            <Rect x={cx + 38} y={yCor + 44} width={10} height={yPe - yCor - 48} rx={4} fill={Cores.erro} fillOpacity={0.45 + 0.55 * esvazia} />
+            <Circle cx={cx} cy={yCor} r={9} fill={Cores.erro} stroke={Cores.fundo} strokeWidth={2} />
+            {/* seta do G */}
+            <Line x1={cx - 44} y1={60} x2={cx - 44} y2={60 + 20 + 60 * sobe} stroke={Cores.dourado} strokeWidth={3} />
+            <SvgText x={cx - 44} y={52} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="middle">+Gz</SvgText>
+            {/* leituras */}
+            <SvgText x={w - 10} y={36} fill={Cores.texto} fontSize={22} fontFamily={Fonte} textAnchor="end">{fmt(g, 1)} G</SvgText>
+            <SvgText x={w - 10} y={62} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">PRESSÃO NO NÍVEL DOS OLHOS</SvgText>
+            <SvgText x={w - 10} y={78} fill={Cores.erro} fontSize={13} fontFamily={Fonte} textAnchor="end">{queda ? `−${queda} mmHg` : 'sem queda'}</SvgText>
+            <SvgText x={w - 10} y={106} fill={corVisao} fontSize={10} fontFamily={Fonte} textAnchor="end">{visao}</SvgText>
+            <SvgText x={w - 10} y={H - 14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">SANGUE DESCE PARA AS PERNAS</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

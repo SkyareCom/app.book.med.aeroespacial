@@ -9,6 +9,7 @@ import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
 import { radiacao } from './capitulos/radiacao';
 import { ruido } from './capitulos/ruido';
+import { forcasg } from './capitulos/forcasg';
 import { temperatura } from './capitulos/temperatura';
 import type { Capitulo, Secao, SecaoId, TipoMidia } from './tipos';
 
@@ -45,7 +46,7 @@ export const secoes: Secao[] = [
       temperatura,
       radiacao,
       ruido,
-      cap(7, 'Forças G', ['Eixos G', 'G-LOC e A-LOC', 'Manobra anti-G', 'Centrífuga'], ['forcas-g']),
+      forcasg,
       cap(8, 'Impacto e ejeção', ['Tolerância ao impacto', 'Retenção e assentos', 'Ejeção', 'Capacetes']),
     ],
   },

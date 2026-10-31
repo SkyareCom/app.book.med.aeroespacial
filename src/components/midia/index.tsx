@@ -11,8 +11,9 @@ import { CalculadoraMergulhoVoo, GraficoTiposDescompressao, SimuladorCamara } fr
 import { AguaFria, RegraDosTres, SimuladorDesidratacao, TermometroCorpo } from '@/components/midia/m1v4-graficos';
 import { GestacaoRadiacao, GraficoDosePorRota, RadiacaoAnual, RiscoCarreira } from '@/components/midia/m1v5-graficos';
 import { CalculadoraRuido, FaixasAudicao, ReguaDecibeis, VibracaoA8 } from '@/components/midia/m1v6-graficos';
+import { CalculadoraCentrifuga, CurvaCarga, LinhaGLOC, PilhaTolerancia } from '@/components/midia/m1v7-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -73,6 +74,11 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'faixas-audicao': () => <FaixasAudicao />,
   'animacao-vibracao': () => <AnimacaoVibracao />,
   'vibracao-a8': () => <VibracaoA8 />,
+  'curva-carga': () => <CurvaCarga />,
+  'linha-gloc': () => <LinhaGLOC />,
+  'pilha-tolerancia': () => <PilhaTolerancia />,
+  'animacao-coluna-sangue': () => <AnimacaoColunaSangue />,
+  'centrifuga': () => <CalculadoraCentrifuga />,
   'risco-carreira': () => <RiscoCarreira />,
   'gestacao-radiacao': () => <GestacaoRadiacao />,
 };
@@ -122,6 +128,11 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'faixas-audicao': 'Faixas de audição',
   'animacao-vibracao': 'Do rotor ao olho',
   'vibracao-a8': 'Dose de vibração',
+  'curva-carga': 'Curva e carga',
+  'linha-gloc': 'Tempo do G-LOC',
+  'pilha-tolerancia': 'Tolerância ao G',
+  'animacao-coluna-sangue': 'A coluna de sangue',
+  'centrifuga': 'Centrífuga',
   'risco-carreira': 'Risco na carreira',
   'gestacao-radiacao': 'Gestação e radiação',
 };
