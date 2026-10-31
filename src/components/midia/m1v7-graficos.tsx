@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, G, Line, Rect, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte } from '@/constants/theme';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Gráficos e calculadoras do M1V7 · Forças G. Fontes no registro de src/data/capitulos/forcasg.ts.
 // Curva nivelada: n = 1 ÷ cos(inclinação). Limites: 14 CFR 25.337 (transporte, mínimo +2,5) e 23.337 (normal 3,8;
@@ -96,13 +97,7 @@ export function LinhaGLOC() {
           <SvgText x={X(28)} y={72} fill={Cores.texto} fontSize={9} fontFamily={Fonte} textAnchor="end">≈ 28 s SEM CONTROLE</SvgText>
         </Svg>
       </View>
-      <View style={styles.escolhas}>
-        {FASES.map((x) => (
-          <Pressable key={x.id} accessibilityRole="radio" accessibilityState={{ checked: sel === x.id }} onPress={() => setSel(x.id)} style={[styles.escolha, sel === x.id && { backgroundColor: x.cor, borderColor: x.cor }]}>
-            <Texto t="rotulo" cor={sel === x.id ? Cores.fundo : Cores.texto}>{x.nome}</Texto>
-          </Pressable>
-        ))}
-      </View>
+      <Opcoes itens={FASES.map((x) => ({ valor: x.id, rotulo: x.nome, cor: x.cor }))} valor={sel} onChange={setSel} />
       <View style={[styles.marca, { borderLeftColor: f.cor }]}>
         <Texto>{f.texto}</Texto>
       </View>
@@ -123,14 +118,11 @@ export function PilhaTolerancia() {
   const yB = 18;
   return (
     <MolduraMidia tipo="Calculadora" titulo="Como se chega perto de 9 G" instrucao="Some as defesas à tolerância sem proteção. Valores médios; a tolerância de cada pessoa varia.">
-      <View style={styles.escolhas}>
-        <Pressable accessibilityRole="checkbox" accessibilityState={{ checked: traje }} onPress={() => setTraje(!traje)} style={[styles.escolha, traje && styles.escolhaAtiva]}>
-          <Texto t="rotulo" cor={traje ? Cores.fundo : Cores.texto}>Traje anti-G</Texto>
-        </Pressable>
-        <Pressable accessibilityRole="checkbox" accessibilityState={{ checked: manobra }} onPress={() => setManobra(!manobra)} style={[styles.escolha, manobra && styles.escolhaAtiva]}>
-          <Texto t="rotulo" cor={manobra ? Cores.fundo : Cores.texto}>Manobra anti-G</Texto>
-        </Pressable>
-      </View>
+      <Opcoes
+        itens={[['traje', 'Traje anti-G'], ['manobra', 'Manobra anti-G']]}
+        ativos={[...(traje ? ['traje'] : []), ...(manobra ? ['manobra'] : [])]}
+        onChange={(v) => (v === 'traje' ? setTraje(!traje) : setManobra(!manobra))}
+      />
       <View onLayout={(e) => setLarg(e.nativeEvent.layout.width)}>
         <Svg width={larg} height={H}>
           <Rect x={x0} y={yB} width={x1 - x0} height={18} rx={6} fill={Cores.trilha} />

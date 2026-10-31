@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { G, Line, Rect, Text as SvgText } from 'react-native-svg';
 
 import { MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte, Raio } from '@/constants/theme';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Tempo de consciência útil (FAA, AC 61-107), em segundos: mínimo e máximo de cada faixa.
 const DADOS: [number, number, number][] = [
@@ -31,13 +32,7 @@ export function GraficoTUC() {
 
   return (
     <MolduraMidia tipo="Gráfico" titulo="Quanto tempo você tem para agir" instrucao="Escala logarítmica: cada marca é um salto grande de tempo.">
-      <View style={styles.alternar}>
-        {[false, true].map((v) => (
-          <Pressable key={String(v)} accessibilityRole="button" accessibilityState={{ selected: rapida === v }} onPress={() => setRapida(v)} style={[styles.opcao, rapida === v && styles.ativa]}>
-            <Texto t="item" cor={rapida === v ? Cores.fundo : Cores.texto} numberOfLines={1} style={{ textAlign: 'center' }}>{v ? 'Descompressão rápida' : 'Perda gradual'}</Texto>
-          </Pressable>
-        ))}
-      </View>
+      <Opcoes itens={[[false, 'Perda gradual'], [true, 'Descompressão rápida']]} valor={rapida} onChange={setRapida} />
       <View onLayout={(ev) => setLarg(ev.nativeEvent.layout.width)}>
         <Svg width={larg} height={h}>
           {TICKS.map(([s, r]) => (

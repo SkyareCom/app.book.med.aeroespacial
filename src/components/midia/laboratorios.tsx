@@ -4,7 +4,7 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
@@ -13,18 +13,13 @@ import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, Fonte, Raio } from '@/constants/theme';
 import { pesParaMetros, pressaoBarometrica } from '@/lib/fisiologia';
+import { Opcoes } from '@/components/midia/opcoes';
 
 const fmt = (n: number, casas = 0) => n.toLocaleString('pt-BR', { minimumFractionDigits: casas, maximumFractionDigits: casas });
 
 function Alternar<T extends string>({ opcoes, valor, onChange }: { opcoes: [T, string][]; valor: T; onChange: (v: T) => void }) {
   return (
-    <View style={styles.alternar}>
-      {opcoes.map(([v, r]) => (
-        <Pressable key={v} accessibilityRole="button" accessibilityState={{ selected: valor === v }} onPress={() => onChange(v)} style={[styles.opcao, valor === v && styles.ativa]}>
-          <Texto t="item" cor={valor === v ? Cores.fundo : Cores.texto} style={{ textAlign: 'center' }}>{r}</Texto>
-        </Pressable>
-      ))}
-    </View>
+    <Opcoes itens={opcoes} valor={valor} onChange={onChange} />
   );
 }
 

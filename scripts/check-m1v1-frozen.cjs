@@ -71,9 +71,9 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
   'assets/videos/m1v2-mascaras.mp4': 'e7d116eebd6b1581',
   'src/data/capitulos/pressurizacao.ts': '9d267d0171d23fbf',
-  'src/components/midia/m1v2-graficos.tsx': '9db2a56a5c49e6f1',
+  'src/components/midia/m1v2-graficos.tsx': '60c56a06f51cf737',
   'src/data/capitulos/descompressao.ts': 'b82e22fdfa722c05',
-  'src/components/midia/m1v3-graficos.tsx': '72f6a9da424c2d4c',
+  'src/components/midia/m1v3-graficos.tsx': '06a6f6faeac27f60',
   'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
   'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
   'assets/images/topicos/m1v2-mascaras-cabine.jpg': '11bd27cc724154e7',
@@ -91,7 +91,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
   // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
   'src/data/capitulos/temperatura.ts': 'afd33ab38997d975',
-  'src/components/midia/m1v4-graficos.tsx': '4e9f29412e025140',
+  'src/components/midia/m1v4-graficos.tsx': '1539b30bd2f7b3a0',
   'assets/videos/m1v4-frio.mp4': '9ff51913ab0e9c92',
   'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
   'assets/images/topicos/m1v4-cabine-sol.jpg': '996fde119fe58715',
@@ -101,8 +101,8 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
   'src/data/capitulos/hipoxia.ts': 'a6ef9c03332ec39f',
   'src/components/midia/simulador-o2.tsx': 'c1212fc4e05924f6',
-  'src/components/midia/grafico-tuc.tsx': '463aa9c2e6251149',
-  'src/components/midia/atividade-classificar.tsx': '8146ad4f3bb8828d',
+  'src/components/midia/grafico-tuc.tsx': 'f6291385242f7c0b',
+  'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',
   'assets/images/topicos/m2v1-1-alveolos.jpg': '3309a261ef43a193',
   'assets/images/topicos/m2v1-1-oximetro.jpg': '6a5bac6bcf360508',
   'assets/images/topicos/m2v1-2-escapamento.jpg': 'a9df8b7a25934b8e',
@@ -117,7 +117,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
   // Congelamento M1V5 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   'src/data/capitulos/radiacao.ts': 'f7eb0031733caf97',
-  'src/components/midia/m1v5-graficos.tsx': '3c6ada562db1ac4b',
+  'src/components/midia/m1v5-graficos.tsx': 'c7514dbed5a6fef8',
   'assets/videos/m1v5-aurora.mp4': 'aea16e089624393c',
   'assets/images/topicos/m1v5-1-cruzeiro-noite.jpg': '7ec0d4b39b7a6198',
   'assets/images/topicos/m1v5-1-rota-polar.jpg': '7af72615acf337f7',
@@ -127,6 +127,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v5-3-para-brisa.jpg': '45898a0b2f62c790',
   'assets/images/topicos/m1v5-4-operacoes.jpg': '64268d5a879428c3',
   'assets/images/topicos/m1v5-4-planejamento.jpg': '0525bb6ba153e074',
+  // 31/10/2026: botões de opção padronizados no app inteiro (componente Opcoes), pedido do autor; hashes refeitos.
   // Revisão 30/10/2026 (foco no organismo e tabela de sistemas do corpo em todos os voos) — autorizada pelo autor; hashes refeitos.
   // Congelamento M1V6 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   'src/data/capitulos/ruido.ts': '16d24cf05b0e28fb',

@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, G, Line, Rect, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte } from '@/constants/theme';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Gráficos e simuladores do M1V4 · Temperatura e sobrevivência.
 // Temperatura corporal: hipotermia pela Wilderness Medical Society (AAFP, 2020); calor pela Flight Safety Foundation,
@@ -183,13 +184,7 @@ export function RegraDosTres() {
           })}
         </Svg>
       </View>
-      <View style={styles.escolhas}>
-        {REGRA.map((r, i) => (
-          <Pressable key={r.item} accessibilityRole="button" accessibilityState={{ selected: i === sel }} onPress={() => setSel(i)} style={[styles.escolha, i === sel && styles.escolhaAtiva]}>
-            <Texto t="rotulo" cor={i === sel ? Cores.fundo : Cores.texto}>{r.item}</Texto>
-          </Pressable>
-        ))}
-      </View>
+      <Opcoes itens={REGRA.map((r, i) => ({ valor: i, rotulo: r.item }))} valor={sel} onChange={setSel} />
       <View style={styles.marca}>
         <Texto t="item" cor={AMARELO}>{d.item} · {d.tempo}</Texto>
         <Texto cor={Cores.textoSuave}>{d.dica}</Texto>

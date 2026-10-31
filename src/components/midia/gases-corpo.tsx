@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Defs, G, Line, LinearGradient, Rect, Stop, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
@@ -7,6 +7,7 @@ import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte, Raio } from '@/constants/theme';
 import { pesParaMetros, pressaoBarometrica } from '@/lib/fisiologia';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Três leis, uma altitude: o que a queda de pressão faz com o gás preso (Boyle), com o oxigênio
 // que entra (Dalton) e com o nitrogênio dissolvido (Henry). Valores calculados na atmosfera padrão;
@@ -43,13 +44,7 @@ export function GasesNoCorpo() {
 
   return (
     <MolduraMidia tipo="Simulação" titulo="O que a altitude faz com os gases do corpo" instrucao="Escolha uma lei e suba. Os valores são calculados na atmosfera padrão.">
-      <View style={styles.abas}>
-        {LEIS.map(([v, r]) => (
-          <Pressable key={v} accessibilityRole="button" accessibilityState={{ selected: lei === v }} onPress={() => setLei(v)} style={[styles.aba, lei === v && styles.abaAtiva]}>
-            <Texto t="item" cor={lei === v ? Cores.fundo : Cores.texto} style={{ textAlign: 'center' }}>{r}</Texto>
-          </Pressable>
-        ))}
-      </View>
+      <Opcoes itens={LEIS} valor={lei} onChange={setLei} />
 
       <View onLayout={(e) => setLarg(e.nativeEvent.layout.width)} style={styles.palco}>
         <Svg width={larg} height={H}>
@@ -78,13 +73,7 @@ export function GasesNoCorpo() {
           <Texto t="item" cor={Cores.destaque}>{fmt(alt)} ft · {fmt(pesParaMetros(alt))} m</Texto>
         </View>
         <Deslizante min={0} max={40000} passo={500} valor={alt} onChange={setAlt} rotulo="Altitude em pés" formatar={(v) => `${fmt(v)} pés`} />
-        <View style={styles.atalhos}>
-          {ATALHOS.map(([a, r]) => (
-            <Pressable key={a} accessibilityRole="button" accessibilityState={{ selected: alt === a }} onPress={() => setAlt(a)} style={[styles.atalho, alt === a && { borderColor: Cores.destaque }]}>
-              <Texto t="rodape" cor={alt === a ? Cores.destaque : Cores.textoSuave}>{r}</Texto>
-            </Pressable>
-          ))}
-        </View>
+        <Opcoes itens={ATALHOS} valor={alt} onChange={setAlt} />
       </View>
 
       <View style={styles.leituras}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Defs, G, Line, LinearGradient, Path, Rect, Stop, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte } from '@/constants/theme';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Gráficos e simuladores do M1V3 · Descompressão.
 // Tipos de descompressão e intervalos após mergulho: FAA AC 61-107B, seções 2-11.a(3) e 2-7.d(4)(d)/(7).
@@ -15,13 +16,7 @@ const fmt = (n: number, c = 0) => n.toLocaleString('pt-BR', { minimumFractionDig
 
 function Escolhas<T extends string>({ opcoes, valor, onChange }: { opcoes: [T, string][]; valor: T; onChange: (v: T) => void }) {
   return (
-    <View style={styles.escolhas}>
-      {opcoes.map(([id, nome]) => (
-        <Pressable key={id} accessibilityRole="radio" accessibilityState={{ checked: valor === id }} onPress={() => onChange(id)} style={[styles.escolha, valor === id && styles.escolhaAtiva]}>
-          <Texto t="rotulo" cor={valor === id ? Cores.fundo : Cores.texto}>{nome}</Texto>
-        </Pressable>
-      ))}
-    </View>
+    <Opcoes itens={opcoes} valor={valor} onChange={onChange} />
   );
 }
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, G, Line, Path, Rect, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte } from '@/constants/theme';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Gráficos e calculadoras do M1V5 · Radiação cósmica.
 // Voos: FAA AC 120-61B (2014), Tabela 2 — dose efetiva (ICRP 103) calculada com o CARI-7 para 27 voos sem escala,
@@ -65,13 +66,7 @@ const ROTAS_CALC = ['mia-tpa', 'nyc-sju', 'lax-hnl', 'was-lax', 'lon-nyc', 'nyc-
 
 function Escolhas({ opcoes, valor, onChange }: { opcoes: string[]; valor: string; onChange: (v: string) => void }) {
   return (
-    <View style={styles.escolhas}>
-      {opcoes.map((id) => (
-        <Pressable key={id} accessibilityRole="radio" accessibilityState={{ checked: valor === id }} onPress={() => onChange(id)} style={[styles.escolha, valor === id && styles.escolhaAtiva]}>
-          <Texto t="rotulo" cor={valor === id ? Cores.fundo : Cores.texto}>{voo(id).rota}</Texto>
-        </Pressable>
-      ))}
-    </View>
+    <Opcoes itens={opcoes.map((id) => ({ valor: id, rotulo: voo(id).rota }))} valor={valor} onChange={onChange} />
   );
 }
 

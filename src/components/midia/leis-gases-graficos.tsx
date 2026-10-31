@@ -7,6 +7,7 @@ import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte, Raio } from '@/constants/theme';
 import { pressaoBarometrica } from '@/lib/fisiologia';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Um gráfico para cada lei dos gases (M1V1 - II). Valores calculados na atmosfera padrão ICAO;
 // fontes e cálculos no registro de revisão do voo M1V1.
@@ -17,13 +18,7 @@ const expansao = (ft: number) => (760 - VAPOR) / (pressaoBarometrica(ft) - VAPOR
 
 function Escolhas<T extends string | number>({ itens, valor, onChange }: { itens: [T, string][]; valor: T; onChange: (v: T) => void }) {
   return (
-    <View style={styles.escolhas}>
-      {itens.map(([v, r]) => (
-        <Pressable key={String(v)} accessibilityRole="button" accessibilityState={{ selected: valor === v }} onPress={() => onChange(v)} style={[styles.escolha, valor === v && styles.escolhaAtiva]}>
-          <Texto t="rodape" cor={valor === v ? Cores.fundo : Cores.textoSuave}>{r}</Texto>
-        </Pressable>
-      ))}
-    </View>
+    <Opcoes itens={itens} valor={valor} onChange={onChange} />
   );
 }
 

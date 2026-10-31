@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Defs, G, Line, LinearGradient, Path, Rect, Stop, Text as SvgText } from 'react-native-svg';
 
 import { Deslizante } from '@/components/midia/deslizante';
@@ -7,6 +7,7 @@ import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Fonte } from '@/constants/theme';
 import { pesParaMetros, pressaoBarometrica } from '@/lib/fisiologia';
+import { Opcoes } from '@/components/midia/opcoes';
 
 // Gráficos e simuladores do M1V2 · Pressurização e oxigênio suplementar.
 // Limites: 14 CFR 25.841 e 14 CFR 91.211; sistemas de oxigênio: FAA AC 61-107B, seção 2-9.
@@ -163,14 +164,7 @@ export function GraficoSistemasOxigenio() {
           <SvgText x={X(40000) - 6} y={topo - 9} fill={Cores.erro} fontSize={9} fontFamily={Fonte} textAnchor="end">40.000 FT</SvgText>
         </Svg>
       </View>
-      <View style={styles.escolhas}>
-        {SISTEMAS.map((q) => (
-          <Pressable key={q.id} accessibilityRole="button" accessibilityState={{ selected: q.id === sel }} onPress={() => setSel(q.id)} style={[styles.escolha, q.id === sel && { borderColor: q.cor }]}>
-            <View style={[styles.ponto, { backgroundColor: q.cor }]} />
-            <Texto cor={q.id === sel ? Cores.texto : Cores.textoSuave}>{q.nome}</Texto>
-          </Pressable>
-        ))}
-      </View>
+      <Opcoes itens={SISTEMAS.map((q) => ({ valor: q.id, rotulo: q.nome, cor: q.cor }))} valor={sel} onChange={setSel} />
       <Texto cor={Cores.textoSuave}>{s.texto}</Texto>
     </MolduraMidia>
   );

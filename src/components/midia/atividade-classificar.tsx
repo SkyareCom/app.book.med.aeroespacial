@@ -69,5 +69,5 @@ export function AtividadeClassificar({ titulo, categorias, casos }: { titulo: st
 const styles = StyleSheet.create({
   caso: { padding: Espaco.md, borderRadius: Raio - 6, backgroundColor: 'rgba(111,211,255,0.08)' },
   grade: { flexDirection: 'row', flexWrap: 'wrap', gap: Espaco.sm },
-  opcao: { flexBasis: '45%', flexGrow: 1, minHeight: 46, alignItems: 'center', justifyContent: 'center', borderRadius: Raio - 6, borderWidth: 1, borderColor: Cores.linha, paddingHorizontal: 8 },
+  opcao: { flexBasis: '45%', flexGrow: 1, minHeight: 46, alignItems: 'center', justifyContent: 'center', borderRadius: 12, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(255,255,255,0.03)', paddingHorizontal: 10, paddingVertical: 6 },
 });
