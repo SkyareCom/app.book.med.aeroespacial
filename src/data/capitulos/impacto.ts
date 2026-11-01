@@ -75,6 +75,7 @@ export const impacto: Capitulo = {
           "A forma de prender o corpo pesa tanto quanto o número. Na Força Aérea britânica, o modelo previa cerca de **4%** de lesões da coluna nas ejeções, e a taxa real foi de **30% a 50%**, por causa do **tipo de cinto** e da folga entre o corpo e o assento. Cinto de **tronco bem ajustado** acopla o corpo ao assento e reduz o **rebote**, que aumenta a carga nas vértebras.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v8-1-treno.jpg'), legenda: 'No trenó de impacto, o boneco instrumentado mede a carga que chegaria à cabeça, à coluna e às pernas de uma pessoa.' } },
           { paragrafo: 2, midia: 'limites-impacto' },
           { paragrafo: 2, tabela: {
             titulo: 'Limites de impacto por direção (G)',
@@ -86,6 +87,7 @@ export const impacto: Capitulo = {
               ['Para cima (−Z)', '9', '12', '15'],
             ],
           } },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v8-1-cintos.jpg'), legenda: 'Cintos de tronco bem apertados prendem o corpo ao assento e reduzem o rebote que sobrecarrega as vértebras.' } },
         ],
       },
     },
@@ -113,7 +115,9 @@ export const impacto: Capitulo = {
               ['Posição do cinto', 'Na pelve; alça no ombro', 'Abdômen e coluna'],
             ],
           } },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v8-2-cabine.jpg'), legenda: 'O cinto abdominal vai baixo, sobre os ossos da pelve, e não sobre a barriga.' } },
           { paragrafo: 3, midia: 'posicao-impacto' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v8-2-crianca.jpg'), legenda: 'Para uma criança com menos de 2 anos, a FAA recomenda um dispositivo de retenção aprovado durante todo o voo, em vez do colo.' } },
         ],
       },
     },
@@ -142,7 +146,10 @@ export const impacto: Capitulo = {
               ['Fratura da coluna', '20% a 30%', 'Série histórica'],
             ],
           } },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v8-3-coluna.jpg'), legenda: 'Depois de uma ejeção, a ressonância da coluna virou rotina para procurar fraturas.' } },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v8-3-paraquedas.jpg'), legenda: 'Com o paraquedas aberto, o piloto desce. Dentro do envelope do assento, 95,7% sobreviveram.' } },
           { paragrafo: 4, midia: 'envelope-ejecao' },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m1v8-ejecao.mp4'), legenda: 'Teste de assento ejetável num trilho de foguete: o boneco sobe com a carga explosiva e o foguete, como um piloto sairia do avião.' } },
         ],
       },
     },
@@ -157,7 +164,9 @@ export const impacto: Capitulo = {
           "O capacete tem um custo: **peso na cabeça**. Sob G alto e na ejeção, cada grama a mais carrega a **coluna cervical** (Veja M1V7). A proteção é o capacete **certo e bem ajustado**, preso pela jugular, e o **pescoço fortalecido**. Nos aviões de passageiros, o papel do capacete fica com o **assento**: onde a cabeça pode bater, o HIC não pode passar de 1.000.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v8-4-helicoptero.jpg'), legenda: 'Pilotos de helicóptero voam de capacete: num acidente, ele protege o crânio e o cérebro.' } },
           { paragrafo: 2, midia: 'risco-capacete' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v8-4-ajuste.jpg'), legenda: 'O capacete só protege bem se estiver ajustado à cabeça e preso pela jugular.' } },
           { paragrafo: 3, tabela: {
             titulo: 'Sistemas do corpo mais atingidos',
             colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

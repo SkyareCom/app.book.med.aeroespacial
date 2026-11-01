@@ -141,6 +141,18 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v6-3-patio.jpg': '057fb846cae517fe',
   'assets/images/topicos/m1v6-4-offshore.jpg': '3255b4d92cf407d0',
   'assets/images/topicos/m1v6-4-painel.jpg': '07e5ceb8d4239077',
+  // Congelamento M1V8 — combinado com o autor ao receber as fotos e o vídeo (31/10/2026).
+  'src/data/capitulos/impacto.ts': 'b1a8ff85b58c1fa2',
+  'src/components/midia/m1v8-graficos.tsx': 'b8f348ab363f9589',
+  'assets/videos/m1v8-ejecao.mp4': '303230e7bd2e71c4',
+  'assets/images/topicos/m1v8-1-treno.jpg': '87a9ba3f77fcb9a3',
+  'assets/images/topicos/m1v8-1-cintos.jpg': '1a6fca669bd66fa9',
+  'assets/images/topicos/m1v8-2-cabine.jpg': '1b695b155599b579',
+  'assets/images/topicos/m1v8-2-crianca.jpg': '27b8b81646dda2b4',
+  'assets/images/topicos/m1v8-3-coluna.jpg': 'a86552a41bdcaec0',
+  'assets/images/topicos/m1v8-3-paraquedas.jpg': '9d36cdfc05791983',
+  'assets/images/topicos/m1v8-4-helicoptero.jpg': '3371a3fd52263750',
+  'assets/images/topicos/m1v8-4-ajuste.jpg': '5a8bbbde10f77222',
 });
 for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
   const caminho = path.resolve(__dirname, '..', arquivo);
@@ -152,8 +164,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5, M1V6 ou M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V8 ou M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1, M1V2, M1V3, M1V4, M1V5, M1V6 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V8 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }
