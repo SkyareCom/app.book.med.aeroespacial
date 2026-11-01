@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { View } from 'react-native';
-import Svg, { Circle, G, Line, Path, Polyline, Rect, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, G, Line, Path, Polyline, Rect } from 'react-native-svg';
+import { SvgText } from '@/components/svg-texto';
 
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';

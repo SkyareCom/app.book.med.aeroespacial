@@ -14,6 +14,7 @@ import { BordaCapa, Cores, Espaco, Fonte, Raio, Tamanho } from '@/constants/them
 import { questoesCMA } from '@/data/cma-questoes';
 import { avaliar, CLASSES, EXAMES_1A, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
 import { idQuestao } from '@/lib/xp';
+import { useTr } from '@/state/idioma';
 import { useProgresso } from '@/state/progresso';
 
 // Exame CMA: página de apoio à decisão do médico examinador.
@@ -621,6 +622,7 @@ function LinhaSN({ rotulo, valor, onChange }: { rotulo: string; valor: boolean |
 }
 
 function Entrada({ rotulo, placeholder, unidade, valor, onChange }: { rotulo: string; placeholder: string; unidade?: string; valor: string; onChange: (t: string) => void }) {
+  const tr = useTr();
   return (
     <View style={styles.linhaCampo}>
       <Texto style={{ flex: 1 }}>{rotulo}</Texto>
@@ -628,7 +630,7 @@ function Entrada({ rotulo, placeholder, unidade, valor, onChange }: { rotulo: st
         <TextInput
           value={valor}
           onChangeText={(t) => onChange(t.replace(/[^0-9.,-]/g, ''))}
-          placeholder={placeholder}
+          placeholder={tr(placeholder)}
           placeholderTextColor={Cores.textoApagado}
           keyboardType="decimal-pad"
           accessibilityLabel={rotulo}

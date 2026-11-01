@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import Svg, { Defs, Ellipse, G, Line, LinearGradient, Path, RadialGradient, Stop, Text as SvgText } from 'react-native-svg';
+import Svg, { Defs, Ellipse, G, Line, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
+import { SvgText } from '@/components/svg-texto';
 
 import { Deslizante } from '@/components/midia/deslizante';
 import { Leitura, MolduraMidia } from '@/components/midia/moldura';

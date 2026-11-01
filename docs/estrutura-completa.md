@@ -28,6 +28,15 @@ Em todos os casos, agregar também:
   nervoso central e visão). Cada voo traz uma tabela "Sistemas do corpo mais atingidos" com sistema, consequência e
   proteção, só com dados já registrados nas fontes do voo.
 
+## IDIOMAS (31/10/2026)
+O app inteiro troca de idioma pelos botões PT BR · EN US · ES ES da tela de entrada. O português é o original e a chave.
+- Dicionários: src/i18n/en-US.json e src/i18n/es-ES.json. O componente Texto, o texto dos gráficos (SvgText) e os
+  parágrafos dos voos passam por traduzir() (src/i18n/index.ts).
+- Voo novo ou texto novo: rodar `npm run traduzir` para ver o que falta e `node scripts/traduzir.cjs --traduzir` para
+  traduzir pela função "traduzir" do Supabase (Claude) e gravar nos dicionários; revisar no diff antes de publicar.
+- O que ainda faltar é traduzido no aparelho, na hora, pela mesma função (src/i18n/automatico.ts), e fica guardado.
+  Precisa do segredo ANTHROPIC_API_KEY no Supabase; sem ele, o texto que falta aparece em português.
+
 # CONTEXTO DO PROJETO — App-Book de Medicina Aeroespacial
 
 Você vai trabalhar comigo neste projeto. Abaixo está tudo o que já foi decidido. Siga estas definições à risca e não mude a estrutura sem me perguntar.

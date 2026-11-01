@@ -1,7 +1,8 @@
 import { Image } from 'expo-image';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Svg, { Circle, Defs, G, Line, LinearGradient, Rect, Stop, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, Defs, G, Line, LinearGradient, Rect, Stop } from 'react-native-svg';
+import { SvgText } from '@/components/svg-texto';
 
 import { MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';

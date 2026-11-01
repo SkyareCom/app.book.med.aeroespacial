@@ -15,6 +15,7 @@ import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
 import { BotaoVoltarFlutuante, TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
+import { useTr } from '@/state/idioma';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo, interativosDe, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
@@ -244,15 +245,17 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
 // Prosa contínua: cada parágrafo pode destacar uma nuance entre **asteriscos duplos**.
 // Figuras, tabelas e simuladores entram após o parágrafo indicado, sem divisões por nível de leitura.
 function TextoCorrente({ texto, recursos }: { texto: string; recursos?: Recurso[] }) {
-  const paragrafos = texto.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  const tr = useTr();
+  // Cada parágrafo é traduzido inteiro, antes de separar os destaques.
+  const paragrafos = texto.split(/\n\s*\n/).map((p) => tr(p.trim())).filter(Boolean);
   return (
     <View style={{ gap: Espaco.md }}>
       {paragrafos.map((p, i) => (
         <View key={i} style={{ gap: Espaco.md }}>
-          <Texto cor={Cores.textoSuave}>
+          <Texto cor={Cores.textoSuave} semTraducao>
             {p.split(/(\*\*[^*]+\*\*)/g).map((parte, j) =>
               parte.startsWith('**') && parte.endsWith('**')
-                ? <Texto key={j} cor={Cores.destaque}>{parte.slice(2, -2)}</Texto>
+                ? <Texto key={j} cor={Cores.destaque} semTraducao>{parte.slice(2, -2)}</Texto>
                 : parte,
             )}
           </Texto>

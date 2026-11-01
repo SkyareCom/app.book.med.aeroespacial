@@ -43,7 +43,8 @@
     "typecheck": "tsc --noEmit",
     "export:web": "expo export -p web",
     "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs",
-    "auditar:midias": "tsx --require ./scripts/stub-assets.cjs scripts/auditar-midias.ts"
+    "auditar:midias": "tsx --require ./scripts/stub-assets.cjs scripts/auditar-midias.ts",
+    "traduzir": "node scripts/traduzir.cjs"
   },
   "private": true
 }

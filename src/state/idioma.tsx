@@ -1,8 +1,11 @@
-// Idioma escolhido na tela de entrada (PT BR, EN US, ES ES), guardado no aparelho.
-// Por enquanto traduz a própria tela de entrada; os textos dos voos seguem em português.
+// Idioma escolhido na tela de entrada (PT BR, EN US, ES ES), guardado no aparelho. O app inteiro segue a escolha:
+// o componente Texto e os textos dos gráficos passam por traduzir() (src/i18n).
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+
+import { aoTraduzir, carregarAutomaticas } from '@/i18n/automatico';
+import { traduzir } from '@/i18n';
 
 export type Idioma = 'pt-BR' | 'en-US' | 'es-ES';
 export const IDIOMAS: [Idioma, string][] = [
@@ -13,10 +16,17 @@ export const IDIOMAS: [Idioma, string][] = [
 
 const CHAVE = 'idioma';
 
-const Ctx = createContext<{ idioma: Idioma; escolherIdioma: (i: Idioma) => void }>({ idioma: 'pt-BR', escolherIdioma: () => {} });
+const Ctx = createContext<{ idioma: Idioma; escolherIdioma: (i: Idioma) => void; versao: number }>({ idioma: 'pt-BR', escolherIdioma: () => {}, versao: 0 });
 
 export function ProvedorIdioma({ children }: { children: ReactNode }) {
   const [idioma, setIdioma] = useState<Idioma>('pt-BR');
+  // Sobe quando chega uma tradução automática, para a tela se redesenhar com ela.
+  const [versao, setVersao] = useState(0);
+  useEffect(() => aoTraduzir(() => setVersao((v) => v + 1)), []);
+  useEffect(() => {
+    if (idioma !== 'pt-BR') carregarAutomaticas(idioma);
+    if (typeof document !== 'undefined') document.documentElement.lang = idioma;
+  }, [idioma]);
 
   useEffect(() => {
     AsyncStorage.getItem(CHAVE)
@@ -31,44 +41,14 @@ export function ProvedorIdioma({ children }: { children: ReactNode }) {
     AsyncStorage.setItem(CHAVE, i).catch(() => {});
   }
 
-  return <Ctx.Provider value={{ idioma, escolherIdioma }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ idioma, escolherIdioma, versao }}>{children}</Ctx.Provider>;
 }
 
 export const useIdioma = () => useContext(Ctx);
 
-// Textos da tela de entrada nos três idiomas.
-export const TEXTOS_ENTRADA = {
-  'pt-BR': {
-    credito: 'Seu app-book de',
-    titulo: 'Medicina aeroespacial',
-    google: 'Continuar com Google',
-    apple: 'Continuar com a Apple',
-    biometria: 'Entrar com biometria',
-    nomeBiometria: { ios: 'Face ID ou Touch ID', android: 'Digital ou reconhecimento facial', outro: 'Face ID, Touch ID ou digital' },
-    semConta: 'Continuar sem conta',
-    salvo: 'Seu progresso fica salvo neste aparelho',
-    idioma: 'Idioma',
-  },
-  'en-US': {
-    credito: 'Your app-book of',
-    titulo: 'Aerospace medicine',
-    google: 'Continue with Google',
-    apple: 'Continue with Apple',
-    biometria: 'Sign in with biometrics',
-    nomeBiometria: { ios: 'Face ID or Touch ID', android: 'Fingerprint or face unlock', outro: 'Face ID, Touch ID or fingerprint' },
-    semConta: 'Continue without an account',
-    salvo: 'Your progress is saved on this device',
-    idioma: 'Language',
-  },
-  'es-ES': {
-    credito: 'Tu app-book de',
-    titulo: 'Medicina aeroespacial',
-    google: 'Continuar con Google',
-    apple: 'Continuar con Apple',
-    biometria: 'Entrar con biometría',
-    nomeBiometria: { ios: 'Face ID o Touch ID', android: 'Huella o reconocimiento facial', outro: 'Face ID, Touch ID o huella' },
-    semConta: 'Continuar sin cuenta',
-    salvo: 'Tu progreso se guarda en este dispositivo',
-    idioma: 'Idioma',
-  },
-} as const;
+// Função de tradução para textos fora do componente Texto (rótulos de acessibilidade, campos, gráficos).
+export function useTr() {
+  const { idioma, versao } = useContext(Ctx);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useCallback((texto: string, estrito = false) => traduzir(texto, idioma, estrito), [idioma, versao]);
+}

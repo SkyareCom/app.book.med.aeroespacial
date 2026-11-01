@@ -71,9 +71,9 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
   'assets/videos/m1v2-mascaras.mp4': 'e7d116eebd6b1581',
   'src/data/capitulos/pressurizacao.ts': '9d267d0171d23fbf',
-  'src/components/midia/m1v2-graficos.tsx': '60c56a06f51cf737',
+  'src/components/midia/m1v2-graficos.tsx': '98ca3b3154f609d5',
   'src/data/capitulos/descompressao.ts': 'b82e22fdfa722c05',
-  'src/components/midia/m1v3-graficos.tsx': '06a6f6faeac27f60',
+  'src/components/midia/m1v3-graficos.tsx': '301331868cfd0c8d',
   'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
   'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
   'assets/images/topicos/m1v2-mascaras-cabine.jpg': '11bd27cc724154e7',
@@ -91,7 +91,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
   // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
   'src/data/capitulos/temperatura.ts': 'afd33ab38997d975',
-  'src/components/midia/m1v4-graficos.tsx': '1539b30bd2f7b3a0',
+  'src/components/midia/m1v4-graficos.tsx': '5673a269f5b6358b',
   'assets/videos/m1v4-frio.mp4': '9ff51913ab0e9c92',
   'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
   'assets/images/topicos/m1v4-cabine-sol.jpg': '996fde119fe58715',
@@ -100,8 +100,8 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-sinal-espelho.jpg': '6bf5f5eb96ab34e7',
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
   'src/data/capitulos/hipoxia.ts': 'a6ef9c03332ec39f',
-  'src/components/midia/simulador-o2.tsx': 'c1212fc4e05924f6',
-  'src/components/midia/grafico-tuc.tsx': 'f6291385242f7c0b',
+  'src/components/midia/simulador-o2.tsx': 'af94937e7e23183d',
+  'src/components/midia/grafico-tuc.tsx': 'ce3774a3c28f2956',
   'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',
   'assets/images/topicos/m2v1-1-alveolos.jpg': '3309a261ef43a193',
   'assets/images/topicos/m2v1-1-oximetro.jpg': '6a5bac6bcf360508',
@@ -117,7 +117,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
   // Congelamento M1V5 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   'src/data/capitulos/radiacao.ts': 'f7eb0031733caf97',
-  'src/components/midia/m1v5-graficos.tsx': 'c7514dbed5a6fef8',
+  'src/components/midia/m1v5-graficos.tsx': '8b8fa55d9c13a1bf',
   'assets/videos/m1v5-aurora.mp4': 'aea16e089624393c',
   'assets/images/topicos/m1v5-1-cruzeiro-noite.jpg': '7ec0d4b39b7a6198',
   'assets/images/topicos/m1v5-1-rota-polar.jpg': '7af72615acf337f7',
@@ -127,11 +127,13 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v5-3-para-brisa.jpg': '45898a0b2f62c790',
   'assets/images/topicos/m1v5-4-operacoes.jpg': '64268d5a879428c3',
   'assets/images/topicos/m1v5-4-planejamento.jpg': '0525bb6ba153e074',
+  // 31/10/2026: app inteiro traduzível (PT BR, EN US, ES ES), pedido do autor: só o import do texto SVG mudou
+  // (SvgText traduzido); textos em português intactos; hashes refeitos.
   // 31/10/2026: botões de opção padronizados no app inteiro (componente Opcoes), pedido do autor; hashes refeitos.
   // Revisão 30/10/2026 (foco no organismo e tabela de sistemas do corpo em todos os voos) — autorizada pelo autor; hashes refeitos.
   // Congelamento M1V6 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   'src/data/capitulos/ruido.ts': '16d24cf05b0e28fb',
-  'src/components/midia/m1v6-graficos.tsx': 'd4c3073e7e0bf9ca',
+  'src/components/midia/m1v6-graficos.tsx': 'baaa4f28582eceeb',
   'assets/videos/m1v6-rotor.mp4': '64a9bd58c322df4f',
   'assets/images/topicos/m1v6-1-fone-cabine.jpg': '455a68cd3c837465',
   'assets/images/topicos/m1v6-1-medicao-cabine.jpg': '77a359f5c3660705',
@@ -143,7 +145,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v6-4-painel.jpg': '07e5ceb8d4239077',
   // Congelamento M1V8 — combinado com o autor ao receber as fotos e o vídeo (31/10/2026).
   'src/data/capitulos/impacto.ts': 'b1a8ff85b58c1fa2',
-  'src/components/midia/m1v8-graficos.tsx': 'b8f348ab363f9589',
+  'src/components/midia/m1v8-graficos.tsx': '5c18b0e9709a77a1',
   'assets/videos/m1v8-ejecao.mp4': '303230e7bd2e71c4',
   'assets/images/topicos/m1v8-1-treno.jpg': '87a9ba3f77fcb9a3',
   'assets/images/topicos/m1v8-1-cintos.jpg': '1a6fca669bd66fa9',
