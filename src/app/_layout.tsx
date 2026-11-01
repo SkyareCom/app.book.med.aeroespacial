@@ -12,6 +12,7 @@ import { PaginasRodape } from '@/components/paginas-rodape';
 import { Cores, Fonte } from '@/constants/theme';
 import { indiceAbaRodape } from '@/lib/swipe-rodape';
 import { ProvedorConta, useConta } from '@/state/conta';
+import { ProvedorIdioma } from '@/state/idioma';
 import { ProvedorNotificacoes } from '@/state/notificacoes';
 import { ProvedorProgresso } from '@/state/progresso';
 
@@ -29,6 +30,7 @@ export default function RootLayout() {
   if (!fontesProntas) return null;
 
   return (
+    <ProvedorIdioma>
     <ProvedorConta>
       <ProvedorProgresso>
       <ProvedorNotificacoes>
@@ -43,6 +45,7 @@ export default function RootLayout() {
       </ProvedorNotificacoes>
       </ProvedorProgresso>
     </ProvedorConta>
+    </ProvedorIdioma>
   );
 }
 

@@ -8,6 +8,7 @@ import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
 import { Cores, Espaco, LarguraMaxima } from '@/constants/theme';
 import { useConta, type ModoEntrada } from '@/state/conta';
+import { TEXTOS_ENTRADA, useIdioma } from '@/state/idioma';
 
 // Abertura de cinema e tela de entrada numa só: campo estelar em aproximação, o logotipo surge,
 // o título aparece e, para quem ainda não entrou, as formas de login logo abaixo.
@@ -22,8 +23,23 @@ export function Abertura({ onFim, entrada }: { onFim: () => void; entrada: boole
   const [terminou, setTerminou] = useState(false);
   const pedeEntrada = useRef(entrada);
   pedeEntrada.current = entrada;
+  const T = TEXTOS_ENTRADA[useIdioma().idioma];
+  // Na tela de entrada, tudo (fundo, logotipo, título e botões) aparece de uma vez, quando a imagem de fundo
+  // já carregou (ou depois de 1,2 s, se ela demorar). Sem login pendente, segue a abertura de cinema em etapas.
+  const juntoComecou = useRef(false);
+  function revelarTudo() {
+    if (juntoComecou.current) return;
+    juntoComecou.current = true;
+    Animated.parallel(
+      [fundo, logo, titulo].map((v) => Animated.timing(v, { toValue: 1, duration: 700, easing: Easing.out(Easing.quad), useNativeDriver: true })),
+    ).start();
+  }
 
   useEffect(() => {
+    if (entrada) {
+      const t = setTimeout(revelarTudo, 1200);
+      return () => clearTimeout(t);
+    }
     const intro = Animated.parallel([
       Animated.timing(fundo, { toValue: 1, duration: 3600, easing: Easing.out(Easing.quad), useNativeDriver: true }),
       Animated.sequence([
@@ -56,7 +72,7 @@ export function Abertura({ onFim, entrada }: { onFim: () => void; entrada: boole
   return (
     <Animated.View pointerEvents={terminou ? 'none' : 'auto'} style={[StyleSheet.absoluteFill, styles.raiz, { opacity: saida }]}>
       <Animated.View style={[StyleSheet.absoluteFill, { opacity: fundo, transform: [{ scale: fundo.interpolate({ inputRange: [0, 1], outputRange: [1.25, 1] }) }] }]}>
-        <Image source={Imagens.fundo} style={StyleSheet.absoluteFill} contentFit="cover" />
+        <Image source={Imagens.fundo} style={StyleSheet.absoluteFill} contentFit="cover" onLoad={() => entrada && revelarTudo()} />
       </Animated.View>
       <ScrollView contentContainerStyle={[styles.rolagem, { paddingTop: insets.top + 32, paddingBottom: insets.bottom + 24 }]}>
         <View style={styles.coluna}>
@@ -67,10 +83,10 @@ export function Abertura({ onFim, entrada }: { onFim: () => void; entrada: boole
             {/* Título em estilo de cartaz de cinema: crédito pequeno entre filetes e o nome em destaque. */}
             <View style={styles.credito}>
               <View style={styles.filete} />
-              <Texto t="rotulo" maiusculo style={styles.textoCredito}>Seu app-book de</Texto>
+              <Texto t="rotulo" maiusculo style={styles.textoCredito}>{T.credito}</Texto>
               <View style={styles.filete} />
             </View>
-            <Texto t="titulo" maiusculo style={styles.textoTitulo}>Medicina aeroespacial</Texto>
+            <Texto t="titulo" maiusculo style={styles.textoTitulo}>{T.titulo}</Texto>
           </Animated.View>
           {entrada ? (
             <Animated.View style={{ opacity: titulo, width: '100%' }}>

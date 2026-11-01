@@ -3,10 +3,12 @@ import { useState, type ReactNode } from 'react';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
+import { Opcoes } from '@/components/midia/opcoes';
 import { SimboloApple, SimboloGoogle } from '@/components/marcas';
 import { Texto } from '@/components/texto';
 import { Cores, Espaco, Raio } from '@/constants/theme';
 import type { ModoEntrada } from '@/state/conta';
+import { IDIOMAS, TEXTOS_ENTRADA, useIdioma, type Idioma } from '@/state/idioma';
 
 // Formas de entrar no app, mostradas na própria tela de abertura.
 // Google e Apple dependem das credenciais das contas de desenvolvedor; enquanto não existem,
@@ -16,11 +18,13 @@ const LOGIN_SOCIAL_ATIVO = false;
 // Para voltar a exigir Google, Apple ou biometria de verdade, troque para false.
 export const ENTRADA_LIVRE = true;
 
-const nomeBiometria = Platform.OS === 'ios' ? 'Face ID ou Touch ID' : Platform.OS === 'android' ? 'Digital ou reconhecimento facial' : 'Face ID, Touch ID ou digital';
 
 export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) => void }) {
   const [aviso, setAviso] = useState<string | null>(null);
   const mostrarApple = Platform.OS !== 'android';
+  const { idioma, escolherIdioma } = useIdioma();
+  const T = TEXTOS_ENTRADA[idioma];
+  const nomeBiometria = Platform.OS === 'ios' ? T.nomeBiometria.ios : Platform.OS === 'android' ? T.nomeBiometria.android : T.nomeBiometria.outro;
 
   function social(provedor: 'Google' | 'Apple') {
     if (ENTRADA_LIVRE) {
@@ -60,10 +64,14 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
 
   return (
     <View style={{ gap: Espaco.md, width: '100%' }}>
+      {/* Idioma: três botões lado a lado, acima do login com Google. */}
+      <View accessibilityLabel={T.idioma}>
+        <Opcoes itens={IDIOMAS} valor={idioma} onChange={(v) => escolherIdioma(v as Idioma)} colunas={3} />
+      </View>
       <View style={{ gap: 10 }}>
-        <BotaoEntrar rotulo="Continuar com Google" icone={<SimboloGoogle />} onPress={() => social('Google')} />
-        {mostrarApple ? <BotaoEntrar rotulo="Continuar com a Apple" icone={<SimboloApple />} onPress={() => social('Apple')} /> : null}
-        <BotaoEntrar rotulo="Entrar com biometria" detalhe={nomeBiometria} icone={<IconeDigital cor={Cores.destaque} />} onPress={biometria} />
+        <BotaoEntrar rotulo={T.google} icone={<SimboloGoogle />} onPress={() => social('Google')} />
+        {mostrarApple ? <BotaoEntrar rotulo={T.apple} icone={<SimboloApple />} onPress={() => social('Apple')} /> : null}
+        <BotaoEntrar rotulo={T.biometria} detalhe={nomeBiometria} icone={<IconeDigital cor={Cores.destaque} />} onPress={biometria} />
       </View>
 
       {aviso ? (
@@ -73,8 +81,8 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
       ) : null}
 
       <Pressable accessibilityRole="button" onPress={() => aoEscolher('convidado')} style={styles.semConta}>
-        <Texto t="item" maiusculo espacado cor={Cores.texto}>Continuar sem conta</Texto>
-        <Texto t="rotulo" cor={Cores.textoApagado}>Seu progresso fica salvo neste aparelho</Texto>
+        <Texto t="item" maiusculo espacado cor={Cores.texto}>{T.semConta}</Texto>
+        <Texto t="rotulo" cor={Cores.textoApagado}>{T.salvo}</Texto>
       </Pressable>
     </View>
   );
