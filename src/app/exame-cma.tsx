@@ -13,6 +13,7 @@ import { Texto } from '@/components/texto';
 import { BordaCapa, Cores, Espaco, Fonte, Raio, Tamanho } from '@/constants/theme';
 import { questoesCMA } from '@/data/cma-questoes';
 import { avaliar, CLASSES, EXAMES_1A, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
+import { avaliarFAA, avaliarICAO, REGRAS_INT, type ResultadoInt } from '@/lib/cma-internacional';
 import { idQuestao } from '@/lib/xp';
 import { useTr } from '@/state/idioma';
 import { useProgresso } from '@/state/progresso';
@@ -114,7 +115,7 @@ export default function ExameCMA() {
       <CartaoImagem imagem={IMG.hero} altura={190} style={BordaCapa}>
         <Selo texto="Ferramenta do examinador" cor={Cores.dourado} />
         <Texto t="titulo">Da anamnese ao veredito</Texto>
-        <Texto cor={Cores.textoSuave}>Formulário por sistema, uma condição por pergunta, com a regra do RBAC 67 sob cada resposta e o veredito no final.</Texto>
+        <Texto cor={Cores.textoSuave}>Formulário por sistema, uma condição por pergunta, com a regra do RBAC 67 sob cada resposta, o que muda na FAA e na ICAO, e os vereditos no final.</Texto>
       </CartaoImagem>
 
       <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: '/capitulo/[secao]/[numero]', params: { secao: 'aviacao', numero: '1' } })} style={styles.voo}>
@@ -351,7 +352,7 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
           rolar.current = false;
           rolagem.current?.scrollTo({ y: e.nativeEvent.layout.y + 200, animated: true });
         }}>
-        {resultado ? <PainelResultado r={resultado} classe={c.nome} valores={valores} /> : null}
+        {resultado ? <PainelResultado r={resultado} classe={c.nome} valores={valores} internacional={[avaliarFAA(funcao, idadeN, valores, resultado), avaliarICAO(funcao, idadeN, publico, valores, resultado)]} mesesAnac={previa?.meses} /> : null}
       </View>
     </>
   );
@@ -379,6 +380,8 @@ function CampoForm({ campo, valores, definir, achados }: { campo: Campo; valores
       )}
       {campo.ajuda ? <Texto cor={Cores.textoApagado}>{campo.ajuda}</Texto> : null}
       {foraDaFaixa ? <Texto cor={Cores.dourado}>Valor fora do esperado ({campo.faixa![0]} a {campo.faixa![1]}). Confira a medida.</Texto> : null}
+      {REGRAS_INT[campo.id]?.faa ? <Texto t="rodape" cor={Cores.textoApagado} maiusculo={false} espacado={false}>FAA: {REGRAS_INT[campo.id].faa}</Texto> : null}
+      {REGRAS_INT[campo.id]?.icao ? <Texto t="rodape" cor={Cores.textoApagado} maiusculo={false} espacado={false}>ICAO: {REGRAS_INT[campo.id].icao}</Texto> : null}
       {achados.map((a, k) => (
         <View key={k} style={styles.respostaLinha}>
           <View style={[styles.ponto, { backgroundColor: COR_NIVEL[a.nivel] }]} />
@@ -400,7 +403,7 @@ function Etapa({ numero, titulo }: { numero: string; titulo: string }) {
   );
 }
 
-function PainelResultado({ r, classe, valores }: { r: Resultado; classe: string; valores: Valores }) {
+function PainelResultado({ r, classe, valores, internacional, mesesAnac }: { r: Resultado; classe: string; valores: Valores; internacional: ResultadoInt[]; mesesAnac?: number }) {
   const cor = COR_VEREDITO[r.veredito];
   const achados = [...r.achados].sort((a, b) => ORDEM.indexOf(a.nivel) - ORDEM.indexOf(b.nivel));
   return (
@@ -467,6 +470,8 @@ function PainelResultado({ r, classe, valores }: { r: Resultado; classe: string;
         </Painel>
       ) : null}
 
+      <Comparacao anac={r} classe={classe} internacional={internacional} mesesAnac={mesesAnac} />
+
       {r.pendentes.length ? (
         <Painel>
           <Texto t="rotulo" cor={Cores.textoApagado}>Falta preencher</Texto>
@@ -481,6 +486,50 @@ function PainelResultado({ r, classe, valores }: { r: Resultado; classe: string;
         ))}
       </Painel>
     </View>
+  );
+}
+
+// ANAC, FAA e ICAO lado a lado: classe equivalente, veredito, validade e o que muda em cada norma.
+function Comparacao({ anac, classe, internacional, mesesAnac }: { anac: Resultado; classe: string; internacional: ResultadoInt[]; mesesAnac?: number }) {
+  const linhas = [
+    { nome: 'ANAC', norma: 'RBAC 67', classe, veredito: anac.veredito, validade: anac.validade ? `${anac.validade.meses} meses` : mesesAnac ? `${mesesAnac} meses, se apto` : '—', notas: [] as string[], achados: [] as Achado[], aplica: true },
+    ...internacional.map((x) => ({
+      nome: x.autoridade === 'faa' ? 'FAA' : 'ICAO',
+      norma: x.norma,
+      classe: x.eq.classe,
+      veredito: x.veredito,
+      validade: x.eq.aplica && x.eq.validade && (x.veredito === 'apto' || x.veredito === 'restricao') ? `${x.eq.validade.meses} meses` : x.eq.validade ? `${x.eq.validade.meses} meses, se apto` : '—',
+      notas: [x.eq.aplica ? x.eq.validade?.regra : undefined, x.eq.nota].filter((t): t is string => !!t),
+      achados: x.achados,
+      aplica: x.eq.aplica,
+    })),
+  ];
+  return (
+    <Painel>
+      <Texto t="rotulo" cor={Cores.destaque}>ANAC, FAA e ICAO</Texto>
+      <Texto cor={Cores.textoSuave}>As mesmas respostas, julgadas pelas três normas. O CMA brasileiro segue a ANAC; FAA e ICAO servem para comparar e para quem voa fora do Brasil.</Texto>
+      {linhas.map((l) => {
+        const cor = l.aplica ? COR_VEREDITO[l.veredito] : Cores.textoApagado;
+        return (
+          <View key={l.nome} style={[styles.marca, { borderLeftColor: cor, gap: 4 }]}>
+            <View style={styles.entre}>
+              <Texto t="item">{l.nome} · {l.norma}</Texto>
+              <Texto t="rotulo" cor={cor}>{l.aplica ? NOME_VEREDITO[l.veredito] : 'Não se aplica'}</Texto>
+            </View>
+            <Texto cor={Cores.textoSuave}>{l.classe} · {l.validade}</Texto>
+            {l.notas.map((t) => (
+              <Texto key={t} t="rodape" cor={Cores.textoApagado} maiusculo={false} espacado={false}>{t}</Texto>
+            ))}
+            {l.achados.map((a, i) => (
+              <View key={i} style={styles.respostaLinha}>
+                <View style={[styles.ponto, { backgroundColor: COR_NIVEL[a.nivel] }]} />
+                <Texto cor={COR_NIVEL[a.nivel]} style={{ flex: 1 }}>{NOME_NIVEL[a.nivel]}: {a.texto} ({a.ref})</Texto>
+              </View>
+            ))}
+          </View>
+        );
+      })}
+    </Painel>
   );
 }
 

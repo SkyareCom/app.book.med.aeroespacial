@@ -165,12 +165,36 @@ function porPartes(nucleo: string, l: Lingua, prof: number): string | undefined 
   return algum ? saida.join('') : undefined;
 }
 
+function porLista(nucleo: string, l: Lingua, prof: number): string | undefined {
+  // Lista de achados separada por "; " (justificativa do Exame CMA): cada item é "texto sem ponto (RBAC ref)".
+  if (nucleo.includes('; ')) {
+    // Só vale se todos os itens forem traduzidos; senão a frase segue para os modelos com partes variáveis.
+    const saida = nucleo.split('; ').map((p) => itemDeLista(p, l));
+    if (saida.every((t) => t !== undefined)) return saida.join('; ');
+  }
+  return undefined;
+}
+
+function itemDeLista(p: string, l: Lingua): string | undefined {
+  const m = p.match(/^(.*?)( \((?:RBAC |Anexo |14 CFR )?[\w.()/, -]*\d[\w.()]*\))?([.:]?)$/);
+  const base = m ? m[1] : p;
+  const ref = m?.[2] ?? '';
+  const fim = m?.[3] ?? '';
+  // O texto original do achado termina em ponto: essa forma é a chave do dicionário.
+  // Só a busca direta: um item que precise de partes variáveis não é item de lista, é frase montada.
+  const comPonto = direta(base + '.', l);
+  if (comPonto !== undefined) return comPonto.replace(/\.$/, '') + ref + fim;
+  const direto = direta(base, l);
+  if (direto !== undefined) return direto + ref + fim;
+  return undefined;
+}
+
 function resolver(nucleo: string, l: Lingua, prof = 0): string | undefined {
   if (!nucleo || !LETRAS.test(nucleo)) return nucleo;
   const d = direta(nucleo, l);
   if (d !== undefined) return d;
   if (prof > 3) return undefined;
-  return porModeloVariavel(nucleo, l, prof) ?? porPartes(nucleo, l, prof);
+  return porLista(nucleo, l, prof) ?? porModeloVariavel(nucleo, l, prof) ?? porPartes(nucleo, l, prof);
 }
 
 // Resultados já calculados; zerados quando chega uma tradução automática.
