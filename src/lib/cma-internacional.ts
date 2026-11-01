@@ -32,6 +32,35 @@
 //   operação comercial de passageiros com um só piloto e a partir dos 60 no transporte aéreo comercial. Classe 2,
 //   60 meses; 24 a partir dos 40 e 12 a partir dos 50. Classe 3 (controlador), 48 meses; 24 a partir dos 40 e 12 a
 //   partir dos 50. Comissário não tem avaliação médica no Anexo 1.
+// MEDICAMENTOS (revisão 31/10/2026)
+// - FAA, Guia do AME, Pharmaceuticals: o AME julga primeiro a doença de base, depois a frequência, a duração e os
+//   efeitos do remédio. Do Not Issue/Do Not Fly (DNI_DNF_tables.pdf, atualizado em 10/07/2023): não emitir sem a FAA
+//   (DNI) com anti-hipertensivo de ação central (clonidina, guanabenzo, metildopa), mefloquina, remédios psiquiátricos
+//   (antipsicótico, estabilizador do humor, estimulante, tranquilizante, ansiolítico; antidepressivo só pelo programa
+//   próprio), anticonvulsivante mesmo para outra doença, corticoide acima de 20 mg/dia de prednisona, controlados de
+//   uso contínuo (inclui opioides e tramadol), emagrecedor simpaticomimético e bupropiona com naltrexona,
+//   anticolinérgico de bexiga (oxibutinina, tolterodina, solifenacina), remédio experimental ou aprovado há menos de
+//   12 meses. Do Not Fly (uso rotineiro: o AME adia): antialérgico de 1ª geração, ansiolítico, relaxante muscular,
+//   indutor do sono, remédio com aviso de sonolência. Espera após a última dose: 5 meias-vidas (ou 5 × o maior
+//   intervalo entre doses); difenidramina, 60 h.
+// - Anti-hipertensivos (Pharm_Antihypertensives.pdf): aceitos alfa e betabloqueador, bloqueador de cálcio, IECA, BRA,
+//   inibidor de renina, vasodilatador direto, diurético; inaceitáveis clonidina, guanabenzo, guanfacina, metildopa,
+//   nitratos; 7 dias sem voar ao começar; o AME emite com até 3 remédios.
+// - Anticoagulantes (pharm/anticoag, 27/03/2024): varfarina nova, 6 semanas de observação e 6 INRs (no máximo 1 por
+//   semana); varfarina em uso, relatório com INR ao menos mensal nos últimos 6 meses; anticoagulante direto segue a
+//   doença de base (67.113(b)(c)).
+// - Antidepressivos (Item 47): só os da lista da FAA, sozinhos, estáveis na mesma dose há 3 meses ou mais, sem
+//   psicose nem ideação suicida; emissão especial com avaliação por AME HIMS; o AME não emite.
+// - Indutores do sono (pharm/sleepaids, 07/05/2025): uso diário não é permitido; esperas de 12 a 72 h conforme o remédio.
+// - Disfunção erétil (pharm/ed): sildenafila, vardenafila e avanafila, 8 h; tadalafila sob demanda, 24 h; tadalafila
+//   diária de 2,5 ou 5 mg aceita se não houver efeito em 7 dias. Nitratos não são aceitos.
+// - Isotretinoína (pharm/acne): 2 semanas após o início; relatório sobre visão e humor; restrição "não válido para
+//   voo noturno". Mefloquina (pharm/malaria): desqualifica durante o uso e por 4 semanas após a última dose.
+//   Hidroxicloroquina/cloroquina: relatório de estado (Plaquenil Status Report).
+// ICAO: o requisito geral do Capítulo 6 inclui o efeito ou efeito colateral de qualquer medicamento terapêutico,
+//   diagnóstico ou preventivo, prescrito ou não (texto reproduzido pela CAAT, Tailândia, Medical Assessment Standards,
+//   Appendix General C.d); o titular não exerce as prerrogativas ao perceber diminuição da aptidão (Anexo 1, 1.2.7).
+//   [conferir no texto do Anexo 1.] Sem regra numérica por remédio.
 
 import { num, SISTEMAS, type Achado, type Nivel, type Resultado, type Valores, type Veredito } from '@/lib/cma';
 
@@ -145,7 +174,31 @@ export const REGRAS_INT: Record<string, { faa?: string; icao?: string }> = {
   personalidade: { faa: 'Só o transtorno grave, com atos repetidos, desqualifica (67.107).' },
   alcool: { faa: 'Dependência desqualifica, salvo 2 anos de abstinência aceitos pela FAA; abuso nos últimos 2 anos desqualifica (67.107).' },
   substancia: { faa: 'Dependência desqualifica, salvo 2 anos de abstinência aceitos pela FAA; abuso nos últimos 2 anos desqualifica (67.107).' },
-  antidep: { faa: 'Antidepressivo: julgado pela FAA caso a caso.' },
+  antidep: { faa: 'Só antidepressivo da lista da FAA, sozinho, estável há 3 meses ou mais: emissão especial, com avaliação por AME HIMS.' },
+  antidepMeses: { faa: 'A FAA exige 3 meses ou mais na mesma dose, sem efeitos colaterais.' },
+  usaMed: { faa: 'O AME julga primeiro a doença tratada, depois a frequência, a duração e os efeitos do remédio.', icao: 'O efeito ou efeito colateral de qualquer remédio, prescrito ou não, entra no julgamento da aptidão.' },
+  medEfeito: { faa: 'Remédio com aviso de sonolência: não voar por 5 meias-vidas após a última dose; uso rotineiro, o AME adia.', icao: 'Efeito colateral que comprometa a função é motivo de inaptidão enquanto durar.' },
+  antiHas: { faa: 'Aceitos: alfa e betabloqueador, bloqueador de cálcio, IECA, BRA, diurético e vasodilatador direto; 7 dias sem voar ao começar.' },
+  antiHasQtd: { faa: 'O AME emite com até 3 remédios para pressão; com mais, adia.' },
+  antiHasCentral: { faa: 'Clonidina, guanabenzo, guanfacina e metildopa: não emitir sem a FAA.' },
+  antiHasNovo: { faa: 'Remédio novo para pressão: 7 dias sem voar, para ver os efeitos colaterais.' },
+  betabloq: { faa: 'Aceito pela FAA, inclusive com insulina, sulfonilureia ou glinida.' },
+  anticoag: { faa: 'Anticoagulante direto: segue a doença de base. Varfarina: regras de INR abaixo.' },
+  cumarinico: { faa: 'Varfarina nova: 6 semanas de observação e 6 INRs, no máximo 1 por semana; em uso, INR ao menos mensal nos últimos 6 meses.' },
+  sedativo: { faa: 'Uso diário de indutor do sono não é permitido; ansiolítico contínuo: não emitir sem a FAA.' },
+  psicoOutro: { faa: 'Antipsicótico, estabilizador do humor e estimulante: não emitir sem a FAA.' },
+  anticonvulsivante: { faa: 'Não emitir sem a FAA, mesmo quando usado para outra doença, como enxaqueca.' },
+  opioide: { faa: 'Controlado de uso contínuo, sem previsão de parar: não emitir sem a FAA.' },
+  relaxante: { faa: 'Do Not Fly: uso rotineiro, o AME adia; uso eventual, 5 meias-vidas sem voar.' },
+  antiHist: { faa: 'Do Not Fly: uso rotineiro, o AME adia; difenidramina, 60 horas sem voar.' },
+  corticoideDose: { faa: 'Acima de 20 mg/dia de prednisona ou equivalente: não emitir sem a FAA.' },
+  emagrecedor: { faa: 'Simpaticomimético e bupropiona com naltrexona: não emitir sem a FAA.' },
+  ide5: { faa: 'Sildenafila, vardenafila e avanafila: 8 h sem voar; tadalafila sob demanda: 24 h; tadalafila diária de 2,5 ou 5 mg, aceita sem efeitos em 7 dias.' },
+  isotretinoina: { faa: 'Restrição "não válido para voo noturno"; 2 semanas após o início e relatório sobre visão e humor.' },
+  hidroxicloroquina: { faa: 'Exige relatório de estado com avaliação da retina.' },
+  mefloquina: { faa: 'Desqualifica durante o uso e por 4 semanas após a última dose.' },
+  anticolinergico: { faa: 'Oxibutinina, tolterodina e solifenacina: não emitir sem a FAA.' },
+  experimental: { faa: 'Remédio experimental ou aprovado há menos de 12 meses: não emitir sem a FAA.' },
 };
 
 // ---------------------------------------------------------------- Julgamento
@@ -154,13 +207,14 @@ const achado = (sistema: string, nivel: Nivel, texto: string, ref: string, campo
 const sim = (v: Valores, id: string) => v[id] === true;
 
 // Campos que a FAA ou a ICAO julgam por regra própria; os demais seguem o achado da ANAC pelo critério geral.
-const PROPRIOS_FAA = new Set(['pas', 'pad', 'antiHas', 'insulina', 'adoOral', 'adoDias', 'glicemia', 'glicConfirmada', 'diabetesDieta', 'avOD', 'avOE', 'avBin', 'correcao', 'pertoJ1', 'distanciaJ6', 'cores', 'hiperforia', 'exoforia', 'esoforia', 'od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000', 'fala', 'voz', 'angina', 'iam', 'iamMeses', 'iamHolter', 'iamCintilo', 'iamEco', 'iamLipido', 'iamCate', 'iamPsiq', 'revasc', 'angioplastia', 'revascDias', 'revascHolter', 'revascCintilo', 'revascLipido', 'revascCate', 'trocaValvar', 'marcapasso', 'transplanteCardiaco', 'epilepsia', 'consciencia', 'perdaConsc', 'funcaoNeuro', 'psicose', 'humor', 'personalidade', 'alcool', 'substancia', 'antidep', 'parecerPsiq', 'cintura', 'peso', 'altura']);
-const PROPRIOS_ICAO = new Set(['pas', 'pad', 'avOD', 'avOE', 'avBin', 'cores', 'od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000', 'fala', 'voz']);
+const PROPRIOS_FAA = new Set(['antiHasNovo', 'anticoag', 'cumarinico', 'anticoagSemanas', 'antidepMeses', 'medEfeito', 'sedativo', 'psicoOutro', 'anticonvulsivante', 'opioide', 'relaxante', 'antiHist', 'corticoide', 'corticoideDose', 'emagrecedor', 'mefloquina', 'experimental', 'pas', 'pad', 'antiHas', 'insulina', 'adoOral', 'adoDias', 'glicemia', 'glicConfirmada', 'diabetesDieta', 'avOD', 'avOE', 'avBin', 'correcao', 'pertoJ1', 'distanciaJ6', 'cores', 'hiperforia', 'exoforia', 'esoforia', 'od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000', 'fala', 'voz', 'angina', 'iam', 'iamMeses', 'iamHolter', 'iamCintilo', 'iamEco', 'iamLipido', 'iamCate', 'iamPsiq', 'revasc', 'angioplastia', 'revascDias', 'revascHolter', 'revascCintilo', 'revascLipido', 'revascCate', 'trocaValvar', 'marcapasso', 'transplanteCardiaco', 'epilepsia', 'consciencia', 'perdaConsc', 'funcaoNeuro', 'psicose', 'humor', 'personalidade', 'alcool', 'substancia', 'antidep', 'parecerPsiq', 'cintura', 'peso', 'altura']);
+const PROPRIOS_ICAO = new Set(['medEfeito', 'pas', 'pad', 'avOD', 'avOE', 'avBin', 'cores', 'od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000', 'fala', 'voz']);
 
 function veredito(achados: Achado[], completo: boolean): Veredito {
   if (achados.some((a) => a.nivel === 'inapto')) return 'inapto';
   if (achados.some((a) => a.nivel === 'julgamento' || a.nivel === 'confirmar')) return 'confirmar';
   if (!completo) return 'incompleto';
+  if (achados.some((a) => a.nivel === 'restricao')) return 'restricao';
   return 'apto';
 }
 
@@ -218,7 +272,46 @@ export function avaliarFAA(funcao: string, idade: number | undefined, v: Valores
   if (sim(v, 'humor')) a.push(achado('mental', 'julgamento', 'Transtorno do humor: o bipolar desqualifica; a depressão é julgada pela FAA.', ref('67.107'), ['humor']));
   if (sim(v, 'personalidade')) a.push(achado('mental', 'julgamento', 'Transtorno de personalidade: desqualifica se grave e com atos repetidos.', ref('67.107(a)'), ['personalidade']));
   if (sim(v, 'alcool') || sim(v, 'substancia')) a.push(achado('mental', 'inapto', 'Dependência ou abuso de substância: desqualifica, salvo 2 anos de abstinência aceitos pela FAA (dependência).', ref('67.107(a)–(b)'), ['alcool', 'substancia']));
-  if (sim(v, 'antidep')) a.push(achado('mental', 'julgamento', 'Antidepressivo: julgado pela FAA caso a caso.', ref('67.107(c)'), ['antidep']));
+  if (sim(v, 'antidep')) {
+    const m = num(v, 'antidepMeses');
+    if (m !== undefined && m < 3) a.push(achado('mental', 'inapto', `Antidepressivo estável há ${m} meses: a FAA exige 3 meses ou mais na mesma dose.`, 'Guia do AME, item 47', ['antidep', 'antidepMeses']));
+    else a.push(achado('mental', 'julgamento', 'Antidepressivo: só os da lista da FAA, sozinhos e estáveis há 3 meses, por emissão especial com avaliação por AME HIMS; o AME não emite.', 'Guia do AME, item 47', ['antidep', 'antidepMeses']));
+  }
+
+  // Medicamentos (Guia do AME, Pharmaceuticals e Do Not Issue/Do Not Fly).
+  const DNI = 'Guia do AME, Do Not Issue';
+  const DNF = 'Guia do AME, Do Not Fly';
+  if (sim(v, 'antiHasCentral')) a.push(achado('vitais', 'inapto', 'Anti-hipertensivo de ação central: não emitir sem liberação da FAA.', DNI, ['antiHasCentral']));
+  if (sim(v, 'antiHasNovo')) a.push(achado('vitais', 'julgamento', 'Anti-hipertensivo novo: 7 dias sem voar, para ver os efeitos colaterais.', 'Guia do AME, anti-hipertensivos', ['antiHasNovo']));
+  const qtd = num(v, 'antiHasQtd');
+  if (sim(v, 'antiHas') && qtd !== undefined && qtd > 3) a.push(achado('vitais', 'julgamento', `${qtd} remédios para pressão: o AME emite com até 3; com mais, adia para a FAA.`, 'Guia do AME, anti-hipertensivos', ['antiHasQtd']));
+  if (sim(v, 'anticoag')) {
+    const sem = num(v, 'anticoagSemanas');
+    if (sim(v, 'cumarinico') && sem !== undefined && sem < 6) a.push(achado('cardio', 'inapto', `Varfarina há ${sem} semanas: a FAA exige 6 semanas e 6 INRs, no máximo 1 por semana.`, 'Guia do AME, anticoagulantes', ['anticoag', 'cumarinico', 'anticoagSemanas']));
+    else if (sim(v, 'cumarinico')) a.push(achado('cardio', 'julgamento', 'Varfarina: relatório do médico com INR ao menos mensal nos últimos 6 meses; o julgamento segue a doença de base.', 'Guia do AME, anticoagulantes', ['anticoag', 'cumarinico']));
+    else a.push(achado('cardio', 'julgamento', 'Anticoagulante: julgado pela doença de base.', ref('67.113(b)–(c)'), ['anticoag']));
+  }
+  const dni: [string, string][] = [
+    ['sedativo', 'Calmante ou indutor do sono em uso contínuo'],
+    ['psicoOutro', 'Remédio psiquiátrico (antipsicótico, estabilizador do humor ou estimulante)'],
+    ['anticonvulsivante', 'Anticonvulsivante, mesmo para outra doença'],
+    ['opioide', 'Opioide de uso contínuo'],
+    ['emagrecedor', 'Emagrecedor estimulante'],
+    ['mefloquina', 'Mefloquina nas últimas 4 semanas'],
+    ['anticolinergico', 'Remédio para bexiga hiperativa'],
+    ['experimental', 'Remédio experimental'],
+  ];
+  for (const [id, t] of dni) if (sim(v, id)) a.push(achado('medicamentos', 'inapto', `${t}: não emitir sem liberação da FAA.`, DNI, [id]));
+  const dose = num(v, 'corticoideDose');
+  if (sim(v, 'corticoide') && dose !== undefined && dose > 20) a.push(achado('medicamentos', 'inapto', `Corticoide ${dose} mg/dia: acima de 20 mg de prednisona, não emitir sem liberação da FAA.`, DNI, ['corticoide', 'corticoideDose']));
+  const dnf: [string, string][] = [
+    ['antiHist', 'Antialérgico sedativo'],
+    ['relaxante', 'Relaxante muscular'],
+    ['medEfeito', 'Remédio que dá sono ou lentidão'],
+  ];
+  for (const [id, t] of dnf) if (sim(v, id)) a.push(achado('medicamentos', 'julgamento', `${t} de uso rotineiro: o AME adia; uso eventual, não voar por 5 meias-vidas após a última dose.`, DNF, [id]));
+  if (sim(v, 'isotretinoina')) a.push(achado('medicamentos', 'restricao', 'Isotretinoína: não válido para voo noturno; relatório sobre visão e humor, 2 semanas após o início.', 'Guia do AME, acne', ['isotretinoina']));
+  if (sim(v, 'hidroxicloroquina')) a.push(achado('medicamentos', 'julgamento', 'Hidroxicloroquina ou cloroquina: relatório de estado com avaliação da retina.', 'Guia do AME, Plaquenil', ['hidroxicloroquina']));
 
   a.push(...geraisDaAnac(anac, PROPRIOS_FAA, ref('67.113(b)'), 'Sem regra específica na FAA: vale o critério geral.'));
   const completo = anac.veredito !== 'incompleto';
@@ -251,6 +344,7 @@ export function avaliarICAO(funcao: string, idade: number | undefined, publico: 
   }
   const pas = num(v, 'pas'), pad = num(v, 'pad');
   if (pas !== undefined && pad !== undefined && (pas > 140 || pad > 90)) a.push(achado('vitais', 'julgamento', `PA ${pas}×${pad} mmHg: o Anexo 1 não fixa número; o examinador julga.`, 'Anexo 1, Cap. 6', ['pas', 'pad']));
+  if (sim(v, 'medEfeito')) a.push(achado('medicamentos', 'julgamento', 'Efeito colateral de remédio que pode comprometer a função: inapto enquanto durar, a critério do examinador.', 'Anexo 1, Cap. 6', ['medEfeito']));
 
   a.push(...geraisDaAnac(anac, PROPRIOS_ICAO, 'Anexo 1, Cap. 6', 'O Anexo 1 não tem regra numérica para isso: vale o critério geral de aptidão.'));
   const completo = anac.veredito !== 'incompleto';

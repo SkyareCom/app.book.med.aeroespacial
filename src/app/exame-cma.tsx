@@ -12,7 +12,7 @@ import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { BordaCapa, Cores, Espaco, Fonte, Raio, Tamanho } from '@/constants/theme';
 import { questoesCMA } from '@/data/cma-questoes';
-import { avaliar, CLASSES, EXAMES_1A, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
+import { avaliar, CLASSES, EXAMES_1A, INFLUENCIA, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
 import { avaliarFAA, avaliarICAO, REGRAS_INT, type ResultadoInt } from '@/lib/cma-internacional';
 import { idQuestao } from '@/lib/xp';
 import { useTr } from '@/state/idioma';
@@ -41,6 +41,7 @@ const IMG_CLASSE: Record<ClasseCMA, number> = {
 };
 
 const IMG_SISTEMA: Record<string, number> = {
+  medicamentos: require('@/assets/images/capas/cli-13.jpg'),
   vitais: require('@/assets/images/capas/cli-08.jpg'),
   metabolico: require('@/assets/images/capas/cli-13.jpg'),
   cardio: require('@/assets/images/capas/cli-02.jpg'),
@@ -65,6 +66,7 @@ function idSistema(a: Achado) {
 }
 
 const CURTO: Record<string, string> = {
+  medicamentos: 'Remédios',
   vitais: 'Vitais', metabolico: 'Metabólico', cardio: 'Cardio', pneumo: 'Pulmão', digestivo: 'Digestivo', renal: 'Rins', hemato: 'Sangue',
   neuro: 'Neuro', mental: 'Mental', obst: 'Gestação', osteo: 'Ossos', visao: 'Visão', audicao: 'Audição', orl: 'ORL', odonto: 'Dentes',
 };
@@ -115,7 +117,7 @@ export default function ExameCMA() {
       <CartaoImagem imagem={IMG.hero} altura={190} style={BordaCapa}>
         <Selo texto="Ferramenta do examinador" cor={Cores.dourado} />
         <Texto t="titulo">Da anamnese ao veredito</Texto>
-        <Texto cor={Cores.textoSuave}>Formulário por sistema, uma condição por pergunta, com a regra do RBAC 67 sob cada resposta, o que muda na FAA e na ICAO, e os vereditos no final.</Texto>
+        <Texto cor={Cores.textoSuave}>Formulário por sistema, uma condição por pergunta, com a regra do RBAC 67 sob cada resposta, o que muda na FAA e na ICAO, os remédios em uso e o que eles mudam nos exames, e os vereditos no final.</Texto>
       </CartaoImagem>
 
       <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: '/capitulo/[secao]/[numero]', params: { secao: 'aviacao', numero: '1' } })} style={styles.voo}>
@@ -161,7 +163,7 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
   const [publico, setPublico] = useState(true);
   const [inicial, setInicial] = useState(false);
   const [valores, setValores] = useState<Valores>({});
-  const [abertos, setAbertos] = useState<Record<string, boolean>>({ vitais: true });
+  const [abertos, setAbertos] = useState<Record<string, boolean>>({ medicamentos: true, vitais: true });
   const [resultado, setResultado] = useState<Resultado | null>(null);
   const rolar = useRef(false);
 
@@ -380,6 +382,7 @@ function CampoForm({ campo, valores, definir, achados }: { campo: Campo; valores
       )}
       {campo.ajuda ? <Texto cor={Cores.textoApagado}>{campo.ajuda}</Texto> : null}
       {foraDaFaixa ? <Texto cor={Cores.dourado}>Valor fora do esperado ({campo.faixa![0]} a {campo.faixa![1]}). Confira a medida.</Texto> : null}
+      {INFLUENCIA[campo.id] ? <Texto t="rodape" cor={Cores.textoApagado} maiusculo={false} espacado={false}>Nos exames ({INFLUENCIA[campo.id].exames}): {INFLUENCIA[campo.id].texto}</Texto> : null}
       {REGRAS_INT[campo.id]?.faa ? <Texto t="rodape" cor={Cores.textoApagado} maiusculo={false} espacado={false}>FAA: {REGRAS_INT[campo.id].faa}</Texto> : null}
       {REGRAS_INT[campo.id]?.icao ? <Texto t="rodape" cor={Cores.textoApagado} maiusculo={false} espacado={false}>ICAO: {REGRAS_INT[campo.id].icao}</Texto> : null}
       {achados.map((a, k) => (
@@ -470,6 +473,8 @@ function PainelResultado({ r, classe, valores, internacional, mesesAnac }: { r: 
         </Painel>
       ) : null}
 
+      <RemediosExames valores={valores} />
+
       <Comparacao anac={r} classe={classe} internacional={internacional} mesesAnac={mesesAnac} />
 
       {r.pendentes.length ? (
@@ -486,6 +491,27 @@ function PainelResultado({ r, classe, valores, internacional, mesesAnac }: { r: 
         ))}
       </Painel>
     </View>
+  );
+}
+
+// Remédios em uso e o que cada um muda na leitura dos exames.
+function RemediosExames({ valores }: { valores: Valores }) {
+  const itens = Object.entries(INFLUENCIA).filter(([id]) => valores[id] === true);
+  if (!itens.length) return null;
+  const controlada = valores.medControlada;
+  return (
+    <Painel>
+      <Texto t="rotulo" cor={Cores.destaque}>Remédios e exames</Texto>
+      <Texto cor={Cores.textoSuave}>Exame feito em uso de remédio mostra a doença tratada, não ausente. O julgamento considera a doença, o tratamento e o prognóstico.</Texto>
+      {controlada === false ? <Texto cor={Cores.dourado}>A doença tratada não está controlada com o remédio atual.</Texto> : null}
+      {itens.map(([id, x]) => (
+        <View key={id} style={[styles.marca, { gap: 2 }]}>
+          <Texto t="item">{x.nome}</Texto>
+          <Texto t="rotulo" cor={Cores.textoApagado}>{x.exames}</Texto>
+          <Texto cor={Cores.textoSuave}>{x.texto}</Texto>
+        </View>
+      ))}
+    </Painel>
   );
 }
 

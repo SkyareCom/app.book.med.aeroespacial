@@ -37,6 +37,13 @@ O app inteiro troca de idioma pelos botões PT BR · EN US · ES ES da tela de e
 - O que ainda faltar é traduzido no aparelho, na hora, pela mesma função (src/i18n/automatico.ts), e fica guardado.
   Precisa do segredo ANTHROPIC_API_KEY no Supabase; sem ele, o texto que falta aparece em português.
 
+## EXAME CMA (31/10/2026)
+- Critérios da ANAC (RBAC 67) no formulário, com o que muda na FAA (14 CFR Part 67 e Guia do AME) e na ICAO (Anexo 1,
+  Cap. 6) sob cada pergunta, e os três vereditos lado a lado no resultado (src/lib/cma.ts, src/lib/cma-internacional.ts).
+- Medicamentos em uso: sistema próprio no topo do formulário (motivo, controle da doença, remédio novo, efeitos
+  colaterais e classes de remédio), regras da FAA (Do Not Issue/Do Not Fly) e o que cada remédio muda nos exames
+  (tabela INFLUENCIA em src/lib/cma.ts), mostrado sob a pergunta e no painel "Remédios e exames".
+
 # CONTEXTO DO PROJETO — App-Book de Medicina Aeroespacial
 
 Você vai trabalhar comigo neste projeto. Abaixo está tudo o que já foi decidido. Siga estas definições à risca e não mude a estrutura sem me perguntar.

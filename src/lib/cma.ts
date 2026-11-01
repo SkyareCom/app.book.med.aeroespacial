@@ -17,6 +17,14 @@
 //    67.73 e 67.91 estão reservados.
 //  - Limiares específicos da 2ª, 4ª e 5ª classes (subpartes D a F) não foram consultados no texto integral:
 //    marcados como [confirmar na referência]. A 3ª classe (controle de tráfego aéreo) não é regida pela ANAC.
+//  - Revisão 31/10/2026 (medicamentos, pedido do autor): RBAC 67, texto da Emenda 00 (resgateaeromedico.com.br,
+//    RBAC67EMD00.pdf): 67.71(c) condição não prevista que afete a segurança, a critério; 67.71(d) o candidato informa
+//    o uso de medicamentos; 67.71(f) os exames consideram os recursos terapêuticos e o prognóstico; 67.15(c) diminuição
+//    da aptidão. [conferir a numeração dessas alíneas na Emenda 05.] As regras por remédio já existentes (67.75(c),
+//    67.79(a)(3) e (8), 67.85(f), 67.87(c)) seguem a Emenda 05. Efeitos dos remédios sobre os exames: farmacologia de
+//    bula (betabloqueador e frequência cardíaca; sulfonilureia e hipoglicemia; corticoide e glicemia; inibidor da
+//    PDE5 e visão de cores; hidroxicloroquina e retina; aminoglicosídeo, cisplatina e diurético de alça e audição;
+//    lítio, tireoide e rins) e FAA, Guia do AME, Pharmaceuticals (isotretinoína e visão noturna; mefloquina).
 
 export type ClasseCMA = '1' | '2' | '4' | '5';
 
@@ -99,7 +107,42 @@ const I = (t: string): Regra => ['inapto', t];
 const J = (t: string): Regra => ['julgamento', t];
 const algum = (v: Valores, ...ids: string[]) => ids.some((id) => v[id] === true);
 
+const med = (v: Valores) => algum(v, 'usaMed');
+
 export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; campos: Campo[] }[] = [
+  {
+    id: 'medicamentos',
+    nome: 'Medicamentos em uso',
+    achado: 'Medicamentos',
+    ref: '67.71(d) · 67.71(f)',
+    campos: [
+      sn('usaMed', 'Usa algum remédio de forma contínua?', '67.71(d)', { ajuda: 'Inclua os de venda livre, colírios, hormônios e suplementos. O candidato informa ao examinador os remédios que usa. Pressão, diabetes, anticoagulante e antidepressivo também têm perguntas no sistema da doença.' }),
+      sn('medControlada', 'A doença tratada está controlada com o remédio?', '67.71(f)', { se: med, ajuda: 'Controlada: sem sintomas nem crises e com os exames na meta, na dose atual.', nao: J('Doença em tratamento sem controle: o julgamento considera a doença, o tratamento e o prognóstico.') }),
+      sn('medRecente', 'Começou um remédio ou mudou a dose há pouco, ainda sem saber como reage?', '67.71(f)', { se: med, sim: J('Remédio novo ou dose nova, com efeitos ainda em observação: julgamento do examinador.') }),
+      sn('medEfeito', 'Algum remédio dá sono, tontura, visão turva, lentidão ou queda de pressão?', '67.71(c)', { se: med, sim: J('Efeito colateral que pode afetar a segurança de voo: julgamento do examinador.') }),
+      sn('betabloq', 'Usa betabloqueador (atenolol, propranolol, metoprolol, carvedilol)?', '67.79(a)(8)', { se: med, ajuda: 'Para pressão, arritmia, enxaqueca ou tremor.' }),
+      sn('estatina', 'Usa remédio para colesterol (sinvastatina, atorvastatina, rosuvastatina)?', '67.85(a)', { se: med }),
+      sn('levotiroxina', 'Usa hormônio de tireoide (levotiroxina) ou remédio contra tireoide acelerada?', '67.85(a)', { se: med }),
+      sn('antiplaquetario', 'Usa antiagregante (AAS, clopidogrel)?', '67.79(a)', { se: med }),
+      sn('corticoide', 'Usa corticoide oral contínuo (prednisona, prednisolona, dexametasona)?', '67.85(a)', { se: med, sim: J('Corticoide contínuo: alterações causadas por hormônio são julgadas pelo examinador.') }),
+      nm('corticoideDose', 'Dose diária de corticoide, em equivalente de prednisona', '67.85(a)', 'ex.: 5', 'mg', [0, 200], { se: (v) => algum(v, 'corticoide') }),
+      sn('antiHist', 'Usa antialérgico que dá sono (dexclorfeniramina, difenidramina, prometazina, hidroxizina)?', '67.71(c)', { se: med, sim: J('Antialérgico sedativo em uso contínuo: julgamento do examinador.') }),
+      sn('sedativo', 'Usa calmante ou remédio para dormir (clonazepam, alprazolam, diazepam, zolpidem)?', '67.71(c)', { se: med, sim: J('Calmante ou indutor do sono em uso contínuo: julgamento do examinador, junto com a causa.') }),
+      sn('psicoOutro', 'Usa outro remédio psiquiátrico (antipsicótico, lítio ou outro estabilizador do humor, estimulante para TDAH)?', '67.75(b)', { se: med, sim: J('Remédio psiquiátrico: o julgamento segue o diagnóstico tratado.') }),
+      sn('anticonvulsivante', 'Usa anticonvulsivante, mesmo para enxaqueca, dor ou humor (topiramato, gabapentina, pregabalina, carbamazepina)?', '67.77(a)', { se: med, sim: J('Anticonvulsivante: o julgamento segue a doença tratada e os efeitos sobre a atenção.') }),
+      sn('opioide', 'Usa analgésico opioide de forma contínua (codeína, tramadol, oxicodona, morfina)?', '67.75(b)', { se: med, sim: J('Opioide em uso contínuo: julgamento do examinador, junto com a dor que o exige.') }),
+      sn('relaxante', 'Usa relaxante muscular (ciclobenzaprina, carisoprodol)?', '67.71(c)', { se: med, sim: J('Relaxante muscular em uso contínuo: julgamento do examinador.') }),
+      sn('emagrecedor', 'Usa remédio estimulante para emagrecer (anfepramona, femproporex, fentermina) ou bupropiona com naltrexona?', '67.71(c)', { se: med, sim: J('Emagrecedor estimulante: julgamento do examinador.') }),
+      sn('ide5', 'Usa remédio para disfunção erétil (sildenafila, tadalafila, vardenafila)?', '67.71(f)', { se: med }),
+      sn('isotretinoina', 'Usa isotretinoína (para acne)?', '67.71(f)', { se: med }),
+      sn('hidroxicloroquina', 'Usa hidroxicloroquina ou cloroquina?', '67.99(c)(9)', { se: med }),
+      sn('mefloquina', 'Usou mefloquina para malária nas últimas 4 semanas?', '67.71(c)', { se: med, sim: J('Mefloquina: julgamento do examinador, pelos efeitos neurológicos e psiquiátricos.') }),
+      sn('anticolinergico', 'Usa remédio para bexiga hiperativa (oxibutinina, tolterodina, solifenacina)?', '67.71(f)', { se: med }),
+      sn('colirio', 'Usa colírio de forma contínua (glaucoma, dilatar ou contrair a pupila)?', '67.99(c)(9)', { se: med }),
+      sn('ototoxico', 'Usa ou usou remédio que pode lesar a audição (aminoglicosídeo, cisplatina, diurético de alça em dose alta)?', '67.101', { se: med }),
+      sn('experimental', 'Algum remédio é experimental, de estudo clínico?', '67.71(f)', { se: med, sim: J('Remédio experimental: julgamento do examinador, sem dados de segurança suficientes.') }),
+    ],
+  },
   {
     id: 'vitais',
     nome: 'Sinais vitais e medidas',
@@ -110,6 +153,9 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
       nm('pas', 'Pressão sistólica', '67.79(a)(8)', 'ex.: 120', 'mmHg', [60, 260], { ajuda: 'Mantida acima de 140×90 mmHg: não apto.' }),
       nm('pad', 'Pressão diastólica', '67.79(a)(8)', 'ex.: 80', 'mmHg', [30, 160]),
       sn('antiHas', 'Usa anti-hipertensivo?', '67.79(a)(8)', { sim: J('Anti-hipertensivo: apto a critério do examinador, com a pressão controlada e sem efeito sobre o voo.') }),
+      nm('antiHasQtd', 'Quantos remédios diferentes para pressão usa?', '67.79(a)(8)', 'ex.: 1', 'remédios', [1, 8], { se: (v) => algum(v, 'antiHas') }),
+      sn('antiHasCentral', 'Algum é de ação central (clonidina, metildopa, guanfacina)?', '67.79(a)(8)', { se: (v) => algum(v, 'antiHas') }),
+      sn('antiHasNovo', 'Começou ou trocou o remédio para pressão há menos de 7 dias?', '67.79(a)(8)', { se: (v) => algum(v, 'antiHas'), sim: J('Anti-hipertensivo começado há menos de 7 dias: efeitos ainda em observação.') }),
       nm('peso', 'Peso', '67.85(a)', 'ex.: 78', 'kg', [35, 250]),
       nm('altura', 'Altura', '67.85(a)', 'ex.: 175', 'cm', [130, 220]),
       nm('cintura', 'Circunferência da cintura', '67.79(b)(1)', 'ex.: 92', 'cm', [50, 180], { ajuda: 'Após infarto: até 102 cm nos homens e 88 cm nas mulheres.' }),
@@ -128,6 +174,8 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
       sn('insulina', 'Usa insulina?', '67.85(b)', { sim: I('Diabetes insulinodependente.') }),
       sn('adoOral', 'Usa antidiabético oral?', '67.85(f)'),
       nm('adoDias', 'Dias de glicemia entre 70 e 139 mg/dl com o antidiabético oral', '67.85(f)', 'ex.: 60', 'dias', [0, 3650], { se: (v) => algum(v, 'adoOral') }),
+      sn('sulfonilureia', 'O antidiabético é sulfonilureia ou glinida (glibenclamida, gliclazida, glimepirida, repaglinida)?', '67.85(f)', { se: (v) => algum(v, 'adoOral') }),
+      sn('hipoMed', 'Teve glicemia abaixo de 70 mg/dl com o remédio no último ano?', '67.85(f)', { se: (v) => algum(v, 'insulina', 'adoOral'), sim: J('Hipoglicemia com o remédio: o 67.85(f) pede glicemia entre 70 e 139 mg/dl no acompanhamento.') }),
       sn('diabetesDieta', 'Tem diabetes controlado só com dieta?', '67.85(c)', { se: (v) => !algum(v, 'insulina', 'adoOral'), sim: J('Diabetes controlado só com dieta: apto a critério do examinador.') }),
       sn('hipoReativa', 'Tem hipoglicemia reativa?', '67.85(g)', { sim: I('Hipoglicemia reativa.') }),
       sn('hipoDificil', 'Tem hipoglicemia de difícil controle?', '67.85(g)', { sim: I('Hipoglicemia de difícil controle.') }),
@@ -244,6 +292,7 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
     ref: '67.87',
     campos: [
       sn('cumarinico', 'O anticoagulante é cumarínico (como a varfarina)?', '67.87(c)', { se: (v) => algum(v, 'anticoag'), sim: I('Anticoagulação oral cumarínica.') }),
+      nm('anticoagSemanas', 'Semanas desde o início do anticoagulante', '67.87(c)', 'ex.: 10', 'semanas', [0, 2000], { se: (v) => algum(v, 'anticoag') }),
       sn('trombofilia', 'Tem trombofilia (sangue que coagula demais)?', '67.87(c)', { sim: I('Hipercoagulabilidade.') }),
       sn('hemorragica', 'Tem doença hemorrágica?', '67.87(c)', { sim: I('Transtorno hemorrágico.') }),
       sn('anemia', 'Tem anemia?', '67.87(a)', { sim: J('Anemia: não apto, salvo investigação e juízo da ANAC de baixa probabilidade de afetar o voo.') }),
@@ -303,6 +352,7 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
       sn('substancia', 'Tem transtorno por uso de outra substância psicoativa?', '67.75(b)', { sim: I('Transtorno por uso de substância psicoativa.') }),
       sn('antidep', 'Trata depressão com antidepressivo?', '67.75(c)'),
       sn('parecerPsiq', 'O parecer psiquiátrico foi favorável?', '67.75(c)', { se: (v) => algum(v, 'antidep') }),
+      nm('antidepMeses', 'Meses estável, na mesma dose do antidepressivo', '67.75(c)', 'ex.: 6', 'meses', [0, 600], { se: (v) => algum(v, 'antidep') }),
       sn('avalPsico', 'A avaliação psicológica foi satisfatória?', '67.75(e)–(h)', { ajuda: 'Testes de personalidade, atenção, memória e raciocínio; no inicial, após acidente ou incidente grave e a cada 5 anos.', nao: I('Avaliação psicológica insatisfatória.') }),
     ],
   },
@@ -420,6 +470,37 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
     ],
   },
 ];
+
+// O que cada remédio muda nos exames: mostrado abaixo da pergunta e no resultado.
+// Controlada não quer dizer curada: o exame em uso do remédio mostra a doença tratada.
+export const INFLUENCIA: Record<string, { nome: string; exames: string; texto: string }> = {
+  antiHas: { nome: 'Anti-hipertensivo', exames: 'Pressão arterial; sódio, potássio e glicemia', texto: 'A pressão medida mostra a hipertensão tratada, não ausente. Diurético pode alterar sódio, potássio e glicemia.' },
+  antiHasCentral: { nome: 'Anti-hipertensivo de ação central', exames: 'Pressão arterial', texto: 'Parar de repente pode subir muito a pressão (efeito rebote); a troca é feita pelo médico que trata.' },
+  betabloq: { nome: 'Betabloqueador', exames: 'ECG, Holter e teste ergométrico', texto: 'Baixa a frequência cardíaca em repouso e no esforço: o teste ergométrico pode não atingir a frequência-alvo. Anote o remédio no pedido.' },
+  insulina: { nome: 'Insulina', exames: 'Glicemia e hemoglobina glicada', texto: 'Mostram o controle com o remédio. A glicemia de jejum isolada não mostra as hipoglicemias entre as medidas.' },
+  adoOral: { nome: 'Antidiabético oral', exames: 'Glicemia e hemoglobina glicada', texto: 'O RBAC julga a glicemia entre 70 e 139 mg/dl durante 60 dias de uso (67.85(f)).' },
+  sulfonilureia: { nome: 'Sulfonilureia ou glinida', exames: 'Glicemia', texto: 'Estimulam a liberação de insulina e podem causar hipoglicemia; a metformina sozinha raramente causa.' },
+  estatina: { nome: 'Remédio para colesterol', exames: 'Lipidograma; enzimas do fígado e dos músculos (TGO, TGP, CK)', texto: 'O lipidograma mostra o colesterol tratado. Após infarto ou revascularização, o RBAC pede lipidograma satisfatório (67.79(b)).' },
+  levotiroxina: { nome: 'Remédio de tireoide', exames: 'TSH e T4 livre; ECG', texto: 'TSH e T4 livre mostram o controle com a dose atual. Dose acima do necessário acelera o coração.' },
+  anticoag: { nome: 'Anticoagulante', exames: 'Coagulograma (TP e INR) e hemograma', texto: 'O INR alto reflete o cumarínico; os anticoagulantes diretos não são acompanhados pelo INR. O risco é de sangramento em caso de trauma.' },
+  antiplaquetario: { nome: 'Antiagregante', exames: 'Coagulograma', texto: 'Não altera o INR. Costuma indicar doença vascular de base, que é o que se julga.' },
+  antidep: { nome: 'Antidepressivo', exames: 'Avaliação psicológica e parecer psiquiátrico', texto: 'A avaliação é feita em uso do remédio; o RBAC exige o parecer do psiquiatra (67.75(c)).' },
+  sedativo: { nome: 'Calmante ou indutor do sono', exames: 'Avaliação psicológica', texto: 'Atenção, memória e tempo de reação podem sair piores sob efeito do remédio.' },
+  psicoOutro: { nome: 'Outro remédio psiquiátrico', exames: 'Avaliação psicológica; lítio no sangue, tireoide e rins', texto: 'Quem usa lítio acompanha o nível no sangue, a tireoide e os rins. Sonolência e lentidão podem aparecer nos testes.' },
+  anticonvulsivante: { nome: 'Anticonvulsivante', exames: 'EEG e avaliação psicológica', texto: 'O EEG e a avaliação neurológica feitos em uso do remédio mostram a doença tratada. Sonolência e lentidão podem aparecer nos testes.' },
+  opioide: { nome: 'Opioide', exames: 'Exame toxicológico e avaliação psicológica', texto: 'O exame toxicológico pode dar positivo para opioide. Atenção e tempo de reação podem piorar.' },
+  relaxante: { nome: 'Relaxante muscular', exames: 'Avaliação psicológica', texto: 'Dá sono e reduz a coordenação.' },
+  antiHist: { nome: 'Antialérgico sedativo', exames: 'Avaliação psicológica', texto: 'Dá sono e reduz o tempo de reação, às vezes sem que a pessoa perceba.' },
+  corticoide: { nome: 'Corticoide', exames: 'Glicemia e pressão arterial', texto: 'Pode subir a glicemia e a pressão e esconder sinais de inflamação ou infecção.' },
+  emagrecedor: { nome: 'Emagrecedor estimulante', exames: 'Pressão arterial e ECG', texto: 'Acelera o coração e pode subir a pressão.' },
+  ide5: { nome: 'Remédio para disfunção erétil', exames: 'Visão de cores e pressão arterial', texto: 'Pode alterar por algumas horas a percepção de cores (tom azulado) e baixar a pressão; com nitrato, a queda pode ser grave.' },
+  isotretinoina: { nome: 'Isotretinoína', exames: 'Visão noturna, avaliação psicológica, lipidograma e enzimas do fígado', texto: 'Pode reduzir a visão noturna, mesmo depois de parar, alterar o humor e subir os triglicerídeos.' },
+  hidroxicloroquina: { nome: 'Hidroxicloroquina ou cloroquina', exames: 'Fundo de olho, campo visual e ECG', texto: 'O uso prolongado pode lesar a retina e alargar o intervalo QT no ECG.' },
+  mefloquina: { nome: 'Mefloquina', exames: 'Avaliação psicológica e equilíbrio', texto: 'Pode causar tontura, zumbido, ansiedade e alterações psiquiátricas, inclusive depois de parar.' },
+  anticolinergico: { nome: 'Remédio para bexiga hiperativa', exames: 'Acuidade visual e avaliação psicológica', texto: 'Pode turvar a visão de perto e causar sono e confusão.' },
+  colirio: { nome: 'Colírio contínuo', exames: 'Acuidade visual, pupila e pressão ocular', texto: 'O colírio de glaucoma mostra a pressão ocular tratada; o que contrai a pupila piora a visão no escuro; o que dilata turva a visão por horas.' },
+  ototoxico: { nome: 'Remédio que pode lesar a audição', exames: 'Audiometria', texto: 'A audiometria mostra o efeito acumulado; a lesão costuma começar nas frequências agudas.' },
+};
 
 // Campos numéricos que precisam estar preenchidos para fechar o julgamento.
 const OBRIGATORIOS = ['pas', 'pad', 'peso', 'altura', 'glicemia', 'avOD', 'avOE', 'avBin', 'od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000'];
