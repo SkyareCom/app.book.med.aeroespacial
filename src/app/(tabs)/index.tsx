@@ -39,7 +39,7 @@ export default function Home() {
 
   const destaques: ItemDestaque[] = [
     { id: 'voo', imagem: ArteEspecialVoo, rotulo: 'Missão especial', titulo: 'O Voo e a Medicina', sinopse: 'Dos balões de 1783 ao turismo espacial: como cada conquista do céu revelou um novo limite do corpo humano.', meta: '5 eras · 20 eventos', botao: 'Decolar', onPress: () => router.push('/historia') },
-    { id: 'hipoxia', imagem: CapaEpisodio['sistemas-1'], rotulo: 'Missão 2 · Voo 1', titulo: 'Respiração e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores de visão e da curva do oxigênio.', meta: '25 min · 4 interativos', botao: 'Decolar', onPress: () => router.push(rotaEpisodio('sistemas', 1)) },
+    { id: 'hipoxia', imagem: CapaEpisodio['sistemas-1'], rotulo: 'Missão 2 · Voo 1', titulo: 'Pulmões, oxigênio e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores de visão e da curva do oxigênio.', meta: '25 min · 4 interativos', botao: 'Decolar', onPress: () => router.push(rotaEpisodio('sistemas', 1)) },
     { id: 'espaco', imagem: ArteTemporada.espaco, rotulo: 'Missão 4', titulo: 'Espaço', sinopse: obterSecao('espaco')!.sinopse, meta: '8 voos', botao: 'Ver missão', onPress: () => router.push('/espaco') },
     { id: 'lab', imagem: CapaEpisodio['conceitos-7'], rotulo: 'Laboratório aeroespacial', titulo: 'Sinta as forças G', sinopse: 'Puxe G, suba sem oxigênio, veja o gás se expandir e calcule a radiação de um ano de voos.', meta: '11 interativos', botao: 'Abrir', onPress: () => router.push('/laboratorio') },
   ];

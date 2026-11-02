@@ -1,4 +1,6 @@
-// Missão 2 (Sistemas) · Voo 1 — Respiração e hipóxia (o número do voo é definido em secoes.ts).
+// Missão 2 (Sistemas) · Voo 1 — Pulmões, oxigênio e hipóxia (o número do voo é definido em secoes.ts).
+// 02/11/2026: título trocado de "Respiração e hipóxia" para "Pulmões, oxigênio e hipóxia", com autorização do autor
+//   (padrão dos títulos da missão Sistemas); conteúdo intacto; hash refeito.
 // Conteúdo reorganizado em narrativa técnica contínua, com conceitos encadeados e destaques.
 // Valores de tempo de consciência útil: FAA Advisory Circular 61-107 (tabela de TUC).
 // Padrão de mídias (27/10/2026): recursos posicionados por parágrafo; tabelas-resumo montadas a partir do próprio texto;
@@ -10,7 +12,7 @@ import type { Capitulo } from '../tipos';
 
 export const hipoxia: Capitulo = {
   numero: 3,
-  titulo: 'Respiração e hipóxia',
+  titulo: 'Pulmões, oxigênio e hipóxia',
   tempoLeituraMin: 25,
   topicos: [
     {

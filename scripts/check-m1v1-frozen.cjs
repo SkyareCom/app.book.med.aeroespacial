@@ -99,7 +99,8 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-resgate-frio.jpg': '99def23e990d2d6b',
   'assets/images/topicos/m1v4-sinal-espelho.jpg': '6bf5f5eb96ab34e7',
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
-  'src/data/capitulos/hipoxia.ts': 'a6ef9c03332ec39f',
+  // 02/11/2026: título do M2V1 trocado para "Pulmões, oxigênio e hipóxia", autorizado pelo autor; hash refeito.
+  'src/data/capitulos/hipoxia.ts': '934b1226f4342217',
   'src/components/midia/simulador-o2.tsx': 'af94937e7e23183d',
   'src/components/midia/grafico-tuc.tsx': 'ce3774a3c28f2956',
   'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',

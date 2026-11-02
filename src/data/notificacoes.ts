@@ -65,7 +65,7 @@ export const notificacoes: Notificacao[] = [
   {
     id: 'hipoxia',
     rotulo: 'Voo disponível',
-    titulo: 'Respiração e hipóxia',
+    titulo: 'Pulmões, oxigênio e hipóxia',
     texto: 'O voo 1 da Missão 2 está completo, com 4 interativos e o teste no final.',
     destino: '/capitulo/sistemas/1',
   },

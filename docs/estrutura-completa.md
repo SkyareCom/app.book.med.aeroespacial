@@ -22,8 +22,8 @@ Títulos dos voos 2 a 13 revisados para nomear os órgãos e sistemas: Coração
 dentes; Olhos e visão; Labirinto e orientação espacial; Cérebro e sistema nervoso; Saúde mental e comportamento; Sono,
 relógio biológico e fadiga; Hormônios e metabolismo; Estômago, intestino e fígado; Sangue, câncer e infecções; Coluna, ossos e
 músculos; Saúde da mulher. Rins saíram do digestivo e envelhecimento saiu da saúde da mulher: viraram M2V14 (Rins e vias
-urinárias) e M2V15 (Envelhecimento), no fim da missão, para não mudar M2V12 e M2V13, citados nos voos congelados. O M2V1
-(Respiração e hipóxia) mantém o título por estar congelado. Total do app: 46 voos.
+urinárias) e M2V15 (O corpo que envelhece), no fim da missão, para não mudar M2V12 e M2V13, citados nos voos congelados.
+O M2V1 passou de "Respiração e hipóxia" para "Pulmões, oxigênio e hipóxia", com autorização do autor. Total do app: 46 voos.
 
 ## FONTES — padrão ANAC e FAA (29/10/2026)
 Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
