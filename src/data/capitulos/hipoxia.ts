@@ -45,7 +45,7 @@
 // - FAA, Guia do AME, Pharmaceuticals/sleep aids (registro em src/lib/cma-internacional.ts): uso diário de indutor do
 //   sono não permitido.
 // - MEDIF: formulário médico das companhias aéreas (ex.: SWISS, lx_medif-form_en.pdf).
-// 02/11/2026: 8 fotos dos tópicos VI a IX (topicos/m2v1-6..9-*.jpg, pessoas fictícias), no tamanho original enviado;
+// 02/11/2026: 8 fotos dos tópicos VI a IX (topicos/m2v1-6..9-*.jpg, pessoas fictícias), no padrão do app (1.600 × 893 px);
 //   borrados o número da poltrona e o rótulo do batom (bombinha), os painéis e a dragona (sonolência) e a marca do
 //   monitor (teste). O raio X não mostra um pneumotórax típico: a legenda não afirma o achado. Voo congelado de novo.
 

@@ -101,18 +101,18 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
   // 02/11/2026: título do M2V1 trocado para "Pulmões, oxigênio e hipóxia", autorizado pelo autor.
   // 02/11/2026: M2V1 adaptado ao modelo de Sistemas (docs/modelo-sistemas.md), com autorização do autor, e congelado de
-  //   novo com as 8 fotos dos tópicos VI a IX, o bloco do formulário de liberação e os interativos novos.
-  'src/data/capitulos/hipoxia.ts': '9b25ea4f9e3cf160',
+  //   novo com as 8 fotos dos tópicos VI a IX (no padrão de 1.600 px, pedido do autor), o bloco do formulário de liberação e os interativos novos.
+  'src/data/capitulos/hipoxia.ts': '0f9efa00f83f5718',
   'src/data/liberacao/respiratorio.ts': 'c713ec1867370877',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
-  'assets/images/topicos/m2v1-6-bombinha.jpg': '735ac4c1e73bdeb7',
-  'assets/images/topicos/m2v1-6-espirometria.jpg': 'c286362cbd3a6d7e',
-  'assets/images/topicos/m2v1-7-cpap-aviao.jpg': '70c44a0fdcbe5b52',
-  'assets/images/topicos/m2v1-7-sonolencia.jpg': '344f3dd40cae2e5a',
-  'assets/images/topicos/m2v1-8-consulta.jpg': '6343e89b0c240eee',
-  'assets/images/topicos/m2v1-8-raio-x.jpg': '4f04a7cf1e407626',
-  'assets/images/topicos/m2v1-9-concentrador.jpg': '7a54f0acc1547732',
-  'assets/images/topicos/m2v1-9-teste.jpg': '50fb60f098816a8b',
+  'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
+  'assets/images/topicos/m2v1-6-espirometria.jpg': '6d40f50ca00797ad',
+  'assets/images/topicos/m2v1-7-cpap-aviao.jpg': '9aec7eb88be3509e',
+  'assets/images/topicos/m2v1-7-sonolencia.jpg': '6e19a0f6560ff36b',
+  'assets/images/topicos/m2v1-8-consulta.jpg': 'ae06463e18e2f0f2',
+  'assets/images/topicos/m2v1-8-raio-x.jpg': 'ca5aa5e0d5f2bf18',
+  'assets/images/topicos/m2v1-9-concentrador.jpg': '031d41bfedebcf01',
+  'assets/images/topicos/m2v1-9-teste.jpg': '72c7bb7c7c74deb8',
   'src/components/midia/simulador-o2.tsx': 'af94937e7e23183d',
   'src/components/midia/grafico-tuc.tsx': 'ce3774a3c28f2956',
   'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',
