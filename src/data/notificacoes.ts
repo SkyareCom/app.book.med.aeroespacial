@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 9;
+export const VERSAO_NOTIFICACOES = 10;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'adaptacao',
+    rotulo: 'Missão especial',
+    titulo: 'Adaptação à altitude',
+    texto: 'Como respiração, coração, vasos, sangue e rins respondem à falta de oxigênio, dos primeiros segundos aos meses, e quando a adaptação falha.',
+    destino: '/adaptacao',
+  },
   {
     id: 'liberacao-voo',
     rotulo: 'Novidade',

@@ -67,7 +67,9 @@ export type TipoMidia =
   | 'controle-asma'
   | 'baterias-cpap'
   | 'prazo-voo-pulmao'
-  | 'teste-hipoxia';
+  | 'teste-hipoxia'
+  | 'linha-adaptacao'
+  | 'subida-segura';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

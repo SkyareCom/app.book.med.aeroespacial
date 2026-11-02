@@ -19,7 +19,8 @@ import { useTr } from '@/state/idioma';
 import { CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme';
 import { chaveCapitulo, interativosDe, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
-import type { Recurso, Topico } from '@/data/tipos';
+import type { Topico } from '@/data/tipos';
+import { TextoCorrente } from '@/components/texto-corrente';
 import { useProgresso } from '@/state/progresso';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
 
@@ -239,67 +240,6 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
         </Animated.View>
       ) : null}
     </Painel>
-  );
-}
-
-// Prosa contínua: cada parágrafo pode destacar uma nuance entre **asteriscos duplos**.
-// Figuras, tabelas e simuladores entram após o parágrafo indicado, sem divisões por nível de leitura.
-function TextoCorrente({ texto, recursos }: { texto: string; recursos?: Recurso[] }) {
-  const tr = useTr();
-  // Cada parágrafo é traduzido inteiro, antes de separar os destaques.
-  const paragrafos = texto.split(/\n\s*\n/).map((p) => tr(p.trim())).filter(Boolean);
-  return (
-    <View style={{ gap: Espaco.md }}>
-      {paragrafos.map((p, i) => (
-        <View key={i} style={{ gap: Espaco.md }}>
-          <Texto cor={Cores.textoSuave} semTraducao>
-            {p.split(/(\*\*[^*]+\*\*)/g).map((parte, j) =>
-              parte.startsWith('**') && parte.endsWith('**')
-                ? <Texto key={j} cor={Cores.destaque} semTraducao>{parte.slice(2, -2)}</Texto>
-                : parte,
-            )}
-          </Texto>
-          <Recursos lista={recursos?.filter((r) => r.paragrafo === i + 1)} />
-        </View>
-      ))}
-      <Recursos lista={recursos?.filter((r) => !r.paragrafo)} />
-    </View>
-  );
-}
-
-function Recursos({ lista }: { lista?: Recurso[] }) {
-  const itens = lista ?? [];
-  return (
-    <>
-      {itens.map((r, i) =>
-        r.midia ? (
-          <Midia key={`${r.midia}-${i}`} tipo={r.midia} />
-        ) : r.video ? (
-          <VideoLaco key={`vid-${i}`} fonte={r.video.fonte} legenda={r.video.legenda} proporcao={r.video.proporcao} />
-        ) : r.tabela ? (
-          <MolduraMidia key={`tab-${i}`} tipo="Tabela" titulo={r.tabela.titulo}>
-            {r.tabela.linhas.map((l) => (
-              <View key={l[0]} style={styles.linhaTabela}>
-                <Texto t="item" cor={Cores.destaque}>{l[0]}</Texto>
-                {l.slice(1).map((v, k) => (
-                  <View key={k} style={{ gap: 1 }}>
-                    <Texto t="rotulo" cor={Cores.textoApagado}>{r.tabela!.colunas[k + 1]}</Texto>
-                    <Texto cor={Cores.textoSuave}>{v}</Texto>
-                  </View>
-                ))}
-              </View>
-            ))}
-          </MolduraMidia>
-        ) : r.figura?.marcadores ? (
-          <FiguraMarcada key={`fig-${i}`} imagem={r.figura.imagem} legenda={r.figura.legenda} proporcao={r.figura.proporcao} marcadores={r.figura.marcadores} />
-        ) : r.figura ? (
-          <View key={`fig-${i}`} style={styles.figura}>
-            <Image source={r.figura.imagem} style={[styles.figuraImagem, { aspectRatio: r.figura.proporcao ?? 16 / 9 }]} contentFit="cover" accessibilityLabel={r.figura.legenda} />
-            <Texto cor={Cores.textoApagado}>{r.figura.legenda}</Texto>
-          </View>
-        ) : null,
-      )}
-    </>
   );
 }
 

@@ -60,3 +60,5 @@ export const ArteTemporada: Record<SecaoId, number> = {
 };
 
 export const ArteEspecialVoo = require('@/assets/images/capas/especial-voo.jpg');
+// Card especial Adaptação à altitude: arte provisória (capa do M1V1) até a arte própria.
+export const ArteAdaptacao = require('@/assets/images/capas/fis-01.jpg');

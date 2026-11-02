@@ -11,10 +11,11 @@ import { Selo } from '@/components/selo';
 import { CartaoEpisodio, Destaques, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
 import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
-import { ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
+import { ArteAdaptacao, ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Imagens } from '@/constants/imagens';
 import { BordaCapa, Cores, Espaco } from '@/constants/theme';
 import { eras } from '@/data/historia';
+import { fasesAdaptacao } from '@/data/adaptacao';
 import { chaveCapitulo, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
 import type { TipoMidia } from '@/data/tipos';
 import { useProgresso } from '@/state/progresso';
@@ -117,6 +118,21 @@ export default function Home() {
               </View>
             </View>
             <Texto t="item" numberOfLines={2}>{e.titulo}</Texto>
+          </Pressable>
+        ))}
+      </Fileira>
+
+      <Fileira rotulo="Missão especial" titulo="Adaptação à altitude" acao="Abrir" onAcao={() => router.push('/adaptacao')}>
+        {fasesAdaptacao.map((f, i) => (
+          <Pressable key={f.id} accessibilityRole="button" onPress={() => router.push('/adaptacao')} style={{ width: 200, gap: 6 }}>
+            <View style={styles.capaEra}>
+              <Image source={ArteAdaptacao} style={[StyleSheet.absoluteFill, { transform: [{ scale: 1.2 + i * 0.12 }] }]} contentFit="cover" />
+              <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']} style={StyleSheet.absoluteFill} />
+              <View style={{ position: 'absolute', left: 10, bottom: 8 }}>
+                <Texto t="rotulo" cor={Cores.dourado}>{f.periodo}</Texto>
+              </View>
+            </View>
+            <Texto t="item" numberOfLines={2}>{f.titulo}</Texto>
           </Pressable>
         ))}
       </Fileira>
