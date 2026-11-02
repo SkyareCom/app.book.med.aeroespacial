@@ -16,7 +16,8 @@ import { EnvelopeEjecao, LimitesImpacto, PosicaoImpacto, RiscoCapacete, TesteAss
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
 import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-graficos';
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -30,6 +31,15 @@ const CASOS_HIPOXIA = [
   { texto: 'Uma comissária com anemia importante sente falta de ar em voo.', resposta: 'Hipêmica', explicacao: 'Com menos hemoglobina, o sangue transporta menos oxigênio.' },
   { texto: 'Num incêndio a bordo, a fumaça contém cianeto.', resposta: 'Histotóxica', explicacao: 'O cianeto impede as células de usar o oxigênio que chega até elas.' },
   { texto: 'Após muito álcool na noite anterior, o piloto tolera menos a altitude.', resposta: 'Histotóxica', explicacao: 'O álcool prejudica o uso do oxigênio pelas células.' },
+];
+
+// M2V2 · tipos de fibrilação atrial (ICAO, Doc 8984, Part III, 1.5.11) e flutter (1.5.21).
+const CASOS_ARRITMIA = [
+  { texto: 'A crise começou de madrugada e parou sozinha em 6 horas. Já aconteceu três vezes este ano.', resposta: 'Paroxística', explicacao: 'Mais de um episódio que termina sozinho, em geral em menos de 24 horas.' },
+  { texto: 'O ritmo irregular dura 10 dias e só voltou ao normal com a cardioversão.', resposta: 'Persistente', explicacao: 'Dura mais de 7 dias e só volta ao ritmo normal com tratamento.' },
+  { texto: 'Há 2 anos o coração está irregular, e o cardiologista decidiu só controlar a frequência.', resposta: 'Permanente', explicacao: 'O ritmo normal não volta ou não se tenta mais trazê-lo de volta; dura mais de 12 meses.' },
+  { texto: 'O ECG mostra o átrio batendo a cerca de 300 por minuto, e o ventrículo a 150.', resposta: 'Flutter', explicacao: 'No flutter, o átrio gira num circuito a cerca de 300 por minuto; com bloqueio 2:1, o ventrículo fica perto de 150.' },
+  { texto: 'Uma única crise depois de vômitos intensos, sem repetir.', resposta: 'Paroxística', explicacao: 'Episódio com causa definida, que termina sozinho; a ICAO o trata como apresentação própria da fibrilação atrial.' },
 ];
 
 export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
@@ -96,6 +106,14 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'teste-hipoxia': () => <TesteHipoxia />,
   'linha-adaptacao': () => <LinhaAdaptacao />,
   'subida-segura': () => <SubidaSegura />,
+  'animacao-coracao': () => <AnimacaoCoracao />,
+  'animacao-valvula': () => <AnimacaoValvula />,
+  'pressao-normas': () => <PressaoNormas />,
+  'prazo-coracao': () => <PrazoCoracao />,
+  'classificar-arritmia': () => <AtividadeClassificar titulo="Que tipo de arritmia é esta?" categorias={['Paroxística', 'Persistente', 'Permanente', 'Flutter']} casos={CASOS_ARRITMIA} />,
+  'prolapso-mitral': () => <ProlapsoMitral />,
+  'nyha-oxigenio': () => <NyhaOxigenio />,
+  'risco-trombose': () => <RiscoTrombose />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -162,6 +180,14 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'teste-hipoxia': 'Teste de hipóxia',
   'linha-adaptacao': 'Corpo se adaptando',
   'subida-segura': 'Subida segura',
+  'animacao-coracao': 'O coração na cabine',
+  'animacao-valvula': 'A válvula que aperta',
+  'pressao-normas': 'Pressão em três normas',
+  'prazo-coracao': 'Prazos do coração',
+  'classificar-arritmia': 'Tipos de arritmia',
+  'prolapso-mitral': 'Prolapso mitral',
+  'nyha-oxigenio': 'NYHA e oxigênio',
+  'risco-trombose': 'Trombose no voo',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {

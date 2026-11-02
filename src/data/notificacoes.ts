@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 11;
+export const VERSAO_NOTIFICACOES = 12;
 
 export interface Notificacao {
   id: string;
@@ -14,6 +14,13 @@ export interface Notificacao {
 
 export const notificacoes: Notificacao[] = [
   {
+    id: 'coracao',
+    rotulo: 'Voo disponível',
+    titulo: 'Coração e vasos sanguíneos',
+    texto: 'O voo 2 da Missão Sistemas chegou: pressão alta, infarto e stent, arritmias e marca-passo, válvulas, insuficiência cardíaca e trombose, com os prazos para passageiro e tripulante. O formulário de liberação ganhou o bloco do coração.',
+    destino: '/capitulo/sistemas/2',
+  },
+  {
     id: 'adaptacao',
     rotulo: 'Missão especial',
     titulo: 'Adaptação à altitude',
@@ -24,7 +31,7 @@ export const notificacoes: Notificacao[] = [
     id: 'liberacao-voo',
     rotulo: 'Novidade',
     titulo: 'Liberação para voo seguro',
-    texto: 'No fim da Missão Sistemas: formulário para passageiro, tripulante e médico especialista, com prazos de repouso e veredito. Começa pelos pulmões.',
+    texto: 'No fim da Missão Sistemas: formulário para passageiro, tripulante e médico especialista, com prazos de repouso e veredito. Cresce a cada voo da missão.',
     destino: '/liberacao-voo',
   },
   {

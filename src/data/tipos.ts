@@ -69,7 +69,15 @@ export type TipoMidia =
   | 'prazo-voo-pulmao'
   | 'teste-hipoxia'
   | 'linha-adaptacao'
-  | 'subida-segura';
+  | 'subida-segura'
+  | 'animacao-coracao'
+  | 'animacao-valvula'
+  | 'pressao-normas'
+  | 'prazo-coracao'
+  | 'classificar-arritmia'
+  | 'prolapso-mitral'
+  | 'nyha-oxigenio'
+  | 'risco-trombose';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

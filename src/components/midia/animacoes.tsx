@@ -553,6 +553,84 @@ export function AnimacaoEjecao() {
   );
 }
 
+// ---------------------------------------------------------------- M2V2 · O coração na cabine
+// Esquema: no solo e na cabine pressurizada, o coração bate e as bolinhas (oxigênio) seguem com o sangue. Na cabine,
+// menos oxigênio por volta e batidas um pouco mais rápidas. Saturação ~93% a 8.000 ft (ICAO, Doc 8984, Tabela II-1-2);
+// +2,4 bpm em média a 7.000 ft (FAA, RITE-ACER-CoE-2011-1). Ritmo das batidas ilustrativo.
+export function AnimacaoCoracao() {
+  const c = useCiclo(12000);
+  const cabine = c.fase >= 0.5;
+  const local = (c.fase % 0.5) / 0.5;
+  const batidas = cabine ? 7.6 : 7;
+  const pulso = Math.pow(Math.max(0, Math.sin(local * Math.PI * 2 * batidas)), 6);
+  const n = cabine ? 9 : 12;
+  const H = 200;
+  return (
+    <Quadro titulo="O coração no solo e na cabine" instrucao="Esquema: as bolinhas são oxigênio levado pelo sangue. A cada 6 segundos, a cena troca entre o solo e a cabine em cruzeiro." ciclo={c} altura={H}>
+      {(w) => {
+        const cx = w * 0.3, cy = 100;
+        const esc = 1 + 0.08 * pulso;
+        const raio = Math.min(w * 0.38, 120);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <Ellipse cx={cx} cy={cy} rx={raio} ry={62} fill="none" stroke="#3A1418" strokeWidth={10} />
+            {Array.from({ length: n }, (_, k) => {
+              const t = (local * 1.6 + k / n) % 1;
+              const a = t * Math.PI * 2;
+              return <Circle key={k} cx={cx + raio * Math.cos(a)} cy={cy + 62 * Math.sin(a)} r={4} fill={Cores.acerto} />;
+            })}
+            <G transform={`translate(${cx} ${cy}) scale(${esc}) translate(${-cx} ${-cy})`}>
+              <Path d={`M ${cx} ${cy + 26} C ${cx - 40} ${cy} ${cx - 34} ${cy - 30} ${cx - 14} ${cy - 30} C ${cx - 4} ${cy - 30} ${cx} ${cy - 22} ${cx} ${cy - 16} C ${cx} ${cy - 22} ${cx + 4} ${cy - 30} ${cx + 14} ${cy - 30} C ${cx + 34} ${cy - 30} ${cx + 40} ${cy} ${cx} ${cy + 26} Z`} fill={Cores.erro} />
+            </G>
+            <SvgText x={w - 10} y={30} fill={cabine ? Cores.dourado : Cores.texto} fontSize={12} fontFamily={Fonte} textAnchor="end">{cabine ? 'CABINE EM CRUZEIRO' : 'SOLO'}</SvgText>
+            <SvgText x={w - 10} y={48} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">{cabine ? '5.000 A 8.000 FT' : 'NÍVEL DO MAR'}</SvgText>
+            <SvgText x={w - 10} y={H - 44} fill={cabine ? Cores.dourado : Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="end">{cabine ? 'SATURAÇÃO ≈ 93% A 8.000 FT' : 'MAIS OXIGÊNIO POR VOLTA'}</SvgText>
+            <SvgText x={w - 10} y={H - 26} fill={cabine ? Cores.dourado : Cores.textoSuave} fontSize={10} fontFamily={Fonte} textAnchor="end">{cabine ? 'CORAÇÃO MAIS RÁPIDO: +2,4 BPM' : 'RITMO DE REPOUSO'}</SvgText>
+            <SvgText x={w - 10} y={H - 12} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="end">{cabine ? 'MÉDIA A 7.000 FT (FAA)' : ''}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
+// ---------------------------------------------------------------- M2V2 · A válvula que aperta
+// Esquema: válvula normal e com estenose. Na estenose, as cúspides abrem pouco e o sangue passa num jato estreito.
+export function AnimacaoValvula() {
+  const c = useCiclo(10000);
+  const estenose = c.fase >= 0.5;
+  const local = (c.fase % 0.5) / 0.5;
+  const abre = Math.max(0, Math.sin(local * Math.PI * 2 * 4));
+  const ang = (estenose ? 18 : 62) * abre;
+  const H = 180;
+  return (
+    <Quadro titulo="A válvula que aperta" instrucao="Esquema: a cada 5 segundos, a cena troca entre uma válvula normal e uma com estenose, em que a abertura fica estreita." ciclo={c} altura={H}>
+      {(w) => {
+        const cx = w / 2, cy = 96, L = 46;
+        const rad = (g: number) => (g * Math.PI) / 180;
+        const larg = estenose ? 8 : 34;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <Rect x={cx - 70} y={cy - 70} width={140} height={140} rx={16} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1} />
+            {Array.from({ length: estenose ? 6 : 12 }, (_, k) => {
+              const t = (local * (estenose ? 6 : 3) + k / (estenose ? 6 : 12)) % 1;
+              const y = cy + 60 - t * 130;
+              const x = cx + ((k % 3) - 1) * (larg / 3) * (y < cy ? 1 : 2);
+              return abre > 0.2 ? <Circle key={k} cx={x} cy={y} r={3.5} fill={Cores.erro} /> : null;
+            })}
+            <Line x1={cx - L} y1={cy} x2={cx - L + L * Math.cos(rad(ang))} y2={cy - L * Math.sin(rad(ang))} stroke={estenose ? Cores.dourado : '#E8EEF5'} strokeWidth={estenose ? 7 : 4} strokeLinecap="round" />
+            <Line x1={cx + L} y1={cy} x2={cx + L - L * Math.cos(rad(ang))} y2={cy - L * Math.sin(rad(ang))} stroke={estenose ? Cores.dourado : '#E8EEF5'} strokeWidth={estenose ? 7 : 4} strokeLinecap="round" />
+            <SvgText x={cx} y={20} fill={estenose ? Cores.dourado : Cores.texto} fontSize={11} fontFamily={Fonte} textAnchor="middle">{estenose ? 'ESTENOSE: ABERTURA ESTREITA' : 'VÁLVULA NORMAL'}</SvgText>
+            <SvgText x={cx} y={H - 8} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{estenose ? 'O CORAÇÃO FAZ MAIS FORÇA PARA EMPURRAR O SANGUE' : 'O SANGUE PASSA SEM ESFORÇO'}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
