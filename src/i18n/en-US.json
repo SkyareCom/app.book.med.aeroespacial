@@ -3670,7 +3670,6 @@
 "Estômago, intestino e fígado": "Stomach, intestine and liver",
 "Hormônios e metabolismo": "Hormones and metabolism",
 "Labirinto e orientação espacial": "Inner ear and spatial orientation",
-"Limites de idade": "Age limits",
 "O piloto que envelhece": "The aging pilot",
 "Olhos e visão": "Eyes and vision",
 "Ouvidos, seios da face e dentes": "Ears, sinuses and teeth",
@@ -3681,5 +3680,7 @@
 "Sono, relógio biológico e fadiga": "Sleep, body clock and fatigue",
 "Doenças digestivas e do fígado": "Digestive and liver diseases",
 "Pulmões, oxigênio e hipóxia": "Lungs, oxygen and hypoxia",
-"O corpo que envelhece": "The aging body"
+"O corpo que envelhece": "The aging body",
+"Envelhecimento e limites de idade": "Aging and age limits",
+"Idade e certificação": "Age and certification"
 }

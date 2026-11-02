@@ -74,7 +74,7 @@ export const secoes: Secao[] = [
       // 02/11/2026: rins e envelhecimento ganharam voos próprios, no fim da missão, para não mudar a numeração
       // citada nos voos congelados (M2V12 e M2V13).
       cap(14, 'Rins e vias urinárias', ['Cálculo renal', 'Doença renal']),
-      cap(15, 'O corpo que envelhece', ['O piloto que envelhece', 'Limites de idade']),
+      cap(15, 'Envelhecimento e limites de idade', ['O piloto que envelhece', 'Idade e certificação']),
     ],
   },
   {
