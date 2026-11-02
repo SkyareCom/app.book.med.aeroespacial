@@ -53,8 +53,9 @@
 //   é a postura mais associada; sem diferença de prevalência contra pilotos de helicóptero e transporte (OR 1,07):
 //   Shiri R et al. Occup Environ Med 2015;72(2):145-50 (revisão sistemática; ano do DOI 2014).
 // Fotos e vídeo premium gerados por IA pelo autor (pessoas fictícias): topicos/m1v7-*.jpg, videos/m1v7-*.mp4.
-// 01/11/2026: 7 fotos e o vídeo da centrífuga integrados (vídeo: meia volta original de 3 s, 10 qps, laço com
-//   transição de 0,5 s). Falta a foto do traje anti-G (m1v7-3-traje.jpg), a regerar.
+// 01/11/2026: 8 fotos e o vídeo da centrífuga integrados (vídeo: meia volta original de 3 s, 10 qps, laço com
+//   transição de 0,5 s). Texto e insígnias borrados na foto do traje (quadro de avisos, papéis, posto, emblema,
+//   plaqueta e distintivo). Voo congelado em scripts/check-m1v1-frozen.cjs.
 
 import type { Capitulo } from '../tipos';
 
@@ -134,6 +135,7 @@ export const forcasg: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'pilha-tolerancia' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v7-3-traje.jpg'), legenda: 'O traje anti-G infla bolsas nas pernas e no abdômen e segura o sangue no tronco: rende cerca de 1 G.' } },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v7-3-academia.jpg'), legenda: 'Pela FAA, o treino que combina exercício aeróbico e musculação ajuda o piloto a tolerar mais G.' } },
           { paragrafo: 4, tabela: {
             titulo: 'Proteção contra o +Gz',

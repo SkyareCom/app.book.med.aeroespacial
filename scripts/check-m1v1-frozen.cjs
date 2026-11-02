@@ -143,6 +143,18 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v6-3-patio.jpg': '057fb846cae517fe',
   'assets/images/topicos/m1v6-4-offshore.jpg': '3255b4d92cf407d0',
   'assets/images/topicos/m1v6-4-painel.jpg': '07e5ceb8d4239077',
+  // Congelamento M1V7 — combinado com o autor ao receber as fotos e o vídeo (01/11/2026).
+  'src/data/capitulos/forcasg.ts': 'aae35efe32ef3298',
+  'src/components/midia/m1v7-graficos.tsx': 'da9ba71eaa9f1b6a',
+  'assets/videos/m1v7-centrifuga.mp4': '98b7204996818516',
+  'assets/images/topicos/m1v7-1-caca-curva.jpg': '5caa935d0c757a67',
+  'assets/images/topicos/m1v7-1-acrobatico.jpg': '41de9d8c860931a8',
+  'assets/images/topicos/m1v7-2-tunel.jpg': 'ab8a1abc8bd18b1b',
+  'assets/images/topicos/m1v7-2-piloto-g.jpg': 'bf8f1f44340f966e',
+  'assets/images/topicos/m1v7-3-traje.jpg': '85c0eb592f5052ce',
+  'assets/images/topicos/m1v7-3-academia.jpg': 'b2476a8941aabb95',
+  'assets/images/topicos/m1v7-4-centrifuga.jpg': '4a1a4ce12b88a6cc',
+  'assets/images/topicos/m1v7-4-check-six.jpg': '1431eebe08f2c046',
   // Congelamento M1V8 — combinado com o autor ao receber as fotos e o vídeo (31/10/2026).
   'src/data/capitulos/impacto.ts': 'b1a8ff85b58c1fa2',
   'src/components/midia/m1v8-graficos.tsx': '5c18b0e9709a77a1',
@@ -166,8 +178,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V8 ou M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V7, M1V8 ou M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V8 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V7, M1V8 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }
