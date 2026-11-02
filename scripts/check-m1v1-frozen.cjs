@@ -100,9 +100,19 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-sinal-espelho.jpg': '6bf5f5eb96ab34e7',
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
   // 02/11/2026: título do M2V1 trocado para "Pulmões, oxigênio e hipóxia", autorizado pelo autor.
-  // 02/11/2026: texto do M2V1 (src/data/capitulos/hipoxia.ts) DESCONGELADO com autorização do autor para a adaptação ao
-  //   modelo de Sistemas (docs/modelo-sistemas.md). Volta a ser congelado, com o bloco de liberação e os interativos novos,
-  //   quando chegarem as 8 fotos dos tópicos VI a IX. As fotos antigas do voo seguem congeladas.
+  // 02/11/2026: M2V1 adaptado ao modelo de Sistemas (docs/modelo-sistemas.md), com autorização do autor, e congelado de
+  //   novo com as 8 fotos dos tópicos VI a IX, o bloco do formulário de liberação e os interativos novos.
+  'src/data/capitulos/hipoxia.ts': '9b25ea4f9e3cf160',
+  'src/data/liberacao/respiratorio.ts': 'c713ec1867370877',
+  'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
+  'assets/images/topicos/m2v1-6-bombinha.jpg': '735ac4c1e73bdeb7',
+  'assets/images/topicos/m2v1-6-espirometria.jpg': 'c286362cbd3a6d7e',
+  'assets/images/topicos/m2v1-7-cpap-aviao.jpg': '70c44a0fdcbe5b52',
+  'assets/images/topicos/m2v1-7-sonolencia.jpg': '344f3dd40cae2e5a',
+  'assets/images/topicos/m2v1-8-consulta.jpg': '6343e89b0c240eee',
+  'assets/images/topicos/m2v1-8-raio-x.jpg': '4f04a7cf1e407626',
+  'assets/images/topicos/m2v1-9-concentrador.jpg': '7a54f0acc1547732',
+  'assets/images/topicos/m2v1-9-teste.jpg': '50fb60f098816a8b',
   'src/components/midia/simulador-o2.tsx': 'af94937e7e23183d',
   'src/components/midia/grafico-tuc.tsx': 'ce3774a3c28f2956',
   'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',
@@ -224,8 +234,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar a missão Conceitos (M1V1–M1V8) ou as fotos do M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar a missão Conceitos (M1V1–M1V8) ou o M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('Missão Conceitos (M1V1–M1V8) e fotos do M2V1 preservadas (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('Missão Conceitos (M1V1–M1V8) e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }

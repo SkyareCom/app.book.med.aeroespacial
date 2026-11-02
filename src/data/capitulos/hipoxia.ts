@@ -45,6 +45,9 @@
 // - FAA, Guia do AME, Pharmaceuticals/sleep aids (registro em src/lib/cma-internacional.ts): uso diário de indutor do
 //   sono não permitido.
 // - MEDIF: formulário médico das companhias aéreas (ex.: SWISS, lx_medif-form_en.pdf).
+// 02/11/2026: 8 fotos dos tópicos VI a IX (topicos/m2v1-6..9-*.jpg, pessoas fictícias), no tamanho original enviado;
+//   borrados o número da poltrona e o rótulo do batom (bombinha), os painéis e a dragona (sonolência) e a marca do
+//   monitor (teste). O raio X não mostra um pneumotórax típico: a legenda não afirma o achado. Voo congelado de novo.
 
 import type { Capitulo } from '../tipos';
 import { liberacaoRespiratorio } from '../liberacao/respiratorio';
@@ -200,6 +203,7 @@ export const hipoxia: Capitulo = {
           "**Não voe hoje** com crise em curso, com uso da bombinha acima do habitual ou, na DPOC, com piora nas últimas 6 semanas. **Converse com o médico antes de comprar a passagem** se a saturação em repouso for de 95% ou menos ou se a falta de ar aparecer em esforços pequenos. O médico confere a espirometria, a saturação, as crises do último ano e, se preciso, pede o teste de simulação de altitude.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-6-bombinha.jpg'), legenda: 'Bombinha com espaçador na bagagem de mão e ao alcance durante todo o voo.' } },
           {
             paragrafo: 3,
             tabela: {
@@ -230,6 +234,7 @@ export const hipoxia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v1-6-espirometria.jpg'), legenda: 'A espirometria mede o VEF1 e a CVF: para a FAA, 80% ou mais do previsto antes do broncodilatador.' } },
         ],
       },
     },
@@ -247,6 +252,7 @@ export const hipoxia: Capitulo = {
           "**Não voe como tripulante** com apneia diagnosticada e sem tratamento, nem com sonolência que já atrapalha o dia. O **passageiro** que ronca alto, acorda cansado e cochila sem querer deve procurar avaliação antes de uma viagem longa. O médico confere o diagnóstico, o **uso do CPAP registrado pelo aparelho** e a sonolência durante o dia.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-7-cpap-aviao.jpg'), legenda: 'No voo noturno, o CPAP vai a bordo e é usado durante o sono, com baterias para toda a viagem.' } },
           {
             paragrafo: 3,
             tabela: {
@@ -260,6 +266,7 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 5, midia: 'baterias-cpap' },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v1-7-sonolencia.jpg'), legenda: 'Na cabine de comando, a apneia sem tratamento vira sono acumulado, desatenção e erros.' } },
         ],
       },
     },
@@ -277,6 +284,7 @@ export const hipoxia: Capitulo = {
           "**Não voe** com dor no peito ou falta de ar súbita, com pneumotórax ainda visível no raio X ou antes do prazo depois de cirurgia, biópsia ou broncoscopia. O médico registra a **data da resolução no raio X**, o tipo de tratamento e se houve recorrência: é essa data que conta os dias.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-8-raio-x.jpg'), legenda: 'O raio X do tórax confirma o pneumotórax e, depois, mostra o pulmão de novo expandido: é dessa data que se contam os dias.' } },
           { paragrafo: 2, midia: 'grafico-boyle' },
           { paragrafo: 3, midia: 'prazo-voo-pulmao' },
           {
@@ -293,6 +301,7 @@ export const hipoxia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v1-8-consulta.jpg'), legenda: 'Com o raio X de controle normal e o prazo cumprido, o passageiro pode voltar a voar.' } },
         ],
       },
     },
@@ -310,6 +319,7 @@ export const hipoxia: Capitulo = {
           "**Não embarque** sem o oxigênio combinado se o teste mostrou a necessidade. Na decisão, o médico usa a saturação em repouso, a resposta ao esforço, o resultado do teste e o **fluxo que manteve a saturação em 85%**; é esse número que vai para o MEDIF.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-9-teste.jpg'), legenda: 'No teste de hipóxia, a mistura com 15% de oxigênio reproduz a cabine a 8.000 ft enquanto o oxímetro mede a saturação.' } },
           { paragrafo: 3, midia: 'teste-hipoxia' },
           {
             paragrafo: 4,
@@ -325,6 +335,7 @@ export const hipoxia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v1-9-concentrador.jpg'), legenda: 'Com o concentrador portátil aprovado pela companhia, o oxigênio segue com o passageiro durante o voo.' } },
           {
             paragrafo: 6,
             tabela: {

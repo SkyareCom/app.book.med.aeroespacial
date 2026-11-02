@@ -29,7 +29,7 @@ O M2V1 passou de "Respiração e hipóxia" para "Pulmões, oxigênio e hipóxia"
 Todos os voos da Missão Sistemas seguem `docs/modelo-sistemas.md`: fisiologia em altitude, agravamentos, prazos de
 repouso, voar sem liberação, dicas e remédios e a decisão, para passageiro, tripulante e médico especialista. No fim da
 missão fica o formulário de liberação para voo seguro (`src/app/liberacao-voo.tsx`), alimentado pelo bloco `liberacao`
-de cada voo. O M2V1 foi adaptado primeiro (tópicos VI a IX) e está descongelado até chegarem as fotos novas.
+de cada voo. O M2V1 foi adaptado primeiro (tópicos VI a IX) e congelado de novo com as fotos novas (02/11/2026).
 
 ## FONTES — padrão ANAC e FAA (29/10/2026)
 Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
