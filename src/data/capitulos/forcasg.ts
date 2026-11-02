@@ -53,6 +53,8 @@
 //   é a postura mais associada; sem diferença de prevalência contra pilotos de helicóptero e transporte (OR 1,07):
 //   Shiri R et al. Occup Environ Med 2015;72(2):145-50 (revisão sistemática; ano do DOI 2014).
 // Fotos e vídeo premium gerados por IA pelo autor (pessoas fictícias): topicos/m1v7-*.jpg, videos/m1v7-*.mp4.
+// 01/11/2026: 7 fotos e o vídeo da centrífuga integrados (vídeo: meia volta original de 3 s, 10 qps, laço com
+//   transição de 0,5 s). Falta a foto do traje anti-G (m1v7-3-traje.jpg), a regerar.
 
 import type { Capitulo } from '../tipos';
 
@@ -73,6 +75,7 @@ export const forcasg: Capitulo = {
           "**Caças e aviões acrobáticos chegam a 9 G**, e a catapulta de um porta-aviões leva o avião a mais de **250 km/h em menos de 2 segundos**. Pela FAA, o piloto civil também pode se **surpreender com G alto** numa curva fechada ou na recuperação de uma atitude anormal, e quase nunca tem traje anti-G.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v7-1-caca-curva.jpg'), legenda: 'Numa curva fechada, o caça chega a 9 G: o corpo do piloto pesa nove vezes mais, com o sangue e a cabeça junto.' } },
           { paragrafo: 2, tabela: {
             titulo: 'Os eixos da força G',
             colunas: ['Eixo', 'Quando aparece', 'O que o corpo sente'],
@@ -85,6 +88,7 @@ export const forcasg: Capitulo = {
             ],
           } },
           { paragrafo: 3, midia: 'curva-carga' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v7-1-acrobatico.jpg'), legenda: 'O avião acrobático também chega a 9 G. No loop, o +Gz empurra o sangue da cabeça para as pernas.' } },
         ],
       },
     },
@@ -101,6 +105,7 @@ export const forcasg: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-coluna-sangue' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v7-2-tunel.jpg'), legenda: 'Sob +Gz, a visão periférica some primeiro: a imagem fica cinza e estreita, como um túnel, antes de apagar.' } },
           { paragrafo: 2, midia: 'forcas-g' },
           { paragrafo: 2, tabela: {
             titulo: 'Sintomas do +Gz, por faixa de G',
@@ -112,6 +117,7 @@ export const forcasg: Capitulo = {
             ],
           } },
           { paragrafo: 3, midia: 'linha-gloc' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v7-2-piloto-g.jpg'), legenda: 'Sob G alto, o corpo afunda no assento. Desidratação, fadiga, fome e sedentarismo baixam a tolerância.' } },
         ],
       },
     },
@@ -128,6 +134,7 @@ export const forcasg: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'pilha-tolerancia' },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v7-3-academia.jpg'), legenda: 'Pela FAA, o treino que combina exercício aeróbico e musculação ajuda o piloto a tolerar mais G.' } },
           { paragrafo: 4, tabela: {
             titulo: 'Proteção contra o +Gz',
             colunas: ['Defesa', 'Quanto ajuda', 'Como funciona'],
@@ -153,7 +160,9 @@ export const forcasg: Capitulo = {
           "O G alto cobra também da **coluna cervical**. A cabeça, com o capacete, fica muitas vezes mais pesada, e o piloto ainda vira o pescoço para olhar para trás. Numa revisão de estudos, os pilotos expostos aos **maiores G** tinham uma chance cerca de **3 vezes maior de dor no pescoço** do que os expostos a G menores, e **olhar para trás** foi a postura mais ligada à dor. **Fortalecer o pescoço**, posicionar a cabeça **antes** de puxar G e evitar girá-la sob carga são a prevenção (Veja M2V12).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v7-4-centrifuga.jpg'), legenda: 'Na centrífuga humana, a cabine na ponta do braço cria G sustentado, e médicos acompanham o piloto por vídeo e eletrocardiograma.' } },
           { paragrafo: 1, midia: 'centrifuga' },
+          { paragrafo: 2, video: { fonte: require('@/assets/videos/m1v7-centrifuga.mp4'), legenda: 'A centrífuga em movimento: quanto mais rápido o braço gira, maior o G dentro da cabine.' } },
           { paragrafo: 2, tabela: {
             titulo: 'Treino em centrífuga pelo padrão da OTAN',
             colunas: ['Item', 'Exigência'],
@@ -165,6 +174,7 @@ export const forcasg: Capitulo = {
               ['Pilotos da FAB no Gripen', '9 G por 15 segundos, na Suécia'],
             ],
           } },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v7-4-check-six.jpg'), legenda: 'Olhar para trás sob G foi a postura mais ligada à dor no pescoço dos pilotos.' } },
           { paragrafo: 3, tabela: {
             titulo: 'Sistemas do corpo mais atingidos',
             colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
