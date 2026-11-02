@@ -67,7 +67,7 @@ export const secoes: Secao[] = [
       cap(7, 'Saúde mental e comportamento', ['Depressão e ansiedade', 'Humor e personalidade', 'Álcool e drogas', 'Avaliação psicológica', 'Apoio por pares']),
       cap(8, 'Sono, relógio biológico e fadiga', ['Fisiologia do sono', 'Relógio biológico', 'Jet lag', 'Higiene do sono', 'Fisiologia da fadiga', 'FRMS', 'Limites de jornada', 'Voos de longa duração', 'Contramedidas']),
       cap(9, 'Hormônios e metabolismo', ['Diabetes', 'Tireoide', 'Obesidade']),
-      cap(10, 'Aparelho digestivo', ['Estômago, intestino e fígado', 'Cirurgias abdominais']),
+      cap(10, 'Estômago, intestino e fígado', ['Doenças digestivas e do fígado', 'Cirurgias abdominais']),
       cap(11, 'Sangue, câncer e infecções', ['Anemias e anticoagulação', 'Câncer', 'Doenças transmissíveis', 'HIV', 'Vacinação']),
       cap(12, 'Coluna, ossos e músculos', ['Dor cervical e lombar', 'Lesões ortopédicas', 'Condicionamento físico']),
       cap(13, 'Saúde da mulher', ['Gestação', 'Ciclo menstrual e menopausa']),

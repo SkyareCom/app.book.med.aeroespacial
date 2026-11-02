@@ -20,7 +20,7 @@ não entram na trava. Qualquer alteração exige autorização expressa do autor
 ## MISSÃO SISTEMAS — TÍTULOS E NOVOS VOOS (02/11/2026)
 Títulos dos voos 2 a 13 revisados para nomear os órgãos e sistemas: Coração e vasos sanguíneos; Ouvidos, seios da face e
 dentes; Olhos e visão; Labirinto e orientação espacial; Cérebro e sistema nervoso; Saúde mental e comportamento; Sono,
-relógio biológico e fadiga; Hormônios e metabolismo; Aparelho digestivo; Sangue, câncer e infecções; Coluna, ossos e
+relógio biológico e fadiga; Hormônios e metabolismo; Estômago, intestino e fígado; Sangue, câncer e infecções; Coluna, ossos e
 músculos; Saúde da mulher. Rins saíram do digestivo e envelhecimento saiu da saúde da mulher: viraram M2V14 (Rins e vias
 urinárias) e M2V15 (Envelhecimento), no fim da missão, para não mudar M2V12 e M2V13, citados nos voos congelados. O M2V1
 (Respiração e hipóxia) mantém o título por estar congelado. Total do app: 46 voos.
