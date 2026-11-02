@@ -17,6 +17,14 @@ testes de cada voo, o bloco da missão em `src/data/secoes.ts` (título, sinopse
 em `src/constants/capas.ts`. Componentes compartilhados com outras missões (animações, laboratórios, índice de mídias)
 não entram na trava. Qualquer alteração exige autorização expressa do autor, novos hashes e comentário datado.
 
+## MISSÃO SISTEMAS — TÍTULOS E NOVOS VOOS (02/11/2026)
+Títulos dos voos 2 a 13 revisados para nomear os órgãos e sistemas: Coração e vasos sanguíneos; Ouvidos, seios da face e
+dentes; Olhos e visão; Labirinto e orientação espacial; Cérebro e sistema nervoso; Saúde mental e comportamento; Sono,
+relógio biológico e fadiga; Hormônios e metabolismo; Aparelho digestivo; Sangue, câncer e infecções; Coluna, ossos e
+músculos; Saúde da mulher. Rins saíram do digestivo e envelhecimento saiu da saúde da mulher: viraram M2V14 (Rins e vias
+urinárias) e M2V15 (Envelhecimento), no fim da missão, para não mudar M2V12 e M2V13, citados nos voos congelados. O M2V1
+(Respiração e hipóxia) mantém o título por estar congelado. Total do app: 46 voos.
+
 ## FONTES — padrão ANAC e FAA (29/10/2026)
 Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
 e da **FAA**, ao lado das obras de referência. Buscar a fonte primária; quando só houver fonte secundária, registrar

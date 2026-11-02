@@ -1,4 +1,4 @@
-// Estrutura completa do app-book: 4 missões (Conceitos, Sistemas, Aviação, Espaço), 44 voos.
+// Estrutura completa do app-book: 4 missões (Conceitos, Sistemas, Aviação, Espaço), 46 voos.
 // Base: Ernsting's Aviation and Space Medicine (5ª ed.), Fundamentals of Aerospace Medicine (5ª ed.),
 // Handbook of Aviation and Space Medicine, Russomano (Fisiologia Aeroespacial) e Vernikos & Russomano.
 // Capítulos com conteúdo redigido importam seus tópicos e testes; os demais trazem só os títulos.
@@ -59,18 +59,22 @@ export const secoes: Secao[] = [
     sinopse: 'Pulmões, coração, ouvidos, olhos, cérebro e mente: como cada sistema reage ao voo e quando a doença impede de voar.',
     capitulos: [
       mais({ ...hipoxia, numero: 1 }, ['Asma e DPOC', 'Apneia do sono', 'Pneumotórax', 'Simulação de altitude']),
-      cap(2, 'Coração e circulação', ['Débito cardíaco', 'Coração na altitude', 'Coração sob aceleração', 'Hipertensão', 'Doença coronariana', 'Arritmias', 'Valvopatias', 'Cardiomiopatias', 'Cardiopatias congênitas', 'Exames cardiológicos', 'Trombose e embolia']),
-      cap(3, 'Ouvidos, seios e dentes', ['Barotrauma', 'Audição', 'Seios da face', 'Barodontalgia', 'Implantes dentários']),
-      cap(4, 'Visão', ['Acuidade visual', 'Visão noturna', 'Visão de cores', 'Lasers', 'Padrões visuais', 'Doenças oculares', 'Correção e cirurgia ocular'], ['adaptacao-escuro']),
-      cap(5, 'Equilíbrio e orientação', ['Sistemas de orientação', 'Ilusões', 'Tipos de desorientação', 'Prevenção', 'Cinetose', 'Vertigem']),
-      cap(6, 'Cérebro e nervos', ['Epilepsia', 'Síncope', 'Cefaleia', 'AVC', 'Trauma craniano', 'Doenças neurodegenerativas']),
-      cap(7, 'Mente e comportamento', ['Depressão e ansiedade', 'Humor e personalidade', 'Álcool e drogas', 'Avaliação psicológica', 'Apoio por pares']),
-      cap(8, 'Sono, ritmo e fadiga', ['Fisiologia do sono', 'Relógio biológico', 'Jet lag', 'Higiene do sono', 'Fisiologia da fadiga', 'FRMS', 'Limites de jornada', 'Voos de longa duração', 'Contramedidas']),
-      cap(9, 'Metabolismo', ['Diabetes', 'Tireoide', 'Obesidade']),
-      cap(10, 'Digestivo e rins', ['Digestivo e fígado', 'Cálculo renal', 'Doença renal', 'Cirurgias abdominais']),
-      cap(11, 'Sangue, imunidade e infecções', ['Anemias e anticoagulação', 'Câncer', 'Doenças transmissíveis', 'HIV', 'Vacinação']),
-      cap(12, 'Ossos e músculos', ['Dor cervical e lombar', 'Lesões ortopédicas', 'Condicionamento físico']),
-      cap(13, 'Mulher, gestação e envelhecimento', ['Gestação', 'Ciclo menstrual e menopausa', 'Envelhecimento']),
+      cap(2, 'Coração e vasos sanguíneos', ['Débito cardíaco', 'Coração na altitude', 'Coração sob aceleração', 'Hipertensão', 'Doença coronariana', 'Arritmias', 'Valvopatias', 'Cardiomiopatias', 'Cardiopatias congênitas', 'Exames cardiológicos', 'Trombose e embolia']),
+      cap(3, 'Ouvidos, seios da face e dentes', ['Barotrauma', 'Audição', 'Seios da face', 'Barodontalgia', 'Implantes dentários']),
+      cap(4, 'Olhos e visão', ['Acuidade visual', 'Visão noturna', 'Visão de cores', 'Lasers', 'Padrões visuais', 'Doenças oculares', 'Correção e cirurgia ocular'], ['adaptacao-escuro']),
+      cap(5, 'Labirinto e orientação espacial', ['Sistemas de orientação', 'Ilusões', 'Tipos de desorientação', 'Prevenção', 'Cinetose', 'Vertigem']),
+      cap(6, 'Cérebro e sistema nervoso', ['Epilepsia', 'Síncope', 'Cefaleia', 'AVC', 'Trauma craniano', 'Doenças neurodegenerativas']),
+      cap(7, 'Saúde mental e comportamento', ['Depressão e ansiedade', 'Humor e personalidade', 'Álcool e drogas', 'Avaliação psicológica', 'Apoio por pares']),
+      cap(8, 'Sono, relógio biológico e fadiga', ['Fisiologia do sono', 'Relógio biológico', 'Jet lag', 'Higiene do sono', 'Fisiologia da fadiga', 'FRMS', 'Limites de jornada', 'Voos de longa duração', 'Contramedidas']),
+      cap(9, 'Hormônios e metabolismo', ['Diabetes', 'Tireoide', 'Obesidade']),
+      cap(10, 'Aparelho digestivo', ['Estômago, intestino e fígado', 'Cirurgias abdominais']),
+      cap(11, 'Sangue, câncer e infecções', ['Anemias e anticoagulação', 'Câncer', 'Doenças transmissíveis', 'HIV', 'Vacinação']),
+      cap(12, 'Coluna, ossos e músculos', ['Dor cervical e lombar', 'Lesões ortopédicas', 'Condicionamento físico']),
+      cap(13, 'Saúde da mulher', ['Gestação', 'Ciclo menstrual e menopausa']),
+      // 02/11/2026: rins e envelhecimento ganharam voos próprios, no fim da missão, para não mudar a numeração
+      // citada nos voos congelados (M2V12 e M2V13).
+      cap(14, 'Rins e vias urinárias', ['Cálculo renal', 'Doença renal']),
+      cap(15, 'Envelhecimento', ['O piloto que envelhece', 'Limites de idade']),
     ],
   },
   {

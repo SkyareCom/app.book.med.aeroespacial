@@ -14,7 +14,7 @@ Objetivo: ilustrar cada tema com formatos variados, posicionados para quebrar a 
 - Prontos, todos civis e adequados: M1V1 curvatura da Terra (neutro), M1V2 máscaras na cabine de passageiros,
   M1V3 névoa num jato executivo, M1V4 frio. Pendente: M1V5 auroras vistas da cabine de comando (civil).
 - Militar: M1V7 Forças G, M1V8 Impacto e ejeção, M3V12 Aviação militar.
-- Ambos (escolher pela cena do texto): M1V6 Ruído e vibração, M2V5 Equilíbrio e orientação, M2V12 Ossos e músculos,
+- Ambos (escolher pela cena do texto): M1V6 Ruído e vibração, M2V5 Equilíbrio e orientação, M2V12 Coluna, ossos e músculos,
   M3V3 Seleção e treinamento.
 - Civil: todos os demais voos das Missões 2 e 3.
 - Missão 4: espacial.

@@ -25,6 +25,8 @@ export const CapaEpisodio: Record<string, number> = {
   'sistemas-11': require('@/assets/images/capas/cli-10.jpg'),
   'sistemas-12': require('@/assets/images/capas/cli-11.jpg'),
   'sistemas-13': require('@/assets/images/capas/cli-12.jpg'),
+  'sistemas-14': require('@/assets/images/capas/cli-09.jpg'), // provisória, até a capa própria
+  'sistemas-15': require('@/assets/images/capas/ope-05.jpg'),
   'aviacao-1': require('@/assets/images/capas/cli-01.jpg'),
   'aviacao-2': require('@/assets/images/capas/cli-13.jpg'),
   'aviacao-3': require('@/assets/images/capas/ope-03.jpg'),
