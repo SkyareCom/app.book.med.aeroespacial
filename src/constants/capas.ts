@@ -60,5 +60,9 @@ export const ArteTemporada: Record<SecaoId, number> = {
 };
 
 export const ArteEspecialVoo = require('@/assets/images/capas/especial-voo.jpg');
-// Card especial Adaptação à altitude: arte provisória (capa do M1V1) até a arte própria.
-export const ArteAdaptacao = require('@/assets/images/capas/fis-01.jpg');
+// Capas dos cards especiais e ferramentas (02/11/2026): uma capa própria para cada card, sem repetir a de um voo.
+// Adaptação: o alpinista do M1V1 - II; Liberação: o passageiro com concentrador do M2V1 - IX; Exame CMA: médico lendo
+// exames (cli-03), a mesma capa do card no M3V1.
+export const ArteAdaptacao = require('@/assets/images/topicos/m1v1-2-alpinista.jpg');
+export const ArteLiberacao = require('@/assets/images/topicos/m2v1-9-concentrador.jpg');
+export const ArteExameCMA = require('@/assets/images/capas/cli-03.jpg');

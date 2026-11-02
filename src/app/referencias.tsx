@@ -4,7 +4,8 @@ import { Painel } from '@/components/cartoes';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { Cores } from '@/constants/theme';
-import { normas, obras, type Referencia } from '@/data/referencias';
+import { diretrizes, normas, obras, type Referencia } from '@/data/referencias';
+import { RelacionadosEspecial } from '@/components/especiais';
 
 // Referências: lista única das obras e normas usadas em todo o app.
 export default function Referencias() {
@@ -13,6 +14,8 @@ export default function Referencias() {
       <Texto cor={Cores.textoSuave}>Todo o conteúdo do Papos de Altitude é baseado nestas obras e normas.</Texto>
       <Lista rotulo="Obras de referência" itens={obras} />
       <Lista rotulo="Normas e autoridades" itens={normas} />
+      <Lista rotulo="Diretrizes para passageiros e viajantes" itens={diretrizes} />
+      <RelacionadosEspecial id="referencias" />
     </Tela>
   );
 }

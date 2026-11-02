@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 
 import { CartaoImagem, Painel } from '@/components/cartoes';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { Imagens } from '@/constants/imagens';
@@ -22,6 +23,7 @@ export default function Curiosidades() {
           </View>
         </Painel>
       ))}
+      <RelacionadosEspecial id="curiosidades" />
     </Tela>
   );
 }

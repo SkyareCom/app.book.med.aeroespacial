@@ -7,9 +7,10 @@ import { CartaoImagem, Painel } from '@/components/cartoes';
 import { Opcoes } from '@/components/midia/opcoes';
 import { Selo } from '@/components/selo';
 import { rotaEpisodio } from '@/components/streaming';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
-import { ArteTemporada } from '@/constants/capas';
+import { ArteLiberacao } from '@/constants/capas';
 import { BordaCapa, Cores, Espaco, Raio } from '@/constants/theme';
 import type { NivelLiberacao, PerfilPaciente } from '@/data/tipos';
 import { avaliarLiberacao, blocosLiberacao, comentarioVeredito, NOME_NIVEL, type QuemResponde } from '@/lib/liberacao';
@@ -43,7 +44,7 @@ export default function LiberacaoVoo() {
 
   return (
     <Tela titulo="Liberação para voo" rotulo="Fim da Missão 2 · Sistemas" refRolagem={rolagem}>
-      <CartaoImagem imagem={ArteTemporada.sistemas} altura={190} style={BordaCapa}>
+      <CartaoImagem imagem={ArteLiberacao} altura={190} style={BordaCapa}>
         <Selo texto="Formulário" cor={Cores.dourado} />
         <Texto t="titulo">Voar é seguro?</Texto>
         <Texto cor={Cores.textoSuave}>Perguntas de cada sistema do corpo, com os prazos de repouso, o que muda para o tripulante e um veredito com comentário no final.</Texto>
@@ -141,6 +142,7 @@ export default function LiberacaoVoo() {
           Ferramenta de apoio à decisão. Não substitui a consulta médica, o médico examinador credenciado, a autoridade aeronáutica (ANAC, FAA) nem as regras da companhia aérea. O formulário cresce a cada voo da Missão Sistemas. Prazos sem fonte consultada aparecem como [confirmar na referência].
         </Texto>
       </Painel>
+      <RelacionadosEspecial id="liberacao-voo" />
     </Tela>
   );
 }

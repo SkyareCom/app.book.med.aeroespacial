@@ -1,14 +1,15 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Link, useRouter } from 'expo-router';
+import { useMemo } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
-import { IconeSeta } from '@/components/icones';
+import { ListaEspeciais } from '@/components/especiais';
 import { NOME_MIDIA } from '@/components/midia';
 import { ResumoRanking } from '@/components/ranking';
 import { Selo } from '@/components/selo';
-import { CartaoEpisodio, Destaques, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
+import { CartaoEpisodio, Destaques, duracao, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
 import { TelaCheia } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteAdaptacao, ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
@@ -16,34 +17,38 @@ import { Imagens } from '@/constants/imagens';
 import { BordaCapa, Cores, Espaco } from '@/constants/theme';
 import { eras } from '@/data/historia';
 import { fasesAdaptacao } from '@/data/adaptacao';
-import { chaveCapitulo, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
-import type { TipoMidia } from '@/data/tipos';
+import { chaveCapitulo, interativosDe, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
+import { obterEspecial } from '@/lib/especiais';
+import { catalogoLab } from '@/lib/laboratorio';
 import { useProgresso } from '@/state/progresso';
 
-const LABORATORIO: TipoMidia[] = ['simulador-o2', 'simulador-visao', 'forcas-g', 'leis-gases', 'adaptacao-escuro', 'regua-ruido', 'radiacao-voo', 'risco-aeromedico', 'perda-ossea'];
-const IMAGEM_LAB: Partial<Record<TipoMidia, string>> = {
-  'simulador-o2': 'sistemas-1',
-  'simulador-visao': 'sistemas-4',
-  'forcas-g': 'conceitos-7',
-  'leis-gases': 'conceitos-3',
-  'adaptacao-escuro': 'sistemas-4',
-  'regua-ruido': 'conceitos-6',
-  'radiacao-voo': 'conceitos-5',
-  'risco-aeromedico': 'aviacao-1',
-  'perda-ossea': 'espaco-2',
-};
+// Fileira do laboratório na Home: um interativo de cada voo (ou card especial), com a capa de onde ele vem.
+function amostraLab() {
+  const vistos = new Set<string>();
+  return catalogoLab().filter((i) => (vistos.has(i.codigo + i.titulo) ? false : (vistos.add(i.codigo + i.titulo), true)));
+}
 
 export default function Home() {
   const router = useRouter();
   const { concluidos, ultimos } = useProgresso();
   const pctGeral = concluidos.length / totalCapitulos;
 
-  const destaques: ItemDestaque[] = [
-    { id: 'voo', imagem: ArteEspecialVoo, rotulo: 'Missão especial', titulo: 'O Voo e a Medicina', sinopse: 'Dos balões de 1783 ao turismo espacial: como cada conquista do céu revelou um novo limite do corpo humano.', meta: '5 eras · 20 eventos', botao: 'Decolar', onPress: () => router.push('/historia') },
-    { id: 'hipoxia', imagem: CapaEpisodio['sistemas-1'], rotulo: 'Missão 2 · Voo 1', titulo: 'Pulmões, oxigênio e hipóxia', sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores, prazos para voltar a voar e o formulário de liberação no fim da missão.', meta: '45 min · 9 interativos', botao: 'Decolar', onPress: () => router.push(rotaEpisodio('sistemas', 1)) },
-    { id: 'espaco', imagem: ArteTemporada.espaco, rotulo: 'Missão 4', titulo: 'Espaço', sinopse: obterSecao('espaco')!.sinopse, meta: '8 voos', botao: 'Ver missão', onPress: () => router.push('/espaco') },
-    { id: 'lab', imagem: CapaEpisodio['conceitos-7'], rotulo: 'Laboratório aeroespacial', titulo: 'Sinta as forças G', sinopse: 'Puxe G, suba sem oxigênio, veja o gás se expandir e calcule a radiação de um ano de voos.', meta: '11 interativos', botao: 'Abrir', onPress: () => router.push('/laboratorio') },
-  ];
+  // Destaques: textos e números vêm dos mesmos dados dos cards (src/lib/especiais.ts e src/data/secoes.ts).
+  const destaques: ItemDestaque[] = useMemo(() => {
+    const hist = obterEspecial('historia');
+    const adap = obterEspecial('adaptacao');
+    const lab = obterEspecial('laboratorio');
+    const m2v1 = obterCapitulo('sistemas', 1)!;
+    const espaco = obterSecao('espaco')!;
+    return [
+      { id: 'voo', imagem: hist.imagem, rotulo: hist.tipo, titulo: hist.titulo, sinopse: hist.sinopse, meta: hist.meta(), botao: 'Decolar', onPress: () => router.push(hist.rota) },
+      { id: 'hipoxia', imagem: CapaEpisodio['sistemas-1'], rotulo: 'Missão 2 · Voo 1', titulo: m2v1.titulo, sinopse: 'A falta de oxigênio é silenciosa: o cérebro sente antes de você perceber. Com simuladores, prazos para voltar a voar e o formulário de liberação no fim da missão.', meta: `${duracao(m2v1)} min · ${interativosDe(m2v1)} interativos`, botao: 'Decolar', onPress: () => router.push(rotaEpisodio('sistemas', 1)) },
+      { id: 'adaptacao', imagem: adap.imagem, rotulo: adap.tipo, titulo: adap.titulo, sinopse: adap.sinopse, meta: adap.meta(), botao: 'Abrir', onPress: () => router.push(adap.rota) },
+      { id: 'espaco', imagem: ArteTemporada.espaco, rotulo: `Missão ${espaco.numeral}`, titulo: espaco.titulo, sinopse: espaco.sinopse, meta: `${espaco.capitulos.length} voos`, botao: 'Ver missão', onPress: () => router.push('/espaco') },
+      { id: 'lab', imagem: lab.imagem, rotulo: lab.tipo, titulo: lab.titulo, sinopse: lab.sinopse, meta: lab.meta(), botao: 'Abrir', onPress: () => router.push(lab.rota) },
+    ];
+  }, [router]);
+
 
   const continuar = ultimos
     .map((ch) => {
@@ -61,7 +66,7 @@ export default function Home() {
       </View>
 
       <Fileira titulo={continuar.length ? 'Continue de onde parou' : 'Comece por aqui'}>
-        {(continuar.length ? continuar : [{ s: obterSecao('sistemas')!, c: obterCapitulo('sistemas', 1)! }]).map(({ s, c }) => (
+        {(continuar.length ? continuar : [{ s: obterSecao('conceitos')!, c: obterCapitulo('conceitos', 1)! }]).map(({ s, c }) => (
           <CartaoEpisodio key={`${s.id}-${c.numero}`} secao={s} capitulo={c} largura={260} />
         ))}
       </Fileira>
@@ -137,17 +142,20 @@ export default function Home() {
         ))}
       </Fileira>
 
-      <Fileira rotulo="Laboratório aeroespacial" titulo="Simule o corpo em voo" acao="Abrir" onAcao={() => router.push('/laboratorio')}>
-        {LABORATORIO.map((m) => (
-          <Pressable key={m} accessibilityRole="button" onPress={() => router.push({ pathname: '/laboratorio', params: { midia: m } })} style={{ width: 170, gap: 6 }}>
+      <Fileira rotulo={obterEspecial('laboratorio').tipo} titulo={obterEspecial('laboratorio').titulo} acao="Abrir" onAcao={() => router.push('/laboratorio')}>
+        {amostraLab().map((m) => (
+          <Pressable key={m.midia} accessibilityRole="button" onPress={() => router.push({ pathname: '/laboratorio', params: { midia: m.midia } })} style={{ width: 170, gap: 6 }}>
             <View style={styles.capaLab}>
-              <Image source={CapaEpisodio[IMAGEM_LAB[m] ?? 'conceitos-1']} style={StyleSheet.absoluteFill} contentFit="cover" />
+              <Image source={m.capa === 'adaptacao' ? ArteAdaptacao : CapaEpisodio[m.capa]} style={StyleSheet.absoluteFill} contentFit="cover" />
               <LinearGradient colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.75)']} style={StyleSheet.absoluteFill} />
               <View style={{ position: 'absolute', left: 10, top: 8 }}>
                 <Selo texto="Interativo" cor={Cores.dourado} />
               </View>
+              <View style={{ position: 'absolute', left: 10, bottom: 6 }}>
+                <Texto t="rotulo" cor={Cores.texto} semTraducao>{m.codigo === 'Especial' ? '' : m.codigo}</Texto>
+              </View>
             </View>
-            <Texto t="item" numberOfLines={2}>{NOME_MIDIA[m]}</Texto>
+            <Texto t="item" numberOfLines={2}>{NOME_MIDIA[m.midia]}</Texto>
           </Pressable>
         ))}
       </Fileira>
@@ -163,46 +171,15 @@ export default function Home() {
         </CartaoImagem>
       </View>
 
+      {/* Ferramentas e extras: os mesmos cards das páginas das missões e dos voos (src/lib/especiais.ts). */}
       <View style={{ paddingHorizontal: GUTTER }}>
-        <CartaoImagem imagem={Imagens.curiosidades} altura={150} direcao="topo" onPress={() => router.push('/curiosidades')} rotuloAcessivel="Abrir curiosidades aeronáuticas">
-          <Texto t="rotulo" cor={Cores.destaque}>Curiosidades aeronáuticas</Texto>
-          <Texto t="item">Fatos surpreendentes sobre o corpo no céu e no espaço</Texto>
-          <View style={styles.abrir}>
-            <Texto t="rotulo" cor={Cores.dourado}>Explorar</Texto>
-            <IconeSeta cor={Cores.dourado} tamanho={16} />
-          </View>
-        </CartaoImagem>
+        <ListaEspeciais rotulo="Ferramentas e extras" itens={(['exame-cma', 'liberacao-voo', 'curiosidades', 'referencias'] as const).map(obterEspecial)} />
       </View>
-
-      {/* Exame CMA, complemento da Missão 3 · Voo 1; as Referências fecham a Home. */}
-      <View style={{ paddingHorizontal: GUTTER }}>
-        <CartaoImagem imagem={CapaEpisodio['aviacao-1']} altura={150} direcao="topo" onPress={() => router.push('/exame-cma')} rotuloAcessivel="Abrir Exame CMA">
-          <Texto t="rotulo" cor={Cores.destaque}>Exame CMA</Texto>
-          <Texto t="item">Certificado Médico Aeronáutico: tudo o que você precisa para o exame</Texto>
-          <Texto cor={Cores.textoSuave}>Complemento da Missão 3 · Voo 1</Texto>
-          <View style={styles.abrir}>
-            <Texto t="rotulo" cor={Cores.dourado}>Abrir</Texto>
-            <IconeSeta cor={Cores.dourado} tamanho={16} />
-          </View>
-        </CartaoImagem>
-      </View>
-
-      <Pressable style={{ paddingHorizontal: GUTTER }} accessibilityRole="link" accessibilityLabel="Abrir referências" onPress={() => router.push('/referencias')}>
-        <Painel>
-          <Texto t="rotulo" cor={Cores.destaque}>Referências</Texto>
-          <Texto t="item">Obras e normas que embasam todo o conteúdo</Texto>
-          <View style={styles.abrir}>
-            <Texto t="rotulo" cor={Cores.dourado}>Ver lista</Texto>
-            <IconeSeta cor={Cores.dourado} tamanho={16} />
-          </View>
-        </Painel>
-      </Pressable>
     </TelaCheia>
   );
 }
 
 const styles = StyleSheet.create({
-  abrir: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 2 },
   linhaEntre: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   grade: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   celula: { flexBasis: '45%', flexGrow: 1, gap: 4 },

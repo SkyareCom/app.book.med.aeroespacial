@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from 'react';
 import { Animated, Platform, Pressable, StyleSheet, View, type ScrollViewInstance } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
-import { CartaoImagem, Painel } from '@/components/cartoes';
-import { IconeAbrir, IconeSeta } from '@/components/icones';
+import { Painel } from '@/components/cartoes';
+import { ListaEspeciais } from '@/components/especiais';
+import { IconeAbrir } from '@/components/icones';
 import { FiguraMarcada } from '@/components/figura-marcada';
 import { Midia } from '@/components/midia';
 import { VideoLaco } from '@/components/midia/video-laco';
-import { Selo } from '@/components/selo';
 import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
 import { BotaoVoltarFlutuante, TelaCheia } from '@/components/tela';
@@ -21,21 +21,9 @@ import { Cores, Espaco, LarguraMaxima, TituloDestaque } from '@/constants/theme'
 import { chaveCapitulo, interativosDe, obterCapitulo, obterSecao, secoes } from '@/data/secoes';
 import type { Topico } from '@/data/tipos';
 import { TextoCorrente } from '@/components/texto-corrente';
+import { especiaisDoVoo } from '@/lib/especiais';
 import { useProgresso } from '@/state/progresso';
 import { useLarguraJanela } from '@/hooks/use-largura-janela';
-
-// Ferramentas que complementam um voo: aparecem depois dos tópicos, antes do teste.
-const COMPLEMENTOS: Record<string, { rota: '/exame-cma'; selo: string; titulo: string; texto: string; imagem: number }[]> = {
-  'aviacao-1': [
-    {
-      rota: '/exame-cma',
-      selo: 'Ferramenta · Exame CMA',
-      titulo: 'Do requisito ao veredito',
-      texto: 'Aplique o RBAC 67: classe, parâmetros por sistema, validade e a justificativa da decisão.',
-      imagem: require('@/assets/images/capas/cli-03.jpg'),
-    },
-  ],
-};
 
 // Na versão web, gera uma página estática para cada um dos voos.
 export async function generateStaticParams() {
@@ -128,17 +116,8 @@ export default function TelaCapitulo() {
             </View>
           ))}
 
-          {COMPLEMENTOS[`${secao.id}-${capitulo.numero}`]?.map((c) => (
-            <CartaoImagem key={c.rota} imagem={c.imagem} altura={170} direcao="topo" onPress={() => router.push(c.rota)} rotuloAcessivel={`Abrir ${c.selo}`} style={{ borderWidth: 1, borderColor: 'rgba(232,196,106,0.4)' }}>
-              <Selo texto={c.selo} cor={Cores.dourado} />
-              <Texto t="item">{c.titulo}</Texto>
-              <Texto cor={Cores.textoSuave}>{c.texto}</Texto>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 }}>
-                <Texto t="rotulo" cor={Cores.dourado}>Abrir</Texto>
-                <IconeSeta cor={Cores.dourado} tamanho={16} />
-              </View>
-            </CartaoImagem>
-          ))}
+          {/* Especiais e ferramentas ligados a este voo (src/lib/especiais.ts): o mesmo card da Home e da missão. */}
+          <ListaEspeciais rotulo="Complementos deste voo" itens={especiaisDoVoo(chaveCapitulo(secao.id, capitulo.numero))} />
 
           {capitulo.teste?.length ? (
             <BotaoPrincipal

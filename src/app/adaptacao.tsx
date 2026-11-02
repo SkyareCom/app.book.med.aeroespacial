@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { CartaoImagem, Painel } from '@/components/cartoes';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { TextoCorrente } from '@/components/texto-corrente';
@@ -35,6 +36,7 @@ export default function Adaptacao() {
       ))}
 
       <BotaoPrincipal rotulo="Teste o conhecimento" onPress={() => router.push({ pathname: '/teste', params: { origem: 'adaptacao', modo: 'quiz' } })} />
+      <RelacionadosEspecial id="adaptacao" />
     </Tela>
   );
 }

@@ -3,6 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
+import { ListaEspeciais } from '@/components/especiais';
 import { IconeCheck } from '@/components/icones';
 import { disponivel, duracao, GUTTER, rotaEpisodio, Selo } from '@/components/streaming';
 import { TelaCheia } from '@/components/tela';
@@ -11,6 +12,7 @@ import { ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Cores, Espaco, TituloDestaque, BordaCapa } from '@/constants/theme';
 import { chaveCapitulo, interativosDe, obterSecao } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
+import { especiaisDaMissao } from '@/lib/especiais';
 import { useProgresso } from '@/state/progresso';
 
 // Página da temporada: arte grande, sinopse e a lista de episódios.
@@ -69,19 +71,8 @@ export function TelaSecao({ id }: { id: SecaoId }) {
             </Pressable>
           );
         })}
-        {id === 'sistemas' ? (
-          // Fim da Missão Sistemas: formulário de liberação para voo seguro (docs/modelo-sistemas.md).
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Abrir o formulário de liberação para voo seguro"
-            onPress={() => router.push('/liberacao-voo')}
-            style={({ pressed }) => [styles.liberacao, pressed && { opacity: 0.85 }]}>
-            <Texto t="rotulo" cor={Cores.dourado}>Fim da missão · Formulário</Texto>
-            <Texto t="item" style={TituloDestaque}>Liberação para voo seguro</Texto>
-            <Texto cor={Cores.textoSuave}>Para passageiro, tripulante e médico especialista: perguntas por sistema, prazos de repouso e um veredito com comentário.</Texto>
-            <Texto t="rotulo" cor={Cores.destaque}>Abrir formulário</Texto>
-          </Pressable>
-        ) : null}
+        {/* Complementos da missão: os mesmos cards de especiais e ferramentas usados na Home e nos voos. */}
+        <ListaEspeciais rotulo="Complementos da missão" itens={especiaisDaMissao(id)} />
       </View>
     </TelaCheia>
   );
@@ -92,7 +83,6 @@ const styles = StyleSheet.create({
   botao: { alignSelf: 'flex-start', minHeight: 46, paddingHorizontal: 22, borderRadius: 23, backgroundColor: Cores.texto, justifyContent: 'center', marginTop: 4 },
   episodio: { height: 101, alignItems: 'center', flexDirection: 'row', gap: Espaco.md, padding: 10, borderRadius: 14, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(6,10,18,0.6)' },
   seloLinha: { height: 20, flexDirection: 'row' },
-  liberacao: { gap: 6, padding: Espaco.lg, borderRadius: 14, borderWidth: 1, borderColor: Cores.dourado, backgroundColor: 'rgba(6,10,18,0.75)' },
   coluna2: { flex: 1, height: 79, gap: 4, overflow: 'hidden' },
   titulo: { height: 36 },
   miniatura: { width: 140, height: 79, flexShrink: 0, borderRadius: 8, overflow: 'hidden', backgroundColor: '#000', ...BordaCapa },

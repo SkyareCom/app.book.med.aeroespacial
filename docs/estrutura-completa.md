@@ -31,6 +31,18 @@ repouso, voar sem liberação, dicas e remédios e a decisão, para passageiro, 
 missão fica o formulário de liberação para voo seguro (`src/app/liberacao-voo.tsx`), alimentado pelo bloco `liberacao`
 de cada voo. O M2V1 foi adaptado primeiro (tópicos VI a IX) e congelado de novo com as fotos novas (02/11/2026).
 
+## CARDS ESPECIAIS, FERRAMENTAS E LIGAÇÕES (02/11/2026)
+Registro único em `src/lib/especiais.ts`: O Voo e a Medicina, Adaptação à altitude, Laboratório, Exame CMA, Liberação
+para voo, Curiosidades e Referências. Cada item tem capa própria (sem repetir a de um voo), título, sinopse, números
+calculados dos dados, voos ligados e missões onde aparece. O mesmo card (`CartaoEspecial`) é usado na Home
+("Ferramentas e extras"), nas páginas das missões ("Complementos da missão"), nos voos ligados ("Complementos deste voo")
+e no fim de cada página especial ("Voos ligados" e "Veja também"). Nenhum número de card é digitado à mão.
+- Laboratório: catálogo gerado de todos os interativos dos voos e dos cards especiais (`src/lib/laboratorio.ts`), por
+  missão, cada um com o voo de origem.
+- Exame CMA: cada sistema usa a capa do voo da Missão Sistemas que trata dele e leva a esse voo.
+- Referências: incluem as diretrizes para passageiros (BTS, CDC, MEDIF) e as autoridades citadas nos voos.
+- Ao criar um especial, um interativo ou um voo novo, ligue-o pelo registro; não crie card avulso numa tela.
+
 ## FONTES — padrão ANAC e FAA (29/10/2026)
 Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
 e da **FAA**, ao lado das obras de referência. Buscar a fonte primária; quando só houver fonte secundária, registrar
@@ -154,7 +166,7 @@ App-book de medicina aeroespacial que pretende ser referência mundial. É unive
 ---
 
 ## 4. Card especial — O VOO E A MEDICINA
-Fica fora das 4 seções. É a história da medicina aeroespacial em 20 eventos cronológicos, divididos em 5 eras, com narrativa direta em cada evento e o botão "TESTE O CONHECIMENTO" no final de cada era. Só fatos históricos relevantes, sem homenagens a pessoas da atualidade.
+Fica fora das 4 seções. É a história da medicina aeroespacial em 21 eventos cronológicos, divididos em 5 eras, com narrativa direta em cada evento e o botão "TESTE O CONHECIMENTO" no final de cada era. Só fatos históricos relevantes, sem homenagens a pessoas da atualidade.
 
 1. **Os Balões (1783–1902):** 1783 primeiros voos de balão · 1862 Glaisher e Coxwell descrevem a hipóxia · 1875 tragédia do balão Zénith · 1878 Paul Bert e a pressão parcial de oxigênio.
 2. **O Avião e a Primeira Guerra (1903–1918):** 1903/1906 Wright e Santos-Dumont · 1908 Selfridge, primeira morte em acidente de avião · 1914–1918 primeiros exames médicos de pilotos e o médico de voo.

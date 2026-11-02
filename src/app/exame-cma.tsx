@@ -7,9 +7,12 @@ import { BotaoPrincipal } from '@/components/botao';
 import { AnaliseIA } from '@/components/cma-ia';
 import { Barra, CartaoImagem, Painel } from '@/components/cartoes';
 import { AnelValidade, Audiograma, EscalaGlicemia, GraficoAcuidade, GraficoPA, GraficoValidade, SERIES_VALIDADE } from '@/components/cma-graficos';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Selo } from '@/components/selo';
+import { rotaEpisodio } from '@/components/streaming';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
+import { ArteExameCMA, CapaEpisodio } from '@/constants/capas';
 import { BordaCapa, Cores, Espaco, Fonte, Raio, Tamanho } from '@/constants/theme';
 import { questoesCMA } from '@/data/cma-questoes';
 import { avaliar, CLASSES, EXAMES_1A, INFLUENCIA, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
@@ -27,8 +30,8 @@ import { useProgresso } from '@/state/progresso';
 type Aba = 'avaliacao' | 'guia' | 'simulado';
 
 const IMG = {
-  hero: require('@/assets/images/capas/cli-01.jpg'),
-  guia: require('@/assets/images/capas/cli-03.jpg'),
+  hero: ArteExameCMA,
+  guia: require('@/assets/images/capas/cli-01.jpg'),
   levar: require('@/assets/images/capas/cli-06.jpg'),
   simulado: require('@/assets/images/capas/cli-12.jpg'),
 };
@@ -40,23 +43,28 @@ const IMG_CLASSE: Record<ClasseCMA, number> = {
   '5': require('@/assets/images/capas/ope-16.jpg'),
 };
 
+// Cada sistema do formulário usa a capa do voo da Missão Sistemas (ou Aviação) que trata dele, e leva a esse voo.
+// Sinais vitais não têm voo próprio: usam a arte do monitor cardíaco (cli-02).
+const VOO_SISTEMA: Record<string, [string, number]> = {
+  medicamentos: ['aviacao', 2],
+  metabolico: ['sistemas', 9],
+  cardio: ['sistemas', 2],
+  pneumo: ['sistemas', 1],
+  digestivo: ['sistemas', 10],
+  renal: ['sistemas', 14],
+  hemato: ['sistemas', 11],
+  neuro: ['sistemas', 6],
+  mental: ['sistemas', 7],
+  obst: ['sistemas', 13],
+  osteo: ['sistemas', 12],
+  visao: ['sistemas', 4],
+  audicao: ['sistemas', 3],
+  orl: ['sistemas', 3],
+  odonto: ['sistemas', 3],
+};
 const IMG_SISTEMA: Record<string, number> = {
-  medicamentos: require('@/assets/images/capas/cli-13.jpg'),
-  vitais: require('@/assets/images/capas/cli-08.jpg'),
-  metabolico: require('@/assets/images/capas/cli-13.jpg'),
-  cardio: require('@/assets/images/capas/cli-02.jpg'),
-  pneumo: require('@/assets/images/topicos/m1v1-2-corpo.jpg'),
-  digestivo: require('@/assets/images/capas/cli-09.jpg'),
-  renal: require('@/assets/images/capas/cli-09.jpg'),
-  hemato: require('@/assets/images/capas/cli-10.jpg'),
-  neuro: require('@/assets/images/capas/cli-04.jpg'),
-  mental: require('@/assets/images/capas/cli-05.jpg'),
-  obst: require('@/assets/images/capas/cli-12.jpg'),
-  osteo: require('@/assets/images/capas/cli-11.jpg'),
-  visao: require('@/assets/images/capas/fis-09.jpg'),
-  audicao: require('@/assets/images/capas/cli-07.jpg'),
-  orl: require('@/assets/images/capas/fis-02.jpg'),
-  odonto: require('@/assets/images/capas/cli-11.jpg'),
+  vitais: require('@/assets/images/capas/cli-02.jpg'),
+  ...Object.fromEntries(Object.entries(VOO_SISTEMA).map(([id, [sec, n]]) => [id, CapaEpisodio[`${sec}-${n}`]])),
 };
 
 // Cada achado aponta as perguntas que o geraram; o sistema é o da primeira delas.
@@ -148,6 +156,7 @@ export default function ExameCMA() {
           Ferramenta de apoio à decisão. Não substitui o exame clínico nem o julgamento do médico ou da clínica credenciada, e a palavra final é da ANAC. Limiares sem fonte consultada aparecem como [confirmar na referência].
         </Texto>
       </Painel>
+      <RelacionadosEspecial id="exame-cma" />
     </Tela>
   );
 }
@@ -157,6 +166,7 @@ export default function ExameCMA() {
 const respondido = (v: Valores, id: string) => v[id] !== undefined && v[id] !== '';
 
 function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> }) {
+  const router = useRouter();
   const [classe, setClasse] = useState<ClasseCMA>('1');
   const [funcao, setFuncao] = useState('pla-multi');
   const [idade, setIdade] = useState('');
@@ -326,6 +336,12 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
             </Pressable>
             {aberto ? (
               <View style={{ gap: Espaco.sm }}>
+                {VOO_SISTEMA[s.id] ? (
+                  <Pressable accessibilityRole="link" onPress={() => router.push(rotaEpisodio(VOO_SISTEMA[s.id][0], VOO_SISTEMA[s.id][1]))} style={styles.vooSistema}>
+                    <Texto t="rotulo" cor={Cores.textoApagado}>{`Missão ${VOO_SISTEMA[s.id][0] === 'aviacao' ? 3 : 2} · Voo ${VOO_SISTEMA[s.id][1]}`}</Texto>
+                    <Texto t="rotulo" cor={Cores.dourado}>Ir ao voo</Texto>
+                  </Pressable>
+                ) : null}
                 {s.id === 'vitais' ? <GraficoPA pas={n(valores, 'pas')} pad={n(valores, 'pad')} /> : null}
                 {s.id === 'metabolico' ? <EscalaGlicemia gli={n(valores, 'glicemia')} /> : null}
                 {s.id === 'visao' ? <GraficoAcuidade od={n(valores, 'avOD')} oe={n(valores, 'avOE')} bin={n(valores, 'avBin')} /> : null}
@@ -718,6 +734,7 @@ function Entrada({ rotulo, placeholder, unidade, valor, onChange }: { rotulo: st
 }
 
 const styles = StyleSheet.create({
+  vooSistema: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 6, borderBottomWidth: 1, borderBottomColor: Cores.linha },
   voo: { flexDirection: 'row', alignItems: 'center', gap: Espaco.sm, padding: Espaco.md, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, backgroundColor: Cores.painel },
   abas: { flexDirection: 'row', gap: 6, padding: 4, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, backgroundColor: Cores.painel },
   aba: { flex: 1, minHeight: 40, borderRadius: Raio - 4, alignItems: 'center', justifyContent: 'center' },

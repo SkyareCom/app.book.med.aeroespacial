@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
 import { CartaoImagem, Painel } from '@/components/cartoes';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { ArteEspecialVoo } from '@/constants/capas';
@@ -42,6 +43,7 @@ export default function Historia() {
           />
         </View>
       ))}
+      <RelacionadosEspecial id="historia" />
     </Tela>
   );
 }

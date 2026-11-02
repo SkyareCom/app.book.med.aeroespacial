@@ -1,36 +1,73 @@
-import { useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
+import { Image } from 'expo-image';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { CartaoImagem } from '@/components/cartoes';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Midia, NOME_MIDIA } from '@/components/midia';
+import { Opcoes } from '@/components/midia/opcoes';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
-import { Imagens } from '@/constants/imagens';
-import { Cores, Espaco, Raio } from '@/constants/theme';
+import { ArteAdaptacao, CapaEpisodio } from '@/constants/capas';
+import { BordaCapa, Cores, Espaco, Raio } from '@/constants/theme';
 import type { TipoMidia } from '@/data/tipos';
+import { obterEspecial } from '@/lib/especiais';
+import { catalogoLab } from '@/lib/laboratorio';
 
-const ORDEM: TipoMidia[] = ['simulador-o2', 'simulador-visao', 'grafico-tuc', 'forcas-g', 'leis-gases', 'adaptacao-escuro', 'regua-ruido', 'radiacao-voo', 'risco-aeromedico', 'perda-ossea', 'classificar-hipoxia'];
-
+// Laboratório aeroespacial: todos os interativos do app (src/lib/laboratorio.ts), por missão, cada um com o voo de
+// origem. Um interativo novo num voo aparece aqui sozinho.
 export default function Laboratorio() {
+  const router = useRouter();
   const { midia } = useLocalSearchParams<{ midia?: string }>();
-  const [ativo, setAtivo] = useState<TipoMidia>(ORDEM.includes(midia as TipoMidia) ? (midia as TipoMidia) : 'simulador-o2');
+  const catalogo = useMemo(() => catalogoLab(), []);
+  const grupos = useMemo(() => [...new Set(catalogo.map((i) => i.grupo))], [catalogo]);
+  const inicial = catalogo.find((i) => i.midia === midia) ?? catalogo[0];
+  const [grupo, setGrupo] = useState(inicial.grupo);
+  const [ativo, setAtivo] = useState<TipoMidia>(inicial.midia);
+  const doGrupo = catalogo.filter((i) => i.grupo === grupo);
+  const item = catalogo.find((i) => i.midia === ativo) ?? doGrupo[0];
+  const lab = obterEspecial('laboratorio');
 
   return (
-    <Tela titulo="Laboratório aeroespacial" rotulo="Simuladores, gráficos e atividades">
-      <CartaoImagem imagem={Imagens.lab} altura={120}>
-        <Texto t="item">Experimente o que acontece com o corpo em cada condição de voo. Cada simulador também aparece no voo do tema.</Texto>
+    <Tela titulo="Laboratório aeroespacial" rotulo={lab.meta()}>
+      <CartaoImagem imagem={lab.imagem} altura={130} style={BordaCapa}>
+        <Texto t="item">{lab.titulo}</Texto>
+        <Texto cor={Cores.textoSuave}>{lab.sinopse}</Texto>
       </CartaoImagem>
+
+      <Opcoes
+        itens={grupos.map((g) => [g, g] as [string, string])}
+        valor={grupo}
+        onChange={(g) => {
+          setGrupo(g);
+          setAtivo(catalogo.find((i) => i.grupo === g)!.midia);
+        }}
+        colunas={1}
+      />
+
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: Espaco.sm }}>
-        {ORDEM.map((m) => (
-          <Pressable key={m} accessibilityRole="tab" accessibilityState={{ selected: ativo === m }} onPress={() => setAtivo(m)} style={[styles.chip, ativo === m && styles.chipAtivo]}>
-            <Texto t="rotulo" cor={ativo === m ? Cores.fundo : Cores.texto}>{NOME_MIDIA[m]}</Texto>
+        {doGrupo.map((i) => (
+          <Pressable key={i.midia} accessibilityRole="tab" accessibilityState={{ selected: ativo === i.midia }} onPress={() => setAtivo(i.midia)} style={[styles.chip, ativo === i.midia && styles.chipAtivo]}>
+            <Texto t="rotulo" cor={ativo === i.midia ? Cores.fundo : Cores.texto}>{NOME_MIDIA[i.midia]}</Texto>
           </Pressable>
         ))}
       </ScrollView>
-      <View key={ativo}>
-        <Midia tipo={ativo} />
+
+      <Pressable accessibilityRole="link" onPress={() => router.push(item.rota as never)} style={styles.origem}>
+        <Image source={item.capa === 'adaptacao' ? ArteAdaptacao : CapaEpisodio[item.capa]} style={[styles.miniatura, BordaCapa]} contentFit="cover" />
+        <View style={{ flex: 1, gap: 2 }}>
+          <Texto t="rotulo" cor={Cores.destaque} semTraducao={item.codigo !== 'Especial'}>{item.codigo === 'Especial' ? 'Missão especial' : item.codigo}</Texto>
+          <Texto t="item" numberOfLines={2}>{item.titulo}</Texto>
+        </View>
+        <Texto t="rotulo" cor={Cores.dourado}>{item.codigo === 'Especial' ? 'Abrir' : 'Ir ao voo'}</Texto>
+      </Pressable>
+
+      <View key={item.midia}>
+        <Midia tipo={item.midia} />
       </View>
+
+      <RelacionadosEspecial id="laboratorio" />
     </Tela>
   );
 }
@@ -38,4 +75,6 @@ export default function Laboratorio() {
 const styles = StyleSheet.create({
   chip: { minHeight: 40, paddingHorizontal: 14, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, justifyContent: 'center', backgroundColor: 'rgba(3,5,10,0.6)' },
   chipAtivo: { backgroundColor: Cores.destaque, borderColor: Cores.destaque },
+  origem: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, padding: 10, borderRadius: 14, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(6,10,18,0.6)' },
+  miniatura: { width: 96, height: 54, borderRadius: 8, overflow: 'hidden' },
 });

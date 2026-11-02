@@ -1,4 +1,4 @@
-// Card especial "O Voo e a Medicina": 20 eventos em 5 eras.
+// Card especial "O Voo e a Medicina": 21 eventos em 5 eras (contagem calculada em src/lib/especiais.ts).
 // Só fatos históricos relevantes; valores incertos com "cerca de".
 
 import type { Era } from './tipos';
