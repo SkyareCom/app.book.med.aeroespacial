@@ -26,7 +26,9 @@
 //   6/12 (20/40) em cada olho e 6/9 (20/30) binocular (ICAO, Aviation Medicine FAQ; NZ CAA, 67.103/67.107).
 // - Audição: Classe 1 e 3, audiometria sem perda acima de 35 dB em 500, 1.000 e 2.000 Hz nem de 50 dB em 3.000 Hz,
 //   em cada ouvido; Classe 2, voz de conversa a 2 m, de costas (síntese do Anexo 1, LegalClarity; mesmos valores do
-//   RBAC 67.101) [conferir no texto do Anexo 1].
+//   RBAC 67.101). Revisão 02/11/2026: limites da Classe 1 conferidos no texto do Anexo 1, Cap. 6, citado pela IFALPA
+//   (17POS02, Cockpit noise level): até 35 dB em 500, 1.000 e 2.000 Hz e 50 dB em 3.000 Hz, cada ouvido; quem passa
+//   do limite pode ser apto com audição normal em ruído que simula a cabine ou em teste prático em voo.
 // - Pressão arterial: o Anexo 1 não fixa número.
 // - Validade (Anexo 1, 1.2.5.2, reproduzido pela CAA do Sri Lanka): Classe 1, 12 meses; 6 meses a partir dos 40 em
 //   operação comercial de passageiros com um só piloto e a partir dos 60 no transporte aéreo comercial. Classe 2,
@@ -59,8 +61,18 @@
 //   Hidroxicloroquina/cloroquina: relatório de estado (Plaquenil Status Report).
 // ICAO: o requisito geral do Capítulo 6 inclui o efeito ou efeito colateral de qualquer medicamento terapêutico,
 //   diagnóstico ou preventivo, prescrito ou não (texto reproduzido pela CAAT, Tailândia, Medical Assessment Standards,
-//   Appendix General C.d); o titular não exerce as prerrogativas ao perceber diminuição da aptidão (Anexo 1, 1.2.7).
-//   [conferir no texto do Anexo 1.] Sem regra numérica por remédio.
+//   Appendix General C.d). Revisão 02/11/2026, texto do Anexo 1 (14ª ed., Emenda 179): 1.2.6.1, o titular não exerce
+//   as prerrogativas ao perceber diminuição da aptidão; 1.2.7.1, nem sob efeito de substância psicoativa; 1.2.7.2,
+//   nem com uso problemático. A frase do Cap. 6 sobre medicamento terapêutico segue a reprodução da CAAT (o Cap. 6
+//   não foi alcançado no texto consultado). Sem regra numérica por remédio.
+// EQUIVALÊNCIAS SEM CLASSE DIRETA (revisão 02/11/2026)
+// - FAA, 14 CFR 61.23(b): sem certificado médico para planador (b)(3), balão (b)(2) e (b)(4) e piloto esportivo de
+//   planador ou balão; 61.23(c)(1)(ii): piloto esportivo nas demais aeronaves leves usa certificado médico ou carteira
+//   de motorista válida dos EUA (Cornell LII, eCFR).
+// - FAA, 14 CFR 107.17: o piloto remoto (Part 107) não tem certificado médico; não pode operar quem sabe, ou tem razão
+//   para saber, que tem condição física ou mental que atrapalha a operação segura.
+// - ICAO, Anexo 1 (Emenda 179, CAA da Nova Zelândia): 6.1.1 c), a avaliação médica Classe 3 vale também para a licença
+//   de piloto remoto; 1.2.5.2, validade de 48 meses, 24 meses a partir dos 40 anos (1.2.5.2.4).
 
 import { num, SISTEMAS, type Achado, type Nivel, type Resultado, type Valores, type Veredito } from '@/lib/cma';
 
@@ -103,11 +115,11 @@ export function equivalenteFAA(funcao: string, idade: number | undefined): Equiv
         validade: i >= 40 ? { meses: 24, regra: '3ª classe a partir dos 40 anos: 24 meses (14 CFR 61.23).' } : { meses: 60, regra: '3ª classe abaixo dos 40 anos: 60 meses (14 CFR 61.23).' },
       };
     case 'leve':
-      return { aplica: false, classe: 'Sem equivalente direto', nota: 'Planador e aeronave leve esportiva têm regras próprias na FAA [confirmar na referência].' };
+      return { aplica: false, classe: 'Sem certificado médico no planador', nota: 'Planador: a FAA não exige certificado médico (14 CFR 61.23(b)). Aeronave leve esportiva: certificado médico ou carteira de motorista válida dos EUA (14 CFR 61.23(c)).' };
     case 'comissario':
       return { aplica: false, classe: 'Sem certificado médico', nota: 'A FAA não exige certificado médico de comissário de voo.' };
     default:
-      return { aplica: false, classe: 'Sem equivalente direto', nota: 'Piloto remoto: [confirmar na referência].' };
+      return { aplica: false, classe: 'Sem certificado médico', nota: 'Piloto remoto: a FAA não exige certificado médico, mas proíbe operar quem sabe ter uma condição física ou mental que atrapalhe a operação segura (14 CFR 107.17).' };
   }
 }
 
@@ -137,7 +149,12 @@ export function equivalenteICAO(funcao: string, idade: number | undefined, publi
     case 'comissario':
       return { aplica: false, classe: 'Sem avaliação médica', nota: 'O Anexo 1 não prevê avaliação médica para comissário de voo.' };
     default:
-      return { aplica: false, classe: 'Sem equivalente direto', nota: 'Piloto remoto: [confirmar na referência].' };
+      return {
+        aplica: true,
+        classe: 'Classe 3',
+        nota: 'O Anexo 1 aplica ao piloto remoto a avaliação médica Classe 3 (6.1.1).',
+        validade: i >= 40 ? { meses: 24, regra: 'Licença de piloto remoto a partir dos 40 anos: 24 meses (Anexo 1, 1.2.5.2).' } : { meses: 48, regra: 'Licença de piloto remoto: 48 meses (Anexo 1, 1.2.5.2).' },
+      };
   }
 }
 

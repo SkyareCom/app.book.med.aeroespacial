@@ -102,8 +102,10 @@ const ARQUIVOS = Object.freeze({
   // 02/11/2026: título do M2V1 trocado para "Pulmões, oxigênio e hipóxia", autorizado pelo autor.
   // 02/11/2026: M2V1 adaptado ao modelo de Sistemas (docs/modelo-sistemas.md), com autorização do autor, e congelado de
   //   novo com as 8 fotos dos tópicos VI a IX (no padrão de 1.600 px, pedido do autor), o bloco do formulário de liberação e os interativos novos.
-  'src/data/capitulos/hipoxia.ts': '233df55a75fb7014',
-  'src/data/liberacao/respiratorio.ts': 'c713ec1867370877',
+  // 02/11/2026 (pedido do autor, "Resolva tudo"): apneia confirmada fora do texto do RBAC 67 Emenda 05; marcadores
+  //   [confirmar na referência] da apneia retirados e numeração das alíneas conferida.
+  'src/data/capitulos/hipoxia.ts': 'b48f6bbe69908826',
+  'src/data/liberacao/respiratorio.ts': 'd7cb8010b5630f56',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
   'assets/images/topicos/m2v1-6-espirometria.jpg': '6d40f50ca00797ad',

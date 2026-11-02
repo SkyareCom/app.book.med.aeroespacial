@@ -20,7 +20,9 @@
 //  - Revisão 31/10/2026 (medicamentos, pedido do autor): RBAC 67, texto da Emenda 00 (resgateaeromedico.com.br,
 //    RBAC67EMD00.pdf): 67.71(c) condição não prevista que afete a segurança, a critério; 67.71(d) o candidato informa
 //    o uso de medicamentos; 67.71(f) os exames consideram os recursos terapêuticos e o prognóstico; 67.15(c) diminuição
-//    da aptidão. [conferir a numeração dessas alíneas na Emenda 05.] As regras por remédio já existentes (67.75(c),
+//    da aptidão. Revisão 02/11/2026: numeração conferida no texto da Emenda 05 (anac.gov.br, RBAC67EMD05.pdf):
+//    67.71(c), (d) e (f) e 67.15(c) dizem o mesmo; 67.15(d) lista quem mais deve reportar (examinador, CENIPA,
+//    serviço médico do operador). 67.13(g): CMA de classe superior válido substitui o das inferiores. As regras por remédio já existentes (67.75(c),
 //    67.79(a)(3) e (8), 67.85(f), 67.87(c)) seguem a Emenda 05. Efeitos dos remédios sobre os exames: farmacologia de
 //    bula (betabloqueador e frequência cardíaca; sulfonilureia e hipoglicemia; corticoide e glicemia; inibidor da
 //    PDE5 e visão de cores; hidroxicloroquina e retina; aminoglicosídeo, cisplatina e diurético de alça e audição;

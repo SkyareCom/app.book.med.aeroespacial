@@ -143,7 +143,7 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
       {
         rotulo: 'Sim, tratada com CPAP usado todas as noites',
         passageiro: e('cuidados', 'Leve o CPAP na bagagem de mão, com carta do médico, e combine o aparelho e as baterias com a companhia.', 'CPAP na bagagem de mão com carta; aprovação da companhia; baterias para 1,5 vez a viagem; usar em voo noturno (BTS 2022).', '3.7'),
-        tripulante: e('avaliar', 'Leve ao médico examinador o registro de uso do CPAP.', 'FAA: autorização especial (AASI) com acompanhamento do uso do CPAP. ANAC: sem item próprio [confirmar na referência]; a critério (67.71(c)).', '3.7'),
+        tripulante: e('avaliar', 'Leve ao médico examinador o registro de uso do CPAP.', 'FAA: autorização especial (AASI) com acompanhamento do uso do CPAP. ANAC: o RBAC 67 não cita a apneia; vale o critério geral (67.71(c)).', '3.7'),
       },
       {
         rotulo: 'Sim, sem tratamento',
