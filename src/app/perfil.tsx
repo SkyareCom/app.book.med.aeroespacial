@@ -1,4 +1,5 @@
 import { Image } from 'expo-image';
+import { router } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
@@ -19,12 +20,18 @@ const DESCRICAO: Record<ModoEntrada, { titulo: string; texto: string }> = {
   convidado: { titulo: 'Sem conta', texto: 'Seu progresso fica salvo só neste aparelho.' },
 };
 
-// Perfil: como a pessoa entrou, progresso nas missões, ranking de conhecimento (XP) e a opção de entrar ou sair.
+// Perfil: como a pessoa entrou, progresso nas missões, ranking de conhecimento (XP), entrar na conta e sair do app.
 export default function Perfil() {
   const { modo, sair } = useConta();
   const { concluidos, melhoresNotas } = useProgresso();
   const conta = DESCRICAO[modo ?? 'convidado'];
   const pct = concluidos.length / totalCapitulos;
+
+  // Sai da conta e volta para a tela de login; depois de entrar, a pessoa cai no início.
+  function sairDoApp() {
+    sair();
+    router.replace('/');
+  }
 
   return (
     <Tela titulo="Perfil" rotulo="Sua conta e seu progresso">
@@ -53,11 +60,8 @@ export default function Perfil() {
 
       <PainelRanking />
 
-      {modo === 'convidado' || !modo ? (
-        <BotaoPrincipal rotulo="Entrar na conta" onPress={sair} />
-      ) : (
-        <BotaoPrincipal rotulo="Sair da conta" secundario onPress={sair} />
-      )}
+      {modo === 'convidado' || !modo ? <BotaoPrincipal rotulo="Entrar na conta" onPress={sairDoApp} /> : null}
+      <BotaoPrincipal rotulo="Sair do app" secundario onPress={sairDoApp} />
     </Tela>
   );
 }
