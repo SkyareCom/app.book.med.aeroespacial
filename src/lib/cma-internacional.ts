@@ -29,6 +29,9 @@
 //   RBAC 67.101). Revisão 02/11/2026: limites da Classe 1 conferidos no texto do Anexo 1, Cap. 6, citado pela IFALPA
 //   (17POS02, Cockpit noise level): até 35 dB em 500, 1.000 e 2.000 Hz e 50 dB em 3.000 Hz, cada ouvido; quem passa
 //   do limite pode ser apto com audição normal em ruído que simula a cabine ou em teste prático em voo.
+//   Conferido também no Doc 8984 (3ª ed., Part III, Cap. 12), que reproduz o Anexo 1: 6.3.4.1 e 6.3.4.1.1–6.3.4.1.2
+//   (Classe 1); 6.4.4.1 (Classe 2, voz de conversa a 2 m, com os dois ouvidos, de costas) e 6.4.4.2 (Classe 2, se
+//   testada por audiometria, os mesmos limites); 6.5.4.1 (Classe 3); sala silenciosa com ruído abaixo de 35 dB(A).
 // - Pressão arterial: o Anexo 1 não fixa número.
 // - Validade (Anexo 1, 1.2.5.2, reproduzido pela CAA do Sri Lanka): Classe 1, 12 meses; 6 meses a partir dos 40 em
 //   operação comercial de passageiros com um só piloto e a partir dos 60 no transporte aéreo comercial. Classe 2,
@@ -63,8 +66,9 @@
 //   diagnóstico ou preventivo, prescrito ou não (texto reproduzido pela CAAT, Tailândia, Medical Assessment Standards,
 //   Appendix General C.d). Revisão 02/11/2026, texto do Anexo 1 (14ª ed., Emenda 179): 1.2.6.1, o titular não exerce
 //   as prerrogativas ao perceber diminuição da aptidão; 1.2.7.1, nem sob efeito de substância psicoativa; 1.2.7.2,
-//   nem com uso problemático. A frase do Cap. 6 sobre medicamento terapêutico segue a reprodução da CAAT (o Cap. 6
-//   não foi alcançado no texto consultado). Sem regra numérica por remédio.
+//   nem com uso problemático. Anexo 1, 6.2.2 d), reproduzido no Doc 8984 (Part I, 2.1.4): o candidato deve estar livre
+//   de efeito ou efeito colateral de remédio terapêutico, diagnóstico ou preventivo, prescrito ou não, que cause
+//   incapacidade funcional capaz de interferir na operação segura. Sem regra numérica por remédio.
 // EQUIVALÊNCIAS SEM CLASSE DIRETA (revisão 02/11/2026)
 // - FAA, 14 CFR 61.23(b): sem certificado médico para planador (b)(3), balão (b)(2) e (b)(4) e piloto esportivo de
 //   planador ou balão; 61.23(c)(1)(ii): piloto esportivo nas demais aeronaves leves usa certificado médico ou carteira
@@ -172,7 +176,7 @@ export const REGRAS_INT: Record<string, { faa?: string; icao?: string }> = {
   hiperforia: { faa: 'Acima de 1 DP: avaliação do especialista, sem desqualificar por si (67.103).' },
   exoforia: { faa: 'Acima de 6 DP: avaliação do especialista, sem desqualificar por si (67.103).' },
   esoforia: { faa: 'Acima de 6 DP: avaliação do especialista, sem desqualificar por si (67.103).' },
-  od500: { faa: 'Melhor ouvido 35/30/30/40 dB e pior ouvido 35/50/50/60 dB em 500/1.000/2.000/3.000 Hz (67.105).', icao: 'Classe 1: até 35 dB em 500, 1.000 e 2.000 Hz e 50 dB em 3.000 Hz, em cada ouvido. Classe 2: voz de conversa a 2 m.' },
+  od500: { faa: 'Melhor ouvido 35/30/30/40 dB e pior ouvido 35/50/50/60 dB em 500/1.000/2.000/3.000 Hz (67.105).', icao: 'Classe 1: até 35 dB em 500, 1.000 e 2.000 Hz e 50 dB em 3.000 Hz, em cada ouvido. Classe 2: voz de conversa a 2 m; se fizer audiometria, os mesmos limites (6.4.4.2).' },
   voz: { faa: 'Voz de conversa a 6 pés (1,8 m), de costas, com os dois ouvidos, substitui a audiometria (67.105).', icao: 'Classe 2: voz de conversa a 2 m, de costas.' },
   fala: { faa: 'Discriminação da fala de 70% ou mais num ouvido substitui a audiometria tonal (67.105).' },
   angina: { faa: 'Desqualifica, salvo emissão especial (67.111).' },

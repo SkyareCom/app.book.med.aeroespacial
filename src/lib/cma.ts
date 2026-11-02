@@ -15,8 +15,28 @@
 //    67.83(a)–(b); 67.85(a)–(g); 67.87(a)–(c); 67.89(a)–(d); 67.93(a)–(c); 67.95(a)–(b); 67.97(a)–(g);
 //    67.99(a)–(k); 67.101(a)–(e) (na revalidação basta uma orelha); 67.103(a)(1)–(4) (texto lido até (a)(5)).
 //    67.73 e 67.91 estão reservados.
-//  - Limiares específicos da 2ª, 4ª e 5ª classes (subpartes D a F) não foram consultados no texto integral:
-//    marcados como [confirmar na referência]. A 3ª classe (controle de tráfego aéreo) não é regida pela ANAC.
+//  - Revisão 02/11/2026 (PDF integral da Emenda 05 enviado pelo autor): subpartes D (2ª classe, 67.111–67.145),
+//    F (4ª, 67.191–67.225) e G (5ª, 67.231–67.261) comparadas seção a seção com a C. A numeração segue a da 1ª classe
+//    deslocada (+40, +120, +160). Diferenças aplicadas pelo motor (REGRAS DA CLASSE, abaixo):
+//    2ª: acuidade 20/40 em cada olho e 20/30 binocular, sem J6 (67.139(c)); audiometria só para PP, os demais ouvem
+//      voz de 85–95 dB a 2 m com os dois ouvidos, uma orelha na revalidação, e a falha nas duas dá restrição de rádio
+//      e de comissário (67.141); infarto em não piloto ≥ 6 meses com lipidograma e cintilografia ou cateterismo; após
+//      revascularização, não piloto com Holter e prova de esforço (67.119(b)(2)–(3)); não piloto pode ser monocular
+//      (67.139(c)(7)) e não tem requisito odontológico (67.143(a)); cirurgia refrativa só regula o piloto
+//      (67.139(b)); ECG e ergométrico na revalidação a cada 2 anos a partir dos 50, abaixo a critério (67.119(d)).
+//    4ª: critério geral a critério do examinador para coração (ECG a partir dos 40), pulmão, sangue e metabolismo
+//      (só diabetes, hipoglicemia ou doença metabólica descompensadas) (67.199–67.207); digestivo, renal e
+//      odontológico reservados; acuidade 20/40 em cada olho, sem binocular, monocular com 20/30 e avaliação de
+//      proficiência (67.219); voz a 2 m em pelo menos um ouvido, falha nos dois dá restrição de rádio (67.221);
+//      gestação de baixo risco apta da 12ª à 26ª semana (67.213); limitação osteomuscular pode ser aceita após
+//      avaliação por examinador credenciado (67.215(b)); exames mínimos sem colesterol, EAS e ácido úrico (67.191(i)).
+//    5ª: acuidade 20/40 em cada olho e 20/30 binocular (67.259(c)(1)); falha de cores dá restrição de operação
+//      (67.259(c)(5)); monocular aceito sem contato visual direto com a aeronave (67.259(c)(6)); IMC, hérnia e
+//      vestibular reservados (67.245, 67.243, 67.257); audiometria a cada 4 anos e uma orelha basta; falha nas duas
+//      dá restrição de rádio (67.261); gestação de baixo risco apta até a 34ª semana (67.253); ECG e ergométrico a
+//      cada 24 meses a partir dos 50 (67.239(d)); radiografia de tórax a critério (67.241(b)).
+//    Função "PP, PP-IFR, balão ou aluno": o app aplica a audiometria (exigida da categoria PP); para balão e aluno a
+//    regra é o teste de voz (67.141(a)). A 3ª classe (controle de tráfego aéreo) não é regida pela ANAC.
 //  - Revisão 31/10/2026 (medicamentos, pedido do autor): RBAC 67, texto da Emenda 00 (resgateaeromedico.com.br,
 //    RBAC67EMD00.pdf): 67.71(c) condição não prevista que afete a segurança, a critério; 67.71(d) o candidato informa
 //    o uso de medicamentos; 67.71(f) os exames consideram os recursos terapêuticos e o prognóstico; 67.15(c) diminuição
@@ -99,7 +119,59 @@ export type Campo =
   | (CampoBase & { tipo: 'sn'; sim?: Regra; nao?: Regra })
   | (CampoBase & { tipo: 'opcao'; opcoes: { id: string; nome: string }[] });
 
-export interface Contexto { inicial: boolean }
+export interface Contexto { inicial: boolean; classe?: ClasseCMA; funcao?: string }
+
+// ---------------------------------------------------------------- REGRAS DA CLASSE (registro no topo do arquivo)
+const NAO_PILOTO = ['comissario', 'mecanico'];
+export const naoPiloto = (funcao?: string) => !!funcao && NAO_PILOTO.includes(funcao);
+// Audiometria tonal (1ª e 5ª classes e PP na 2ª) ou teste de voz a 2 m (demais da 2ª e 4ª classe).
+export function usaAudiometria(ctx: Contexto) {
+  if (ctx.classe === '4') return false;
+  if (ctx.classe === '2') return ctx.funcao === undefined || ctx.funcao === 'pp';
+  return true;
+}
+const AUDIOMETRIA = ['od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000', 'fala'];
+const VISAO_DETALHE = ['avBin', 'correcao', 'umPar', 'lenteMulti', 'lenteColorida', 'lenteOculos', 'semCorrecao200', 'pertoJ1', 'distanciaJ6', 'cores', 'hiperforia', 'exoforia', 'esoforia', 'heterotropia', 'refrativa', 'refrativaMeses'];
+const BOCA_NARIZ = ['boca', 'viasAereas', 'seios', 'maxilofacial', 'disartria', 'gagueira', 'fonacao', 'narizDireito', 'narizEsquerdo'];
+const SISTEMAS_RESERVADOS: Partial<Record<ClasseCMA, string[]>> = { '4': ['digestivo', 'renal', 'odonto'] };
+
+// Pergunta que não existe na subparte da classe (seção reservada ou requisito só da 1ª classe).
+export function oculto(id: string, ctx: Contexto): boolean {
+  const c = ctx.classe;
+  if (!c || c === '1') return false;
+  const sis = SISTEMAS.find((s) => s.campos.some((f) => f.id === id))?.id;
+  if (sis && SISTEMAS_RESERVADOS[c]?.includes(sis)) return true;
+  if (!usaAudiometria(ctx) && AUDIOMETRIA.includes(id)) return true;
+  if (id === 'distanciaJ6') return true;
+  if (c === '2' && naoPiloto(ctx.funcao) && (sis === 'odonto' || id === 'refrativa' || id === 'refrativaMeses')) return true;
+  if (c === '4' && (VISAO_DETALHE.includes(id) || BOCA_NARIZ.includes(id))) return true;
+  if (c === '5' && ['vestibular', 'vestibularPassageiro', 'hernia'].includes(id)) return true;
+  return false;
+}
+
+export function sistemaAplica(id: string, classe: ClasseCMA) {
+  return !SISTEMAS_RESERVADOS[classe]?.includes(id);
+}
+
+// Alínea equivalente na subparte da classe: a numeração da 1ª classe deslocada. Na 4ª classe, cuja estrutura é
+// outra, só a seção.
+const DESLOCA: Record<ClasseCMA, number> = { '1': 0, '2': 40, '4': 120, '5': 160 };
+export function refClasse(ref: string, classe: ClasseCMA) {
+  const d = DESLOCA[classe];
+  if (!d) return ref;
+  return ref.replace(/67\.(\d+)(\([^\s,]*\))?/g, (m, n: string, par?: string) => {
+    const x = Number(n);
+    if (x < 71 || x > 103) return m;
+    return classe === '4' ? `67.${x + d}` : `67.${x + d}${par ?? ''}`;
+  });
+}
+
+// Resumo das diferenças da classe, mostrado ao escolher a classe.
+export const NOTA_CLASSE: Partial<Record<ClasseCMA, string>> = {
+  '2': 'Subparte D (67.111 a 67.145). Muda em relação à 1ª classe: acuidade de 20/40 em cada olho e 20/30 binocular; audiometria só para PP, e os demais fazem o teste de voz a 2 m; infarto em não piloto com prazo de 6 meses; não piloto pode ter visão monocular e não tem requisito odontológico; ECG e ergométrico na revalidação a cada 2 anos a partir dos 50.',
+  '4': 'Subparte F (67.191 a 67.225). Coração, pulmão, sangue e metabolismo seguem o critério do examinador, sem limites numéricos; não há requisitos digestivos, renais nem odontológicos; acuidade de 20/40 em cada olho; teste de voz a 2 m em pelo menos um ouvido; gestação de baixo risco apta da 12ª à 26ª semana.',
+  '5': 'Subparte G (67.231 a 67.261). Acuidade de 20/40 em cada olho e 20/30 binocular; falha nas cores e visão monocular podem ser aceitas com restrição de operação; sem limite de IMC; audiometria a cada 4 anos, com uma orelha bastando; gestação de baixo risco apta até a 34ª semana.',
+};
 
 // Atalhos para escrever as perguntas: uma pergunta, uma condição.
 type Extra = { sim?: Regra; nao?: Regra; se?: (v: Valores, ctx: Contexto) => boolean; ajuda?: string };
@@ -392,9 +464,9 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
     achado: 'Oftalmológico',
     ref: '67.99',
     campos: [
-      nm('avOD', 'Acuidade de longe, olho direito', '67.99(c)(1)', '20/__ (ex.: 25)', '20/x', [10, 400], { ajuda: 'Mínimo 20/30 em cada olho, com ou sem correção.' }),
+      nm('avOD', 'Acuidade de longe, olho direito', '67.99(c)(1)', '20/__ (ex.: 25)', '20/x', [10, 400], { ajuda: 'Com ou sem correção. Mínimo de 20/30 na 1ª classe e de 20/40 nas demais.' }),
       nm('avOE', 'Acuidade de longe, olho esquerdo', '67.99(c)(1)', '20/__ (ex.: 25)', '20/x', [10, 400]),
-      nm('avBin', 'Acuidade binocular', '67.99(c)(1)', '20/__ (ex.: 20)', '20/x', [10, 400], { ajuda: 'Mínimo 20/20.' }),
+      nm('avBin', 'Acuidade binocular', '67.99(c)(1)', '20/__ (ex.: 20)', '20/x', [10, 400], { ajuda: 'Mínimo de 20/20 na 1ª classe e de 20/30 na 2ª e na 5ª.' }),
       sn('correcao', 'Precisa de correção óptica para atingir esses valores?', '67.99(c)(4)'),
       sn('umPar', 'Um único par de óculos serve para perto e para longe?', '67.99(c)(3)', { se: (v) => algum(v, 'correcao'), nao: I('Um único par de óculos precisa servir para perto e para longe.') }),
       sn('lenteMulti', 'Usa lente de contato multifocal?', '67.99(g)', { se: (v) => algum(v, 'correcao'), sim: I('Só são aceitas lentes de contato monofocais.') }),
@@ -432,7 +504,7 @@ export const SISTEMAS: { id: string; nome: string; achado: string; ref: string; 
       nm('oe2000', 'Orelha esquerda, 2.000 Hz', '67.101(a)', 'ex.: 20', 'dB', [-10, 120]),
       nm('oe3000', 'Orelha esquerda, 3.000 Hz', '67.101(a)', 'ex.: 25', 'dB', [-10, 120]),
       sn('fala', 'Discrimina a fala em ruído que simula a cabine?', '67.101(b)(1)', { se: (v) => audiometriaFalha(v), ajuda: 'Logoaudiometria com listas foneticamente equilibradas.' }),
-      sn('voz', 'Ouve voz de 85 a 95 dB a 2 metros, de costas para o examinador?', '67.101(b)(2)', { se: (v) => audiometriaFalha(v) }),
+      sn('voz', 'Ouve voz de 85 a 95 dB a 2 metros, de costas para o examinador?', '67.101(b)(2)', { se: (v, ctx) => !usaAudiometria(ctx) || audiometriaFalha(v), ajuda: 'Em sala silenciosa, com ruído de fundo abaixo de 50 dB.' }),
     ],
   },
   {
@@ -546,6 +618,7 @@ function audiometriaFalha(v: Valores) {
 
 // Pergunta visível no momento (as condicionais dependem das respostas anteriores).
 export function visivel(c: Campo, v: Valores, ctx: Contexto) {
+  if (oculto(c.id, ctx)) return false;
   return !c.se || c.se(v, ctx);
 }
 
@@ -565,8 +638,12 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
   const restricoes: string[] = [];
   let validadeMax: number | undefined;
   const add = (sistema: string, nivel: Nivel, texto: string, ref: string, ...campos: string[]) => a.push({ sistema, nivel, texto, ref, campos });
-  const sim = (id: string) => v[id] === true;
-  const nao = (id: string) => v[id] === false;
+  ctx = { ...ctx, classe, funcao };
+  const usa = (id: string) => !oculto(id, ctx);
+  const sim = (id: string) => usa(id) && v[id] === true;
+  const nao = (id: string) => usa(id) && v[id] === false;
+  const c4 = classe === '4';
+  const np = classe === '2' && naoPiloto(funcao);
 
   // Regras simples: a própria pergunta define o resultado do "Sim" ou do "Não".
   for (const s of SISTEMAS)
@@ -580,7 +657,8 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
   const pas = num(v, 'pas');
   const pad = num(v, 'pad');
   if (pas !== undefined && pad !== undefined) {
-    if (pas > 140 || pad > 90) add('Cardiovascular', 'inapto', `PA ${pas}×${pad} mmHg, acima de 140×90 (exige pressão mantida: repita as medidas).`, '67.79(a)(8)', 'pas', 'pad');
+    if (c4) add('Cardiovascular', pas > 140 || pad > 90 ? 'julgamento' : 'ok', `PA ${pas}×${pad} mmHg. A 4ª classe não fixa limite: vale o critério do examinador.`, '67.199(a)', 'pas', 'pad');
+    else if (pas > 140 || pad > 90) add('Cardiovascular', 'inapto', `PA ${pas}×${pad} mmHg, acima de 140×90 (exige pressão mantida: repita as medidas).`, '67.79(a)(8)', 'pas', 'pad');
     else add('Cardiovascular', 'ok', `PA ${pas}×${pad} mmHg, dentro do limite de 140×90.`, '67.79(a)(8)', 'pas', 'pad');
   }
 
@@ -590,7 +668,8 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
   const imc = peso && alt ? peso / (alt / 100) ** 2 : undefined;
   if (imc !== undefined) {
     const t = `IMC ${imc.toFixed(1).replace('.', ',')} kg/m²`;
-    if (imc >= 40) add('Metabólico', 'inapto', `${t}: obesidade com IMC de 40 ou mais.`, '67.85(a)', 'peso', 'altura');
+    if (classe === '4' || classe === '5') add('Metabólico', 'ok', `${t}. A ${classe}ª classe não usa o IMC como critério.`, classe === '4' ? '67.205(a)' : '67.245(a)', 'peso', 'altura');
+    else if (imc >= 40) add('Metabólico', 'inapto', `${t}: obesidade com IMC de 40 ou mais.`, '67.85(a)', 'peso', 'altura');
     else add('Metabólico', 'ok', `${t}, abaixo de 40.`, '67.85(a)', 'peso', 'altura');
   }
   const cintura = num(v, 'cintura');
@@ -625,7 +704,19 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
     const faltam = ids.filter(([id]) => v[id] === undefined).map(([, nome]) => nome);
     return { ruins, faltam };
   };
-  if (sim('iam')) {
+  if (sim('iam') && c4) add('Cardiovascular', 'julgamento', 'Infarto: na 4ª classe, julgamento do examinador sobre o efeito na segurança de voo.', '67.199(a)', 'iam');
+  else if (sim('iam') && np) {
+    const m = num(v, 'iamMeses');
+    const imagem = sim('iamCintilo') || sim('iamCate');
+    const ids = ['iam', 'iamMeses', 'iamLipido', 'iamCintilo', 'iamCate'];
+    if (m === undefined || m < 6) add('Cardiovascular', 'inapto', 'Infarto há menos de 6 meses (ou tempo não informado), em candidato não piloto.', '67.119(b)(2)', ...ids);
+    else if (nao('iamLipido') || (nao('iamCintilo') && !sim('iamCate'))) add('Cardiovascular', 'inapto', `Infarto há ${m} meses com lipidograma ou exame de imagem insatisfatório.`, '67.119(b)(2)', ...ids);
+    else if (!sim('iamLipido') || !imagem) add('Cardiovascular', 'julgamento', `Infarto há ${m} meses: falta confirmar o lipidograma e a cintilografia ou o cateterismo.`, '67.119(b)(2)', ...ids);
+    else {
+      add('Cardiovascular', 'restricao', `Infarto há ${m} meses (≥ 6, não piloto), sem insuficiência cardíaca, angina ou arritmia grave: apto com restrição, em consulta com a ANAC, validade de até 6 meses.`, '67.119(b)(2) e (c)', ...ids);
+      validadeMax = Math.min(validadeMax ?? 99, 6);
+    }
+  } else if (sim('iam')) {
     const m = num(v, 'iamMeses');
     const e = exames([['iamHolter', 'Holter'], ['iamCintilo', 'cintilografia'], ['iamEco', 'eco-Doppler'], ['iamLipido', 'lipidograma'], ['iamCate', 'cineangiocoronariografia'], ['iamPsiq', 'parecer psiquiátrico']]);
     const ids = ['iam', 'iamMeses', 'iamHolter', 'iamCintilo', 'iamEco', 'iamLipido', 'iamCate', 'iamPsiq'];
@@ -641,9 +732,10 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
       }
     }
   }
-  if (sim('revasc') || sim('angioplastia')) {
+  if ((sim('revasc') || sim('angioplastia')) && c4) add('Cardiovascular', 'julgamento', 'Revascularização ou angioplastia: na 4ª classe, julgamento do examinador.', '67.199(a)', 'revasc', 'angioplastia');
+  else if (sim('revasc') || sim('angioplastia')) {
     const d = num(v, 'revascDias');
-    const e = exames([['revascHolter', 'Holter'], ['revascCintilo', 'cintilografia'], ['revascLipido', 'lipidograma'], ['revascCate', 'cineangiocoronariografia']]);
+    const e = np ? exames([['revascHolter', 'Holter'], ['revascCintilo', 'prova de esforço']]) : exames([['revascHolter', 'Holter'], ['revascCintilo', 'cintilografia'], ['revascLipido', 'lipidograma'], ['revascCate', 'cineangiocoronariografia']]);
     const ids = ['revasc', 'angioplastia', 'revascDias', 'revascHolter', 'revascCintilo', 'revascLipido', 'revascCate'];
     const nome = sim('revasc') ? 'Revascularização' : 'Angioplastia';
     if (d === undefined || d < 180) add('Cardiovascular', 'inapto', `${nome} há menos de 180 dias (ou tempo não informado).`, '67.79(b)(2)', ...ids);
@@ -689,21 +781,27 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
   const od = num(v, 'avOD');
   const oe = num(v, 'avOE');
   const bin = num(v, 'avBin');
-  if (od !== undefined && oe !== undefined && bin !== undefined) {
-    const falhas = [od > 30 && `OD 20/${od}`, oe > 30 && `OE 20/${oe}`, bin > 20 && `binocular 20/${bin}`].filter(Boolean);
-    if (falhas.length) add('Oftalmológico', 'inapto', `Acuidade abaixo do exigido (${falhas.join(', ')}); mínimo 20/30 em cada olho e 20/20 binocular.`, '67.99(c)(1)', 'avOD', 'avOE', 'avBin');
-    else add('Oftalmológico', 'ok', `Acuidade OD 20/${od}, OE 20/${oe}, binocular 20/${bin}.`, '67.99(c)(1)', 'avOD', 'avOE', 'avBin');
+  const [limCada, limBin] = classe === '1' ? [30, 20] : classe === '4' ? [40, undefined] : [40, 30];
+  const refAcuidade = classe === '4' ? '67.219(b)' : '67.99(c)(1)';
+  if (od !== undefined && oe !== undefined && (bin !== undefined || limBin === undefined)) {
+    const falhas = [od > limCada && `OD 20/${od}`, oe > limCada && `OE 20/${oe}`, limBin !== undefined && bin !== undefined && bin > limBin && `binocular 20/${bin}`].filter(Boolean);
+    const minimo = `mínimo 20/${limCada} em cada olho${limBin !== undefined ? ` e 20/${limBin} binocular` : ''}`;
+    if (falhas.length) add('Oftalmológico', 'inapto', `Acuidade abaixo do exigido (${falhas.join(', ')}); ${minimo}.`, refAcuidade, 'avOD', 'avOE', 'avBin');
+    else add('Oftalmológico', 'ok', `Acuidade OD 20/${od}, OE 20/${oe}${limBin !== undefined ? `, binocular 20/${bin}` : ''}.`, refAcuidade, 'avOD', 'avOE', 'avBin');
     if (!falhas.length && sim('correcao')) {
       restricoes.push('Uso obrigatório de correção óptica em voo, com óculos reserva a bordo.');
       add('Oftalmológico', 'restricao', 'Correção óptica obrigatória, anotada no CMA, com óculos reserva.', '67.99(c)(4)', 'correcao');
     }
   }
-  const hip = num(v, 'hiperforia');
-  const exo = num(v, 'exoforia');
-  const eso = num(v, 'esoforia');
+  const hip = usa('hiperforia') ? num(v, 'hiperforia') : undefined;
+  const exo = usa('exoforia') ? num(v, 'exoforia') : undefined;
+  const eso = usa('esoforia') ? num(v, 'esoforia') : undefined;
   if ((hip ?? 0) > 1 || (exo ?? 0) > 5 || (eso ?? 0) > 10) add('Oftalmológico', 'inapto', 'Foria acima do limite (hiperforia ≤ 1, exoforia ≤ 5, esoforia ≤ 10 DP).', '67.99(c)(7)', 'hiperforia', 'exoforia', 'esoforia');
   else if (hip !== undefined || exo !== undefined || eso !== undefined) add('Oftalmológico', 'ok', 'Forias dentro dos limites.', '67.99(c)(7)', 'hiperforia', 'exoforia', 'esoforia');
-  if (sim('monocular')) {
+  if (sim('monocular') && np) add('Oftalmológico', 'ok', 'Visão monocular: o candidato não piloto pode tê-la.', '67.139(c)(7)', 'monocular');
+  else if (sim('monocular') && c4) add('Oftalmológico', 'julgamento', 'Visão monocular: apto com acuidade de 20/30 ou melhor no olho bom e avaliação de proficiência por examinador credenciado.', '67.219(c)', 'monocular');
+  else if (sim('monocular') && classe === '5') add('Oftalmológico', 'restricao', 'Visão monocular: aceita só em operações sem contato visual direto com a aeronave.', '67.259(c)(6)', 'monocular');
+  else if (sim('monocular')) {
     if (ctx.inicial) add('Oftalmológico', 'inapto', 'Visão monocular no exame inicial: exige visão de profundidade normal.', '67.99(c)(6)', 'monocular');
     else add('Oftalmológico', 'julgamento', 'Visão monocular em revalidação: aceita se o olho bom cumprir todos os requisitos.', '67.99(c)(6)', 'monocular');
   }
@@ -714,25 +812,50 @@ export function avaliar(classe: ClasseCMA, funcao: string, idade: number | undef
   }
 
   // Auditivo
-  const dir = orelhaOk(v, 'od');
-  const esq = orelhaOk(v, 'oe');
+  const audio = usaAudiometria(ctx);
+  const dir = audio ? orelhaOk(v, 'od') : undefined;
+  const esq = audio ? orelhaOk(v, 'oe') : undefined;
   const ouv = ['od500', 'od1000', 'od2000', 'od3000', 'oe500', 'oe1000', 'oe2000', 'oe3000'];
-  if (dir !== undefined && esq !== undefined) {
+  const restrRadio = classe === '1' || classe === '2' ? 'Não válido para voos com comunicação bilateral por rádio, nem para atuar como comissário.' : 'Não válido para voos com comunicação bilateral por rádio.';
+  if (!audio) {
+    const refVoz = c4 ? '67.221' : '67.141';
+    if (v.voz === true) add('Auditivo', 'ok', `Ouve voz de intensidade normal a 2 metros, de costas${c4 ? ', em pelo menos um ouvido' : ''}.`, `${refVoz}(a)`, 'voz');
+    else if (v.voz === false) {
+      add('Auditivo', 'restricao', 'Não ouve voz de intensidade normal a 2 metros em nenhum ouvido.', c4 ? '67.221(c)' : '67.141(d)', 'voz');
+      restricoes.push(restrRadio);
+    }
+  } else if (dir !== undefined && esq !== undefined) {
     if (dir && esq) add('Auditivo', 'ok', 'Audiometria dentro dos limites nas duas orelhas.', '67.101(a)', ...ouv);
     else if (sim('fala') || sim('voz')) add('Auditivo', 'ok', `Audiometria fora do limite, compensada ${sim('fala') ? 'pela discriminação da fala em ruído' : 'pelo teste de voz a 2 metros'}.`, '67.101(b)', ...ouv, 'fala', 'voz');
     else if (!dir && !esq) {
       add('Auditivo', 'restricao', 'Perda nas duas orelhas sem compensação no teste de fala.', '67.101(e)', ...ouv, 'fala', 'voz');
-      restricoes.push('Não válido para voos com comunicação bilateral por rádio, nem para atuar como comissário.');
-    } else if (!ctx.inicial) add('Auditivo', 'ok', `Perda só na orelha ${dir ? 'esquerda' : 'direita'}: na revalidação, basta uma orelha dentro do limite.`, '67.101(d)', ...ouv);
+      restricoes.push(restrRadio);
+    } else if (!ctx.inicial || classe === '5') add('Auditivo', 'ok', `Perda só na orelha ${dir ? 'esquerda' : 'direita'}: na revalidação, basta uma orelha dentro do limite.`, '67.101(d)', ...ouv);
     else add('Auditivo', 'julgamento', `Perda só na orelha ${dir ? 'esquerda' : 'direita'} no exame inicial: fazer o teste de discriminação da fala.`, '67.101(b)', ...ouv, 'fala', 'voz');
   }
 
+  // Regras de pergunta que mudam na subparte da classe.
+  for (const x of a) {
+    const id = x.campos[0];
+    if (id === 'gestacao' && c4) Object.assign(x, { nivel: 'julgamento', texto: 'Gravidez: apta só entre a 12ª e a 26ª semana, se a avaliação obstétrica e a supervisão contínua indicarem baixo risco.', ref: '67.213(a)–(b)' });
+    else if (id === 'gestacao' && classe === '5') Object.assign(x, { nivel: 'julgamento', texto: 'Gravidez: apta até a 34ª semana, se a avaliação obstétrica e a supervisão contínua indicarem baixo risco.', ref: '67.253(a)' });
+    else if (id === 'cores' && classe === '5') {
+      Object.assign(x, { nivel: 'restricao', texto: 'Não reconhece as cores exigidas: CMA com restrição a operações em que as cores não sejam indispensáveis.', ref: '67.259(c)(5)' });
+      restricoes.push('Operação restrita a situações em que o reconhecimento de cores não seja indispensável.');
+    } else if (c4 && x.nivel === 'inapto' && ['Respiratório', 'Hematológico', 'Metabólico', 'Cardiovascular', 'Osteomuscular', 'ORL', 'Oftalmológico'].includes(x.sistema) && x.ref !== '67.219(b)') {
+      const geral: Record<string, string> = { Respiratório: '67.201(b)', Hematológico: '67.207(a)', Metabólico: '67.205(a)', Cardiovascular: '67.199(a)', Osteomuscular: '67.215(b)', ORL: '67.217(a)', Oftalmológico: '67.219(a)' };
+      Object.assign(x, { nivel: 'julgamento', texto: `${x.texto.replace(/\.$/, '')}: na 4ª classe, a critério do examinador${x.sistema === 'Osteomuscular' ? ', após avaliação por examinador credenciado' : ''}.`, ref: geral[x.sistema] });
+    }
+    // PP na 2ª classe: a audição segue a seção 67.101 da 1ª classe (67.141(a)).
+    if (classe === '2' && x.sistema === 'Auditivo' && audio) x.ref = `67.141(a) e ${x.ref}`;
+    else if (classe !== '1' && Number(x.ref.match(/67\.(\d+)/)?.[1]) <= 103) x.ref = refClasse(x.ref, classe);
+  }
+  if (c4) validadeMax = undefined;
+
   for (const x of a) if (x.nivel === 'restricao' && x.texto.includes('6 meses')) restricoes.push('Validade reduzida a até 6 meses por condição clínica em acompanhamento.');
 
-  // Classes sem limiares consultados: os critérios da 1ª classe servem de referência, e o que não passar vira "confirmar".
-  if (classe !== '1') for (const x of a) if (x.nivel === 'inapto' || x.nivel === 'restricao') x.nivel = 'confirmar';
-
-  const pendentes = OBRIGATORIOS.filter((id) => num(v, id) === undefined).map(rotuloCampo);
+  const pendentes = OBRIGATORIOS.filter((id) => usa(id) && num(v, id) === undefined).map(rotuloCampo);
+  if (!audio && v.voz === undefined) pendentes.push(rotuloCampo('voz'));
   if (idade === undefined) pendentes.unshift('idade');
 
   const tem = (n: Nivel) => a.some((x) => x.nivel === n);
@@ -773,7 +896,7 @@ function comentar(classe: ClasseCMA, ver: Veredito, a: Achado[], restricoes: str
     p.push(`Ainda não é possível fechar o julgamento: falta${pendentes.length > 1 ? 'm' : ''} ${pendentes.length} parâmetro${pendentes.length > 1 ? 's' : ''} obrigatório${pendentes.length > 1 ? 's' : ''} (${pendentes.join('; ')}).`);
     if (inaptos.length === 0 && conf.length === 0) p.push('Nenhum critério de inaptidão apareceu entre os itens já respondidos.');
   } else if (ver === 'confirmar') {
-    p.push(`Para a ${classe}ª classe, os limiares específicos não foram consultados no texto integral do RBAC 67. Os itens a seguir não atendem ao critério da 1ª classe, usado aqui como referência, e precisam ser conferidos na subparte da classe: ${conf.join('; ')}.`);
+    p.push(`Itens a conferir na referência antes de concluir: ${conf.join('; ')}.`);
   } else if (ver === 'restricao') {
     p.push(`Candidato apto com restrição para a ${classe}ª classe. Todos os requisitos avaliados foram cumpridos${restr.length ? `, com condições que exigem acompanhamento: ${restr.join('; ')}` : ''}.`);
     if (restricoes.length) p.push(`Restrições a anotar no CMA: ${restricoes.join(' ')}`);
@@ -782,15 +905,42 @@ function comentar(classe: ClasseCMA, ver: Veredito, a: Achado[], restricoes: str
   }
   if (julg.length && ver !== 'inapto') p.push(`Pontos que dependem do julgamento do examinador ou da ANAC e podem mudar o resultado: ${julg.join('; ')}.`);
   if (validade) p.push(`Validade: ${validade.meses} meses, até ${validade.data}. ${validade.regra}`);
-  if (classe !== '1' && ver !== 'confirmar') p.push('Limiares específicos desta classe: [confirmar na referência]. A análise usou os critérios da 1ª classe como referência.');
   return p.join('\n\n');
 }
 
-// Exames exigidos na 1ª classe (67.105 a 67.111).
-export const EXAMES_1A = [
+// Exames exigidos por classe. 1ª: 67.71(i), 67.75(g)–(h), 67.77(b), 67.79(d), 67.81(b), 67.97(f), 67.101(a).
+const EXAMES_1A = [
   { exame: 'Laboratório', quando: 'Inicial e revalidação: glicemia de jejum (± HbA1c), colesterol e frações, triglicerídeos, creatinina, hemograma, EAS, ácido úrico, β-HCG. Tipagem ABO/Rh no inicial.' },
   { exame: 'ECG e teste ergométrico', quando: 'No inicial. Na revalidação: a cada 12 meses a partir dos 50 anos; a cada 2 anos dos 30 aos 49.' },
   { exame: 'Radiografia de tórax, EEG e radiografia de seios da face', quando: 'No exame inicial.' },
   { exame: 'Audiometria', quando: 'No inicial. Na revalidação: a cada 5 anos antes dos 40; a cada 2 anos a partir dos 40.' },
   { exame: 'Parecer psiquiátrico e avaliação psicológica', quando: 'No inicial e após acidente ou incidente grave. Avaliação psicológica a cada 5 anos.' },
 ];
+
+// 2ª: 67.111(i), 67.115(g)–(h), 67.117(b), 67.119(d), 67.121(b), 67.141. 4ª: 67.191(i), 67.195(f)–(g), 67.199(a), 67.201(a),
+// 67.221. 5ª: 67.231(i), 67.235(f)–(g), 67.237(b), 67.239(d), 67.241(b), 67.261(a).
+export const EXAMES: Record<ClasseCMA, { exame: string; quando: string }[]> = {
+  '1': EXAMES_1A,
+  '2': [
+    { exame: 'Laboratório', quando: 'Inicial e revalidação: glicemia de jejum (± HbA1c), colesterol e frações, triglicerídeos, creatinina, hemograma, EAS, ácido úrico, β-HCG. Tipagem ABO/Rh no inicial.' },
+    { exame: 'ECG e teste ergométrico', quando: 'No inicial. Na revalidação: a cada 2 anos a partir dos 50 anos; abaixo dos 50, a critério do examinador.' },
+    { exame: 'Radiografia de tórax e EEG', quando: 'No exame inicial; na revalidação, a critério do examinador.' },
+    { exame: 'Audição', quando: 'PP: audiometria, como na 1ª classe. Demais: voz de intensidade normal a 2 metros, de costas, com os dois ouvidos (um basta na revalidação).' },
+    { exame: 'Parecer psiquiátrico e avaliação psicológica', quando: 'No inicial e após acidente ou incidente grave. Avaliação psicológica a cada 5 anos.' },
+  ],
+  '4': [
+    { exame: 'Laboratório', quando: 'Inicial e revalidação: glicemia de jejum (± HbA1c), triglicerídeos, creatinina, hemograma, β-HCG. Tipagem ABO/Rh no inicial.' },
+    { exame: 'ECG', quando: 'A partir dos 40 anos. Outros exames do coração, a critério do examinador.' },
+    { exame: 'Radiografia de tórax', quando: 'No exame inicial; na revalidação, a critério do examinador.' },
+    { exame: 'Audição', quando: 'Voz de intensidade normal a 2 metros, de costas, em pelo menos um ouvido.' },
+    { exame: 'Avaliação psicológica', quando: 'No inicial e após acidente ou incidente grave, com parecer psiquiátrico.' },
+  ],
+  '5': [
+    { exame: 'Laboratório', quando: 'Inicial e revalidação: glicemia de jejum (± HbA1c), colesterol e frações, triglicerídeos, creatinina, hemograma, EAS, ácido úrico, β-HCG. Tipagem ABO/Rh no inicial.' },
+    { exame: 'ECG e teste ergométrico', quando: 'No inicial. Na revalidação: a cada 24 meses a partir dos 50 anos; abaixo dos 50, a critério do examinador.' },
+    { exame: 'EEG', quando: 'No exame inicial; na revalidação, a critério do examinador.' },
+    { exame: 'Radiografia de tórax', quando: 'A critério do examinador, se houver suspeita de doença pulmonar.' },
+    { exame: 'Audiometria', quando: 'No inicial. Na revalidação, ao menos a cada 4 anos.' },
+    { exame: 'Avaliação psicológica', quando: 'No exame inicial, com parecer psiquiátrico.' },
+  ],
+};

@@ -31,9 +31,15 @@
 //   RITE-ACER-CoE-2011-1 (nov. 2011): cabine a 7.000 ft, SpO2 média de 90%; FC +2,4 bpm (IC 0,7–4,1); quase 1% de queda
 //   da SpO2 por década acima dos 50; quase metade dos mais velhos a 90% ou menos; sintomas pouco sensíveis.
 // - 02/11/2026, pedido do autor (usar manuais da ICAO, ANAC e FAA): removidos os números que vinham só de fonte
-//   secundária (fluxo cerebral de 20–30%, pico da eritropoetina em 48 h, hemoglobina acima de 22 g/dL). ICAO Doc 8984
-//   (Manual of Civil Aviation Medicine) e os manuais de curso da ANAC não puderam ser baixados nesta revisão:
-//   [confirmar na referência] a fisiologia qualitativa deste card nesses manuais.
+//   secundária (fluxo cerebral de 20–30%, pico da eritropoetina em 48 h, hemoglobina acima de 22 g/dL).
+// - ICAO, Doc 8984, 3ª ed. (PDF enviado pelo autor, 02/11/2026), Part II, Cap. 1: limiar fisiológico da hipóxia em
+//   1.000 m (3.300 ft), sintomas a partir de ~1.500 m (5.000 ft), mais intensos acima de 3.000 m (10.000 ft); cabine
+//   de passageiros a 1.500–2.450 m (5.000–8.000 ft); SpO2 em repouso ~93% a 2.450 m, ~89% a 3.050 m, ~87% a 3.650 m,
+//   ~83% a 4.250 m, ~80% a 4.550 m, 65% a 6.100 m (Tabela II-1-2); hiperpneia ou hiperventilação e taquicardia entre os
+//   sinais objetivos (Tabela II-1-3). O manual não descreve a aclimatação de dias a meses: essa parte do card segue o
+//   CDC e a FAA/CAMI. Manuais de curso da ANAC: não enviados [confirmar na referência].
+// - Acetazolamida no tripulante: o candidato informa os remédios ao examinador (RBAC 67.71(d)) e não pode ter efeito
+//   ou efeito colateral de remédio que interfira na operação segura (Anexo 1, 6.2.2 d), no Doc 8984).
 // - Saturação e altitude de cabine: ver também M2V1 (BTS 2022). 14 CFR 61.53: registro de M2V1.
 
 import type { Questao, Recurso } from './tipos';
@@ -73,7 +79,7 @@ export const fasesAdaptacao: FaseAdaptacao[] = [
       "Nos **3 a 5 primeiros dias**, os **rins** fazem a parte decisiva. Eles eliminam **bicarbonato** pela urina e corrigem a alcalose. Com o sangue de volta ao equilíbrio, o freio sai, e a respiração pode ficar alta de forma sustentada: é a **aclimatação ventilatória**.",
       "O volume de **plasma** cai nos primeiros dias, e a **hemoglobina fica mais concentrada**: cada litro de sangue carrega mais oxigênio sem que nenhuma hemácia nova tenha sido feita. Ao mesmo tempo, os rins sentem a falta de oxigênio e liberam **eritropoetina**, que manda a medula óssea produzir hemácias; o efeito, porém, só aparece semanas depois.",
       "Dentro das hemácias, sobe o **2,3-DPG**, que solta o oxigênio da hemoglobina e **facilita a entrega** aos tecidos, desfazendo o efeito da alcalose. À noite, acima de cerca de **2.700 m**, a **respiração periódica**, com pausas e retomadas, é quase universal e fragmenta o sono, que costuma melhorar com a aclimatação.",
-      "A **acetazolamida** imita o trabalho dos rins: provoca a perda de bicarbonato, estimula a respiração e encurta a aclimatação ventilatória de 3 a 5 dias para **um dia**. É usada na prevenção do mal agudo da montanha por indicação médica. Para o tripulante, o uso passa pela avaliação do médico examinador [confirmar na referência].",
+      "A **acetazolamida** imita o trabalho dos rins: provoca a perda de bicarbonato, estimula a respiração e encurta a aclimatação ventilatória de 3 a 5 dias para **um dia**. É usada na prevenção do mal agudo da montanha por indicação médica. Para o tripulante, todo remédio passa pela avaliação do médico examinador, que julga o efeito e os efeitos colaterais sobre o voo.",
     ].join('\n\n'),
     recursos: [
       {

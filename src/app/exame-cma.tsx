@@ -15,7 +15,7 @@ import { Texto } from '@/components/texto';
 import { ArteExameCMA, CapaEpisodio } from '@/constants/capas';
 import { BordaCapa, Cores, Espaco, Fonte, Raio, Tamanho } from '@/constants/theme';
 import { questoesCMA } from '@/data/cma-questoes';
-import { avaliar, CLASSES, EXAMES_1A, INFLUENCIA, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
+import { avaliar, CLASSES, EXAMES, INFLUENCIA, NOTA_CLASSE, refClasse, NOME_VEREDITO, SISTEMAS, validadeMeses, visivel, type Achado, type Campo, type ClasseCMA, type Resultado, type Valores, type Veredito } from '@/lib/cma';
 import { avaliarFAA, avaliarICAO, REGRAS_INT, type ResultadoInt } from '@/lib/cma-internacional';
 import { idQuestao } from '@/lib/xp';
 import { useTr } from '@/state/idioma';
@@ -181,12 +181,11 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
   const idadeN = idade.trim() && Number.isFinite(Number(idade)) ? Number(idade) : undefined;
   const previa = idadeN !== undefined ? validadeMeses(funcao, idadeN, publico) : undefined;
   const serie = SERIES_VALIDADE.find((s) => s.funcao === funcao) ?? { funcao, publico, nome: '', cor: Cores.destaque };
-  const ctx = { inicial };
 
   // Análise ao vivo: alimenta a resposta de cada pergunta e o status de cada sistema.
-  const aoVivo = useMemo(() => avaliar(classe, funcao, idadeN, publico, valores, { inicial }), [classe, funcao, idadeN, publico, valores, inicial]);
+  const aoVivo = useMemo(() => avaliar(classe, funcao, idadeN, publico, valores, { inicial, classe, funcao }), [classe, funcao, idadeN, publico, valores, inicial]);
   // As perguntas de detalhe só aparecem quando a resposta anterior pede.
-  const visiveis = useMemo(() => SISTEMAS.map((s) => ({ s, campos: s.campos.filter((f) => visivel(f, valores, { inicial })) })), [valores, inicial]);
+  const visiveis = useMemo(() => SISTEMAS.map((s) => ({ s, campos: s.campos.filter((f) => visivel(f, valores, { inicial, classe, funcao })) })), [valores, inicial, classe, funcao]);
   const total = visiveis.reduce((k, x) => k + x.campos.length, 0);
   // Cada achado aparece uma vez, sob a última pergunta visível que o gerou.
   const porCampo = useMemo(() => {
@@ -263,11 +262,7 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
       </View>
       <Painel>
         <Texto cor={Cores.textoSuave}>{c.quem}</Texto>
-        {classe !== '1' ? (
-          <Texto cor={Cores.destaque}>
-            Limiares específicos da {c.nome}: [confirmar na referência]. A análise usa os critérios da 1ª classe como referência e marca para conferência o que não passar.
-          </Texto>
-        ) : null}
+        {NOTA_CLASSE[classe] ? <Texto cor={Cores.destaque}>{NOTA_CLASSE[classe]}</Texto> : null}
         <Texto cor={Cores.textoApagado}>A 3ª classe (controle de tráfego aéreo) não é regida pela ANAC.</Texto>
       </Painel>
 
@@ -296,16 +291,12 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
 
       <Etapa numero="3" titulo="Exames exigidos" />
       <Painel>
-        {classe === '1' ? (
-          EXAMES_1A.map((e) => (
-            <View key={e.exame} style={styles.marca}>
-              <Texto t="item">{e.exame}</Texto>
-              <Texto cor={Cores.textoSuave}>{e.quando}</Texto>
-            </View>
-          ))
-        ) : (
-          <Texto cor={Cores.textoSuave}>Lista de exames da {c.nome}: [confirmar na referência].</Texto>
-        )}
+        {EXAMES[classe].map((e) => (
+          <View key={e.exame} style={styles.marca}>
+            <Texto t="item">{e.exame}</Texto>
+            <Texto cor={Cores.textoSuave}>{e.quando}</Texto>
+          </View>
+        ))}
         {inicial ? <Texto cor={Cores.textoApagado}>Exame inicial: confira os itens marcados como "no inicial".</Texto> : null}
       </Painel>
 
@@ -326,7 +317,7 @@ function Avaliacao({ rolagem }: { rolagem: RefObject<ScrollViewInstance | null> 
               <Image source={IMG_SISTEMA[s.id]} style={[styles.miniatura, BordaCapa]} contentFit="cover" />
               <View style={{ flex: 1, gap: 4 }}>
                 <Texto t="item">{s.nome}</Texto>
-                <Texto t="rotulo" cor={Cores.textoApagado}>RBAC {s.ref} · {feitos}/{campos.length}</Texto>
+                <Texto t="rotulo" cor={Cores.textoApagado}>RBAC {refClasse(s.ref, classe)} · {feitos}/{campos.length}</Texto>
                 <Barra valor={feitos / campos.length} altura={2} />
               </View>
               <View style={{ alignItems: 'flex-end', gap: 6 }}>
