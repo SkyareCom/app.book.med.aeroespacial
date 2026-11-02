@@ -11,6 +11,12 @@
 ## CONGELAMENTO EDITORIAL — M1V2, M1V3 (27/10/2026), M1V4 e M2V1 (29/10/2026), M1V5 e M1V6 (30/10/2026), M1V8 (31/10/2026) e M1V7 (01/11/2026)
 Mesmas regras acima; arquivos e fotos protegidos pelo mapa ARQUIVOS em `scripts/check-m1v1-frozen.cjs`.
 
+## CONGELAMENTO DA MISSÃO CONCEITOS (02/11/2026)
+A missão Conceitos inteira (M1V1–M1V8) está congelada, por pedido do autor: textos, recursos, gráficos, fotos, vídeos e
+testes de cada voo, o bloco da missão em `src/data/secoes.ts` (título, sinopse e ordem dos voos) e as capas ligadas a ela
+em `src/constants/capas.ts`. Componentes compartilhados com outras missões (animações, laboratórios, índice de mídias)
+não entram na trava. Qualquer alteração exige autorização expressa do autor, novos hashes e comentário datado.
+
 ## FONTES — padrão ANAC e FAA (29/10/2026)
 Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
 e da **FAA**, ao lado das obras de referência. Buscar a fonte primária; quando só houver fonte secundária, registrar

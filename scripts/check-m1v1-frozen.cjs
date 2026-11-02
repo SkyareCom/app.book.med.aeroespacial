@@ -143,6 +143,31 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v6-3-patio.jpg': '057fb846cae517fe',
   'assets/images/topicos/m1v6-4-offshore.jpg': '3255b4d92cf407d0',
   'assets/images/topicos/m1v6-4-painel.jpg': '07e5ceb8d4239077',
+  // Congelamento da missão CONCEITOS (M1V1–M1V8) — pedido do autor em 02/11/2026: arquivo do M1V1 inteiro,
+  // fotos, vídeo e interativo do M1V1 e as capas dos 8 voos e da missão.
+  'src/data/capitulos/atmosfera.ts': 'ed2d2b24fabe994d',
+  'src/components/midia/m1v1-umidade.tsx': '7699b9377a454c7d',
+  'assets/videos/m1v1-curvatura.mp4': 'd0c6a7c850ab75f8',
+  'assets/images/topicos/m1v1-1-balao.jpg': 'cda576be862919c5',
+  'assets/images/topicos/m1v1-1-tropopausa.jpg': '430a6ec77df40b30',
+  'assets/images/topicos/m1v1-2-alpinista.jpg': '6fb5606e52269d17',
+  'assets/images/topicos/m1v1-2-cilindro.jpg': 'c913a54c58b7a645',
+  'assets/images/topicos/m1v1-2-corpo.jpg': '00639f6c958ac15e',
+  'assets/images/topicos/m1v1-2-garrafa.jpg': '842bb374abd7513b',
+  'assets/images/topicos/m1v1-2-pacote.jpg': '5cb4f44f50f1ce66',
+  'assets/images/topicos/m1v1-3-aeroporto-quente.jpg': '94177974a285c6d9',
+  'assets/images/topicos/m1v1-3-altimetro.jpg': '1602def8d4d0a9f8',
+  'assets/images/topicos/m1v1-4-calor-umido.jpg': 'c0d8a7d421fbd05d',
+  'assets/images/topicos/m1v1-4-olhos-secos.jpg': 'b28ec41286f60ee7',
+  'assets/images/capas/fis-01.jpg': '1a85d85309fbfa67',
+  'assets/images/capas/fis-04.jpg': 'e1bc6bdaf3ef317c',
+  'assets/images/capas/fis-05.jpg': '32f73e4c688d75dc',
+  'assets/images/capas/fis-11.jpg': '3cf15ed560546e80',
+  'assets/images/capas/fis-12.jpg': 'ff82c068d8abb7c6',
+  'assets/images/capas/fis-10.jpg': 'f9d48d31b16b310a',
+  'assets/images/capas/fis-06.jpg': '463bd93843c541ab',
+  'assets/images/capas/fis-07.jpg': '7faee900054036be',
+  'assets/images/capas/temporada-fisiologia.jpg': '82d71e88e8415748',
   // Congelamento M1V7 — combinado com o autor ao receber as fotos e o vídeo (01/11/2026).
   'src/data/capitulos/forcasg.ts': 'aae35efe32ef3298',
   'src/components/midia/m1v7-graficos.tsx': 'da9ba71eaa9f1b6a',
@@ -177,9 +202,27 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
   }
 }
 
+// Missão CONCEITOS (02/11/2026): bloco da missão no índice (título, sinopse e ordem dos 8 voos) e capas ligadas a ela.
+{
+  const sha = (t) => crypto.createHash('sha256').update(t).digest('hex').slice(0, 16);
+  const indice = fs.readFileSync(path.resolve(__dirname, '../src/data/secoes.ts'), 'utf8');
+  const a = indice.indexOf("    id: 'conceitos',"), b = indice.indexOf("    id: 'sistemas',");
+  const blocoMissao = a >= 0 && b > a ? sha(indice.slice(a, b)) : 'ausente';
+  if (blocoMissao !== 'c9f3024e2453b03b') {
+    console.error('CONGELAMENTO VIOLADO: bloco da missão Conceitos em src/data/secoes.ts.');
+    diferente = true;
+  }
+  const capasTs = fs.readFileSync(path.resolve(__dirname, '../src/constants/capas.ts'), 'utf8');
+  const linhasCapas = capasTs.split('\n').filter((l) => /^\s*'conceitos-\d+'|^\s*conceitos:/.test(l)).join('\n');
+  if (sha(linhasCapas) !== '7459b4820baed9c5') {
+    console.error('CONGELAMENTO VIOLADO: capas da missão Conceitos em src/constants/capas.ts.');
+    diferente = true;
+  }
+}
+
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V7, M1V8 ou M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar a missão Conceitos (M1V1–M1V8) ou o M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('M1V1, M1V2, M1V3, M1V4, M1V5, M1V6, M1V7, M1V8 e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('Missão Conceitos (M1V1–M1V8) e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }
