@@ -47,7 +47,9 @@
 // - MEDIF: formulário médico das companhias aéreas (ex.: SWISS, lx_medif-form_en.pdf).
 // 02/11/2026: 8 fotos dos tópicos VI a IX (topicos/m2v1-6..9-*.jpg, pessoas fictícias), no padrão do app (1.600 × 893 px);
 //   borrados o número da poltrona e o rótulo do batom (bombinha), os painéis e a dragona (sonolência) e a marca do
-//   monitor (teste). O raio X não mostra um pneumotórax típico: a legenda não afirma o achado. Voo congelado de novo.
+//   monitor (teste). Voo congelado de novo.
+// 02/11/2026: raio X do pneumotórax trocado com autorização do autor (imagem nova com linha pleural e faixa sem
+//   desenho pulmonar); legenda passa a nomear o achado; hash refeito.
 
 import type { Capitulo } from '../tipos';
 import { liberacaoRespiratorio } from '../liberacao/respiratorio';
@@ -284,7 +286,7 @@ export const hipoxia: Capitulo = {
           "**Não voe** com dor no peito ou falta de ar súbita, com pneumotórax ainda visível no raio X ou antes do prazo depois de cirurgia, biópsia ou broncoscopia. O médico registra a **data da resolução no raio X**, o tipo de tratamento e se houve recorrência: é essa data que conta os dias.",
         ].join('\n\n'),
         recursos: [
-          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-8-raio-x.jpg'), legenda: 'O raio X do tórax confirma o pneumotórax e, depois, mostra o pulmão de novo expandido: é dessa data que se contam os dias.' } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-8-raio-x.jpg'), legenda: 'No raio X, a linha branca fina é a borda do pulmão colapsado; por fora dela, a faixa escura sem desenho do pulmão é o ar do pneumotórax.' } },
           { paragrafo: 2, midia: 'grafico-boyle' },
           { paragrafo: 3, midia: 'prazo-voo-pulmao' },
           {
