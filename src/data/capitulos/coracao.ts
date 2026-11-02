@@ -70,6 +70,8 @@
 //   estável no anticoagulante; TEP: ≥ 5 dias, anticoagulação estável e PaO2 normal em ar ambiente); BTS 2022 (2
 //   semanas após o diagnóstico; registro em hipoxia.ts).
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
+// Mídia do autor (02/11/2026): 14 fotos (topicos/m2v2-*.jpg, pessoas fictícias) no padrão de 1.600 × 893 px e o vídeo
+//   videos/m2v2-coracao.mp4 (ecocardiograma recortado para tirar o logotipo e os textos da tela; 8 s em laço, sem som).
 
 import { liberacaoCardiovascular } from '../liberacao/cardiovascular';
 import type { Capitulo } from '../tipos';

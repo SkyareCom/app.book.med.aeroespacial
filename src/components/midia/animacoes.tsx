@@ -568,17 +568,17 @@ export function AnimacaoCoracao() {
   return (
     <Quadro titulo="O coração no solo e na cabine" instrucao="Esquema: as bolinhas são oxigênio levado pelo sangue. A cada 6 segundos, a cena troca entre o solo e a cabine em cruzeiro." ciclo={c} altura={H}>
       {(w) => {
-        const cx = w * 0.3, cy = 100;
+        const cx = w * 0.24, cy = 100;
         const esc = 1 + 0.08 * pulso;
-        const raio = Math.min(w * 0.38, 120);
+        const raio = Math.min(w * 0.19, 70);
         return (
           <G>
             <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
-            <Ellipse cx={cx} cy={cy} rx={raio} ry={62} fill="none" stroke="#3A1418" strokeWidth={10} />
+            <Ellipse cx={cx} cy={cy} rx={raio} ry={58} fill="none" stroke="#3A1418" strokeWidth={10} />
             {Array.from({ length: n }, (_, k) => {
               const t = (local * 1.6 + k / n) % 1;
               const a = t * Math.PI * 2;
-              return <Circle key={k} cx={cx + raio * Math.cos(a)} cy={cy + 62 * Math.sin(a)} r={4} fill={Cores.acerto} />;
+              return <Circle key={k} cx={cx + raio * Math.cos(a)} cy={cy + 58 * Math.sin(a)} r={4} fill={Cores.acerto} />;
             })}
             <G transform={`translate(${cx} ${cy}) scale(${esc}) translate(${-cx} ${-cy})`}>
               <Path d={`M ${cx} ${cy + 26} C ${cx - 40} ${cy} ${cx - 34} ${cy - 30} ${cx - 14} ${cy - 30} C ${cx - 4} ${cy - 30} ${cx} ${cy - 22} ${cx} ${cy - 16} C ${cx} ${cy - 22} ${cx + 4} ${cy - 30} ${cx + 14} ${cy - 30} C ${cx + 34} ${cy - 30} ${cx + 40} ${cy} ${cx} ${cy + 26} Z`} fill={Cores.erro} />
@@ -613,7 +613,7 @@ export function AnimacaoValvula() {
         return (
           <G>
             <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
-            <Rect x={cx - 70} y={cy - 70} width={140} height={140} rx={16} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1} />
+            <Rect x={cx - 64} y={cy - 64} width={128} height={124} rx={16} fill="#1E2C40" stroke="#C9D4E0" strokeWidth={1} />
             {Array.from({ length: estenose ? 6 : 12 }, (_, k) => {
               const t = (local * (estenose ? 6 : 3) + k / (estenose ? 6 : 12)) % 1;
               const y = cy + 60 - t * 130;
@@ -623,7 +623,7 @@ export function AnimacaoValvula() {
             <Line x1={cx - L} y1={cy} x2={cx - L + L * Math.cos(rad(ang))} y2={cy - L * Math.sin(rad(ang))} stroke={estenose ? Cores.dourado : '#E8EEF5'} strokeWidth={estenose ? 7 : 4} strokeLinecap="round" />
             <Line x1={cx + L} y1={cy} x2={cx + L - L * Math.cos(rad(ang))} y2={cy - L * Math.sin(rad(ang))} stroke={estenose ? Cores.dourado : '#E8EEF5'} strokeWidth={estenose ? 7 : 4} strokeLinecap="round" />
             <SvgText x={cx} y={20} fill={estenose ? Cores.dourado : Cores.texto} fontSize={11} fontFamily={Fonte} textAnchor="middle">{estenose ? 'ESTENOSE: ABERTURA ESTREITA' : 'VÁLVULA NORMAL'}</SvgText>
-            <SvgText x={cx} y={H - 8} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{estenose ? 'O CORAÇÃO FAZ MAIS FORÇA PARA EMPURRAR O SANGUE' : 'O SANGUE PASSA SEM ESFORÇO'}</SvgText>
+            <SvgText x={cx} y={H - 8} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{estenose ? 'MAIS FORÇA PARA EMPURRAR' : 'O SANGUE PASSA SEM ESFORÇO'}</SvgText>
           </G>
         );
       }}
