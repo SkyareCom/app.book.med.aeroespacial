@@ -99,8 +99,10 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v4-resgate-frio.jpg': '99def23e990d2d6b',
   'assets/images/topicos/m1v4-sinal-espelho.jpg': '6bf5f5eb96ab34e7',
   'assets/images/topicos/m1v4-sinal-solo.jpg': 'b25a9345e3caecb1',
-  // 02/11/2026: título do M2V1 trocado para "Pulmões, oxigênio e hipóxia", autorizado pelo autor; hash refeito.
-  'src/data/capitulos/hipoxia.ts': '934b1226f4342217',
+  // 02/11/2026: título do M2V1 trocado para "Pulmões, oxigênio e hipóxia", autorizado pelo autor.
+  // 02/11/2026: texto do M2V1 (src/data/capitulos/hipoxia.ts) DESCONGELADO com autorização do autor para a adaptação ao
+  //   modelo de Sistemas (docs/modelo-sistemas.md). Volta a ser congelado, com o bloco de liberação e os interativos novos,
+  //   quando chegarem as 8 fotos dos tópicos VI a IX. As fotos antigas do voo seguem congeladas.
   'src/components/midia/simulador-o2.tsx': 'af94937e7e23183d',
   'src/components/midia/grafico-tuc.tsx': 'ce3774a3c28f2956',
   'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',
@@ -222,8 +224,8 @@ for (const [arquivo, esperado] of Object.entries(ARQUIVOS)) {
 }
 
 if (diferente) {
-  console.error('Solicite autorização do autor antes de descongelar ou alterar a missão Conceitos (M1V1–M1V8) ou o M2V1.');
+  console.error('Solicite autorização do autor antes de descongelar ou alterar a missão Conceitos (M1V1–M1V8) ou as fotos do M2V1.');
   process.exitCode = 1;
 } else {
-  console.log('Missão Conceitos (M1V1–M1V8) e M2V1 preservados (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
+  console.log('Missão Conceitos (M1V1–M1V8) e fotos do M2V1 preservadas (textos, recursos, gráficos, fotos e testes). Nenhum conteúdo congelado mudou.');
 }

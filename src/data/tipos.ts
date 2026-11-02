@@ -63,7 +63,11 @@ export type TipoMidia =
   | 'posicao-impacto'
   | 'animacao-ejecao'
   | 'envelope-ejecao'
-  | 'risco-capacete';
+  | 'risco-capacete'
+  | 'controle-asma'
+  | 'baterias-cpap'
+  | 'prazo-voo-pulmao'
+  | 'teste-hipoxia';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.
@@ -105,6 +109,23 @@ export interface Questao {
   topico: string; // id do tópico (ou evento) de origem, para revisão
 }
 
+// Formulário de liberação para voo seguro (fim da Missão Sistemas; docs/modelo-sistemas.md).
+// Cada voo de Sistemas traz as perguntas do seu sistema; o formulário junta todas e o veredito vale o pior nível.
+export type NivelLiberacao = 'liberado' | 'cuidados' | 'avaliar' | 'nao-voar';
+export type PerfilPaciente = 'passageiro' | 'tripulante';
+export interface EfeitoLiberacao {
+  nivel: NivelLiberacao;
+  leigo: string; // para o passageiro ou o tripulante que responde sobre si
+  medico: string; // para o médico especialista: norma, prazo e o que registrar
+  topico?: string; // id do tópico para revisar
+}
+export interface PerguntaLiberacao {
+  id: string;
+  pergunta: string;
+  ajuda?: string;
+  opcoes: { rotulo: string; passageiro: EfeitoLiberacao; tripulante: EfeitoLiberacao }[];
+}
+
 export interface Capitulo {
   numero: number;
   titulo: string;
@@ -113,6 +134,8 @@ export interface Capitulo {
   teste?: Questao[];
   // Mídias do episódio inteiro, mostradas mesmo antes de o texto ficar pronto.
   laboratorio?: TipoMidia[];
+  // Perguntas deste sistema no formulário de liberação para voo seguro (só voos da Missão Sistemas).
+  liberacao?: PerguntaLiberacao[];
 }
 
 export interface Secao {

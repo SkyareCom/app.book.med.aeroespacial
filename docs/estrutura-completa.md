@@ -25,6 +25,12 @@ músculos; Saúde da mulher. Rins saíram do digestivo e envelhecimento saiu da 
 urinárias) e M2V15 (Envelhecimento e limites de idade), no fim da missão, para não mudar M2V12 e M2V13, citados nos voos congelados.
 O M2V1 passou de "Respiração e hipóxia" para "Pulmões, oxigênio e hipóxia", com autorização do autor. Total do app: 46 voos.
 
+## MODELO DE SISTEMAS E FORMULÁRIO DE LIBERAÇÃO (02/11/2026)
+Todos os voos da Missão Sistemas seguem `docs/modelo-sistemas.md`: fisiologia em altitude, agravamentos, prazos de
+repouso, voar sem liberação, dicas e remédios e a decisão, para passageiro, tripulante e médico especialista. No fim da
+missão fica o formulário de liberação para voo seguro (`src/app/liberacao-voo.tsx`), alimentado pelo bloco `liberacao`
+de cada voo. O M2V1 foi adaptado primeiro (tópicos VI a IX) e está descongelado até chegarem as fotos novas.
+
 ## FONTES — padrão ANAC e FAA (29/10/2026)
 Em todo voo, considerar sempre as normas e publicações da **ANAC** (e das autoridades brasileiras do tema, como a CNEN)
 e da **FAA**, ao lado das obras de referência. Buscar a fonte primária; quando só houver fonte secundária, registrar

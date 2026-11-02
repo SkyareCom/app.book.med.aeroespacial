@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 8;
+export const VERSAO_NOTIFICACOES = 9;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'liberacao-voo',
+    rotulo: 'Novidade',
+    titulo: 'Liberação para voo seguro',
+    texto: 'No fim da Missão Sistemas: formulário para passageiro, tripulante e médico especialista, com prazos de repouso e veredito. Começa pelos pulmões.',
+    destino: '/liberacao-voo',
+  },
   {
     id: 'impacto',
     rotulo: 'Voo disponível',
@@ -66,7 +73,7 @@ export const notificacoes: Notificacao[] = [
     id: 'hipoxia',
     rotulo: 'Voo disponível',
     titulo: 'Pulmões, oxigênio e hipóxia',
-    texto: 'O voo 1 da Missão 2 está completo, com 4 interativos e o teste no final.',
+    texto: 'O voo 1 da Missão 2 ganhou asma e DPOC, apneia do sono, pneumotórax e simulação de altitude, com 9 interativos e o teste no final.',
     destino: '/capitulo/sistemas/1',
   },
   {

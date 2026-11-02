@@ -58,7 +58,7 @@ export const secoes: Secao[] = [
     subtitulo: 'Cada sistema do corpo, do funcionamento normal à doença',
     sinopse: 'Pulmões, coração, ouvidos, olhos, cérebro e mente: como cada sistema reage ao voo e quando a doença impede de voar.',
     capitulos: [
-      mais({ ...hipoxia, numero: 1 }, ['Asma e DPOC', 'Apneia do sono', 'Pneumotórax', 'Simulação de altitude']),
+      { ...hipoxia, numero: 1 },
       cap(2, 'Coração e vasos sanguíneos', ['Débito cardíaco', 'Coração na altitude', 'Coração sob aceleração', 'Hipertensão', 'Doença coronariana', 'Arritmias', 'Valvopatias', 'Cardiomiopatias', 'Cardiopatias congênitas', 'Exames cardiológicos', 'Trombose e embolia']),
       cap(3, 'Ouvidos, seios da face e dentes', ['Barotrauma', 'Audição', 'Seios da face', 'Barodontalgia', 'Implantes dentários']),
       cap(4, 'Olhos e visão', ['Acuidade visual', 'Visão noturna', 'Visão de cores', 'Lasers', 'Padrões visuais', 'Doenças oculares', 'Correção e cirurgia ocular'], ['adaptacao-escuro']),

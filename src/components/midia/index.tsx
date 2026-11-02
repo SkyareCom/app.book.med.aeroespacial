@@ -14,6 +14,7 @@ import { CalculadoraRuido, FaixasAudicao, ReguaDecibeis, VibracaoA8 } from '@/co
 import { CalculadoraCentrifuga, CurvaCarga, LinhaGLOC, PilhaTolerancia } from '@/components/midia/m1v7-graficos';
 import { EnvelopeEjecao, LimitesImpacto, PosicaoImpacto, RiscoCapacete, TesteAssento } from '@/components/midia/m1v8-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
+import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
@@ -88,6 +89,10 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'risco-capacete': () => <RiscoCapacete />,
   'risco-carreira': () => <RiscoCarreira />,
   'gestacao-radiacao': () => <GestacaoRadiacao />,
+  'controle-asma': () => <ControleAsma />,
+  'baterias-cpap': () => <BateriasCPAP />,
+  'prazo-voo-pulmao': () => <PrazoVooPulmao />,
+  'teste-hipoxia': () => <TesteHipoxia />,
 };
 
 export const NOME_MIDIA: Record<TipoMidia, string> = {
@@ -148,6 +153,10 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'risco-capacete': 'Risco sem capacete',
   'risco-carreira': 'Risco na carreira',
   'gestacao-radiacao': 'Gestação e radiação',
+  'controle-asma': 'Asma controlada',
+  'baterias-cpap': 'Baterias do CPAP',
+  'prazo-voo-pulmao': 'Quando voar',
+  'teste-hipoxia': 'Teste de hipóxia',
 };
 
 export function Midia({ tipo }: { tipo: TipoMidia }) {
