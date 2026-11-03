@@ -76,6 +76,8 @@
 //   12–15 h, 24 h após mais de 15 h); art. 49 (3 ou mais fusos num sentido: 2 h a mais de repouso por fuso, na base);
 //   art. 51 (ao menos 10 folgas por mês, 2 em sábado e domingo seguidos).
 // - ANAC, RBAC 67 (registro em src/lib/cma.ts): remédio para dormir e calmante a critério (67.71(c)); 67.15(c).
+// Mídia (03/11/2026): fotos e vídeos gerados por IA enviados pelo autor; pessoas fictícias. O relógio digital da foto
+// do amanhecer foi desfocado; os vídeos foram cortados para tirar as cenas com relógio digital e embalagens com marca.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
 
 import { liberacaoSono } from '../liberacao/sono';
@@ -118,7 +120,6 @@ export const sono: Capitulo = {
             },
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-1-beliche.jpg'), 'No beliche de descanso a bordo, o sono costuma ser mais curto e leve que em casa.') },
-          { paragrafo: 5, video: { fonte: require('@/assets/videos/m2v8-noite.mp4'), legenda: 'Do anoitecer ao amanhecer: o relógio biológico acompanha a luz e prepara o corpo para dormir e para acordar.' } },
         ],
       },
     },
@@ -153,6 +154,7 @@ export const sono: Capitulo = {
             },
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-2-refeicao.jpg'), 'Refeição de madrugada no hotel: a falta de sono aumenta a fome, em parte pela grelina mais alta.') },
+          { paragrafo: 5, video: { fonte: require('@/assets/videos/m2v8-refeicao.mp4'), legenda: 'Fome fora de hora: com o relógio desajustado e pouco sono, o corpo pede comida no meio da noite.' } },
         ],
       },
     },
@@ -185,7 +187,8 @@ export const sono: Capitulo = {
               ],
             },
           },
-          { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-3-relogios.jpg'), 'Os relógios do aeroporto mostram a distância entre o fuso de casa e o do destino.') },
+          { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-3-relogios.jpg'), 'Os relógios do aeroporto marcam a hora local; o relógio do corpo continua no fuso de casa.') },
+          { paragrafo: 5, video: { fonte: require('@/assets/videos/m2v8-insonia.mp4'), legenda: 'Madrugada no hotel depois de cruzar fusos: o corpo cansado, mas o relógio interno ainda marca o dia.' } },
         ],
       },
     },
