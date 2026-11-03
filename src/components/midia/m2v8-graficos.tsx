@@ -108,7 +108,7 @@ export function DirecaoJetLag() {
 }
 
 // ---------------------------------------------------------------- Plano de jet lag
-const ANTES = ['3 dias antes', '2 dias antes', '1 dia antes'];
+const ANTES: Record<number, string> = { 3: '3 dias antes', 2: '2 dias antes', 1: '1 dia antes' };
 
 export function PlanoJetLag() {
   const [dir, setDir] = useState<Direcao>('leste');
@@ -116,7 +116,9 @@ export function PlanoJetLag() {
   const [deitar, setDeitar] = useState(23);
   const [curta, setCurta] = useState(false);
   const sinal = dir === 'leste' ? -1 : 1;
-  const dias = [1, 2, 3].map((d) => deitar + sinal * d);
+  // 1 hora por dia, por 2 a 3 dias (CDC), sem passar do número de fusos.
+  const n = Math.min(3, fusos);
+  const dias = Array.from({ length: n }, (_, i) => ({ antes: n - i, deitar: deitar + sinal * (i + 1) }));
   const semJetLag = fusos < 2;
   return (
     <MolduraMidia tipo="Planejador" titulo="Plano para o jet lag" instrucao="Informe a direção, os fusos, a hora em que costuma deitar e se a estadia é curta.">
@@ -132,8 +134,8 @@ export function PlanoJetLag() {
         <>
           <Texto cor={Cores.textoSuave}>Antes de viajar, desloque o sono 1 hora por dia:</Texto>
           <View style={styles.leituras}>
-            {dias.map((h, i) => (
-              <Leitura key={i} rotulo={ANTES[i]} valor={`Deitar ${hora(h)}`} cor={Cores.dourado} />
+            {dias.map((d) => (
+              <Leitura key={d.antes} rotulo={ANTES[d.antes]} valor={`Deitar ${hora(d.deitar)}`} cor={Cores.dourado} />
             ))}
           </View>
           <Marca cor={Cores.acerto}>
@@ -144,11 +146,12 @@ export function PlanoJetLag() {
           <Marca cor={Cores.dourado}>
             {dir === 'leste'
               ? 'Melatonina (passageiro): 0,5 a 1 mg cerca de 90 minutos antes da hora de deitar do destino, por alguns dias.'
-              : 'Melatonina (passageiro): costuma ser dispensável; se usada, é tomada de manhã, e nunca entre meia-noite e 5 horas do relógio do corpo.'}
+              : 'Melatonina (passageiro): atrasa o relógio quando tomada na manhã do relógio do corpo, que ainda está no fuso de casa. Nunca na hora em que ela já está alta, à noite do relógio do corpo.'}
           </Marca>
+          <Texto cor={Cores.textoApagado}>A hora exata da luz e da melatonina depende do número de fusos. Em viagens com muitos fusos, use uma calculadora de jet lag ou peça orientação médica.</Texto>
         </>
       )}
-      <Texto cor={Cores.textoApagado}>Tripulante: em pernoite curto, fique no horário de casa. A ICAO não recomenda a melatonina para tripulantes em geral.</Texto>
+      <Texto cor={Cores.textoApagado}>Tripulante: em pernoite de menos de 3 dias, fique no horário de casa. A ICAO não recomenda a melatonina para tripulantes em geral.</Texto>
     </MolduraMidia>
   );
 }
