@@ -6,6 +6,7 @@
 import { atmosfera } from './capitulos/atmosfera';
 import { descompressao } from './capitulos/descompressao';
 import { coracao } from './capitulos/coracao';
+import { sono } from './capitulos/sono';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
 import { radiacao } from './capitulos/radiacao';
@@ -66,7 +67,7 @@ export const secoes: Secao[] = [
       cap(5, 'Labirinto e orientação espacial', ['Sistemas de orientação', 'Ilusões', 'Tipos de desorientação', 'Prevenção', 'Cinetose', 'Vertigem']),
       cap(6, 'Cérebro e sistema nervoso', ['Epilepsia', 'Síncope', 'Cefaleia', 'AVC', 'Trauma craniano', 'Doenças neurodegenerativas']),
       cap(7, 'Saúde mental e comportamento', ['Depressão e ansiedade', 'Humor e personalidade', 'Álcool e drogas', 'Avaliação psicológica', 'Apoio por pares']),
-      cap(8, 'Sono, relógio biológico e fadiga', ['Fisiologia do sono', 'Relógio biológico', 'Jet lag', 'Higiene do sono', 'Fisiologia da fadiga', 'FRMS', 'Limites de jornada', 'Voos de longa duração', 'Contramedidas']),
+      { ...sono, numero: 8 },
       cap(9, 'Hormônios e metabolismo', ['Diabetes', 'Tireoide', 'Obesidade']),
       cap(10, 'Estômago, intestino e fígado', ['Doenças digestivas e do fígado', 'Cirurgias abdominais']),
       cap(11, 'Sangue, câncer e infecções', ['Anemias e anticoagulação', 'Câncer', 'Doenças transmissíveis', 'HIV', 'Vacinação']),

@@ -631,6 +631,59 @@ export function AnimacaoValvula() {
   );
 }
 
+// ---------------------------------------------------------------- M2V8 · O relógio de 24 horas
+// Esquema qualitativo de quem dorme das 23 às 7 h: melatonina à noite (pico perto de 3–4 h), cortisol com pico no início
+// da manhã e temperatura do corpo com mínimo no início da manhã. Faixa: janela de baixa circadiana (2–6 h).
+export function AnimacaoRelogio() {
+  const c = useCiclo(16000);
+  const h = c.fase * 24;
+  const H = 200;
+  const gauss = (x: number, m: number, s: number) => {
+    const d = Math.min(Math.abs(x - m), 24 - Math.abs(x - m));
+    return Math.exp(-(d * d) / (2 * s * s));
+  };
+  const melatonina = (x: number) => gauss(x, 3.5, 3.2);
+  const cortisol = (x: number) => gauss(x, 7.5, 2.6) * 0.95 + 0.08;
+  const temperatura = (x: number) => 0.5 - 0.42 * Math.cos(((x - 5) / 24) * Math.PI * 2);
+  const frase = h >= 2 && h < 6 ? 'JANELA DE BAIXA CIRCADIANA' : h >= 6 && h < 10 ? 'CORTISOL ALTO: DESPERTAR' : h >= 15 && h < 17 ? 'QUEDA DA TARDE' : h >= 21 || h < 2 ? 'MELATONINA SUBINDO' : 'DIA: MELATONINA BAIXA';
+  const corFrase = h >= 2 && h < 6 ? Cores.erro : h >= 15 && h < 17 ? Cores.dourado : Cores.texto;
+  return (
+    <Quadro titulo="O relógio de 24 horas" instrucao="Esquema de quem dorme das 23 às 7 horas: a linha percorre o dia e mostra a melatonina, o cortisol e a temperatura do corpo." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 12, x1 = w - 12, y0 = 44, y1 = H - 34;
+        const px = (x: number) => x0 + (x / 24) * (x1 - x0);
+        const py = (v: number) => y1 - v * (y1 - y0);
+        const curva = (f: (x: number) => number) => Array.from({ length: 97 }, (_, k) => {
+          const x = (k / 96) * 24;
+          return `${k ? 'L' : 'M'} ${px(x).toFixed(1)} ${py(f(x)).toFixed(1)}`;
+        }).join(' ');
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <Rect x={px(0)} y={y0} width={px(7) - px(0)} height={y1 - y0} fill="#16233A" />
+            <Rect x={px(23)} y={y0} width={px(24) - px(23)} height={y1 - y0} fill="#16233A" />
+            <Rect x={px(2)} y={y0} width={px(6) - px(2)} height={y1 - y0} fill={Cores.erro} opacity={0.14} />
+            <Path d={curva(temperatura)} stroke="#E8EEF5" strokeWidth={1.5} strokeDasharray="4 3" fill="none" />
+            <Path d={curva(cortisol)} stroke={Cores.dourado} strokeWidth={2.5} fill="none" />
+            <Path d={curva(melatonina)} stroke="#7FA8FF" strokeWidth={2.5} fill="none" />
+            <Line x1={px(h)} y1={y0 - 4} x2={px(h)} y2={y1} stroke={Cores.texto} strokeWidth={1.5} />
+            <Circle cx={px(h)} cy={py(melatonina(h))} r={4} fill="#7FA8FF" />
+            <Circle cx={px(h)} cy={py(cortisol(h))} r={4} fill={Cores.dourado} />
+            {[0, 6, 12, 18, 24].map((t) => (
+              <SvgText key={t} x={px(t)} y={y1 + 14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor={t === 0 ? 'start' : t === 24 ? 'end' : 'middle'}>{`${t} h`}</SvgText>
+            ))}
+            <SvgText x={12} y={20} fill={Cores.texto} fontSize={13} fontFamily={Fonte}>{`${String(Math.floor(h)).padStart(2, '0')}:00`}</SvgText>
+            <SvgText x={w - 12} y={20} fill={corFrase} fontSize={10} fontFamily={Fonte} textAnchor="end">{frase}</SvgText>
+            <SvgText x={12} y={H - 6} fill="#7FA8FF" fontSize={9} fontFamily={Fonte}>MELATONINA</SvgText>
+            <SvgText x={w / 2} y={H - 6} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="middle">CORTISOL</SvgText>
+            <SvgText x={w - 12} y={H - 6} fill="#E8EEF5" fontSize={9} fontFamily={Fonte} textAnchor="end">TEMPERATURA</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

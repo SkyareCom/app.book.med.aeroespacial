@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 12;
+export const VERSAO_NOTIFICACOES = 13;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'sono',
+    rotulo: 'Voo disponível',
+    titulo: 'Sono, relógio biológico e fadiga',
+    texto: 'O voo 8 da Missão Sistemas chegou: o relógio biológico e seus hormônios, jet lag para o leste e para o oeste com plano de prevenção, fadiga, limites de jornada e repouso, remédios para dormir e apneia. O formulário de liberação ganhou o bloco do sono.',
+    destino: '/capitulo/sistemas/8',
+  },
   {
     id: 'coracao',
     rotulo: 'Voo disponível',
