@@ -69,6 +69,12 @@
 //   evidência; aspirina: ACCP contra, ASH só se meia ou HBPM inviáveis; IATA 2020 (TVP recente: voar assintomático e
 //   estável no anticoagulante; TEP: ≥ 5 dias, anticoagulação estável e PaO2 normal em ar ambiente); BTS 2022 (2
 //   semanas após o diagnóstico; registro em hipoxia.ts).
+// Detalhamento (03/11/2026), a pedido do autor, no padrão do jet lag: em cada tópico, um parágrafo e uma tabela "Como
+//   prevenir e amenizar" com as mesmas fontes (UK CAA: remédios na bagagem de mão, oxigênio por indicação e combinado
+//   com a companhia, marca-passo e desfibrilador com interferência improvável; CDC: trombose; FAA, ICAO e RBAC 67:
+//   prazos, antiagregante, remédios aceitos, Holter, eco e TSH; 67.15(c): informar piora). Ajuste dos remédios aos fusos
+//   remete ao M2V8. Pedir ajuda com as malas, não correr no aeroporto e assento perto do banheiro para quem usa
+//   diurético são orientações práticas de bom senso, sem número próprio.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
 // Mídia do autor (02/11/2026): 14 fotos (topicos/m2v2-*.jpg, pessoas fictícias) no padrão de 1.600 × 893 px e o vídeo
 //   videos/m2v2-coracao.mp4 (ecocardiograma recortado para tirar o logotipo e os textos da tela; 8 s em laço, sem som).
@@ -94,6 +100,7 @@ export const coracao: Capitulo = {
           "O **gás que expande** também conta. Depois de uma **cirurgia no tórax**, como a ponte de safena, sobra ar dentro do peito, e ele cresce com a subida (Veja M1V1 - II); por isso o passageiro espera de **10 a 14 dias** para o ar ser reabsorvido (Veja M2V2 - III).",
           "Horas **sentado**, no **ar seco** da cabine (Veja M1V1 - IV), deixam o sangue parado nas veias das pernas e favorecem a **trombose** (Veja M2V2 - VII). Os **fusos horários** bagunçam o horário dos remédios do coração (Veja M2V8), e as **acelerações** do voo de caça empurram o sangue para longe da cabeça (Veja M1V7).",
           "Para o tripulante, a pergunta é outra: o risco de **incapacitação**. Infarto, AVC e ruptura da aorta podem tirar o piloto de ação de uma vez; uma arritmia leve pode só **distrair**. Com **um só piloto**, a incapacitação tende a virar acidente, e por isso a medicina aeroespacial calcula o risco anual de cada condição (Veja M3V1). O **eletrocardiograma** periódico serve para **achar casos**, não basta sozinho para afastar ninguém.",
+          "**Como se preparar para voar com o coração.** Leve os **remédios na bagagem de mão**, com a receita e a lista de doses, e ajuste os horários quando cruzar fusos (Veja M2V8 - IV). Se o médico indicar **oxigênio a bordo**, combine com a companhia antes do voo, pelo **MEDIF**. Em voo longo, **caminhe** e mexa as pernas (Veja M2V2 - VII). **Dor no peito, falta de ar, palpitação ou desmaio** a bordo pedem aviso imediato à tripulação. Para o tripulante, o **eletrocardiograma** segue a idade e a classe, e qualquer piora da saúde deve ser informada ao examinador antes do próximo voo.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-coracao' },
@@ -126,6 +133,21 @@ export const coracao: Capitulo = {
               ],
             },
           },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como se preparar para voar com o coração',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Remédios', 'Na bagagem de mão, com receita e lista de doses; horários ajustados aos fusos'],
+                ['Oxigênio a bordo', 'Só com indicação médica, combinado antes com a companhia pelo MEDIF'],
+                ['Voo longo', 'Caminhar e exercitar a panturrilha; assento do corredor'],
+                ['Sinais de alarme a bordo', 'Dor no peito, falta de ar, palpitação ou desmaio: avisar a tripulação na hora'],
+                ['Depois de cirurgia no tórax', 'Esperar a reabsorção do ar: 10 a 14 dias'],
+                ['Tripulante', 'ECG conforme a idade e a classe; informar ao examinador qualquer piora antes de voar'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -140,6 +162,7 @@ export const coracao: Capitulo = {
           "Para o **passageiro**, a pressão **tratada e controlada não impede** o voo; a pressão **não controlada** é uma contraindicação. Para o **tripulante**, os limites mudam com a autoridade. No RBAC 67, pressão mantida **acima de 140 × 90 mmHg** torna o candidato **não apto**, e quem usa remédio pode ser apto a critério do examinador. A FAA aceita até **155/95 mmHg** no exame. Para a ICAO, pressão **consistentemente acima de 160/95** desqualifica em **todas as classes**.",
           "Voar com a pressão descontrolada é voar com mais chance de **AVC** e **infarto** longe do atendimento. O tripulante que sabe da piora e continua voando descumpre a regra: pelo RBAC 67, ele deve **informar a ANAC ou o examinador** e parar de exercer a licença até um novo julgamento, e a FAA proíbe atuar com condição que impeça cumprir os requisitos do certificado.",
           "A maioria dos remédios de pressão é compatível com o voo, mas as listas da FAA e da ICAO não são iguais: a FAA aceita o **alfabloqueador**, que a ICAO não aceita, e ambas recusam os de **ação central**, como a **clonidina** e a **metildopa**. Na FAA, quem começa o remédio fica **7 dias sem voar**, e o examinador pode emitir o certificado com **até 3 remédios**. O passageiro leva os comprimidos na **bagagem de mão** e mantém o intervalo entre as doses quando cruza fusos (Veja M2V8).",
+          "**Como prevenir e amenizar.** Meça a pressão em **dias diferentes**, sempre em repouso, e leve as medidas à consulta. Não pare nem troque o remédio por conta própria antes da viagem; leve os comprimidos na **bagagem de mão** e mantenha o intervalo entre as doses quando cruzar fusos (Veja M2V8 - IV). Nos primeiros dias de remédio novo, **levante-se devagar** da poltrona, porque a queda de pressão ao ficar de pé pode dar tontura. O tripulante só volta a voar quando o controle estiver **estável e sem efeitos colaterais**, e confere se o remédio é aceito pela autoridade: os de **ação central** não são aceitos pela FAA nem pela ICAO.",
           "**Não voe hoje** com a pressão sem controle, com dor de cabeça forte, alteração da visão ou dor no peito. Como tripulante, **não voe** nos primeiros dias de um remédio novo ou de uma dose nova. O médico registra as **medidas repetidas** em dias diferentes, os remédios e as doses, e confere sinais de lesão no coração, nos olhos e nos rins.",
         ].join('\n\n'),
         recursos: [
@@ -174,6 +197,20 @@ export const coracao: Capitulo = {
               ],
             },
           },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir e amenizar · pressão alta',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Antes da viagem', 'Medidas em dias diferentes, em repouso; pressão controlada'],
+                ['Remédios', 'Sem parar nem trocar por conta própria; na bagagem de mão; intervalo mantido entre os fusos'],
+                ['Remédio novo ou dose nova', 'Levantar devagar da poltrona; tripulante sem voar até o controle estável (FAA: 7 dias)'],
+                ['Sinais de alarme', 'Dor de cabeça forte, alteração da visão ou dor no peito: não voar e procurar atendimento'],
+                ['Tripulante', 'Confirmar se o remédio é aceito: de ação central não; alfabloqueador aceito pela FAA, não pela ICAO'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -188,6 +225,7 @@ export const coracao: Capitulo = {
           "Para o **passageiro**, os prazos são curtos. Depois de um **infarto sem complicação**, a viagem é possível em **7 a 10 dias**; antes de 7, é contraindicada. **Com complicação**, o voo fica contraindicado nas primeiras **4 a 6 semanas**. A **angioplastia com stent** sem complicação permite viajar em **3 dias**, com avaliação individual. A **ponte de safena** e as outras cirurgias do tórax pedem de **10 a 14 dias**, para o ar deixado no peito ser reabsorvido.",
           "Para o **tripulante**, os prazos são longos e as autoridades divergem. No RBAC 67, o infarto exige **pelo menos 1 ano**, e a revascularização ou a angioplastia sem infarto, **pelo menos 180 dias**, com Holter, cintilografia, eco e exames de sangue normais; o resultado favorável é **apto com restrição**, com validade de **até 6 meses**. Na 2ª classe, o comissário e o mecânico de voo podem voltar **6 meses** depois do infarto. Na FAA, a espera é de **3 meses** depois do infarto ou do stent e de **6 meses** depois da ponte, com **autorização especial**. A ICAO pede **6 meses**, coração com bombeamento normal e voo só **com outro piloto** na Classe 1.",
           "Voar antes do prazo é arriscar um **novo infarto** ou uma **arritmia** a bordo, longe do hospital, e o desvio do avião. O tripulante ainda responde pela licença. Depois do stent, o **antiagregante** não pode ser interrompido por conta própria: a FAA espera **1 ano** de uso com o stent **farmacológico** e pelo menos **30 dias** com o **convencional**. Parar de fumar, a **estatina** e o controle da pressão fazem parte do retorno.",
+          "**Como prevenir e amenizar.** Respeite o **prazo** do evento: ele muda com o tipo de tratamento e com a presença de complicação. Leve os remédios na **bagagem de mão** e **não interrompa o antiagregante** por conta própria, nem para viajar. Se a angina aparece em esforços pequenos, combine **oxigênio** com a companhia. Evite carregar malas pesadas e correr no aeroporto: peça ajuda e chegue com tempo. **Parar de fumar**, a **estatina** e o controle da pressão reduzem o risco de um novo evento. Dor no peito a bordo pede aviso imediato à tripulação.",
           "**Não voe hoje** com dor no peito nova, mais forte ou em repouso, nem antes do prazo depois do infarto, do stent ou da cirurgia. O médico confere a **data do evento**, se houve **complicação**, o **teste de esforço** e a **função do coração**, e anota os prazos no atestado ou no MEDIF.",
         ].join('\n\n'),
         recursos: [
@@ -224,6 +262,21 @@ export const coracao: Capitulo = {
               ],
             },
           },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir e amenizar · doença coronariana',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Prazos', 'Seguir o prazo do evento: infarto, stent ou ponte, com ou sem complicação'],
+                ['Antiagregante', 'Nunca interromper por conta própria, nem para viajar'],
+                ['Angina em esforços pequenos', 'Oxigênio a bordo combinado com a companhia'],
+                ['No aeroporto', 'Pedir ajuda com as malas e chegar com tempo, sem correr'],
+                ['Prevenção de novo evento', 'Parar de fumar, estatina e pressão controlada'],
+                ['Dor no peito a bordo', 'Avisar a tripulação na hora'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -238,6 +291,7 @@ export const coracao: Capitulo = {
           "Para o **passageiro**, a arritmia **controlada** não impede o voo; a **não controlada** é uma contraindicação. Quem tem **marca-passo** ou **desfibrilador** pode voar quando estiver estável: a interferência com os sistemas do avião ou com o controle de segurança do aeroporto é **muito improvável** nos aparelhos comuns.",
           "Para o **tripulante**, o caminho é mais longo. No RBAC 67, distúrbio significativo do ritmo torna o candidato **não apto**, salvo investigação favorável, e o **marca-passo** também; depois da **ablação** de uma via anômala, o retorno é possível em **3 meses**, com estudo eletrofisiológico normal. Na FAA, a fibrilação atrial vai para a **decisão da FAA**, a espera é de **3 meses** depois da ablação e de **1 mês** depois da cardioversão, o marca-passo pede **2 meses** e o **desfibrilador ativo desqualifica** todas as classes. A ICAO aceita a fibrilação atrial com ritmo normal, **3 Holter** sem crise em 2 a 3 meses e voo só **com outro piloto**; o marca-passo, sem dependência dele, só com restrição; e o desfibrilador implantável **impede** o voo.",
           "Voar com a arritmia descontrolada é arriscar **desmaio**, **AVC** ou uma crise longe do atendimento. Entre os remédios de controle, a ICAO aceita a **digoxina**, o **betabloqueador**, o **sotalol** e o **verapamil**. A **anticoagulação** é o ponto sensível: o RBAC 67 torna **não apto** quem usa anticoagulante **cumarínico**, como a **varfarina**, e muitos países fazem o mesmo (Veja M2V11).",
+          "**Como prevenir e amenizar.** Mantenha os remédios do ritmo e o **anticoagulante** nos horários certos, ajustando-os aos fusos com o médico (Veja M2V8 - IV); um atraso de dose pode deixar o coração ou o sangue sem proteção. Quem tem **marca-passo** ou **desfibrilador** pode voar quando estiver estável: a interferência com os sistemas do avião ou com a inspeção de segurança é **muito improvável** nos aparelhos comuns. Palpitação nova a bordo, tontura ou desmaio pedem aviso imediato à tripulação. Para o tripulante, a investigação inclui o **Holter**, o **ecocardiograma** e a **tireoide**, e o retorno segue os prazos de cada procedimento.",
           "**Não voe hoje** com palpitação nova, desmaio ou tontura que não passa, nem nas primeiras semanas depois de ablação, cardioversão ou implante de aparelho. O médico confere o **Holter**, o **ecocardiograma**, a função da **tireoide** e o anticoagulante, e registra o tipo e a data do aparelho implantado.",
         ].join('\n\n'),
         recursos: [
@@ -273,6 +327,20 @@ export const coracao: Capitulo = {
               ],
             },
           },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir e amenizar · arritmias e aparelhos',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Remédios do ritmo e anticoagulante', 'Horários certos, ajustados aos fusos com o médico'],
+                ['Marca-passo ou desfibrilador', 'Voar quando estável; interferência com o avião e a inspeção muito improvável'],
+                ['Sinais de alarme a bordo', 'Palpitação nova, tontura ou desmaio: avisar a tripulação'],
+                ['Depois de ablação, cardioversão ou implante', 'Respeitar o prazo antes de voar como tripulante'],
+                ['Tripulante', 'Holter, ecocardiograma e tireoide na investigação'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -287,6 +355,7 @@ export const coracao: Capitulo = {
           "Para o **passageiro**, a valvopatia **com sintomas** pede avaliação individual, e a **grave com sintomas** impede o voo. Quem tem cardiopatia **cianótica**, que deixa os lábios arroxeados, ou **hipertensão pulmonar** precisa de **oxigênio** a bordo, combinado com a companhia.",
           "Para o **tripulante**, o RBAC 67 torna **não apto** quem tem **sopro significativo** ou **doença valvar**, **troca de válvula** ou **transplante**, e cardiopatia congênita sem **cura cirúrgica indubitável**. O prolapso mitral é aceito se **não der sintomas**, não houver arritmia nem outra doença do coração, e a **esteira**, o **Holter** e o **ecocardiograma** forem satisfatórios. Na FAA, a troca de válvula e as demais valvopatias vão para a **decisão da FAA**. A ICAO aceita, depois de **6 meses**, a **prótese biológica** na aorta ou o **reparo da mitral**, com ritmo normal, sem varfarina e com voo só com outro piloto; a **válvula mecânica impede** o voo.",
           "Voar sem liberação com uma válvula apertada é arriscar **falta de ar**, **desmaio** ou **arritmia** na cabine. Com prótese mecânica, o **anticoagulante** é obrigatório, e o RBAC 67 torna não apto quem usa o do tipo **cumarínico** (Veja M2V2 - IV).",
+          "**Como prevenir e amenizar.** Mantenha o **ecocardiograma** em dia e saiba o tipo da sua válvula: a **mecânica** exige anticoagulante para sempre, e a dose precisa seguir o horário também em viagem (Veja M2V8 - IV). Quem tem cardiopatia **cianótica** ou **hipertensão pulmonar** combina **oxigênio** com a companhia antes de embarcar. Evite esforço no aeroporto e peça ajuda com as malas. Falta de ar nova, desmaio ou dor no peito são sinais de alarme, em terra e a bordo.",
           "**Não voe hoje** com falta de ar nova, desmaio ou dor no peito. O médico confere o **ecocardiograma**, o tipo de prótese, o ritmo e o anticoagulante, e informa à companhia se o paciente precisa de oxigênio.",
         ].join('\n\n'),
         recursos: [
@@ -308,7 +377,21 @@ export const coracao: Capitulo = {
               ],
             },
           },
-          { paragrafo: 6, midia: 'animacao-valvula' },
+          { paragrafo: 7, midia: 'animacao-valvula' },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir e amenizar · válvulas e congênitas',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Exames', 'Ecocardiograma em dia; saber o tipo de válvula ou prótese'],
+                ['Prótese mecânica', 'Anticoagulante sem falhas, também nos horários de viagem'],
+                ['Cianótica ou hipertensão pulmonar', 'Oxigênio a bordo combinado antes com a companhia'],
+                ['No aeroporto', 'Evitar esforço; pedir ajuda com as malas'],
+                ['Sinais de alarme', 'Falta de ar nova, desmaio ou dor no peito'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -323,6 +406,7 @@ export const coracao: Capitulo = {
           "Para o **passageiro**, a insuficiência cardíaca **classe III ou IV**, ou com oxigênio do sangue abaixo de **70 mmHg** no solo, pede **oxigênio a bordo**; a insuficiência **descompensada**, com piora recente, **impede o voo**. O oxigênio precisa ser combinado com a companhia, que costuma pedir o **MEDIF**.",
           "Para o **tripulante**, o RBAC 67 torna **não apto** quem tem **pericardite** ou **miocardiopatia**. A ICAO admite a volta depois de uma pericardite em **3 a 6 meses**, só com restrição, com **eco**, **Holter** e **esteira** normais e acompanhamento por **2 anos**; a **recorrência** impede o voo, porque a dor pode incapacitar.",
           "Voar com a insuficiência descompensada é arriscar **edema de pulmão** a bordo, com falta de ar que piora com a altitude, e o desvio do avião. Os remédios ficam na **bagagem de mão**, e quem usa **diurético** planeja o acesso ao banheiro sem deixar de tomar a dose.",
+          "**Como prevenir e amenizar.** Antes de viajar, confira se a insuficiência está **compensada**: sem falta de ar em repouso, sem inchaço novo e sem ganho rápido de peso. Na classe **III ou IV**, combine o **oxigênio** com a companhia pelo MEDIF. Leve os remédios na **bagagem de mão**; quem usa **diurético** escolhe um assento perto do banheiro em vez de pular a dose. Evite esforço e malas pesadas no aeroporto, e em voo longo mexa as pernas. Falta de ar que piora a bordo pede aviso imediato à tripulação.",
           "**Não voe hoje** com falta de ar em repouso, inchaço que aumentou ou ganho de peso rápido. O médico confere a **classe da NYHA**, a **fração de ejeção** e o oxigênio do sangue, e registra no MEDIF o fluxo de oxigênio necessário.",
         ].join('\n\n'),
         recursos: [
@@ -343,6 +427,20 @@ export const coracao: Capitulo = {
             },
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v2-6-oxigenio.jpg'), 'O concentrador portátil aprovado pela companhia leva o oxigênio combinado no MEDIF durante todo o voo.') },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir e amenizar · insuficiência cardíaca',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Antes de viajar', 'Compensada: sem falta de ar em repouso, inchaço novo ou ganho rápido de peso'],
+                ['Classe III ou IV', 'Oxigênio a bordo combinado pelo MEDIF'],
+                ['Diurético', 'Tomar a dose; preferir assento perto do banheiro'],
+                ['No aeroporto', 'Evitar esforço e malas pesadas'],
+                ['A bordo', 'Mexer as pernas; avisar a tripulação se a falta de ar piorar'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -357,6 +455,7 @@ export const coracao: Capitulo = {
           "Para o **passageiro** que já teve trombose, a IATA admite o voo depois de uma **trombose na perna** quando não há sintomas e o **anticoagulante está estável**; depois de uma **embolia**, a partir de **5 dias**, com anticoagulação estável e oxigênio normal no sangue. A British Thoracic Society é mais cautelosa: **2 semanas** depois do diagnóstico (Veja M2V1 - IX).",
           "Para o **tripulante**, o RBAC 67 torna **não apto** quem tem **sangue que coagula demais** ou usa anticoagulante **cumarínico** (Veja M2V11). Na FAA, a trombose na 1ª e na 2ª classes vai para a **decisão da FAA**, e na 3ª o examinador pode emitir depois de **episódio único**, resolvido e **sem anticoagulante**; quem usa varfarina mostra o **INR ao menos mensal** nos 6 meses anteriores. Pela ICAO, a certificação volta **1 semana** depois de parar a varfarina; depois de uma embolia, espera-se **6 meses** de tratamento, e a pressão do pulmão precisa estar normal.",
           "Prevenir é simples para todos: **caminhar** pelo corredor, **exercitar a panturrilha** na poltrona e preferir o **assento do corredor**. Beber água é razoável, mas não há prova de que evite a trombose. Para quem tem **risco alto**, a **meia de compressão** abaixo do joelho, com **15 a 30 mmHg** no tornozelo, é recomendada; a **heparina** antes do voo é decisão do médico, e a **aspirina** não é a primeira escolha.",
+          "**Quem precisa de mais cuidado.** O risco alto não vem do voo sozinho, e sim da soma com outros fatores: **trombose anterior**, **cirurgia**, internação ou trauma recentes, **câncer ativo**, **gestação** e pós-parto, **hormônio** com estrogênio, **obesidade**, trombofilia e pouca mobilidade. Quanto **mais longo** o voo, mais pesa cada um deles. Quem tem esses fatores planeja antes: **meia de compressão** e conversa com o médico sobre a **heparina**. Quem já usa **anticoagulante** mantém as doses nos horários, também quando cruza fusos (Veja M2V8 - IV), e não precisa de mais nada para o voo além das medidas de todos.",
           "**Não voe hoje** com dor e inchaço numa perna ou falta de ar súbita. Nas **2 semanas** depois de um voo longo, esses sinais pedem atendimento médico. O médico confere a data do diagnóstico, o anticoagulante, o oxigênio do sangue e os fatores de risco, e decide a prevenção da próxima viagem.",
         ].join('\n\n'),
         recursos: [
@@ -377,7 +476,7 @@ export const coracao: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v2-7-meia.jpg'), 'A meia de compressão abaixo do joelho, com 15 a 30 mmHg no tornozelo, é indicada para quem tem risco alto.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
@@ -389,6 +488,21 @@ export const coracao: Capitulo = {
                 ['Pulmões', 'Insuficiência cardíaca e embolia trazem falta de ar na cabine', 'Oxigênio combinado com a companhia; prevenção da trombose'],
                 ['Veias das pernas', 'O sangue parado forma coágulos nos voos longos', 'Caminhar, exercitar a panturrilha, meia de compressão no risco alto'],
                 ['Tórax depois de cirurgia', 'O ar que sobra no peito cresce com a subida', 'Esperar 10 a 14 dias depois da ponte de safena'],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir a trombose no voo',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Todos os passageiros', 'Caminhar quando for seguro, exercitar a panturrilha, assento do corredor'],
+                ['Risco alto', 'Meia de compressão abaixo do joelho, 15 a 30 mmHg; heparina só por decisão médica'],
+                ['Aspirina', 'Não é a primeira escolha para prevenir a trombose do voo'],
+                ['Água', 'Razoável, mas sem prova de que evite a trombose'],
+                ['Em anticoagulante', 'Doses nos horários, ajustadas aos fusos'],
+                ['Até 2 semanas depois', 'Dor e inchaço na perna ou falta de ar súbita: atendimento médico'],
               ],
             },
           },
