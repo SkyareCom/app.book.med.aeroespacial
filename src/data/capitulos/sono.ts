@@ -81,6 +81,16 @@
 //   Mapa: contorno Natural Earth (domínio público). Rotas definidas pelo autor: Brasília (UTC−3) → Auckland (UTC+12, ou
 //   +13 no horário de verão da Nova Zelândia) para o leste: 15 a 16 fusos; Tóquio (UTC+9) → São Paulo (UTC−3) para o
 //   oeste: 12 fusos.
+// Revisão (03/11/2026), a pedido do autor: dicas de refeições, de esticar o dia ou dormir e outras (tópico IV). Fontes:
+//   CDC Yellow Book (atividades e refeições no horário do destino; ficar acordado no dia local aumenta a pressão do
+//   sono; oeste: ficar acordado até a hora de deitar; cochilos de 20–30 min; menos álcool e cafeína para dormir a bordo,
+//   máscara e tampões; exercício aumenta o alerta; hidratação, álcool e cafeína desidratam; cafeína cedo para o leste e
+//   não cedo para o oeste; viagem < 2 dias no horário de casa). ICAO Doc 8984 17.3.1 (ritual; evitar refeição grande
+//   poucas horas antes), 17.3.3 (pernoite curto: horário de casa ou sono planejado para logo antes da saída), 17.3.5
+//   (sono no dia local: no máximo 2–3 h), 17.3.6 (queda pós-almoço no horário de casa nos 2 primeiros dias), 17.3.8
+//   (respostas individuais; ansiedade e preocupações), Apêndice 2 (exercício vigoroso não nas 2 h antes; comer antes do
+//   sono diurno e não > 20% da energia 1–2 h antes do sono principal; dormir de dia antes de trabalhar a noite toda).
+//   Nenhuma das fontes recomenda dieta específica contra o jet lag.
 // Mídia (03/11/2026): fotos e vídeos gerados por IA enviados pelo autor; pessoas fictícias. O relógio digital da foto
 // do amanhecer foi desfocado; os vídeos foram cortados para tirar as cenas com relógio digital e embalagens com marca.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
@@ -207,7 +217,10 @@ export const sono: Capitulo = {
           "A preparação começa **antes do voo**. Nos **2 a 3 dias** anteriores, desloque o sono **1 hora por dia** na direção do destino: mais cedo para o **leste**, mais tarde para o **oeste**. Escolha, quando der, um voo que chegue numa hora boa para receber a **luz certa** no destino.",
           "A **luz** é o tratamento mais forte. A luz forte **depois do ponto mais baixo do relógio**, cerca de 2 a 4 horas antes da hora habitual de acordar, **adianta** o relógio; a luz **à noite** o **atrasa**. Indo para o **leste**, procure **luz pela manhã** e evite a luz à noite, com óculos escuros e cortinas fechadas. Indo para o **oeste**, evite a luz forte de manhã cedo e aproveite a do fim do dia. No destino, saia e pegue **luz do dia no horário local**.",
           "A **melatonina** ajuda quando tomada na **hora certa**. Doses de **0,5 a 1 mg** costumam bastar; mais de **5 mg** não é recomendado, porque o excesso continua agindo na hora errada. Tomada cerca de **90 minutos antes de deitar** no horário do destino, ela **adianta** o relógio e ajuda quem voou para o **leste**; tomada de manhã, **atrasa** e ajuda quem voou para o **oeste**. Entre meia-noite e 5 horas do relógio interno, ela **não faz efeito**, e na hora errada **piora** o descompasso. Fora das farmácias, a dose real pode não ser a do rótulo.",
-          "No dia a dia do destino, **cochilos de 20 a 30 minutos** ajudam a ficar acordado sem atrapalhar a noite; cochilos longos atrapalham. A **cafeína** age por cerca de **5 horas**: até **200 mg** a cada 4 horas de dia, parando **6 horas antes de deitar**, e nunca de manhã cedo quando o ajuste é para o oeste. Faça as **refeições no horário do destino**, mantenha-se **hidratado** e evite **álcool**, que faz dormir mais rápido mas **fragmenta** o sono.",
+          "No dia a dia do destino, **cochilos de 20 a 30 minutos** ajudam a ficar acordado sem atrapalhar a noite; cochilos longos atrapalham. A **cafeína** age por cerca de **5 horas**: até **200 mg** a cada 4 horas de dia, parando **6 horas antes de deitar**, e nunca de manhã cedo quando o ajuste é para o oeste.",
+          "As **refeições** também acertam o relógio. Desde o primeiro dia, faça o café da manhã, o almoço e o jantar no **horário do destino**; na viagem curta, de menos de 2 dias, mantenha os horários de casa. Antes do sono principal, evite **refeição pesada**, acima de cerca de **20% da energia do dia**, nas **1 a 2 horas** anteriores, mas não vá dormir com fome: quem dorme de dia deve comer algo antes para não acordar faminto. As fontes oficiais não recomendam uma dieta especial contra o jet lag; o que conta é o **horário** de comer.",
+          "**Esticar o dia ou dormir?** Ficar acordado durante o **dia local** aumenta a pressão do sono e ajuda a dormir na noite do destino. Indo para o **oeste**, segure o sono até a **hora local de deitar**. Se o sono durante o dia for inevitável, limite-o a **2 ou 3 horas**; para só recuperar a atenção, bastam **20 a 30 minutos**. Nos **2 primeiros dias**, o sono vem mais fácil no **início da tarde do horário de casa**, a queda pós-almoço que viaja com você. Antes de uma noite inteira de voo ou de trabalho, **durma durante o dia**. A bordo, dorme melhor quem toma **menos álcool e cafeína** e usa **máscara e tampões**.",
+          "**Outras dicas.** O **exercício** aumenta o alerta: de preferência ao ar livre e de dia, somando a luz, mas sem esforço vigoroso nas **2 horas antes de dormir**. Beba **água** no voo e no destino: a desidratação piora os sintomas, e o **álcool** e a **cafeína** desidratam; o álcool também faz dormir mais rápido, mas **fragmenta** o sono. Leve o seu **ritual de dormir** para fora de casa. Cada pessoa reage de um jeito: teste as estratégias, fique com as que funcionam para você e lembre que **ansiedade** e **preocupações** pioram o sono longe de casa. O plano interativo acima ajuda a montar o seu horário.",
           "Remédios para dormir, como o **zolpidem** e a **eszopiclona**, podem ajudar o passageiro por poucas noites, com orientação médica. **Anti-histamínicos** e **calmantes de ação longa** pioram a atenção e o equilíbrio e devem ser evitados, inclusive a bordo. O **tripulante** segue regras próprias: em pernoites curtos, **fica no horário de casa**; a ICAO **não recomenda** a melatonina para tripulantes em geral; e a Lei do Aeronauta dá **2 horas a mais de repouso por fuso** quando a viagem cruza **3 ou mais fusos** num mesmo sentido.",
           "**Não dirija nem tome decisões importantes** no primeiro dia depois de cruzar muitos fusos se estiver sonolento. Procure o médico se a insônia durar mais que a adaptação esperada ou se usar remédios em horário fixo, como **insulina** e **anticoagulante**, para ajustar as doses ao novo fuso (Veja M2V9 e M2V11).",
         ].join('\n\n'),
@@ -242,7 +255,7 @@ export const sono: Capitulo = {
                 ['Escuro no destino', 'Óculos escuros e cortinas fechadas à noite', 'Óculos escuros ao sair de manhã cedo'],
                 ['Melatonina (passageiro)', '0,5 a 1 mg cerca de 90 minutos antes de deitar no horário do destino', 'Em geral dispensável; se usada, de manhã'],
                 ['Primeira noite', 'Deitar no horário local, com quarto escuro e fresco', 'Ficar acordado até a hora local de dormir'],
-                ['Cafeína', 'Até 200 mg a cada 4 horas de dia; parar 6 horas antes de deitar', 'Igual, sem tomar de manhã cedo'],
+                ['Cafeína', 'Até 200 mg a cada 4 horas de dia, inclusive cedo de manhã; parar 6 horas antes de deitar', 'Até 200 mg a cada 4 horas de dia, sem tomar de manhã cedo; parar 6 horas antes de deitar'],
                 ['Cochilos', '20 a 30 minutos, longe da hora de dormir', '20 a 30 minutos, longe da hora de dormir'],
                 ['Refeições, água e álcool', 'Comer no horário do destino, beber água, evitar álcool', 'Comer no horário do destino, beber água, evitar álcool'],
                 ['Viagem de menos de 2 dias', 'Manter o horário de casa', 'Manter o horário de casa'],
@@ -250,7 +263,29 @@ export const sono: Capitulo = {
               ],
             },
           },
-          { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v8-4-caminhada.jpg'), 'Caminhar ao sol na manhã seguinte à chegada ajuda o relógio a se ajustar ao novo fuso.') },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Comer, dormir e ficar acordado na adaptação',
+              colunas: ['Momento', 'O que fazer'],
+              linhas: [
+                ['A bordo', 'Pouco álcool e cafeína para dormir melhor; máscara e tampões'],
+                ['Refeições no destino', 'Café da manhã, almoço e jantar no horário local desde o primeiro dia'],
+                ['Antes do sono principal', 'Sem refeição pesada nas 1 a 2 horas antes; não deitar com fome'],
+                ['Primeiro dia no destino', 'Ficar acordado durante o dia local para ter sono à noite'],
+                ['Voando para o oeste', 'Segurar o sono até a hora local de deitar'],
+                ['Cochilo para a atenção', '20 a 30 minutos'],
+                ['Sono de dia inevitável', 'No máximo 2 ou 3 horas'],
+                ['Melhor hora para cochilar', 'Início da tarde no horário de casa, nos 2 primeiros dias'],
+                ['Antes de uma noite de voo', 'Dormir durante o dia'],
+                ['Acordou de madrugada', 'Levantar, ler até ter sono e voltar para a cama (Veja M2V8 - VII)'],
+                ['Exercício', 'De dia e ao ar livre; nada vigoroso nas 2 horas antes de dormir'],
+                ['Água', 'Beber no voo e no destino; álcool e cafeína desidratam'],
+                ['Tripulante em pernoite curto', 'Ficar no horário de casa ou planejar o sono para dormir logo antes de sair para o voo'],
+              ],
+            },
+          },
+          { paragrafo: 8, figura: foto(require('@/assets/images/topicos/m2v8-4-caminhada.jpg'), 'Caminhar ao sol na manhã seguinte à chegada ajuda o relógio a se ajustar ao novo fuso.') },
         ],
       },
     },
