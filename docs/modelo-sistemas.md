@@ -32,6 +32,19 @@ cabeçalhos dentro do texto:
    (FAA Do Not Issue / Do Not Fly; ANAC), horário das doses com fuso, bagagem de mão, oxigênio a bordo, MEDIF.
 6. **Decidir** — sinais que impedem o voo hoje e o que o médico precisa conferir.
 
+**Detalhamento prático (padrão do jet lag, 03/11/2026).** Todo tópico, de abertura ou de condição, ganha:
+1. **Parágrafo "Como prevenir e amenizar"** (ou "Como…" com o verbo do tópico), em negrito no início, com o que fazer
+   antes, durante e depois do voo, separando passageiro e tripulante quando mudar, e direção, horário ou situação quando
+   mudar (ex.: leste × oeste).
+2. **Tabela prática** "Como prevenir e amenizar · …" (ou checklist), com colunas Situação/Momento · O que fazer, ou com
+   uma coluna por direção ou grupo quando a orientação mudar.
+3. **Revisão de coerência** com os outros tópicos, as tabelas, os interativos e o formulário de liberação: o mesmo
+   prazo, limite ou definição tem de aparecer igual em todos os lugares (ex.: viagem curta, cochilo, limiar de risco).
+4. Quando o tema tem geografia ou tempo, uma **animação** que mostre o mecanismo (ex.: mapa com o avião indo para o
+   leste e para o oeste).
+Dica sem número próprio é escrita como conduta prática e registrada no comentário de revisão como aplicação das fontes;
+dica que contradiz ou extrapola a fonte não entra.
+
 **Fecho do voo.** Tabela "Sistemas do corpo mais atingidos" (obrigatória) e o teste no botão TESTE O CONHECIMENTO.
 
 ## 2. Tabelas obrigatórias
@@ -85,4 +98,5 @@ aviso de que o formulário apoia a decisão e não substitui o médico, a autori
 - [ ] Cada condição com as seis partes, a tabela "Liberação para voo" e prazos com fonte.
 - [ ] "Remédios e voo" onde houver tratamento.
 - [ ] Bloco `liberacao` com as perguntas do sistema, efeitos para passageiro e tripulante e fontes.
+- [ ] Detalhamento prático em todos os tópicos (parágrafo e tabela) e revisão de coerência.
 - [ ] Padrão de mídias, tabela de sistemas do corpo, teste, traduções (0 pendências) e teste visual em 320–390 px.
