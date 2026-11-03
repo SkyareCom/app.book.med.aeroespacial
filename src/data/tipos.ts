@@ -76,6 +76,7 @@ export type TipoMidia =
   | 'prazo-coracao'
   | 'classificar-arritmia'
   | 'animacao-relogio'
+  | 'animacao-mapa-jet-lag'
   | 'relogio-hormonal'
   | 'direcao-jet-lag'
   | 'plano-jet-lag'

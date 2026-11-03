@@ -76,6 +76,10 @@
 //   12–15 h, 24 h após mais de 15 h); art. 49 (3 ou mais fusos num sentido: 2 h a mais de repouso por fuso, na base);
 //   art. 51 (ao menos 10 folgas por mês, 2 em sábado e domingo seguidos).
 // - ANAC, RBAC 67 (registro em src/lib/cma.ts): remédio para dormir e calmante a critério (67.71(c)); 67.15(c).
+// Revisão (03/11/2026), a pedido do autor: mapa com o avião indo para o leste e para o oeste (tópico III) e tabela de
+//   medidas para prevenir e amenizar o jet lag (tópico IV), com as mesmas fontes (CDC Yellow Book; Doc 8984 17.3.3 e 17.5).
+//   Mapa: contorno Natural Earth (domínio público). São Paulo (UTC−3), Dubai (UTC+4) e Honolulu (UTC−10), sem horário
+//   de verão nos três: 7 fusos para cada lado.
 // Mídia (03/11/2026): fotos e vídeos gerados por IA enviados pelo autor; pessoas fictícias. O relógio digital da foto
 // do amanhecer foi desfocado; os vídeos foram cortados para tirar as cenas com relógio digital e embalagens com marca.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
@@ -172,6 +176,7 @@ export const sono: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-3-insonia.jpg'), 'Três da manhã no hotel, completamente acordado: o relógio do corpo ainda está no fuso de casa.') },
+          { paragrafo: 2, midia: 'animacao-mapa-jet-lag' },
           { paragrafo: 2, midia: 'direcao-jet-lag' },
           {
             paragrafo: 3,
@@ -221,6 +226,26 @@ export const sono: Capitulo = {
                 ['Eszopiclona', 'Ajuda a adormecer e manter o sono', 'FAA: 30 h'],
                 ['Temazepam', 'Mantém o sono', 'FAA: 72 h'],
                 ['Anti-histamínico que dá sono', 'Sonolência no dia seguinte', 'Evitar'],
+              ],
+            },
+          },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: 'Como prevenir e amenizar o jet lag',
+              colunas: ['Medida', 'Voando para o leste', 'Voando para o oeste'],
+              linhas: [
+                ['Antes de viajar (2 a 3 dias)', 'Deitar e acordar 1 hora mais cedo por dia', 'Deitar e acordar 1 hora mais tarde por dia'],
+                ['Horário do voo', 'Chegar numa hora que permita pegar luz pela manhã', 'Chegar numa hora que permita pegar luz no fim do dia'],
+                ['Luz no destino', 'Procurar luz forte pela manhã; evitar luz à noite', 'Aproveitar a luz do fim da tarde; evitar luz forte de manhã cedo'],
+                ['Escuro no destino', 'Óculos escuros e cortinas fechadas à noite', 'Óculos escuros ao sair de manhã cedo'],
+                ['Melatonina (passageiro)', '0,5 a 1 mg cerca de 90 minutos antes de deitar no horário do destino', 'Em geral dispensável; se usada, de manhã'],
+                ['Primeira noite', 'Deitar no horário local, com quarto escuro e fresco', 'Ficar acordado até a hora local de dormir'],
+                ['Cafeína', 'Até 200 mg a cada 4 horas de dia; parar 6 horas antes de deitar', 'Igual, sem tomar de manhã cedo'],
+                ['Cochilos', '20 a 30 minutos, longe da hora de dormir', '20 a 30 minutos, longe da hora de dormir'],
+                ['Refeições, água e álcool', 'Comer no horário do destino, beber água, evitar álcool', 'Comer no horário do destino, beber água, evitar álcool'],
+                ['Viagem de menos de 2 dias', 'Manter o horário de casa', 'Manter o horário de casa'],
+                ['Tripulante', 'Pernoite curto no horário de casa; melatonina em geral não recomendada', 'Pernoite curto no horário de casa; melatonina em geral não recomendada'],
               ],
             },
           },

@@ -18,7 +18,7 @@ import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-grafi
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -113,6 +113,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'prazo-coracao': () => <PrazoCoracao />,
   'classificar-arritmia': () => <AtividadeClassificar titulo="Que tipo de arritmia é esta?" categorias={['Paroxística', 'Persistente', 'Permanente', 'Flutter']} casos={CASOS_ARRITMIA} />,
   'animacao-relogio': () => <AnimacaoRelogio />,
+  'animacao-mapa-jet-lag': () => <AnimacaoMapaJetLag />,
   'relogio-hormonal': () => <RelogioHormonal />,
   'direcao-jet-lag': () => <DirecaoJetLag />,
   'plano-jet-lag': () => <PlanoJetLag />,
@@ -194,6 +195,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'prazo-coracao': 'Prazos do coração',
   'classificar-arritmia': 'Tipos de arritmia',
   'animacao-relogio': 'O relógio de 24 horas',
+  'animacao-mapa-jet-lag': 'Leste ou oeste no mapa',
   'relogio-hormonal': 'O relógio hormonal',
   'direcao-jet-lag': 'Leste ou oeste',
   'plano-jet-lag': 'Plano para o jet lag',

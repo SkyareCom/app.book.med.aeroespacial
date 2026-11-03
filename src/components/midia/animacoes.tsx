@@ -7,6 +7,7 @@ import { MolduraMidia } from '@/components/midia/moldura';
 import { Texto } from '@/components/texto';
 import { Cores, Fonte } from '@/constants/theme';
 import { pressaoBarometrica } from '@/lib/fisiologia';
+import { MAPA_MUNDI } from '@/components/midia/mapa-mundi';
 
 // Animações em laço (o "GIF" do app): leves, em SVG, sem arquivo de vídeo. Tocar pausa ou retoma.
 // Todas são esquemas ilustrativos; os números exibidos vêm de cálculos já registrados nos voos:
@@ -677,6 +678,71 @@ export function AnimacaoRelogio() {
             <SvgText x={12} y={H - 6} fill="#7FA8FF" fontSize={9} fontFamily={Fonte}>MELATONINA</SvgText>
             <SvgText x={w / 2} y={H - 6} fill={Cores.dourado} fontSize={9} fontFamily={Fonte} textAnchor="middle">CORTISOL</SvgText>
             <SvgText x={w - 12} y={H - 6} fill="#E8EEF5" fontSize={9} fontFamily={Fonte} textAnchor="end">TEMPERATURA</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
+// ---------------------------------------------------------------- M2V8 · Leste ou oeste no mapa
+// Esquema: o mesmo número de fusos (7) nas duas direções a partir de São Paulo (UTC−3): Dubai (UTC+4) a leste e
+// Honolulu (UTC−10) a oeste. Ajuste médio do CDC: cerca de 1 h por dia para o leste e 1,5 h por dia para o oeste.
+const ROTAS = {
+  leste: { destino: [235.3, 57.8], titulo: 'PARA O LESTE', cidade: 'SÃO PAULO → DUBAI', relogio: 'O RELÓGIO CORRE PARA A FRENTE', corpo: 'ADIANTAR O CORPO: CERCA DE 7 DIAS', cor: Cores.erro },
+  oeste: { destino: [22.2, 61.7], titulo: 'PARA O OESTE', cidade: 'SÃO PAULO → HONOLULU', relogio: 'O RELÓGIO VOLTA PARA TRÁS', corpo: 'ATRASAR O CORPO: CERCA DE 5 DIAS', cor: Cores.dourado },
+} as const;
+
+export function AnimacaoMapaJetLag() {
+  const c = useCiclo(14000);
+  const sentido = c.fase < 0.5 ? 'leste' : 'oeste';
+  const r = ROTAS[sentido];
+  const local = (c.fase % 0.5) / 0.5;
+  const t = Math.min(local / 0.7, 1);
+  const fusos = Math.min(7, Math.floor(t * 7.999));
+  const H = 230;
+  return (
+    <Quadro titulo="Leste ou oeste no mapa" instrucao="Esquema: o avião sai de São Paulo e cruza 7 fusos, primeiro para o leste e depois para o oeste. O mesmo número de fusos pede tempos de ajuste diferentes." ciclo={c} altura={H}>
+      {(w) => {
+        const sx = Math.min(w / 360, (H - 96) / 150);
+        const ox = (w - 360 * sx) / 2, oy = 38;
+        const P = (x: number, y: number): [number, number] => [ox + x * sx, oy + y * sx];
+        const [x0, y0] = P(133.4, 106.5);
+        const [x2, y2] = P(r.destino[0], r.destino[1]);
+        const xc = (x0 + x2) / 2, yc = Math.min(y0, y2) - 34 * sx;
+        const bx = (u: number) => (1 - u) * (1 - u) * x0 + 2 * (1 - u) * u * xc + u * u * x2;
+        const by = (u: number) => (1 - u) * (1 - u) * y0 + 2 * (1 - u) * u * yc + u * u * y2;
+        const px = bx(t), py = by(t);
+        const dx = 2 * (1 - t) * (xc - x0) + 2 * t * (x2 - xc), dy = 2 * (1 - t) * (yc - y0) + 2 * t * (y2 - yc);
+        const ang = (Math.atan2(dy, dx) * 180) / Math.PI;
+        const feito = Array.from({ length: 31 }, (_, k) => {
+          const u = (k / 30) * t;
+          return `${k ? 'L' : 'M'} ${bx(u).toFixed(1)} ${by(u).toFixed(1)}`;
+        }).join(' ');
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            {Array.from({ length: 25 }, (_, k) => {
+              const [lx] = P(k * 15, 0);
+              return <Line key={k} x1={lx} y1={oy} x2={lx} y2={oy + 150 * sx} stroke="#16233A" strokeWidth={1} />;
+            })}
+            <G transform={`translate(${ox} ${oy}) scale(${sx})`}>
+              <Path d={MAPA_MUNDI} fill="#1E3A5A" stroke="#3D6A96" strokeWidth={0.4 / sx} />
+            </G>
+            <Path d={`M ${x0} ${y0} Q ${xc} ${yc} ${x2} ${y2}`} stroke={Cores.textoApagado} strokeWidth={1} strokeDasharray="3 3" fill="none" />
+            <Path d={feito} stroke={r.cor} strokeWidth={2} fill="none" />
+            <Circle cx={x0} cy={y0} r={4} fill={Cores.acerto} />
+            <Circle cx={x2} cy={y2} r={4} fill={r.cor} />
+            <G transform={`translate(${px} ${py}) rotate(${ang})`}>
+              <Path d="M 9 0 L -6 -2 L -9 -8 L -11 -8 L -9 -1.5 L -12 -1 L -13 -4 L -14 -4 L -13.5 0 L -14 4 L -13 4 L -12 1 L -9 1.5 L -11 8 L -9 8 L -6 2 Z" fill="#E8EEF5" />
+            </G>
+            <SvgText x={10} y={18} fill={r.cor} fontSize={12} fontFamily={Fonte}>{r.titulo}</SvgText>
+            <SvgText x={w - 10} y={18} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">{r.cidade}</SvgText>
+            <SvgText x={10} y={oy + 150 * sx * 0.93} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>← OESTE</SvgText>
+            <SvgText x={w - 10} y={oy + 150 * sx * 0.93} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">LESTE →</SvgText>
+            <SvgText x={10} y={H - 46} fill={Cores.texto} fontSize={10} fontFamily={Fonte}>{`FUSOS CRUZADOS: ${fusos}`}</SvgText>
+            <SvgText x={10} y={H - 29} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>{r.relogio}</SvgText>
+            <SvgText x={10} y={H - 12} fill={t >= 1 ? r.cor : Cores.textoApagado} fontSize={10} fontFamily={Fonte}>{t >= 1 ? r.corpo : 'EM VOO'}</SvgText>
           </G>
         );
       }}
