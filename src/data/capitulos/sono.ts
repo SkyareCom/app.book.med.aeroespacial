@@ -78,8 +78,9 @@
 // - ANAC, RBAC 67 (registro em src/lib/cma.ts): remédio para dormir e calmante a critério (67.71(c)); 67.15(c).
 // Revisão (03/11/2026), a pedido do autor: mapa com o avião indo para o leste e para o oeste (tópico III) e tabela de
 //   medidas para prevenir e amenizar o jet lag (tópico IV), com as mesmas fontes (CDC Yellow Book; Doc 8984 17.3.3 e 17.5).
-//   Mapa: contorno Natural Earth (domínio público). São Paulo (UTC−3), Dubai (UTC+4) e Honolulu (UTC−10), sem horário
-//   de verão nos três: 7 fusos para cada lado.
+//   Mapa: contorno Natural Earth (domínio público). Rotas definidas pelo autor: Brasília (UTC−3) → Auckland (UTC+12, ou
+//   +13 no horário de verão da Nova Zelândia) para o leste: 15 a 16 fusos; Tóquio (UTC+9) → São Paulo (UTC−3) para o
+//   oeste: 12 fusos.
 // Mídia (03/11/2026): fotos e vídeos gerados por IA enviados pelo autor; pessoas fictícias. O relógio digital da foto
 // do amanhecer foi desfocado; os vídeos foram cortados para tirar as cenas com relógio digital e embalagens com marca.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.

@@ -686,11 +686,12 @@ export function AnimacaoRelogio() {
 }
 
 // ---------------------------------------------------------------- M2V8 · Leste ou oeste no mapa
-// Esquema: o mesmo número de fusos (7) nas duas direções a partir de São Paulo (UTC−3): Dubai (UTC+4) a leste e
-// Honolulu (UTC−10) a oeste. Ajuste médio do CDC: cerca de 1 h por dia para o leste e 1,5 h por dia para o oeste.
+// Esquema, rotas escolhidas pelo autor: Brasília (UTC−3) → Auckland (UTC+12; UTC+13 no horário de verão da Nova
+// Zelândia, de setembro a abril) para o leste, e Tóquio (UTC+9, sem horário de verão) → São Paulo (UTC−3) para o oeste.
+// Ajuste médio do CDC: cerca de 1 h por dia para o leste e 1,5 h por dia para o oeste.
 const ROTAS = {
-  leste: { destino: [235.3, 57.8], titulo: 'PARA O LESTE', cidade: 'SÃO PAULO → DUBAI', relogio: 'O RELÓGIO CORRE PARA A FRENTE', corpo: 'ADIANTAR O CORPO: CERCA DE 7 DIAS', cor: Cores.erro },
-  oeste: { destino: [22.2, 61.7], titulo: 'PARA O OESTE', cidade: 'SÃO PAULO → HONOLULU', relogio: 'O RELÓGIO VOLTA PARA TRÁS', corpo: 'ATRASAR O CORPO: CERCA DE 5 DIAS', cor: Cores.dourado },
+  leste: { origem: [132.1, 98.8], destino: [354.8, 119.8], fusos: 15, titulo: 'PARA O LESTE', cidade: 'BRASÍLIA → AUCKLAND', relogio: 'RELÓGIO +15 H (+16 NO VERÃO DA NOVA ZELÂNDIA)', corpo: 'ADIANTAR O CORPO: CERCA DE 1 H POR DIA', cor: Cores.erro },
+  oeste: { origem: [319.7, 47.3], destino: [133.4, 106.5], fusos: 12, titulo: 'PARA O OESTE', cidade: 'TÓQUIO → SÃO PAULO', relogio: 'RELÓGIO −12 H', corpo: 'ATRASAR O CORPO: CERCA DE 1,5 H POR DIA', cor: Cores.dourado },
 } as const;
 
 export function AnimacaoMapaJetLag() {
@@ -699,15 +700,15 @@ export function AnimacaoMapaJetLag() {
   const r = ROTAS[sentido];
   const local = (c.fase % 0.5) / 0.5;
   const t = Math.min(local / 0.7, 1);
-  const fusos = Math.min(7, Math.floor(t * 7.999));
+  const fusos = Math.min(r.fusos, Math.floor(t * (r.fusos + 0.999)));
   const H = 230;
   return (
-    <Quadro titulo="Leste ou oeste no mapa" instrucao="Esquema: o avião sai de São Paulo e cruza 7 fusos, primeiro para o leste e depois para o oeste. O mesmo número de fusos pede tempos de ajuste diferentes." ciclo={c} altura={H}>
+    <Quadro titulo="Leste ou oeste no mapa" instrucao="Esquema: primeiro o voo para o leste, de Brasília a Auckland; depois o voo para o oeste, de Tóquio a São Paulo. O contador mostra os fusos cruzados." ciclo={c} altura={H}>
       {(w) => {
-        const sx = Math.min(w / 360, (H - 96) / 150);
+        const sx = Math.min((w - 24) / 360, (H - 96) / 150);
         const ox = (w - 360 * sx) / 2, oy = 38;
         const P = (x: number, y: number): [number, number] => [ox + x * sx, oy + y * sx];
-        const [x0, y0] = P(133.4, 106.5);
+        const [x0, y0] = P(r.origem[0], r.origem[1]);
         const [x2, y2] = P(r.destino[0], r.destino[1]);
         const xc = (x0 + x2) / 2, yc = Math.min(y0, y2) - 34 * sx;
         const bx = (u: number) => (1 - u) * (1 - u) * x0 + 2 * (1 - u) * u * xc + u * u * x2;

@@ -5307,5 +5307,12 @@
 "Viagem de menos de 2 dias": "Trip of less than 2 days",
 "Óculos escuros ao sair de manhã cedo": "Sunglasses when going out early in the morning",
 "Óculos escuros e cortinas fechadas à noite": "Sunglasses and closed curtains at night",
-"← OESTE": "← WEST"
+"← OESTE": "← WEST",
+"ADIANTAR O CORPO: CERCA DE 1 H POR DIA": "ADVANCE THE BODY: ABOUT 1 H PER DAY",
+"ATRASAR O CORPO: CERCA DE 1,5 H POR DIA": "DELAY THE BODY: ABOUT 1.5 H PER DAY",
+"BRASÍLIA → AUCKLAND": "BRASÍLIA → AUCKLAND",
+"Esquema: primeiro o voo para o leste, de Brasília a Auckland; depois o voo para o oeste, de Tóquio a São Paulo. O contador mostra os fusos cruzados.": "Diagram: first the eastward flight, from Brasília to Auckland; then the westward flight, from Tokyo to São Paulo. The counter shows the time zones crossed.",
+"RELÓGIO +15 H (+16 NO VERÃO DA NOVA ZELÂNDIA)": "CLOCK +15 H (+16 IN NEW ZEALAND SUMMER)",
+"RELÓGIO −12 H": "CLOCK −12 H",
+"TÓQUIO → SÃO PAULO": "TOKYO → SÃO PAULO"
 }
