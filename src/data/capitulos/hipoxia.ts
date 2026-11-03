@@ -52,6 +52,15 @@
 //   monitor (teste). Voo congelado de novo.
 // 02/11/2026: raio X do pneumotórax trocado com autorização do autor (imagem nova com linha pleural e faixa sem
 //   desenho pulmonar); legenda passa a nomear o achado; hash refeito.
+// Descongelado em 03/11/2026 com autorização do autor ("Detalhar todo tópico de todos os sistemas como foi feito em jet
+//   lag"): tópicos I a V ganharam parágrafo "Como..." e tabela prática; VI a IX, tabela de checklist com os dados já
+//   registrados. Fontes novas: ICAO Doc 8984 Part II Cap. 1, 1.2.12–1.2.13 e Tabela II-1-2 (saturação a 8.000, 10.000,
+//   12.000, 14.000, 15.000, 20.000 e 25.000 ft; tripulante usa oxigênio acima de 10.000 ft de cabine; TCU de 10 min a
+//   20.000 ft, ≤ 2,5 min a 25.000 ft e ~30 s a 30.000 ft; quatro tipos, histotóxica relevante na sobrevivência a
+//   acidentes); FAA AIM 8-1-2 (faraim.org): oxigênio recomendado acima de 10.000 ft de dia e de 5.000 ft à noite;
+//   tripulação com oxigênio após 30 min entre 12.500 e 14.000 ft e sempre acima de 14.000 ft; todos acima de 15.000 ft
+//   (14 CFR 91.211); treinamento em câmara recomendado. Oxigênio e pouso na suspeita de monóxido, e respiração lenta
+//   consciente após excluir a hipóxia, são condutas práticas sem número próprio. Voo congelado de novo.
 
 import type { Capitulo } from '../tipos';
 import { liberacaoRespiratorio } from '../liberacao/respiratorio';
@@ -71,6 +80,7 @@ export const hipoxia: Capitulo = {
           "Nos **alvéolos**, pequenos sacos no fim das vias aéreas, o oxigênio atravessa a **membrana alvéolo-capilar** e entra no sangue. Ali, a **hemoglobina** das hemácias o carrega até os tecidos, e a circulação precisa levá-lo até onde ele é usado.",
           "Ao nível do mar, a **pressão alveolar de oxigênio** fica perto de **100 mmHg**. A 8.000 ft (2.400 m), cai para **65 a 70 mmHg**, e a saturação de pessoas saudáveis costuma ficar entre **90% e 93%**, conforme a resposta da respiração.",
           "A **curva de dissociação da oxi-hemoglobina** explica o perigo: no início, a saturação resiste; depois de certo ponto, cada nova queda de pressão derruba a saturação cada vez mais rápido. Altitude, tempo de exposição, respiração e doenças mudam essa resposta. Descobrir em qual das quatro etapas o oxigênio falhou é o primeiro passo para corrigir.",
+          "**Como proteger o caminho do oxigênio.** Cada etapa tem a sua proteção. No **ar**, a pressurização ou o oxigênio suplementar; a FAA recomenda oxigênio acima de **10.000 ft de dia** e acima de **5.000 ft à noite**, e a ICAO lembra que, acima de **10.000 ft** de cabine, o tripulante deve usar oxigênio. No **alvéolo**, controlar a doença do pulmão antes de voar (Veja M2V1 - VI). No **sangue**, tratar a **anemia** e evitar o **monóxido de carbono** (Veja M2V1 - II). No **tecido**, cuidar da circulação. A saturação cai com a altitude de forma previsível: cerca de **93%** a 8.000 ft, **89%** a 10.000 ft e **80%** a 15.000 ft em quem não tem doença.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-cascata' },
@@ -90,6 +100,22 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 4, midia: 'simulador-o2' },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'O oxigênio do sangue em cada altitude',
+              colunas: ['Altitude', 'Saturação aproximada', 'O que acontece'],
+              linhas: [
+                ['8.000 ft (2.450 m)', '93%', 'Cabine pressurizada no limite; saudável sem sintomas'],
+                ['10.000 ft (3.050 m)', '89%', 'Funções complexas pioram; tripulante usa oxigênio acima disso (ICAO)'],
+                ['12.000 ft (3.650 m)', '87%', 'Memória curta e erros de omissão'],
+                ['14.000 ft (4.250 m)', '83%', 'Todos têm a função mental prejudicada'],
+                ['15.000 ft (4.550 m)', '80%', 'Todos prejudicados, alguns gravemente'],
+                ['20.000 ft (6.100 m)', '65%', 'Perda da consciência útil em cerca de 10 minutos'],
+                ['25.000 ft (7.600 m)', 'Abaixo de 60%', 'Consciência útil de 2,5 minutos ou menos'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -104,6 +130,7 @@ export const hipoxia: Capitulo = {
           "Na **hipóxia estagnante**, o sangue não chega com o fluxo necessário, como nos distúrbios circulatórios ou nas acelerações que reduzem o sangue no cérebro (Veja M1V7). Na **hipóxia histotóxica**, o oxigênio chega, mas a célula não consegue usá-lo; o exemplo clássico é o **cianeto**.",
           "Os mecanismos se somam. Um piloto anêmico, ou exposto a monóxido de carbono, tem menos reserva para enfrentar a altitude. Em aviões a pistão, **vazamentos do escapamento** são um risco real, mesmo perto do solo.",
           "Reconhecer o mecanismo orienta a resposta. O oxigênio suplementar ajuda em muitas situações, mas **não substitui corrigir a causa**: pressurização falha, cabine contaminada, anemia, problema circulatório ou exposição tóxica.",
+          "**Como prevenir cada tipo.** A **hipóxica** se previne com pressurização e oxigênio nas altitudes certas. A **hipêmica**, tratando a anemia antes de voar (Veja M2V11) e desconfiando do **monóxido de carbono** em aviões a pistão: dor de cabeça, tontura ou sonolência com o aquecimento ligado pedem oxigênio e pouso. A **estagnante** das acelerações se previne com a manobra e o traje anti-G (Veja M1V7). A **histotóxica** aparece sobretudo na fumaça de incêndio, em que o **cianeto** e o monóxido se somam: proteção respiratória e saída rápida (Veja M3V8).",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-2-fumaca.jpg'), legenda: 'Fumaça na cabine: monóxido de carbono e outros tóxicos podem roubar o oxigênio do sangue e das células.' } },
@@ -122,6 +149,19 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-2-escapamento.jpg'), legenda: 'Inverno num monomotor: gás do escapamento entrando pela ventilação do aquecedor causa sonolência e dor de cabeça.' } },
           { paragrafo: 5, midia: 'classificar-hipoxia' },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como prevenir cada tipo de hipóxia',
+              colunas: ['Tipo', 'Exemplo', 'Como prevenir'],
+              linhas: [
+                ['Hipóxica', 'Altitude sem pressurização ou descompressão', 'Pressurização e oxigênio nas altitudes certas'],
+                ['Hipêmica', 'Anemia; monóxido de carbono do escapamento', 'Tratar a anemia; na suspeita de monóxido, oxigênio e pouso'],
+                ['Estagnante', 'Acelerações do voo de caça; problema circulatório', 'Manobra e traje anti-G (Veja M1V7)'],
+                ['Histotóxica', 'Cianeto da fumaça de incêndio', 'Proteção respiratória e saída rápida'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -135,12 +175,27 @@ export const hipoxia: Capitulo = {
           "Sem oxigênio, numa exposição súbita, o TCU encolhe com a altitude: cerca de **20 a 30 minutos a 18.000 ft**, **3 a 5 minutos a 25.000 ft**, **1 a 2 minutos a 30.000 ft**, **30 segundos a 1 minuto a 35.000 ft** e **15 a 20 segundos a 40.000 ft**. São estimativas, não prazos garantidos.",
           "Esforço físico, fadiga, doenças e diferenças individuais encurtam esse tempo. **Numa descompressão rápida, o TCU pode cair para cerca da metade.**",
           "Por isso a regra é imediata: diante de perda de pressurização, **coloque e ajuste a própria máscara de oxigênio antes de qualquer outra tarefa**, depois siga os procedimentos da aeronave. Cada segundo de dúvida consome o tempo disponível.",
+          "**Como ganhar tempo.** O TCU depende da fonte e da pessoa: para a ICAO, fica perto de **10 minutos a 20.000 ft**, **2,5 minutos ou menos a 25.000 ft** e cerca de **30 segundos a 30.000 ft**; por isso os números servem de alerta, não de prazo. O tempo se ganha antes do problema: conhecer a altitude do voo e o TCU correspondente, saber onde está a máscara e treinar o gesto. O treinamento em **câmara de altitude** mostra o próprio TCU com segurança. Para o tripulante de avião sem pressurização, a regra americana exige oxigênio depois de **30 minutos entre 12.500 e 14.000 ft**, o tempo todo **acima de 14.000 ft**, e para todos os ocupantes **acima de 15.000 ft**.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-3-cronometro.jpg'), legenda: 'Quando o alarme acende, o relógio passa a correr contra o piloto: o tempo útil é medido em segundos ou minutos.' } },
           { paragrafo: 2, midia: 'grafico-tuc' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m2v1-3-descompressao-cabine.jpg'), legenda: 'Descompressão rápida na cabine de comando: névoa, papéis voando e alarmes. O tempo útil cai pela metade, e a máscara vem antes de tudo.' } },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-3-mascara-primeiro.jpg'), legenda: 'Alarme de cabine: a máscara de colocação rápida vem antes de qualquer outra tarefa.' } },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Como ganhar tempo numa perda de pressurização',
+              colunas: ['Momento', 'O que fazer'],
+              linhas: [
+                ['Antes do voo', 'Conhecer a altitude do voo e o TCU dela; saber onde está a máscara'],
+                ['Treinamento', 'Câmara de altitude para conhecer o próprio TCU com segurança'],
+                ['Na perda de pressão', 'Máscara primeiro, ajustada; depois os procedimentos da aeronave'],
+                ['Passageiro', 'Colocar a própria máscara antes de ajudar outra pessoa'],
+                ['Avião sem pressurização (EUA)', 'Tripulante: oxigênio após 30 min entre 12.500 e 14.000 ft e sempre acima de 14.000 ft; todos acima de 15.000 ft'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -154,11 +209,26 @@ export const hipoxia: Capitulo = {
           "Os sintomas variam: **euforia, tontura, calor, formigamento e alterações da visão**. Quem está ao lado pode notar confusão, lentidão, respiração alterada ou lábios azulados, mas **a ausência de cianose não exclui hipóxia**.",
           "A **visão noturna** é das mais sensíveis e pode piorar já em altitudes moderadas. Depois sofrem a memória recente, o raciocínio e os movimentos finos. No treinamento em câmara, cada pessoa aprende a reconhecer o próprio conjunto de sintomas: a **assinatura individual de hipóxia**.",
           "A conduta é a mesma do tempo de consciência útil (Veja M2V1 - III): **ao suspeitar de hipóxia, restabelecer o oxigênio na hora**, sem esperar sinais tardios.",
+          "**Como reconhecer e agir.** Aprenda a sua **assinatura de hipóxia** no treinamento em câmara: ela tende a se repetir e é o alarme mais rápido. À noite, a visão é a primeira a sofrer, e a FAA recomenda oxigênio já **acima de 5.000 ft**. Em altitude, qualquer sintoma estranho, como dor de cabeça, tontura, calor no rosto, visão escurecida ou bocejos, pede **oxigênio primeiro** e só depois a investigação. Na cabine, combine com o colega observar o outro: lábios azulados podem faltar, mas a **confusão** e a **lentidão** aparecem.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v1-4-euforia.jpg'), legenda: 'Na câmara, sem máscara, o aluno sorri e acha que está tudo bem enquanto a escrita desanda: a armadilha da hipóxia.' } },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-4-cianose.jpg'), legenda: 'Lábios e unhas azulados denunciam pouco oxigênio no sangue, mas a ausência deles não exclui a hipóxia.' } },
           { paragrafo: 3, midia: 'simulador-visao' },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Como reconhecer e agir',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Treinamento', 'Conhecer a própria assinatura de hipóxia na câmara'],
+                ['Voo noturno', 'Oxigênio recomendado acima de 5.000 ft (FAA)'],
+                ['Sintoma estranho em altitude', 'Oxigênio primeiro; depois investigar'],
+                ['Colega estranho', 'Confusão e lentidão contam mais que a cor dos lábios'],
+                ['Depois do episódio', 'Registrar e conferir o sistema de oxigênio e a pressurização'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -172,6 +242,7 @@ export const hipoxia: Capitulo = {
           "A queda do gás carbônico no sangue, a **hipocapnia**, contrai os vasos do cérebro e reduz o fluxo de sangue nele, além de causar **alcalose respiratória**. Nos casos intensos, o cálcio ionizado cai e surgem **formigamento em volta da boca e nas mãos, espasmos musculares** e mal-estar.",
           "No voo, **hipóxia e hiperventilação podem coexistir ou ser confundidas**. Tratar hipóxia como ansiedade atrasa uma intervenção vital. Por isso, sintoma inexplicado em altitude pede primeiro a checagem do oxigênio e da pressurização.",
           "A ordem é fixa: **oxigênio adequado primeiro, sistema verificado e altitude corrigida, se preciso**. Só depois de excluir a hipóxia vale orientar a respiração mais lenta. **Respirar em saco de papel não é seguro** diante dessa dúvida.",
+          "**Como prevenir e amenizar.** O treinamento em câmara ensina a separar a hipóxia da hiperventilação e mostra como o próprio corpo responde. Em situações de estresse, como turbulência forte ou emergência, perceba a respiração acelerada cedo. Diante de sintomas em altitude, a sequência não muda: **oxigênio primeiro**, sistema e pressurização verificados, altitude corrigida. Excluída a hipóxia, **desacelere a respiração**, de forma consciente, até os sintomas passarem. Nunca use **saco de papel** em voo, porque ele pode piorar uma hipóxia não reconhecida.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-5-maos.jpg'), legenda: 'Mãos tensas e dedos em leve espasmo: o formigamento da hiperventilação lembra o da hipóxia.' } },
@@ -190,6 +261,20 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-5-oxigenio.jpg'), legenda: 'Na dúvida entre ansiedade e hipóxia, primeiro o oxigênio; só depois se orienta a respiração mais lenta.' } },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: 'Como prevenir e amenizar a hiperventilação',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Treinamento', 'Câmara de altitude para separar hipóxia de hiperventilação'],
+                ['Estresse em voo', 'Perceber cedo a respiração acelerada'],
+                ['Sintomas em altitude', 'Oxigênio primeiro, sistema verificado, altitude corrigida'],
+                ['Hipóxia excluída', 'Respirar mais devagar, de forma consciente'],
+                ['Saco de papel', 'Não usar em voo'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -239,6 +324,20 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v1-6-espirometria.jpg'), legenda: 'A espirometria mede o VEF1 e a CVF: para a FAA, 80% ou mais do previsto antes do broncodilatador.' } },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: 'Checklist de viagem · asma e DPOC',
+              colunas: ['Item', 'O que fazer'],
+              linhas: [
+                ['Antes de comprar a passagem', 'Saturação em repouso de 95% ou menos ou falta de ar em esforços pequenos: falar com o médico'],
+                ['Doença estável', 'Bombinha de alívio no uso de sempre; DPOC sem piora nas últimas 6 semanas'],
+                ['Bagagem de mão', 'Todos os remédios e o espaçador; a bombinha de alívio à mão'],
+                ['Asma grave', 'Corticoide oral de emergência combinado com o especialista; caneta de adrenalina acessível'],
+                ['Oxigênio', 'Se o teste mostrar necessidade, combinado antes com a companhia (Veja M2V1 - IX)'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -271,6 +370,20 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 5, midia: 'baterias-cpap' },
           { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v1-7-sonolencia.jpg'), legenda: 'Na cabine de comando, a apneia sem tratamento vira sono acumulado, desatenção e erros.' } },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: 'Checklist de viagem com CPAP',
+              colunas: ['Item', 'O que fazer'],
+              linhas: [
+                ['Antes de viajar', 'Carta do médico e aprovação da companhia para o aparelho e as baterias'],
+                ['Bagagem de mão', 'O próprio CPAP'],
+                ['Baterias', 'Para 1,5 vez a duração da viagem'],
+                ['Escolha do voo', 'Voos diurnos; no voo noturno, usar o CPAP a bordo'],
+                ['Álcool e calmantes', 'Nada nas 12 horas antes e durante a viagem'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -306,6 +419,20 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v1-8-consulta.jpg'), legenda: 'Com o raio X de controle normal e o prazo cumprido, o passageiro pode voltar a voar.' } },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Checklist antes de voar depois de pneumotórax',
+              colunas: ['Item', 'O que fazer'],
+              linhas: [
+                ['Raio X de controle', 'Em mãos, com a data da resolução completa'],
+                ['Passageiro', 'Contar 7 dias a partir da resolução no raio X'],
+                ['Depois de cirurgia do tórax', '4 semanas após a retirada do dreno, ou 2 se a viagem for essencial'],
+                ['Depois de biópsia ou broncoscopia com biópsia', '1 semana, contada da resolução se houve pneumotórax'],
+                ['Sintomas', 'Dor no peito ou falta de ar súbita: não voar e procurar atendimento'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -355,6 +482,20 @@ export const hipoxia: Capitulo = {
                 ['Vias aéreas', 'Crise de asma ou piora da DPOC longe do atendimento', 'Voar com a doença estável e a bombinha na bagagem de mão'],
                 ['Sono e atenção', 'A apneia sem tratamento traz sonolência e erros', 'CPAP; sem álcool nem calmantes 12 h antes do voo'],
                 ['Pele e mucosas', 'Lábios azulados podem aparecer, mas sua falta não exclui hipóxia', 'Checar oxigênio e pressurização diante de qualquer sintoma'],
+              ],
+            },
+          },
+          {
+            paragrafo: 2,
+            tabela: {
+              titulo: 'Como combinar o oxigênio a bordo',
+              colunas: ['Passo', 'O que fazer'],
+              linhas: [
+                ['1. Avaliação', 'Saturação em repouso e, se indicado, teste de simulação de altitude'],
+                ['2. Fluxo', 'Médico define o fluxo que mantém a saturação em 85% ou mais'],
+                ['3. MEDIF', 'Formulário médico preenchido e enviado à companhia antes do voo'],
+                ['4. Aparelho', 'Concentrador portátil aprovado pela companhia, com baterias suficientes'],
+                ['5. Embarque', 'Sem o oxigênio combinado, não embarcar'],
               ],
             },
           },
