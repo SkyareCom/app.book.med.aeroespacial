@@ -164,8 +164,10 @@ export function MedidorFadiga() {
   const [madrugada, setMadrugada] = useState(false);
   const divida = Math.max(0, 8 - sono) * noites;
   const pontos = (divida >= 2 ? 1 : 0) + (divida >= 8 ? 1 : 0) + (acordado > 16 ? 1 : 0) + (acordado >= 18 ? 1 : 0) + (madrugada ? 1 : 0);
-  const nivel = pontos >= 3 ? 'Alto' : pontos >= 1 ? 'Atenção' : 'Baixo';
-  const cor = pontos >= 3 ? Cores.erro : pontos >= 1 ? Cores.dourado : Cores.acerto;
+  // Mais de 16 h acordado no pouso conta como risco alto, como na tabela e no formulário de liberação.
+  const alto = pontos >= 3 || acordado > 16;
+  const nivel = alto ? 'Alto' : pontos >= 1 ? 'Atenção' : 'Baixo';
+  const cor = alto ? Cores.erro : pontos >= 1 ? Cores.dourado : Cores.acerto;
   const motivos: string[] = [];
   if (divida >= 2) motivos.push(`Dívida de cerca de ${fmt(divida)} h de sono.`);
   if (acordado > 16) motivos.push(acordado >= 18 ? 'Mais de 18 h acordado: queda clara do desempenho.' : 'Mais de 16 h acordado: a reação fica mais lenta.');

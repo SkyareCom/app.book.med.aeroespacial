@@ -35,7 +35,7 @@ export const liberacaoSono: PerguntaLiberacao[] = [
       {
         rotulo: 'Mais de 16 horas',
         passageiro: e('cuidados', 'Evite dirigir na chegada; use transporte ou descanse antes.', 'Desempenho deteriora após 16 h acordado e claramente após 18–20 h (FAA AC 120-100).', '8.5'),
-        tripulante: e('avaliar', 'Risco alto de fadiga: planeje um cochilo antes ou fale com a escala.', 'FAA AC 120-100: desempenho estável até 16 h, queda após 18–20 h; cochilo prévio de 25–30 min; FRMS da empresa.', '8.5'),
+        tripulante: e('avaliar', 'Risco alto de fadiga: descanse ou cochile antes e fale com a escala.', 'FAA AC 120-100: desempenho estável até 16 h, queda após 18–20 h; cochilo prévio de 25–30 min; FRMS da empresa.', '8.5'),
       },
     ],
   },

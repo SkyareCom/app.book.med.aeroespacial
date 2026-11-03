@@ -101,6 +101,15 @@
 //   direções; a diferença entre leste (refeições locais mais cedo, café com a luz da manhã, jantar cedo e leve) e oeste
 //   (refeições locais mais tarde, jantar segurado até a hora local) é a aplicação dessa regra com a luz (CDC) e o limite
 //   de refeição antes do sono (ICAO Apêndice 2); nenhuma fonte dá um horário de refeição próprio para cada direção.
+// Detalhamento (03/11/2026), a pedido do autor, no padrão do jet lag: tópicos I (necessidade de sono individual, não
+//   se treina dormir menos, idade; tabela do dia do relógio: Doc 8984 17.2.7 e Apêndice 2; Doc 9966; FAA AC 120-100), II
+//   (proteção dos hormônios: Leproult e Van Cauter; NIGMS; CDC), V (fatores da fadiga: Doc 8984 17.2.7 e Apêndice 2;
+//   prevenção: Apêndice 2 (dormir de dia antes da noite toda; cochilo de 10 min), FAA AC 120-100 (cochilo de 25–30 min;
+//   cafeína 15–30 min a 5 h; pausas de 5 min), Doc 9966 (recuperação em 2 noites; inércia 10–15 min); coerência da
+//   tabela e do formulário para > 16 h acordado), VI (aproveitar o repouso: 14 CFR 117.25; FAA AC 120-100; Doc 9966) e
+//   VII (higiene do sono: Doc 8984 Apêndice 2, despertador, desacelerar, tabaco, 21 °C; cochilo ideal 20–30 min do CDC).
+//   "Levantar e conversar" e "refeições leves de madrugada" são aplicações das fontes (monotonia, FAA; tolerância à
+//   glicose menor à noite, Leproult e Van Cauter), sem número próprio.
 // Mídia (03/11/2026): fotos e vídeos gerados por IA enviados pelo autor; pessoas fictícias. O relógio digital da foto
 // do amanhecer foi desfocado; os vídeos foram cortados para tirar as cenas com relógio digital e embalagens com marca.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
@@ -126,6 +135,7 @@ export const sono: Capitulo = {
           "O relógio cria horários fortes. A **janela de baixa circadiana**, entre cerca de **2 e 6 horas**, coincide com a **temperatura mais baixa** do corpo e é o pior momento para trabalhar: os erros sobem muito **entre 2 e 4 horas**. Há uma segunda queda **à tarde, perto de 15 a 17 horas**. Nas horas antes de deitar, ao contrário, o relógio segura a vigília, e deitar cedo rende pouco sono.",
           "A vida no ar desafia os dois motores ao mesmo tempo. Os **fusos horários** deslocam o dia lá fora, a **madrugada** obriga a trabalhar quando o relógio pede sono, as **jornadas longas** aumentam a pressão do sono e o **beliche** a bordo tem ruído e movimento. Em altitude de montanha, acima de cerca de **2.700 m**, a respiração fica **periódica** durante o sono até a aclimatação (Veja M2V1).",
           "O resultado tem nome: **fadiga**. Para a ICAO, é a capacidade física ou mental reduzida pela **perda de sono**, pela **vigília prolongada**, pela **fase do relógio** ou pela **carga de trabalho**, a ponto de prejudicar a atenção e a operação segura. Ela pode ser **transitória**, resolvida por um bom sono, ou **cumulativa**, quando a recuperação não se completa dia após dia.",
+          "**Como usar o relógio a seu favor.** A necessidade de sono varia de pessoa para pessoa, mas ninguém se treina para dormir menos: perder algumas horas por noite já prejudica o desempenho depois de **2 ou 3 dias**. Com a **idade**, a qualidade do sono piora, e o mesmo horário passa a render um sono mais leve. O dia do relógio tem horas fortes e fracas: o pior desempenho fica entre **1 e 5 horas**, a segunda queda vem no **meio da tarde**, e nas horas antes de deitar o relógio segura a vigília. Planeje o sono, o trabalho e as tarefas difíceis com esse mapa na cabeça.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-relogio' },
@@ -145,6 +155,20 @@ export const sono: Capitulo = {
             },
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-1-beliche.jpg'), 'No beliche de descanso a bordo, o sono costuma ser mais curto e leve que em casa.') },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'O dia do relógio biológico',
+              colunas: ['Hora do relógio do corpo', 'O que o corpo faz', 'O que fazer'],
+              linhas: [
+                ['Fim da noite (cerca de 1 a 5 h)', 'Maior sono, temperatura mais baixa, melatonina no pico; erros sobem muito entre 2 e 4 h', 'Proteger o sono; em serviço, redobrar a atenção e as verificações'],
+                ['Início da manhã', 'Cortisol no pico; a luz adianta o relógio', 'Luz do dia logo cedo quando quiser adiantar o relógio'],
+                ['Meio da tarde (cerca de 15 a 17 h)', 'Segunda queda do alerta, com ou sem almoço', 'Melhor hora para um cochilo curto'],
+                ['Horas antes de deitar', 'O relógio segura a vigília', 'Deitar mais cedo que o habitual rende pouco sono'],
+                ['Cerca de 2 h antes de deitar', 'A melatonina começa a subir', 'Pouca luz forte'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -159,6 +183,7 @@ export const sono: Capitulo = {
           "Outros hormônios dependem do **próprio sono**. O **hormônio do crescimento** tem seu pulso mais forte logo depois de adormecer, no **sono profundo**, e quase desaparece quando se passa a noite acordado. A **temperatura do corpo** acompanha o relógio e chega ao **mínimo no início da manhã**, o horário de maior sono.",
           "A falta de sono mexe no **apetite** e no **açúcar do sangue**. Depois de **2 noites de 4 horas**, a **leptina**, que dá saciedade, caiu cerca de **18%**, a **grelina**, que dá fome, subiu cerca de **28%**, a fome aumentou **24%** e a vontade de carboidratos, **32%**. Depois de **5 noites de 4 horas**, a tolerância à glicose caiu cerca de **43%** e a sensibilidade à insulina, **24%**.",
           "Repetida por anos, a desregulação do relógio está ligada a **obesidade**, **diabetes**, **transtornos do humor** e problemas do **coração** e da **pressão** (Veja M2V2 e M2V9). Para quem voa, o recado prático é que **comer, dormir e se expor à luz em horários coerentes** ajuda o relógio, e que a fome de madrugada é, em parte, hormonal.",
+          "**Como proteger os hormônios.** A **luz** é o comando da melatonina: luz forte pela manhã e pouca luz forte nas horas antes de deitar. O **hormônio do crescimento** depende do sono profundo do **começo da noite**, por isso as primeiras horas de sono são as que mais valem. A fome que aparece depois de noites curtas é, em parte, **grelina alta e leptina baixa**: saber disso ajuda a não confundir sono com fome. Como a tolerância à glicose é menor **de madrugada**, quem trabalha à noite se dá melhor com refeições leves nessas horas e com a refeição principal no horário de dia. Nenhum suplemento substitui o sono: em poucas noites curtas, o metabolismo já muda.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-2-luz.jpg'), 'A luz do sol pela manhã suprime a melatonina e diz ao relógio que o dia começou.') },
@@ -180,6 +205,20 @@ export const sono: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-2-refeicao.jpg'), 'Refeição de madrugada no hotel: a falta de sono aumenta a fome, em parte pela grelina mais alta.') },
           { paragrafo: 5, video: { fonte: require('@/assets/videos/m2v8-refeicao.mp4'), legenda: 'Fome fora de hora: com o relógio desajustado e pouco sono, o corpo pede comida no meio da noite.' } },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'O que desregula os hormônios e como proteger',
+              colunas: ['Hormônio', 'O que desregula', 'Como proteger'],
+              linhas: [
+                ['Melatonina', 'Luz forte à noite; luz na hora errada depois de cruzar fusos', 'Luz pela manhã e pouca luz forte antes de deitar'],
+                ['Cortisol', 'Fusos e madrugadas: o pico continua no horário de casa por dias', 'Luz e rotina no horário em que vai viver; paciência nos primeiros dias'],
+                ['Hormônio do crescimento', 'Noite sem sono ou sono profundo cortado', 'Proteger as primeiras horas de sono'],
+                ['Leptina e grelina', 'Noites curtas: mais fome e mais vontade de doces e massas', 'Dormir o suficiente; reconhecer a fome do cansaço'],
+                ['Insulina e glicose', 'Noites curtas e refeições grandes de madrugada', 'Refeições leves de madrugada; a principal no horário de dia'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -314,7 +353,9 @@ export const sono: Capitulo = {
           "O pior é que **a pessoa cansada não percebe** o quanto está cansada: depois de alguns dias de pouco sono, o julgamento da própria falha piora. Surgem os **microssonos**, segundos de sono sem aviso, **9 vezes mais prováveis** nos voos noturnos. Numa pesquisa, **80%** de 1.424 tripulantes regionais disseram já ter cochilado em voo. A investigação de acidentes nos EUA encontrou taxas desproporcionais em jornadas de **mais de 13 horas**.",
           "Para o **passageiro**, a fadiga pesa ao **dirigir** depois de um voo longo ou noturno e se soma ao jet lag. Para o **tripulante**, ela é um risco operacional: as normas proíbem aceitar o serviço quem se sabe cansado a ponto de prejudicar a segurança, e o repouso deve dar a **oportunidade de dormir** antes da jornada (Veja M2V8 - VI).",
           "Voar fatigado aumenta **erros**, **esquecimentos** e **lapsos de atenção** justamente nos momentos de maior carga, como a aproximação. Para o tripulante, apresentar-se sem condições descumpre a regra de não atuar com deficiência que impeça cumprir os requisitos, além das normas da empresa. Os sinais de alerta são **bocejos**, **pálpebras pesadas**, **cabeça caindo**, **releituras** e **falhas de comunicação**.",
-          "**Não aceite o serviço** se dormiu bem menos que o habitual, se estará acordado há mais de **16 horas** na hora de pousar ou se já cochilou sem querer. Avise a escala ou o comandante. Nos EUA, a regra é explícita: o tripulante que se declara **fatigado** não pode ser escalado nem aceitar o voo, e a empresa deve retirá-lo do serviço.",
+          "**O que aumenta a fadiga.** Além do sono e da hora do dia, pesam a **idade**, a **saúde**, o **tipo de tarefa** (monótona ou exigente, física ou mental), o **tempo na tarefa**, a **carga de trabalho**, o **ambiente** (calor, frio, ruído) e os **remédios**. Na cabine contam ainda o **número e a composição da tripulação**, a **aclimatação ao fuso**, a **jornada anterior**, a **oportunidade de descanso** antes e durante o voo e a **recuperação** depois dele. Um fator muitas vezes esquecido: chegar à jornada **já com sono atrasado**.",
+          "**Como prevenir e amenizar a fadiga.** O sono é a única cura, e ele começa **antes da jornada**: antes de trabalhar a noite inteira, **durma durante o dia**. Um **cochilo de 25 a 30 minutos** antes de sair ajuda; mesmo **10 minutos** já melhoram a atenção. Em serviço, a **cafeína** age em **15 a 30 minutos** e dura até **5 horas**; use-a quando precisar, não por hábito. **Pausas de 5 minutos**, levantar e conversar quebram a monotonia, e o **descanso controlado** na cabine só vale onde a autoridade e a empresa permitem. Na madrugada, entre **2 e 4 horas**, redobre as verificações. Depois da jornada, recupere: são pelo menos **2 noites** de sono livre.",
+          "**Não aceite o serviço** se dormiu bem menos que o habitual ou se já cochilou sem querer: avise a escala ou o comandante. Se estará acordado há mais de **16 horas** na hora de pousar, descanse ou cochile antes e fale com a escala. Nos EUA, a regra é explícita: o tripulante que se declara **fatigado** não pode ser escalado nem aceitar o voo, e a empresa deve retirá-lo do serviço.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-5-cabine.jpg'), 'Madrugada na cabine de comando: a janela de baixa circadiana é o horário de maior risco de erro.') },
@@ -327,12 +368,30 @@ export const sono: Capitulo = {
               linhas: [
                 ['Dormiu o habitual (7 a 9 h)', 'Sem restrição', 'Apto quanto ao sono'],
                 ['Dormiu 2 horas ou mais a menos que o habitual', 'Evitar dirigir na chegada', 'Avaliar a própria condição e avisar se estiver cansado'],
-                ['Acordado há mais de 16 h no pouso', 'Evitar dirigir na chegada', 'Risco alto: não aceitar o serviço sem descanso'],
+                ['Acordado há mais de 16 h no pouso', 'Evitar dirigir na chegada', 'Risco alto: descansar ou cochilar antes e falar com a escala'],
                 ['Já cochilou sem querer', 'Não dirigir', 'Não voar; investigar distúrbio do sono'],
               ],
             },
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v8-5-bocejo.jpg'), 'Bocejos, pálpebras pesadas e releituras: os sinais aparecem antes de a pessoa admitir o cansaço.') },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: 'Como prevenir e amenizar a fadiga',
+              colunas: ['Momento', 'O que fazer'],
+              linhas: [
+                ['Dias antes da jornada', 'Dormir o habitual; não chegar com sono atrasado'],
+                ['Antes de trabalhar a noite', 'Dormir durante o dia, de preferência no meio da tarde'],
+                ['Antes de sair para o voo', 'Cochilo de 25 a 30 minutos; acordar ao menos 10 a 15 minutos antes de tarefas de segurança'],
+                ['Durante a jornada', 'Cafeína quando precisar; pausas de 5 minutos; levantar e conversar'],
+                ['Madrugada (2 a 4 h)', 'Redobrar verificações e comunicação; hora de mais erros'],
+                ['Voo longo', 'Usar o descanso a bordo para dormir; descanso controlado só onde permitido'],
+                ['Sinais de alerta', 'Bocejos, pálpebras pesadas, cabeça caindo, releituras: avisar o colega'],
+                ['Depois da jornada', 'Recuperar com pelo menos 2 noites de sono livre'],
+                ['Passageiro depois de voo longo ou noturno', 'Não dirigir sonolento; descansar antes ou usar transporte'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -347,6 +406,7 @@ export const sono: Capitulo = {
           "O **repouso** cresce com a jornada: **12 horas** depois de até 12 horas de jornada, **16 horas** depois de 12 a 15 horas e **24 horas** depois de mais de 15. Quem cruza **3 ou mais fusos** num sentido ganha **2 horas a mais por fuso**, na base, e o mês deve ter ao menos **10 folgas**. Nos EUA, a FAA exige **10 horas** de repouso com **8 horas seguidas de oportunidade de sono**, **30 horas livres** a cada semana e, depois de cruzar mais de **60° de longitude** e passar mais de uma semana fora, **56 horas** com **3 noites** de sono.",
           "Nos **voos de longa duração**, com até **20 horas**, a tripulação é **aumentada** e se reveza no **beliche** ou em poltronas de descanso. O sono a bordo é curto: **5 horas** de oportunidade costumam render cerca de **3 horas** de sono, e **2 períodos de 3 a 5 horas** funcionam melhor que um de 8. Onde a autoridade permite, o **descanso controlado** na cabine de comando é limitado a cerca de **40 minutos**, para evitar a inércia do sono, e não serve para planejar a escala.",
           "A regra só protege se o repouso for **usado para dormir**. Uma folga de **48 horas** que começa às **2 horas da manhã** dá à maioria das pessoas **uma só noite** de sono; uma de **40 horas** que começa às **21 horas** dá **duas**. Por isso o tripulante planeja o sono antes da jornada e avisa quando o repouso não deu a oportunidade de dormir.",
+          "**Como aproveitar o repouso.** No pernoite, a prioridade é a **oportunidade de dormir**: quarto escuro, silencioso e fresco, despertador confiável e o sono marcado para as horas em que o relógio ajuda. Nos EUA, o tripulante que não conseguir as **8 horas** seguidas de oportunidade de sono deve **avisar a empresa**. A bordo, deite-se mesmo sem sono: o beliche raramente rende mais de **5 horas** de sono, e dois períodos de **3 a 5 horas** funcionam melhor que um de 8. Ao acordar do beliche ou do descanso controlado, dê **10 a 15 minutos** para a inércia passar antes de assumir. Depois de sequências de madrugadas ou de jornadas longas, a recuperação pede **2 noites** seguidas de sono livre.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-6-escala.jpg'), 'Planejar a escala com os limites de jornada e de repouso é a primeira barreira contra a fadiga.') },
@@ -366,6 +426,22 @@ export const sono: Capitulo = {
             },
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-6-revezamento.jpg'), 'Troca de turno no voo de longa duração: um piloto descansa enquanto o outro assume.') },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: 'Como aproveitar o repouso',
+              colunas: ['Situação', 'O que fazer'],
+              linhas: [
+                ['Pernoite', 'Quarto escuro, silencioso e perto de 21 °C; despertador confiável'],
+                ['Repouso sem 8 h seguidas para dormir', 'Avisar a empresa (exigência da FAA)'],
+                ['Folga', 'Contar as noites de sono, não só as horas: 40 h que começam às 21 h valem mais que 48 h às 2 h'],
+                ['Beliche no voo longo', 'Deitar mesmo sem sono; dois períodos de 3 a 5 h rendem mais que um de 8'],
+                ['Descanso controlado na cabine', 'Só onde permitido; até cerca de 40 minutos; não serve para planejar a escala'],
+                ['Ao acordar', 'Esperar 10 a 15 minutos antes de assumir tarefas de segurança'],
+                ['Depois de madrugadas ou jornadas longas', 'Recuperar com 2 noites seguidas de sono livre'],
+              ],
+            },
+          },
         ],
       },
     },
@@ -375,8 +451,8 @@ export const sono: Capitulo = {
       pergunta: 'O que funciona de verdade para dormir e ficar alerta?',
       conteudo: {
         texto: [
-          "A única cura para a fadiga é **dormir**, e o sono começa antes de deitar. Durma quando o relógio ajuda: proteja a **madrugada** do horário de casa, quando o sono vem mais fácil, e prefira cochilar na **janela da tarde**, perto de **15 a 17 horas**. Bloqueie a **luz** com cortina ou máscara, use **tampões** ou ruído branco, deixe o quarto perto de **21 °C**, evite **exercício vigoroso** nas 2 horas antes e **refeição pesada** 1 a 2 horas antes, e siga um **ritual** de dormir também fora de casa.",
-          "O **álcool** engana: faz adormecer mais rápido, mas **2 doses** atrasam o REM e **3 ou mais** fazem acordar cedo. A **cafeína** leva de **15 a 30 minutos** para agir e dura até **5 horas**; quem a usa todo dia perde parte do efeito. O **cochilo** é a contramedida mais forte: **10 minutos** já melhoram a atenção, mas cochilos de mais de **45 minutos** trazem a **inércia do sono**, uma lentidão de **20 minutos ou mais** ao acordar; dê ao menos **10 a 15 minutos** antes de uma tarefa de segurança.",
+          "A única cura para a fadiga é **dormir**, e o sono começa antes de deitar. Durma quando o relógio ajuda: proteja a **madrugada** do relógio do corpo, quando o sono vem mais fácil, e prefira cochilar no **meio da tarde** do relógio do corpo, perto de **15 a 17 horas**. Bloqueie a **luz** com cortina ou máscara, use **tampões** ou ruído branco, deixe o quarto perto de **21 °C**, evite **exercício vigoroso** nas 2 horas antes e **refeição pesada** 1 a 2 horas antes, e siga um **ritual** de dormir também fora de casa. Use um **despertador confiável**, para não dormir com medo de perder a hora, e reserve um tempo para **desacelerar** depois de tarefas tensas. Cafeína, **tabaco** e comida ficam longe das horas antes de deitar.",
+          "O **álcool** engana: faz adormecer mais rápido, mas **2 doses** atrasam o REM e **3 ou mais** fazem acordar cedo. A **cafeína** leva de **15 a 30 minutos** para agir e dura até **5 horas**; quem a usa todo dia perde parte do efeito. O **cochilo** é a contramedida mais forte: **10 minutos** já melhoram a atenção, e o ideal fica entre **20 e 30 minutos**; cochilos de mais de **45 minutos** trazem a **inércia do sono**, uma lentidão de **20 minutos ou mais** ao acordar; dê ao menos **10 a 15 minutos** antes de uma tarefa de segurança.",
           "Acordou de madrugada no pernoite e não volta a dormir? Levante-se, leia por cerca de uma hora ou até ter sono e tente de novo; se em meia hora continuar acordado, repita. Durante o dia no destino, prefira cochilos curtos; se não conseguir evitar dormir mais, pare em **2 ou 3 horas** para preservar a noite.",
           "**Remédio para dormir** é exceção, não rotina. A ICAO aceita poucas noites, no máximo **3 ou 4 doses por semana**, sempre com orientação de um médico que conheça a aviação e depois de um **teste em solo**. Nunca compre remédio para dormir sem receita no exterior: dose e qualidade são incertas. Na FAA, a espera depois da última dose vai de **12 horas** (zaleplona) a **72 horas** (temazepam), e o **uso diário não é permitido**. No Brasil, o uso contínuo de remédio para dormir fica **a critério do médico examinador**.",
           "Sonolência que não melhora com sono pede investigação. A **apneia do sono** é a causa mais comum (Veja M2V1 - VII): a ICAO considera **inapto temporário** o tripulante com escala de sonolência de **Epworth de 10 ou mais** ou história sugestiva, e manda investigar quem tem pescoço com mais de **43 cm** ou IMC acima de **30** e ronca. Outras causas são a **narcolepsia**, a **hipersonia idiopática**, os **movimentos periódicos das pernas**, a **depressão** e a **dor**. Para a FAA, a condição crônica que atrapalha o sono **desqualifica** até ser tratada.",
@@ -385,6 +461,25 @@ export const sono: Capitulo = {
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-7-quarto.jpg'), 'Quarto de hotel escuro, fresco e silencioso: a higiene do sono vale também longe de casa.') },
           { paragrafo: 2, midia: 'cochilo-cafeina' },
+          {
+            paragrafo: 3,
+            tabela: {
+              titulo: 'Higiene do sono em casa e fora dela',
+              colunas: ['Item', 'O que fazer'],
+              linhas: [
+                ['Horário', 'Dormir nas horas de sono do relógio do corpo; de dia, no meio da tarde'],
+                ['Luz', 'Cortina blackout ou máscara de olhos'],
+                ['Ruído', 'Tampões, com ou sem ruído branco de fundo'],
+                ['Temperatura', 'Perto de 21 °C'],
+                ['Ansiedade', 'Despertador confiável; sem pressa; desacelerar antes de deitar'],
+                ['Exercício', 'Ajuda o sono, mas nada vigoroso nas 2 horas antes'],
+                ['Cafeína, tabaco e comida', 'Longe das horas antes de deitar; a cafeína leva 4 a 6 horas para sair'],
+                ['Álcool', 'Mais de uma dose já piora o sono'],
+                ['Ritual', 'Repetir fora de casa a rotina de antes de dormir'],
+                ['Refeição', 'Comer antes do sono de dia; nada acima de 20% da energia do dia 1 a 2 horas antes do sono principal'],
+              ],
+            },
+          },
           {
             paragrafo: 4,
             tabela: {
