@@ -75,6 +75,13 @@ export type TipoMidia =
   | 'pressao-normas'
   | 'prazo-coracao'
   | 'classificar-arritmia'
+  | 'animacao-relogio'
+  | 'relogio-hormonal'
+  | 'direcao-jet-lag'
+  | 'plano-jet-lag'
+  | 'medidor-fadiga'
+  | 'repouso-aeronauta'
+  | 'cochilo-cafeina'
   | 'prolapso-mitral'
   | 'nyha-oxigenio'
   | 'risco-trombose';

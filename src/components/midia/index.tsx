@@ -17,7 +17,8 @@ import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
 import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-graficos';
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -111,6 +112,13 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'pressao-normas': () => <PressaoNormas />,
   'prazo-coracao': () => <PrazoCoracao />,
   'classificar-arritmia': () => <AtividadeClassificar titulo="Que tipo de arritmia é esta?" categorias={['Paroxística', 'Persistente', 'Permanente', 'Flutter']} casos={CASOS_ARRITMIA} />,
+  'animacao-relogio': () => <AnimacaoRelogio />,
+  'relogio-hormonal': () => <RelogioHormonal />,
+  'direcao-jet-lag': () => <DirecaoJetLag />,
+  'plano-jet-lag': () => <PlanoJetLag />,
+  'medidor-fadiga': () => <MedidorFadiga />,
+  'repouso-aeronauta': () => <RepousoAeronauta />,
+  'cochilo-cafeina': () => <CochiloCafeina />,
   'prolapso-mitral': () => <ProlapsoMitral />,
   'nyha-oxigenio': () => <NyhaOxigenio />,
   'risco-trombose': () => <RiscoTrombose />,
@@ -185,6 +193,13 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'pressao-normas': 'Pressão em três normas',
   'prazo-coracao': 'Prazos do coração',
   'classificar-arritmia': 'Tipos de arritmia',
+  'animacao-relogio': 'O relógio de 24 horas',
+  'relogio-hormonal': 'O relógio hormonal',
+  'direcao-jet-lag': 'Leste ou oeste',
+  'plano-jet-lag': 'Plano para o jet lag',
+  'medidor-fadiga': 'Medidor de fadiga',
+  'repouso-aeronauta': 'Jornada e repouso',
+  'cochilo-cafeina': 'Cochilo e cafeína',
   'prolapso-mitral': 'Prolapso mitral',
   'nyha-oxigenio': 'NYHA e oxigênio',
   'risco-trombose': 'Trombose no voo',
