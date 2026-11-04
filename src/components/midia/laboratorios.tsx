@@ -139,7 +139,7 @@ export function AdaptacaoEscuro() {
         <Cabecalho rotulo="Tempo no escuro" valor={`${fmt(min)} min`} />
         <Deslizante min={0} max={40} passo={1} valor={min} onChange={setMin} rotulo="Minutos no escuro" />
       </View>
-      <Texto cor={Cores.textoSuave}>{fase} Uma luz branca forte desfaz a adaptação em segundos; por isso cabines usam iluminação vermelha ou fraca à noite.</Texto>
+      <Texto cor={Cores.textoSuave}>{fase} Uma luz forte por 1 segundo ou mais desfaz parte da adaptação. A luz vermelha preserva a adaptação, mas distorce as cores das cartas.</Texto>
     </MolduraMidia>
   );
 }

@@ -8,6 +8,7 @@ import { descompressao } from './capitulos/descompressao';
 import { coracao } from './capitulos/coracao';
 import { sono } from './capitulos/sono';
 import { ouvidos } from './capitulos/ouvidos';
+import { olhos } from './capitulos/olhos';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
 import { radiacao } from './capitulos/radiacao';
@@ -64,7 +65,7 @@ export const secoes: Secao[] = [
       { ...hipoxia, numero: 1 },
       { ...coracao, numero: 2 },
       { ...ouvidos, numero: 3 },
-      cap(4, 'Olhos e visão', ['Acuidade visual', 'Visão noturna', 'Visão de cores', 'Lasers', 'Padrões visuais', 'Doenças oculares', 'Correção e cirurgia ocular'], ['adaptacao-escuro']),
+      { ...olhos, numero: 4 },
       cap(5, 'Labirinto e orientação espacial', ['Sistemas de orientação', 'Ilusões', 'Tipos de desorientação', 'Prevenção', 'Cinetose', 'Vertigem']),
       cap(6, 'Cérebro e sistema nervoso', ['Epilepsia', 'Síncope', 'Cefaleia', 'AVC', 'Trauma craniano', 'Doenças neurodegenerativas']),
       cap(7, 'Saúde mental e comportamento', ['Depressão e ansiedade', 'Humor e personalidade', 'Álcool e drogas', 'Avaliação psicológica', 'Apoio por pares']),
