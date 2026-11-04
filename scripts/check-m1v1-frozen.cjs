@@ -117,6 +117,9 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m2v1-8-raio-x.jpg': '87491515bb977f1e',
   'assets/images/topicos/m2v1-9-concentrador.jpg': '031d41bfedebcf01',
   'assets/images/topicos/m2v1-9-teste.jpg': '72c7bb7c7c74deb8',
+  // 03/11/2026: simulador do oxigênio descongelado com autorização do autor ("Descongele e ajuste o simulador"): a
+  //   PO₂ alveolar de src/lib/fisiologia.ts foi calibrada pela Tabela II-1-2 da ICAO (93% a 8.000 ft); o arquivo do
+  //   componente não mudou e segue congelado.
   'src/components/midia/simulador-o2.tsx': 'af94937e7e23183d',
   'src/components/midia/grafico-tuc.tsx': 'ce3774a3c28f2956',
   'src/components/midia/atividade-classificar.tsx': '1d1928c030bb10fd',

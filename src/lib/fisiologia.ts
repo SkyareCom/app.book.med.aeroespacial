@@ -10,14 +10,21 @@ export function po2Inspirado(altitudePes: number) {
   return 0.2095 * (pressaoBarometrica(altitudePes) - 47);
 }
 
-// PO₂ alveolar aproximada respirando ar, em exposição aguda (inclui a hiperventilação reflexa).
-// Valores de referência usuais em tratados de fisiologia de aviação; entre os pontos, interpolação linear.
+// PO₂ alveolar aproximada respirando ar, em exposição aguda (inclui a hiperventilação reflexa); entre os pontos,
+// interpolação linear.
+// 03/11/2026 (autorizado pelo autor, "Descongele e ajuste o simulador"): de 8.000 a 25.000 ft, os pontos foram
+//   calibrados para que a saturação da equação de Severinghaus reproduza a Tabela II-1-2 do Doc 8984 da ICAO (93% a
+//   8.000 ft, 89% a 10.000, 87% a 12.000, 83% a 14.000, 80% a 15.000, 65% a 20.000 e abaixo de 60% a 25.000 ft), a
+//   mesma usada no texto do M2V1. Antes, 69 mmHg a 8.000 ft davam 94% e 61 mmHg a 10.000 ft, 91%. Usado só pelo
+//   simulador do oxigênio (simulador-o2.tsx).
 const TABELA_PAO2: [number, number][] = [
   [0, 103],
   [5000, 81],
-  [8000, 69],
-  [10000, 61],
-  [15000, 45],
+  [8000, 67],
+  [10000, 57],
+  [12000, 53],
+  [14000, 48],
+  [15000, 44.5],
   [18000, 38],
   [20000, 34],
   [25000, 30],
