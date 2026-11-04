@@ -137,7 +137,8 @@ export function GraficoSistemasOxigenio() {
   const X = (ft: number) => x0 + (Math.min(ft, 50000) / 50000) * (x1 - x0);
   const linhaH = 34;
   const topo = 30;
-  const H = topo + SISTEMAS.length * linhaH + 34;
+  // 04/11/2026: +4 px no fim para o rótulo do eixo não ser cortado embaixo.
+  const H = topo + SISTEMAS.length * linhaH + 38;
   const s = SISTEMAS.find((q) => q.id === sel)!;
   return (
     <MolduraMidia tipo="Gráfico" titulo="Cada máscara tem seu teto" instrucao="Toque num sistema para ver até onde ele protege.">
@@ -149,7 +150,7 @@ export function GraficoSistemasOxigenio() {
               <SvgText x={X(f)} y={H - 12} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{f / 1000}k</SvgText>
             </G>
           ))}
-          <SvgText x={(x0 + x1) / 2} y={H - 1} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">ALTITUDE (PÉS)</SvgText>
+          <SvgText x={(x0 + x1) / 2} y={H - 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">ALTITUDE (PÉS)</SvgText>
           {SISTEMAS.map((q, i) => {
             const y = topo + i * linhaH;
             const ativo = q.id === sel;

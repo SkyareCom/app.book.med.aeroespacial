@@ -116,7 +116,8 @@ export function AdaptacaoEscuro() {
     const bast = 0.05 + 0.95 * Math.exp(-Math.max(0, m - 4) / 7);
     return Math.min(cones, m < 4 ? 1 : bast);
   };
-  const y = (v: number) => 12 + (1 - (1 - v)) * (h - 40);
+  // 04/11/2026: eixo corrigido para "quanto mais baixo, menos luz é preciso" (o limiar cai com o tempo no escuro).
+  const y = (v: number) => 12 + (1 - v) * (h - 40);
   let d = '';
   for (let m = 0; m <= 40; m += 0.5) d += `${m === 0 ? 'M' : 'L'}${x(m).toFixed(1)},${y(limiar(m)).toFixed(1)}`;
   const fase = min < 8 ? 'Os cones (visão de cores e detalhes) se adaptam primeiro.' : min < 25 ? 'Os bastonetes assumem: a sensibilidade continua subindo.' : 'Adaptação quase completa, após cerca de 30 minutos.';
@@ -125,14 +126,14 @@ export function AdaptacaoEscuro() {
       <View onLayout={(e) => setLarg(e.nativeEvent.layout.width)}>
         <Svg width={larg} height={h}>
           {[0, 10, 20, 30, 40].map((m) => (
-            <SvgText key={m} x={x(m)} y={h - 8} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte} textAnchor="middle">{m} min</SvgText>
+            <SvgText key={m} x={m === 40 ? x(m) + 6 : x(m)} y={h - 8} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte} textAnchor={m === 40 ? 'end' : 'middle'}>{m} min</SvgText>
           ))}
           <Line x1={x(0)} y1={h - 24} x2={x(40)} y2={h - 24} stroke={Cores.linha} />
           <Path d={d} stroke={Cores.destaque} strokeWidth={2.5} fill="none" />
           <Line x1={x(min)} y1={8} x2={x(min)} y2={h - 24} stroke={Cores.dourado} strokeDasharray="4 4" />
           <Circle cx={x(min)} cy={y(limiar(min))} r={6} fill={Cores.dourado} />
-          <SvgText x={x(3)} y={y(0.62) - 8} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte}>cones</SvgText>
-          <SvgText x={x(22)} y={y(0.18) - 8} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte}>bastonetes</SvgText>
+          <SvgText x={x(4.5)} y={y(0.56) - 12} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte}>cones</SvgText>
+          <SvgText x={x(22)} y={y(0.12) - 16} fill={Cores.textoApagado} fontSize={10} fontFamily={Fonte}>bastonetes</SvgText>
         </Svg>
       </View>
       <View>
