@@ -146,8 +146,8 @@ export function GraficoSistemasOxigenio() {
         <Svg width={larg} height={H}>
           {[0, 10000, 20000, 30000, 40000, 50000].map((f) => (
             <G key={f}>
-              <Line x1={X(f)} y1={topo + SISTEMAS.length * linhaH - 4} x2={X(f)} y2={H - 26} stroke={Cores.linha} />
-              <SvgText x={X(f)} y={H - 12} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{f / 1000}k</SvgText>
+              <Line x1={X(f)} y1={topo + SISTEMAS.length * linhaH - 4} x2={X(f)} y2={H - 30} stroke={Cores.linha} />
+              <SvgText x={X(f)} y={H - 17} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{f / 1000}k</SvgText>
             </G>
           ))}
           <SvgText x={(x0 + x1) / 2} y={H - 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">ALTITUDE (PÉS)</SvgText>

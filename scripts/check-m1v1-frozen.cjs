@@ -71,7 +71,9 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
   'assets/videos/m1v2-mascaras.mp4': 'e7d116eebd6b1581',
   'src/data/capitulos/pressurizacao.ts': '9d267d0171d23fbf',
-  'src/components/midia/m1v2-graficos.tsx': '98ca3b3154f609d5',
+  // 04/11/2026: a pedido do autor ("Corrigir textos escondidos pelos gráficos em todo app"), o rótulo ALTITUDE (PÉS)
+  // do gráfico de sistemas de oxigênio deixou de ser cortado embaixo (+4 px de altura). Novo hash.
+  'src/components/midia/m1v2-graficos.tsx': '54dd9a527058f414',
   'src/data/capitulos/descompressao.ts': 'b82e22fdfa722c05',
   'src/components/midia/m1v3-graficos.tsx': '301331868cfd0c8d',
   'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
