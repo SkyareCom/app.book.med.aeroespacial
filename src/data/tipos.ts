@@ -117,6 +117,7 @@ export type TipoMidia =
   | 'alcool-voo'
   | 'avaliacao-psicologica'
   | 'apoio-colega'
+  | 'surto-bordo'
   | 'relogio-hormonal'
   | 'direcao-jet-lag'
   | 'plano-jet-lag'

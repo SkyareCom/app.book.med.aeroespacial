@@ -58,6 +58,24 @@
 // - BEA, relatório final do voo 9525 da Germanwings (março de 2016): o copiloto derrubou o avião de propósito em
 //   24/03/2015, com 150 mortos; tinha transtorno mental não declarado à autoridade. [confirmar na referência]
 // - CONASS (Conselho Nacional de Secretários de Saúde): CVV, ligação gratuita pelo 188, 24 horas.
+// - Surto psicótico em voo (acrescentado em 04/11/2026, a pedido do autor: "Inserir abordagem a surtos psicóticos em
+//   voo"): Joshi KG, In-flight psychiatric emergencies: what you should know, Current Psychiatry 2019;18(12), com base em
+//   Martin-Gill, Doyle e Yealy, JAMA 2018;320(24):2580-90: sintomas psiquiátricos e intoxicação ou abstinência, cada um,
+//   até 3% das emergências em voo; o voluntário diz a formação à tripulação e não atua sob álcool, droga ou remédio que
+//   afete o julgamento; criar vínculo, perguntar história, substâncias (tipo, quantidade, horário), psicotrópicos, dose,
+//   última dose e se estão a bordo; desescalada verbal primeiro; vigiar sinais vitais, estado mental, intoxicação ou
+//   abstinência e respiração; hidratação e oxigênio se preciso; se falhar, benzodiazepínico ou antipsicótico, se houver;
+//   o kit exigido pela FAA (AC 121-33B) não precisa ter antipsicótico, naloxona nem benzodiazepínico; se agressivo,
+//   protocolo de segurança da empresa, que pode incluir contenção ou pouso alternado; "a segurança tem prioridade sobre o
+//   tratamento"; o comandante decide o pouso alternado com o despacho; dificuldade respiratória: apoio médico em solo.
+//   AsMA, Medical Emergencies: Managing In-flight Medical Events (revisão de julho de 2016), kit médico recomendado:
+//   antipsicótico (ex.: haloperidol) e sedativo anticonvulsivante injetável ou intranasal.
+//   Convenção de Tóquio (1963), art. 6: o comandante pode impor medidas razoáveis, inclusive contenção, para proteger a
+//   aeronave e as pessoas, manter a ordem ou entregar a pessoa às autoridades; pode pedir ajuda a tripulantes e
+//   passageiros; qualquer tripulante ou passageiro pode agir sem autorização se for imediatamente necessário; art. 10:
+//   quem age conforme a Convenção não responde pelo tratamento dado à pessoa contida.
+//   Código Brasileiro de Aeronáutica (Lei 7.565/1986), art. 168: o comandante pode desembarcar quem comprometa a boa
+//   ordem, a disciplina ou a segurança (texto literal: [confirmar na referência]).
 // Condutas práticas sem número próprio (respirar devagar, avisar a tripulação, pedir água em vez de bebida, conversar com
 // um colega) são aplicações das fontes acima. Sem fonte: [confirmar na referência].
 
@@ -180,6 +198,8 @@ export const mente: Capitulo = {
           "Os **transtornos de personalidade** são padrões rígidos e problemáticos de comportamento, presentes a vida adulta inteira, que costumam incomodar mais os outros que a própria pessoa. Os **transtornos de controle dos impulsos**, a incapacidade de frear um impulso mesmo vendo o prejuízo, são especialmente incompatíveis com uma função de segurança como a de piloto.",
           "Para o tripulante, a regra é dura e igual na ANAC e na ICAO. A **mania**, isolada ou no bipolar, leva a **impedimento de longo prazo**; a **hipomania** também torna inapto. **Esquizofrenia** e transtornos delirantes impedem a licença. O **transtorno psicótico breve** pode ser aceito depois de **1 ano** estável sem antipsicótico. Transtornos de personalidade, salvo raras exceções, não são compatíveis com o ambiente da aviação.",
           "Para o passageiro, o que decide é a **estabilidade**. Quem tem psicose bem controlada pode voar, às vezes com um **acompanhante** que garanta o remédio e ajude se houver problema; nos casos mais difíceis, um profissional de saúde. Comportamento **imprevisível, agressivo, desorganizado ou perturbador** contraindica o voo, e a companhia pode recusar o embarque. O médico e a companhia combinam a liberação pelo **MEDIF**.",
+          "**Surto a bordo: como abordar.** Sintomas psiquiátricos respondem por até **3%** das emergências médicas em voo, e intoxicação ou abstinência por outro tanto. A **tripulação** conduz a situação e avisa o comandante; o profissional de saúde que se oferece diz a sua formação e não atua se bebeu ou tomou remédio que afete o julgamento. O primeiro passo é a **conversa**: criar vínculo, tentar acalmar e perguntar pelo diagnóstico, pelos remédios, pela última dose e se eles estão a bordo. Depois, procurar outra causa: **álcool e drogas**, intoxicação ou abstinência, sinais vitais e respiração, com água e oxigênio se preciso.",
+          "Se a conversa não basta, o médico voluntário pode considerar um **benzodiazepínico** ou um **antipsicótico**, se houver no kit: o kit mínimo exigido pela FAA não precisa ter nenhum dos dois, e a AsMA recomenda incluir haloperidol e um sedativo injetável. Se o passageiro fica **agressivo**, a **segurança vem antes do tratamento**: a tripulação segue o protocolo da empresa, que pode incluir **contenção** ou **pouso alternado**. Pela Convenção de Tóquio, o comandante pode impor medidas razoáveis, inclusive contenção, e pedir ajuda a tripulantes e passageiros; pelo Código Brasileiro de Aeronáutica, pode desembarcar quem põe o voo em risco. Quem decide o pouso alternado é o comandante, com o despacho da empresa.",
           "**Como prevenir e amenizar.** Mantenha o remédio no horário, ajustado ao fuso com o médico, e leve o suficiente na bagagem de mão. Durma antes do voo e evite álcool. Viaje com quem conhece a sua rotina e avise a companhia se for sozinho. Se surgir agitação a bordo, peça ajuda à tripulação cedo, antes de a crise crescer.",
         ].join('\n\n'),
         recursos: [
@@ -201,8 +221,20 @@ export const mente: Capitulo = {
             },
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v7-3-comissaria.jpg'), 'Pedir ajuda à tripulação cedo evita que a agitação cresça.') },
+          { paragrafo: 6, midia: 'surto-bordo' },
           {
-            paragrafo: 6,
+            paragrafo: 7,
+            tabela: {
+              titulo: 'Kit médico a bordo · remédios para agitação',
+              colunas: ['Kit', 'Antipsicótico', 'Benzodiazepínico ou sedativo'],
+              linhas: [
+                ['Mínimo exigido pela FAA', 'Não obrigatório', 'Não obrigatório'],
+                ['Recomendado pela AsMA', 'Sim (ex.: haloperidol)', 'Sedativo injetável ou intranasal'],
+              ],
+            },
+          },
+          {
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · bipolar e psicose',
               colunas: ['Momento', 'O que fazer'],
@@ -401,6 +433,13 @@ export const mente: Capitulo = {
       opcoes: ['Nada', 'Impedimento de longo prazo', 'Só 1 mês de afastamento', 'Voo só com copiloto'],
       correta: 1,
       explicacao: 'A mania recai de forma imprevisível, mesmo com estabilizador de humor, e leva a impedimento de longo prazo.',
+      topico: '7.3',
+    },
+    {
+      pergunta: 'Num surto psicótico a bordo, com o passageiro agressivo, o que vem primeiro?',
+      opcoes: ['Dar um sedativo a qualquer custo', 'A segurança do voo e das pessoas a bordo', 'Esperar o pouso sem fazer nada', 'Deixar os passageiros resolverem sozinhos'],
+      correta: 1,
+      explicacao: 'Com agressão, a segurança vem antes do tratamento: a tripulação segue o protocolo da empresa, que pode incluir contenção ou pouso alternado.',
       topico: '7.3',
     },
     {

@@ -214,6 +214,34 @@ export function ApoioColega() {
   );
 }
 
+// ---------------------------------------------------------------- Surto psicótico a bordo (Joshi 2019; AsMA 2016; Tóquio 1963)
+type Etapa = 'avisar' | 'conversar' | 'causa' | 'remedio' | 'agressao';
+const ETAPAS: Record<Etapa, { nome: string; tripulacao: string; voluntario: string; urgente: boolean }> = {
+  avisar: { nome: '1. Primeiros sinais', tripulacao: 'Avisa o comandante e procura um profissional de saúde a bordo.', voluntario: 'Apresenta-se e diz a formação; não atua se bebeu ou tomou remédio que afete o julgamento.', urgente: false },
+  conversar: { nome: '2. Conversa', tripulacao: 'Acompanha de perto e apoia a conversa.', voluntario: 'Cria vínculo e tenta acalmar; pergunta pelo diagnóstico, pelos remédios, pela última dose e se estão a bordo.', urgente: false },
+  causa: { nome: '3. Outra causa', tripulacao: 'Oferece água e oxigênio se pedirem; chama o apoio médico em solo se faltar ar.', voluntario: 'Pergunta por álcool e drogas (tipo, quantidade e horário); procura intoxicação ou abstinência; mede os sinais vitais.', urgente: false },
+  remedio: { nome: '4. Remédio', tripulacao: 'Abre o kit médico; o kit mínimo da FAA não precisa ter antipsicótico nem benzodiazepínico.', voluntario: 'Se a conversa falhar, considera benzodiazepínico ou antipsicótico, se houver.', urgente: false },
+  agressao: { nome: '5. Agressão', tripulacao: 'Segue o protocolo de segurança da empresa: contenção ou pouso alternado, que o comandante decide.', voluntario: 'Ajuda se o comandante pedir; a segurança vem antes do tratamento.', urgente: true },
+};
+
+export function SurtoBordo() {
+  const [e, setE] = useState<Etapa>('avisar');
+  const k = ETAPAS[e];
+  return (
+    <MolduraMidia tipo="Classificador" titulo="Surto psicótico a bordo" instrucao="Escolha a etapa para ver o que a tripulação e o profissional de saúde voluntário fazem.">
+      <Opcoes itens={(Object.keys(ETAPAS) as Etapa[]).map((x) => [x, ETAPAS[x].nome] as [Etapa, string])} valor={e} onChange={setE} colunas={1} />
+      <View style={{ gap: 4 }}>
+        <Texto t="rotulo" cor={Cores.textoApagado}>Tripulação</Texto>
+        <Marca cor={k.urgente ? Cores.erro : Cores.destaque}>{k.tripulacao}</Marca>
+      </View>
+      <View style={{ gap: 4 }}>
+        <Texto t="rotulo" cor={Cores.textoApagado}>Profissional de saúde voluntário</Texto>
+        <Marca cor={k.urgente ? Cores.erro : Cores.dourado}>{k.voluntario}</Marca>
+      </View>
+    </MolduraMidia>
+  );
+}
+
 const styles = StyleSheet.create({
   leituras: { flexDirection: 'row', flexWrap: 'wrap', gap: Espaco.md },
   marca: { gap: 2, paddingLeft: Espaco.sm, borderLeftWidth: 2 },

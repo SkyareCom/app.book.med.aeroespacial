@@ -18,7 +18,7 @@ import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-grafi
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
-import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos } from '@/components/midia/m2v7-graficos';
+import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
 import { AssentoEnjoo, CondutaDesorientacao, IlusaoPista, IlusaoSomatogravica, IlusoesLabirinto, LimiarInclinacao, TempoNuvem } from '@/components/midia/m2v5-graficos';
 import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
@@ -159,6 +159,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'alcool-voo': () => <AlcoolVoo />,
   'avaliacao-psicologica': () => <AvaliacaoPsicologica />,
   'apoio-colega': () => <ApoioColega />,
+  'surto-bordo': () => <SurtoBordo />,
   'relogio-hormonal': () => <RelogioHormonal />,
   'direcao-jet-lag': () => <DirecaoJetLag />,
   'plano-jet-lag': () => <PlanoJetLag />,
@@ -281,6 +282,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'alcool-voo': 'Quantas horas depois de beber',
   'avaliacao-psicologica': 'Quando há avaliação psicológica',
   'apoio-colega': 'Como ajudar um colega',
+  'surto-bordo': 'Surto psicótico a bordo',
   'relogio-hormonal': 'O relógio hormonal',
   'direcao-jet-lag': 'Leste ou oeste',
   'plano-jet-lag': 'Plano para o jet lag',

@@ -17,7 +17,7 @@ export const notificacoes: Notificacao[] = [
     id: 'mente',
     rotulo: 'Voo disponível',
     titulo: 'Saúde mental e comportamento',
-    texto: 'O voo 7 da Missão Sistemas chegou: a mente no voo e o checklist IMSAFE, depressão e ansiedade com os antidepressivos aceitos, bipolar e psicose, álcool e as 8 horas antes do voo, avaliação psicológica e apoio por pares. O formulário de liberação ganhou o bloco da saúde mental.',
+    texto: 'O voo 7 da Missão Sistemas chegou: a mente no voo e o checklist IMSAFE, depressão e ansiedade com os antidepressivos aceitos, bipolar e psicose, com a abordagem do surto a bordo, álcool e as 8 horas antes do voo, avaliação psicológica e apoio por pares. O formulário de liberação ganhou o bloco da saúde mental.',
     destino: '/capitulo/sistemas/7',
   },
   {
