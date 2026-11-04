@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 17;
+export const VERSAO_NOTIFICACOES = 18;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'mente',
+    rotulo: 'Voo disponível',
+    titulo: 'Saúde mental e comportamento',
+    texto: 'O voo 7 da Missão Sistemas chegou: a mente no voo e o checklist IMSAFE, depressão e ansiedade com os antidepressivos aceitos, bipolar e psicose, álcool e as 8 horas antes do voo, avaliação psicológica e apoio por pares. O formulário de liberação ganhou o bloco da saúde mental.',
+    destino: '/capitulo/sistemas/7',
+  },
   {
     id: 'cerebro',
     rotulo: 'Voo disponível',

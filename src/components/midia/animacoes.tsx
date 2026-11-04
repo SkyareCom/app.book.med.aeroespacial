@@ -930,6 +930,46 @@ export function AnimacaoArCranio() {
   );
 }
 
+// M2V7 · Antidepressivo e voo (ICAO Doc 8984, Part III, Cap. 9, Apêndice 2): linha do tempo de um tripulante que
+// começa um ISRS aceito, fica 4 semanas estável, volta a voar (com copiloto), muda a dose (solo até estabilizar) e,
+// depois, retira o remédio (solo durante a retirada e mais 2 semanas). Esquema sem escala de tempo real.
+export function AnimacaoAntidepressivo() {
+  const c = useCiclo(16000);
+  const t = c.fase;
+  const FASES = [
+    { de: 0, ate: 0.18, titulo: 'COMEÇA O REMÉDIO: EM SOLO', cor: Cores.erro, voa: false },
+    { de: 0.18, ate: 0.36, titulo: '4 SEMANAS ESTÁVEL: PODE VOLTAR, COM COPILOTO', cor: Cores.acerto, voa: true },
+    { de: 0.36, ate: 0.5, titulo: 'A DOSE MUDOU: SOLO ATÉ ESTABILIZAR', cor: Cores.erro, voa: false },
+    { de: 0.5, ate: 0.7, titulo: 'ESTÁVEL DE NOVO: VOA', cor: Cores.acerto, voa: true },
+    { de: 0.7, ate: 0.86, titulo: 'RETIRADA + 2 SEMANAS: SOLO', cor: Cores.erro, voa: false },
+    { de: 0.86, ate: 1, titulo: 'SEM REMÉDIO, ESTÁVEL: VOA', cor: Cores.acerto, voa: true },
+  ];
+  const f = FASES.find((x) => t >= x.de && t < x.ate) ?? FASES[FASES.length - 1];
+  const H = 150;
+  return (
+    <Quadro titulo="Antidepressivo e voo, passo a passo" instrucao="Linha do tempo de um tripulante tratado com um antidepressivo aceito, pela orientação da ICAO. Vermelho: em solo; verde: pode voar." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 14, x1 = w - 14, X = (v: number) => x0 + v * (x1 - x0);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            {FASES.map((x) => (
+              <Rect key={x.de} x={X(x.de)} y={70} width={X(x.ate) - X(x.de)} height={16} fill={x.cor} fillOpacity={t >= x.de ? 0.75 : 0.18} />
+            ))}
+            <Line x1={X(t)} y1={60} x2={X(t)} y2={96} stroke={Cores.texto} strokeWidth={2} />
+            <Circle cx={X(t)} cy={56} r={6} fill={f.cor} />
+            <SvgText x={10} y={20} fill={f.cor} fontSize={10} fontFamily={Fonte}>{f.titulo}</SvgText>
+            <SvgText x={10} y={38} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>{f.voa ? 'PODE VOAR' : 'EM SOLO'}</SvgText>
+            <SvgText x={x0} y={112} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>INÍCIO</SvgText>
+            <SvgText x={x1} y={112} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">SEM REMÉDIO</SvgText>
+            <SvgText x={10} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>FAA: 6 MESES ESTÁVEL ANTES DE VOLTAR</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
