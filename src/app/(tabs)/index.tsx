@@ -11,6 +11,7 @@ import { ResumoRanking } from '@/components/ranking';
 import { Selo } from '@/components/selo';
 import { CartaoEpisodio, Destaques, duracao, Fileira, GUTTER, rotaEpisodio, type ItemDestaque } from '@/components/streaming';
 import { TelaCheia } from '@/components/tela';
+import { InstalarApp } from '@/components/instalar-app';
 import { Texto } from '@/components/texto';
 import { ArteAdaptacao, ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Imagens } from '@/constants/imagens';
@@ -64,6 +65,8 @@ export default function Home() {
       <View>
         <Destaques itens={destaques} />
       </View>
+
+      <InstalarApp margem={GUTTER} />
 
       <Fileira titulo={continuar.length ? 'Continue de onde parou' : 'Comece por aqui'}>
         {(continuar.length ? continuar : [{ s: obterSecao('conceitos')!, c: obterCapitulo('conceitos', 1)! }]).map(({ s, c }) => (

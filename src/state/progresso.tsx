@@ -33,6 +33,8 @@ interface ContextoProgresso extends Progresso {
   registrarResposta: (id: string, certa: boolean, xp: number, modo: 'quiz' | 'prova') => number;
   zerarRanking: () => void;
   definirRankingAtivo: (ativo: boolean) => void;
+  // Apaga todo o progresso deste aparelho (Perfil → Apagar meus dados).
+  apagarProgresso: () => void;
 }
 
 const vazio: Progresso = { concluidos: [], melhoresNotas: {}, ultimos: [], respostas: {}, rankingAtivo: true };
@@ -45,6 +47,7 @@ const Ctx = createContext<ContextoProgresso>({
   registrarResposta: () => 0,
   zerarRanking: () => {},
   definirRankingAtivo: () => {},
+  apagarProgresso: () => {},
 });
 
 function salvar(p: Progresso) {
@@ -115,10 +118,15 @@ export function ProvedorProgresso({ children }: { children: ReactNode }) {
     });
   }
 
+  function apagarProgresso() {
+    setEstado(vazio);
+    AsyncStorage.removeItem(CHAVE).catch(() => {});
+  }
+
   const xp = Object.values(estado.respostas).reduce((n, r) => n + r.xp, 0);
 
   return (
-    <Ctx.Provider value={{ ...estado, xp, carregado, registrarTeste, registrarVisita, registrarResposta, zerarRanking, definirRankingAtivo }}>
+    <Ctx.Provider value={{ ...estado, xp, carregado, registrarTeste, registrarVisita, registrarResposta, zerarRanking, definirRankingAtivo, apagarProgresso }}>
       {children}
     </Ctx.Provider>
   );

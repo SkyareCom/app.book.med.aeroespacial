@@ -11,12 +11,17 @@ import { Cabecalho, Rodape } from '@/components/moldura-app';
 import { PaginasRodape } from '@/components/paginas-rodape';
 import { Cores, Fonte } from '@/constants/theme';
 import { indiceAbaRodape } from '@/lib/swipe-rodape';
+import { ProvedorAcesso } from '@/state/acesso';
 import { ProvedorConta, useConta } from '@/state/conta';
 import { ProvedorIdioma } from '@/state/idioma';
 import { ProvedorNotificacoes } from '@/state/notificacoes';
 import { ProvedorProgresso } from '@/state/progresso';
 
 SplashScreen.preventAutoHideAsync();
+
+// Páginas que abrem direto pelo link, sem a abertura e a tela de entrada por cima: as lojas e a LGPD exigem
+// que a política de privacidade, os termos e a exclusão de dados sejam públicos.
+const ROTAS_LIVRES = ['/privacidade', '/termos', '/aviso-medico', '/excluir-dados'];
 
 export default function RootLayout() {
   const caminho = usePathname();
@@ -32,6 +37,7 @@ export default function RootLayout() {
   return (
     <ProvedorIdioma>
     <ProvedorConta>
+    <ProvedorAcesso>
       <ProvedorProgresso>
       <ProvedorNotificacoes>
         <StatusBar style="light" />
@@ -40,10 +46,11 @@ export default function RootLayout() {
           <PaginasRodape rodape={<Rodape />}>
             <Stack screenOptions={{ headerShown: false, animation: indiceAbaRodape(caminho) >= 0 ? 'none' : 'fade', contentStyle: { backgroundColor: Cores.fundo } }} />
           </PaginasRodape>
-          <AberturaEEntrada />
+          {ROTAS_LIVRES.some((r) => caminho.endsWith(r)) ? null : <AberturaEEntrada />}
         </View>
       </ProvedorNotificacoes>
       </ProvedorProgresso>
+    </ProvedorAcesso>
     </ProvedorConta>
     </ProvedorIdioma>
   );

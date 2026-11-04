@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
-import { router } from 'expo-router';
+import Constants from 'expo-constants';
+import { Link, router } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 import { BotaoPrincipal } from '@/components/botao';
@@ -19,6 +20,13 @@ const DESCRICAO: Record<ModoEntrada, { titulo: string; texto: string }> = {
   biometria: { titulo: 'Biometria', texto: 'Você entrou com Face ID, Touch ID ou digital.' },
   convidado: { titulo: 'Sem conta', texto: 'Seu progresso fica salvo só neste aparelho.' },
 };
+
+const LEGAIS = [
+  ['/aviso-medico', 'Aviso médico'],
+  ['/termos', 'Termos de Uso'],
+  ['/privacidade', 'Política de Privacidade'],
+  ['/excluir-dados', 'Apagar meus dados'],
+] as const;
 
 // Perfil: como a pessoa entrou, progresso nas missões, ranking de conhecimento (XP), entrar na conta e sair do app.
 export default function Perfil() {
@@ -62,6 +70,16 @@ export default function Perfil() {
 
       {modo === 'convidado' || !modo ? <BotaoPrincipal rotulo="Entrar na conta" onPress={sairDoApp} /> : null}
       <BotaoPrincipal rotulo="Sair do app" secundario onPress={sairDoApp} />
+
+      <Painel>
+        <Texto t="rotulo" cor={Cores.destaque}>Privacidade e uso</Texto>
+        {LEGAIS.map(([rota, rotulo]) => (
+          <Link key={rota} href={rota}>
+            <Texto cor={Cores.texto}>{rotulo}</Texto>
+          </Link>
+        ))}
+        <Texto t="rotulo" cor={Cores.textoApagado}>{`v${Constants.expoConfig?.version ?? ''}`}</Texto>
+      </Painel>
     </Tela>
   );
 }

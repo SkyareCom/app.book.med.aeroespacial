@@ -39,3 +39,18 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+## Publicação (Google Play, PWA e venda por link)
+
+Modelo e passo a passo em `docs/publicacao.md`. Android: nativo na Google Play + PWA pelo link; iPhone: só PWA pelo link.
+
+- `npm run check:publicacao` roda no CI e precisa passar. Antes de enviar à loja: `npm run check:publicacao -- --loja`.
+- A cada voo publicado: `npm run loja:ficha` (atualiza `docs/loja/ficha-*.md`) e, se as telas mudarem,
+  `python3 tools/loja/capturas.py`; commit junto com o voo. O voo entra pago quando `COBRANCA_ATIVA` for true,
+  salvo se estiver em `VOOS_LIVRES` (`src/lib/acesso.ts`).
+- Coleta de dados nova (login, pagamento, envio de arquivo) exige atualizar `src/data/legal.ts`,
+  `EDITORA.atualizadoEm` e `docs/loja/seguranca-dados.md` no mesmo commit.
+- Rotas que precisam abrir sem login ficam em `ROTAS_LIVRES` (`src/app/_layout.tsx`).
+- `src/app/+html.tsx` (SDK 58) precisa renderizar `headNodes` e `bodyNodes` de `useServerDocumentContext`.
+- Nunca colocar chaves no repositório: a chave de serviço da Google Play fica nos segredos do EAS; a do Supabase,
+  nos segredos do Supabase.
