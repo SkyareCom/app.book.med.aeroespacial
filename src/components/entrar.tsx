@@ -1,4 +1,5 @@
 import * as LocalAuthentication from 'expo-local-authentication';
+import { router } from 'expo-router';
 import { useState, type ReactNode } from 'react';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
@@ -84,6 +85,16 @@ export function OpcoesEntrada({ aoEscolher }: { aoEscolher: (modo: ModoEntrada) 
         <Texto t="item" maiusculo espacado cor={Cores.texto}>Continuar sem conta</Texto>
         <Texto t="rotulo" cor={Cores.textoApagado}>Seu progresso fica salvo neste aparelho</Texto>
       </Pressable>
+
+      {/* Aceite: ao entrar de qualquer forma, a pessoa concorda com os termos, a privacidade e o aviso médico. */}
+      <Texto t="rodape" cor={Cores.textoApagado} style={{ textAlign: 'center' }}>
+        Ao continuar, você concorda com os{' '}
+        <Texto t="rodape" cor={Cores.destaque} onPress={() => router.push('/termos')}>Termos de Uso</Texto>
+        {' '}e a{' '}
+        <Texto t="rodape" cor={Cores.destaque} onPress={() => router.push('/privacidade')}>Política de Privacidade</Texto>
+        . O app é educativo e não substitui o médico:{' '}
+        <Texto t="rodape" cor={Cores.destaque} onPress={() => router.push('/aviso-medico')}>Aviso médico</Texto>.
+      </Texto>
     </View>
   );
 }

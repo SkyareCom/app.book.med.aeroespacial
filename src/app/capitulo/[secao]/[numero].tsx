@@ -13,7 +13,10 @@ import { Midia } from '@/components/midia';
 import { VideoLaco } from '@/components/midia/video-laco';
 import { MolduraMidia } from '@/components/midia/moldura';
 import { CartaoEpisodio, disponivel, duracao, Fileira, GUTTER } from '@/components/streaming';
-import { BotaoVoltarFlutuante, TelaCheia } from '@/components/tela';
+import { Assinatura } from '@/components/assinatura';
+import { BotaoVoltarFlutuante, Tela, TelaCheia } from '@/components/tela';
+import { vooLiberado } from '@/lib/acesso';
+import { useAcesso } from '@/state/acesso';
 import { Texto } from '@/components/texto';
 import { useTr } from '@/state/idioma';
 import { CapaEpisodio } from '@/constants/capas';
@@ -55,6 +58,7 @@ export default function TelaCapitulo() {
     ? Number.parseInt(numero, 10)
     : NaN;
   const capitulo = obterCapitulo(secaoId, numeroNormalizado);
+  const { temAcesso } = useAcesso();
 
   useEffect(() => {
     if (secao && capitulo) registrarVisita(chaveCapitulo(secao.id, capitulo.numero));
@@ -65,6 +69,14 @@ export default function TelaCapitulo() {
   // Nunca abrir um painel de erro como tela inicial do aplicativo.
   if (!secao || !capitulo) {
     return <Redirect href="/" />;
+  }
+
+  if (!vooLiberado(secao.id, capitulo.numero, temAcesso)) {
+    return (
+      <Tela titulo={capitulo.titulo} rotulo={secao.titulo}>
+        <Assinatura titulo={capitulo.titulo} />
+      </Tela>
+    );
   }
 
   const pronto = disponivel(capitulo);

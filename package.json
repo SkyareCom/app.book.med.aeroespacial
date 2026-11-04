@@ -44,7 +44,16 @@
     "export:web": "expo export -p web",
     "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs",
     "auditar:midias": "tsx --require ./scripts/stub-assets.cjs scripts/auditar-midias.ts",
-    "traduzir": "node scripts/traduzir.cjs"
+    "traduzir": "node scripts/traduzir.cjs",
+    "build:android:teste": "npx eas-cli@latest build -p android --profile preview",
+    "build:android": "npx eas-cli@latest build -p android --profile production",
+    "enviar:android": "npx eas-cli@latest submit -p android --profile production",
+    "check:publicacao": "node scripts/check-publicacao.cjs",
+    "build:ios:teste": "npx eas-cli@latest build -p ios --profile preview",
+    "build:ios": "npx eas-cli@latest build -p ios --profile production",
+    "enviar:ios": "npx eas-cli@latest submit -p ios --profile production",
+    "build:todos": "npx eas-cli@latest build -p all --profile production",
+    "loja:ficha": "tsx --require ./scripts/stub-assets.cjs scripts/gerar-loja.ts"
   },
   "private": true
 }

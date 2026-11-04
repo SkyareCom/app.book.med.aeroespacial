@@ -41,6 +41,9 @@ jobs:
       - name: Gerar HTML de produção
         run: npm run export:web
 
+      - name: Conferir prontidão para Google Play e PWA
+        run: npm run check:publicacao
+
       - name: Conferir conteúdo e navegação exportados
         shell: bash
         run: |

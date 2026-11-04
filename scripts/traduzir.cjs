@@ -16,7 +16,7 @@ const path = require('path');
 const RAIZ = path.resolve(__dirname, '..');
 const IDIOMAS = ['en-US', 'es-ES'];
 const LOTE = 40;
-const IGNORAR = /^(<svg|eyJ|rotate\(|url\(|translate\(|Bearer|AppBookDisplay)|\/functions\//;
+const IGNORAR = /^(<svg|eyJ|rotate\(|url\(|translate\(|Bearer|AppBookDisplay|\(display-mode|IE=edge|X-UA-Compatible|Macintosh|body\{|if\('serviceWorker'|width=device-width)|\/functions\/|^\{0\}\/(auth|rest|icones|manifest)/;
 
 function servidor() {
   const s = fs.readFileSync(path.join(RAIZ, 'src/constants/servidor.ts'), 'utf8');
