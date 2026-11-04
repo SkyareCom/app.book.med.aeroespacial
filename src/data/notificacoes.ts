@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 16;
+export const VERSAO_NOTIFICACOES = 17;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'cerebro',
+    rotulo: 'Voo disponível',
+    titulo: 'Cérebro e sistema nervoso',
+    texto: 'O voo 6 da Missão Sistemas chegou: o cérebro em altitude e o ar preso no crânio, convulsão e epilepsia, desmaio, enxaqueca e o prazo de cada remédio, AVC e AIT, trauma e cirurgia da cabeça, Parkinson, esclerose múltipla e demência. O formulário de liberação ganhou o bloco neurológico.',
+    destino: '/capitulo/sistemas/6',
+  },
   {
     id: 'orientacao',
     rotulo: 'Voo disponível',
