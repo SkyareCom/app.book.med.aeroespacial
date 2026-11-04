@@ -18,10 +18,11 @@ import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-grafi
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
+import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
 import { AssentoEnjoo, CondutaDesorientacao, IlusaoPista, IlusaoSomatogravica, IlusoesLabirinto, LimiarInclinacao, TempoNuvem } from '@/components/midia/m2v5-graficos';
 import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -142,6 +143,14 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'tempo-nuvem': () => <TempoNuvem />,
   'conduta-desorientacao': () => <CondutaDesorientacao />,
   'assento-enjoo': () => <AssentoEnjoo />,
+  'animacao-ar-cranio': () => <AnimacaoArCranio />,
+  'gatilhos-cerebro': () => <GatilhosCerebro />,
+  'prazo-convulsao': () => <PrazoConvulsao />,
+  'desmaio-convulsao': () => <DesmaioConvulsao />,
+  'remedios-enxaqueca': () => <RemediosEnxaqueca />,
+  'prazo-avc': () => <PrazoAvc />,
+  'gravidade-tce': () => <GravidadeTce />,
+  'doencas-progressivas': () => <DoencasProgressivas />,
   'relogio-hormonal': () => <RelogioHormonal />,
   'direcao-jet-lag': () => <DirecaoJetLag />,
   'plano-jet-lag': () => <PlanoJetLag />,
@@ -249,6 +258,14 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'tempo-nuvem': 'Tempo até perder o controle',
   'conduta-desorientacao': 'O que sente, o que fazer',
   'assento-enjoo': 'Onde sentar para não enjoar',
+  'animacao-ar-cranio': 'Ar preso no crânio na subida',
+  'gatilhos-cerebro': 'Gatilhos do voo para o cérebro',
+  'prazo-convulsao': 'Voar depois de uma convulsão',
+  'desmaio-convulsao': 'Desmaio ou convulsão?',
+  'remedios-enxaqueca': 'Remédio de enxaqueca e prazo para voar',
+  'prazo-avc': 'Dias depois do AVC',
+  'gravidade-tce': 'Gravidade do trauma craniano',
+  'doencas-progressivas': 'Doenças do movimento e da memória',
   'relogio-hormonal': 'O relógio hormonal',
   'direcao-jet-lag': 'Leste ou oeste',
   'plano-jet-lag': 'Plano para o jet lag',

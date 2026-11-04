@@ -891,6 +891,45 @@ export function AnimacaoLabirinto() {
   );
 }
 
+// M2V6 · Ar no crânio: depois de cirurgia ou trauma, uma bolha de ar dentro da cabeça cresce na subida (Boyle, gás
+// saturado de vapor a 37 °C, como em laboratorios.tsx) e volta na descida. Cabine de 0 a 8.000 ft.
+export function AnimacaoArCranio() {
+  const c = useCiclo(14000);
+  const t = c.fase * 14;
+  const fase = t < 2 ? 0 : t < 6 ? 1 : t < 9 ? 2 : 3;
+  const ft = fase === 0 ? 0 : fase === 1 ? 8000 * suave((t - 2) / 4) : fase === 2 ? 8000 : 8000 * (1 - suave((t - 9) / 5));
+  const pb = pressaoBarometrica(ft);
+  const fator = (760 - 47) / (pb - 47);
+  const H = 210;
+  const titulo = ['NO SOLO: BOLHA DE AR NO CRÂNIO', 'SUBINDO: A BOLHA CRESCE', 'CABINE A 8.000 FT: CERCA DE 38% MAIOR', 'DESCENDO: A BOLHA VOLTA'][fase];
+  const cor = [Cores.textoSuave, Cores.dourado, Cores.erro, Cores.acerto][fase];
+  return (
+    <Quadro titulo="Ar preso no crânio na subida" instrucao="Esquema de uma cabeça vista de lado, depois de uma cirurgia, com uma bolha de ar entre o crânio e o cérebro. A cabine sobe até 8.000 ft e desce." ciclo={c} altura={H}>
+      {(w) => {
+        const R = Math.min(66, w * 0.2), cx = R + 22, cy = 112;
+        const r0 = R * 0.21, r = r0 * Math.cbrt(fator);
+        const bx = cx + 6, by = cy - R + 10 + r;
+        const aperto = (r - r0) * 1.4;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <Ellipse cx={cx} cy={cy} rx={R + 8} ry={R + 4} fill="#2A3442" stroke="#C9D4E0" strokeWidth={3} />
+            <Path d={`M ${cx - R + 6} ${cy} Q ${cx - R + 6} ${cy - R + 8 + aperto} ${cx} ${cy - R + 8 + aperto} Q ${cx + R - 6} ${cy - R + 8 + aperto} ${cx + R - 6} ${cy} Q ${cx + R - 10} ${cy + R - 8} ${cx} ${cy + R - 8} Q ${cx - R + 10} ${cy + R - 8} ${cx - R + 6} ${cy} Z`} fill="#C98B9A" fillOpacity={0.85} stroke="#8E5A68" strokeWidth={1.5} />
+            <Path d={`M ${cx - 30} ${cy - 10} q 12 -12 24 0 t 24 0 M ${cx - 36} ${cy + 18} q 14 -12 28 0 t 28 0`} stroke="#8E5A68" strokeWidth={1.5} fill="none" />
+            <Circle cx={bx} cy={by} r={r} fill="#9FD8FF" fillOpacity={0.75} stroke="#E8F6FF" strokeWidth={1.5} />
+            <SvgText x={10} y={18} fill={cor} fontSize={10} fontFamily={Fonte}>{titulo}</SvgText>
+            <SvgText x={w - 10} y={H / 2 - 8} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">CABINE</SvgText>
+            <SvgText x={w - 10} y={H / 2 + 8} fill={Cores.destaque} fontSize={13} fontFamily={Fonte} textAnchor="end">{`${fmt(ft / 1000, 1)} MIL FT`}</SvgText>
+            <SvgText x={w - 10} y={H / 2 + 30} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">BOLHA</SvgText>
+            <SvgText x={w - 10} y={H / 2 + 46} fill={cor} fontSize={13} fontFamily={Fonte} textAnchor="end">{`+${fmt((fator - 1) * 100)}%`}</SvgText>
+            <SvgText x={10} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>AZUL: AR · ROSA: CÉREBRO</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
