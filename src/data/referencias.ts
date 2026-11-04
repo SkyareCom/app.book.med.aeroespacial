@@ -17,7 +17,7 @@ export const obras: Referencia[] = [
 export const normas: Referencia[] = [
   { titulo: 'ICAO', detalhe: 'Organização da Aviação Civil Internacional: Anexo 1 (licenças, Capítulo 6), Anexo 6 (gerenciamento da fadiga), Doc 8984 (Manual de Medicina da Aviação Civil) e Doc 9966 (Manual do FRMS)' },
   { titulo: 'ANAC', detalhe: 'Agência Nacional de Aviação Civil (Brasil): RBAC 67 (certificação médica), RBAC 25 e RBAC 120' },
-  { titulo: 'FAA', detalhe: 'Administração Federal de Aviação dos EUA: 14 CFR Partes 25, 61, 67 e 117, Guia do Examinador Médico (AME), AC 120-100 (fadiga) e publicações do CAMI' },
+  { titulo: 'FAA', detalhe: 'Administração Federal de Aviação dos EUA: 14 CFR Partes 25, 61, 67 e 117, Guia do Examinador Médico (AME), AC 120-100 (fadiga), Manual de Informação Aeronáutica (AIM) e publicações do CAMI' },
   { titulo: 'EASA', detalhe: 'Agência Europeia para a Segurança da Aviação' },
   { titulo: 'CAA da Nova Zelândia', detalhe: 'Manual médico da autoridade de aviação civil (sistema respiratório)' },
   { titulo: 'NASA', detalhe: 'Agência espacial dos EUA (tolerância humana à aceleração)' },
@@ -40,6 +40,8 @@ export const diretrizes: Referencia[] = [
   { titulo: 'CANSO, ICAO e IFATCA', detalhe: 'Guia de gerenciamento da fadiga para serviços de tráfego aéreo (2016)' },
   { titulo: 'NIH', detalhe: 'Instituto Nacional de Ciências Médicas Gerais dos EUA (NIGMS): ritmos circadianos' },
   { titulo: 'IATA', detalhe: 'Associação Internacional de Transporte Aéreo: Medical Manual, passageiros com trombose recente (citado pelo CDC)' },
+  { titulo: 'British Dental Journal', detalhe: 'Felkai et al., 2023: turismo odontológico, barotrauma e barodontalgia, com prazos para voar depois do dentista' },
+  { titulo: 'PeerJ', detalhe: 'Topbaş et al., 2024: barodontalgia em pilotos e a classificação de Ferjentsik e Aker' },
   { titulo: 'Leproult e Van Cauter', detalhe: 'Revisão sobre sono, perda de sono, hormônios e metabolismo (Endocrine Development, 2010)' },
   { titulo: 'Companhias aéreas', detalhe: 'Formulário médico de passageiros (MEDIF) e regras de oxigênio e aparelhos a bordo' },
 ];

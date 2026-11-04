@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 13;
+export const VERSAO_NOTIFICACOES = 14;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'ouvidos',
+    rotulo: 'Voo disponível',
+    titulo: 'Ouvidos, seios da face e dentes',
+    texto: 'O voo 3 da Missão Sistemas chegou: por que o ouvido dói na descida, barotrauma, cirurgias do ouvido e vertigem, audição nas três normas, sinusite e quanto esperar para voar depois do dentista. O formulário de liberação ganhou o bloco dos ouvidos, seios e dentes.',
+    destino: '/capitulo/sistemas/3',
+  },
   {
     id: 'sono',
     rotulo: 'Voo disponível',
