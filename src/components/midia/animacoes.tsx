@@ -751,6 +751,58 @@ export function AnimacaoMapaJetLag() {
   );
 }
 
+// ---------------------------------------------------------------- M2V3 · O ouvido na subida e na descida
+// Esquema (ICAO Doc 8984 Part III 12.4.3–12.4.4): a tuba auditiva funciona como válvula de uma via; na subida o ar sai
+// sozinho; na descida a ponta da tuba fica fechada e o ar só entra quando a pessoa engole, boceja ou faz a Valsalva.
+export function AnimacaoOuvido() {
+  const c = useCiclo(15000);
+  const fase = c.fase < 1 / 3 ? 0 : c.fase < 2 / 3 ? 1 : 2;
+  const local = (c.fase * 3) % 1;
+  const H = 200;
+  const titulo = ['SUBIDA: O AR SAI SOZINHO', 'DESCIDA: A TUBA FICA FECHADA', 'ENGOLIR ABRE A TUBA: O AR ENTRA'][fase];
+  const rodape = ['O TÍMPANO ESTUFA PARA FORA E VOLTA', 'O TÍMPANO É PUXADO PARA DENTRO: DOR E OUVIDO CHEIO', 'A PRESSÃO SE IGUALA E O TÍMPANO VOLTA AO LUGAR'][fase];
+  const cor = fase === 1 ? Cores.erro : fase === 2 ? Cores.acerto : Cores.dourado;
+  const curva = fase === 0 ? -14 * Math.sin(local * Math.PI) : fase === 1 ? 16 * Math.min(1, local * 2) : 16 * Math.max(0, 1 - local * 1.6);
+  return (
+    <Quadro titulo="O ouvido na subida e na descida" instrucao="Esquema: o canal do ouvido à esquerda, o tímpano, o ouvido médio e a tuba auditiva que desce até o nariz. A cada 5 segundos, a cena passa da subida para a descida e para o gesto de engolir." ciclo={c} altura={H}>
+      {(w) => {
+        const xt = w * 0.36, yt = 52, yb = 132, ym = (yt + yb) / 2;
+        const cx = w * 0.53, cy = ym;
+        const nx = w * 0.86, ny = H - 46;
+        const tubo = `M ${cx + 26} ${cy + 22} Q ${w * 0.72} ${cy + 30} ${nx} ${ny}`;
+        const ponto = (u: number) => {
+          const x0 = cx + 26, y0 = cy + 22, x1 = w * 0.72, y1 = cy + 30;
+          return [(1 - u) * (1 - u) * x0 + 2 * (1 - u) * u * x1 + u * u * nx, (1 - u) * (1 - u) * y0 + 2 * (1 - u) * u * y1 + u * u * ny];
+        };
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <Rect x={10} y={ym - 14} width={xt - 10} height={28} fill="#1E2C40" />
+            <Ellipse cx={cx} cy={cy} rx={w * 0.15} ry={46} fill="#1E2C40" stroke="#3D6A96" strokeWidth={1} />
+            <Path d={tubo} stroke={fase === 1 ? Cores.erro : '#3D6A96'} strokeWidth={10} fill="none" strokeLinecap="round" />
+            <Rect x={nx - 22} y={ny} width={44} height={22} rx={6} fill="#1E2C40" stroke="#3D6A96" strokeWidth={1} />
+            {fase === 1 ? <Line x1={nx - 8} y1={ny - 8} x2={nx + 8} y2={ny + 8} stroke={Cores.erro} strokeWidth={3} /> : null}
+            {fase === 1 ? <Line x1={nx + 8} y1={ny - 8} x2={nx - 8} y2={ny + 8} stroke={Cores.erro} strokeWidth={3} /> : null}
+            {fase !== 1
+              ? Array.from({ length: 4 }, (_, k) => {
+                  const u = (local + k / 4) % 1;
+                  const [x, y] = ponto(fase === 0 ? u : 1 - u);
+                  return <Circle key={k} cx={x} cy={y} r={3.5} fill="#7FA8FF" />;
+                })
+              : null}
+            <Path d={`M ${xt} ${yt} Q ${xt + curva * 2} ${ym} ${xt} ${yb}`} stroke={cor} strokeWidth={4} fill="none" />
+            <SvgText x={12} y={ym + 30} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte}>CANAL</SvgText>
+            <SvgText x={cx} y={cy - 52} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">OUVIDO MÉDIO</SvgText>
+            <SvgText x={nx} y={ny + 34} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">NARIZ</SvgText>
+            <SvgText x={10} y={18} fill={cor} fontSize={11} fontFamily={Fonte}>{titulo}</SvgText>
+            <SvgText x={10} y={H - 8} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>{rodape}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
