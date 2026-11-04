@@ -71,13 +71,14 @@ const MARCOS: { km: number; rotulo: string; cor: string }[] = [
 const TEMPERATURAS: [number, string][] = [[0, '15 °C'], [12, '−56,5 °C'], [50, '0 °C'], [85, '−86 °C'], [520, '+1.000 °C']];
 
 // Texto sobre a foto com uma tarja escura atrás, para ler bem em qualquer faixa do céu.
+// 04/11/2026: tarja mais opaca, para a linha tracejada do limite não cruzar as temperaturas.
 function Rotulo({ x, y, texto, cor, tam = 10, fim = false }: { x: number; y: number; texto: string; cor: string; tam?: number; fim?: boolean }) {
   const w = texto.length * tam * 0.5 + 12;
   const h = tam + 5;
   const x0 = fim ? x - w + 6 : x - 6;
   return (
     <G>
-      <Rect x={x0} y={y - h / 2} width={w} height={h} rx={h / 2} fill="#03050A" fillOpacity={0.62} />
+      <Rect x={x0} y={y - h / 2} width={w} height={h} rx={h / 2} fill="#03050A" fillOpacity={0.9} />
       <SvgText x={x} y={y + tam * 0.36} fill={cor} fontSize={tam} fontFamily={Fonte} textAnchor={fim ? 'end' : 'start'}>{texto}</SvgText>
     </G>
   );
