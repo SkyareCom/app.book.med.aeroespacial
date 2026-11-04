@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 15;
+export const VERSAO_NOTIFICACOES = 16;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'orientacao',
+    rotulo: 'Voo disponível',
+    titulo: 'Labirinto e orientação espacial',
+    texto: 'O voo 5 da Missão Sistemas chegou: como o corpo sabe onde está, as ilusões do labirinto e da pista, a desorientação espacial e os 178 segundos na nuvem, prevenção e treino, enjoo de movimento e seus remédios. O formulário de liberação ganhou o bloco da orientação.',
+    destino: '/capitulo/sistemas/5',
+  },
   {
     id: 'olhos',
     rotulo: 'Voo disponível',

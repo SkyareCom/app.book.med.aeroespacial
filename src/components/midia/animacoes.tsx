@@ -848,6 +848,49 @@ export function AnimacaoVarredura() {
   );
 }
 
+// ---------------------------------------------------------------- M2V5 · O labirinto na curva
+// ICAO Doc 8984 Part II 1.7.4 e 1.7.7; FAA Airman Education (10 a 20 s de rotação constante). Ciclo de 16 s: entrada na
+// curva (o líquido fica para trás e a cúpula dobra), curva constante (o líquido acompanha e a sensação some), saída (o
+// líquido continua e a cúpula dobra para o outro lado) e repouso. O tempo da curva está comprimido.
+export function AnimacaoLabirinto() {
+  const c = useCiclo(16000);
+  const t = c.fase * 16;
+  const fase = t < 3 ? 0 : t < 8 ? 1 : t < 12 ? 2 : 3;
+  const local = fase === 0 ? t / 3 : fase === 1 ? (t - 3) / 5 : fase === 2 ? (t - 8) / 4 : (t - 12) / 4;
+  // giro do canal (a cabeça), em graus acumulados
+  const canal = t < 3 ? 40 * t * t / 6 : t < 8 ? 30 + 40 * (t - 3) : 230;
+  const atraso = fase === 0 ? 28 * suave(local) : fase === 1 ? 28 * (1 - suave(local)) : fase === 2 ? -28 * Math.sin(Math.PI * Math.min(1, local * 1.2)) : 0;
+  const dobra = fase === 0 ? 1 * suave(local) : fase === 1 ? 1 - suave(local) : fase === 2 ? -Math.sin(Math.PI * Math.min(1, local * 1.2)) : 0;
+  const H = 200;
+  const titulo = ['ENTRANDO NA CURVA: SENTE O GIRO', 'CURVA CONSTANTE: A SENSAÇÃO SOME', 'NIVELANDO: SENTE CURVA AO CONTRÁRIO', 'PARADO: O LÍQUIDO ASSENTA'][fase];
+  const cor = [Cores.acerto, Cores.dourado, Cores.erro, Cores.textoSuave][fase];
+  return (
+    <Quadro titulo="O labirinto numa curva" instrucao="Esquema de um canal semicircular visto de cima: o anel gira com a cabeça e o líquido, com a cúpula, fica para trás. A cena passa pela entrada na curva, pela curva constante e pela saída." ciclo={c} altura={H}>
+      {(w) => {
+        const cx = w * 0.5, cy = 104, r = 56;
+        const a = ((canal - 90) * Math.PI) / 180;
+        const px = cx + r * Math.cos(a), py = cy + r * Math.sin(a);
+        const af = ((canal - 90 - atraso) * Math.PI) / 180;
+        const qx = cx + (r - 2) * Math.cos(af), qy = cy + (r - 2) * Math.sin(af);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <Circle cx={cx} cy={cy} r={r} fill="none" stroke="#3D6A96" strokeWidth={16} />
+            <Circle cx={cx} cy={cy} r={r} fill="none" stroke="#4A8CFF" strokeOpacity={0.35} strokeWidth={10} />
+            <Circle cx={qx} cy={qy} r={5} fill="#7FA8FF" />
+            <G rotation={canal} origin={`${cx}, ${cy}`}>
+              <Line x1={cx} y1={cy - r - 9} x2={cx + dobra * 12} y2={cy - r + 9} stroke={cor} strokeWidth={4} strokeLinecap="round" />
+            </G>
+            <Circle cx={px} cy={py} r={2} fill={cor} />
+            <SvgText x={10} y={18} fill={cor} fontSize={10} fontFamily={Fonte}>{titulo}</SvgText>
+            <SvgText x={10} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>{fase === 1 ? 'NA VIDA REAL, DEPOIS DE 10 A 20 S' : 'TRAÇO: CÚPULA · PONTO AZUL: LÍQUIDO'}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

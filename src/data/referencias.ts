@@ -17,7 +17,7 @@ export const obras: Referencia[] = [
 export const normas: Referencia[] = [
   { titulo: 'ICAO', detalhe: 'Organização da Aviação Civil Internacional: Anexo 1 (licenças, Capítulo 6), Anexo 6 (gerenciamento da fadiga), Doc 8984 (Manual de Medicina da Aviação Civil) e Doc 9966 (Manual do FRMS)' },
   { titulo: 'ANAC', detalhe: 'Agência Nacional de Aviação Civil (Brasil): RBAC 67 (certificação médica), RBAC 25 e RBAC 120' },
-  { titulo: 'FAA', detalhe: 'Administração Federal de Aviação dos EUA: 14 CFR Partes 25, 61, 67 e 117, Guia do Examinador Médico (AME), AC 120-100 (fadiga), Manual de Informação Aeronáutica (AIM), AC 70-2B e Ordem JO 7400.2 (laser), Airplane Flying Handbook e publicações do CAMI (visão do piloto, óculos de sol)' },
+  { titulo: 'FAA', detalhe: 'Administração Federal de Aviação dos EUA: 14 CFR Partes 25, 61, 67 e 117, Guia do Examinador Médico (AME), AC 120-100 (fadiga), Manual de Informação Aeronáutica (AIM), AC 70-2B e Ordem JO 7400.2 (laser), Airplane Flying Handbook, AC 60-4A (desorientação espacial), guia de remédios sem receita para pilotos e publicações do CAMI (visão do piloto, óculos de sol, desorientação espacial)' },
   { titulo: 'EASA', detalhe: 'Agência Europeia para a Segurança da Aviação' },
   { titulo: 'CAA da Nova Zelândia', detalhe: 'Manual médico da autoridade de aviação civil (sistema respiratório)' },
   { titulo: 'NASA', detalhe: 'Agência espacial dos EUA (tolerância humana à aceleração)' },
@@ -37,7 +37,7 @@ export const normas: Referencia[] = [
 // Diretrizes médicas e de saúde do viajante usadas para passageiros (02/11/2026).
 export const diretrizes: Referencia[] = [
   { titulo: 'British Thoracic Society', detalhe: 'Declaração clínica sobre viagem aérea de passageiros com doença respiratória (Thorax, 2022)' },
-  { titulo: 'CDC', detalhe: 'Centros de Controle e Prevenção de Doenças dos EUA: Yellow Book, viagem à altitude, mal da altitude, trombose em viajantes e jet lag' },
+  { titulo: 'CDC', detalhe: 'Centros de Controle e Prevenção de Doenças dos EUA: Yellow Book, viagem à altitude, mal da altitude, trombose em viajantes, jet lag e enjoo de movimento' },
   { titulo: 'UK Civil Aviation Authority', detalhe: 'Autoridade de aviação civil do Reino Unido: orientação a profissionais de saúde sobre passageiros com doença cardiovascular e orientação a examinadores depois de cirurgia dos olhos' },
   { titulo: 'CANSO, ICAO e IFATCA', detalhe: 'Guia de gerenciamento da fadiga para serviços de tráfego aéreo (2016)' },
   { titulo: 'NIH', detalhe: 'Instituto Nacional de Ciências Médicas Gerais dos EUA (NIGMS): ritmos circadianos' },
@@ -45,6 +45,7 @@ export const diretrizes: Referencia[] = [
   { titulo: 'British Dental Journal', detalhe: 'Felkai et al., 2023: turismo odontológico, barotrauma e barodontalgia, com prazos para voar depois do dentista' },
   { titulo: 'PeerJ', detalhe: 'Topbaş et al., 2024: barodontalgia em pilotos e a classificação de Ferjentsik e Aker' },
   { titulo: 'Aviation, Space, and Environmental Medicine', detalhe: 'Houston, Graf e Sharkey, 2012: viagem aérea depois de gás injetado no olho' },
+  { titulo: 'AOPA', detalhe: 'Associação de proprietários e pilotos de aeronaves (EUA): artigo sobre o estudo de 1954 da Universidade de Illinois, pilotos sem treino de instrumentos em tempo simulado' },
   { titulo: 'IEEE Transactions on Visualization and Computer Graphics', detalhe: 'Machado, Oliveira e Fernandes, 2009: modelo para simular a visão com defeito de cores' },
   { titulo: 'Leproult e Van Cauter', detalhe: 'Revisão sobre sono, perda de sono, hormônios e metabolismo (Endocrine Development, 2010)' },
   { titulo: 'Companhias aéreas', detalhe: 'Formulário médico de passageiros (MEDIF) e regras de oxigênio e aparelhos a bordo' },
