@@ -18,8 +18,9 @@ import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-grafi
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
+import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -123,6 +124,15 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'mapa-seios': () => <MapaSeios />,
   'classes-barodontalgia': () => <ClassesBarodontalgia />,
   'prazo-dentista': () => <PrazoDentista />,
+  'animacao-varredura': () => <AnimacaoVarredura />,
+  'uv-altitude': () => <UvAltitude />,
+  'acuidade-normas': () => <AcuidadeNormas />,
+  'ponto-cego-noturno': () => <PontoCegoNoturno />,
+  'campo-visual': () => <CampoVisual />,
+  'papi-cores': () => <PapiCores />,
+  'zonas-laser': () => <ZonasLaser />,
+  'colirios-voo': () => <ColiriosVoo />,
+  'prazo-cirurgia-olho': () => <PrazoCirurgiaOlho />,
   'relogio-hormonal': () => <RelogioHormonal />,
   'direcao-jet-lag': () => <DirecaoJetLag />,
   'plano-jet-lag': () => <PlanoJetLag />,
@@ -213,6 +223,15 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'mapa-seios': 'Seios da face',
   'classes-barodontalgia': 'Dor de dente no voo',
   'prazo-dentista': 'Voar depois do dentista',
+  'animacao-varredura': 'A varredura do céu',
+  'uv-altitude': 'UV e luz azul',
+  'acuidade-normas': 'Acuidade nas três normas',
+  'ponto-cego-noturno': 'Ponto cego noturno',
+  'campo-visual': 'Campo de visão',
+  'papi-cores': 'PAPI e visão de cores',
+  'zonas-laser': 'Zonas contra laser',
+  'colirios-voo': 'Colírios e voo',
+  'prazo-cirurgia-olho': 'Voar depois de operar os olhos',
   'relogio-hormonal': 'O relógio hormonal',
   'direcao-jet-lag': 'Leste ou oeste',
   'plano-jet-lag': 'Plano para o jet lag',

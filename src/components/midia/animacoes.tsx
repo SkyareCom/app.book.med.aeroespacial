@@ -803,6 +803,51 @@ export function AnimacaoOuvido() {
   );
 }
 
+// ---------------------------------------------------------------- M2V4 · Varredura visual
+// FAA (Pilot Vision; AIM, Fitness for Flight): movimentos de até 10°, ao menos 1 s em cada área; cerca de 4–5 s no painel
+// para cada 16 s fora. Ciclo de 20 s: 12 setores de 10° em 16 s (1,33 s cada) e 4 s no painel.
+export function AnimacaoVarredura() {
+  const c = useCiclo(20000);
+  const t = c.fase * 20;
+  const fora = t < 16;
+  const setor = Math.min(11, Math.floor(t / (16 / 12)));
+  const alvo = 8;
+  const visto = fora && setor >= alvo;
+  const H = 190;
+  return (
+    <Quadro titulo="A varredura do céu" instrucao="Vista do para-brisa: o círculo é onde o olho foca. Ele salta de 10° em 10°, para em cada setor e, no fim, olha o painel. O ponto à direita é outro avião." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 14, x1 = w - 14, larg = (x1 - x0) / 12;
+        const hy = 96;
+        const fx = fora ? x0 + larg * (setor + 0.5) : w / 2;
+        const fy = fora ? hy - 18 : H - 30;
+        const ax = x0 + larg * (alvo + 0.5) + 4, ay = hy - 26;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#2E5C8A" />
+            <Rect x={0} y={hy} width={w} height={H - hy} fill="#3B5A3A" />
+            <Rect x={0} y={H - 48} width={w} height={48} fill="#141E2B" />
+            {Array.from({ length: 13 }, (_, i) => (
+              <Line key={i} x1={x0 + larg * i} y1={24} x2={x0 + larg * i} y2={hy} stroke="#FFFFFF" strokeOpacity={0.18} strokeDasharray="2 4" />
+            ))}
+            {fora && Array.from({ length: setor + 1 }, (_, i) => (
+              <Rect key={`v${i}`} x={x0 + larg * i} y={24} width={larg} height={hy - 24} fill="#FFFFFF" opacity={0.06} />
+            ))}
+            <Circle cx={ax} cy={ay} r={2.2} fill={visto ? Cores.dourado : '#DDE6F0'} />
+            {visto ? <Circle cx={ax} cy={ay} r={8} fill="none" stroke={Cores.dourado} strokeWidth={1.5} /> : null}
+            {[0.2, 0.4, 0.6, 0.8].map((p) => (
+              <Rect key={p} x={w * p - 14} y={H - 38} width={28} height={20} rx={3} fill="#22334A" stroke="#3D6A96" />
+            ))}
+            <Circle cx={fx} cy={fy} r={Math.max(10, larg * 0.45)} fill="none" stroke={fora ? '#FFFFFF' : Cores.dourado} strokeWidth={2} />
+            <SvgText x={10} y={16} fill={fora ? '#FFFFFF' : Cores.dourado} fontSize={10} fontFamily={Fonte}>{fora ? `FORA: SETOR ${setor + 1} DE 12 · 10° · 1 S` : 'PAINEL: CERCA DE 4 S'}</SvgText>
+            <SvgText x={w - 10} y={16} fill={visto ? Cores.dourado : '#C9D4E0'} fontSize={10} fontFamily={Fonte} textAnchor="end">{visto ? 'TRÁFEGO À VISTA' : fora ? 'PROCURANDO' : ''}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 14;
+export const VERSAO_NOTIFICACOES = 15;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'olhos',
+    rotulo: 'Voo disponível',
+    titulo: 'Olhos e visão',
+    texto: 'O voo 4 da Missão Sistemas chegou: a visão em altitude, acuidade e óculos nas três normas, visão noturna, varredura do céu, visão de cores, lasers e óculos de sol, doenças e colírios, e quanto esperar para voar depois de operar os olhos. O formulário de liberação ganhou o bloco dos olhos.',
+    destino: '/capitulo/sistemas/4',
+  },
   {
     id: 'ouvidos',
     rotulo: 'Voo disponível',
