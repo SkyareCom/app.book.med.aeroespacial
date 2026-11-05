@@ -134,7 +134,14 @@ export type TipoMidia =
   | 'cochilo-cafeina'
   | 'prolapso-mitral'
   | 'nyha-oxigenio'
-  | 'risco-trombose';
+  | 'risco-trombose'
+  | 'digestivo-voo'
+  | 'refluxo-voo'
+  | 'intestino-crise'
+  | 'figado-risco'
+  | 'biliar-decidir'
+  | 'prazo-cirurgia-digestiva'
+  | 'animacao-gas-intestinal';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.
