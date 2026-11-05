@@ -21,10 +21,18 @@ Foram recebidas nesta conversa **11 fotografias cinematográficas**. Conferidas 
 
 **Atenção:** os 11 arquivos binários tratados encontram-se no pacote de trabalho gerado no ChatGPT, mas **não estão enviados ao GitHub**. A ligação pelo campo `figura` / `require()` só deve ser introduzida depois da inclusão real desses binários em `assets/images/topicos/`; caso contrário a compilação quebrará.
 
+## Vídeo recebido e tratado
+
+- Arquivo recebido nesta conversa: `182690.mp4`.
+- Visual: passageira fictícia na cabine, passando de leve desconforto abdominal à recuperação; sem letreiros, logotipos ou insígnias relevantes.
+- Entrada: 1280 × 720, 24 fps, 10,0267 s, com áudio AAC.
+- Saída tratada: `m2v10-gas-cabine.mp4`, **8,000 s, 1280 × 720, H.264, yuv420p, áudio removido, `+faststart`**.
+- O binário final está no pacote de trabalho gerado nesta conversa. **Não está integrado ao GitHub**, pois a transferência de binários a partir do ambiente de processamento não está disponível aqui.
+
 ## Pendências de mídia
 
 - A 12ª foto, `m2v10-3-acompanhamento.jpg`.
-- Vídeo silencioso de 8 s, `m2v10-gas-cabine.mp4`.
-- Transferir binários, inserir `figura` e `video` nos `recursos`, conferir alternância por parágrafo e rodar a auditoria de mídias.
+- Transferir ao GitHub o vídeo já recebido/tratado, `m2v10-gas-cabine.mp4`.
+- Transferir 11 fotografias e o vídeo tratados, mais a 12ª foto quando recebida; então inserir `figura` e `video` nos `recursos`, conferir alternância por parágrafo e rodar a auditoria de mídias.
 
 Não mover o ramo para `main` nem publicar até a conclusão integral das verificações.
