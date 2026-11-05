@@ -209,11 +209,16 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
     "pergunta": "Como estão a vesícula e o pâncreas?",
     "opcoes": [
       {
-        "rotulo": "Sem doença ou sem sintomas de cálculo conhecido",
+        "rotulo": "Não tenho doença biliar ou pancreática",
+        "passageiro": { "nivel": "liberado", "leigo": "", "medico": "" },
+        "tripulante": { "nivel": "liberado", "leigo": "", "medico": "" }
+      },
+      {
+        "rotulo": "Tenho cálculo biliar sem sintomas",
         "passageiro": {
-          "nivel": "liberado",
-          "leigo": "",
-          "medico": "",
+          "nivel": "cuidados",
+          "leigo": "Converse com o médico sobre o cálculo antes de viajar.",
+          "medico": "Confirmar ausência de sintomas, obstrução ou inflamação.",
           "topico": "10.5"
         },
         "tripulante": {
