@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 19;
+export const VERSAO_NOTIFICACOES = 20;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'digestivo',
+    rotulo: 'Voo disponível',
+    titulo: 'Estômago, intestino e fígado',
+    texto: 'O voo 10 da Missão Sistemas apresenta a digestão na cabine, refluxo e úlcera, crises intestinais, doença do fígado, vesícula e pâncreas, cirurgias abdominais e prazos distintos para passageiros e tripulantes. O formulário de liberação ganhou o bloco digestivo.',
+    destino: '/capitulo/sistemas/10',
+  },
   {
     id: 'hormonios',
     rotulo: 'Voo disponível',
