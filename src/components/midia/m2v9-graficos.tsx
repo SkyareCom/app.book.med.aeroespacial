@@ -188,7 +188,7 @@ export function TireoideVoo() {
   const k = CASOS[c];
   return (
     <MolduraMidia tipo="Comparador" titulo="Tireoide e voo" instrucao="Escolha a situação para ver o que muda para o tripulante e para o passageiro.">
-      <Opcoes itens={(Object.keys(CASOS) as Caso[]).map((x) => [x, CASOS[x].nome] as [Caso, string])} valor={c} onChange={setC} colunas={2} />
+      <Opcoes itens={(Object.keys(CASOS) as Caso[]).map((x) => [x, CASOS[x].nome] as [Caso, string])} valor={c} onChange={setC} colunas={1} />
       <View style={{ gap: 4 }}>
         <Texto t="rotulo" cor={Cores.textoApagado}>Tripulante</Texto>
         <Marca cor={k.grave ? Cores.erro : Cores.acerto}>{k.tripulante}</Marca>
