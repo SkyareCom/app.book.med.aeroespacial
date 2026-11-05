@@ -210,8 +210,16 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
     "opcoes": [
       {
         "rotulo": "Não tenho doença biliar ou pancreática",
-        "passageiro": { "nivel": "liberado", "leigo": "", "medico": "" },
-        "tripulante": { "nivel": "liberado", "leigo": "", "medico": "" }
+        "passageiro": {
+          "nivel": "liberado",
+          "leigo": "",
+          "medico": ""
+        },
+        "tripulante": {
+          "nivel": "liberado",
+          "leigo": "",
+          "medico": ""
+        }
       },
       {
         "rotulo": "Tenho cálculo biliar sem sintomas",
@@ -241,6 +249,56 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
           "leigo": "Não assuma o voo antes de tratar e ser reavaliado.",
           "medico": "EASA MED.B.020: pancreatite ativa e litíase sintomática; RBAC 67.83/67.123.",
           "topico": "10.5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "digestivo-hernia-obstrucao",
+    "pergunta": "Tem hérnia abdominal com sintomas ou suspeita de obstrução intestinal?",
+    "ajuda": "Dor intensa com hérnia endurecida, vômitos e distensão progressiva exigem atendimento urgente.",
+    "opcoes": [
+      {
+        "rotulo": "Não",
+        "passageiro": {
+          "nivel": "liberado",
+          "leigo": "",
+          "medico": ""
+        },
+        "tripulante": {
+          "nivel": "liberado",
+          "leigo": "",
+          "medico": ""
+        }
+      },
+      {
+        "rotulo": "Tenho hérnia sem dor ou sintomas",
+        "passageiro": {
+          "nivel": "cuidados",
+          "leigo": "Converse com o médico se houver aumento de volume ou desconforto.",
+          "medico": "Avaliar tamanho e risco de encarceramento antes de voos longos.",
+          "topico": "10.6"
+        },
+        "tripulante": {
+          "nivel": "avaliar",
+          "leigo": "Informe a hérnia ao examinador aeromédico para avaliar o risco de incapacidade.",
+          "medico": "RBAC 67.83(a)(2) e 67.123(a)(2): hérnia com risco de sintomas incapacitantes.",
+          "topico": "10.6"
+        }
+      },
+      {
+        "rotulo": "Tenho dor forte, hérnia que não reduz, vômitos ou distensão progressiva",
+        "passageiro": {
+          "nivel": "nao-voar",
+          "leigo": "Não embarque; pode ser uma obstrução ou hérnia estrangulada. Procure urgência.",
+          "medico": "Investigar encarceramento, isquemia, obstrução e complicações cirúrgicas.",
+          "topico": "10.6"
+        },
+        "tripulante": {
+          "nivel": "nao-voar",
+          "leigo": "Não assuma função; procure urgência e informe o examinador.",
+          "medico": "RBAC 67.83/67.123: risco imediato de incapacitação por obstrução e dor.",
+          "topico": "10.6"
         }
       }
     ]
