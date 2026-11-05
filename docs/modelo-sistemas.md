@@ -58,6 +58,11 @@ dica que contradiz ou extrapola a fonte não entra.
 
 Prazos sem fonte primária ficam "[confirmar na referência]". Nunca estimar um prazo.
 
+**Coluna "Quem é mais vulnerável" (05/11/2026, pedido do autor).** Em todo o app, e em qualquer coluna, tabela ou
+interativo com a mesma função (quem corre mais risco, quem sofre mais), cada célula traz o grupo e, depois de dois-pontos,
+o **motivo fisiológico ou metabólico** de ele ser mais atingido (ex.: "Diabetes descontrolado: o açúcar acima do que o rim
+segura sai na urina e puxa água junto; somado ao ar seco, desidrata"). A remissão "(Veja M_V_ - romano)" fica no fim.
+
 ## 3. Fontes por leitor
 
 - **Tripulante:** ANAC, RBAC 67 (Emenda vigente); FAA, 14 CFR Part 67, 14 CFR 61.53 e Guide for Aviation Medical
