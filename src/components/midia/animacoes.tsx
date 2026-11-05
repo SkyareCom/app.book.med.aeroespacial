@@ -970,6 +970,51 @@ export function AnimacaoAntidepressivo() {
   );
 }
 
+// M2V9 · Bomba de insulina na subida e na descida (King et al., Diabetes Care 2011; Boyle, M1V1 - II): a cabine vai do
+// solo a 8.000 ft, a bolha do reservatório cresce e empurra cerca de 1 a 1,4 unidade a mais; na descida, a bolha encolhe e
+// a bomba entrega quase 1 unidade a menos. Tamanho da bolha pela pressão barométrica; esquema sem escala de tempo real.
+export function AnimacaoBombaInsulina() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  // 0–0,3 subida; 0,3–0,6 cruzeiro; 0,6–0,9 descida; 0,9–1 solo.
+  const alt = t < 0.3 ? suave(t / 0.3) : t < 0.6 ? 1 : t < 0.9 ? 1 - suave((t - 0.6) / 0.3) : 0;
+  const ft = alt * 8000;
+  const vol = 760 / pressaoBarometrica(ft);
+  const fase = t < 0.3 ? 'SUBIDA: A BOLHA CRESCE E EMPURRA INSULINA A MAIS' : t < 0.6 ? 'CRUZEIRO: RECONECTAR SEM BOLHAS' : t < 0.9 ? 'DESCIDA: A BOLHA ENCOLHE E A DOSE CAI' : 'SOLO: PREENCHER O CATETER ANTES DE RECONECTAR';
+  const cor = t < 0.3 ? Cores.erro : t < 0.6 ? Cores.acerto : t < 0.9 ? Cores.dourado : Cores.textoSuave;
+  const extra = t < 0.3 ? '+1 A 1,4 U' : t < 0.6 ? '' : t < 0.9 ? 'QUASE −1 U' : '';
+  const H = 170;
+  return (
+    <Quadro titulo="A bomba de insulina no voo" instrucao="Esquema: a cabine sobe a 8.000 ft e a bolha do reservatório cresce (lei de Boyle). Na descida, encolhe." ciclo={c} altura={H}>
+      {(w) => {
+        const rx = 24, ry = 54, rw = Math.min(170, w - 130), rh = 40;
+        // Raio exagerado para ver a mudança (esquema); o rodapé mostra o volume real pela lei de Boyle.
+        const r = 7 * vol * vol;
+        const bx = rx + 12 + r;
+        const gx = w - 62, gy0 = 128, gy1 = 52;
+        const gy = gy0 - alt * (gy0 - gy1);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{fase}</SvgText>
+            <Rect x={rx} y={ry} width={rw} height={rh} rx={8} fill="none" stroke={Cores.textoSuave} strokeWidth={1.5} />
+            <Rect x={rx + 4} y={ry + 4} width={rw - 8} height={rh - 8} rx={5} fill={Cores.destaque} fillOpacity={0.25} />
+            <Circle cx={bx} cy={ry + rh / 2} r={r} fill="#0A1626" stroke={Cores.texto} strokeWidth={1.2} />
+            <Line x1={rx + rw} y1={ry + rh / 2} x2={rx + rw + 26} y2={ry + rh / 2} stroke={Cores.textoSuave} strokeWidth={2} />
+            <SvgText x={rx + rw + 30} y={ry + rh / 2 + 4} fill={cor} fontSize={11} fontFamily={Fonte}>{extra}</SvgText>
+            <SvgText x={rx} y={ry + rh + 18} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>RESERVATÓRIO</SvgText>
+            <Line x1={gx} y1={gy0} x2={gx} y2={gy1} stroke={Cores.linha} strokeWidth={2} />
+            <Circle cx={gx} cy={gy} r={5} fill={cor} />
+            <SvgText x={gx + 10} y={gy1 + 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>8.000 FT</SvgText>
+            <SvgText x={gx + 10} y={gy0 + 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>SOLO</SvgText>
+            <SvgText x={10} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>{`CABINE: ${fmt(Math.round(ft / 100) * 100)} FT · BOLHA ×${fmt(vol, 2)}`}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

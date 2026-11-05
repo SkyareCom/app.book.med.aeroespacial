@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 18;
+export const VERSAO_NOTIFICACOES = 19;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'hormonios',
+    rotulo: 'Voo disponível',
+    titulo: 'Hormônios e metabolismo',
+    texto: 'O voo 9 da Missão Sistemas chegou: diabetes e hipoglicemia com os prazos da ANAC e da FAA, o semáforo do açúcar dos pilotos com insulina, insulina, bomba e fuso na viagem, tireoide e iodo radioativo, obesidade e os remédios para emagrecer. O formulário de liberação ganhou o bloco dos hormônios.',
+    destino: '/capitulo/sistemas/9',
+  },
   {
     id: 'mente',
     rotulo: 'Voo disponível',
