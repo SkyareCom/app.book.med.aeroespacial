@@ -108,7 +108,9 @@ const ARQUIVOS = Object.freeze({
   //   [confirmar na referência] da apneia retirados e numeração das alíneas conferida.
   // 03/11/2026: descongelado com autorização do autor ("Detalhar todo tópico de todos os sistemas como foi feito em
   //   jet lag"); tópicos I a V com parágrafo e tabela práticos, VI a IX com checklists; recongelado com hash novo.
-  'src/data/capitulos/hipoxia.ts': 'b1afe67f6a77d8a9',
+  // 05/11/2026: descongelado com autorização do autor ("Em todo app, em QUEM É MAIS VULNERÁVEL, sempre detalhar o motivo
+  //   metabólico e fisiológico"); só a coluna da tabela "O que muda em altitude" do tópico I mudou; recongelado com hash novo.
+  'src/data/capitulos/hipoxia.ts': '48d67b972a801ca9',
   'src/data/liberacao/respiratorio.ts': 'd7cb8010b5630f56',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
