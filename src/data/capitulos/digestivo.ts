@@ -71,6 +71,10 @@ export const digestivo: Capitulo = {
             "midia": "digestivo-voo"
           },
           {
+            "paragrafo": 4,
+            "midia": "animacao-gas-intestinal"
+          },
+          {
             "paragrafo": 6,
             "tabela": {
               "titulo": "Como prevenir e amenizar · aparelho digestivo",
