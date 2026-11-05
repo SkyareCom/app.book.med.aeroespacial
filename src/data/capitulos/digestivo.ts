@@ -24,7 +24,6 @@ import { liberacaoDigestivo } from '../liberacao/digestivo';
 export const digestivo: Capitulo = {
   "numero": 10,
   "titulo": "Estômago, intestino e fígado",
-  "tempoLeituraMin": 40,
   "topicos": [
     {
       "id": "10.1",
