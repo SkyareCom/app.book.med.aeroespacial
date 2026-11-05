@@ -88,3 +88,18 @@ ffmpeg -i entrada.mp4 -an -c:v libx264 -preset veryfast -crf 24 -pix_fmt yuv420p
 ```
 
 Se vier uma foto em vez do vídeo, montar 8 s com zoompan lento, sem áudio, na resolução 16:9. Conferir visualmente e desfocar com borda suave qualquer texto, insígnia, marca ou tela legível antes de integrar.
+
+## Mapa de inserção após aprovação do autor
+
+A referência a `paragrafo` corresponde ao índice do texto do tópico, contado a partir de 1. As fotos não devem entrar no código antes de existir o arquivo processado.
+
+| Tópico | Foto após parágrafo 1 | Foto após parágrafo 4 ou 5 | Outros recursos |
+| --- | --- | --- | --- |
+| 10.1 · Abertura | m2v10-1-cabine.jpg | m2v10-1-corredor.jpg · após 5 | Vídeo m2v10-gas-cabine.mp4 depois do 2, interativo após 3 e animação após 4 |
+| 10.2 · Refluxo/úlcera | m2v10-2-refeicao.jpg | m2v10-2-consulta.jpg · após 4 | Interativo após 1; liberação após 3; remédios após 5 |
+| 10.3 · Intestino | m2v10-3-hidratacao.jpg | m2v10-3-acompanhamento.jpg · após 4 | Interativo após 1; liberação após 3; remédios após 5 |
+| 10.4 · Fígado | m2v10-4-avaliacao.jpg | m2v10-4-tratamento.jpg · após 4 | Interativo após 1; liberação após 3; remédios após 5 |
+| 10.5 · Vesícula/pâncreas | m2v10-5-vesicula.jpg | m2v10-5-pancreas.jpg · após 4 | Interativo após 1; liberação após 3; remédios após 5 |
+| 10.6 · Cirurgias | m2v10-6-recuperacao.jpg | m2v10-6-reabilitacao.jpg · após 4 | Interativo após 1; liberação após 3; remédios após 5 |
+
+Depois da inclusão, repetir `npm run -s auditar:midias` e conferir a alternância foto/interativo/tabela/animação/vídeo em todos os seis tópicos.
