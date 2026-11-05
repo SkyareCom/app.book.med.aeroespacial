@@ -11,6 +11,7 @@ import { ouvidos } from './capitulos/ouvidos';
 import { olhos } from './capitulos/olhos';
 import { cerebro } from './capitulos/cerebro';
 import { mente } from './capitulos/mente';
+import { hormonios } from './capitulos/hormonios';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -73,7 +74,7 @@ export const secoes: Secao[] = [
       { ...cerebro, numero: 6 },
       { ...mente, numero: 7 },
       { ...sono, numero: 8 },
-      cap(9, 'Hormônios e metabolismo', ['Diabetes', 'Tireoide', 'Obesidade']),
+      { ...hormonios, numero: 9 },
       cap(10, 'Estômago, intestino e fígado', ['Doenças digestivas e do fígado', 'Cirurgias abdominais']),
       cap(11, 'Sangue, câncer e infecções', ['Anemias e anticoagulação', 'Câncer', 'Doenças transmissíveis', 'HIV', 'Vacinação']),
       cap(12, 'Coluna, ossos e músculos', ['Dor cervical e lombar', 'Lesões ortopédicas', 'Condicionamento físico']),
