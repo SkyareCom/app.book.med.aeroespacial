@@ -63,6 +63,10 @@ interativo com a mesma função (quem corre mais risco, quem sofre mais), cada c
 o **motivo fisiológico ou metabólico** de ele ser mais atingido (ex.: "Diabetes descontrolado: o açúcar acima do que o rim
 segura sai na urina e puxa água junto; somado ao ar seco, desidrata"). A remissão "(Veja M_V_ - romano)" fica no fim.
 
+**Tabelas semelhantes (05/11/2026, pedido do autor).** A regra vale também para a coluna "O que acontece" da tabela
+"Sistemas do corpo mais atingidos", em todos os voos das duas missões: o efeito e, em seguida, o **motivo** (ex.:
+"Açúcar baixo: confusão, desmaio, incapacitação súbita; o cérebro depende da glicose do sangue e não a armazena").
+
 ## 3. Fontes por leitor
 
 - **Tripulante:** ANAC, RBAC 67 (Emenda vigente); FAA, 14 CFR Part 67, 14 CFR 61.53 e Guide for Aviation Medical
