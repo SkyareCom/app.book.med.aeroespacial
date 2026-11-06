@@ -33,7 +33,14 @@ const { chromium } = require('playwright');
             parent:p?{top:Math.round(p.top),bottom:Math.round(p.bottom),height:Math.round(p.height)}:null,
             position:getComputedStyle(elem).position,display:getComputedStyle(elem).display,whiteSpace:getComputedStyle(elem).whiteSpace});
         }
-        return {url:location.href,innerWidth:innerWidth,scrollWidth:document.documentElement.scrollWidth,
+        const avail=document.documentElement.clientWidth;
+        const overflows=Array.from(document.querySelectorAll('body *')).map(e=>{
+          const r=e.getBoundingClientRect();return {e,r}
+        }).filter(o=>o.r.width>40&&o.r.right>avail+5).sort((a,b)=>b.r.right-a.r.right).slice(0,12).map(({e,r})=>({
+          tag:e.tagName,cls:String(e.className).slice(0,90),right:Math.round(r.right),width:Math.round(r.width),txt:(e.textContent||'').slice(0,65)
+        }));
+        return {url:location.href,innerWidth:innerWidth,clientWidth:avail,visualWidth:visualViewport.width,scrollWidth:document.documentElement.scrollWidth,
+          viewport:document.querySelector('meta[name="viewport"]')?.content,overflows,
           textLength:document.body.innerText.length,hasTopic:document.body.innerText.includes('Depois de'),found:found.slice(-40)};
       });
       console.log('LAYOUT',width,JSON.stringify(data));
