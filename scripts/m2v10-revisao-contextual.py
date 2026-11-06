@@ -62,12 +62,10 @@ def traduzir_marcas(frase, traducao, idioma):
     if frase.count("**") != traducao.count("**"):
         if frase.count("**") % 2:
             return None
-        texto_html = ""
-        em_negrito = False
-        for parte in frase.split("**"):
-            if texto_html:
-                texto_html += "<b>" if not em_negrito else "</b>"
-                em_negrito = not em_negrito
+        partes = frase.split("**")
+        texto_html = partes[0]
+        for i, parte in enumerate(partes[1:]):
+            texto_html += "<b>" if i % 2 == 0 else "</b>"
             texto_html += parte
         # Tradução contextual com marcação HTML, a ser convertida após o retorno.
         traducao_html = requisitar([texto_html], idioma)[0]
