@@ -49,3 +49,11 @@ Não mover o ramo para `main` nem publicar até a conclusão integral das verifi
 2. Executar `node scripts/m2v10-integrar-midias.cjs`. O script verifica previamente todos os 13 arquivos; se faltar algum, não modifica o capítulo.
 3. Rodar `npx tsc --noEmit`, `node scripts/check-m1v1-frozen.cjs`, `node scripts/traduzir.cjs`, `npm run -s auditar:midias`, `npm run export:web`, `npm run -s loja:ficha` e `npm run -s check:publicacao`; também conferir as telas a 320 e 390 px.
 4. Apenas após correções, revisão médica e todos os testes passarem: commit do código e dos binários no ramo e revisão da PR, antes de qualquer merge.
+
+## Instalação automática pelo GitHub — um único arquivo
+
+O ramo contém a automação `.github/workflows/importar-midias-m2v10.yml`. Ela é acionada quando o autor adiciona **somente o ZIP** `M2V10_midias_completas_12_fotos_1_video.zip` à raiz do ramo `m2v10-digestivo` no GitHub.
+
+No celular: abra o repositório → selecione o ramo `m2v10-digestivo` → `Add file` / `Upload files` → escolha o ZIP inteiro (sem descompactar) → `Commit changes` nesse ramo, **nunca em `main`**. A ação automatizada valida o manifesto SHA-256, extrai os 13 arquivos para `assets/`, executa o integrador, compila e exporta a versão web, registra as alterações no ramo e remove o ZIP original do GitHub.
+
+A automação não mescla nem publica a `main`. Depois da importação ainda é obrigatório cumprir tradução completa (0 textos faltantes), auditoria e revisão clínica, seguido de avaliação dos três workflows de publicação.
