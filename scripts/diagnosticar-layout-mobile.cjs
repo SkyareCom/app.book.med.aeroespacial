@@ -10,7 +10,8 @@ const { chromium } = require('playwright');
     for (const width of [320,360,390]) {
       const page=await browser.newPage({viewport:{width,height:740},deviceScaleFactor:2,isMobile:true,hasTouch:true});
       page.on('pageerror',err=>console.log('PAGEERROR',width,err.message));
-      await page.goto('http://127.0.0.1:4173/capitulo/sistemas/10.html',{waitUntil:'networkidle',timeout:70000});
+      await page.goto('http://127.0.0.1:4173/capitulo/sistemas/10.html',{waitUntil:'domcontentloaded',timeout:30000});
+      await page.waitForTimeout(1800);
       const toggle=page.getByRole('button',{name:/M2V10 - VI:/});
       await toggle.scrollIntoViewIfNeeded();
       await toggle.click();
