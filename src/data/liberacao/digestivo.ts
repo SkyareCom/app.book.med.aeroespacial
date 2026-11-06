@@ -347,7 +347,7 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "tripulante": {
           "nivel": "avaliar",
           "leigo": "Só retorne após prazo correspondente à cirurgia e liberação aeromédica.",
-          "medico": "UK CAA pilotos: laparoscopia diagnóstica 1 semana, maior 3–4 semanas, cirurgia maior 2–3 meses; avaliação.",
+          "medico": "UK CAA pilotos: laparoscopia diagnóstica 1 semana, maior 3 a 4 semanas, cirurgia maior 2 a 3 meses; avaliação.",
           "topico": "10.6"
         }
       },
@@ -390,13 +390,13 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "passageiro": {
           "nivel": "nao-voar",
           "leigo": "Espere completar 24 horas e confirme que não houve complicações.",
-          "medico": "UK CAA passageiros: colonoscopia com grande volume de gás, evitar voo por 24 h.",
+          "medico": "UK CAA passageiros: colonoscopia com grande volume de gás, evitar voo por 24 horas.",
           "topico": "10.6"
         },
         "tripulante": {
           "nivel": "avaliar",
           "leigo": "Informe o examinador; se houve biópsia ou polipectomia, o prazo britânico é maior.",
-          "medico": "UK CAA pilotos: endoscopia baixa com biópsia/polipectomia, 48 h no mínimo.",
+          "medico": "UK CAA pilotos: endoscopia baixa com biópsia/polipectomia, 48 horas no mínimo.",
           "topico": "10.6"
         }
       },
@@ -405,13 +405,13 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "passageiro": {
           "nivel": "cuidados",
           "leigo": "Se estiver bem, sem dor ou sangramento, confirme as orientações do serviço.",
-          "medico": "UK CAA passageiros: mínimo de 24 h com insuflação expressiva, sem complicações.",
+          "medico": "UK CAA passageiros: mínimo de 24 horas com insuflação expressiva, sem complicações.",
           "topico": "10.6"
         },
         "tripulante": {
           "nivel": "avaliar",
           "leigo": "Confirme se houve biópsia/polipectomia e apresente a informação ao examinador.",
-          "medico": "UK CAA pilotos: 48 h mínimas após biópsia/polipectomia.",
+          "medico": "UK CAA pilotos: 48 horas mínimas após biópsia/polipectomia.",
           "topico": "10.6"
         }
       }
@@ -440,7 +440,7 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "passageiro": {
           "nivel": "nao-voar",
           "leigo": "Não embarque; o gás residual ainda pode expandir. Se houve cirurgia abdominal, aplica-se também a orientação dos 10 dias.",
-          "medico": "UK CAA passageiros: cerca de 24 h para gás residual; cirurgia abdominal demanda pelo menos 10 dias e avaliação.",
+          "medico": "UK CAA passageiros: cerca de 24 horas para gás residual; cirurgia abdominal demanda pelo menos 10 dias e avaliação.",
           "topico": "10.6"
         },
         "tripulante": {
@@ -455,7 +455,7 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "passageiro": {
           "nivel": "avaliar",
           "leigo": "O gás residual costuma deixar de ser a principal preocupação; confirme recuperação e liberação.",
-          "medico": "UK CAA passageiros: mínimo aproximado de 24 h pelo gás residual, com avaliação clínica.",
+          "medico": "UK CAA passageiros: mínimo aproximado de 24 horas pelo gás residual, com avaliação clínica.",
           "topico": "10.6"
         },
         "tripulante": {
@@ -476,7 +476,7 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "tripulante": {
           "nivel": "avaliar",
           "leigo": "Na referência britânica, considerar 3 a 4 semanas após cirurgia laparoscópica maior, com avaliação.",
-          "medico": "UK CAA pilotos: 3–4 semanas, recuperação completa.",
+          "medico": "UK CAA pilotos: 3 a 4 semanas, recuperação completa.",
           "topico": "10.6"
         }
       }
@@ -511,7 +511,7 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "tripulante": {
           "nivel": "nao-voar",
           "leigo": "Não assuma o voo antes de 48 horas e informe o examinador.",
-          "medico": "UK CAA pilotos: pelo menos 48 h depois de biópsia/polipectomia.",
+          "medico": "UK CAA pilotos: pelo menos 48 horas depois de biópsia/polipectomia.",
           "topico": "10.6"
         }
       },
@@ -526,7 +526,7 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         "tripulante": {
           "nivel": "avaliar",
           "leigo": "O prazo britânico passou, mas informe o examinador; não é liberação automática.",
-          "medico": "UK CAA: pelo menos 48 h e informar AME.",
+          "medico": "UK CAA: pelo menos 48 horas e informar AME.",
           "topico": "10.6"
         }
       }
