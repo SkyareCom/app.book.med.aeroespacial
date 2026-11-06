@@ -42,3 +42,10 @@ Foram recebidas nesta conversa **12 fotografias cinematográficas**. Conferidas 
 - Concluir traduções e testes de compilação, visualização e publicação.
 
 Não mover o ramo para `main` nem publicar até a conclusão integral das verificações.
+
+## Como incluir os binários sem quebrar o ramo
+
+1. Na cópia de trabalho do ramo `m2v10-digestivo`, descompactar `M2V10_midias_completas_12_fotos_1_video.zip` na raiz do projeto, mantendo os caminhos `assets/images/topicos` e `assets/videos`.
+2. Executar `node scripts/m2v10-integrar-midias.cjs`. O script verifica previamente todos os 13 arquivos; se faltar algum, não modifica o capítulo.
+3. Rodar `npx tsc --noEmit`, `node scripts/check-m1v1-frozen.cjs`, `node scripts/traduzir.cjs`, `npm run -s auditar:midias`, `npm run export:web`, `npm run -s loja:ficha` e `npm run -s check:publicacao`; também conferir as telas a 320 e 390 px.
+4. Apenas após correções, revisão médica e todos os testes passarem: commit do código e dos binários no ramo e revisão da PR, antes de qualquer merge.
