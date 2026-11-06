@@ -1,0 +1,44 @@
+name: Preparar traduções e ficha da loja M2V10
+on:
+  push:
+    branches: [m2v10-digestivo]
+    paths:
+      - '.github/workflows/preparar-m2v10.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: m2v10-digestivo
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Completar traduções pelo mecanismo existente do projeto
+        id: traducao
+        continue-on-error: true
+        run: node scripts/traduzir.cjs --traduzir
+      - name: Atualizar ficha da loja
+        run: npm run -s loja:ficha
+      - name: Registrar somente traduções e fichas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/i18n/en-US.json src/i18n/es-ES.json docs/loja/ficha-pt-BR.md docs/loja/ficha-en-US.md docs/loja/ficha-es-ES.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(m2v10): atualizar traduções e fichas geradas" -m "Co-authored-by: ChatGPT <noreply@openai.com>"
+            git push origin HEAD:m2v10-digestivo
+          fi
+      - name: Conferir tradução final
+        run: |
+          node scripts/traduzir.cjs | tee /tmp/m2v10-traducao.txt
+          grep -q 'en-US: 0 texto(s) sem tradução' /tmp/m2v10-traducao.txt
+          grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/m2v10-traducao.txt
