@@ -1,0 +1,108 @@
+name: Produção editorial e publicação de voos
+on:
+  push:
+    branches: [m2v10-digestivo, 'voo/**']
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: 'Código do voo (ex. M2V11)'
+        required: false
+        type: string
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: publicar-voo-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      codigo: ${{ steps.alvo.outputs.codigo }}
+      midias: ${{ steps.media.outputs.aprovadas }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Identificar voo
+        id: alvo
+        env:
+          MANUAL: ${{ inputs.codigo }}
+        run: |
+          set -euo pipefail
+          if [ -n "$MANUAL" ]; then C="$MANUAL"
+          elif [ "$GITHUB_REF_NAME" = m2v10-digestivo ]; then C=M2V10
+          else C="${GITHUB_REF_NAME#voo/}"; fi
+          C="$(echo "$C" | tr '[:lower:]' '[:upper:]')"
+          [[ "$C" =~ ^M[1-4]V[1-9][0-9]*$ ]]
+          echo "codigo=$C" >> "$GITHUB_OUTPUT"
+          echo "CODIGO=$C" >> "$GITHUB_ENV"
+      - run: npm ci
+      - name: Compilar, testar e preservar capítulos congelados
+        run: |
+          npm run typecheck
+          npm test
+          node scripts/check-m1v1-frozen.cjs
+      - name: Exigir inglês e espanhol completos
+        run: |
+          set -euo pipefail
+          node scripts/traduzir.cjs | tee /tmp/traducao.log
+          grep -q 'en-US: 0 texto(s) sem tradução' /tmp/traducao.log
+          grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/traducao.log
+      - name: Validar o padrão editorial antes das mídias
+        run: npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs "$CODIGO" conteudo
+      - name: Conferir fotos e vídeo padronizados
+        id: media
+        run: |
+          if npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs "$CODIGO" publicar; then
+            echo 'aprovadas=true' >> "$GITHUB_OUTPUT"
+            echo "### $CODIGO: pronto para publicação" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'aprovadas=false' >> "$GITHUB_OUTPUT"
+            echo "### $CODIGO: conteúdo validado; aguardando mídias" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Auditar mídias, exportar HTML e verificar publicação
+        if: steps.media.outputs.aprovadas == 'true'
+        run: |
+          set -euo pipefail
+          npm run -s auditar:midias | tee /tmp/midias.log
+          grep -q '0 pendência(s) de mídia' /tmp/midias.log
+          npm run export:web
+          npm run -s check:publicacao
+          M="${CODIGO#M}"; I="${M%%V*}"; N="${M#*V}"
+          case "$I" in
+            1) S=conceitos;; 2) S=sistemas;; 3) S=aviacao;; 4) S=espaco;;
+          esac
+          test -s "dist/capitulo/$S/$N.html"
+          ! grep -q 'Voo não encontrado' "dist/capitulo/$S/$N.html"
+  publicar:
+    needs: validar
+    if: needs.validar.result == 'success' && needs.validar.outputs.midias == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mesclar PR já aprovada e publicar Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          CODIGO: ${{ needs.validar.outputs.codigo }}
+        run: |
+          set -euo pipefail
+          OWNER="${REPO%%/*}"
+          PR="$(gh api "repos/$REPO/pulls?head=$OWNER:$REF&base=main&state=open" --jq '.[0].number // empty')"
+          if [ -z "$PR" ]; then echo '::notice::Sem PR para main; não publicar.'; exit 0; fi
+          LABELS="$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name')"
+          if ! echo "$LABELS" | grep -Fxq editorial-aprovado; then
+            echo '::notice::Aguardando revisão clínica, editorial e visual identificada na PR.'
+            exit 0
+          fi
+          if [ "$(gh api "repos/$REPO/pulls/$PR" --jq '.draft')" = true ]; then
+            echo '::notice::PR em rascunho; não publicar.'
+            exit 0
+          fi
+          gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f merge_method=squash -f sha="$SHA" -f commit_title="Publicar $CODIGO — texto, tradução e mídias"
+          echo "$CODIGO mesclado. O workflow da main publicará no GitHub Pages." >> "$GITHUB_STEP_SUMMARY"

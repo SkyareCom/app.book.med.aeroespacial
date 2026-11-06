@@ -19,12 +19,13 @@ import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/comp
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
 import { FusoInsulina, HormoniosVoo, ImcVoo, PrazoDiabetes, RemediosPeso, SemaforoGlicemia, TireoideVoo } from '@/components/midia/m2v9-graficos';
+import { BiliarDecidir, DigestivoVoo, FigadoRisco, IntestinoCrise, PrazoCirurgiaDigestiva, RefluxoVoo } from '@/components/midia/m2v10-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
 import { AssentoEnjoo, CondutaDesorientacao, IlusaoPista, IlusaoSomatogravica, IlusoesLabirinto, LimiarInclinacao, TempoNuvem } from '@/components/midia/m2v5-graficos';
 import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -162,6 +163,13 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'tireoide-voo': () => <TireoideVoo />,
   'imc-voo': () => <ImcVoo />,
   'remedios-peso': () => <RemediosPeso />,
+  'digestivo-voo': () => <DigestivoVoo />,
+  'refluxo-voo': () => <RefluxoVoo />,
+  'intestino-crise': () => <IntestinoCrise />,
+  'figado-risco': () => <FigadoRisco />,
+  'biliar-decidir': () => <BiliarDecidir />,
+  'prazo-cirurgia-digestiva': () => <PrazoCirurgiaDigestiva />,
+  'animacao-gas-intestinal': () => <AnimacaoGasIntestinal />,
   imsafe: () => <Imsafe />,
   'prazo-antidepressivo': () => <PrazoAntidepressivo />,
   'quadros-psiquiatricos': () => <QuadrosPsiquiatricos />,
@@ -293,6 +301,13 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'tireoide-voo': 'Tireoide e voo',
   'imc-voo': 'IMC e voo',
   'remedios-peso': 'Remédio para emagrecer e voo',
+  'digestivo-voo': 'Digestão na cabine',
+  'refluxo-voo': 'Refluxo, úlcera e sangramento',
+  'intestino-crise': 'Doença intestinal e crise',
+  'figado-risco': 'Fígado: estabilidade e risco',
+  'biliar-decidir': 'Vesícula e pâncreas',
+  'prazo-cirurgia-digestiva': 'Cirurgia abdominal: quando voar',
+  'animacao-gas-intestinal': 'Gás intestinal em altitude',
   imsafe: 'IMSAFE: o piloto confere a si mesmo',
   'prazo-antidepressivo': 'Antidepressivo e volta ao voo',
   'quadros-psiquiatricos': 'Diagnóstico e voo',

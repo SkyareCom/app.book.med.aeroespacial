@@ -1015,6 +1015,41 @@ export function AnimacaoBombaInsulina() {
   );
 }
 
+// M2V10 · Gás intestinal sob menor pressão de cabine: lei de Boyle (Veja M1V1 - II).
+// Esquema didático: o aumento do volume não é previsão clínica de tamanho de alça nem simulação cirúrgica.
+export function AnimacaoGasIntestinal() {
+  const ciclo = useCiclo(11000);
+  const p = ciclo.fase;
+  const fracao = p < 0.34 ? suave(p / 0.34) : p < 0.64 ? 1 : p < 0.94 ? 1 - suave((p - 0.64) / 0.3) : 0;
+  const ft = 8000 * fracao;
+  const fator = 760 / pressaoBarometrica(ft);
+  const raio = 24 * Math.sqrt(fator);
+  const altura = 204;
+  const fase = p < 0.34 ? 'SUBIDA' : p < 0.64 ? 'CRUZEIRO' : p < 0.94 ? 'DESCIDA' : 'SOLO';
+  return (
+    <Quadro titulo="O gás intestinal durante a subida" instrucao="Toque para pausar. Uma bolha esquemática ocupa mais volume quando a pressão da cabine diminui; obstrução e sutura recente aumentam o risco clínico." ciclo={ciclo} altura={altura}>
+      {(w) => {
+        const cx = w * 0.36, cy = 112, medidor = w - 44;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={altura} rx={8} fill="#0A1626" />
+            <SvgText x={12} y={22} fill={Cores.dourado} fontSize={11} fontFamily={Fonte}>{fase}</SvgText>
+            <SvgText x={12} y={40} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>AR RETIDO NO INTESTINO</SvgText>
+            <Ellipse cx={cx} cy={cy} rx={88} ry={62} fill="#29374A" stroke={Cores.textoSuave} strokeWidth={2} />
+            <Ellipse cx={cx} cy={cy} rx={66} ry={40} fill="#76556A" stroke="#C99EAB" strokeWidth={3} />
+            <Circle cx={cx} cy={cy} r={raio} fill="#B9E6FF" fillOpacity={0.82} stroke="#F1FAFF" strokeWidth={2} />
+            <Line x1={medidor} y1={67} x2={medidor} y2={153} stroke={Cores.linha} strokeWidth={3} />
+            <Circle cx={medidor} cy={153 - 86 * fracao} r={6} fill={Cores.dourado} />
+            <SvgText x={w - 12} y={55} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">8.000 FT</SvgText>
+            <SvgText x={w - 12} y={171} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte} textAnchor="end">SOLO</SvgText>
+            <SvgText x={12} y={altura - 10} fill={Cores.textoSuave} fontSize={10} fontFamily={Fonte}>{`CABINE: ${fmt(Math.round(ft / 100) * 100)} ft · GÁS: ${fmt(fator, 2)}×`}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });

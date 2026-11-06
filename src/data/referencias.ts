@@ -17,6 +17,7 @@ export const obras: Referencia[] = [
 export const normas: Referencia[] = [
   { titulo: 'ICAO', detalhe: 'Organização da Aviação Civil Internacional: Anexo 1 (licenças, Capítulo 6, inclusive diabetes tratado com insulina), Anexo 6 (gerenciamento da fadiga), Doc 8984 (Manual de Medicina da Aviação Civil) e Doc 9966 (Manual do FRMS)' },
   { titulo: 'ANAC', detalhe: 'Agência Nacional de Aviação Civil (Brasil): RBAC 67 (certificação médica, inclusive requisitos metabólicos e endocrinológicos), RBAC 25, RBAC 120 (prevenção do uso de substâncias psicoativas) e Resolução 280/2013 (passageiros com necessidade de assistência especial)' },
+  { titulo: 'EASA Part-MED', detalhe: 'MED.B.020: requisitos médicos do aparelho digestivo, hepatopatias, doença intestinal e recuperação depois de cirurgia' },
   { titulo: 'FAA', detalhe: 'Administração Federal de Aviação dos EUA: 14 CFR Partes 25, 61, 67 e 117, Guia do Examinador Médico (AME), com as tabelas neurológicas (convulsão, epilepsia, enxaqueca e seus remédios, AVC e AIT, trauma craniano) e o protocolo de antidepressivos, os protocolos de diabetes (com e sem insulina, sensor contínuo e combinações aceitas de remédios), hipotireoidismo, remédios para emagrecer e apneia do sono, 14 CFR 91.17 (álcool), programa HIMS, checklist IMSAFE, AC 120-100 (fadiga), Manual de Informação Aeronáutica (AIM), AC 70-2B e Ordem JO 7400.2 (laser), Airplane Flying Handbook, AC 60-4A (desorientação espacial), guia de remédios sem receita para pilotos e publicações do CAMI (visão do piloto, óculos de sol, desorientação espacial)' },
   { titulo: 'EASA', detalhe: 'Agência Europeia para a Segurança da Aviação: Regulamento (UE) 2018/1042 (apoio por pares, testes de álcool e avaliação psicológica)' },
   { titulo: 'CAA da Nova Zelândia', detalhe: 'Manual médico da autoridade de aviação civil (sistema respiratório)' },
@@ -38,6 +39,10 @@ export const normas: Referencia[] = [
 
 // Diretrizes médicas e de saúde do viajante usadas para passageiros (02/11/2026).
 export const diretrizes: Referencia[] = [
+  { titulo: 'UK CAA · cirurgias e digestivo', detalhe: 'Orientação para passageiros sobre cirurgia abdominal, colonoscopia e gás residual na laparoscopia; orientação aeromédica específica para pilotos após laparoscopia e cirurgia abdominal' },
+  { titulo: 'FAA · aparelho digestivo', detalhe: 'Guide for Aviation Medical Examiners, Item 38 Abdomen and Viscera; decisões sobre refluxo, úlcera, hepatite e colite, incluindo acompanhamento de autorizações especiais' },
+  { titulo: 'ICAO · aparelho digestivo', detalhe: 'Doc 8984, Parte III, Capítulo 3: Digestive System, doenças digestivas e critérios de avaliação aeromédica' },
+  { titulo: 'CDC Yellow Book · diarreia', detalhe: 'Travelers’ Diarrhea: reidratação oral, antidiarreicos, sintomas de alarme e precauções com antibióticos em viagem' },
   { titulo: 'British Thoracic Society', detalhe: 'Declaração clínica sobre viagem aérea de passageiros com doença respiratória (Thorax, 2022)' },
   { titulo: 'CDC', detalhe: 'Centros de Controle e Prevenção de Doenças dos EUA: Yellow Book, viagem à altitude, mal da altitude, trombose em viajantes, jet lag, enjoo de movimento e trombose em viajantes com obesidade' },
   { titulo: 'UK Civil Aviation Authority', detalhe: 'Autoridade de aviação civil do Reino Unido: orientação a profissionais de saúde sobre passageiros com doença cardiovascular, neurológica e psiquiátrica e orientação a examinadores depois de cirurgia dos olhos' },
