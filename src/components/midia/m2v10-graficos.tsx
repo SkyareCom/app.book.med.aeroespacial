@@ -97,7 +97,11 @@ export function PrazoCirurgiaDigestiva() {
     <MolduraMidia tipo="Explorador" titulo="Cirurgia e retorno ao voo" instrucao="Selecione o perfil e o procedimento. Os intervalos são referências de autoridades britânicas, não uma autorização individual.">
       <Opcoes<Perfil> itens={[[ 'passageiro', 'Passageiro' ], [ 'tripulante', 'Tripulante' ]]} valor={perfil} onChange={(v) => { setPerfil(v); setProcedimento(0); }} colunas={2} />
       <Opcoes itens={lista.map((c, i) => [i, c.nome] as [number, string])} valor={procedimento} onChange={setProcedimento} colunas={1} />
-      <Leitura rotulo="Orientação publicada" valor={perfil === 'passageiro' ? 'Passageiro' : 'Piloto / tripulante'} cor={Cores.dourado} />
+      {/* Leitura usa flexBasis percentual de largura; precisa de pai em linha para
+          não converter o percentual em altura e deixar os textos escaparem no web mobile. */}
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', width: '100%', minWidth: 0 }}>
+        <Leitura rotulo="Orientação publicada" valor={perfil === 'passageiro' ? 'Passageiro' : 'Piloto / tripulante'} cor={Cores.dourado} />
+      </View>
       <Texto>{atual.detalhe}</Texto>
       <Texto>{atual.conduta}</Texto>
       <Texto t="rotulo" cor={Cores.textoApagado}>No Brasil, para tripulantes, a decisão é feita conforme o RBAC 67 e o examinador. Dor, sangramento ou sintomas incapacitantes impedem operar.</Texto>
