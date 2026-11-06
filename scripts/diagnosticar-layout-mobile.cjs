@@ -10,7 +10,7 @@ const { chromium } = require('playwright');
     for (const width of [320,360,390]) {
       const page=await browser.newPage({viewport:{width,height:740},deviceScaleFactor:2,isMobile:true,hasTouch:true});
       page.on('pageerror',err=>console.log('PAGEERROR',width,err.message));
-      await page.goto('http://127.0.0.1:4173/capitulo/sistemas/10.html?topico=10.6',{waitUntil:'domcontentloaded',timeout:30000});
+      await page.goto('http://127.0.0.1:4173/app.book.med.aeroespacial/capitulo/sistemas/10.html?topico=10.6',{waitUntil:'domcontentloaded',timeout:30000});
       await page.waitForTimeout(1800);
       await page.waitForTimeout(2200);
       const data=await page.evaluate(()=>{
