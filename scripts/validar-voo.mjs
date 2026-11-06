@@ -7,7 +7,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { execFileSync } from 'node:child_process';
 import { secoes } from '../src/data/secoes.ts';
 
 const raiz = process.cwd();
@@ -103,6 +102,53 @@ if (missao === 2) {
 }
 for (const formato of ['interativo', 'animação', 'tabela']) exigir(formatos.has(formato),
   'Falta o formato obrigatório ' + formato + '.');
+// Inspeção ISO-BMFF nativa: dispensa ffprobe e não usa rede nem instalações extras.
+function examinarMP4(b) {
+  function atoms(start,end) {
+    const all=[];
+    for (let p=start;p+8<=end;) {
+      const raw=b.readUInt32BE(p),type=b.toString('ascii',p+4,p+8);
+      let len=raw,header=8;
+      if(raw===1) {if(p+16>end)break;len=Number(b.readBigUInt64BE(p+8));header=16;}
+      else if(raw===0)len=end-p;
+      if(len<header||p+len>end)break;
+      all.push({type,start:p+header,end:p+len});
+      p+=len;
+    }
+    return all;
+  }
+  const child=(parent,type)=>atoms(parent.start,parent.end).find(x=>x.type===type);
+  const moov=atoms(0,b.length).find(x=>x.type==='moov');
+  if(!moov)throw new Error('Estrutura moov não encontrada');
+  const mvhd=child(moov,'mvhd');
+  if(!mvhd)throw new Error('Duração ausente');
+  const v1=b[mvhd.start]===1;
+  const scale=b.readUInt32BE(mvhd.start+(v1?20:12));
+  const units=v1?Number(b.readBigUInt64BE(mvhd.start+24)):b.readUInt32BE(mvhd.start+16);
+  if(!scale||!units)throw new Error('Duração inválida');
+  let codec='',width=0,height=0,audio=false;
+  for(const track of atoms(moov.start,moov.end).filter(x=>x.type==='trak')) {
+    const mdia=child(track,'mdia');if(!mdia)continue;
+    const hdlr=child(mdia,'hdlr');if(!hdlr)continue;
+    const handler=b.toString('ascii',hdlr.start+8,hdlr.start+12);
+    if(handler==='soun')audio=true;
+    if(handler!=='vide')continue;
+    const minf=child(mdia,'minf');
+    const stbl=minf&&child(minf,'stbl');
+    const stsd=stbl&&child(stbl,'stsd');
+    if(!stsd)continue;
+    for(const entry of atoms(stsd.start+8,stsd.end)) {
+      if(entry.type==='avc1'||entry.type==='avc3') {
+        codec=entry.type;
+        const p=entry.start-8;
+        width=b.readUInt16BE(p+32);
+        height=b.readUInt16BE(p+34);
+      }
+    }
+  }
+  return {codec,width,height,duration:units/scale,audio};
+}
+
 if (fase === 'publicar') {
   exigir(formatos.has('foto') && formatos.has('vídeo'), 'Falta foto ou vídeo no voo.');
   const slug = codigo.toLowerCase();
@@ -148,14 +194,10 @@ if (fase === 'publicar') {
       hashes.add(hash);
     } else if (a.nome.endsWith('.mp4')) {
       try {
-        const info = JSON.parse(execFileSync('ffprobe',
-          ['-v', 'error', '-show_entries', 'format=duration:stream=codec_type,codec_name,width,height',
-            '-of', 'json', local], { encoding: 'utf8', timeout: 15000 }));
-        const v = info.streams.find((s) => s.codec_type === 'video');
-        const audio = info.streams.some((s) => s.codec_type === 'audio');
-        exigir(v?.codec_name === 'h264' && v.width >= 1280 &&
-          Math.abs(v.width / v.height - 16 / 9) < 0.04 &&
-          Number(info.format.duration) >= 2 && Number(info.format.duration) <= 8.5 && !audio,
+        const info = examinarMP4(buf);
+        exigir(info.codec === 'avc1' && info.width >= 1280 &&
+          Math.abs(info.width / info.height - 16 / 9) < 0.04 &&
+          info.duration >= 2 && info.duration <= 8.5 && !info.audio,
           'MP4 deve ser H.264, 16:9, 2–8,5 segundos, sem som: ' + a.nome);
       } catch (e) { erros.push('Não foi possível validar o MP4 ' + a.nome + ': ' + String(e)); }
     }

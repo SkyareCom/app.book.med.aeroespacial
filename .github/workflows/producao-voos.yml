@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 concurrency:
   group: publicar-voo-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   validar:
     runs-on: ubuntu-latest
@@ -54,13 +54,6 @@ jobs:
           grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/traducao.log
       - name: Validar o padrão editorial antes das mídias
         run: npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs "$CODIGO" conteudo
-      - name: Preparar inspeção técnica do MP4
-        run: |
-          if ! command -v ffprobe >/dev/null 2>&1; then
-            sudo apt-get update -qq
-            sudo apt-get install -y -qq ffmpeg
-          fi
-          ffprobe -version | head -n 1
       - name: Conferir fotos e vídeo padronizados
         id: media
         run: |
