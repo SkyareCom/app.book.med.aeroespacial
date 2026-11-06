@@ -24,6 +24,8 @@ jobs:
       - run: npm run export:web
       - name: Medir com navegador real
         run: |
-          python3 -m http.server 4173 --bind 127.0.0.1 -d dist >/tmp/servidor.log 2>&1 &
+          mkdir -p /tmp/site/app.book.med.aeroespacial
+          cp -a dist/. /tmp/site/app.book.med.aeroespacial/
+          python3 -m http.server 4173 --bind 127.0.0.1 -d /tmp/site >/tmp/servidor.log 2>&1 &
           sleep 2
           CHROME_BIN="$(command -v google-chrome)" node scripts/diagnosticar-layout-mobile.cjs
