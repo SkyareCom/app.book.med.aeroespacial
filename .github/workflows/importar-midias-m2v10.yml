@@ -1,0 +1,65 @@
+name: Importar mídias M2V10 recebidas do autor
+
+on:
+  push:
+    branches: [m2v10-digestivo]
+    paths:
+      - 'M2V10_midias_completas_12_fotos_1_video.zip'
+
+permissions:
+  contents: write
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: m2v10-digestivo
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Validar origem e conteúdo do pacote
+        run: |
+          set -euo pipefail
+          PACOTE=M2V10_midias_completas_12_fotos_1_video.zip
+          test -f "$PACOTE"
+          test "$(unzip -Z1 "$PACOTE" | wc -l)" -eq 15
+          if unzip -Z1 "$PACOTE" | grep -Eq '(^/|(^|/)\.\.(/|$)|\\)'; then
+            echo "Caminho não permitido no pacote"; exit 1
+          fi
+          mkdir -p /tmp/m2v10-unzip
+          unzip -q "$PACOTE" -d /tmp/m2v10-unzip
+          (cd /tmp/m2v10-unzip && sha256sum -c SHA256SUMS.txt)
+          test "$(find /tmp/m2v10-unzip/assets/images/topicos -type f -name 'm2v10-*.jpg' | wc -l)" -eq 12
+          test -f /tmp/m2v10-unzip/assets/videos/m2v10-gas-cabine.mp4
+      - name: Copiar fotos e vídeo
+        run: |
+          cp -v /tmp/m2v10-unzip/assets/images/topicos/*.jpg assets/images/topicos/
+          cp -v /tmp/m2v10-unzip/assets/videos/m2v10-gas-cabine.mp4 assets/videos/
+      - name: Integrar recursos ao capítulo
+        run: node scripts/m2v10-integrar-midias.cjs
+      - run: npm ci
+      - name: TypeScript
+        run: npx tsc --noEmit
+      - name: Congelamento
+        run: node scripts/check-m1v1-frozen.cjs
+      - name: Auditoria das mídias
+        run: |
+          npm run -s auditar:midias | tee /tmp/m2v10-auditoria.txt
+          if grep -E 'M2V10|pendência\(s\)' /tmp/m2v10-auditoria.txt | grep -Eq 'faltam [1-9]|[1-9][0-9]* pendência'; then
+            echo "Mídias ainda pendentes"; exit 1
+          fi
+      - name: Exportação web
+        run: npm run export:web
+      - name: Atualizar fichas
+        run: npm run -s loja:ficha
+      - name: Salvar binários e código apenas no ramo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images/topicos/m2v10-*.jpg assets/videos/m2v10-gas-cabine.mp4 src/data/capitulos/digestivo.ts docs/loja/ficha-*.md
+          git rm -f M2V10_midias_completas_12_fotos_1_video.zip
+          git commit -m "feat(m2v10): integrar 12 fotografias e vídeo aos seis tópicos" -m "Co-authored-by: ChatGPT <noreply@openai.com>"
+          git push origin HEAD:m2v10-digestivo
