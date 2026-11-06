@@ -55,7 +55,7 @@ async function main() {
       console.log(`  ${Math.min(i + LOTE, faltam.length)}/${faltam.length}`);
     }
     const ordenado = Object.fromEntries(Object.entries(dic).sort(([a], [b]) => a.localeCompare(b)));
-    fs.writeFileSync(arq, JSON.stringify(ordenado, null, 0).replace(/","/g, '",\n"') + '\n');
+    fs.writeFileSync(arq, JSON.stringify(ordenado, null, 0).replace(/","/g, '",\n"').replace(/}$/, '\n}'));
   }
 }
 
