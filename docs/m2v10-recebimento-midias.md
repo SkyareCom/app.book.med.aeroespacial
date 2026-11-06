@@ -57,3 +57,11 @@ O ramo contém a automação `.github/workflows/importar-midias-m2v10.yml`. Ela 
 No celular: abra o repositório → selecione o ramo `m2v10-digestivo` → `Add file` / `Upload files` → escolha o ZIP inteiro (sem descompactar) → `Commit changes` nesse ramo, **nunca em `main`**. A ação automatizada valida o manifesto SHA-256, extrai os 13 arquivos para `assets/`, executa o integrador, compila e exporta a versão web, registra as alterações no ramo e remove o ZIP original do GitHub.
 
 A automação não mescla nem publica a `main`. Depois da importação ainda é obrigatório cumprir tradução completa (0 textos faltantes), auditoria e revisão clínica, seguido de avaliação dos três workflows de publicação.
+
+## Fotografias adicionais recebidas posteriormente
+
+- `182691.jpg`: segunda opção de consulta gastroenterológica, não utilizada para evitar duplicação com `m2v10-3-acompanhamento.jpg`.
+- `182473.jpg`: refeição em cabine, opção secundária para 10.2, sem substituir a mídia já aprovada.
+- `182572.jpg`, `182474.jpg`, `182573.jpg`, `182470.jpg` e `182472.jpg`: imagens voltadas principalmente a diabetes, tireoide e condições metabólicas; não aplicadas ao M2V10.
+- `182471.jpg`: material de CPAP; não aplicado ao M2V10.
+- `182690.mp4`: mesmo vídeo de referência usado na versão tratada e integrada.
