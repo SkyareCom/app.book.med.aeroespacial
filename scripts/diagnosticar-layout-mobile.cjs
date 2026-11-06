@@ -14,7 +14,7 @@ const { chromium } = require('playwright');
       await page.waitForTimeout(1800);
       const toggle=page.getByRole('button',{name:/M2V10 - VI:/});
       await toggle.scrollIntoViewIfNeeded();
-      await toggle.click();
+      await toggle.click({force:true});
       await page.waitForTimeout(1400);
       const data=await page.evaluate(()=>{
         const regex=/Para o|passageiro|UK CAA: evitar voar|Depois, o cirurgião|NO BRASIL|No Brasil, para tripulantes|O tripulante é avaliado/;
