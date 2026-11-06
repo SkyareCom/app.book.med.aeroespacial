@@ -1,0 +1,58 @@
+name: Revisar traduções médicas M2V10 e validar
+on:
+  push:
+    branches: [m2v10-digestivo]
+    paths: [.github/workflows/m2v10-revisar-traducoes-contextuais.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: m2v10-digestivo
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências do app
+        run: npm ci
+      - name: Validar sintaxe do revisor
+        run: python3 -m py_compile scripts/m2v10-revisao-contextual.py
+      - name: Gerar traduções contextuais para os textos editoriais do voo
+        run: python3 -u scripts/m2v10-revisao-contextual.py
+      - name: Exigir dois idiomas sem textos faltantes
+        run: |
+          set -euo pipefail
+          node scripts/traduzir.cjs | tee /tmp/idiomas.txt
+          grep -q 'en-US: 0 texto(s) sem tradução' /tmp/idiomas.txt
+          grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/idiomas.txt
+      - name: Compilação e preservação editorial
+        run: |
+          npx tsc --noEmit
+          node scripts/check-m1v1-frozen.cjs
+      - name: Testar funções do app
+        run: npm test
+      - name: Auditoria das mídias
+        run: |
+          set -euo pipefail
+          npm run -s auditar:midias | tee /tmp/midias.txt
+          grep -q '0 pendência(s) de mídia' /tmp/midias.txt
+      - name: Gerar HTML e conferir requisitos de publicação
+        run: |
+          npm run export:web
+          npm run -s check:publicacao
+          npm run -s loja:ficha
+      - name: Salvar traduções revistas somente no ramo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/i18n/en-US.json src/i18n/es-ES.json docs/m2v10-revisao-traducoes.json docs/loja/ficha-*.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(m2v10): revisar qualidade clínica de traduções contextuais EN ES' -m 'Co-authored-by: ChatGPT <noreply@openai.com>'
+            git push origin HEAD:m2v10-digestivo
+          fi
