@@ -10,12 +10,9 @@ const { chromium } = require('playwright');
     for (const width of [320,360,390]) {
       const page=await browser.newPage({viewport:{width,height:740},deviceScaleFactor:2,isMobile:true,hasTouch:true});
       page.on('pageerror',err=>console.log('PAGEERROR',width,err.message));
-      await page.goto('http://127.0.0.1:4173/capitulo/sistemas/10.html',{waitUntil:'domcontentloaded',timeout:30000});
+      await page.goto('http://127.0.0.1:4173/capitulo/sistemas/10.html?topico=10.6',{waitUntil:'domcontentloaded',timeout:30000});
       await page.waitForTimeout(1800);
-      const toggle=page.getByRole('button',{name:/M2V10 - VI:/});
-      await toggle.scrollIntoViewIfNeeded();
-      await toggle.click({force:true});
-      await page.waitForTimeout(1400);
+      await page.waitForTimeout(2200);
       const data=await page.evaluate(()=>{
         const regex=/Para o|passageiro|UK CAA: evitar voar|Depois, o cirurgião|NO BRASIL|No Brasil, para tripulantes|O tripulante é avaliado/;
         const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -37,7 +34,7 @@ const { chromium } = require('playwright');
             position:getComputedStyle(elem).position,display:getComputedStyle(elem).display,whiteSpace:getComputedStyle(elem).whiteSpace});
         }
         return {url:location.href,innerWidth:innerWidth,scrollWidth:document.documentElement.scrollWidth,
-          found:found.slice(-24)};
+          textLength:document.body.innerText.length,hasTopic:document.body.innerText.includes('Depois de'),found:found.slice(-40)};
       });
       console.log('LAYOUT',width,JSON.stringify(data));
       await page.close();
