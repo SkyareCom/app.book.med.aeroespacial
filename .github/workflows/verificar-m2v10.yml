@@ -1,0 +1,38 @@
+name: Verificar M2V10 em desenvolvimento
+
+on:
+  push:
+    branches: [m2v10-digestivo]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Verificar sintaxe do integrador
+        run: node --check scripts/m2v10-integrar-midias.cjs
+      - name: Verificar TypeScript
+        run: npx tsc --noEmit
+      - name: Verificar congelamento
+        run: node scripts/check-m1v1-frozen.cjs
+      - name: Diagnosticar traduções
+        if: always()
+        run: node scripts/traduzir.cjs
+      - name: Diagnosticar mídias
+        if: always()
+        run: npm run -s auditar:midias
+      - name: Gerar exportação web em teste
+        if: always()
+        run: npm run export:web
+      - name: Verificar publicação
+        if: always()
+        run: npm run -s check:publicacao
