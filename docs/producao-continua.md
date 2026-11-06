@@ -40,7 +40,7 @@ npm run typecheck
 npm test
 node scripts/check-m1v1-frozen.cjs
 node scripts/traduzir.cjs
-npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.ts M2V11 conteudo
+npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs M2V11 conteudo
 npm run loja:ficha
 ```
 

@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { secoes } from '../src/data/secoes';
+import { secoes } from '../src/data/secoes.ts';
 
 const raiz = process.cwd();
 const codigo = (process.argv[2] ?? '').toUpperCase();
@@ -20,9 +20,9 @@ if (!match || !['conteudo', 'publicar'].includes(fase)) {
 }
 const missao = Number(match[1]), voo = Number(match[2]);
 const cap = secoes[missao - 1]?.capitulos[voo - 1];
-const erros: string[] = [];
-const observacoes: string[] = [];
-const exigir = (condicao: unknown, mensagem: string) => { if (!condicao) erros.push(mensagem); };
+const erros = [];
+const observacoes = [];
+const exigir = (condicao, mensagem) => { if (!condicao) erros.push(mensagem); };
 if (!cap) {
   console.error('O voo não consta do catálogo: ' + codigo);
   process.exit(1);
@@ -31,11 +31,11 @@ const topicos = cap.topicos;
 const todos = topicos.filter(t => t.conteudo?.texto?.trim());
 exigir(topicos.length >= 2, 'Devem existir abertura e desenvolvimento.');
 exigir(todos.length === topicos.length, 'Há tópicos sem conteúdo.');
-const formatos = new Set<string>();
-const temTabela = (recursos: NonNullable<(typeof topicos)[number]['conteudo']>['recursos'], nome: string) =>
+const formatos = new Set();
+const temTabela = (recursos, nome) =>
   (recursos ?? []).some(r => r.tabela?.titulo.startsWith(nome));
 for (let i = 0; i < todos.length; i++) {
-  const t = todos[i], c = t.conteudo!;
+  const t = todos[i], c = t.conteudo;
   const prefixo = codigo + ' ' + t.id + ' ' + t.titulo + ': ';
   const ps = c.texto.split('\n\n').filter(Boolean);
   const recursos = c.recursos ?? [];
@@ -52,7 +52,7 @@ for (let i = 0; i < todos.length; i++) {
     if (r.tabela) {
       formatos.add('tabela');
       exigir(r.tabela.colunas.length >= 2 && r.tabela.linhas.length > 0 &&
-        r.tabela.linhas.every(l => l.length === r.tabela!.colunas.length),
+        r.tabela.linhas.every(l => l.length === r.tabela.colunas.length),
         prefixo + 'tabela com tamanho inconsistente: ' + r.tabela.titulo);
     }
   }
@@ -118,7 +118,7 @@ if (fase === 'publicar') {
     'As fotos na fonte não correspondem às fotos cadastradas.');
   exigir(arquivos.filter(a => a.nome.endsWith('.mp4')).length === recursos.filter(r => !!r.video).length,
     'Os vídeos na fonte não correspondem aos vídeos cadastrados.');
-  const hashes = new Set<string>();
+  const hashes = new Set();
   for (const a of arquivos) {
     const local = path.join(raiz, 'assets', a.pasta, a.nome);
     if (!fs.existsSync(local)) { erros.push('Arquivo ausente: ' + a.nome); continue; }
@@ -151,8 +151,8 @@ if (fase === 'publicar') {
         const info = JSON.parse(execFileSync('ffprobe',
           ['-v', 'error', '-show_entries', 'format=duration:stream=codec_type,codec_name,width,height',
             '-of', 'json', local], { encoding: 'utf8', timeout: 15000 }));
-        const v = info.streams.find((s: { codec_type: string }) => s.codec_type === 'video');
-        const audio = info.streams.some((s: { codec_type: string }) => s.codec_type === 'audio');
+        const v = info.streams.find((s) => s.codec_type === 'video');
+        const audio = info.streams.some((s) => s.codec_type === 'audio');
         exigir(v?.codec_name === 'h264' && v.width >= 1280 &&
           Math.abs(v.width / v.height - 16 / 9) < 0.04 &&
           Number(info.format.duration) >= 2 && Number(info.format.duration) <= 8.5 && !audio,

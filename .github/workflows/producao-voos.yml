@@ -53,11 +53,11 @@ jobs:
           grep -q 'en-US: 0 texto(s) sem tradução' /tmp/traducao.log
           grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/traducao.log
       - name: Validar o padrão editorial antes das mídias
-        run: npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.ts "$CODIGO" conteudo
+        run: npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs "$CODIGO" conteudo
       - name: Conferir fotos e vídeo padronizados
         id: media
         run: |
-          if npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.ts "$CODIGO" publicar; then
+          if npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs "$CODIGO" publicar; then
             echo 'aprovadas=true' >> "$GITHUB_OUTPUT"
             echo "### $CODIGO: pronto para publicação" >> "$GITHUB_STEP_SUMMARY"
           else
