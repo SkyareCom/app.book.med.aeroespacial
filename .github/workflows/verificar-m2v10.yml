@@ -24,12 +24,17 @@ jobs:
         run: npx tsc --noEmit
       - name: Verificar congelamento
         run: node scripts/check-m1v1-frozen.cjs
-      - name: Diagnosticar traduções
+      - name: Exigir traduções completas
         if: always()
-        run: node scripts/traduzir.cjs
-      - name: Diagnosticar mídias
+        run: |
+          node scripts/traduzir.cjs | tee /tmp/m2v10-traducoes.txt
+          grep -q 'en-US: 0 texto(s) sem tradução' /tmp/m2v10-traducoes.txt
+          grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/m2v10-traducoes.txt
+      - name: Exigir mídias completas
         if: always()
-        run: npm run -s auditar:midias
+        run: |
+          npm run -s auditar:midias | tee /tmp/m2v10-midias.txt
+          grep -q '0 pendência(s) de mídia' /tmp/m2v10-midias.txt
       - name: Gerar exportação web em teste
         if: always()
         run: npm run export:web
