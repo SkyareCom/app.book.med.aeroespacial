@@ -1,0 +1,31 @@
+name: M2V10 teste de marcadores na tradução contextual
+on:
+  push:
+    branches: [m2v10-digestivo]
+    paths: [.github/workflows/m2v10-teste-marcadores-traducao.yml]
+permissions: { contents: read }
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testar marcação de termos
+        run: |
+          python3 - <<'PY'
+          import urllib.parse,urllib.request,json
+          exemplos=[
+            "O **estômago** recebe e mistura o alimento; o **intestino** absorve água e nutrientes; o **fígado** processa substâncias, produz bile e participa da coagulação.",
+            "O <b>estômago</b> recebe e mistura o alimento; o <b>intestino</b> absorve água e nutrientes; o <b>fígado</b> processa substâncias, produz bile e participa da coagulação.",
+            "A **diarreia** elimina água e sais pelas fezes; pode ser causada por infecção, medicamento ou inflamação.",
+            "Após **laparoscopia**, a referência menciona cerca de **24 horas** pelo gás residual, mas esse intervalo **não equivale a liberação cirúrgica de uma operação maior**.",
+            "Para o **tripulante**, a avaliação depende do RBAC 67, FAA e EASA (Veja M2V10 - III)."
+          ]
+          for lang in ['en','es']:
+            data=urllib.parse.urlencode([('sl','pt'),('tl',lang)]+[('q',x) for x in exemplos])
+            req=urllib.request.Request('https://translate.googleapis.com/translate_a/t?client=dict-chrome-ex&'+data,headers={'User-Agent':'Mozilla/5.0'})
+            try:
+              with urllib.request.urlopen(req,timeout=20) as r: translated=json.loads(r.read())
+              print('LANG',lang)
+              for orig,out in zip(exemplos,translated): print(json.dumps({'orig':orig,'out':out},ensure_ascii=False))
+            except Exception as e: print('ERROR',lang,repr(e))
+          PY
