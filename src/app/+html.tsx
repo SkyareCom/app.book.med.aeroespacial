@@ -24,7 +24,7 @@ export default function Root({ children }: PropsWithChildren) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Papos de Altitude" />
         <ScrollViewStyleReset />
-        <style dangerouslySetInnerHTML={{ __html: 'html,body,#root{max-width:100%;overflow-x:hidden;overflow-x:clip;}body{background-color:#03050A;}' }} />
+        <style dangerouslySetInnerHTML={{ __html: 'body{background-color:#03050A;}html,body,#root{max-width:100%;overflow-x:hidden;overflow-x:clip;}' }} />
         <script
           dangerouslySetInnerHTML={{
             __html: `if('serviceWorker' in navigator&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1'){addEventListener('load',function(){navigator.serviceWorker.register('${BASE}/sw.js',{scope:'${BASE}/'}).catch(function(){})})}`,
