@@ -16,6 +16,15 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - name: Conferir integridade do app
+        run: |
+          set -euo pipefail
+          npm run typecheck
+          npm test
+          node scripts/check-m1v1-frozen.cjs
+          node scripts/traduzir.cjs | tee /tmp/idiomas.txt
+          grep -q 'en-US: 0 texto(s) sem tradução' /tmp/idiomas.txt
+          grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/idiomas.txt
       - run: npm install --no-save --ignore-scripts playwright@1.56.1
       - name: Localizar Google Chrome
         run: |
