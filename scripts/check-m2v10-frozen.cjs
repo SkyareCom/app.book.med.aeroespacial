@@ -51,32 +51,27 @@ for (const [p, esperado] of Object.entries(BLOBS)) {
   const atual = blobSha(ler(p));
   if (atual !== esperado) erro(p + ': esperado ' + esperado + ', encontrado ' + atual);
 }
-const fontes = [
-  'src/data/capitulos/digestivo.ts',
-  'src/data/liberacao/digestivo.ts',
-  'src/components/midia/m2v10-graficos.tsx',
-].map(p => ler(p).toString('utf8'));
+// A lista assinada é um retrato exato das chaves existentes quando o autor congelou M2V10.
+// Uma nova expressão do M2V11 pode aparecer no texto antigo como substring, mas não
+// deve ser confundida com uma tradução que existia na data do congelamento.
+const chavesArquivo = ler('scripts/m2v10-frozen-keys.json').toString('utf8');
+if (fnv(chavesArquivo) !== '53fc5b2390b72174') erro('lista imutável de chaves do M2V10 foi modificada.');
+let chavesCongeladas = [];
+try { chavesCongeladas = JSON.parse(chavesArquivo); }
+catch (e) { erro('lista de chaves do M2V10 inválida.'); }
+if (!Array.isArray(chavesCongeladas) || chavesCongeladas.length !== MAX_CHAVES) erro('quantidade de chaves congeladas inválida.');
 const animacoes = ler('src/components/midia/animacoes.tsx').toString('utf8');
 const inicio = animacoes.indexOf('// M2V10 · Gás intestinal');
 const fim = animacoes.indexOf('\n// M2V', inicio + 12);
 const trecho = inicio >= 0 ? animacoes.slice(inicio, fim < 0 ? undefined : fim).trimEnd() : '';
 if (fnv(trecho) !== ANIMACAO) erro('animação específica do M2V10 foi modificada.');
-fontes.push(trecho);
-// As traduções são compartilhadas com o app inteiro. Congelar o JSON total impediria novos voos.
-// Protegemos SOMENTE os pares PT->EN/ES de chaves presentes no conteúdo e nas mídias do M2V10.
-function pertenceAoVoo(chave) {
-  const escapada = chave.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/"/g, '\\"');
-  return fontes.some(s => s.includes(escapada) || s.includes(chave));
-}
 for (const [idioma, esperado] of Object.entries(I18N)) {
   const p = 'src/i18n/' + idioma + '.json';
   let d;
   try { d = JSON.parse(ler(p).toString('utf8')); }
   catch (e) { erro('JSON de idioma inválido: ' + idioma); continue; }
-  const pares = Object.entries(d)
-    .filter(([chave]) => pertenceAoVoo(chave))
-    .sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
-  if (pares.length !== MAX_CHAVES) erro(idioma + ': entradas congeladas alteradas (' + pares.length + '/' + MAX_CHAVES + ').');
+  const pares = chavesCongeladas.map(chave => [chave, d[chave]]);
+  if (pares.some(([, traducao]) => typeof traducao !== 'string')) erro(idioma + ': entrada congelada removida.');
   if (fnv(JSON.stringify(pares)) !== esperado) erro(idioma + ': conteúdo das traduções do M2V10 mudou.');
 }
 const secoes = ler('src/data/secoes.ts').toString('utf8');
