@@ -61,7 +61,7 @@ export function Opcoes<T extends string | number | boolean>({
               pressed && !on && styles.pressionada,
             ]}>
             {x.cor && !on ? <View style={[styles.ponto, { backgroundColor: x.cor }]} /> : null}
-            <Texto t="item" cor={on ? Cores.fundo : Cores.texto} numberOfLines={2} style={styles.rotulo}>{x.rotulo}</Texto>
+            <Texto t="item" cor={on ? Cores.fundo : Cores.texto} style={styles.rotulo}>{x.rotulo}</Texto>
           </Pressable>
         );
       })}
@@ -87,5 +87,5 @@ const styles = StyleSheet.create({
   },
   pressionada: { backgroundColor: 'rgba(111,211,255,0.12)' },
   ponto: { width: 8, height: 8, borderRadius: 4 },
-  rotulo: { textAlign: 'center', flexShrink: 1 },
+  rotulo: { textAlign: 'center', flexShrink: 1, minWidth: 0 },
 });

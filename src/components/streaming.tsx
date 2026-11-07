@@ -35,7 +35,7 @@ export function rotaEpisodio(secao: string, numero: number) {
 export function Fileira({ titulo, rotulo, acao, onAcao, children }: { titulo: string; rotulo?: string; acao?: string; onAcao?: () => void; children: ReactNode }) {
   const gestoInterno = useSwipeInterno();
   return (
-    <View style={{ gap: Espaco.sm }}>
+    <View style={{ gap: Espaco.sm, width: '100%', maxWidth: '100%', overflow: 'hidden' }}>
       <View style={styles.cabecalhoFileira}>
         <View style={{ flex: 1, gap: 2 }}>
           {rotulo ? <Texto t="rotulo" cor={Cores.destaque}>{rotulo}</Texto> : null}
