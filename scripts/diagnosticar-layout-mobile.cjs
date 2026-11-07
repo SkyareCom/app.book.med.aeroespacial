@@ -68,10 +68,10 @@ const { chromium } = require('playwright');
         throw new Error('O texto do capítulo sobrepõe o interativo em ' + width + ' px');
       }
       if (data.scrollWidth>data.visualWidth+2) {
-        console.log('ROLAGEM-PENDENTE',width, JSON.stringify(data.near));
+        throw new Error('Rolagem horizontal indevida ' + width + 'px, document=' + data.scrollWidth + ', viewport=' + data.visualWidth + ': ' + JSON.stringify(data.near));
       }
       const toggle=page.getByRole('button',{name:/M2V10 - VI:/});
-      await toggle.click({timeout:10000});
+      await toggle.click({force:true,timeout:10000});
       if (await page.getByText('UK CAA: evitar voar nos primeiros 10 dias após cirurgia abdominal.',{exact:true}).count()) {
         throw new Error('Gaveta não fechou após toque em ' + width + ' px');
       }
