@@ -1,0 +1,50 @@
+name: M2V11 tradução completa e validação
+on:
+  push:
+    branches: ['voo/M2V11']
+    paths: [.github/workflows/m2v11-traducao.yml]
+  workflow_dispatch:
+permissions: { contents: write }
+jobs:
+  traduzir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: voo/M2V11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Traduzir textos e termos do M2V11 por contexto
+        run: python3 -u scripts/traduzir-voo-contextual.py
+      - name: Garantir zero traduções faltantes
+        run: |
+          set -euo pipefail
+          node scripts/traduzir.cjs | tee /tmp/idiomas.txt
+          grep -q 'en-US: 0 texto(s) sem tradução' /tmp/idiomas.txt
+          grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/idiomas.txt
+      - name: Proteger M2V10 e toda a missão congelada
+        run: |
+          node scripts/check-m1v1-frozen.cjs
+          node scripts/check-m2v10-frozen.cjs
+      - name: Validar sistema editorial, TypeScript e testes
+        run: |
+          npx tsc --noEmit
+          npm test
+          npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs M2V11 conteudo
+      - name: Exportar HTML do capítulo em PT EN ES
+        run: |
+          npm run export:web
+          test -s dist/capitulo/sistemas/11.html
+      - name: Gravar apenas as traduções e relatório no ramo do novo voo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/i18n/en-US.json src/i18n/es-ES.json docs/m2v11-auditoria-traducao.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(m2v11): completar EN-US e ES-ES preservando M2V10'
+            git push origin HEAD:voo/M2V11
+          fi
