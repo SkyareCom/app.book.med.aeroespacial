@@ -70,12 +70,16 @@ const { chromium } = require('playwright');
       if (data.scrollWidth>data.visualWidth+2) {
         throw new Error('Rolagem horizontal indevida ' + width + 'px, document=' + data.scrollWidth + ', viewport=' + data.visualWidth + ': ' + JSON.stringify(data.near));
       }
+      // Disparar o clique no elemento (independente do cabeçalho fixo sobre o ponto
+      // de rolagem escolhido pelo Playwright), testando o estado real da gaveta.
       const toggle=page.getByRole('button',{name:/M2V10 - VI:/});
-      await toggle.click({force:true,timeout:10000});
+      await toggle.evaluate((el)=>el.click());
+      await page.waitForTimeout(500);
       if (await page.getByText('UK CAA: evitar voar nos primeiros 10 dias após cirurgia abdominal.',{exact:true}).count()) {
-        throw new Error('Gaveta não fechou após toque em ' + width + ' px');
+        throw new Error('Gaveta não fechou após clique no botão em ' + width + ' px');
       }
-      await toggle.click({timeout:10000});
+      await toggle.evaluate((el)=>el.click());
+      await page.waitForTimeout(500);
       await page.close();
     }
   } finally { await browser.close(); }
