@@ -62,7 +62,7 @@ catch (e) { erro('lista de chaves do M2V10 inválida.'); }
 if (!Array.isArray(chavesCongeladas) || chavesCongeladas.length !== MAX_CHAVES) erro('quantidade de chaves congeladas inválida.');
 const animacoes = ler('src/components/midia/animacoes.tsx').toString('utf8');
 const inicio = animacoes.indexOf('// M2V10 · Gás intestinal');
-const fim = animacoes.indexOf('\\n// M2V', inicio + 12);
+const fim = animacoes.indexOf('\n// M2V', inicio + 12);
 const trecho = inicio >= 0 ? animacoes.slice(inicio, fim < 0 ? undefined : fim).trimEnd() : '';
 if (fnv(trecho) !== ANIMACAO) erro('animação específica do M2V10 foi modificada.');
 for (const [idioma, esperado] of Object.entries(I18N)) {
