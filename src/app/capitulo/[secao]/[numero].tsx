@@ -193,10 +193,10 @@ function BlocoTopico({ topico, codigo, destacado, voltarAoTopo }: { topico: Topi
             (ou "em produção") e o puxador à direita. A altura é sempre a mesma. */}
         <View style={styles.textosTopico}>
           <Texto t="rotulo" cor={Cores.destaque} numberOfLines={1}>{codigo} - {romano(Number(topico.id.split('.').pop()))}</Texto>
-          <Texto t="item" style={TituloDestaque} numberOfLines={1}>{topico.titulo}</Texto>
+          <Texto t="item" style={TituloDestaque} numberOfLines={2}>{topico.titulo}</Texto>
           <View style={styles.perguntaTopico}>
             {pode ? (
-              <Texto cor={Cores.textoApagado} numberOfLines={2}>{topico.pergunta}</Texto>
+              <Texto cor={Cores.textoApagado}>{topico.pergunta}</Texto>
             ) : (
               <Texto t="rotulo" cor={Cores.textoApagado}>Em produção</Texto>
             )}
@@ -242,8 +242,8 @@ const styles = StyleSheet.create({
   cabecaTopico: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, marginHorizontal: -8, marginVertical: -6, paddingHorizontal: 8, paddingVertical: 6, borderRadius: 12 },
   cabecaPressionada: { backgroundColor: 'rgba(111,211,255,0.08)' },
   puxador: { alignItems: 'center', gap: 4, width: 60 },
-  textosTopico: { flex: 1, height: 72, gap: 2 },
-  perguntaTopico: { height: 36, justifyContent: 'center' },
+  textosTopico: { flex: 1, minWidth: 0, minHeight: 72, gap: 2 },
+  perguntaTopico: { minHeight: 36, justifyContent: 'center' },
   setaAberta: { borderColor: Cores.destaque, backgroundColor: 'rgba(111,211,255,0.1)' },
   seta: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, borderColor: Cores.linha, alignItems: 'center', justifyContent: 'center' },
   fechar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, minHeight: 44, borderTopWidth: 1, borderTopColor: Cores.linha },
