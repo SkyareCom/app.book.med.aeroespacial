@@ -39,6 +39,11 @@ export const normas: Referencia[] = [
 
 // Diretrizes médicas e de saúde do viajante usadas para passageiros (02/11/2026).
 export const diretrizes: Referencia[] = [
+  { titulo: 'CDC Yellow Book 2026 · Sangue e viagem', detalhe: 'Air Travel; Travelers with Chronic Illnesses: orientação para anemia, hemoglobinopatias e risco trombótico em passageiros' },
+  { titulo: 'CDC Yellow Book 2026 · HIV, infecções e imunização', detalhe: 'Travelers with HIV; Immunocompromised Travelers: tratamento contínuo, imunossupressão, vacinas vivas e preparo pré-viagem' },
+  { titulo: 'FAA · doenças hematológicas, neoplasias e HIV', detalhe: 'Guide for Aviation Medical Examiners, item 48, com decisões e documentação individual conforme condição' },
+  { titulo: 'ANAC · requisitos hematológicos', detalhe: 'RBAC 67, Emenda 05, itens 67.87 e 67.127: anemia, coagulação, hemoglobinopatias e anticoagulação oral cumarínica' },
+  { titulo: 'EASA Part-MED · hematologia', detalhe: 'MED.B.030: avaliação de anemia, leucemia, doenças de sangue e estabilidade; não substitui o RBAC brasileiro' },
   { titulo: 'UK CAA · cirurgias e digestivo', detalhe: 'Orientação para passageiros sobre cirurgia abdominal, colonoscopia e gás residual na laparoscopia; orientação aeromédica específica para pilotos após laparoscopia e cirurgia abdominal' },
   { titulo: 'FAA · aparelho digestivo', detalhe: 'Guide for Aviation Medical Examiners, Item 38 Abdomen and Viscera; decisões sobre refluxo, úlcera, hepatite e colite, incluindo acompanhamento de autorizações especiais' },
   { titulo: 'ICAO · aparelho digestivo', detalhe: 'Doc 8984, Parte III, Capítulo 3: Digestive System, doenças digestivas e critérios de avaliação aeromédica' },

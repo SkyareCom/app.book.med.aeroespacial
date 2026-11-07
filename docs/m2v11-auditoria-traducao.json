@@ -1,0 +1,134 @@
+[
+  {
+    "idioma": "en-US",
+    "chaves": 480,
+    "amostra": [
+      {
+        "pt": "**Câncer** reúne doenças de crescimento celular desregulado, com consequências muito distintas conforme órgão, estágio e",
+        "traducao": "**Cancer** brings together diseases of unregulated cell growth, with very different consequences depending on the organ, stage and treatment. A patient being followed up "
+      },
+      {
+        "pt": "**Doenças transmissíveis** podem alcançar outras pessoas por partículas respiratórias, contato, sangue, alimentos ou vet",
+        "traducao": "**Communicable diseases** can reach other people through respiratory particles, contact, blood, food or vectors, depending on the agent. The mere presence of an infection"
+      },
+      {
+        "pt": "A **anemia** é uma redução da capacidade de transporte de oxigênio, frequentemente relacionada a hemoglobina baixa por p",
+        "traducao": "**Anemia** is a reduction in oxygen transport capacity, often related to low hemoglobin due to blood loss, iron deficiency, inflammation, kidney disease or bone marrow di"
+      },
+      {
+        "pt": "A **vacinação** prepara a resposta imune contra agentes específicos e reduz a probabilidade de doença ou complicações. E",
+        "traducao": "**vaccination** prepares the immune response against specific agents and reduces the likelihood of illness or complications. It is part of collective protection, but does"
+      },
+      {
+        "pt": "A compensação clínica e a causa da anemia importam junto ao hemograma.",
+        "traducao": "Clinical compensation and the cause of anemia are important together with the blood count."
+      },
+      {
+        "pt": "A defesa reduzida aumenta risco de infecções oportunistas e complicações em destinos de maior exposição.",
+        "traducao": "Reduced defense increases the risk of opportunistic infections and complications in destinations with greater exposure."
+      },
+      {
+        "pt": "A desoxigenação pode favorecer eventos vaso-oclusivos; traço falciforme não é a mesma condição.",
+        "traducao": "Deoxygenation can favor vaso-occlusive events; Sickle cell trait is not the same condition."
+      },
+      {
+        "pt": "A exigência depende do país e da rota, não da altitude do avião.",
+        "traducao": "The requirement depends on the country and route, not the altitude of the plane."
+      },
+      {
+        "pt": "A hemoglobina disponível recebe menos oxigênio, reduzindo a margem de segurança em anemia ou doença cardiopulmonar.",
+        "traducao": "Available hemoglobin receives less oxygen, reducing the safety margin in anemia or cardiopulmonary disease."
+      },
+      {
+        "pt": "A infecção e a baixa reserva respiratória somam-se à menor pressão parcial de O₂.",
+        "traducao": "Infection and low respiratory reserve add to the lower partial pressure of O₂."
+      },
+      {
+        "pt": "A menor ação muscular reduz o retorno venoso. Em quem tem fatores de risco, a estase favorece trombose.",
+        "traducao": "Less muscular action reduces venous return. In those with risk factors, stasis favors thrombosis."
+      },
+      {
+        "pt": "A menor pressão parcial de O₂ na cabine reduz a margem de segurança em quem tem pouca hemoglobina; não diminui o número ",
+        "traducao": "The lower partial pressure of O₂ in the cabin reduces the safety margin in those with low hemoglobin; does not automatically reduce the number of red blood cells."
+      },
+      {
+        "pt": "A perda súbita reduz volume circulante e entrega de oxigênio, podendo levar a síncope.",
+        "traducao": "Sudden loss reduces circulating volume and oxygen delivery, which can lead to syncope."
+      },
+      {
+        "pt": "A supressão viral e o acompanhamento permitem saúde estável; HIV não se transmite pelo ar da cabine.",
+        "traducao": "Viral suppression and follow-up allow for stable health; HIV is not transmitted through cabin air."
+      },
+      {
+        "pt": "A transmissão depende do agente, proximidade, sintomas e medidas de controle.",
+        "traducao": "Transmission depends on the agent, proximity, symptoms and control measures."
+      }
+    ]
+  },
+  {
+    "idioma": "es-ES",
+    "chaves": 480,
+    "amostra": [
+      {
+        "pt": "**Câncer** reúne doenças de crescimento celular desregulado, com consequências muito distintas conforme órgão, estágio e",
+        "traducao": "El **cáncer** reúne enfermedades de crecimiento celular desregulado, con consecuencias muy diferentes según el órgano, el estadio y el tratamiento. Un paciente en seguimi"
+      },
+      {
+        "pt": "**Doenças transmissíveis** podem alcançar outras pessoas por partículas respiratórias, contato, sangue, alimentos ou vet",
+        "traducao": "**Las enfermedades transmisibles** pueden llegar a otras personas a través de partículas respiratorias, contacto, sangre, alimentos o vectores, dependiendo del agente. La"
+      },
+      {
+        "pt": "A **anemia** é uma redução da capacidade de transporte de oxigênio, frequentemente relacionada a hemoglobina baixa por p",
+        "traducao": "**La anemia** es una reducción en la capacidad de transporte de oxígeno, a menudo relacionada con una hemoglobina baja debido a la pérdida de sangre, deficiencia de hierr"
+      },
+      {
+        "pt": "A **vacinação** prepara a resposta imune contra agentes específicos e reduz a probabilidade de doença ou complicações. E",
+        "traducao": "**la vacunación** prepara la respuesta inmune contra agentes específicos y reduce la probabilidad de enfermedades o complicaciones. Es parte de la protección colectiva, p"
+      },
+      {
+        "pt": "A compensação clínica e a causa da anemia importam junto ao hemograma.",
+        "traducao": "La compensación clínica y la causa de la anemia son importantes junto con el hemograma."
+      },
+      {
+        "pt": "A defesa reduzida aumenta risco de infecções oportunistas e complicações em destinos de maior exposição.",
+        "traducao": "La defensa reducida aumenta el riesgo de infecciones oportunistas y complicaciones en destinos con mayor exposición."
+      },
+      {
+        "pt": "A desoxigenação pode favorecer eventos vaso-oclusivos; traço falciforme não é a mesma condição.",
+        "traducao": "La desoxigenación puede favorecer eventos vasooclusivos; El rasgo de células falciformes no es la misma condición."
+      },
+      {
+        "pt": "A exigência depende do país e da rota, não da altitude do avião.",
+        "traducao": "El requisito depende del país y la ruta, no de la altitud del avión."
+      },
+      {
+        "pt": "A hemoglobina disponível recebe menos oxigênio, reduzindo a margem de segurança em anemia ou doença cardiopulmonar.",
+        "traducao": "La hemoglobina disponible recibe menos oxígeno, lo que reduce el margen de seguridad en caso de anemia o enfermedad cardiopulmonar."
+      },
+      {
+        "pt": "A infecção e a baixa reserva respiratória somam-se à menor pressão parcial de O₂.",
+        "traducao": "La infección y la baja reserva respiratoria se suman a la presión parcial más baja de O₂."
+      },
+      {
+        "pt": "A menor ação muscular reduz o retorno venoso. Em quem tem fatores de risco, a estase favorece trombose.",
+        "traducao": "Una menor acción muscular reduce el retorno venoso. En aquellos con factores de riesgo, la estasis favorece la trombosis."
+      },
+      {
+        "pt": "A menor pressão parcial de O₂ na cabine reduz a margem de segurança em quem tem pouca hemoglobina; não diminui o número ",
+        "traducao": "La menor presión parcial de O₂ en la cabina reduce el margen de seguridad en aquellos con hemoglobina baja; no reduce automáticamente la cantidad de glóbulos rojos."
+      },
+      {
+        "pt": "A perda súbita reduz volume circulante e entrega de oxigênio, podendo levar a síncope.",
+        "traducao": "La pérdida repentina reduce el volumen circulante y el suministro de oxígeno, lo que puede provocar un síncope."
+      },
+      {
+        "pt": "A supressão viral e o acompanhamento permitem saúde estável; HIV não se transmite pelo ar da cabine.",
+        "traducao": "La supresión viral y el seguimiento permiten una salud estable; El VIH no se transmite a través del aire de la cabina."
+      },
+      {
+        "pt": "A transmissão depende do agente, proximidade, sintomas e medidas de controle.",
+        "traducao": "La transmisión depende del agente, la proximidad, los síntomas y las medidas de control."
+      }
+    ]
+  }
+]

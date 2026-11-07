@@ -141,7 +141,14 @@ export type TipoMidia =
   | 'figado-risco'
   | 'biliar-decidir'
   | 'prazo-cirurgia-digestiva'
-  | 'animacao-gas-intestinal';
+  | 'animacao-gas-intestinal'
+  | 'sangue-cabine'
+  | 'anemia-voo'
+  | 'cancer-voo'
+  | 'infeccao-voo'
+  | 'hiv-viagem'
+  | 'vacinas-voo'
+  | 'animacao-hemoglobina';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.
