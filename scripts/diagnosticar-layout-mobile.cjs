@@ -44,6 +44,24 @@ const { chromium } = require('playwright');
           textLength:document.body.innerText.length,hasTopic:document.body.innerText.includes('Depois de'),found:found.slice(-40)};
       });
       console.log('LAYOUT',width,JSON.stringify(data));
+      const detalhes=data.found.filter(x=>x.text.startsWith('UK CAA: evitar voar')||x.text.startsWith('Depois, o cirurgião')||x.text.startsWith('No Brasil, para tripulantes'));
+      if (detalhes.length !== 3 || detalhes.some(x=>x.box.bottom>x.parent.bottom+3)) {
+        throw new Error('Texto extrapola moldura de cirurgia em ' + width + ' px: ' + JSON.stringify(detalhes));
+      }
+      const inicio=data.found.find(x=>x.text==='Para o');
+      const fim=detalhes.find(x=>x.text.startsWith('No Brasil,'));
+      if (!inicio || !fim || inicio.box.top<fim.box.bottom+4) {
+        throw new Error('O texto do capítulo sobrepõe o interativo em ' + width + ' px');
+      }
+      if (data.scrollWidth>data.visualWidth+2) {
+        throw new Error('Rolagem horizontal indevida em ' + width + ' px: ' + JSON.stringify(data.overflows));
+      }
+      const toggle=page.getByRole('button',{name:/M2V10 - VI:/});
+      await toggle.click({timeout:10000});
+      if (await page.getByText('UK CAA: evitar voar nos primeiros 10 dias após cirurgia abdominal.',{exact:true}).count()) {
+        throw new Error('Gaveta não fechou após toque em ' + width + ' px');
+      }
+      await toggle.click({timeout:10000});
       await page.close();
     }
   } finally { await browser.close(); }
