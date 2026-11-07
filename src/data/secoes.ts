@@ -13,6 +13,7 @@ import { cerebro } from './capitulos/cerebro';
 import { mente } from './capitulos/mente';
 import { hormonios } from './capitulos/hormonios';
 import { digestivo } from './capitulos/digestivo';
+import { sangueImunidade } from './capitulos/sangue-imunidade';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -77,7 +78,7 @@ export const secoes: Secao[] = [
       { ...sono, numero: 8 },
       { ...hormonios, numero: 9 },
       { ...digestivo, numero: 10 },
-      cap(11, 'Sangue, câncer e infecções', ['Anemias e anticoagulação', 'Câncer', 'Doenças transmissíveis', 'HIV', 'Vacinação']),
+      { ...sangueImunidade, numero: 11 },
       cap(12, 'Coluna, ossos e músculos', ['Dor cervical e lombar', 'Lesões ortopédicas', 'Condicionamento físico']),
       cap(13, 'Saúde da mulher', ['Gestação', 'Ciclo menstrual e menopausa']),
       // 02/11/2026: rins e envelhecimento ganharam voos próprios, no fim da missão, para não mudar a numeração
