@@ -26,7 +26,7 @@ jobs:
           node scripts/traduzir.cjs | tee /tmp/idiomas.txt
           grep -q 'en-US: 0 texto(s) sem tradução' /tmp/idiomas.txt
           grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/idiomas.txt
-      - name: Proteger M2V10 e toda a missão congelada
+      - name: Proteger M2V10 com chaves originais e toda a missão congelada
         run: |
           node scripts/check-m1v1-frozen.cjs
           node scripts/check-m2v10-frozen.cjs
