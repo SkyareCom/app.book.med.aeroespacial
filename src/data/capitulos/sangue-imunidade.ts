@@ -366,6 +366,7 @@ export const sangueImunidade: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, verifique sintomas, orientações locais e recomendações de saúde pública para o destino. Adie se estiver contagioso conforme a doença, com dispneia ou clinicamente instável. Se surgirem sintomas durante a viagem, avise a tripulação e siga os procedimentos de segurança. Após o pouso, procure avaliação quando houver sinais de gravidade. Planejamento, vacinação adequada e respeito à privacidade reduzem riscos sem discriminação.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v11-4-prevencao.jpg'), legenda: "Ventilação e máscara reduzem o risco; quem está com febre deve adiar o voo." } },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v11-4-avaliacao.jpg'), legenda: "Febre ou sintomas respiratórios pedem avaliação antes do embarque." } },
           {
             paragrafo: 1,

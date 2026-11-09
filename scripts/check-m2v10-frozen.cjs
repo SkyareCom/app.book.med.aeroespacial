@@ -7,6 +7,8 @@
 // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células sem ponto final, títulos de
 // tabela com o tema, remissão no padrão, tempo de leitura, texto dividido em parágrafos (o app traduz parágrafo por
 // parágrafo) com as traduções de cada um, "OACI" e "Ver" no espanhol, chaves do objeto sem aspas; hashes refeitos.
+// 09/11/2026 (mesmo pedido): rótulos do interativo no espanhol corrigidos (SUBIDA = ASCENSO, não TREPAR;
+// TRIPULANTE = TRIPULANTE, não MULTITUD); hash do es-ES refeito.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -29,7 +31,7 @@ const BLOBS = Object.freeze({
   "src/data/capitulos/digestivo.ts": "aaa8a27f68923ea2e2e7075f7a23be82a7a8d48f",
   "src/data/liberacao/digestivo.ts": "5834023a70774beb3a2af46d104cf6cc91c2592f"
 });
-const I18N = Object.freeze({ 'en-US': 'cecadaf95f7ebe84', 'es-ES': '0884ab941717bde7' });
+const I18N = Object.freeze({ 'en-US': 'cecadaf95f7ebe84', 'es-ES': '70993fbf45253697' });
 const MAX_CHAVES = 675;
 const ANIMACAO = '65fa9cbc56b5511a';
 let falhas = 0;

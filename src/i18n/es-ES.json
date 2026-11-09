@@ -9324,7 +9324,7 @@
 "Revisar função hepática, ascite, sangramento, consciência e efeitos dos medicamentos.":"Revisar la función hepática, ascitis, sangrado, conciencia y efectos de los medicamentos.",
 "Revisar sinais de alerta, diagnóstico e tratamento; confirmar resolução de complicações.":"Revisar las señales de alerta, diagnóstico y tratamiento; confirmar la resolución de las complicaciones.",
 "Revisão do motivo, da dose, de sangramento e do risco aeromédico (Veja M2V2 - VII).":"Revisión del motivo, dosis, sangrado y riesgo aeromédico (Ver M2V2 - VII).",
-"SUBIDA":"TREPAR",
+"SUBIDA":"ASCENSO",
 "Sais de reidratação oral":"Sales de rehidratación oral",
 "Sangramento":"Sangría",
 "Sangramento ativo é emergência. Varizes conhecidas exigem avaliação antes de viajar.":"El sangrado activo es una emergencia. Las venas varicosas conocidas requieren una evaluación antes de viajar.",
@@ -9352,7 +9352,7 @@
 "Sonolência, reação lenta e risco operacional.":"Somnolencia, lentitud de reacción y riesgo operacional.",
 "Substâncias não depuradas pelo fígado afetam o cérebro: sonolência, desorientação e confusão.":"Las sustancias que el hígado no elimina afectan al cerebro: somnolencia, desorientación y confusión.",
 "Só retorne após prazo correspondente à cirurgia e liberação aeromédica.":"Sólo devolución después del plazo correspondiente a la cirugía y autorización médica aérea.",
-"TRIPULANTE":"MULTITUD",
+"TRIPULANTE":"TRIPULANTE",
 "Tem doença do fígado com sintomas ou complicações?":"¿Tiene enfermedad hepática con síntomas o complicaciones?",
 "Tem dor abdominal forte ou crescente, vômito com sangue, fezes pretas com fraqueza ou desmaio, ou distensão progressiva?":"¿Tiene dolor abdominal intenso o creciente, vómito con sangre, heces negras con debilidad o desmayo o distensión progresiva?",
 "Tem hérnia abdominal com sintomas ou suspeita de obstrução intestinal?":"¿Tiene una hernia abdominal con síntomas o sospecha de obstrucción intestinal?",
@@ -9906,7 +9906,7 @@
 "O CDC recomenda adiar viagem após crise recente; converse com seu médico.":"CDC recomienda posponer viajes tras crisis reciente; habla con tu médico.",
 "O HIV não se transmite pelo ar da cabine. A avaliação clínica deve respeitar a privacidade.":"El VIH no se transmite a través del aire de la cabina. La evaluación clínica debe respetar la privacidad.",
 "O HIV é transmitido pelo ar compartilhado na cabine?":"¿Se transmite el VIH a través del aire compartido de la cabina?",
-"O QUE MUDA NO CORPO":"QUE CAMBIOS EN EL CUERPO",
+"O QUE MUDA NO CORPO":"QUÉ CAMBIA EN EL CUERPO",
 "O estado imune pode contraindicar vacinas replicantes; o risco do destino também importa.":"El estado inmunológico puede contraindicar la replicación de vacunas; El riesgo del destino también importa.",
 "O plano combina exigências do destino e condições clínicas individuais.":"El plan combina los requisitos del destino y las condiciones clínicas individuales.",
 "O quadro pode comprometer a saúde do viajante e trazer risco de transmissão.":"La afección puede comprometer la salud del viajero y suponer un riesgo de transmisión.",
@@ -10266,5 +10266,7 @@
 "A consulta é confidencial: o HIV controlado não impede a viagem.":"La consulta es confidencial: el VIH controlado no impide viajar.",
 "Os remédios vão na bagagem de mão, em quantidade para atrasos.":"Los medicamentos van en el equipaje de mano, en cantidad suficiente para retrasos.",
 "A vacina é planejada semanas antes da viagem.":"La vacuna se planifica semanas antes del viaje.",
-"A carteira de vacinação confere o que o destino exige.":"La cartilla de vacunación comprueba lo que exige el destino."
+"A carteira de vacinação confere o que o destino exige.":"La cartilla de vacunación comprueba lo que exige el destino.",
+"Ventilação e máscara reduzem o risco; quem está com febre deve adiar o voo.":"La ventilación y la mascarilla reducen el riesgo; quien tiene fiebre debe aplazar el vuelo.",
+"O voo 11 da Missão Sistemas chegou: o sangue e a defesa do organismo na cabine, anemia e anticoagulação, câncer e quimioterapia, infecções transmissíveis, HIV sem discriminação e vacinas para o viajante. O formulário de liberação ganhou o bloco do sangue e da imunidade.":"Llegó el vuelo 11 de la Misión Sistemas: la sangre y las defensas del organismo en la cabina, anemia y anticoagulación, cáncer y quimioterapia, infecciones transmisibles, VIH sin discriminación y vacunas para el viajero. El formulario de autorización ganó el bloque de la sangre y la inmunidad."
 }
