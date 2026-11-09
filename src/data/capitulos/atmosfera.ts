@@ -70,6 +70,7 @@ import type { Capitulo } from '../tipos';
 export const atmosfera: Capitulo = {
   numero: 1,
   titulo: 'Atmosfera e ambiente de voo',
+  tempoLeituraMin: 20,
   topicos: [
     {
       id: '1.1',
@@ -140,11 +141,11 @@ export const atmosfera: Capitulo = {
               titulo: 'Onde o gás fica preso',
               colunas: ['Local', 'Quando incomoda', 'O que se sente'],
               linhas: [
-                ['Ouvido médio', 'Principalmente na descida.', 'Dor, ouvido tapado e audição abafada.'],
-                ['Seios da face', 'Na subida ou na descida.', 'Dor na testa, ao redor dos olhos ou nos dentes de cima.'],
-                ['Dentes', 'Na subida.', 'Dor em dente com cárie, restauração mal adaptada ou ar preso.'],
-                ['Estômago e intestino', 'Na subida.', 'Estufamento, cólica e gases.'],
-                ['Pulmões e pleura', 'Descompressão rápida ou pneumotórax prévio.', 'Falta de ar e dor no peito.'],
+                ['Ouvido médio', 'Principalmente na descida', 'Dor, ouvido tapado e audição abafada'],
+                ['Seios da face', 'Na subida ou na descida', 'Dor na testa, ao redor dos olhos ou nos dentes de cima'],
+                ['Dentes', 'Na subida', 'Dor em dente com cárie, restauração mal adaptada ou ar preso'],
+                ['Estômago e intestino', 'Na subida', 'Estufamento, cólica e gases'],
+                ['Pulmões e pleura', 'Descompressão rápida ou pneumotórax prévio', 'Falta de ar e dor no peito'],
               ],
             },
           },
@@ -174,8 +175,8 @@ export const atmosfera: Capitulo = {
               titulo: 'Dois jeitos de medir a altitude',
               colunas: ['Altitude', 'O que é', 'Para que serve'],
               linhas: [
-                ['Altitude-pressão', 'Altura acima do nível de 1.013,25 hPa, com o altímetro ajustado em 29,92 inHg.', 'Cálculos de desempenho e níveis de voo.'],
-                ['Altitude-densidade', 'Altitude-pressão corrigida para a temperatura fora do padrão.', 'Saber como o avião e o motor vão render naquele dia.'],
+                ['Altitude-pressão', 'Altura acima do nível de 1.013,25 hPa, com o altímetro ajustado em 29,92 inHg', 'Cálculos de desempenho e níveis de voo'],
+                ['Altitude-densidade', 'Altitude-pressão corrigida para a temperatura fora do padrão', 'Saber como o avião e o motor vão render naquele dia'],
               ],
             },
           },
@@ -202,10 +203,10 @@ export const atmosfera: Capitulo = {
               titulo: 'Como ler temperatura e umidade',
               colunas: ['Medida', 'O que informa', 'Aplicação no voo'],
               linhas: [
-                ['Temperatura externa', 'O calor ou frio do ar fora da aeronave, em °C.', 'Densidade do ar, desempenho e condições de gelo.'],
-                ['Temperatura da cabine', 'O ambiente térmico regulado pelo sistema de climatização.', 'Conforto e proteção durante o cruzeiro.'],
-                ['Umidade relativa', 'Quanto o vapor presente representa da saturação possível, em %.', 'Conforto das mucosas e avaliação meteorológica.'],
-                ['Ponto de orvalho', 'A temperatura em que o ar se satura ao ser resfriado.', 'Indício de condensação, nuvens ou nevoeiro.'],
+                ['Temperatura externa', 'O calor ou frio do ar fora da aeronave, em °C', 'Densidade do ar, desempenho e condições de gelo'],
+                ['Temperatura da cabine', 'O ambiente térmico regulado pelo sistema de climatização', 'Conforto e proteção durante o cruzeiro'],
+                ['Umidade relativa', 'Quanto o vapor presente representa da saturação possível, em %', 'Conforto das mucosas e avaliação meteorológica'],
+                ['Ponto de orvalho', 'A temperatura em que o ar se satura ao ser resfriado', 'Indício de condensação, nuvens ou nevoeiro'],
               ],
             },
           },
