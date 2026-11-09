@@ -6,8 +6,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const src = fs.readFileSync(path.join(root, 'src/data/capitulos/sangue-imunidade.ts'), 'utf8');
-const blocks = [...src.matchAll(/"texto": "((?:\\.|[^"\\])*)"/g)]
-  .map(m => JSON.parse('"' + m[1] + '"'));
+// 09/11/2026: o texto passou a ser lista de parágrafos (texto: [ '…', … ].join('\n\n')), padrão dos outros voos.
+const blocks = [...src.matchAll(/texto: \[\n([\s\S]*?)\n\s*\]\.join\('\\n\\n'\)/g)]
+  .map(m => [...m[1].matchAll(/^\s*("(?:\\.|[^"\\])*"),$/gm)].map(x => JSON.parse(x[1])).join('\n\n'));
 if (blocks.length !== 6) throw Error('M2V11 precisa ter 6 tópicos com texto.');
 for (const language of ['en-US', 'es-ES']) {
   const dic = JSON.parse(fs.readFileSync(path.join(root, 'src/i18n', language + '.json'), 'utf8'));

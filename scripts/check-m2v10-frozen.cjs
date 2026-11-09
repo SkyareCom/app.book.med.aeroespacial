@@ -4,6 +4,9 @@
 // 12 fotografias, vídeo, animação e entradas de tradução usadas neste voo.
 // Não altera documentos; qualquer divergência bloqueia o CI da main e dos PRs.
 // Somente autorização explícita do autor permite atualizar as assinaturas.
+// 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células sem ponto final, títulos de
+// tabela com o tema, remissão no padrão, tempo de leitura, texto dividido em parágrafos (o app traduz parágrafo por
+// parágrafo) com as traduções de cada um, "OACI" e "Ver" no espanhol, chaves do objeto sem aspas; hashes refeitos.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -23,11 +26,11 @@ const BLOBS = Object.freeze({
   "assets/images/topicos/m2v10-6-recuperacao.jpg": "244e1c505bbfb1d23fab49475a09e9c4d6abec18",
   "assets/videos/m2v10-gas-cabine.mp4": "33421089edfffda8eb270909769183d9c19dbec0",
   "src/components/midia/m2v10-graficos.tsx": "a24fda2cacc86652a96ed97eacdf9efc99299cea",
-  "src/data/capitulos/digestivo.ts": "8c8bc613a68a056bb2dd72116f70073ca4d3c388",
-  "src/data/liberacao/digestivo.ts": "54586a0145421faac22576ea5978c8c80ac0e410"
+  "src/data/capitulos/digestivo.ts": "aaa8a27f68923ea2e2e7075f7a23be82a7a8d48f",
+  "src/data/liberacao/digestivo.ts": "5834023a70774beb3a2af46d104cf6cc91c2592f"
 });
-const I18N = Object.freeze({ 'en-US': 'dfc198388b66f6d6', 'es-ES': '1fb248eb7f984a26' });
-const MAX_CHAVES = 629;
+const I18N = Object.freeze({ 'en-US': 'cecadaf95f7ebe84', 'es-ES': '0884ab941717bde7' });
+const MAX_CHAVES = 675;
 const ANIMACAO = '65fa9cbc56b5511a';
 let falhas = 0;
 function erro(mensagem) { console.error('CONGELAMENTO M2V10 VIOLADO: ' + mensagem); falhas++; }
@@ -55,7 +58,7 @@ for (const [p, esperado] of Object.entries(BLOBS)) {
 // Uma nova expressão do M2V11 pode aparecer no texto antigo como substring, mas não
 // deve ser confundida com uma tradução que existia na data do congelamento.
 const chavesArquivo = ler('scripts/m2v10-frozen-keys.json').toString('utf8');
-if (fnv(chavesArquivo) !== '53fc5b2390b72174') erro('lista imutável de chaves do M2V10 foi modificada.');
+if (fnv(chavesArquivo) !== '05aea312e7f16750') erro('lista imutável de chaves do M2V10 foi modificada.');
 let chavesCongeladas = [];
 try { chavesCongeladas = JSON.parse(chavesArquivo); }
 catch (e) { erro('lista de chaves do M2V10 inválida.'); }
@@ -82,5 +85,5 @@ if (falhas > 0) {
   console.error('O conteúdo congelado não pode ser modificado sem autorização expressa do autor.');
   process.exitCode = 1;
 } else {
-  console.log('CONGELADO / ÍNTEGRO: M2V10 — seis tópicos, interativos, doze fotos, vídeo, teste, liberação e 629 chaves de tradução por idioma.');
+  console.log('CONGELADO / ÍNTEGRO: M2V10 — seis tópicos, interativos, doze fotos, vídeo, teste, liberação e 675 chaves de tradução por idioma.');
 }

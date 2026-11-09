@@ -1,7 +1,7 @@
 name: Produção editorial e publicação de voos
 on:
   push:
-    branches: [m2v10-digestivo, 'voo/**']
+    branches: ['voo/**']
   workflow_dispatch:
     inputs:
       codigo:
@@ -34,7 +34,6 @@ jobs:
         run: |
           set -euo pipefail
           if [ -n "$MANUAL" ]; then C="$MANUAL"
-          elif [ "$GITHUB_REF_NAME" = m2v10-digestivo ]; then C=M2V10
           else C="${GITHUB_REF_NAME#voo/}"; fi
           C="$(echo "$C" | tr '[:lower:]' '[:upper:]')"
           [[ "$C" =~ ^M[1-4]V[1-9][0-9]*$ ]]
