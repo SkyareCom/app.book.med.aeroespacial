@@ -109,3 +109,14 @@ aviso de que o formulário apoia a decisão e não substitui o médico, a autori
 - [ ] Bloco `liberacao` com as perguntas do sistema, efeitos para passageiro e tripulante e fontes.
 - [ ] Detalhamento prático em todos os tópicos (parágrafo e tabela) e revisão de coerência.
 - [ ] Padrão de mídias, tabela de sistemas do corpo, teste, traduções (0 pendências) e teste visual em 320–390 px.
+
+## 6. Padrões de forma (revisão de 09/11/2026, pedido do autor)
+
+- **Texto do tópico em lista de parágrafos** (`[ '…', '…' ].join('\n\n')`), nunca uma string única com `\n\n` dentro: o
+  app traduz parágrafo por parágrafo, e só assim cada parágrafo entra nos dicionários e na conferência de traduções.
+- **Células de tabela sem ponto final.**
+- **Títulos de tabela com o tema:** "Liberação para voo · …", "Remédios e voo · …", "Como prevenir e amenizar · …".
+- **Remissões:** "(Veja M1V1 - IV e M2V8 - III)" em português; "(See …)" em inglês; "(Ver …)" em espanhol, que também usa
+  "OACI" e "ACV".
+- **Tempo de leitura** (`tempoLeituraMin`) em todo voo.
+
