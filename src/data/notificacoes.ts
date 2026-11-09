@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 20;
+export const VERSAO_NOTIFICACOES = 21;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'sangue',
+    rotulo: 'Voo disponível',
+    titulo: 'Sangue, câncer e infecções',
+    texto: 'O voo 11 da Missão Sistemas chegou: o sangue e a defesa do organismo na cabine, anemia e anticoagulação, câncer e quimioterapia, infecções transmissíveis, HIV sem discriminação e vacinas para o viajante. O formulário de liberação ganhou o bloco do sangue e da imunidade.',
+    destino: '/capitulo/sistemas/11',
+  },
   {
     id: 'digestivo',
     rotulo: 'Voo disponível',

@@ -52,6 +52,9 @@ jobs:
           node scripts/traduzir.cjs | tee /tmp/traducao.log
           grep -q 'en-US: 0 texto(s) sem tradução' /tmp/traducao.log
           grep -q 'es-ES: 0 texto(s) sem tradução' /tmp/traducao.log
+      - name: Exigir traduções dos parágrafos realmente renderizados
+        run: |
+          if [ "$CODIGO" = M2V11 ]; then node scripts/check-m2v11-i18n.cjs; fi
       - name: Validar o padrão editorial antes das mídias
         run: npx tsx --require ./scripts/stub-assets.cjs scripts/validar-voo.mjs "$CODIGO" conteudo
       - name: Conferir fotos e vídeo padronizados
