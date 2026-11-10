@@ -56,6 +56,19 @@ export function TipoVooOuvidos() {
   return <TipoVoo titulo="Ouvidos, seios e dentes em cada tipo de voo" dados={OUVIDOS} />;
 }
 
+// ---------------------------------------------------------------- M2V4 · Olhos (registro em olhos.ts)
+const OLHOS: Linha[] = [
+  { nome: 'Óculos ou lente de contato', pressurizado: 'Par de reserva na cabine; lágrima artificial no ar seco.', nao: 'Ar mais seco e vento da janela incomodam a lente de contato.', helicoptero: 'Vibração borra a leitura; óculos firmes sob o capacete.' },
+  { nome: 'Visão noturna fraca', pressurizado: 'Hipóxia leve da cabine já reduz a visão noturna.', nao: 'Sem oxigênio, piora acima de 5.000 ft à noite; o fumante piora antes.', helicoptero: 'Óculos de visão noturna estreitam o campo: varredura com a cabeça.' },
+  { nome: 'Glaucoma ou perda de campo', pressurizado: 'Controle em dia: colírios na bagagem de mão, no horário.', nao: 'À noite, a hipóxia estreita ainda mais o campo.', helicoptero: 'Voo baixo exige o campo inteiro contra fios e obstáculos.' },
+  { nome: 'Visão de um olho só', pressurizado: 'Passageiro sem restrição.', nao: 'Tripulante: 6 meses de adaptação e teste em voo (ICAO).', helicoptero: 'Varredura lateral mais exigente no voo baixo.' },
+  { nome: 'Gás no olho após cirurgia de retina', pressurizado: 'Não voar até absorver: cerca de 2 semanas (SF6) ou 6 semanas (C3F8).', nao: 'Cabine mais alta: o gás se expande mais. Não voar.', helicoptero: 'Também proibido; até a subida da serra de carro pode expandir o gás.' },
+  { nome: 'Laser ou luz forte', pressurizado: 'Dois pilotos: quem não foi atingido assume.', nao: 'Avião leve com um só piloto: proteger os olhos e manter o controle.', helicoptero: 'Voo baixo e lento perto de cidades: mais tempo ao alcance do laser.' },
+];
+export function TipoVooOlhos() {
+  return <TipoVoo titulo="Os olhos em cada tipo de voo" dados={OLHOS} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });
