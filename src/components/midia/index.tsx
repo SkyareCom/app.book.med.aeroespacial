@@ -21,12 +21,13 @@ import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDe
 import { FusoInsulina, HormoniosVoo, ImcVoo, PrazoDiabetes, RemediosPeso, SemaforoGlicemia, TireoideVoo } from '@/components/midia/m2v9-graficos';
 import { BiliarDecidir, DigestivoVoo, FigadoRisco, IntestinoCrise, PrazoCirurgiaDigestiva, RefluxoVoo } from '@/components/midia/m2v10-graficos';
 import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo, AnimacaoHemoglobina } from '@/components/midia/m2v11-graficos';
+import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
 import { AssentoEnjoo, CondutaDesorientacao, IlusaoPista, IlusaoSomatogravica, IlusoesLabirinto, LimiarInclinacao, TempoNuvem } from '@/components/midia/m2v5-graficos';
 import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoTalaPneumatica, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -178,6 +179,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'hiv-viagem': () => <HIVViagem />,
   'vacinas-voo': () => <VacinasVoo />,
   'animacao-hemoglobina': () => <AnimacaoHemoglobina />,
+  'ossos-voo': () => <OssosVoo />,
+  'remedio-dor-espera': () => <RemedioDorEspera />,
+  'gesso-prazo': () => <GessoPrazo />,
+  'protese-certificacao': () => <ProteseCertificacao />,
+  'carga-pescoco': () => <CargaPescoco />,
+  'animacao-tala-pneumatica': () => <AnimacaoTalaPneumatica />,
   imsafe: () => <Imsafe />,
   'prazo-antidepressivo': () => <PrazoAntidepressivo />,
   'quadros-psiquiatricos': () => <QuadrosPsiquiatricos />,
@@ -323,6 +330,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'hiv-viagem': 'HIV e viagens',
   'vacinas-voo': 'Vacinação do viajante',
   'animacao-hemoglobina': 'Hemácias e oxigênio na cabine',
+  'ossos-voo': 'O voo e o sistema musculoesquelético',
+  'remedio-dor-espera': 'Remédio para dor e prazo sem voar',
+  'gesso-prazo': 'Gesso e prazo para voar',
+  'protese-certificacao': 'Prótese, articulação e certificado',
+  'carga-pescoco': 'A carga no pescoço sob G',
+  'animacao-tala-pneumatica': 'A tala pneumática na subida',
   imsafe: 'IMSAFE: o piloto confere a si mesmo',
   'prazo-antidepressivo': 'Antidepressivo e volta ao voo',
   'quadros-psiquiatricos': 'Diagnóstico e voo',
