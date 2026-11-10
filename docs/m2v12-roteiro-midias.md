@@ -1,5 +1,8 @@
 # M2V12 — Roteiro e prompts de mídias
 
+**Atualização (10/11/2026):** a validação de publicação exige foto na abertura dos tópicos II a V; a primeira foto de
+cada um passou para o parágrafo 1.
+
 **Status (10/11/2026):** capítulo, tabelas, interativos, animação, formulário de liberação, teste, referências e traduções
 EN/ES prontos no ramo `voo/M2V12` (`validar-voo M2V12 conteudo` aprovado). Faltam 10 fotos e 1 vídeo. Nenhum `require()`
 entra antes do arquivo real.
@@ -11,13 +14,13 @@ textos, logotipos, insígnias, crachás ou telas legíveis. Foto com qualquer de
 |---:|---|---|---:|---|
 | 1 | `m2v12-1-assento.jpg` | 12.1 Abertura | 3 | Passageiro ajustando o apoio lombar e esticando as pernas no corredor |
 | 2 | `m2v12-1-assistencia.jpg` | 12.1 Abertura | 5 | Passageira com bota imobilizadora em cadeira de rodas, assistida no embarque |
-| 3 | `m2v12-2-helicoptero.jpg` | 12.2 Pescoço e costas | 2 | Piloto de helicóptero de noite com óculos de visão noturna no capacete |
+| 3 | `m2v12-2-helicoptero.jpg` | 12.2 Pescoço e costas | 1 (abertura) | Piloto de helicóptero de noite com óculos de visão noturna no capacete |
 | 4 | `m2v12-2-exame.jpg` | 12.2 Pescoço e costas | 4 | Médico testando força da perna de piloto deitado na maca |
-| 5 | `m2v12-3-gesso.jpg` | 12.3 Fraturas e gesso | 2 | Passageiro com gesso na perna no assento do corredor, perna apoiada |
+| 5 | `m2v12-3-gesso.jpg` | 12.3 Fraturas e gesso | 1 (abertura) | Passageiro com gesso na perna no assento do corredor, perna apoiada |
 | 6 | `m2v12-3-tala.jpg` | 12.3 Fraturas e gesso | 4 | Enfermeira soltando ar da válvula de uma tala pneumática na perna |
-| 7 | `m2v12-4-protese.jpg` | 12.4 Próteses | 2 | Passageira com prótese abaixo do joelho caminhando na ponte de embarque |
+| 7 | `m2v12-4-protese.jpg` | 12.4 Próteses | 1 (abertura) | Passageira com prótese abaixo do joelho caminhando na ponte de embarque |
 | 8 | `m2v12-4-simulador.jpg` | 12.4 Próteses | 4 | Piloto com prótese de perna testando os pedais num simulador com o examinador |
-| 9 | `m2v12-5-exercicio.jpg` | 12.5 Condicionamento | 2 | Piloto fazendo exercício de pescoço com faixa elástica na academia |
+| 9 | `m2v12-5-exercicio.jpg` | 12.5 Condicionamento | 1 (abertura) | Piloto fazendo exercício de pescoço com faixa elástica na academia |
 | 10 | `m2v12-5-caca.jpg` | 12.5 Condicionamento | 4 | Piloto de caça com a cabeça encostada no assento antes da manobra |
 
 **Vídeo:** `m2v12-coluna-voo.mp4`, 12.1, após o parágrafo 4. 6 a 10 s, sem áudio, 16:9, H.264.
