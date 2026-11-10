@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 23;
+export const VERSAO_NOTIFICACOES = 24;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'ossos-musculos',
+    rotulo: 'Voo disponível',
+    titulo: 'Coluna, ossos e músculos',
+    texto: 'O voo 12 da Missão Sistemas chegou: dor no pescoço e nas costas, fraturas e gesso, próteses e amputação, condicionamento físico e retorno ao voo, com tratamentos, prazos e o comparador por tipo de aeronave.',
+    destino: '/capitulo/sistemas/12',
+  },
   {
     id: 'doencas-tratamentos',
     rotulo: 'Atualização',

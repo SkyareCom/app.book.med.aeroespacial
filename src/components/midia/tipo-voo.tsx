@@ -246,6 +246,17 @@ export function TipoVooImpacto() {
   return <TipoVoo titulo="O impacto em cada tipo de voo" dados={IMPACTO} />;
 }
 
+// ---------------------------------------------------------------- M2V12 · Coluna, ossos e músculos (registro em ossos-musculos.ts)
+const OSSOS: Linha[] = [
+  { nome: 'Dor no pescoço e nas costas', pressurizado: 'Levantar e andar; apoio lombar.', nao: 'Assento fixo e cabine apertada cansam a coluna.', helicoptero: 'Vibração, postura torta e óculos de visão noturna pesam no pescoço.' },
+  { nome: 'Gesso ou tala', pressurizado: '24 h (voo < 2 h) ou 48 h (voo mais longo) depois do gesso.', nao: 'A tala de ar se expande mais: soltar parte do ar.', helicoptero: 'Embarque e vibração doem na fratura recente.' },
+  { nome: 'Cirurgia de coluna ou prótese', pressurizado: 'Prazo do cirurgião; prevenir trombose nos voos longos.', nao: 'Força e alcance para os comandos antes de voltar.', helicoptero: 'Pedais e coletivo exigem as duas pernas e os dois braços.' },
+  { nome: 'Amputação', pressurizado: 'Assistência com 48 h; avisar a prótese na inspeção de segurança.', nao: 'Prova prática; FAA pode emitir declaração de capacidade.', helicoptero: 'Prova prática com os pedais e o coletivo.' },
+];
+export function TipoVooOssos() {
+  return <TipoVoo titulo="Coluna, ossos e músculos em cada tipo de voo" dados={OSSOS} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

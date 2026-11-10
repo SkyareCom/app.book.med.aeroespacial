@@ -1015,6 +1015,46 @@ export function AnimacaoBombaInsulina() {
   );
 }
 
+// M2V12 · Tala pneumática na subida: lei de Boyle (Veja M1V1 - II). UK CAA: soltar parte do ar antes do voo, porque
+// a expansão pode causar desconforto, compressão circulatória ou neuropraxia. Espessura da câmara exagerada (esquema).
+export function AnimacaoTalaPneumatica() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  // 0–0,3 subida; 0,3–0,6 cruzeiro; 0,6–0,9 descida; 0,9–1 solo.
+  const alt = t < 0.3 ? suave(t / 0.3) : t < 0.6 ? 1 : t < 0.9 ? 1 - suave((t - 0.6) / 0.3) : 0;
+  const ft = alt * 8000;
+  const vol = 760 / pressaoBarometrica(ft);
+  const fase = t < 0.3 ? 'SUBIDA: O AR DA TALA EXPANDE E APERTA A PERNA' : t < 0.6 ? 'CRUZEIRO: A TALA CONTINUA APERTADA' : t < 0.9 ? 'DESCIDA: O AR ENCOLHE E A TALA AFROUXA' : 'SOLO: CONFERIR O APOIO DA TALA';
+  const cor = t < 0.3 ? Cores.erro : t < 0.6 ? Cores.dourado : t < 0.9 ? Cores.acerto : Cores.textoSuave;
+  const H = 184;
+  return (
+    <Quadro titulo="A tala pneumática na subida" instrucao="Esquema: a cabine sobe a 8.000 ft e o ar preso na tala se expande (lei de Boyle). Por isso se solta um pouco de ar antes do voo." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 22, x1 = Math.max(x0 + 140, w - 92), cy = 98;
+        // A câmara de ar engrossa com o volume (exagerado para ver); a perna fica do mesmo tamanho.
+        const perna = 16, camara = 9 * vol * vol;
+        const gx = w - 46, gy0 = 150, gy1 = 56;
+        const gy = gy0 - alt * (gy0 - gy1);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{fase}</SvgText>
+            <Rect x={x0 + 18} y={cy - perna - camara} width={x1 - x0 - 36} height={2 * (perna + camara)} rx={perna + camara} fill="#3A6E95" fillOpacity={0.55} stroke="#9CCBEA" strokeWidth={1.5} />
+            <Rect x={x0} y={cy - perna} width={x1 - x0} height={2 * perna} rx={perna} fill="#C9A27E" stroke="#E6C7A6" strokeWidth={1.2} />
+            <Ellipse cx={x1 - 4} cy={cy + perna - 2} rx={14} ry={7} fill="#C9A27E" />
+            <SvgText x={x0 + 22} y={cy - perna - camara - 6} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>CÂMARA DE AR</SvgText>
+            <Line x1={gx} y1={gy0} x2={gx} y2={gy1} stroke={Cores.linha} strokeWidth={2} />
+            <Circle cx={gx} cy={gy} r={5} fill={cor} />
+            <SvgText x={gx + 9} y={gy1 + 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>8.000 FT</SvgText>
+            <SvgText x={gx + 9} y={gy0 + 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>SOLO</SvgText>
+            <SvgText x={10} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>{`CABINE: ${fmt(Math.round(ft / 100) * 100)} FT · AR ×${fmt(vol, 2)}`}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 // M2V10 · Gás intestinal sob menor pressão de cabine: lei de Boyle (Veja M1V1 - II).
 // Esquema didático: o aumento do volume não é previsão clínica de tamanho de alça nem simulação cirúrgica.
 export function AnimacaoGasIntestinal() {
