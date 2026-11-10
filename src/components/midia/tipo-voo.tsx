@@ -80,6 +80,18 @@ export function TipoVooOrientacao() {
   return <TipoVoo titulo="A orientação em cada tipo de voo" dados={ORIENTACAO} />;
 }
 
+// ---------------------------------------------------------------- M2V6 · Cérebro (registro em cerebro.ts)
+const CEREBRO: Linha[] = [
+  { nome: 'Epilepsia', pressurizado: 'Passageiro controlado voa; doses no horário com o fuso, sono em dia.', nao: 'Hipóxia e cansaço do voo leve baixam o limiar da crise.', helicoptero: 'Luz do sol cortada pelas pás pode piscar na faixa que dispara crises.' },
+  { nome: 'Desmaio', pressurizado: 'Desmaio benigno não impede; levantar devagar e beber água.', nao: 'Hipóxia soma-se à queda de pressão.', helicoptero: 'Um só desmaio no comando é incapacitação total.' },
+  { nome: 'Enxaqueca', pressurizado: 'Remédio de crise na bagagem de mão, tomado no início.', nao: 'Hipóxia acima de 10.000 ft pode disparar a crise.', helicoptero: 'Ruído, vibração e luz piscando somam gatilhos.' },
+  { nome: 'AVC recente', pressurizado: 'Passageiro: não até o 4º dia; do 5º ao 14º, estável e com oxigênio (IATA).', nao: 'Sem oxigênio, a margem do cérebro lesado é menor.', helicoptero: 'Transporte aeromédico com equipe e oxigênio, quando necessário.' },
+  { nome: 'Cirurgia do crânio ou ar na cabeça', pressurizado: 'Passageiro: 10 a 14 dias, com avaliação do ar.', nao: 'O ar se expande mais que na cabine pressurizada.', helicoptero: 'Voo baixo expande menos, mas o prazo vale do mesmo jeito.' },
+];
+export function TipoVooCerebro() {
+  return <TipoVoo titulo="O cérebro em cada tipo de voo" dados={CEREBRO} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });
