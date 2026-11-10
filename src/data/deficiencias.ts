@@ -60,6 +60,12 @@ import type { Questao, Recurso } from './tipos';
 // as duas mãos e os dois pés nos comandos; voo não pressurizado sem oxigênio limita a altitude (Veja M1V2).
 // Sem fonte primária para cadeira motorizada e bateria: o texto manda consultar a companhia, sem número.
 
+// 10/11/2026 ("Aplique em tudo", pedido das doenças com tratamentos expectantes, não invasivos e invasivos, prognóstico,
+//   prazos e tipo de voo): parágrafo de tratamentos e tabela "Tratamentos e voo" nas fases df-amp, df2, df-cego, df3,
+//   df4, df-tea e df5. Prazos citados vêm dos voos de Sistemas (M2V3 - III: 10 dias após cirurgia do ouvido; M2V4 -
+//   VIII: gás no olho; M2V7; ICAO 6 meses na visão monocular, registro acima). Linhas de tratamento (reabilitação,
+//   terapia do espelho, revisão do coto, cateterismo, bomba implantada, implante coclear, terapias do autismo, diálise):
+//   conhecimento médico geral, sem número próprio.
 export interface FaseDeficiencia {
   id: string;
   periodo: string;
@@ -125,9 +131,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       '**O passageiro** com amputação é PNAE: tem assistência e prioridade de embarque, e a muleta, a cadeira ou a prótese de reserva entram como **ajuda técnica**, sem custo. A **dor fantasma**, sentida no membro que não existe mais, pode piorar com o cansaço da viagem; o remédio usado para ela costuma dar sono. Andar no corredor ajuda o coto e as veias das pernas (Veja M2V2 - VII).',
       '**O tripulante** com amputação passa por **avaliação funcional** e, em geral, por **prova de voo médica**. Na FAA, a amputação estável pode receber a **SODA**. No Reino Unido, quem tem amputação **abaixo do joelho** costuma voar com a prótese, de preferência com tornozelo fixo; **acima do joelho**, muitas vezes voa sem a prótese, com técnica própria nos pedais; com amputação das **duas pernas**, em geral precisa de **comando manual aprovado**. Na prótese de braço, a 1ª classe pede **pinça do polegar** firme em cada mão.',
       'O remédio para a **dor fantasma** tende a ser **desqualificante** para o piloto, porque costuma deprimir o sistema nervoso. A limitação vale para os **tipos de aeronave** demonstrados na prova. No **helicóptero**, os dois pés controlam os pedais o tempo todo, e cada membro faz uma tarefa diferente ao mesmo tempo; no avião leve, o comando manual adaptado só foi aprovado para voo privado. Na ANAC, a sequela funcional é julgada pelo examinador, e no recurso a agência pode exigir teste em voo.',
+      "**Tratamentos, reabilitação e tipo de voo.** Depois da amputação, o caminho é **reabilitação**: fisioterapia, treino de marcha e adaptação da **prótese**, um tratamento **não invasivo** que dura meses. A **dor fantasma** vai do **expectante**, porque muitas vezes diminui com o tempo, ao **não invasivo**, com fisioterapia, terapia do espelho e remédios, alguns proibidos para o piloto; o tratamento **invasivo** é a **revisão cirúrgica do coto** quando há dor localizada, ferida ou osso irregular. O passageiro voa quando o coto cicatrizou, e o tripulante volta depois da adaptação e da prova prática. No jato **pressurizado**, as horas sentado incham o coto; no avião leve **não pressurizado**, a cabine apertada dificulta pôr e tirar a prótese; no **helicóptero**, os pedais exigem as duas pernas.",
       '**Como se preparar.** Passageiro: peça assistência com 48 horas, leve material para ajustar o encaixe, carregador e bateria na bagagem de mão e o número de série dos componentes. Piloto: leve ao examinador relatório de força, amplitude e dor, sem remédio que dê sono, e faça a prova na aeronave em que vai voar.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · amputações",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Reabilitação e prótese", "Não invasivo", "Voar com a prótese ou a ajuda técnica"],
+            ["Remédio para dor fantasma", "Não invasivo", "Piloto: muitos tiram do voo"],
+            ["Revisão cirúrgica do coto", "Invasivo", "Voar com o coto cicatrizado e a liberação do cirurgião"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'amputacao-voo' },
       {
         paragrafo: 4,
@@ -144,7 +163,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · amputações',
           colunas: ['Momento ou situação', 'O que fazer'],
@@ -169,9 +188,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       'O voo traz riscos próprios. Quem não sente a pele das nádegas e das pernas pode ter **lesão por pressão** em horas sentado no assento do avião, mais duro que a almofada da cadeira. A perna parada favorece a **trombose** (Veja M2V2 - VII). Quem precisa de ajuda para usar o **sanitário** deve viajar com acompanhante: o operador fornece um sem custo ou cobra até **20%** da tarifa.',
       '**O tripulante** com paraplegia passa por **avaliação funcional** e **prova de voo médica**. Na FAA, a paralisia que não progride é tratada como amputação e pode receber a **SODA**. No avião, em geral precisa de **comando manual** para o leme e de **freio de mão**; no Reino Unido, esses comandos só são aprovados para **voo privado**. No **helicóptero**, não existe comando manual aprovado para os pedais, e a autoridade britânica ainda não certificou piloto de helicóptero com paraplegia.',
       'Os remédios pesam. A maioria dos **relaxantes musculares**, os **analgésicos opioides** e alguns remédios para a bexiga não são aceitos para o piloto. Mas parar o remédio da espasticidade de repente pode causar **espasmos** durante o voo, também perigosos. No avião **não pressurizado**, frio e altitude somam desconforto a um corpo com circulação e controle da temperatura reduzidos.',
+      "**Tratamentos, prognóstico e tipo de voo.** A lesão da medula e as doenças neuromusculares não têm tratamento que devolva a função perdida na maioria dos casos: o foco é **reabilitação** e prevenção de complicações. O tratamento **não invasivo** inclui fisioterapia, a almofada certa, o remédio da **espasticidade** e o cuidado com a bexiga e o intestino; o **cateterismo** intermitente da bexiga é um procedimento simples que viaja junto. Os tratamentos **invasivos** são a **cirurgia** da lesão por pressão, a bomba de remédio implantada para espasticidade e as cirurgias de tendões e da coluna, cada um com prazo do cirurgião. Uma **lesão por pressão** aberta ou uma infecção urinária com febre adiam o voo. No jato **pressurizado**, o problema é o assento duro por horas; no avião leve **não pressurizado** e no **helicóptero**, o embarque exige transferência por pessoas treinadas.",
       '**Como se preparar.** Informe a categoria (WCHR, WCHS ou WCHC) ao comprar a passagem, leve a almofada da cadeira para o assento do avião e alivie a pressão mudando de posição. Confirme com a companhia as regras para cadeira motorizada e bateria. O piloto planeja o tratamento da espasticidade com o médico e o examinador e faz a prova na aeronave adaptada em que vai voar.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · paraplegia e cadeira de rodas",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Almofada e mudança de posição", "Não invasivo", "Aliviar a pressão durante o voo"],
+            ["Cateterismo intermitente", "Procedimento simples", "Levar o material na bagagem de mão"],
+            ["Cirurgia da lesão por pressão", "Invasivo", "Voar só com a ferida fechada e a liberação do cirurgião"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'categoria-cadeira' },
       {
         paragrafo: 4,
@@ -199,7 +231,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · paraplegia e cadeira de rodas',
           colunas: ['Momento ou situação', 'O que fazer'],
@@ -224,9 +256,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       'O **cão-guia** viaja **sem custo**, na cabine, no **chão junto ao passageiro**, com arreio e sem focinheira. No Brasil, a dupla leva a **carteira de identificação** com foto e a **plaqueta** no pescoço do cão, expedidas pelo centro de treinamento ou pelo instrutor, a **carteira de vacinação** atualizada, com vacina múltipla e antirrábica assinada por veterinário, e coleira, guia e arreio com alça.',
       'Nos voos domésticos, a ANAC orientou as companhias a **não exigir atestado de saúde** de 10 dias para o cão-guia: o documento sanitário é a carteira de vacinação. O cão **em treinamento** usa plaqueta com a inscrição "cão-guia em treinamento" e dispensa o arreio. Nos voos **internacionais**, valem também as exigências sanitárias do **país de destino**, que pedem preparo com antecedência.',
       'Em **voo longo**, planeje alimentação e água do cão e as necessidades fisiológicas antes do embarque e nas conexões. Na **aviação**, a cegueira e a baixa visão que não melhoram com óculos impedem a função de **piloto**, mas não outras funções em terra. Na viagem, a deficiência visual não muda nada no voo pressurizado ou não pressurizado: o que muda é o deslocamento.',
+      "**Tratamentos, prognóstico e tipo de voo.** Algumas causas de baixa visão têm tratamento: a **catarata**, com cirurgia; o **glaucoma**, com colírio, laser ou cirurgia; a **retinopatia do diabetes** e a degeneração da mácula, com laser e injeção no olho (Veja M2V4 - VII e VIII). Quando a perda é definitiva, o tratamento é **não invasivo**: **reabilitação visual**, auxílios ópticos, leitor de tela, bengala e **cão-guia**. Depois de cirurgia do olho, valem os prazos do voo dos olhos; com **gás no olho**, voar é proibido até ele ser absorvido (Veja M2V4 - VIII). O prognóstico depende da causa: a catarata operada costuma recuperar a visão; a perda do nervo óptico, não. No jato **pressurizado**, a orientação a bordo e a assistência pesam mais que a altitude; no avião leve **não pressurizado** e no **helicóptero**, o passageiro cego precisa de instrução de segurança tátil e de alguém que o guie na saída.",
       '**Como se preparar.** Peça assistência com 48 horas e avise que viaja com cão-guia; confira os documentos do cão e, no exterior, as regras do destino com antecedência. Algumas companhias aceitam um cadastro permanente, o **FREMEC**, com laudo oftalmológico, para dispensar o MEDIF a cada viagem.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · cegueira e baixa visão",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Reabilitação visual e cão-guia", "Não invasivo", "Assistência e cão na cabine, sem custo"],
+            ["Cirurgia de catarata ou glaucoma", "Invasivo", "Prazo do voo dos olhos (Veja M2V4 - VIII)"],
+            ["Gás no olho após cirurgia de retina", "Invasivo", "Não voar até o gás ser absorvido"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'cao-guia-documentos' },
       {
         paragrafo: 3,
@@ -244,7 +289,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · cegueira e cão-guia',
           colunas: ['Momento ou situação', 'O que fazer'],
@@ -269,9 +314,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       '**O tripulante** precisa de **adaptação**: aprender a usar as pistas de profundidade de um olho só e a girar mais a cabeça para cobrir o campo. A ICAO aceita a exceção depois de ao menos **6 meses** de adaptação e de **teste em voo**; a FAA também pede **6 meses** e libera por emissão especial em qualquer classe. A ANAC aceita a visão monocular na **revalidação** ou no exame inicial depois de acidente ou incidente grave, com o outro olho normal.',
       'O tipo de voo pesa. No **helicóptero** em voo baixo, a varredura lateral contra obstáculos e fios depende muito do campo visual. No pouso, a estimativa de altura e de distância já usa pistas monoculares, o que ajuda na adaptação. Num avião **não pressurizado**, a falta de oxigênio piora a visão noturna em altitudes moderadas (Veja M1V2), o que soma ao campo menor.',
       'O olho que sobra precisa ser protegido e acompanhado: uma lesão nele muda tudo. Óculos de proteção, óculos de reserva a bordo e consultas regulares com o oftalmologista são parte da rotina. Qualquer queda de visão no olho bom afasta do voo até nova avaliação.',
+      "**Tratamentos, prognóstico e tipo de voo.** A visão monocular raramente se trata: a conduta é **expectante** e de **adaptação**, e o tratamento **não invasivo** é proteger o olho bom, corrigir o grau e treinar a varredura com a cabeça. Quando a causa tem tratamento, como uma catarata no olho fraco ou um descolamento de retina, entra a **cirurgia**, um tratamento **invasivo** com prazo próprio (Veja M2V4 - VIII). O prognóstico é bom depois da adaptação: muitos pilotos voam com um olho só. No jato **pressurizado** de dois pilotos, o outro piloto cobre o lado cego; no avião leve **não pressurizado**, de um só piloto, a varredura lateral pesa mais, sobretudo no tráfego; no **helicóptero**, o voo baixo perto de fios e obstáculos exige girar a cabeça o tempo todo.",
       '**Como se preparar.** O piloto cumpre os 6 meses de adaptação, treina a varredura com o instrutor, leva ao examinador o laudo do oftalmologista e se prepara para o teste em voo. O passageiro escolhe o assento que deixa o lado bom voltado para o corredor quando isso ajuda a se orientar.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · visão monocular",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Adaptação e treino de varredura", "Expectante e não invasivo", "ICAO: ao menos 6 meses e teste em voo"],
+            ["Proteção do olho bom", "Não invasivo", "Óculos de proteção e de reserva"],
+            ["Cirurgia no olho fraco", "Invasivo", "Prazo do voo dos olhos (Veja M2V4 - VIII)"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'visao-deficiencia' },
       {
         paragrafo: 3,
@@ -287,7 +345,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · visão monocular',
           colunas: ['Momento ou situação', 'O que fazer'],
@@ -312,9 +370,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       '**O tripulante** precisa cumprir o teste de audição da classe. A ANAC aceita quem não atinge os limiares se passar na discriminação da fala e na voz sussurrada, e na revalidação um ouvido pode bastar. A ICAO considera que o **aparelho auditivo**, em geral, não é aceito em voo para profissionais. Na FAA, o piloto surdo pode voar com a limitação **"não válido onde o uso do rádio é exigido"**.',
       'O ruído agrava tudo. No **helicóptero** e no avião leve **não pressurizado**, o ruído é alto e a comunicação depende do fone e do capacete (Veja M1V6). Quem já ouve pouco perde mais nesse ambiente, e os alarmes precisam de reforço visual. Na aviação comercial, o rádio é obrigatório: a limitação da FAA restringe o voo a espaço aéreo e aeródromos sem exigência de rádio.',
       'O Reino Unido usa o código **"só com aparelho auditivo"** quando a pessoa cumpre o requisito com ele. Proteger a audição que resta é parte da prevenção: protetor de ouvido e fone com redução de ruído evitam piorar a perda (Veja M1V6 - III).',
+      "**Tratamentos, prognóstico e tipo de voo.** A perda auditiva tem tratamento conforme a causa. A **cera** e a otite se resolvem com conduta simples; a perda por ruído e a da idade se tratam de forma **não invasiva**, com **aparelho auditivo**; a **surdez súbita** é urgência, com corticoide e, às vezes, injeção dentro do ouvido (Veja M1V6 - II). Os tratamentos **invasivos** são a cirurgia do ouvido médio, a prótese ancorada no osso e o **implante coclear**, que pode devolver a compreensão da fala a quem tem perda profunda; depois de cirurgia do ouvido, o passageiro espera ao menos **10 dias**, com liberação do otorrino (Veja M2V3 - III). O aparelho e o implante podem ficar ligados no voo. No jato **pressurizado**, os avisos também por escrito ajudam; no avião leve **não pressurizado** e no **helicóptero**, o ruído alto mascara a fala, e o fone com boa vedação é parte do tratamento.",
       '**Como se preparar.** O passageiro avisa a companhia sobre as ajudas de comunicação, se apresenta à tripulação e pede a demonstração individual. O piloto faz o audiograma com antecedência, leva os resultados ao examinador e confirma que limitação vai constar no certificado.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · deficiência auditiva",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Aparelho auditivo", "Não invasivo", "Pode ficar ligado no voo"],
+            ["Implante coclear", "Invasivo", "Pode ficar ligado; avisar na inspeção"],
+            ["Cirurgia do ouvido médio", "Invasivo", "Passageiro: ao menos 10 dias, com o otorrino"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'audicao-deficiencia' },
       {
         paragrafo: 3,
@@ -330,7 +401,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · deficiência auditiva',
           colunas: ['Momento ou situação', 'O que fazer'],
@@ -355,9 +426,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       '**O passageiro** autista é **PNAE** e tem assistência e embarque prioritário. Se não consegue entender as **instruções de segurança** ou usar o sanitário sem ajuda, a companhia exige **acompanhante**, fornecido sem custo ou pago pelo próprio acompanhante com até **20%** da tarifa. O cordão é **opcional** e não substitui documento quando pedido.',
       '**O tripulante** autista passa por avaliação **individual**. No Reino Unido, o autismo **não desqualifica automaticamente**: o examinador analisa relatórios de psicologia, neuropsicologia ou psiquiatria e pode pedir avaliação atualizada, e o candidato pode começar o treinamento com **relatórios de progresso**. A FAA não lista o autismo entre as condições da tabela psiquiátrica: a decisão é caso a caso. No Brasil, entra na avaliação mental e comportamental do RBAC 67 (Veja M2V7).',
       'Para o piloto, o que pesa é a **função**: comunicação com o outro piloto e com o controle, flexibilidade diante do imprevisto, atenção e julgamento sob estresse. **Remédios** associados, como os do TDAH, são avaliados à parte; no Reino Unido, os estimulantes não são aceitos para o certificado. No **helicóptero**, vibração e ruído são mais intensos (Veja M1V6).',
+      "**Tratamentos, prognóstico e tipo de voo.** O autismo não é doença para curar: o tratamento é **apoio**, e quase todo **não invasivo**. Entram a **terapia comportamental**, a fonoaudiologia, a terapia ocupacional e a preparação para situações novas, como a **história social** da viagem e a visita ao aeroporto. Remédio entra só para condições associadas, como ansiedade, insônia, TDAH ou irritabilidade intensa, e o que dá sono muda a regra para o tripulante. Não há tratamento invasivo para o autismo. O prognóstico da viagem melhora muito com preparo e previsibilidade. No jato **pressurizado**, o voo longo, o ruído e a cabine cheia são o desafio, e o abafador de ruído ajuda; no avião leve **não pressurizado** e no **helicóptero**, o ruído e a vibração são intensos, e o voo deve ser explicado antes, passo a passo.",
       '**Como se preparar.** Avise a companhia com 48 horas, ou 72 horas se houver acompanhante, e descreva o que ajuda numa crise. Escolha voos mais curtos e horários calmos quando possível, leve a CIPTEA, fones e remédios na bagagem de mão. O candidato a piloto procura o examinador antes da formação e leva os relatórios do especialista.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · autismo",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Terapias de apoio e história social", "Não invasivo", "Preparar a viagem com antecedência"],
+            ["Remédio para condição associada", "Não invasivo", "Tripulante: os que dão sono mudam a regra"],
+            ["Abafador de ruído", "Não invasivo", "Usar no embarque e no voo"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'autismo-voo' },
       {
         paragrafo: 3,
@@ -373,7 +457,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · autismo',
           colunas: ['Momento ou situação', 'O que fazer'],
@@ -398,9 +482,22 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
       'A companhia **exige acompanhante** quando a deficiência mental ou intelectual impede de entender as **instruções de segurança**, quando a pessoa não consegue usar o sanitário sem ajuda ou quando viaja em maca. O acompanhante é fornecido pelo operador sem custo, ou o próprio acompanhante paga até **20%** da tarifa.',
       '**O tripulante** com transtorno psicossocial passa pela avaliação mental e comportamental, que é **individual** (Veja M2V7). O que pesa é a função: atenção, julgamento, comunicação e estabilidade sob estresse. Diagnóstico estável e tratado não equivale automaticamente a inaptidão, e o remédio usado também entra na avaliação. A deficiência intelectual que limita julgamento e aprendizado tende a impedir a função de piloto.',
       'No voo, o ambiente conta. Turbulência, ruído e cabine cheia são piores num **voo longo**; no **helicóptero**, vibração e barulho são intensos (Veja M1V6). Uma crise psiquiátrica a bordo pode levar a desvio do voo; por isso, quem está em crise aguda deve adiar a viagem e quem tem tratamento contínuo leva o remédio na bagagem de mão.',
+      "**Tratamentos, prognóstico e tipo de voo.** Nas deficiências intelectual e psicossocial, o tratamento é **contínuo** e quase todo **não invasivo**: apoio, terapia, **remédios** no horário e plano para crises. A conduta **expectante** vale para quem está estável há tempo, sem mudar nada antes da viagem. O tratamento **invasivo** é raro: a **internação** e, em casos graves de humor, a eletroconvulsoterapia, com prazos e regras próprios (Veja M2V7). Nas outras deficiências ocultas, como a epilepsia, a doença dos rins em diálise e a dor crônica, o tratamento segue a doença, e a **diálise** é marcada em torno do voo. O prognóstico da viagem depende da estabilidade: crise recente adia. No jato **pressurizado**, a tripulação pode ajudar numa crise; no avião leve **não pressurizado** e no **helicóptero**, não há tripulação de cabine, e o acompanhante é ainda mais importante.",
       '**Como se preparar.** Avise a companhia com 48 horas, ou 72 horas se houver acompanhante, explique o que ajuda numa crise e leve o remédio na bagagem de mão. Use o cordão de girassóis se quiser e tenha o documento à mão. O tripulante leva ao examinador o relatório do especialista sobre a função e o tratamento.',
     ].join('\n\n'),
     recursos: [
+      {
+        paragrafo: 6,
+        tabela: {
+          titulo: "Tratamentos e voo · deficiências ocultas",
+          colunas: ['Tratamento', 'Tipo', 'No voo'],
+          linhas: [
+            ["Remédios no horário e plano de crise", "Não invasivo", "Levar na bagagem de mão, com receita"],
+            ["Internação recente", "Invasivo", "Voar só com alta e liberação do psiquiatra"],
+            ["Diálise", "Invasivo", "Marcar as sessões em torno do voo"],
+          ],
+        },
+      },
       { paragrafo: 1, midia: 'prazo-assistencia' },
       {
         paragrafo: 3,
@@ -416,7 +513,7 @@ export const fasesDeficiencias: FaseDeficiencia[] = [
         },
       },
       {
-        paragrafo: 6,
+        paragrafo: 7,
         tabela: {
           titulo: 'Como se preparar · deficiências mentais e ocultas',
           colunas: ['Momento ou situação', 'O que fazer'],
