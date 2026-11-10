@@ -151,6 +151,11 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
         tripulante: e('nao-voar', 'Não voe como tripulante até tratar e o médico examinador liberar.', 'FAA: apneia do sono desqualificante até tratamento eficaz; sintomas com risco imediato, adiar. 14 CFR 61.53.', '3.7'),
       },
       {
+        rotulo: 'Sim, operado (vias aéreas, estimulador implantado ou cirurgia bariátrica)',
+        passageiro: e('cuidados', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo após cirurgia das vias aéreas: conforme o cirurgião [confirmar na referência]; cirurgia bariátrica: cerca de 10 dias (UK CAA, Veja M2V10).', '3.7'),
+        tripulante: e('avaliar', 'Volte a voar só quando o novo estudo do sono mostrar o tratamento eficaz.', 'FAA (OSA): certificação após tratamento eficaz comprovado; UK CAA: cirurgia bariátrica, inapto por até 3 meses.', '3.7'),
+      },
+      {
         rotulo: 'Não sei, mas ronco alto e tenho sono durante o dia',
         passageiro: e('cuidados', 'Procure avaliação do sono antes de uma viagem longa e evite álcool e calmantes no voo.', 'Suspeita de AOS: encaminhar para avaliação do sono; orientar como AOS não tratada (BTS 2022).', '3.7'),
         tripulante: e('avaliar', 'Conte ao médico examinador: talvez precise de uma avaliação do sono.', 'FAA: alto risco, Specification Sheet B e 90 dias para a avaliação; sintomas com risco imediato, adiar.', '3.7'),

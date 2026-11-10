@@ -153,6 +153,18 @@ export function TipoVooDigestivo() {
   return <TipoVoo titulo="O aparelho digestivo em cada tipo de voo" dados={DIGESTIVO} />;
 }
 
+// ---------------------------------------------------------------- M2V1 · Pulmões e hipóxia (registro em hipoxia.ts)
+const PULMAO: Linha[] = [
+  { nome: 'Asma ou DPOC', pressurizado: 'Cabine até 8.000 ft; quem precisa de oxigênio combina o concentrador com a companhia.', nao: 'Acima de 10.000 ft sem oxigênio, a saturação da DPOC cai mais depressa.', helicoptero: 'Voo baixo; ar frio e poeira do rotor podem disparar crise de asma.' },
+  { nome: 'Apneia do sono', pressurizado: 'CPAP a bordo nos voos noturnos, com aprovação da companhia.', nao: 'Voos curtos e diurnos; sonolência soma-se à hipóxia acima de 10.000 ft.', helicoptero: 'Um só piloto: tratar antes de voar.' },
+  { nome: 'Pneumotórax', pressurizado: 'O ar preso cresce cerca de 38% a 8.000 ft; 7 dias após a resolução.', nao: 'Cerca de 50% a 10.000 ft: mesmo prazo, mais expansão.', helicoptero: 'Expande menos; transporte aeromédico costuma pedir dreno antes.' },
+  { nome: 'Monóxido de carbono', pressurizado: 'Raro na cabine pressurizada.', nao: 'Aquecimento pelo escapamento pode vazar monóxido: detector na cabine.', helicoptero: 'Gases do motor perto do solo e no pairado: atenção ao cheiro e à dor de cabeça.' },
+  { nome: 'Cirurgia do tórax', pressurizado: 'Passageiro: 4 semanas após retirar o dreno (2 se essencial).', nao: 'Mesmo prazo, com mais expansão do ar residual.', helicoptero: 'Mesmo prazo; tripulante depende da autoridade.' },
+];
+export function TipoVooPulmao() {
+  return <TipoVoo titulo="Os pulmões em cada tipo de voo" dados={PULMAO} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

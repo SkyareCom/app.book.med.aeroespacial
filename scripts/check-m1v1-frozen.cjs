@@ -119,8 +119,12 @@ const ARQUIVOS = Object.freeze({
   // 05/11/2026: descongelado com autorização do autor ("Em todo app, em QUEM É MAIS VULNERÁVEL, sempre detalhar o motivo
   //   metabólico e fisiológico"); só a coluna da tabela "O que muda em altitude" do tópico I mudou; recongelado com hash novo.
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/hipoxia.ts': '28f615410078a6b5',
-  'src/data/liberacao/respiratorio.ts': 'd7cb8010b5630f56',
+  // 10/11/2026: autorizado pelo autor ("Autorizo todos", sobre alterar os voos congelados para o pedido "As doenças
+  //   devem aparecer no texto e nao em tabelas isoladas..."): parágrafo de tratamentos, prognóstico e tipo de voo nos
+  //   tópicos II, VI, VII e VIII, comparador "tipo de voo", tabela de tratamentos da apneia, opção de apneia operada na
+  //   liberação e remissão do sono corrigida (M3V2 → M2V8 - VII); hashes refeitos.
+  'src/data/capitulos/hipoxia.ts': 'b452b38b751fe905',
+  'src/data/liberacao/respiratorio.ts': '9a6f5727cd7f1613',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
   'assets/images/topicos/m2v1-6-espirometria.jpg': '6d40f50ca00797ad',
