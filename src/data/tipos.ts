@@ -174,7 +174,17 @@ export type TipoMidia =
   | 'tipo-voo-cerebro'
   | 'tipo-voo-orientacao'
   | 'tipo-voo-olhos'
-  | 'tipo-voo-ouvidos';
+  | 'tipo-voo-ouvidos'
+  | 'deficiencia-papel'
+  | 'amputacao-voo'
+  | 'categoria-cadeira'
+  | 'cao-guia-documentos'
+  | 'visao-deficiencia'
+  | 'audicao-deficiencia'
+  | 'autismo-voo'
+  | 'prazo-assistencia'
+  | 'caminho-cma'
+  | 'medif-fremec';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

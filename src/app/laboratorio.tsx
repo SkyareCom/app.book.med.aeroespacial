@@ -9,7 +9,7 @@ import { Midia, NOME_MIDIA } from '@/components/midia';
 import { Opcoes } from '@/components/midia/opcoes';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
-import { ArteAdaptacao, CapaEpisodio } from '@/constants/capas';
+import { ArteAdaptacao, ArteDeficiencias, CapaEpisodio } from '@/constants/capas';
 import { BordaCapa, Cores, Espaco, Raio } from '@/constants/theme';
 import type { TipoMidia } from '@/data/tipos';
 import { obterEspecial } from '@/lib/especiais';
@@ -55,7 +55,7 @@ export default function Laboratorio() {
       </ScrollView>
 
       <Pressable accessibilityRole="link" onPress={() => router.push(item.rota as never)} style={styles.origem}>
-        <Image source={item.capa === 'adaptacao' ? ArteAdaptacao : CapaEpisodio[item.capa]} style={[styles.miniatura, BordaCapa]} contentFit="cover" />
+        <Image source={item.capa === 'adaptacao' ? ArteAdaptacao : item.capa === 'deficiencias' ? ArteDeficiencias : CapaEpisodio[item.capa]} style={[styles.miniatura, BordaCapa]} contentFit="cover" />
         <View style={{ flex: 1, gap: 2 }}>
           <Texto t="rotulo" cor={Cores.destaque} semTraducao={item.codigo !== 'Especial'}>{item.codigo === 'Especial' ? 'Missão especial' : item.codigo}</Texto>
           <Texto t="item" numberOfLines={2}>{item.titulo}</Texto>

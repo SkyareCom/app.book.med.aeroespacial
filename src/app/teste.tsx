@@ -10,6 +10,7 @@ import { Texto } from '@/components/texto';
 import { Cores, Espaco } from '@/constants/theme';
 import { questoesCMA } from '@/data/cma-questoes';
 import { testeAdaptacao } from '@/data/adaptacao';
+import { testeDeficiencias } from '@/data/deficiencias';
 import { eras } from '@/data/historia';
 import { catalogo } from '@/data/questoes';
 import { chaveCapitulo, obterCapitulo, obterSecao } from '@/data/secoes';
@@ -39,6 +40,9 @@ export default function TelaTeste() {
     if (p.origem === 'adaptacao') {
       return { todas: testeAdaptacao, titulo: 'Adaptação à altitude', rotulo: 'Teste · Missão especial', chave: undefined };
     }
+    if (p.origem === 'deficiencias') {
+      return { todas: testeDeficiencias, titulo: 'Deficiências e o voo', rotulo: 'Teste · Missão especial', chave: undefined };
+    }
     if (p.origem === 'cma') {
       return { todas: questoesCMA, titulo: 'Simulado CMA', rotulo: 'Requisitos do RBAC 67', chave: undefined };
     }
@@ -53,7 +57,7 @@ export default function TelaTeste() {
   // A lista da rodada é fixada quando a rodada começa, para não mudar enquanto a pessoa responde.
   const questoes = useMemo(() => {
     const livres = rankingAtivo ? todas.filter((q) => !respostas[idQuestao(q)]) : todas;
-    if (p.origem === 'capitulo' || p.origem === 'era' || p.origem === 'cma' || p.origem === 'adaptacao') return livres;
+    if (p.origem === 'capitulo' || p.origem === 'era' || p.origem === 'cma' || p.origem === 'adaptacao' || p.origem === 'deficiencias') return livres;
     return embaralhar(livres).slice(0, modo === 'prova' ? 10 : 8);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todas, rodada, rankingAtivo, carregado]);
@@ -116,7 +120,7 @@ export default function TelaTeste() {
         onRevisar={
           p.origem === 'capitulo' && p.secao && p.numero
             ? (topico) => router.replace({ pathname: '/capitulo/[secao]/[numero]', params: { secao: p.secao!, numero: p.numero!, topico } })
-            : p.origem === 'era' || p.origem === 'adaptacao'
+            : p.origem === 'era' || p.origem === 'adaptacao' || p.origem === 'deficiencias'
               ? () => router.back()
               : undefined
         }

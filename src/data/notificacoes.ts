@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 21;
+export const VERSAO_NOTIFICACOES = 24;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,27 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'ossos-musculos',
+    rotulo: 'Voo disponível',
+    titulo: 'Coluna, ossos e músculos',
+    texto: 'O voo 12 da Missão Sistemas chegou: dor no pescoço e nas costas, fraturas e gesso, próteses e amputação, condicionamento físico e retorno ao voo, com tratamentos, prazos e o comparador por tipo de aeronave.',
+    destino: '/capitulo/sistemas/12',
+  },
+  {
+    id: 'doencas-tratamentos',
+    rotulo: 'Atualização',
+    titulo: 'Doenças e tratamentos em todos os voos',
+    texto: 'Cada voo agora traz as principais doenças do tema com os tratamentos expectantes, não invasivos e invasivos, o prognóstico no voo, os prazos para voltar a voar e um comparador entre avião pressurizado, não pressurizado e helicóptero. A Liberação para voo ganhou perguntas sobre cirurgias e procedimentos.',
+    destino: '/liberacao-voo',
+  },
+  {
+    id: 'deficiencias',
+    rotulo: 'Missão especial',
+    titulo: 'Deficiências e o voo',
+    texto: 'Nova missão especial na Home: amputações, cadeira de rodas, cegueira e cão-guia, visão monocular, surdez, autismo e deficiências ocultas, com o caminho do tripulante até o certificado médico. A Liberação para voo ganhou o MEDIF e o FREMEC.',
+    destino: '/deficiencias',
+  },
   {
     id: 'sangue',
     rotulo: 'Voo disponível',

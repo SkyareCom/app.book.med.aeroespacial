@@ -5,16 +5,17 @@
 
 import type { Href } from 'expo-router';
 
-import { ArteAdaptacao, ArteEspecialVoo, ArteExameCMA, ArteLiberacao } from '@/constants/capas';
+import { ArteAdaptacao, ArteDeficiencias, ArteEspecialVoo, ArteExameCMA, ArteLiberacao } from '@/constants/capas';
 import { Imagens } from '@/constants/imagens';
 import { fasesAdaptacao } from '@/data/adaptacao';
+import { fasesDeficiencias } from '@/data/deficiencias';
 import { eras } from '@/data/historia';
 import { secoes } from '@/data/secoes';
 import type { SecaoId } from '@/data/tipos';
 import { SISTEMAS } from '@/lib/cma';
 import { catalogoLab } from '@/lib/laboratorio';
 
-export type IdEspecial = 'historia' | 'adaptacao' | 'laboratorio' | 'exame-cma' | 'liberacao-voo' | 'curiosidades' | 'referencias';
+export type IdEspecial = 'historia' | 'adaptacao' | 'deficiencias' | 'laboratorio' | 'exame-cma' | 'liberacao-voo' | 'curiosidades' | 'referencias';
 
 export interface Especial {
   id: IdEspecial;
@@ -53,6 +54,17 @@ export const ESPECIAIS: Especial[] = [
     meta: () => `${fasesAdaptacao.length} fases · ${catalogoLab().filter((i) => i.capa === 'adaptacao').length} interativos`,
     voos: ['conceitos-1', 'conceitos-2', 'sistemas-1', 'sistemas-2'],
     missoes: ['conceitos', 'sistemas'],
+  },
+  {
+    id: 'deficiencias',
+    rota: '/deficiencias',
+    tipo: 'Missão especial',
+    titulo: 'Deficiências e o voo',
+    sinopse: 'Amputações, cadeira de rodas, cegueira e cão-guia, visão monocular, surdez, autismo e deficiências ocultas: o que muda para o passageiro e o caminho do tripulante até o certificado médico.',
+    imagem: ArteDeficiencias,
+    meta: () => `${fasesDeficiencias.length} tópicos · ${catalogoLab().filter((i) => i.capa === 'deficiencias').length} interativos`,
+    voos: ['sistemas-3', 'sistemas-4', 'sistemas-7'],
+    missoes: ['sistemas', 'aviacao'],
   },
   {
     id: 'laboratorio',
@@ -132,9 +144,10 @@ export function especiaisDaMissao(id: SecaoId) {
 // Ligações entre os próprios especiais (mostradas no fim de cada página especial).
 export const RELACIONADOS: Partial<Record<IdEspecial, IdEspecial[]>> = {
   historia: ['adaptacao', 'laboratorio'],
-  adaptacao: ['historia', 'liberacao-voo', 'laboratorio'],
+  adaptacao: ['historia', 'deficiencias', 'liberacao-voo', 'laboratorio'],
+  deficiencias: ['liberacao-voo', 'exame-cma', 'adaptacao'],
   'exame-cma': ['liberacao-voo', 'referencias'],
-  'liberacao-voo': ['exame-cma', 'adaptacao', 'referencias'],
+  'liberacao-voo': ['exame-cma', 'deficiencias', 'adaptacao', 'referencias'],
   laboratorio: ['adaptacao', 'historia'],
   curiosidades: ['historia', 'laboratorio'],
   referencias: ['exame-cma', 'liberacao-voo'],
