@@ -256,6 +256,7 @@ export const hipoxia: Capitulo = {
           "A queda do gás carbônico no sangue, a **hipocapnia**, contrai os vasos do cérebro e reduz o fluxo de sangue nele, além de causar **alcalose respiratória**. Nos casos intensos, o cálcio ionizado cai e surgem **formigamento em volta da boca e nas mãos, espasmos musculares** e mal-estar.",
           "No voo, **hipóxia e hiperventilação podem coexistir ou ser confundidas**. Tratar hipóxia como ansiedade atrasa uma intervenção vital. Por isso, sintoma inexplicado em altitude pede primeiro a checagem do oxigênio e da pressurização.",
           "A ordem é fixa: **oxigênio adequado primeiro, sistema verificado e altitude corrigida, se preciso**. Só depois de excluir a hipóxia vale orientar a respiração mais lenta. **Respirar em saco de papel não é seguro** diante dessa dúvida.",
+          "**Doenças, tratamentos e tipo de voo.** A hiperventilação repetida costuma ter uma causa: **ansiedade**, **pânico** e **medo de voar** (Veja M2V7 - II), mas também **asma**, dor e febre. Na crise isolada, a conduta é **expectante** e de respiração: falar devagar, contar a respiração e, antes de tudo, conferir o oxigênio. O tratamento **não invasivo** da causa é a **terapia cognitivo-comportamental**, o treino respiratório e, quando indicado, o remédio, que tem regras para o tripulante (Veja M2V7 - II). Não há tratamento invasivo para a hiperventilação. O prognóstico é bom: tratada a ansiedade, as crises diminuem. No jato **pressurizado**, o passageiro ansioso tem tripulação para ajudar; no avião **não pressurizado**, acima de 10.000 ft, hipóxia e hiperventilação se confundem, e o oxigênio vem primeiro; no **helicóptero**, ruído, vibração e voo baixo somam estresse.",
           "**Como prevenir e amenizar.** O treinamento em câmara ensina a separar a hipóxia da hiperventilação e mostra como o próprio corpo responde. Em situações de estresse, como turbulência forte ou emergência, perceba a respiração acelerada cedo. Diante de sintomas em altitude, a sequência não muda: **oxigênio primeiro**, sistema e pressurização verificados, altitude corrigida. Excluída a hipóxia, **desacelere a respiração**, de forma consciente, até os sintomas passarem. Nunca use **saco de papel** em voo, porque ele pode piorar uma hipóxia não reconhecida.",
         ].join('\n\n'),
         recursos: [
@@ -276,7 +277,7 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-5-oxigenio.jpg'), legenda: 'Na dúvida entre ansiedade e hipóxia, primeiro o oxigênio; só depois se orienta a respiração mais lenta.' } },
           {
-            paragrafo: 5,
+            paragrafo: 6,
             tabela: {
               titulo: 'Como prevenir e amenizar a hiperventilação',
               colunas: ['Situação', 'O que fazer'],
@@ -479,6 +480,7 @@ export const hipoxia: Capitulo = {
           "O resultado decide o oxigênio. Com **PaO2 de 6,6 kPa (50 mmHg) ou mais**, ou **saturação de 85% ou mais**, o oxigênio a bordo **não é necessário**. Abaixo disso, ele é **recomendado**, ajustado para manter a saturação em pelo menos **85%** no adulto. Sem o teste, alguns casos já têm fluxo definido, em geral **2 litros por minuto**, e quem usa oxigênio em casa **soma 2 litros por minuto** ao fluxo de sempre. Concentradores portáteis raramente passam de **3 litros por minuto** contínuos.",
           "Algumas situações pedem só tempo. Com **pneumonia** e saturação no solo **abaixo de 94%**, a viagem não essencial espera **7 dias**. Depois de **trombose venosa profunda ou embolia pulmonar**, a espera é de **2 semanas**.",
           "Voar precisando de oxigênio sem tê-lo combinado é arriscar a **hipóxia** que a cabine provoca justamente em quem tem menos reserva (Veja M2V1 - IV). Oxigênio e aparelhos precisam de **aprovação prévia da companhia**, que costuma pedir o **formulário médico (MEDIF)** preenchido pelo médico. Para o tripulante, a lógica é outra: na DPOC, a FAA exige saturação em repouso de **96% ou mais** para a autorização especial.",
+          "**Doenças, tratamentos e tipo de voo.** Quem mais precisa do teste e do oxigênio a bordo tem **DPOC**, **fibrose pulmonar**, **hipertensão pulmonar**, **fibrose cística** ou doença do coração com pouca reserva, ou acabou de ter **pneumonia**. A conduta é **expectante** quando a saturação em repouso passa de 95%; o tratamento **não invasivo** é o **oxigênio** no voo, com o fluxo definido pelo teste, além do tratamento da doença: antibiótico na pneumonia, remédios do pulmão e da circulação. O tratamento **invasivo** mais extremo é o **transplante de pulmão**, e depois dele a volta ao voo é decidida com a equipe do transplante. O prognóstico é bom quando o oxigênio é combinado antes. No jato **pressurizado**, o concentrador portátil aprovado vai na cabine; no avião **não pressurizado**, a cabine é a altitude real, e o oxigênio precisa estar disponível já em altitudes menores; no **helicóptero**, o transporte de quem depende de oxigênio é aeromédico.",
           "**Não embarque** sem o oxigênio combinado se o teste mostrou a necessidade. Na decisão, o médico usa a saturação em repouso, a resposta ao esforço, o resultado do teste e o **fluxo que manteve a saturação em 85%**; é esse número que vai para o MEDIF.",
         ].join('\n\n'),
         recursos: [
@@ -500,7 +502,7 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v1-9-concentrador.jpg'), legenda: 'Com o concentrador portátil aprovado pela companhia, o oxigênio segue com o passageiro durante o voo.' } },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
