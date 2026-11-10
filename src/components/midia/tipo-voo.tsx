@@ -128,6 +128,19 @@ export function TipoVooHormonios() {
   return <TipoVoo titulo="Os hormônios em cada tipo de voo" dados={HORMONIOS} />;
 }
 
+// ---------------------------------------------------------------- M2V11 · Sangue, câncer e infecções (registro em sangue-imunidade.ts)
+const SANGUE: Linha[] = [
+  { nome: 'Anemia', pressurizado: 'Hemoglobina abaixo de 8,5 g/dL: adiar, salvo anemia crônica estável avaliada.', nao: 'Acima de 10.000 ft sem oxigênio, a reserva acaba mais rápido.', helicoptero: 'Quem sangra viaja em transporte aeromédico, com equipe e oxigênio.' },
+  { nome: 'Doença falciforme', pressurizado: 'Crise nos 9 dias anteriores: adiar.', nao: 'Sem oxigênio acima de 10.000 ft: menos folga.', helicoptero: 'Crise a bordo pede equipe e oxigênio.' },
+  { nome: 'Trombose ou embolia', pressurizado: 'Perna: anticoagulante estável; embolia: 5 dias (IATA) a 2 semanas (BTS).', nao: 'Trechos curtos; o que pesa é o oxigênio depois da embolia.', helicoptero: 'Trechos curtos; mesmos prazos.' },
+  { nome: 'Câncer operado', pressurizado: 'Abdome cerca de 10 dias; tórax 4 semanas após o dreno; crânio 10 a 14 dias.', nao: 'O ar que ficou no corpo se expande mais.', helicoptero: 'Voo baixo expande menos, mas o prazo vale.' },
+  { nome: 'Infecção transmissível', pressurizado: 'Filtros ajudam, mas não protegem quem senta perto.', nao: 'Cabine pequena, ocupantes muito próximos.', helicoptero: 'Cabine pequena; transporte de paciente com equipe protegida.' },
+  { nome: 'HIV', pressurizado: 'Controlado: sem restrição; doses ajustadas ao fuso.', nao: 'Mesmas regras de remédio e de sintomas.', helicoptero: 'Mesmas regras de remédio e de sintomas.' },
+];
+export function TipoVooSangue() {
+  return <TipoVoo titulo="Sangue, câncer e infecções em cada tipo de voo" dados={SANGUE} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });
