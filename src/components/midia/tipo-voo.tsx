@@ -104,6 +104,18 @@ export function TipoVooMente() {
   return <TipoVoo titulo="A mente em cada tipo de voo" dados={MENTE} />;
 }
 
+// ---------------------------------------------------------------- M2V8 · Sono (registro em sono.ts)
+const SONO: Linha[] = [
+  { nome: 'Jet lag', pressurizado: 'Rotas longas cruzam muitos fusos; para o leste, o ajuste é mais lento.', nao: 'Raramente cruza fusos; o que pesa é a madrugada.', helicoptero: 'Raramente cruza fusos; a escala de madrugada desloca o relógio.' },
+  { nome: 'Fadiga', pressurizado: 'Tripulação aumentada e beliche nos voos longos.', nao: 'Acima de 10.000 ft sem oxigênio, a hipóxia soma-se ao cansaço.', helicoptero: 'Muitas vezes um só piloto: ninguém assume se o sono vencer.' },
+  { nome: 'Apneia do sono', pressurizado: 'Passageiro leva o CPAP, com aprovação da companhia, e usa no voo noturno.', nao: 'O risco é a sonolência de dia no comando; tratar antes de voar.', helicoptero: 'Sonolência com um só piloto: tratar antes de voar.' },
+  { nome: 'Remédio para dormir', pressurizado: 'Passageiro: ação curta, sem álcool; tripulante: 12 a 72 h antes (FAA).', nao: 'Somado à hipóxia, piora o julgamento.', helicoptero: 'Mesmas esperas da FAA: 12 a 72 h.' },
+  { nome: 'Narcolepsia', pressurizado: 'Passageiro voa com o remédio no horário.', nao: 'Tripulante: incompatível com o voo (FAA).', helicoptero: 'Tripulante: incompatível com o voo (FAA).' },
+];
+export function TipoVooSono() {
+  return <TipoVoo titulo="O sono em cada tipo de voo" dados={SONO} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

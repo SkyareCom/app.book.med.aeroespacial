@@ -150,6 +150,7 @@ export type TipoMidia =
   | 'vacinas-voo'
   | 'animacao-hemoglobina'
   | 'tipo-voo-coracao'
+  | 'tipo-voo-sono'
   | 'tipo-voo-mente'
   | 'tipo-voo-cerebro'
   | 'tipo-voo-orientacao'
