@@ -93,4 +93,31 @@ export const liberacaoSono: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'sono-tratamento',
+    pergunta: 'Tem diagnóstico ou tratamento de algum destes distúrbios do sono?',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Insônia crônica em terapia, sem remédio diário',
+        passageiro: ok('8.7'),
+        tripulante: e('cuidados', 'Pode voar; conte ao examinador e mantenha a higiene do sono.', 'AASM (2026): terapia cognitivo-comportamental para insônia como primeira escolha; FAA: uso diário de hipnótico não permitido.', '8.7'),
+      },
+      {
+        rotulo: 'Cirurgia para apneia do sono',
+        passageiro: e('avaliar', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo pós-operatório: conforme o cirurgião [confirmar na referência].', '8.7'),
+        tripulante: e('avaliar', 'Volte a voar quando o tratamento se mostrar eficaz.', 'FAA (OSA): certificação após tratamento eficaz comprovado; Doc 8984 17.6.', '8.7'),
+      },
+      {
+        rotulo: 'Narcolepsia ou hipersonia',
+        passageiro: e('cuidados', 'Pode voar com o remédio no horário, ajustado ao fuso.', 'Manter o tratamento; ajuste de horário com o médico.', '8.7'),
+        tripulante: e('nao-voar', 'Não pode voar como tripulante; fale com o examinador.', 'FAA, Narcolepsy/Hypersomnia: "incompatible with aviation safety", tratada ou não; decisão da FAA.', '8.7'),
+      },
+      {
+        rotulo: 'Pernas inquietas em tratamento',
+        passageiro: e('cuidados', 'Pode voar; levante e caminhe no voo longo.', 'Movimento das pernas no voo longo também previne trombose (Veja M2V2 - VII).', '8.7'),
+        tripulante: e('avaliar', 'Fale com o examinador; alguns remédios dão sono.', 'FAA, Restless Leg: adiar a emissão; remédio, dose e efeitos, hemograma e ferritina de até 90 dias; possível autorização especial.', '8.7'),
+      },
+    ],
+  },
 ];

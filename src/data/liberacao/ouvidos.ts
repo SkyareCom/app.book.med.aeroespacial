@@ -1,7 +1,9 @@
 // Formulário de liberação para voo seguro · bloco dos ouvidos, seios da face e dentes (M2V3).
 // Cada resposta tem um efeito para o passageiro e outro para o tripulante, com texto leigo e texto para o médico.
 // Fontes no registro de revisão de src/data/capitulos/ouvidos.ts (ICAO Doc 8984 Part III Cap. 12; RBAC 67.97, 67.101 e
-// 67.103; FAA 14 CFR 67.105, Guia do AME Item 30 e AIM 8-1-2; CDC Yellow Book; Felkai et al., Br Dent J 2023). Sem
+// 67.103; FAA 14 CFR 67.105, Guia do AME Item 30 e AIM 8-1-2; CDC Yellow Book; Felkai et al., Br Dent J 2023;
+// GPnotebook, ENT disorders and flying (CAA e IATA Medical Manual 11ª ed.): cirurgia do ouvido médio, até 9 dias não
+// apto, 10 dias ou mais com atestado do otorrino; NHS Worcestershire, tubo de ventilação: voar é seguro). Sem
 // fonte: [confirmar na referência].
 
 import type { EfeitoLiberacao, PerguntaLiberacao } from '../tipos';
@@ -46,12 +48,17 @@ export const liberacaoOuvidos: PerguntaLiberacao[] = [
       { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
       {
         rotulo: 'Sim, no estribo (estapedectomia)',
-        passageiro: e('avaliar', 'Confirme com o cirurgião quando pode voar.', 'Prótese do estribo: risco de deslocamento e vertigem com variação súbita de pressão.', '3.3'),
+        passageiro: e('avaliar', 'Espere ao menos 10 dias e a liberação do otorrino.', 'Cirurgia do ouvido médio: até o 9º dia, não voar; a partir do 10º, com atestado do otorrino (CAA e IATA, via GPnotebook). Prótese do estribo: risco de deslocamento e vertigem com variação súbita de pressão.', '3.3'),
         tripulante: e('nao-voar', 'Não voe nos primeiros 1 a 3 meses; depois, só com avaliação especializada.', 'ICAO 12.5.3–12.5.4: 1 a 3 meses sem voar; avaliação da tuba e sem vertigem na Valsalva; depois restrição a tripulação múltipla por 2 anos; FAA: decisão da FAA com relatório do cirurgião.', '3.3'),
       },
       {
+        rotulo: 'Tubo de ventilação no tímpano',
+        passageiro: e('cuidados', 'Pode voar: o tubo iguala a pressão sozinho.', 'Tubo de ventilação: voar é seguro com o tubo no lugar (NHS, Worcestershire).', '3.2'),
+        tripulante: e('avaliar', 'Leve o relatório do otorrino ao examinador.', 'ICAO 12.5.1: miringotomia sem restrição; avaliar a doença de base e a tuba.', '3.2'),
+      },
+      {
         rotulo: 'Sim, outra cirurgia do ouvido',
-        passageiro: e('avaliar', 'Confirme com o cirurgião quando pode voar.', 'Cirurgia do ouvido: prazo definido pelo cirurgião.', '3.3'),
+        passageiro: e('avaliar', 'Espere ao menos 10 dias e a liberação do otorrino.', 'Cirurgia do ouvido médio: até o 9º dia, não voar; a partir do 10º, com atestado do otorrino (CAA e IATA, via GPnotebook).', '3.3'),
         tripulante: e('avaliar', 'Só volte a voar com a liberação do examinador.', 'ICAO 12.5.1 e 12.5.7: miringotomia e mastoidectomia simples e timpanoplastia sem restrição se sem vertigem e com audição normal; mastoidectomia radical, avaliação completa; FAA: decisão da FAA.', '3.3'),
       },
     ],
@@ -92,6 +99,23 @@ export const liberacaoOuvidos: PerguntaLiberacao[] = [
         rotulo: 'Dor de dente que piora no voo',
         passageiro: e('avaliar', 'Procure o dentista antes de voar.', 'Barodontalgia: dente com doença prévia (classes de Ferjentsik e Aker); descartar barossinusite maxilar.', '3.6'),
         tripulante: e('nao-voar', 'Não voe até tratar o dente.', 'Barodontalgia pode distrair ou incapacitar; RBAC 67.103(a): sem cárie profunda, doença periapical ou endodontia em curso.', '3.6'),
+      },
+    ],
+  },
+  {
+    id: 'orl-audicao',
+    pergunta: 'Perdeu a audição de repente, tem zumbido novo ou usa aparelho auditivo?',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Perda súbita de audição ou zumbido novo',
+        passageiro: e('avaliar', 'Procure o otorrino com urgência antes de voar.', 'Surdez súbita: avaliação e corticoide precoces; investigar barotrauma e fístula.', '3.4'),
+        tripulante: e('nao-voar', 'Não voe até a avaliação do otorrino e uma nova audiometria.', 'ANAC: audiometria de 250 a 8.000 Hz; FAA: voz a 2 metros ou audiometria nos limites.', '3.4'),
+      },
+      {
+        rotulo: 'Perda por ruído ou aparelho auditivo, estável',
+        passageiro: ok('3.1'),
+        tripulante: e('avaliar', 'Mostre a audiometria ao examinador e use proteção auditiva.', 'ANAC: audiometria sem aparelho; 2ª e 4ª classes aceitam voz a 2 metros. FAA: voz a 2 metros ou audiometria nos limites.', '3.4'),
       },
     ],
   },

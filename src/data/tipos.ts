@@ -148,7 +148,26 @@ export type TipoMidia =
   | 'infeccao-voo'
   | 'hiv-viagem'
   | 'vacinas-voo'
-  | 'animacao-hemoglobina';
+  | 'animacao-hemoglobina'
+  | 'tipo-voo-coracao'
+  | 'tipo-voo-impacto'
+  | 'tipo-voo-g'
+  | 'tipo-voo-ruido'
+  | 'tipo-voo-radiacao'
+  | 'tipo-voo-temperatura'
+  | 'tipo-voo-descompressao'
+  | 'tipo-voo-cabine'
+  | 'tipo-voo-gases'
+  | 'tipo-voo-pulmao'
+  | 'tipo-voo-digestivo'
+  | 'tipo-voo-sangue'
+  | 'tipo-voo-hormonios'
+  | 'tipo-voo-sono'
+  | 'tipo-voo-mente'
+  | 'tipo-voo-cerebro'
+  | 'tipo-voo-orientacao'
+  | 'tipo-voo-olhos'
+  | 'tipo-voo-ouvidos';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

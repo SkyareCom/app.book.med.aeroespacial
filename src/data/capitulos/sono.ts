@@ -113,6 +113,21 @@
 // Mídia (03/11/2026): fotos e vídeos gerados por IA enviados pelo autor; pessoas fictícias. O relógio digital da foto
 // do amanhecer foi desfocado; os vídeos foram cortados para tirar as cenas com relógio digital e embalagens com marca.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
+// Doenças, tratamentos e tipo de voo (10/11/2026), a pedido do autor ("As doenças devem aparecer no texto e nao em
+//   tabelas isoladas / Todas com seus tratamentos indocados e influenciados pelos voos / Entrararem ma liberacao para voos
+//   / Prognostico relacionado ao voo / Periodo indicado de adiamento ou tepouso etc / Tratamentos cirurgicos ou invasivos
+//   destacados ou enfatizados" e "Tratamentos exectantes e nao invasivos também devem entrar"). Fontes novas: AASM,
+//   diretriz de tratamento combinado da insônia crônica (J Clin Sleep Med, 13/04/2026; nota da AASM de 22/04/2026): a
+//   terapia cognitivo-comportamental para insônia sozinha é o tratamento de primeira escolha mais eficaz; combinação com
+//   remédio sugerida em vez de remédio sozinho. FAA, AME Guide: Narcolepsy/Hypersomnia ("This condition is incompatible
+//   with aviation safety", tratada ou não; adiar e enviar à FAA); Restless Leg (adiar; remédio, dose e efeitos; nota
+//   clínica, hemograma e ferritina de até 90 dias; polissonografia se feita; possível autorização especial); OSA
+//   (certificação "once effective treatment is shown"). CPAP a bordo: registro de hipoxia.ts (M2V1 - VII). Recuperação
+//   em 2 noites (Doc 9966), aclimatação em 36 h (14 CFR 117.25), 2 h por fuso (Lei 13.475/2017, art. 49), esperas da
+//   FAA (Guia do AME, Sleep aids) e beliche (FAA AC 120-100): fontes acima. Aparelho intraoral e cirurgia das vias aéreas
+//   como opções da apneia: conhecimento médico geral, sem prazo próprio; prazo de viagem após a cirurgia: [confirmar na
+//   referência]. Comparador "tipo de voo": aplicações das fontes acima (fusos só nas rotas longas, um só piloto, hipóxia
+//   acima de 10.000 ft, Veja M2V1).
 
 import { liberacaoSono } from '../liberacao/sono';
 import type { Capitulo } from '../tipos';
@@ -135,15 +150,17 @@ export const sono: Capitulo = {
           "O relógio cria horários fortes. A **janela de baixa circadiana**, entre cerca de **2 e 6 horas**, coincide com a **temperatura mais baixa** do corpo e é o pior momento para trabalhar: os erros sobem muito **entre 2 e 4 horas**. Há uma segunda queda **à tarde, perto de 15 a 17 horas**. Nas horas antes de deitar, ao contrário, o relógio segura a vigília, e deitar cedo rende pouco sono.",
           "A vida no ar desafia os dois motores ao mesmo tempo. Os **fusos horários** deslocam o dia lá fora, a **madrugada** obriga a trabalhar quando o relógio pede sono, as **jornadas longas** aumentam a pressão do sono e o **beliche** a bordo tem ruído e movimento. Em altitude de montanha, acima de cerca de **2.700 m**, a respiração fica **periódica** durante o sono até a aclimatação (Veja M2V1).",
           "O resultado tem nome: **fadiga**. Para a ICAO, é a capacidade física ou mental reduzida pela **perda de sono**, pela **vigília prolongada**, pela **fase do relógio** ou pela **carga de trabalho**, a ponto de prejudicar a atenção e a operação segura. Ela pode ser **transitória**, resolvida por um bom sono, ou **cumulativa**, quando a recuperação não se completa dia após dia.",
-          "**Como usar o relógio a seu favor.** A necessidade de sono varia de pessoa para pessoa, mas ninguém se treina para dormir menos: perder algumas horas por noite já prejudica o desempenho depois de **2 ou 3 dias**. Com a **idade**, a qualidade do sono piora, e o mesmo horário passa a render um sono mais leve. O dia do relógio tem horas fortes e fracas: o pior desempenho fica entre **1 e 5 horas**, a segunda queda vem no **meio da tarde**, e nas horas antes de deitar o relógio segura a vigília. Planeje o sono, o trabalho e as tarefas difíceis com esse mapa na cabeça.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças do sono que mais pesam no voo são a **insônia**, a **apneia do sono**, a **narcolepsia** e a **hipersonia**, os **movimentos periódicos das pernas** e o **jet lag**. O tratamento vai do **expectante**, porque a insônia de uma viagem e o jet lag costumam passar em dias, ao **não invasivo**, que resolve a maioria: a **terapia cognitivo-comportamental para insônia**, a primeira escolha, a **luz** na hora certa, o **CPAP** na apneia e os remédios. O tratamento **invasivo** é exceção: a **cirurgia** das vias aéreas, em casos selecionados de apneia. No jato **pressurizado** de longa distância, pesam os fusos, a madrugada e o beliche; no avião **não pressurizado**, a hipóxia acima de 10.000 ft soma-se ao sono; no **helicóptero**, muitas vezes com um só piloto, não há quem assuma o comando se o sono vencer.",
+          "**Como prevenir e amenizar.** Como usar o relógio a seu favor: a necessidade de sono varia de pessoa para pessoa, mas ninguém se treina para dormir menos: perder algumas horas por noite já prejudica o desempenho depois de **2 ou 3 dias**. Com a **idade**, a qualidade do sono piora, e o mesmo horário passa a render um sono mais leve. O dia do relógio tem horas fortes e fracas: o pior desempenho fica entre **1 e 5 horas**, a segunda queda vem no **meio da tarde**, e nas horas antes de deitar o relógio segura a vigília. Planeje o sono, o trabalho e as tarefas difíceis com esse mapa na cabeça.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-sono' },
           { paragrafo: 1, midia: 'animacao-relogio' },
           { paragrafo: 2, figura: foto(require('@/assets/images/topicos/m2v8-1-amanhecer.jpg'), 'A luz da manhã chega ao relógio biológico pelos olhos e acerta o ritmo do corpo para o dia que começa.') },
           {
             paragrafo: 3,
             tabela: {
-              titulo: 'O que muda em voo',
+              titulo: 'O que muda em altitude · sono e relógio',
               colunas: ['Fator do voo', 'O que acontece no sono e no relógio', 'Quem é mais vulnerável'],
               linhas: [
                 ['Fusos horários', 'O dia lá fora muda de lugar e o relógio leva dias para acompanhar', 'Quem cruza 2 ou mais fusos: o relógio do cérebro se ajusta devagar à luz nova; até lá, hormônios do sono e do despertar, temperatura e digestão seguem o horário de casa (Veja M2V8 - III)'],
@@ -156,9 +173,9 @@ export const sono: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-1-beliche.jpg'), 'No beliche de descanso a bordo, o sono costuma ser mais curto e leve que em casa.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'O dia do relógio biológico',
+              titulo: 'Como prevenir e amenizar · o dia do relógio biológico',
               colunas: ['Hora do relógio do corpo', 'O que o corpo faz', 'O que fazer'],
               linhas: [
                 ['Fim da noite (cerca de 1 a 5 h)', 'Maior sono, temperatura mais baixa, melatonina no pico; erros sobem muito entre 2 e 4 h', 'Proteger o sono; em serviço, redobrar a atenção e as verificações'],
@@ -183,9 +200,34 @@ export const sono: Capitulo = {
           "Outros hormônios dependem do **próprio sono**. O **hormônio do crescimento** tem seu pulso mais forte logo depois de adormecer, no **sono profundo**, e quase desaparece quando se passa a noite acordado. A **temperatura do corpo** acompanha o relógio e chega ao **mínimo no início da manhã**, o horário de maior sono.",
           "A falta de sono mexe no **apetite** e no **açúcar do sangue**. Depois de **2 noites de 4 horas**, a **leptina**, que dá saciedade, caiu cerca de **18%**, a **grelina**, que dá fome, subiu cerca de **28%**, a fome aumentou **24%** e a vontade de carboidratos, **32%**. Depois de **5 noites de 4 horas**, a tolerância à glicose caiu cerca de **43%** e a sensibilidade à insulina, **24%**.",
           "Repetida por anos, a desregulação do relógio está ligada a **obesidade**, **diabetes**, **transtornos do humor** e problemas do **coração** e da **pressão** (Veja M2V2 e M2V9). Para quem voa, o recado prático é que **comer, dormir e se expor à luz em horários coerentes** ajuda o relógio, e que a fome de madrugada é, em parte, hormonal.",
-          "**Como proteger os hormônios.** A **luz** é o comando da melatonina: luz forte pela manhã e pouca luz forte nas horas antes de deitar. O **hormônio do crescimento** depende do sono profundo do **começo da noite**, por isso as primeiras horas de sono são as que mais valem. A fome que aparece depois de noites curtas é, em parte, **grelina alta e leptina baixa**: saber disso ajuda a não confundir sono com fome. Como a tolerância à glicose é menor **de madrugada**, quem trabalha à noite se dá melhor com refeições leves nessas horas e com a refeição principal no horário de dia. Nenhum suplemento substitui o sono: em poucas noites curtas, o metabolismo já muda.",
+          "**Tratamentos, prognóstico e tipo de voo.** O relógio hormonal desregulado não é uma doença à parte: ele piora o **apetite**, o **açúcar do sangue** e o **humor**, e soma-se ao **diabetes** e à **obesidade** (Veja M2V9). A conduta é **expectante** depois de uma viagem isolada, porque o sono em dia recoloca os hormônios no lugar; a recuperação pede ao menos **2 noites seguidas** sem restrição. O tratamento **não invasivo** é a **luz** na hora certa, a **melatonina** em dose baixa, quando indicada, e o horário das refeições; quem tem diabetes ajusta com o médico os remédios ao fuso. Não há tratamento invasivo. Quem voa longas rotas **pressurizadas**, cruzando fusos e madrugadas, desloca o relógio hormonal com mais frequência; no avião leve **não pressurizado** e no **helicóptero**, que raramente cruzam fusos, o que desloca o relógio é a escala de madrugada.",
+          "**Como prevenir e amenizar.** Como proteger os hormônios: a **luz** é o comando da melatonina: luz forte pela manhã e pouca luz forte nas horas antes de deitar. O **hormônio do crescimento** depende do sono profundo do **começo da noite**, por isso as primeiras horas de sono são as que mais valem. A fome que aparece depois de noites curtas é, em parte, **grelina alta e leptina baixa**: saber disso ajuda a não confundir sono com fome. Como a tolerância à glicose é menor **de madrugada**, quem trabalha à noite se dá melhor com refeições leves nessas horas e com a refeição principal no horário de dia. Nenhum suplemento substitui o sono: em poucas noites curtas, o metabolismo já muda.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · hormônios e relógio",
+              colunas: ["Remédio", "Efeito que importa", "Tripulante"],
+              linhas: [
+                ["Melatonina (0,5 a 1 mg)", "Adianta ou atrasa o relógio conforme a hora", "ICAO: em geral não recomendada"],
+                ["Cafeína", "Atrasa o sono se tomada tarde", "Parar 6 h antes de deitar"],
+                ["Insulina e remédios do diabetes", "O horário muda com o fuso", "Ajustar com o médico (Veja M2V9)"],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Liberação para voo · hormônios e relógio",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Sono curto há vários dias", "Evitar dirigir depois do voo", "Recuperar com 2 noites seguidas de sono sem restrição"],
+                ["Diabetes com remédio em horário fixo", "Ajustar as doses ao fuso com o médico (Veja M2V9)", "Ajustar com o examinador (Veja M2V9)"],
+                ["Melatonina para acertar o relógio", "Dose baixa, na hora certa", "ICAO: em geral não recomendada"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-2-luz.jpg'), 'A luz do sol pela manhã suprime a melatonina e diz ao relógio que o dia começou.') },
           { paragrafo: 2, midia: 'relogio-hormonal' },
           {
@@ -206,9 +248,9 @@ export const sono: Capitulo = {
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-2-refeicao.jpg'), 'Refeição de madrugada no hotel: a falta de sono aumenta a fome, em parte pela grelina mais alta.') },
           { paragrafo: 5, video: { fonte: require('@/assets/videos/m2v8-refeicao.mp4'), legenda: 'Fome fora de hora: com o relógio desajustado e pouco sono, o corpo pede comida no meio da noite.' } },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'O que desregula os hormônios e como proteger',
+              titulo: 'Como prevenir e amenizar · hormônios do sono',
               colunas: ['Hormônio', 'O que desregula', 'Como proteger'],
               linhas: [
                 ['Melatonina', 'Luz forte à noite; luz na hora errada depois de cruzar fusos', 'Luz pela manhã e pouca luz forte antes de deitar'],
@@ -233,8 +275,48 @@ export const sono: Capitulo = {
           "Na prática, o corpo se ajusta em média **1,5 hora por dia** depois de voar para o **oeste** e só **1 hora por dia** depois de voar para o **leste**. Seis fusos para o leste podem pedir perto de uma semana; seis para o oeste, cerca de quatro dias. Além disso, cada órgão se ajusta num ritmo diferente: por alguns dias, sono, temperatura, hormônios e digestão ficam **dessincronizados entre si**.",
           "Voar no sentido **norte–sul**, sem mudar de fuso, não causa jet lag, mas o **voo noturno** e a **noite mal dormida** causam cansaço parecido (Veja M2V8 - V). Viagens **curtas** não dão tempo para o relógio se ajustar: nelas, o melhor é **manter o horário de casa**. Para o passageiro, curta é a viagem de **menos de 2 dias**; para o tripulante, o pernoite de **menos de 3 dias**.",
           "O jet lag pesa mais em quem já vem com **sono atrasado**, em quem viaja com **frequência** e em quem tem doenças que dependem de remédios em horário fixo, como o **diabetes** (Veja M2V9) e a **anticoagulação** (Veja M2V11). Para o tripulante, a preocupação principal é a **fadiga** que ele traz para a próxima jornada.",
+          "**Tratamento, prognóstico e tipo de voo.** O jet lag tem conduta **expectante** quando a viagem é curta: fica-se no horário de casa e o corpo nem chega a se deslocar. Nas viagens longas, o tratamento é **não invasivo**: **luz** na hora certa, **melatonina** em dose baixa, cochilos curtos e, por poucas noites, **remédio para dormir** com orientação médica. Não há tratamento invasivo. O prognóstico é bom: o relógio se ajusta cerca de **1 hora por dia** depois de voar para o leste e **1,5 hora por dia** para o oeste. Quem tem remédio em horário fixo ajusta as doses com o médico. O jet lag é um problema do jato **pressurizado** de longa distância; o avião leve **não pressurizado** e o **helicóptero** raramente cruzam fusos, e neles o cansaço vem da madrugada e da jornada (Veja M2V8 - V).",
+          "**Como prevenir e amenizar.** Antes de uma viagem longa, decida se vai se adaptar ou ficar no horário de casa: menos de 2 dias, fique no de casa. Indo para o **leste**, adiante o sono e procure luz pela manhã; indo para o **oeste**, atrase o sono e aproveite a luz do fim do dia. Não dirija sonolento no primeiro dia. O plano completo está no tópico seguinte (Veja M2V8 - IV).",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · jet lag e direção",
+              colunas: ["Decisão", "O que fazer"],
+              linhas: [
+                ["Viagem de menos de 2 dias", "Ficar no horário de casa"],
+                ["Viagem longa para o leste", "Adiantar o sono antes; luz pela manhã no destino"],
+                ["Viagem longa para o oeste", "Atrasar o sono antes; luz no fim do dia no destino"],
+                ["Primeiro dia", "Não dirigir sonolento"],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · direção do voo",
+              colunas: ["Remédio", "Voando para o leste", "Voando para o oeste"],
+              linhas: [
+                ["Melatonina", "Cerca de 90 minutos antes de deitar no destino", "Quando o relógio do corpo marca manhã"],
+                ["Cafeína", "Pode ser tomada cedo de manhã", "Não cedo de manhã"],
+                ["Remédio para dormir", "Poucas noites, com orientação médica", "Poucas noites, com orientação médica"],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Liberação para voo · jet lag",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Viagem curta, de menos de 2 dias", "Manter o horário de casa", "Pernoite de menos de 3 dias: horário de casa"],
+                ["Muitos fusos, primeiro dia", "Não dirigir nem decidir coisas importantes se sonolento", "Brasil: 2 h a mais de repouso por fuso a partir de 3 fusos"],
+                ["Remédio em horário fixo (insulina, anticoagulante)", "Ajustar ao fuso com o médico", "Ajustar com o examinador"],
+                ["Adaptação ao novo fuso", "Cerca de 1 h por dia para o leste e 1,5 h para o oeste", "FAA: aclimatado após 36 h no novo fuso"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-3-insonia.jpg'), 'Três da manhã no hotel, completamente acordado: o relógio do corpo ainda está no fuso de casa.') },
           { paragrafo: 2, midia: 'animacao-mapa-jet-lag' },
           { paragrafo: 2, midia: 'direcao-jet-lag' },
@@ -269,11 +351,23 @@ export const sono: Capitulo = {
           "No dia a dia do destino, **cochilos de 20 a 30 minutos** ajudam a ficar acordado sem atrapalhar a noite; cochilos longos atrapalham. A **cafeína** age por cerca de **5 horas**: até **200 mg** a cada 4 horas de dia, parando **6 horas antes de deitar**. Indo para o **leste**, ela pode ser tomada cedo de manhã; indo para o **oeste**, não.",
           "As **refeições** também acertam o relógio. Nas duas direções, a regra é comer no **horário do destino** desde o primeiro dia; o que muda é como isso pesa no corpo. Indo para o **leste**, as refeições locais chegam **mais cedo** do que o corpo espera: tome o **café da manhã no horário local**, junto com a luz da manhã, e faça um **jantar cedo e leve** para conseguir deitar no horário local. Indo para o **oeste**, elas chegam **mais tarde**: **segure o jantar** até o horário local e, se a fome apertar antes, faça um lanche leve. A bordo, coma nos horários de refeição do destino e durma quando for noite lá. Na viagem curta, de menos de 2 dias, mantenha os horários de casa. Em qualquer direção, evite **refeição pesada**, acima de cerca de **20% da energia do dia**, nas **1 a 2 horas** antes do sono principal, mas não vá dormir com fome: quem dorme de dia deve comer algo antes para não acordar faminto. As fontes oficiais não recomendam uma dieta especial contra o jet lag; o que conta é o **horário** de comer.",
           "**Esticar o dia ou dormir?** Ficar acordado durante o **dia local** aumenta a pressão do sono e ajuda a dormir na noite do destino. Indo para o **oeste**, segure o sono até a **hora local de deitar**. Durante o dia local, prefira **cochilos de 20 a 30 minutos**: cochilos longos atrapalham a noite, e passando de **45 minutos** vem a inércia do sono. Se não conseguir evitar um sono maior, a ICAO orienta parar em **2 ou 3 horas**. Quem **não vai se adaptar** e fica no horário de casa faz o contrário: dorme nas horas de sono de casa, da **1 às 5 horas** e no **meio da tarde**. Antes de uma noite inteira de voo ou de trabalho, **durma durante o dia**. A bordo, dorme melhor quem toma **menos álcool e cafeína** e usa **máscara e tampões**.",
-          "**Outras dicas.** O **exercício** aumenta o alerta: de preferência ao ar livre e de dia, somando a luz, mas sem esforço vigoroso nas **2 horas antes de dormir**. Beba **água** no voo e no destino: a desidratação piora os sintomas, e o **álcool** e a **cafeína** desidratam; o álcool também faz dormir mais rápido, mas **fragmenta** o sono. Leve o seu **ritual de dormir** para fora de casa. Cada pessoa reage de um jeito: teste as estratégias, fique com as que funcionam para você e lembre que **ansiedade** e **preocupações** pioram o sono longe de casa. O plano interativo acima ajuda a montar o seu horário.",
+          "**Como prevenir e amenizar.** Outras dicas: o **exercício** aumenta o alerta: de preferência ao ar livre e de dia, somando a luz, mas sem esforço vigoroso nas **2 horas antes de dormir**. Beba **água** no voo e no destino: a desidratação piora os sintomas, e o **álcool** e a **cafeína** desidratam; o álcool também faz dormir mais rápido, mas **fragmenta** o sono. Leve o seu **ritual de dormir** para fora de casa. Cada pessoa reage de um jeito: teste as estratégias, fique com as que funcionam para você e lembre que **ansiedade** e **preocupações** pioram o sono longe de casa. O plano interativo acima ajuda a montar o seu horário.",
           "Remédios para dormir, como o **zolpidem** e a **eszopiclona**, podem ajudar o passageiro por poucas noites, com orientação médica. **Anti-histamínicos** e **calmantes de ação longa** pioram a atenção e o equilíbrio e devem ser evitados, inclusive a bordo. O **tripulante** segue regras próprias: em pernoites de **menos de 3 dias**, **fica no horário de casa**; a ICAO **não recomenda** a melatonina para tripulantes em geral; e a Lei do Aeronauta dá **2 horas a mais de repouso por fuso** quando a viagem cruza **3 ou mais fusos** num mesmo sentido.",
           "**Não dirija nem tome decisões importantes** no primeiro dia depois de cruzar muitos fusos se estiver sonolento. Procure o médico se a insônia durar mais que a adaptação esperada ou se usar remédios em horário fixo, como **insulina** e **anticoagulante**, para ajustar as doses ao novo fuso (Veja M2V9 e M2V11).",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 9,
+            tabela: {
+              titulo: "Liberação para voo · jet lag ao chegar",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Remédio para dormir nas primeiras noites", "Poucas noites, com orientação médica", "FAA: 12 a 72 h antes de voar, conforme o remédio"],
+                ["Melatonina", "Dose baixa, na hora certa", "ICAO: em geral não recomendada"],
+                ["Sonolento no primeiro dia", "Não dirigir nem decidir coisas importantes", "Não aceitar o serviço; avisar a escala"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-4-mascara.jpg'), 'Máscara de olhos e tampões a bordo: escuro e silêncio no horário de dormir do destino.') },
           { paragrafo: 2, midia: 'plano-jet-lag' },
           {
@@ -354,10 +448,22 @@ export const sono: Capitulo = {
           "Para o **passageiro**, a fadiga pesa ao **dirigir** depois de um voo longo ou noturno e se soma ao jet lag. Para o **tripulante**, ela é um risco operacional: as normas proíbem aceitar o serviço quem se sabe cansado a ponto de prejudicar a segurança, e o repouso deve dar a **oportunidade de dormir** antes da jornada (Veja M2V8 - VI).",
           "Voar fatigado aumenta **erros**, **esquecimentos** e **lapsos de atenção** justamente nos momentos de maior carga, como a aproximação. Para o tripulante, apresentar-se sem condições descumpre a regra de não atuar com deficiência que impeça cumprir os requisitos, além das normas da empresa. Os sinais de alerta são **bocejos**, **pálpebras pesadas**, **cabeça caindo**, **releituras** e **falhas de comunicação**.",
           "**O que aumenta a fadiga.** Além do sono e da hora do dia, pesam a **idade**, a **saúde**, o **tipo de tarefa** (monótona ou exigente, física ou mental), o **tempo na tarefa**, a **carga de trabalho**, o **ambiente** (calor, frio, ruído) e os **remédios**. Na cabine contam ainda o **número e a composição da tripulação**, a **aclimatação ao fuso**, a **jornada anterior**, a **oportunidade de descanso** antes e durante o voo e a **recuperação** depois dele. Um fator muitas vezes esquecido: chegar à jornada **já com sono atrasado**.",
-          "**Como prevenir e amenizar a fadiga.** O sono é a única cura, e ele começa **antes da jornada**: antes de trabalhar a noite inteira, **durma durante o dia**. Um **cochilo de 25 a 30 minutos** antes de sair ajuda; mesmo **10 minutos** já melhoram a atenção. Em serviço, a **cafeína** age em **15 a 30 minutos** e dura até **5 horas**; use-a quando precisar, não por hábito. **Pausas de 5 minutos**, levantar e conversar quebram a monotonia, e o **descanso controlado** na cabine só vale onde a autoridade e a empresa permitem. Na madrugada, entre **2 e 4 horas**, redobre as verificações. Depois da jornada, recupere: são pelo menos **2 noites** de sono livre.",
+          "**Como prevenir e amenizar.** O sono é a única cura, e ele começa **antes da jornada**: antes de trabalhar a noite inteira, **durma durante o dia**. Um **cochilo de 25 a 30 minutos** antes de sair ajuda; mesmo **10 minutos** já melhoram a atenção. Em serviço, a **cafeína** age em **15 a 30 minutos** e dura até **5 horas**; use-a quando precisar, não por hábito. **Pausas de 5 minutos**, levantar e conversar quebram a monotonia, e o **descanso controlado** na cabine só vale onde a autoridade e a empresa permitem. Na madrugada, entre **2 e 4 horas**, redobre as verificações. Depois da jornada, recupere: são pelo menos **2 noites** de sono livre.",
           "**Não aceite o serviço** se dormiu bem menos que o habitual ou se já cochilou sem querer: avise a escala ou o comandante. Se estará acordado há mais de **16 horas** na hora de pousar, descanse ou cochile antes e fale com a escala. Nos EUA, a regra é explícita: o tripulante que se declara **fatigado** não pode ser escalado nem aceitar o voo, e a empresa deve retirá-lo do serviço.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 8,
+            tabela: {
+              titulo: "Remédios e voo · fadiga",
+              colunas: ["Remédio", "Efeito que importa", "Tripulante"],
+              linhas: [
+                ["Cafeína", "Age em 15 a 30 minutos e dura até 5 horas", "Usar só quando precisar; o uso diário reduz o efeito"],
+                ["Remédio para dormir no pernoite", "Pode deixar sono residual", "FAA: 12 a 72 h antes de voar"],
+                ["Anti-histamínico que dá sono", "Sonolência no dia seguinte", "Evitar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-5-cabine.jpg'), 'Madrugada na cabine de comando: a janela de baixa circadiana é o horário de maior risco de erro.') },
           { paragrafo: 2, midia: 'medidor-fadiga' },
           {
@@ -406,9 +512,34 @@ export const sono: Capitulo = {
           "O **repouso** cresce com a jornada: **12 horas** depois de até 12 horas de jornada, **16 horas** depois de 12 a 15 horas e **24 horas** depois de mais de 15. Quem cruza **3 ou mais fusos** num sentido ganha **2 horas a mais por fuso**, na base, e o mês deve ter ao menos **10 folgas**. Nos EUA, a FAA exige **10 horas** de repouso com **8 horas seguidas de oportunidade de sono**, **30 horas livres** a cada semana e, depois de cruzar mais de **60° de longitude** e passar mais de uma semana fora, **56 horas** com **3 noites** de sono.",
           "Nos **voos de longa duração**, com até **20 horas**, a tripulação é **aumentada** e se reveza no **beliche** ou em poltronas de descanso. O sono a bordo é curto: **5 horas** de oportunidade costumam render cerca de **3 horas** de sono, e **2 períodos de 3 a 5 horas** funcionam melhor que um de 8. Onde a autoridade permite, o **descanso controlado** na cabine de comando é limitado a cerca de **40 minutos**, para evitar a inércia do sono, e não serve para planejar a escala.",
           "A regra só protege se o repouso for **usado para dormir**. Uma folga de **48 horas** que começa às **2 horas da manhã** dá à maioria das pessoas **uma só noite** de sono; uma de **40 horas** que começa às **21 horas** dá **duas**. Por isso o tripulante planeja o sono antes da jornada e avisa quando o repouso não deu a oportunidade de dormir.",
-          "**Como aproveitar o repouso.** No pernoite, a prioridade é a **oportunidade de dormir**: quarto escuro, silencioso e fresco, despertador confiável e o sono marcado para as horas em que o relógio ajuda. Nos EUA, o tripulante que não conseguir as **8 horas** seguidas de oportunidade de sono deve **avisar a empresa**. A bordo, deite-se mesmo sem sono: o beliche raramente rende mais de **5 horas** de sono, e dois períodos de **3 a 5 horas** funcionam melhor que um de 8. Ao acordar do beliche ou do descanso controlado, dê **10 a 15 minutos** para a inércia passar antes de assumir. Depois de sequências de madrugadas ou de jornadas longas, a recuperação pede **2 noites** seguidas de sono livre.",
+          "**Como prevenir e amenizar.** Como aproveitar o repouso: no pernoite, a prioridade é a **oportunidade de dormir**: quarto escuro, silencioso e fresco, despertador confiável e o sono marcado para as horas em que o relógio ajuda. Nos EUA, o tripulante que não conseguir as **8 horas** seguidas de oportunidade de sono deve **avisar a empresa**. A bordo, deite-se mesmo sem sono: o beliche raramente rende mais de **5 horas** de sono, e dois períodos de **3 a 5 horas** funcionam melhor que um de 8. Ao acordar do beliche ou do descanso controlado, dê **10 a 15 minutos** para a inércia passar antes de assumir. Depois de sequências de madrugadas ou de jornadas longas, a recuperação pede **2 noites** seguidas de sono livre.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: "Remédios e voo · repouso e beliche",
+              colunas: ["Remédio", "Efeito que importa", "Tripulante"],
+              linhas: [
+                ["Remédio para dormir no pernoite", "Ajuda, mas pode deixar sono residual", "ICAO: até 3 ou 4 doses por semana; FAA: 12 a 72 h antes"],
+                ["Remédio para dormir no beliche", "Sono em pleno serviço", "Incompatível com as esperas da FAA"],
+                ["Cafeína", "Age em 15 a 30 minutos e dura até 5 horas", "Evitar nas horas antes do repouso"],
+              ],
+            },
+          },
+          {
+            paragrafo: 5,
+            tabela: {
+              titulo: "Liberação para voo · jornada e repouso",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Repouso sem 8 h de oportunidade de sono", "Não se aplica", "FAA: avisar a empresa"],
+                ["Sente-se fatigado antes da jornada", "Não se aplica", "FAA: declarar-se fatigado; não é escalado"],
+                ["3 ou mais fusos num sentido", "Não se aplica", "Brasil: 2 h a mais de repouso por fuso, na base"],
+                ["Voo longo com tripulação aumentada", "Dormir no horário do destino", "Beliche: 2 períodos de 3 a 5 h rendem mais que um de 8 h"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-6-escala.jpg'), 'Planejar a escala com os limites de jornada e de repouso é a primeira barreira contra a fadiga.') },
           { paragrafo: 2, midia: 'repouso-aeronauta' },
           {
@@ -429,7 +560,7 @@ export const sono: Capitulo = {
           {
             paragrafo: 6,
             tabela: {
-              titulo: 'Como aproveitar o repouso',
+              titulo: 'Como prevenir e amenizar · repouso',
               colunas: ['Situação', 'O que fazer'],
               linhas: [
                 ['Pernoite', 'Quarto escuro, silencioso e perto de 21 °C; despertador confiável'],
@@ -456,15 +587,31 @@ export const sono: Capitulo = {
           "Acordou de madrugada no pernoite e não volta a dormir? Levante-se, leia por cerca de uma hora ou até ter sono e tente de novo; se em meia hora continuar acordado, repita. Durante o dia no destino, prefira cochilos curtos; se não conseguir evitar dormir mais, pare em **2 ou 3 horas** para preservar a noite.",
           "**Remédio para dormir** é exceção, não rotina. A ICAO aceita poucas noites, no máximo **3 ou 4 doses por semana**, sempre com orientação de um médico que conheça a aviação e depois de um **teste em solo**. Nunca compre remédio para dormir sem receita no exterior: dose e qualidade são incertas. Na FAA, a espera depois da última dose vai de **12 horas** (zaleplona) a **72 horas** (temazepam), e o **uso diário não é permitido**. No Brasil, o uso contínuo de remédio para dormir fica **a critério do médico examinador**.",
           "Sonolência que não melhora com sono pede investigação. A **apneia do sono** é a causa mais comum (Veja M2V1 - VII): a ICAO considera **inapto temporário** o tripulante com escala de sonolência de **Epworth de 10 ou mais** ou história sugestiva, e manda investigar quem tem pescoço com mais de **43 cm** ou IMC acima de **30** e ronca. Outras causas são a **narcolepsia**, a **hipersonia idiopática**, os **movimentos periódicos das pernas**, a **depressão** e a **dor**. Para a FAA, a condição crônica que atrapalha o sono **desqualifica** até ser tratada.",
-          "**Não use** remédio para dormir pela primeira vez antes de um voo, não misture com **álcool** e não use cafeína para substituir o sono. O médico pergunta pelo **ronco**, pelos **cochilos involuntários** e pelos remédios, aplica a **escala de Epworth** e, se preciso, pede o **estudo do sono**.",
+          "**Tratamentos, prognóstico e tipo de voo.** Na **insônia** de viagem, a conduta é **expectante** e de higiene do sono. Na insônia crônica, o tratamento **não invasivo** de primeira escolha é a **terapia cognitivo-comportamental para insônia**; o remédio entra por pouco tempo, às vezes junto com ela. Na **apneia**, o **CPAP** é o tratamento padrão, com perda de peso e, para alguns, aparelho na boca; a **cirurgia** das vias aéreas é o tratamento **invasivo**, para casos selecionados, e o tripulante só volta a voar quando o tratamento se mostra **eficaz**. Para a FAA, a **narcolepsia** e a **hipersonia** são incompatíveis com o voo do tripulante, tratadas ou não; os **movimentos das pernas** são avaliados caso a caso, com os remédios e a ferritina. O passageiro com apneia leva o **CPAP** e o usa no voo noturno **pressurizado** (Veja M2V1 - VII); no avião **não pressurizado**, a hipóxia acima de 10.000 ft soma-se às pausas; no **helicóptero** de um só piloto, a sonolência não tratada não tem quem a cubra.",
+          "**Como prevenir e amenizar.** Não use remédio para dormir pela primeira vez antes de um voo, não misture com **álcool** e não use cafeína para substituir o sono. O médico pergunta pelo **ronco**, pelos **cochilos involuntários** e pelos remédios, aplica a **escala de Epworth** e, se preciso, pede o **estudo do sono**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · distúrbios do sono",
+              colunas: ["Tratamento", "Efeito que importa", "Tripulante"],
+              linhas: [
+                ["Terapia cognitivo-comportamental para insônia", "Primeira escolha, sem remédio", "Sem restrição própria"],
+                ["Remédio para dormir", "Ajuda por poucas noites", "FAA: 12 a 72 h antes; uso diário não permitido"],
+                ["CPAP", "Trata a apneia", "Volta a voar com o tratamento eficaz"],
+                ["Cirurgia da apneia", "Para casos selecionados", "Volta quando o tratamento se mostra eficaz"],
+                ["Remédios para narcolepsia", "Controlam a sonolência", "FAA: condição incompatível com o voo"],
+                ["Remédios para pernas inquietas", "Alguns dão sono", "FAA: caso a caso, com ferritina"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v8-7-quarto.jpg'), 'Quarto de hotel escuro, fresco e silencioso: a higiene do sono vale também longe de casa.') },
           { paragrafo: 2, midia: 'cochilo-cafeina' },
           {
             paragrafo: 3,
             tabela: {
-              titulo: 'Higiene do sono em casa e fora dela',
+              titulo: 'Como prevenir e amenizar · higiene do sono',
               colunas: ['Item', 'O que fazer'],
               linhas: [
                 ['Horário', 'Dormir nas horas de sono do relógio do corpo; de dia, no meio da tarde'],
@@ -496,7 +643,7 @@ export const sono: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v8-7-estudo.jpg'), 'O estudo do sono registra a respiração, o oxigênio e as fases do sono durante a noite.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

@@ -49,6 +49,16 @@
 //   [confirmar capítulo e página].
 // Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v3-*.jpg.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
+//   Prazo após tratamento hiperbárico: St Leger Dowse M, Bryson P, Gunby A, Fife W. "Time to fly after treatment for
+//   DCI", DDRC, 2005: 18 câmaras, de imediatamente a 6 semanas; 72 h a mais citada (DAN); Acott: 4 semanas razoáveis.
+//   24 h após descompressão rápida: AC 61-107B 2-7.d(7). Transporte de mergulhador o mais baixo possível: aplicação da
+//   lei de Henry (sem número próprio).
 import type { Capitulo } from '../tipos';
 
 export const descompressao: Capitulo = {
@@ -86,8 +96,10 @@ export const descompressao: Capitulo = {
           "A doença tem várias faces. A mais comum é a **dor profunda nas grandes articulações**, que piora com o movimento. A pele pode coçar e ficar **marmorizada**. Nos nervos, surgem **dormência, ardor e formigamento**. No peito, a **sufocação** traz dor em queimação, tosse seca e falta de ar, e **pode matar sem tratamento**. No **sistema nervoso central**, aparecem confusão, alterações da visão, convulsões, fraqueza e perda de consciência.",
           "O **tempo em altitude** é o fator de risco mais forte. Somam-se **subida rápida**, **exposições repetidas** acima de 18.000 ft em poucas horas, **esforço físico** em altitude, **lesão recente** numa articulação, **frio intenso**, **gordura corporal** (que guarda mais nitrogênio), **idade**, efeitos do **álcool** e um **mergulho recente** (Veja M1V3 - III).",
           "A conduta não espera: **máscara, oxigênio a 100%, descida de emergência e pouso** o quanto antes, com a articulação dolorida imóvel. **Mesmo que os sintomas sumam na descida, a pessoa precisa de avaliação médica**, respirando oxigênio. Se persistirem, o tratamento é na **câmara hiperbárica** (Veja M1V3 - IV). E um alerta: **oxigênio a 100% durante o voo não previne a doença** se não houve pré-respiração antes da decolagem.",
+          "**Tratamentos, prognóstico e prazos.** A doença descompressiva **não tem conduta expectante**: mesmo que os sintomas sumam na descida, a pessoa é avaliada. O tratamento **não invasivo** começa no avião, com **oxigênio a 100%** e água, e o definitivo é a **recompressão na câmara hiperbárica** (Veja M1V3 - IV), o tratamento mais intenso, com sessões repetidas se restarem sintomas. Tratada cedo, a forma das articulações costuma curar sem sequela; a do sistema nervoso pode deixar marcas. Os prazos: depois de uma descompressão rápida em voo, **24 horas** sem voar; depois do tratamento na câmara, não há consenso, e as orientações vão de **72 horas**, a mais citada, a **6 semanas**, com o médico hiperbárico; o tripulante volta só com a liberação do médico e da autoridade. No jato **pressurizado**, o risco aparece só na descompressão; no avião **não pressurizado**, em todo voo acima de 18.000 ft; no **helicóptero**, o risco de altitude é raro, mas o transporte de um mergulhador doente deve ser feito o mais baixo possível.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-descompressao' },
           { paragrafo: 1, midia: 'animacao-bolhas' },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v3-piloto-dor.jpg'), legenda: 'Dor profunda no ombro em pleno voo sem pressurização: a forma mais comum da doença descompressiva.' } },
           {

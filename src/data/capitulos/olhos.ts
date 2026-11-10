@@ -52,6 +52,11 @@
 //   Tallahassee, 2002, com o PAPI); 11.9.1–11.9.2 (condições que tornam inapto até avaliação especializada); 11.10.1–
 //   11.10.14 (glaucoma: pressão ≥ 24 mmHg ou diferença ≥ 5 mmHg, encaminhar; mióticos em geral não permitidos;
 //   betabloqueador e prostaglandina úteis; inibidor de anidrase carbônica em colírio; controle regular).
+// - 10/11/2026, pedido do autor (doenças no texto, tratamentos expectantes, não invasivos e invasivos, prognóstico,
+//   prazos e tipo de voo): parágrafo "Tratamentos, prognóstico e tipo de voo" em cada tópico, tabelas de remédios que
+//   faltavam e comparador por tipo de aeronave, com os números já registrados acima (5.000 ft à noite; 8 a 24 h após
+//   dilatar; 8 h após sildenafil; SF6 e C3F8). UK CAA, Surgical conditions: outra cirurgia intraocular ou ferimento
+//   penetrante, 1 semana. Tratamentos sem número próprio: aplicação clínica geral.
 // - ANAC, RBAC 67, Emenda 05 (PDF enviado pelo autor): 67.99 (1ª classe) e 67.139 (2ª classe): (a) olhos normais;
 //   (b) cirurgia refrativa há mais de 6 meses, com teste de ofuscamento e de sensibilidade ao contraste se pedido;
 //   (c)(1) 20/30 em cada olho e 20/20 binocular (2ª: 20/40 e 20/30); (c)(2) J1 a 30–50 cm e J6 a 100 cm (2ª: só J1);
@@ -134,9 +139,11 @@ export const olhos: Capitulo = {
           "O **ar seco** da cabine resseca e irrita os olhos nos voos longos, e a **lente de contato gelatinosa** passa a incomodar mais cedo. O olho não tem ar preso como o ouvido, com uma exceção grave: o **gás** que o cirurgião injeta no olho depois de uma cirurgia de retina se **expande** com a altitude (Veja M1V1 - II e M2V4 - VIII).",
           "Acima das nuvens, a **luz vem de baixo**: as nuvens refletem o sol para cima e o painel fica na sombra, enquanto lá fora tudo brilha. O céu fica mais escuro e o **contraste** aumenta. O **ultravioleta** sobe cerca de **5% a cada 1.000 ft**, mas as **janelas da cabine** barram muito bem o UV; o que passa é a **luz azul**, que aumenta com a altitude e atravessa o para-brisa em 50% a 60%.",
           "A **velocidade** também cobra: um movimento acima de **10° por segundo** no campo de visão já borra a imagem. A **vibração** dos instrumentos entre **22 e 64 Hz**, comum no helicóptero, e a de **2 a 10 Hz** da turbulência atrapalham a leitura (Veja M1V6 - IV). Na acrobacia e no voo militar, a **força G** escurece a visão antes de apagar a consciência (Veja M1V7 - II).",
-          "**Como proteger os olhos no voo.** Antes, durma bem, traga os **óculos** em dia e o **par de reserva**, e um **óculos de sol cinza neutro**. Durante, pisque mais, use **lágrima artificial sem conservante** se o olho secar, tire a lente de contato se incomodar e não esfregue os olhos. À noite, use oxigênio quando a regra pedir (Veja M2V4 - III). Depois de voos longos, o olho seco costuma melhorar em terra; dor, vermelhidão ou visão borrada que não passam pedem avaliação (Veja M2V4 - VII).",
+          "**Doenças, tratamentos e tipo de voo.** As condições deste voo são os **erros de refração** e a presbiopia, a **cegueira noturna**, a **perda de campo visual**, a **visão de um olho só**, o **defeito de cores**, as **lesões por laser** e as doenças do olho: **glaucoma**, **catarata**, **uveíte**, olho seco e doenças da **retina**. O tratamento pode ser **expectante**, acompanhando o grau e a pressão do olho; **não invasivo**, com óculos, lentes, colírios e lágrima artificial; ou **invasivo**: **laser** na córnea ou na retina, **cirurgia de catarata**, cirurgia do glaucoma e da retina. Na cabine **pressurizada**, a hipóxia leve já mexe na visão noturna. No avião **não pressurizado**, sem oxigênio, a visão noturna piora acima de **5.000 ft** à noite, e uma bolha de gás no olho se expande mais. No **helicóptero**, a vibração dos instrumentos e o voo baixo, com fios e obstáculos, exigem a melhor acuidade e o campo inteiro.",
+          "**Como prevenir e amenizar.** Antes, durma bem, traga os **óculos** em dia e o **par de reserva**, e um **óculos de sol cinza neutro**. Durante, pisque mais, use **lágrima artificial sem conservante** se o olho secar, tire a lente de contato se incomodar e não esfregue os olhos. À noite, use oxigênio quando a regra pedir (Veja M2V4 - III). Depois de voos longos, o olho seco costuma melhorar em terra; dor, vermelhidão ou visão borrada que não passam pedem avaliação (Veja M2V4 - VII).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-olhos' },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-1-nuvens.jpg'), 'Acima das nuvens, a luz vem de baixo: o painel fica na sombra e lá fora tudo brilha.') },
           {
             paragrafo: 2,
@@ -156,9 +163,9 @@ export const olhos: Capitulo = {
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v4-1-colirio.jpg'), 'Lágrima artificial sem conservante alivia o olho ressecado pelo ar seco da cabine.') },
           { paragrafo: 4, midia: 'uv-altitude' },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como proteger os olhos no voo',
+              titulo: 'Como prevenir e amenizar · olhos no voo',
               colunas: ['Momento', 'O que fazer'],
               linhas: [
                 ['Antes', 'Óculos em dia, par de reserva e óculos de sol cinza neutro na bagagem de mão'],
@@ -184,9 +191,22 @@ export const olhos: Capitulo = {
           "Vale **com ou sem óculos**: a ICAO não tem limite para a visão sem correção. Quem enxerga **pior que 20/200** sem óculos em algum olho apresenta um **relatório oftalmológico** no primeiro exame e depois **a cada 5 anos**. Quem precisa de correção tem de **usá-la** no voo e levar **óculos de reserva**, mesmo quando usa lente de contato; isso vem escrito no certificado médico.",
           "A **presbiopia**, a vista cansada, chega devagar: primeiro a leitura falha **com pouca luz** ou cansaço, e o **hipermetrope** a sente mais cedo. O piloto deve ter um **único par** que sirva para longe e para perto, sem trocar nem tirar os óculos: **meia-lua**, **bifocal**, **trifocal** ou **multifocal**. Óculos de leitura de lente inteira **não servem**, porque borram a pista. Quando surge a presbiopia, o certo é pegar os óculos logo, sem esperar a letra pequena falhar de dia.",
           "A **lente de contato** é aceita se for **monofocal**, **sem cor** e **bem tolerada**, sempre com os óculos de reserva. Não se usa lente de contato e óculos **no mesmo olho**, nem a **monovisão**, um olho corrigido para longe e o outro para perto, porque o olho de perto enxerga mal a distância. Quem tem grau muito alto usa lente de contato ou óculos de **alto índice**, que deformam menos as bordas.",
-          "**Como enxergar bem na cabine.** Leve ao oftalmologista as **distâncias** que você usa no avião: painel, painel de cima e cartas. Tenha o par de reserva **na cabine**, não na mala despachada. O passageiro não tem exigência de acuidade, mas leva os óculos e a receita na bagagem de mão. O tripulante que voa **sem a correção exigida** descumpre a restrição do certificado: a ANAC pode pedir para ver os óculos e a reserva, e o examinador pede novos exames se a visão cair ou houver doença, lesão ou cirurgia no olho.",
+          "**Tratamentos, prognóstico e tipo de voo.** Miopia, hipermetropia, astigmatismo e presbiopia têm tratamento **não invasivo** na maioria dos casos: **óculos** ou **lente de contato**, revistos quando o grau muda, em conduta **expectante** entre uma consulta e outra. O tratamento **invasivo** é a **cirurgia refrativa** com laser ou a troca da lente do olho, com os prazos do tópico de cirurgias (Veja M2V4 - VIII). O prognóstico é bom: com a correção certa e o par de reserva, a acuidade fica dentro da norma. No **helicóptero**, a vibração borra a leitura dos instrumentos, e os óculos precisam ficar firmes sob o capacete; no avião leve **não pressurizado**, o ar mais seco em altitude e o vento de uma janela aberta incomodam mais quem usa lente de contato.",
+          "**Como prevenir e amenizar.** Leve ao oftalmologista as **distâncias** que você usa no avião: painel, painel de cima e cartas. Tenha o par de reserva **na cabine**, não na mala despachada. O passageiro não tem exigência de acuidade, mas leva os óculos e a receita na bagagem de mão. O tripulante que voa **sem a correção exigida** descumpre a restrição do certificado: a ANAC pode pedir para ver os óculos e a reserva, e o examinador pede novos exames se a visão cair ou houver doença, lesão ou cirurgia no olho.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · acuidade e óculos",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Lágrima artificial sem conservante", "Alivia o olho seco e a lente de contato no ar seco", "Compatível"],
+                ["Colírio que dilata a pupila", "Borra o foco e ofusca por horas", "Esperar 8 a 24 horas antes de voar"],
+                ["Colírio anti-histamínico", "Pode borrar a visão logo depois de pingar", "Não pingar logo antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-2-tabela.jpg'), 'No exame, cada olho é testado separado, com e sem a correção.') },
           { paragrafo: 2, midia: 'acuidade-normas' },
           {
@@ -206,7 +226,7 @@ export const olhos: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v4-2-meia-lua.jpg'), 'Com a meia-lua ou o bifocal, o piloto lê a carta e olha a pista sem trocar de óculos.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · acuidade e óculos',
               colunas: ['Situação', 'O que fazer'],
@@ -234,9 +254,21 @@ export const olhos: Capitulo = {
           "A **luz vermelha** na cabine não atrapalha a adaptação, mas **distorce as cores** das cartas e piora a leitura de quem tem presbiopia. Na aviação comercial, quase tudo vem dos instrumentos, e a ICAO considera que o pequeno ganho da luz vermelha ou da luz branca fraca não compensa a perda de leitura. Na aviação geral, a adaptação ao escuro ainda importa em muitas situações.",
           "A visão noturna é das primeiras funções a sofrer com a **hipóxia** (Veja M2V1 - IV). Sem oxigênio, ela piora acima de **5.000 ft** à noite, e o **fumante**, com monóxido de carbono no sangue, sente em altitude ainda menor. No escuro, a **pupila dilata**, a imagem perde nitidez e o olho tende a focar perto, a **miopia noturna**, de até várias dioptrias.",
           "Enxerga pior à noite quem tem **presbiopia** sem correção, quem fez **cirurgia refrativa** e ficou com **halos** ou perda de contraste, quem usa **lente escura**, que é só para o dia, e quem tem **cegueira noturna**, a nictalopia, que torna o tripulante inapto até avaliação. Voar à noite assim, sem liberação, aumenta o risco de não ver outro avião, o terreno ou a pista.",
-          "**Como preservar a visão noturna.** Chegue à aeronave com tempo para os olhos se adaptarem e evite luz branca forte antes da decolagem. Use a menor luz que permita ler os instrumentos e feche um olho diante de um farol. Para achar algo fraco, olhe **de lado**, a 5° a 10°, e mova o olhar devagar. Em voo não pressurizado, use **oxigênio** acima de 5.000 ft à noite e não fume antes de voar.",
+          "**Tratamentos, prognóstico e tipo de voo.** A visão noturna fraca por presbiopia ou grau não corrigido melhora com **óculos certos**, tratamento **não invasivo**. Os **halos** depois da cirurgia refrativa costumam diminuir com o tempo, em conduta **expectante**. A **catarata** que ofusca à noite se resolve com **cirurgia**; a **cegueira noturna** por doença da retina não tem cura simples e torna o tripulante inapto. O prognóstico depende da causa. No avião **não pressurizado**, quem voa à noite sem oxigênio acima de **5.000 ft** perde visão noturna, e o fumante perde antes; no **helicóptero** com óculos de visão noturna, o campo fica estreito, e a varredura com a cabeça compensa (Veja M2V4 - IV).",
+          "**Como prevenir e amenizar.** Chegue à aeronave com tempo para os olhos se adaptarem e evite luz branca forte antes da decolagem. Use a menor luz que permita ler os instrumentos e feche um olho diante de um farol. Para achar algo fraco, olhe **de lado**, a 5° a 10°, e mova o olhar devagar. Em voo não pressurizado, use **oxigênio** acima de 5.000 ft à noite e não fume antes de voar.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · visão noturna",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Colírio miótico (pilocarpina)", "Contrai a pupila e escurece a visão à noite", "Não aceito para o tripulante"],
+                ["Sildenafil", "Visão azulada por horas", "Esperar 8 horas antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-3-noite.jpg'), 'À noite, quem enxerga são os bastonetes: sem cores e sem detalhes.') },
           { paragrafo: 1, midia: 'ponto-cego-noturno' },
           { paragrafo: 2, midia: 'adaptacao-escuro' },
@@ -256,7 +288,7 @@ export const olhos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · visão noturna',
               colunas: ['Momento', 'O que fazer'],
@@ -284,9 +316,22 @@ export const olhos: Capitulo = {
           "Sem nada para focar, como acima das nuvens, na névoa ou à noite, o olho **relaxa** e foca a uns **3 a 9 m**, a **miopia de campo vazio**: o piloto olha e não vê. Trocar o foco entre o painel e o horizonte também leva **vários segundos**. Na velocidade do pouso, a cerca de **145 kt**, só uma área de uns **500 m²** pode ser examinada sem a imagem borrar.",
           "A **visão de um olho só** tem campo menor e perde a **estereopsia**, a visão em 3D de perto, mas não perde a noção de profundidade a distância: além de uns **10 m**, ela vem de sombras, tamanho aparente, perspectiva e do deslocamento dos objetos quando a cabeça se move. A ANAC só aceita o tripulante **monocular** na revalidação ou no exame depois de acidente ou incidente grave, se o olho bom cumprir os requisitos; a ICAO, só por exceção, depois de **ao menos 6 meses** de adaptação e teste em voo. As **ilusões visuais** do voo ficam no M2V5.",
           "Atrapalham a varredura as **colunas do para-brisa**, a armação dos óculos e a linha do bifocal, o **sol** de frente e o **cansaço**. Uma **perda de campo** de um olho, por glaucoma, retina ou nervo, exige avaliação neuro-oftalmológica antes de voar (Veja M2V4 - VII). Para o passageiro, nada disso impede a viagem.",
-          "**Como olhar para fora.** Divida o céu em setores de **10°** e pare **1 segundo** em cada um. A cada pouco, foque um ponto **distante**, uma nuvem, a ponta da asa, o horizonte, para tirar o olho do foco curto. Mova a **cabeça** para olhar atrás das colunas do para-brisa. Na subida, na descida e perto de aeroportos, aumente o tempo olhando para fora.",
+          "**Tratamentos, prognóstico e tipo de voo.** A perda de campo por **glaucoma** se trata para não avançar: **colírios** que baixam a pressão do olho, **laser** e, quando não bastam, **cirurgia**; o campo perdido não volta, e o prognóstico depende de começar cedo. A perda por doença da **retina** ou do **nervo** segue a causa. A **visão de um olho só** não tem tratamento que devolva a profundidade: a conduta é a **adaptação**, de ao menos **6 meses**, com treino da varredura (Veja M2V4 - IV). No **helicóptero** em voo baixo, a varredura lateral contra fios e obstáculos depende muito do campo; no avião **não pressurizado** à noite, a hipóxia estreita ainda mais o campo de quem já perdeu parte dele.",
+          "**Como prevenir e amenizar.** Divida o céu em setores de **10°** e pare **1 segundo** em cada um. A cada pouco, foque um ponto **distante**, uma nuvem, a ponta da asa, o horizonte, para tirar o olho do foco curto. Mova a **cabeça** para olhar atrás das colunas do para-brisa. Na subida, na descida e perto de aeroportos, aumente o tempo olhando para fora.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · campo visual",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Colírio de prostaglandina ou betabloqueador", "Baixa a pressão do olho no glaucoma", "ICAO: úteis, com controle regular"],
+                ["Inibidor da anidrase carbônica em colírio", "Baixa a pressão do olho", "ICAO: aceito em colírio"],
+                ["Colírio miótico", "Escurece a visão e reduz o campo à noite", "Não aceito para o tripulante"],
+              ],
+            },
+          },
           { paragrafo: 1, midia: 'campo-visual' },
           { paragrafo: 2, midia: 'animacao-varredura' },
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v4-4-ceu.jpg'), 'Acima das nuvens, sem nada para focar, o olho relaxa e foca perto: o piloto olha e não vê.') },
@@ -305,9 +350,9 @@ export const olhos: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v4-4-varredura.jpg'), 'A cabeça se move para olhar atrás das colunas do para-brisa.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como fazer a varredura visual',
+              titulo: 'Como prevenir e amenizar · varredura visual',
               colunas: ['Passo', 'O que fazer'],
               linhas: [
                 ['Dividir o céu', 'Setores de até 10°, de um lado ao outro'],
@@ -333,9 +378,22 @@ export const olhos: Capitulo = {
           "O exame começa com as **placas pseudoisocromáticas**, como as de **Ishihara**, vistas à luz do dia; quem falha pode passar por outros testes, como o arranjo de cores **D-15**, lanternas e o **anomaloscópio**. Lentes que \"corrigem\" a cor **não valem**. A **ANAC** aceita quem lê as tabelas ou, no mínimo, reconhece as cores básicas da aviação isoladas: **amarelo, azul, verde, vermelho, branco, preto e âmbar**. Na **ICAO**, quem falha e não distingue as cores e luzes da navegação só fica com a Classe 2 **válida de dia**. Na **FAA**, desde **2025** a triagem é feita **uma vez**, no computador; quem falha recebe a 3ª classe **só para voo visual de dia**.",
           "O defeito também pode ser **adquirido**, num olho mais que no outro e às vezes piorando: doenças da **retina**, do **nervo óptico**, **glaucoma** avançado e remédios como a **hidroxicloroquina**, o **etambutol** e o **digitálico**. O **sildenafil**, para disfunção erétil, deixa tudo **azulado** em **3% a 11%** dos usuários por até 5 horas ou mais; a FAA pede **8 horas** sem voar depois dele (Veja M2V4 - VII).",
           "Para o passageiro, a visão de cores **não muda nada**. O tripulante com defeito voa dentro da restrição do certificado; voar à noite ou fora dela, sem liberação, é voar contra a norma e contra o risco que o caso do FedEx mostrou. Quem nota que as cores **mudaram** deve procurar o oftalmologista, porque o defeito adquirido costuma ter uma causa a tratar.",
-          "**Como lidar com a visão de cores.** Saiba seu resultado antes de escolher a carreira e faça o teste com calma e boa luz. Nas telas, confira também a **forma** e a **posição** dos símbolos, não só a cor. Tripulante que toma sildenafil respeita as 8 horas; quem usa hidroxicloroquina ou etambutol faz o controle de olhos que o médico pedir.",
+          "**Tratamentos, prognóstico e tipo de voo.** O defeito de cores **congênito** não tem tratamento e não piora: a conduta é **expectante**, com testes práticos e, quando preciso, restrição no certificado, como voar **só de dia**. Lentes coloridas não corrigem e não valem no exame. O defeito **adquirido** pede tratar a causa, como o glaucoma ou a doença da retina, ou suspender o remédio que o provocou, sob orientação médica; o efeito do sildenafil passa em horas. No **helicóptero** e no avião leve **não pressurizado**, que voam mais à noite em locais sem pista iluminada e dependem mais das luzes de outras aeronaves e de obstáculos, a restrição de voo noturno pesa mais.",
+          "**Como prevenir e amenizar.** Saiba seu resultado antes de escolher a carreira e faça o teste com calma e boa luz. Nas telas, confira também a **forma** e a **posição** dos símbolos, não só a cor. Tripulante que toma sildenafil respeita as 8 horas; quem usa hidroxicloroquina ou etambutol faz o controle de olhos que o médico pedir.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · visão de cores",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Hidroxicloroquina", "Uso longo pode lesar a retina e as cores", "Exame oftalmológico periódico"],
+                ["Etambutol", "Pode lesar o nervo óptico e as cores", "Testar a visão de cores durante o uso"],
+                ["Sildenafil", "Tom azulado por horas", "Esperar 8 horas antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-5-teste.jpg'), 'As placas de pontos coloridos revelam o defeito vermelho-verde.') },
           { paragrafo: 2, midia: 'papi-cores' },
           {
@@ -354,7 +412,7 @@ export const olhos: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v4-5-papi.jpg'), 'No crepúsculo, as luzes vermelhas e brancas do PAPI indicam se o avião está na rampa certa.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · visão de cores',
               colunas: ['Situação', 'O que fazer'],
@@ -382,9 +440,21 @@ export const olhos: Capitulo = {
           "Em volta dos aeroportos, a norma cria **zonas** onde um laser autorizado, como o de shows, precisa ficar fraco. Na **zona livre de laser**, até **2.000 ft** de altura e **2 NM** da pista, a luz não pode nem distrair: até **50 nW/cm²**. Na **zona crítica**, até **10.000 ft** e **10 NM**, não pode causar efeitos passageiros como o clarão e a pós-imagem: até **5 µW/cm²**. Nas **zonas sensíveis**, o limite é **100 µW/cm²**.",
           "**Se um laser atingir a cabine:** não olhe para o feixe, **proteja os olhos** com a mão ou o quebra-sol, e, se houver dois pilotos, quem não foi atingido assume os comandos. Avise o **controle** com a posição, a altitude, a cor e a direção do feixe; o controle trata o caso como **emergência em voo**. Depois do pouso, notifique: no Brasil, pela **ficha de notificação** do CENIPA; nos EUA, pelo questionário da FAA.",
           "Quem continua com **mancha**, borrão ou dor depois do clarão precisa de **avaliação oftalmológica** antes de voar de novo; para o tripulante, a lesão no olho exige exames adicionais. O passageiro atingido pela janela, raro, segue a mesma conduta. Voar com uma mancha no centro da visão é voar sem ver direito a pista e os instrumentos.",
-          "A luz forte do **sol** pede **óculos de sol** certos. Para o voo, a lente deve filtrar **70% a 85%** da luz, nunca mais; ser **cinza neutro**, que não muda as cores; e barrar **99% a 100%** do UV. Lente **polarizada** não serve, porque apaga telas com filtro antirreflexo e cria reflexos no para-brisa; a **fotocromática** clareia devagar ao entrar na sombra. Lente escura é **só de dia**.",
+          "**Tratamentos, prognóstico e tipo de voo.** O ofuscamento, a cegueira por clarão e a pós-imagem costumam passar em minutos, em conduta **expectante**, com o olho em repouso e longe da luz forte. Quem continua com **mancha** ou dor passa por exame da **retina**; a queimadura de retina não tem tratamento que a desfaça, e a conduta é acompanhar e proteger o olho. O prognóstico costuma ser bom, porque a maioria dos efeitos é temporária, mas a lesão da retina pode ser permanente. O **helicóptero**, que voa baixo e devagar perto de cidades, fica mais tempo ao alcance do laser; nos voos de um só piloto, não há quem assuma o comando durante o clarão.",
+          "**Como prevenir e amenizar.** A luz forte do **sol** pede **óculos de sol** certos. Para o voo, a lente deve filtrar **70% a 85%** da luz, nunca mais; ser **cinza neutro**, que não muda as cores; e barrar **99% a 100%** do UV. Lente **polarizada** não serve, porque apaga telas com filtro antirreflexo e cria reflexos no para-brisa; a **fotocromática** clareia devagar ao entrar na sombra. Lente escura é **só de dia**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · laser e luz forte",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Colírio lubrificante", "Conforto depois do clarão", "Compatível"],
+                ["Analgésico comum", "Alivia a dor leve do olho", "Dor ou mancha que persiste pede exame antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-6-laser.jpg'), 'Um feixe de laser verde atinge o para-brisa na aproximação noturna.') },
           { paragrafo: 2, midia: 'zonas-laser' },
           {
@@ -400,9 +470,9 @@ export const olhos: Capitulo = {
               ],
             },
           },
-          { paragrafo: 6, figura: foto(require('@/assets/images/topicos/m2v4-6-oculos-sol.jpg'), 'Lente cinza neutra, sem polarização, reduz o brilho sem mudar as cores.') },
+          { paragrafo: 7, figura: foto(require('@/assets/images/topicos/m2v4-6-oculos-sol.jpg'), 'Lente cinza neutra, sem polarização, reduz o brilho sem mudar as cores.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · laser e luz forte',
               colunas: ['Momento', 'O que fazer'],
@@ -430,7 +500,8 @@ export const olhos: Capitulo = {
           "**Olho vermelho com dor**, visão borrada, **luz incomodando** e lacrimejamento sugerem **uveíte** e pedem oftalmologista **com urgência**. A **catarata**, a lente do olho ficando opaca, borra a visão e causa **ofuscamento**, sobretudo à noite; o tratamento é cirúrgico (Veja M2V4 - VIII). O **descolamento de retina** corrigido pode ser liberado depois de avaliação especializada.",
           "O **olho seco** piora no ar seco da cabine; a lágrima artificial **sem conservante** ajuda, e a com conservante irrita quem usa lente de contato. A **conjuntivite** e a **lesão da córnea** pedem tratamento antes de voar. Lente de contato é um **corpo estranho**: pode arranhar a córnea e causar alergia, úlcera e infecção, e por isso precisa de acompanhamento.",
           "Os **colírios** também contam. A **pilocarpina** e outros **mióticos** contraem a pupila, escurecem a visão à noite e borram o foco: não são aceitos para o tripulante. Os colírios que **dilatam** a pupila, como os do exame de fundo de olho, pedem **8 a 24 horas** sem voar. **Prostaglandinas**, **betabloqueadores** e **inibidores da anidrase carbônica** em colírio são aceitos; o betabloqueador pode baixar o pulso e piorar a asma.",
-          "**Como cuidar dos olhos doentes antes de voar.** Faça o controle do glaucoma em dia, com **campo visual** e pressão. Leve os colírios na **bagagem de mão** e pingue no horário de casa, ajustando com o fuso (Veja M2V8). Não pingue colírio anti-histamínico logo antes nem durante o voo. Com olho vermelho, dor ou visão que caiu, o tripulante **não voa** e o passageiro procura avaliação antes de embarcar. Voar assim arrisca piorar o olho longe de ajuda e, para o tripulante, descumprir o certificado.",
+          "**Tratamentos, prognóstico e tipo de voo.** O **glaucoma** começa com tratamento **não invasivo**, os colírios que baixam a pressão, e pode precisar de **laser** ou **cirurgia**; o tripulante controlado e com campo normal pode voar. A **uveíte** se trata com **colírio de corticoide** e às vezes remédio pela boca, e o voo espera a inflamação passar. A **catarata** começa em conduta **expectante**, com troca dos óculos, e termina na **cirurgia** quando a visão ou o ofuscamento atrapalham. O **olho seco** e a **conjuntivite** são tratados com colírios. O prognóstico é bom quando o tratamento chega cedo; o glaucoma sem controle e a uveíte que volta são os que mais afastam do voo. No avião **não pressurizado** e no **helicóptero** com porta aberta, o vento e a poeira irritam mais o olho seco ou inflamado.",
+          "**Como prevenir e amenizar.** Faça o controle do glaucoma em dia, com **campo visual** e pressão. Leve os colírios na **bagagem de mão** e pingue no horário de casa, ajustando com o fuso (Veja M2V8). Não pingue colírio anti-histamínico logo antes nem durante o voo. Com olho vermelho, dor ou visão que caiu, o tripulante **não voa** e o passageiro procura avaliação antes de embarcar. Voar assim arrisca piorar o olho longe de ajuda e, para o tripulante, descumprir o certificado.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-7-lampada.jpg'), 'Na lâmpada de fenda, o oftalmologista examina a córnea, a lente e o fundo do olho.') },
@@ -470,7 +541,7 @@ export const olhos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · doenças dos olhos',
               colunas: ['Situação', 'O que fazer'],
@@ -498,9 +569,21 @@ export const olhos: Capitulo = {
           "Na **catarata**, troca-se a lente opaca por uma **lente intraocular**. Muita gente enxerga bem já no dia seguinte, e o grau se estabiliza em **6 a 8 semanas**. O passageiro pode voar **24 horas** depois. Para o tripulante, a ICAO considera adequada só a lente **monofocal**; a FAA aceita também as lentes para presbiopia, se não houver ofuscamento nem halos, e aplica a mesma regra dos 3 meses. A autoridade britânica afasta por **ao menos 6 semanas**. Meses ou anos depois, a cápsula pode embaçar; o **laser YAG** resolve em minutos.",
           "A cirurgia de **retina** às vezes termina com uma **bolha de gás** dentro do olho. Com a pressão menor da cabine, o gás **se expande**, a pressão do olho sobe e a pessoa pode **perder a visão** de forma grave. Por isso **não se voa** até o gás ser absorvido: cerca de **2 semanas** com **SF6** e **6 semanas** com **C3F8** ou **C2F6**. Outra cirurgia dentro do olho ou um **ferimento que perfurou** o olho pedem ao menos **7 dias**. Para o tripulante, o descolamento de retina torna inapto até a avaliação; a autoridade britânica pede o relatório do cirurgião numa revisão de **3 meses**.",
           "Voar antes do prazo arrisca **dor**, aumento da pressão e **perda da visão**, longe de um oftalmologista. Para o tripulante, toda cirurgia do olho leva a exames adicionais: esconder um LASIK, que não deixa cicatriz visível, não esconde a perda de contraste à noite e coloca em risco o certificado. A ICAO avisa que a cirurgia pode **atrasar a volta** ao voo ou, se complicar, tirar o certificado **de vez**.",
-          "**Como se preparar para a cirurgia dos olhos.** Antes, conte ao cirurgião que você **voa** e pergunte qual **gás** será usado, se houver. Planeje a cirurgia longe da escala e a volta para casa por terra se houver gás no olho. Depois, **não coce** o olho, pingue o colírio no horário e leve a receita na bagagem de mão. O tripulante só volta com os prazos da sua autoridade e, na ICAO, revisão **6 meses** depois e **a cada ano**.",
+          "**Tratamentos, prognóstico e tipo de voo.** Antes da cirurgia, a maioria dos casos foi tratada de forma **não invasiva**, com óculos, lentes ou colírios, e muitos seguem assim. Os procedimentos **invasivos** deste tópico são a **cirurgia refrativa**, a **cirurgia de catarata**, a cirurgia de **retina** com ou sem gás e a cirurgia do **glaucoma**. Depois de outras cirurgias dentro do olho ou de ferimento que perfura o olho, a CAA britânica pede **1 semana** antes de voar. O prognóstico é bom quando o prazo é respeitado; com gás no olho, voar antes da absorção pode cegar. No avião **não pressurizado**, a cabine sobe mais e a bolha se expande mais do que numa cabine a 8.000 ft; o helicóptero e até a estrada de serra podem expandi-la, e o cirurgião orienta a volta para casa.",
+          "**Como prevenir e amenizar.** Antes, conte ao cirurgião que você **voa** e pergunte qual **gás** será usado, se houver. Planeje a cirurgia longe da escala e a volta para casa por terra se houver gás no olho. Depois, **não coce** o olho, pingue o colírio no horário e leve a receita na bagagem de mão. O tripulante só volta com os prazos da sua autoridade e, na ICAO, revisão **6 meses** depois e **a cada ano**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · cirurgia dos olhos",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Colírio de antibiótico e corticoide", "Previne infecção e inflamação depois da cirurgia", "Voltar só com o tratamento terminado e a liberação"],
+                ["Colírio que dilata a pupila", "Borra o foco e ofusca por horas", "Esperar 8 a 24 horas antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v4-8-laser.jpg'), 'Na cirurgia refrativa, o laser esculpe a córnea para tirar o grau.') },
           { paragrafo: 2, midia: 'prazo-cirurgia-olho' },
           {
@@ -520,7 +603,7 @@ export const olhos: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v4-8-protetor.jpg'), 'Depois da cirurgia, o protetor evita coçar e bater no olho operado.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · cirurgia dos olhos',
               colunas: ['Momento', 'O que fazer'],
@@ -535,7 +618,7 @@ export const olhos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

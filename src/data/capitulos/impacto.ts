@@ -56,6 +56,12 @@
 // - HIC 1.000: 14 CFR 25.562(c). Peso do capacete e pescoço sob G: Veja M1V7 (Shiri 2015).
 // Fotos e vídeo premium gerados por IA pelo autor (pessoas fictícias): topicos/m1v8-*.jpg, videos/m1v8-*.mp4.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
 export const impacto: Capitulo = {
@@ -73,8 +79,10 @@ export const impacto: Capitulo = {
           "O resumo clássico da NASA, de **1959**, mostrou que a tolerância depende de quatro coisas: o **pico** da aceleração, a **duração**, a **velocidade de subida** e, sobretudo, a **direção**. Em **1954**, o médico da Força Aérea dos EUA **John Paul Stapp**, preso por cintos num trenó a foguete, parou de **1.017 km/h** com cerca de **46 G**. Saiu machucado e abalado, mas **sem lesão permanente**, e sua pesquisa ajudou a criar os **cintos de segurança** de carros e aviões.",
           "A direção muda tudo. **De frente ou de costas**, com o corpo apoiado no encosto ou nos cintos, a carga se espalha pelo tronco e o limite de risco alto chega a **46 G**. **No eixo da coluna**, de cima para baixo, o mesmo nível de risco aparece com cerca de **23 G**, porque as **vértebras** recebem a carga uma sobre a outra. No +Z, o risco **alto** corresponde a **50%** de chance de **fratura da coluna**; o **moderado**, a **5%**; o **baixo**, a **0,5%**.",
           "A forma de prender o corpo pesa tanto quanto o número. Na Força Aérea britânica, o modelo previa cerca de **4%** de lesões da coluna nas ejeções, e a taxa real foi de **30% a 50%**, por causa do **tipo de cinto** e da folga entre o corpo e o assento. Cinto de **tronco bem ajustado** acopla o corpo ao assento e reduz o **rebote**, que aumenta a carga nas vértebras.",
+          "**Doenças, tratamentos e tipo de voo.** As lesões do impacto são a **fratura da coluna**, as **fraturas** de braços e pernas, o **trauma de crânio** e as lesões dos órgãos do abdome e do tórax. A **fratura em cunha estável** se trata de forma **não invasiva**, com repouso relativo, colete e fisioterapia, e afasta o piloto de aviões com assento ejetável por **3 a 4 meses** (Veja M1V8 - III). A fratura **instável** ou que ameaça a medula pede tratamento **invasivo**: **cirurgia** com parafusos e hastes. O trauma de crânio vai do **expectante**, na concussão leve, à **cirurgia** do hematoma, com prazos próprios (Veja M2V6). O retorno ao voo depende da consolidação, da força e da avaliação (Veja M2V12). No jato **pressurizado**, a proteção é o **cinto abdominal** sobre a pelve e a posição de impacto; no avião leve **não pressurizado**, o **cinto de ombro**; no **helicóptero**, o impacto é sobretudo **vertical**, e os assentos que absorvem energia protegem a coluna.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 5, midia: 'tipo-voo-impacto' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v8-1-treno.jpg'), legenda: 'No trenó de impacto, o boneco instrumentado mede a carga que chegaria à cabeça, à coluna e às pernas de uma pessoa.' } },
           { paragrafo: 2, midia: 'limites-impacto' },
           { paragrafo: 2, tabela: {

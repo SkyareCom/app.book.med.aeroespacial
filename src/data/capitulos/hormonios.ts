@@ -85,6 +85,20 @@
 //   de dia, pacientes com hipoventilação podem ter hipoxemia em voo.
 // - ANAC, Resolução 280/2013, art. 3 e art. 9: passageiro com necessidade de assistência especial inclui mobilidade
 //   reduzida; avisar 48 h antes, ou 72 h se precisar de acompanhante ou de documento médico.
+// - Doenças, tratamentos e tipo de voo (10/11/2026), a pedido do autor ("As doenças devem aparecer no texto e nao em
+//   tabelas isoladas / Todas com seus tratamentos indocados e influenciados pelos voos / Entrararem ma liberacao para voos
+//   / Prognostico relacionado ao voo / Periodo indicado de adiamento ou tepouso etc / Tratamentos cirurgicos ou invasivos
+//   destacados ou enfatizados" e "Tratamentos exectantes e nao invasivos também devem entrar"): UK CAA, Obesity
+//   information sheet (v31, 29/07/2026): cirurgia bariátrica, inapto por até 3 meses conforme o procedimento e a
+//   recuperação; procedimentos endoscópicos reduzem bastante o período; relatórios de recuperação completa e ausência de
+//   efeitos incapacitantes; avisar e passar por avaliação final do AME; GLP-1: 2 semanas no início, 72 h no ajuste.
+//   Passageiro após cirurgia abdominal: 10 dias (UK CAA; registro de digestivo.ts, M2V10). Troca de bomba ou sensor, 7
+//   dias (FAA, registro acima e liberação). Cirurgia bariátrica no controle do diabetes tipo 2 e as linhas de tratamento
+//   (dieta, atividade, remédio, insulina; antitireoidiano e betabloqueador; iodo e cirurgia como tratamentos definitivos):
+//   conhecimento médico geral, sem número próprio. Comparador "tipo de voo": aplicações das fontes acima (protocolo
+//   britânico com copiloto; bolhas da bomba maiores com subida maior, pela lei dos gases, Veja M1V1 - II; hipóxia acima
+//   de 10.000 ft, Veja M2V1). Prazo do passageiro após cirurgia da tireoide ou procedimento endoscópico: [confirmar na
+//   referência].
 // Condutas práticas sem número próprio (comer no horário, beber água, andar no corredor, levar lanche, ajustar o horário
 // do remédio com o médico) são aplicações das fontes acima. Sem fonte: [confirmar na referência].
 
@@ -109,9 +123,11 @@ export const hormonios: Capitulo = {
           "O **gás que expande** na subida (Veja M1V1 - II) também chega à insulina. Na **bomba de insulina**, bolhas crescem no reservatório e empurram o líquido: num estudo, as bombas entregaram cerca de **1 a 1,4 unidade a mais** na subida e quase 1 unidade a menos na descida. Para quem usa doses pequenas, como crianças, a diferença pesa.",
           "O **ar seco** (Veja M1V1 - IV) e a **imobilidade** somam riscos. O açúcar alto faz urinar mais e desidrata. A **obesidade**, com IMC de **30** ou mais, é fator de risco para trombose em viagens de mais de **4 horas** (Veja M2V2 - VII). E a cabine apertada limita o movimento justamente de quem mais precisa andar.",
           "O **fuso horário** mexe nos remédios (Veja M2V8 - III). Indo para o **leste**, o dia encurta; para o **oeste**, alonga. Quando o dia perde ou ganha mais de **2 horas**, a dose de insulina pode precisar de ajuste. A insulina viaja na **bagagem de mão**: no porão, o frio pode congelá-la, e a mala pode se perder.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças hormonais que mais pesam no voo são o **diabetes**, com o risco de **hipoglicemia**, as doenças da **tireoide**, a **obesidade** e, mais rara, a falta de cortisol da **doença de Addison**, que exige levar a cortisona sempre à mão. O tratamento vai do **expectante**, nas alterações leves em acompanhamento, ao **não invasivo**, que é a regra: dieta, atividade, remédios por boca, **insulina** e hormônio de reposição. Os tratamentos **invasivos** e ablativos são a **cirurgia da tireoide**, o **iodo radioativo** e a **cirurgia bariátrica**, cada um com prazo de afastamento. No avião **pressurizado**, a cabine fica entre 6.000 e 8.000 ft; no **não pressurizado**, a subida maior aumenta as bolhas da bomba de insulina, e acima de 10.000 ft a hipóxia confunde-se com a hipoglicemia; no **helicóptero** de um só piloto, o protocolo britânico da insulina, que exige copiloto, não se cumpre.",
           "**Como prevenir e amenizar.** Antes de voar, combine com o médico o horário dos remédios no fuso de destino. No voo, beba água, ande pelo corredor quando o aviso de cintos permitir e coma nos horários de sempre, levando um lanche para o caso de atraso. Quem usa insulina leva de sobra, dividida em duas bolsas na bagagem de mão, e avisa a tripulação.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-hormonios' },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v9-1-refeicao.jpg'), 'A bordo, a hora de comer muda; o açúcar do sangue sente.') },
           {
             paragrafo: 2,
@@ -130,7 +146,7 @@ export const hormonios: Capitulo = {
           { paragrafo: 3, midia: 'hormonios-voo' },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v9-1-corredor.jpg'), 'Andar no corredor e beber água ajudam o sangue a circular.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · hormônios no voo',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -158,6 +174,7 @@ export const hormonios: Capitulo = {
           "O protocolo britânico funciona: **49 pilotos** voaram **22.078 horas** em 7,5 anos, com **97,7%** das medidas no verde e **nenhuma incapacitação**. No vermelho baixo, abaixo de **4 mmol/L** (cerca de 72 mg/dL), o piloto passa o comando ao copiloto, come **10 a 15 g** de carboidrato rápido e mede de novo em **15 minutos**. Para o tripulante, voar sem declarar o diabetes ou o remédio é infração e pode invalidar o certificado e o seguro.",
           "Para o **passageiro**, o diabetes **não impede** o voo. O risco é a hipoglicemia longe do chão: o tratamento é o mesmo, açúcar rápido e medir de novo. Avise a tripulação que usa insulina, leve identificação e um lanche, e não dependa da refeição de bordo, que pode atrasar. Açúcar muito alto, vômitos ou sinais de cetoacidose pedem médico antes de embarcar.",
           "**Remédios e voo.** O que pesa é o risco de hipoglicemia e o tempo de adaptação ao remédio. Metformina, gliptinas, SGLT2 e GLP-1 baixam pouco o açúcar quando usados sozinhos; o SGLT2 faz urinar mais e pode desidratar na cabine seca. Sulfonilureias, glinidas e insulina exigem medir o açúcar e cumprir os prazos. Nunca mude a dose por conta própria antes de uma viagem.",
+          "**Tratamentos, prognóstico e tipo de voo.** O diabetes não tem conduta expectante: o tratamento **não invasivo** começa com dieta e atividade, segue com remédios por boca ou injetáveis e chega à **insulina**, em caneta, bomba ou com sensor contínuo. O tratamento **invasivo** é a **cirurgia bariátrica**, que pode controlar o diabetes tipo 2 de quem tem obesidade (Veja M2V9 - V). O prognóstico no voo é bom com controle estável: o passageiro voa, e o tripulante sem insulina volta depois do prazo de cada remédio novo. Os prazos de afastamento valem para cada **troca de remédio**, e uma hipoglicemia grave tira do voo até a avaliação. No jato **pressurizado**, os voos longos pedem medir a cada 4 a 6 horas; no avião **não pressurizado** e no **helicóptero**, muitas vezes de um só piloto, não há quem assuma o comando numa hipoglicemia, e o protocolo britânico, que exige copiloto, não se aplica.",
           "**Como prevenir e amenizar.** Meça o açúcar antes de embarcar e durante o voo, a cada 4 a 6 horas ou antes das refeições; quem usa sensor confere o alarme. Tenha sempre à mão **15 g de carboidrato rápido**, como suco ou sachê de glicose. Coma no horário e evite álcool. Tripulante: siga o protocolo da sua autoridade e, no vermelho, passe o comando.",
         ].join('\n\n'),
         recursos: [
@@ -195,7 +212,7 @@ export const hormonios: Capitulo = {
             },
           },
           {
-            paragrafo: 8,
+            paragrafo: 9,
             tabela: {
               titulo: 'Como prevenir e amenizar · diabetes',
               colunas: ['Momento', 'O que fazer'],
@@ -222,9 +239,23 @@ export const hormonios: Capitulo = {
           "O **fuso** muda a conta. Indo para o **leste**, o dia encurta: se perde mais de **2 horas**, a dose de insulina intermediária ou longa pode precisar diminuir. Indo para o **oeste**, o dia alonga: se ganha mais de 2 horas, pode precisar de uma dose extra de insulina rápida com uma refeição. Quem usa remédio por boca raramente precisa de dose extra. Manter o relógio no horário da partida durante o voo ajuda a espaçar as refeições.",
           "A comida de bordo nem sempre ajuda. A refeição **\"para diabético\"** costuma ser pensada para o tipo 2 e pode ter pouco carboidrato para quem usa insulina. Leve **carboidrato extra** para atrasos e coma conforme o serviço de bordo, perguntando à tripulação o horário. Meça o açúcar antes das refeições, a cada **4 a 6 horas** de voo.",
           "O **glicosímetro** funciona na cabine: a pressão de 6.000 a 8.000 ft não afeta a maioria dos aparelhos, mas frio, calor ou altitude extremos podem atrapalhar o aparelho e as fitas, outro motivo para levá-los na bagagem de mão. O sensor contínuo e a bomba também viajam com você; peça à companhia, com antecedência, um assento perto do banheiro se quiser privacidade para aplicar.",
+          "**Tratamentos e tipo de voo.** A insulina é o tratamento **não invasivo** mais exigente do diabetes: caneta, **bomba** ou sensor contínuo mudam a rotina da viagem, mas não impedem o passageiro de voar. Para o tripulante, a FAA pede **7 dias** sem voar a cada troca de bomba ou de sensor. A conduta na viagem é **preventiva**: plano escrito para o fuso, insulina de sobra e medidas frequentes. No jato **pressurizado**, a variação da cabine já muda a entrega da bomba; no avião **não pressurizado**, que sobe mais alto sem pressurização, a variação de pressão e as bolhas tendem a ser maiores, e vale seguir o plano da bomba em cada subida e descida; no **helicóptero**, as subidas e descidas repetidas pedem o mesmo cuidado, e o frio pode atrapalhar o glicosímetro e as fitas.",
           "**Como prevenir e amenizar.** Semanas antes, peça ao médico um plano por escrito para o fuso e a carta para a segurança do aeroporto. No dia, insulina e insumos de sobra, em duas bolsas de mão, e lanche. No avião, avise a tripulação, siga o plano da bomba na subida e na descida e meça antes de comer. No destino, volte ao horário local aos poucos, como o médico combinou.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · insulina e fuso",
+              colunas: ["Remédio ou aparelho", "Efeito que importa no voo", "Tripulante"],
+              linhas: [
+                ["Insulina em caneta", "Dose ajustada ao fuso com o médico", "Brasil e ICAO: inapto; FAA e Reino Unido: protocolos próprios"],
+                ["Bomba de insulina", "Entrega a mais na subida e a menos na descida", "FAA: 7 dias sem voar a cada troca de bomba"],
+                ["Sensor contínuo", "Alarme de açúcar baixo e alto", "FAA: 7 dias a cada troca de sensor; Reino Unido: aceito no voo"],
+                ["Remédio por boca", "Raramente precisa de dose extra com o fuso", "Prazo de cada remédio novo (FAA)"],
+              ],
+            },
+          },
           { paragrafo: 1, video: { fonte: require('@/assets/videos/m2v9-insulina.mp4'), legenda: 'A insulina viaja na bolsa térmica, na bagagem de mão, sempre perto de quem usa.' } },
           { paragrafo: 2, midia: 'animacao-bomba-insulina' },
           { paragrafo: 3, midia: 'fuso-insulina' },
@@ -244,7 +275,7 @@ export const hormonios: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v9-3-bolsa.jpg'), 'Duas bolsas de mão: se uma se perder, a outra garante a viagem.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · insulina em viagem',
               colunas: ['Momento', 'O que fazer'],
@@ -273,10 +304,23 @@ export const hormonios: Capitulo = {
           "No **hipertireoidismo**, o remédio antitireoidiano sem efeito colateral não desqualifica, mas o piloto fica inapto até a função se normalizar, e na 1ª classe o oftalmologista confere os **movimentos dos olhos** e a visão dupla. Depois de **cirurgia** ou de **iodo radioativo**, o afastamento vai até o fim do tratamento e a função estável, com exame de sangue todo ano. A ANAC avalia caso a caso a hiper ou hipofunção significativa e os efeitos do hormônio de reposição.",
           "Para o **passageiro**, a tireoide estável não impede o voo. Um cuidado prático: depois de tratamento com **iodo radioativo**, o corpo pode disparar os **alarmes de radiação** do aeroporto por até cerca de **95 dias**. Leve o comprovante do tratamento. Coração disparado, falta de ar ou febre com a tireoide descontrolada pedem médico antes de viajar.",
           "Voar com a tireoide descontrolada é somar cansaço ou taquicardia ao voo. Para o tripulante, esconder o diagnóstico ou a troca de remédio é infração e pode invalidar o certificado. O prazo de afastamento depois da cirurgia da tireoide é definido pela recuperação e pelo cirurgião [confirmar na referência].",
+          "**Tratamentos, prognóstico e tipo de voo.** No **hipotireoidismo**, o tratamento é **não invasivo**: levotiroxina todo dia, com exame de controle; o prognóstico é ótimo, e a volta ao voo vem com a função estável. No **hipertireoidismo**, o tratamento começa **não invasivo**, com antitireoidiano e betabloqueador, e pode passar ao **iodo radioativo** ou à **cirurgia da tireoide**, os tratamentos **definitivos**. Depois deles, o tripulante fica afastado até a recuperação e a função estável; o passageiro respeita a orientação de distância da equipe e leva o comprovante por causa dos alarmes do aeroporto. Com a tireoide estável, o tipo de aeronave não muda a regra; descontrolada, a taquicardia tem menos folga na hipóxia acima de 10.000 ft do avião **não pressurizado**, e a visão dupla pesa mais no voo baixo do **helicóptero**.",
           "**Remédios e voo.** A **levotiroxina** é tomada em jejum, uma vez por dia; numa viagem com fuso, mantenha o intervalo de cerca de 24 horas e ajuste aos poucos ao horário local. Os antitireoidianos pedem exame de sangue de controle. Betabloqueadores, usados para o coração acelerado, seguem as regras de pressão alta para tripulantes (Veja M2V2 - II).",
           "**Como prevenir e amenizar.** Faça os exames de controle antes de viagens longas e não pule a dose no dia do voo. Leve o remédio na bagagem de mão. Tripulante: avise o examinador de qualquer troca de dose. Passageiro tratado com iodo radioativo: leve o comprovante e, se a equipe orientou distância de outras pessoas, siga o prazo antes de viajar.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Liberação para voo · cirurgia e iodo radioativo",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Cirurgia da tireoide", "Prazo conforme a recuperação e o cirurgião", "Inapto até a recuperação e a função estável (Reino Unido)"],
+                ["Iodo radioativo", "Seguir a orientação de distância; levar o comprovante", "Inapto até o fim do tratamento e a função estável (Reino Unido)"],
+                ["Alarme de radiação no aeroporto", "Pode disparar por até cerca de 95 dias", "Pode disparar por até cerca de 95 dias"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v9-4-exame.jpg'), 'O exame do pescoço e um exame de sangue mostram como a tireoide trabalha.') },
           { paragrafo: 2, midia: 'tireoide-voo' },
           {
@@ -296,7 +340,7 @@ export const hormonios: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v9-4-aeroporto.jpg'), 'Depois do iodo radioativo, leve o comprovante: o portal de radiação pode apitar.') },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Remédios e voo · tireoide',
               colunas: ['Remédio ou classe', 'Efeito que importa no voo', 'Tripulante (FAA/ANAC)'],
@@ -309,7 +353,7 @@ export const hormonios: Capitulo = {
             },
           },
           {
-            paragrafo: 8,
+            paragrafo: 9,
             tabela: {
               titulo: 'Como prevenir e amenizar · tireoide',
               colunas: ['Momento', 'O que fazer'],
@@ -337,9 +381,22 @@ export const hormonios: Capitulo = {
           "Para o **passageiro**, a obesidade não impede o voo, mas pede planejamento. Quem tem dificuldade para se mover pode pedir **assistência especial** à companhia, com pelo menos **48 horas** de antecedência, ou **72 horas** se precisar de acompanhante ou de documento médico. O **CPAP** vai na bagagem de mão, com a carta do médico. Quem faz **cirurgia bariátrica** no exterior deve planejar a volta com o especialista antes de viajar.",
           "Voar sem cuidar desses pontos tem preço: oxigênio baixo em quem tem hipoventilação, trombose depois de um voo longo, sonolência por apneia não tratada. Para o tripulante, usar remédio para emagrecer sem cumprir o prazo, ou comprado sem receita, é voar fora da norma. Náusea, vômito ou tontura do remédio também tiram do voo: com sintoma, não se voa.",
           "**Remédios e voo.** Os remédios do tipo **GLP-1** costumam dar náusea e tirar a fome; sozinhos, baixam pouco o açúcar, mas comer pouco e beber pouco no voo pode desidratar e dar tontura. Combinados com remédios do diabetes, o risco de açúcar baixo sobe. Os remédios estimulantes para emagrecer aceleram o coração e tiram o sono.",
+          "**Tratamentos, prognóstico e prazos.** A obesidade tem tratamento **não invasivo** de base, com dieta, atividade e, quando indicado, remédio do tipo GLP-1, cumprindo os prazos do tripulante. O tratamento **invasivo** é a **cirurgia bariátrica**: no Reino Unido, o tripulante fica **inapto por até 3 meses** depois dela, conforme o tipo de cirurgia e a recuperação, com relatórios que confirmem recuperação completa e ausência de efeitos que incapacitem; os procedimentos **endoscópicos** encurtam bastante esse prazo. O passageiro segue a orientação da cirurgia abdominal, com cerca de **10 dias** antes de voar (Veja M2V10). Perder peso melhora a apneia, a pressão e o açúcar, e o prognóstico no voo melhora junto. No jato **pressurizado**, pesa a trombose do voo longo; no avião **não pressurizado**, quem tem hipoventilação sente mais a hipóxia acima de 10.000 ft; no **helicóptero**, o espaço e o peso a bordo também contam no planejamento.",
           "**Como prevenir e amenizar.** Prefira o assento do **corredor** e levante-se para andar quando o aviso de cintos permitir; mexa as panturrilhas sentado. Em voos de mais de 6 horas, quem tem risco pode usar **meias de compressão** de 15 a 30 mmHg, com orientação médica. Beba água. Quem tem apneia ou hipoventilação faz o teste de hipóxia antes e combina o oxigênio ou o CPAP com a companhia. Tripulante: remédio para emagrecer só com receita e com o prazo cumprido.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 8,
+            tabela: {
+              titulo: "Liberação para voo · cirurgia bariátrica",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Cirurgia bariátrica aberta ou por vídeo", "Cerca de 10 dias, com liberação do cirurgião (Veja M2V10)", "Reino Unido: inapto por até 3 meses; volta com relatórios e avaliação do examinador"],
+                ["Procedimento endoscópico", "Prazo menor, conforme o médico", "Reino Unido: prazo bem menor"],
+                ["Cirurgia no exterior", "Planejar a volta com o especialista antes de viajar", "Avisar o examinador"],
+              ],
+            },
+          },
           { paragrafo: 1, midia: 'imc-voo' },
           { paragrafo: 2, figura: foto(require('@/assets/images/topicos/m2v9-5-panturrilha.jpg'), 'Mexer as panturrilhas e andar no corredor protegem contra a trombose.') },
           {
@@ -374,7 +431,7 @@ export const hormonios: Capitulo = {
             },
           },
           {
-            paragrafo: 8,
+            paragrafo: 9,
             tabela: {
               titulo: 'Como prevenir e amenizar · obesidade',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -387,7 +444,7 @@ export const hormonios: Capitulo = {
             },
           },
           {
-            paragrafo: 8,
+            paragrafo: 9,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

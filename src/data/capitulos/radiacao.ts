@@ -72,6 +72,12 @@
 //   ¶3a, ¶6a(1), ¶9a–b; CAMI 2026, p. 9.
 // Fotos e vídeo premium gerados por IA pelo autor (pessoas fictícias): topicos/m1v5-*.jpg, videos/m1v5-*.mp4.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
 export const radiacao: Capitulo = {
@@ -162,8 +168,10 @@ export const radiacao: Capitulo = {
           "Os estudos com tripulantes ainda não separam a radiação dos outros fatores da profissão. Numa pesquisa de Harvard com mais de **5.000 comissários**, as mulheres tinham mais **câncer de mama** (1,5 vez), **melanoma** (2,3 vezes) e **câncer de pele não melanoma** (4,1 vezes) do que a população geral. No melanoma, pesa também o **ultravioleta A**, que atravessa o para-brisa: num turboélice, cerca de **57 minutos a 30.000 pés** equivalem a 20 minutos de bronzeamento artificial. E não é possível atribuir a doença de uma pessoa à radiação do voo.",
           "A fase mais sensível é a **gestação**. Depois que a gravidez é comunicada, recomenda-se que o **feto receba no máximo 1 mSv** até o fim da gestação, e **não mais que 0,5 mSv num mesmo mês**. O risco estimado de **câncer fatal** por exposição antes do nascimento é de **1 em 10.000 por mSv**, maior que o do adulto. Nas **três primeiras semanas**, antes de as células se especializarem, uma partícula pode matar o embrião, risco que cai muito depressa depois dos primeiros dias. Até **20 mSv**, não se viram malformações.",
           "Por isso, **comunicar cedo** a gravidez faz diferença: com a escala ajustada, em voos mais curtos, mais baixos ou em latitudes menores, a dose do feto fica abaixo do limite. A questão da tripulante grávida vai além da radiação (Veja M2V13).",
+          "**Doenças, tratamentos e tipo de voo.** As doenças ligadas à radiação do voo são as de longo prazo: **câncer**, em especial de pele e de mama nas pesquisas com tripulantes, e **catarata**. Não há tratamento para a dose recebida; a conduta é **expectante** e de vigilância: exame da pele, **mamografia** e exame dos olhos nas idades indicadas. Quando a doença aparece, o tratamento é o de qualquer caso: **não invasivo**, como a quimioterapia e a radioterapia, ou **invasivo**, como a **cirurgia do câncer** e a **cirurgia da catarata**, cada uma com prazo para voltar a voar (Veja M2V11 - III e M2V4). Na gestação, a proteção é **comunicar cedo** e ajustar a escala. No jato **pressurizado**, as rotas altas, longas e polares recebem as maiores doses; no avião leve **não pressurizado** e no **helicóptero**, que voam baixo, a dose cósmica é muito menor, e o que pesa é o **ultravioleta** pela janela.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-radiacao' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-3-consulta.jpg'), legenda: 'Na consulta de saúde ocupacional, a dose acumulada e os riscos entram na conversa como qualquer outro fator do trabalho a bordo.' } },
           { paragrafo: 2, midia: 'risco-carreira' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v5-3-para-brisa.jpg'), legenda: 'Acima das nuvens, o sol forte atravessa o para-brisa: o ultravioleta A é outro fator de risco para a pele de quem voa.' } },
