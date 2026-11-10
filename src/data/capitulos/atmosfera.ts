@@ -65,6 +65,13 @@
 // - Simulador umidade-cabine (27/10/2026, padrão de recursos autorizado pelo autor): fórmula de Magnus, ar externo
 //   saturado na atmosfera padrão, comprimido à cabine de 8.000 ft e aquecido a 22 °C (cálculo; detalhes no componente).
 //
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
+//   Expansão de 1,5 vez a 10.000 ft: (760 − 47) ÷ (523 − 47), pressão de src/lib/fisiologia.ts.
 import type { Capitulo } from '../tipos';
 
 export const atmosfera: Capitulo = {
@@ -109,8 +116,10 @@ export const atmosfera: Capitulo = {
           "**Lei de Henry:** a quantidade de gás dissolvida num líquido acompanha a pressão desse gás. Quando a pressão cai, os tecidos ficam **supersaturados de nitrogênio**, que tende a sair em bolhas: é o mecanismo da **doença descompressiva** (Veja M1V3). O risco cresce com descompressões rápidas e depois de mergulho com gás comprimido.",
           "**Lei de Charles:** com a pressão constante, o volume acompanha a temperatura absoluta; num recipiente rígido, quem acompanha é a pressão (**Gay-Lussac**). Como o corpo regula a própria temperatura, o efeito aparece nos equipamentos: no frio, o **cilindro de oxigênio** marca menos pressão sem ter perdido gás.",
           "Na prática, **expansão de gás, falta de oxigênio e bolhas de nitrogênio são três problemas diferentes com a mesma origem: a queda de pressão**. Antes do voo, merecem atenção os resfriados e as sinusites, que dificultam equalizar, e todo gás retido no corpo, como um pneumotórax não drenado ou uma bolha no olho após certas cirurgias.",
+          "**Doenças, tratamentos e tipo de voo.** Cada lei tem as suas doenças. Boyle explica o **barotrauma** do ouvido, dos seios e dos dentes (Veja M2V3), o **pneumotórax** (Veja M2V1 - VIII), o gás que distende o intestino depois de uma cirurgia (Veja M2V10) e a bolha no olho depois de cirurgia de retina (Veja M2V4); Dalton explica a **hipóxia** (Veja M2V1); Henry, a **doença descompressiva** (Veja M1V3 - II). O tratamento vai do **expectante**, no ouvido entupido que volta sozinho em dias, ao **não invasivo**, com descongestionante, corticoide no nariz e **oxigênio**, até o **invasivo**: abrir o tímpano ou pôr um **tubo de ventilação**, **drenar o tórax** e tratar na **câmara hiperbárica**. Em cada caso, o prazo para voar está no voo do sistema. No jato **pressurizado**, o gás preso cresce **1,4 vez** a 8.000 ft; no avião **não pressurizado**, cerca de **1,5 vez** a 10.000 ft e **2,1 vezes** a 18.000 ft; no **helicóptero**, as altitudes são menores, mas as subidas e descidas se repetem várias vezes no mesmo voo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 8, midia: 'tipo-voo-gases' },
           {
             paragrafo: 1,
             figura: {
@@ -194,6 +203,7 @@ export const atmosfera: Capitulo = {
           "A **umidade relativa** mostra quanto do vapor possível naquela temperatura já está no ar. Aquecido sem ganhar vapor, o ar fica relativamente mais seco. O **ponto de orvalho** é a temperatura em que o ar, ao esfriar, fica saturado. Quanto mais perto dele está a temperatura, mais perto da saturação, o que não garante nevoeiro.",
           "Em grandes altitudes, o ar de fora é muito seco. A cabine recebe esse ar aquecido e climatizado e fica confortável apesar do frio extremo. Mas a umidade continua baixa: **frequentemente entre 10% e 20% em cruzeiro**, conforme a aeronave e a operação.",
           "O resultado é o **ressecamento de olhos, nariz, garganta e boca**, mais intenso em quem usa lentes de contato. **Boca seca não prova desidratação**: a avaliação considera sintomas, tempo de exposição e a condição de cada pessoa.",
+          "**Doenças, tratamentos e tipo de voo.** O ar seco agrava o **olho seco**, a **rinite** e a **desidratação** de quem já bebe pouco, toma diurético ou tem diarreia. A conduta é quase sempre **expectante** e de hábito: água, menos álcool e cafeína. O tratamento **não invasivo** é a **lágrima artificial**, o soro no nariz e, para quem usa lente de contato, trocar pelos óculos nos voos longos. O tratamento **invasivo**, a **hidratação na veia**, fica para a desidratação grave, que adia o voo até a recuperação. O prognóstico é ótimo: os sintomas somem em horas no solo. No jato **pressurizado**, o cruzeiro longo com umidade de 10% a 20% é o que mais resseca; no avião leve **não pressurizado** e no **helicóptero**, os voos são curtos, e o que pesa é o calor da cabine parada ao sol (Veja M1V4 - I).",
           "No solo, o extremo se inverte. **No calor úmido, o suor evapora devagar e o corpo perde calor com dificuldade**; no frio intenso, o vento e a roupa inadequada aceleram a perda de calor (Veja M1V4).",
         ].join('\n\n'),
         recursos: [
@@ -212,9 +222,9 @@ export const atmosfera: Capitulo = {
           },
           { paragrafo: 3, midia: 'umidade-cabine' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-4-olhos-secos.jpg'), legenda: 'Horas de cruzeiro no ar seco da cabine: olhos ardendo e garganta seca, mesmo com a cabine confortável.' } },
-          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v1-4-calor-umido.jpg'), legenda: 'No calor úmido da pista tropical, o ar saturado não deixa o suor evaporar, e o corpo perde calor com dificuldade.' } },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m1v1-4-calor-umido.jpg'), legenda: 'No calor úmido da pista tropical, o ar saturado não deixa o suor evaporar, e o corpo perde calor com dificuldade.' } },
           {
-            paragrafo: 5,
+            paragrafo: 6,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

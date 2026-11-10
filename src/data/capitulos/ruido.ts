@@ -70,6 +70,12 @@
 // - Diretiva 2002/44/CE, art. 3(2): VCI, valor de ação 0,5 m/s² (ou VDV 9,1) e limite 1,15 m/s² (ou VDV 21).
 // Fotos e vídeo premium gerados por IA pelo autor (pessoas fictícias): topicos/m1v6-*.jpg, videos/m1v6-*.mp4.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
 export const ruido: Capitulo = {
@@ -122,8 +128,10 @@ export const ruido: Capitulo = {
           "No Brasil, um estudo com **3.130 pilotos civis** examinados em 2011 no Centro de Medicina Aeroespacial (**CEMAL**) da Força Aérea encontrou **suspeita de PAIR em 29,3%**, em **12,8%** nos dois ouvidos. A frequência mais atingida foi **4.000 Hz**, seguida de 6.000 e 3.000 Hz. A suspeita cresceu com a exposição ao ruído, medida por horas e anos de voo, e foi mais forte entre pilotos **comerciais e de linha aérea com 40 anos ou mais**.",
           "O ruído pesa além da audição. Pela FAA, acima de **90 dB** pioram as tarefas que pedem **vigilância**, **concentração**, **cálculo** e **noção de tempo**. O NIOSH associa o ruído a **estresse**, queda de **desempenho** e, possivelmente, **hipertensão**, mas considera os dados insuficientes para fixar limites para esses efeitos. Na cabine, o ruído também define o **volume mínimo do fone** para entender as mensagens (Veja M3V6).",
           "A audição faz parte do **exame para o certificado médico**. A **FAA** aceita ouvir uma **voz de conversa** a cerca de **2 metros**, de costas para o examinador, ou uma **audiometria** dentro de limites por frequência. A **ANAC** pede **audiometria de 250 a 8.000 Hz**, sem aparelho auditivo; na 2ª e na 4ª classe, aceita o **teste de voz a 2 metros**, e na 1ª classe o exame do ouvido é feito por **otorrinolaringologista**. A avaliação clínica do ouvido fica em outro voo (Veja M2V3).",
+          "**Tratamentos, prognóstico e tipo de voo.** Na **perda temporária**, a conduta é **expectante**: silêncio e proteção, e a audição volta em horas. A **perda induzida por ruído** não tem cura; o tratamento é **não invasivo**: parar a progressão com proteção e, quando a conversa fica difícil, **aparelho auditivo**. A **surdez súbita**, de um ouvido, em horas, é urgência: o tratamento é **corticoide** por boca e, se não basta, **injeção dentro do ouvido**, um tratamento **invasivo**; o tripulante não voa até a avaliação (Veja M2V3). Na perda profunda, o tratamento **invasivo** é o **implante coclear**. O **zumbido** se trata com orientação, som de fundo e terapia. O prognóstico depende de proteger cedo: a perda já instalada não volta. No jato **pressurizado**, a cabine é mais silenciosa; no avião leve **não pressurizado** e no **helicóptero**, o ruído passa de 90 dB, e o **fone com proteção** é obrigatório.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-ruido' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-2-audiometria.jpg'), legenda: 'Na cabine de audiometria, o piloto aperta o botão a cada som que ouve; o exame mostra a perda antes que ele a perceba.' } },
           { paragrafo: 2, midia: 'faixas-audicao' },
           {
@@ -213,6 +221,7 @@ export const ruido: Capitulo = {
           "No **helicóptero**, a vibração nasce no **rotor principal**. Ele gira de cerca de **2 a 8 voltas por segundo**, em geral **4 a 6** nos helicópteros médios, e cada pá que passa empurra a estrutura: a **frequência de passagem das pás** fica entre **10 e 30 Hz**, quase sempre entre **20 e 25 Hz**.",
           "A vibração **embaça a visão**. O olho balança dentro do crânio: o movimento cresce perto de **12 Hz** e chega ao pico perto de **18 Hz**. A maior perda de **acuidade visual** foi medida a **12,5 Hz**, e a faixa mais sensível vai de **12,5 a 31,5 Hz**, justamente onde ficam as frequências das pás. O resultado é dificuldade para **ler os instrumentos**, com efeito na segurança do voo.",
           "A coluna também sente. Num estudo com **seis helicópteros**, a dose estimada para um dia de 8 horas, a **A(8)**, ficou entre **0,32 e 0,51 m/s²**, na faixa em que o risco à saúde começa a ser considerado, num grupo com **alta incidência de dor lombar**. A **postura** é um dos fatores principais, sobretudo no helicóptero, e as **almofadas** comuns podem até **amplificar** a faixa de 4 a 8 Hz (Veja M2V12).",
+          "**Doenças, tratamentos e tipo de voo.** A vibração se liga à **dor lombar** e à **dor no pescoço**, e a das ferramentas de manutenção, à **síndrome da vibração de mão e braço**, com dedos brancos e dormentes. Na dor lombar comum, a conduta é **expectante** e de movimento: a maioria melhora em semanas. O tratamento **não invasivo** é a **fisioterapia**, o exercício, o analgésico sem efeito de sono e o ajuste do **assento** e da postura. O **invasivo**, a **cirurgia da coluna**, fica para a hérnia de disco que comprime um nervo e não melhora, e o tripulante volta só depois da recuperação e da avaliação (Veja M2V12). O prognóstico é bom quando se corta a exposição: assento, postura e pausas. No jato **pressurizado**, a vibração é baixa; no avião leve **não pressurizado**, o motor a pistão vibra mais; no **helicóptero**, as pás vibram justamente na faixa que embaça a visão e cansa a coluna.",
           "No Brasil, a vibração de corpo inteiro tem **nível de ação** de **0,5 m/s²** e **limite de exposição** de **1,1 m/s²**, ambos para a jornada de 8 horas, no **Anexo 1 da NR-9**; acima do limite, a **NR-15** caracteriza **insalubridade** de grau médio. A norma também avalia o **valor da dose de vibração (VDV)**, que pesa os solavancos: ação em **9,1** e limite em **21 m/s¹·⁷⁵**. A **União Europeia** usa 0,5 e **1,15 m/s²**. Como a dose cresce com a vibração e com o tempo, reduzi-la depende do **assento**, da **postura** e das **horas expostas**.",
         ].join('\n\n'),
         recursos: [
@@ -221,7 +230,7 @@ export const ruido: Capitulo = {
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v6-4-painel.jpg'), legenda: 'Com a vibração, ponteiros e telas tremem diante dos olhos, e a leitura dos instrumentos fica mais difícil.' } },
           { paragrafo: 4, midia: 'vibracao-a8' },
           {
-            paragrafo: 5,
+            paragrafo: 6,
             tabela: {
               titulo: 'Limites de vibração de corpo inteiro, por dia de 8 horas',
               colunas: ['Referência', 'Nível de ação', 'Limite'],
@@ -233,9 +242,9 @@ export const ruido: Capitulo = {
               ],
             },
           },
-          { paragrafo: 5, video: { fonte: require('@/assets/videos/m1v6-rotor.mp4'), legenda: 'As pás do rotor passam pelo alto da cabine de 20 a 25 vezes por segundo; o tremor que chega ao assento e ao painel vem delas.' } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m1v6-rotor.mp4'), legenda: 'As pás do rotor passam pelo alto da cabine de 20 a 25 vezes por segundo; o tremor que chega ao assento e ao painel vem delas.' } },
           {
-            paragrafo: 5,
+            paragrafo: 6,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

@@ -42,6 +42,12 @@
 //   [confirmar capítulo e página].
 // Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v2-*.jpg.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
 export const pressurizacao: Capitulo = {
@@ -78,8 +84,10 @@ export const pressurizacao: Capitulo = {
           "Nos aviões de transporte, a regra de certificação limita a cabine a **até 8.000 ft em condições normais de operação**. É a altitude que o corpo de quem voa enfrenta em quase todo cruzeiro, com o oxigênio inspirado já mais baixo que no solo (Veja M1V1 - II).",
           "A regra também prevê a falha. Num defeito provável, os ocupantes não podem ficar acima de **15.000 ft** de cabine; numa descompressão, a cabine não pode passar de **25.000 ft por mais de 2 minutos** nem jamais de **40.000 ft**. A tripulação recebe um **alerta quando a cabine passa de 10.000 ft**, e as máscaras dos passageiros caem antes de 15.000 ft.",
           "Na descida, a cabine também desce, mas devagar: em geral, **no máximo 500 a 600 ft por minuto**, para poupar os ouvidos (Veja M2V3). Antes do pouso, a pressão de dentro iguala a de fora.",
+          "**Doenças, tratamentos e tipo de voo.** A cabine a 8.000 ft é inofensiva para quem é saudável, mas pesa em quem tem pouca reserva: **DPOC** e outras doenças do pulmão, **insuficiência cardíaca**, **anemia**, **doença falciforme** e **hipertensão pulmonar** (Veja M2V1, M2V2 e M2V11). Para eles, a conduta pode ser **expectante** quando a saturação em repouso passa de 95%; o tratamento **não invasivo** é o **oxigênio a bordo**, combinado antes com a companhia pelo **MEDIF**, depois do **teste de simulação de altitude** quando indicado (Veja M2V1 - IX). Não há tratamento invasivo para a altitude da cabine; quem não tolera nem com oxigênio **adia** a viagem até estabilizar. No jato **pressurizado**, a cabine fica até 8.000 ft; no avião **não pressurizado**, a cabine é a própria altitude, e a regra exige oxigênio a partir de 12.500 ft (Veja M1V2 - III); no **helicóptero**, quase nunca pressurizado, o voo baixo poupa, salvo na montanha.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 5, midia: 'tipo-voo-cabine' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v2-aviao-quadrado.jpg'), legenda: 'O avião cruza a mais de 10 km de altura, mas o corpo de quem está dentro vive na altitude de cabine.' } },
           { paragrafo: 2, midia: 'perfil-cabine' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v2-mascaras-cabine.jpg'), legenda: 'Se a cabine perde pressão, as máscaras dos passageiros caem antes de a altitude de cabine passar de 15.000 ft.' } },

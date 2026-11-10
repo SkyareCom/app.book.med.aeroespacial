@@ -102,4 +102,21 @@ export const liberacaoOuvidos: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'orl-audicao',
+    pergunta: 'Perdeu a audição de repente, tem zumbido novo ou usa aparelho auditivo?',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Perda súbita de audição ou zumbido novo',
+        passageiro: e('avaliar', 'Procure o otorrino com urgência antes de voar.', 'Surdez súbita: avaliação e corticoide precoces; investigar barotrauma e fístula.', '3.1'),
+        tripulante: e('nao-voar', 'Não voe até a avaliação do otorrino e uma nova audiometria.', 'ANAC: audiometria de 250 a 8.000 Hz; FAA: voz a 2 metros ou audiometria nos limites.', '3.1'),
+      },
+      {
+        rotulo: 'Perda por ruído ou aparelho auditivo, estável',
+        passageiro: ok('3.1'),
+        tripulante: e('avaliar', 'Mostre a audiometria ao examinador e use proteção auditiva.', 'ANAC: audiometria sem aparelho; 2ª e 4ª classes aceitam voz a 2 metros. FAA: voz a 2 metros ou audiometria nos limites.', '3.1'),
+      },
+    ],
+  },
 ];

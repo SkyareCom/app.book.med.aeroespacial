@@ -165,6 +165,87 @@ export function TipoVooPulmao() {
   return <TipoVoo titulo="Os pulmões em cada tipo de voo" dados={PULMAO} />;
 }
 
+// ---------------------------------------------------------------- M1V1 · Os gases do corpo em cada tipo de voo (registro em atmosfera.ts)
+const GASES: Linha[] = [
+  { nome: 'Ouvido e seios', pressurizado: 'Descida de 8.000 ft: adiar se não equaliza (Veja M2V3).', nao: 'Variações maiores: o barotrauma é mais provável.', helicoptero: 'Subidas e descidas repetidas no mesmo voo.' },
+  { nome: 'Gás preso no corpo', pressurizado: 'Cresce 1,4 vez a 8.000 ft.', nao: 'Cerca de 1,5 vez a 10.000 ft e 2,1 vezes a 18.000 ft.', helicoptero: 'Altitudes menores: expande menos.' },
+  { nome: 'Bolhas de nitrogênio', pressurizado: 'Só na descompressão da cabine.', nao: 'Risco em todo voo acima de 18.000 ft.', helicoptero: 'Raro; mergulhador doente viaja o mais baixo possível.' },
+  { nome: 'Ar seco', pressurizado: 'Umidade de 10% a 20% no cruzeiro longo.', nao: 'Voos curtos; pesa o calor da cabine ao sol.', helicoptero: 'Voos curtos; pesa o calor da cabine ao sol.' },
+];
+export function TipoVooGases() {
+  return <TipoVoo titulo="Os gases do corpo em cada tipo de voo" dados={GASES} />;
+}
+
+// ---------------------------------------------------------------- M1V2 · A altitude de cabine em cada tipo de voo (registro em pressurizacao.ts)
+const CABINE: Linha[] = [
+  { nome: 'Pessoa saudável', pressurizado: 'Cabine até 8.000 ft: sem efeito relevante.', nao: 'A cabine é a própria altitude: oxigênio a partir de 12.500 ft (FAA).', helicoptero: 'Voo baixo: sem efeito, salvo na montanha.' },
+  { nome: 'DPOC, coração ou anemia', pressurizado: 'Oxigênio a bordo combinado pelo MEDIF, se indicado.', nao: 'Sem oxigênio, evitar altitudes acima de 8.000 ft.', helicoptero: 'Transporte aeromédico com oxigênio.' },
+  { nome: 'Gás preso no corpo', pressurizado: 'Respeitar os prazos de cada cirurgia.', nao: 'Mesmos prazos, com mais expansão.', helicoptero: 'Expande menos, mas o prazo vale.' },
+];
+export function TipoVooCabine() {
+  return <TipoVoo titulo="A altitude de cabine em cada tipo de voo" dados={CABINE} />;
+}
+
+// ---------------------------------------------------------------- M1V3 · A descompressão em cada tipo de voo (registro em descompressao.ts)
+const DESCOMPRESSAO: Linha[] = [
+  { nome: 'Doença descompressiva', pressurizado: 'Só na perda de pressurização; oxigênio e pouso.', nao: 'Risco em todo voo acima de 18.000 ft.', helicoptero: 'Raro pela altitude; cuidado com mergulhadores.' },
+  { nome: 'Depois de mergulhar', pressurizado: '12 h (sem parada) ou 24 h (com parada) até 8.000 ft.', nao: 'Acima de 8.000 ft: 24 h depois de qualquer mergulho.', helicoptero: 'Mesmos prazos; voar o mais baixo possível.' },
+  { nome: 'Depois da câmara hiperbárica', pressurizado: 'Em geral 72 h; até 6 semanas, conforme o médico.', nao: 'Mesmo prazo.', helicoptero: 'Mesmo prazo.' },
+];
+export function TipoVooDescompressao() {
+  return <TipoVoo titulo="A descompressão em cada tipo de voo" dados={DESCOMPRESSAO} />;
+}
+
+// ---------------------------------------------------------------- M1V4 · Calor e frio em cada tipo de voo (registro em temperatura.ts)
+const TEMPERATURA: Linha[] = [
+  { nome: 'Calor e desidratação', pressurizado: 'Risco no solo, com a cabine parada ao sol.', nao: 'Cabine envidraçada esquenta como estufa.', helicoptero: 'Capacete e macacão retêm calor; o voo baixo não refresca.' },
+  { nome: 'Insolação', pressurizado: 'Voltar só depois da recuperação e da avaliação.', nao: 'Mesmo critério.', helicoptero: 'Mesmo critério.' },
+  { nome: 'Hipotermia e congelamento', pressurizado: 'Risco no pouso forçado em região fria.', nao: 'Aquecimento fraco no avião leve.', helicoptero: 'Resgate: vítima deitada, aquecida e sem movimentos bruscos.' },
+];
+export function TipoVooTemperatura() {
+  return <TipoVoo titulo="Calor e frio em cada tipo de voo" dados={TEMPERATURA} />;
+}
+
+// ---------------------------------------------------------------- M1V5 · A radiação em cada tipo de voo (registro em radiacao.ts)
+const RADIACAO: Linha[] = [
+  { nome: 'Dose cósmica', pressurizado: 'Maior nas rotas altas, longas e polares.', nao: 'Voo baixo: dose muito menor.', helicoptero: 'Voo baixo: dose muito menor.' },
+  { nome: 'Gestação', pressurizado: 'Comunicar cedo e ajustar a escala: feto até 1 mSv.', nao: 'Dose baixa; outros riscos do voo pesam mais.', helicoptero: 'Dose baixa; vibração e esforço pesam mais.' },
+  { nome: 'Ultravioleta e pele', pressurizado: 'Para-brisa filtra parte; vigiar a pele.', nao: 'Janelas grandes e voo diurno: proteção solar.', helicoptero: 'Bolha de vidro: proteção solar.' },
+];
+export function TipoVooRadiacao() {
+  return <TipoVoo titulo="A radiação em cada tipo de voo" dados={RADIACAO} />;
+}
+
+// ---------------------------------------------------------------- M1V6 · O ruído em cada tipo de voo (registro em ruido.ts)
+const RUIDO: Linha[] = [
+  { nome: 'Perda auditiva por ruído', pressurizado: 'Cabine mais silenciosa; fone na cabine de comando.', nao: 'Ruído acima de 90 dB: fone com proteção.', helicoptero: 'Ruído intenso: capacete ou fone com proteção.' },
+  { nome: 'Surdez súbita', pressurizado: 'Não voar até a avaliação (Veja M2V3).', nao: 'Mesmo critério.', helicoptero: 'Mesmo critério.' },
+  { nome: 'Dor lombar por vibração', pressurizado: 'Vibração baixa.', nao: 'Motor a pistão vibra mais.', helicoptero: 'Pás na faixa que cansa a coluna: assento e postura.' },
+];
+export function TipoVooRuido() {
+  return <TipoVoo titulo="O ruído em cada tipo de voo" dados={RUIDO} />;
+}
+
+// ---------------------------------------------------------------- M1V7 · As forças G em cada tipo de voo (registro em forcasg.ts)
+const FORCAS_G: Linha[] = [
+  { nome: 'G-LOC', pressurizado: 'Não acontece no voo de transporte.', nao: 'Acrobacia sem traje anti-G: manobra e limite próprio.', helicoptero: 'G baixo.' },
+  { nome: 'Pressão baixa ou desidratação', pressurizado: 'Levantar devagar; beber água.', nao: 'Tolerância ao G cai: hidratar antes.', helicoptero: 'Pouco efeito do G.' },
+  { nome: 'Dor no pescoço e na coluna', pressurizado: 'Pouco efeito.', nao: 'Acrobacia: fortalecer e não virar a cabeça sob carga.', helicoptero: 'Vibração e postura pesam mais que o G.' },
+];
+export function TipoVooG() {
+  return <TipoVoo titulo="As forças G em cada tipo de voo" dados={FORCAS_G} />;
+}
+
+// ---------------------------------------------------------------- M1V8 · O impacto em cada tipo de voo (registro em impacto.ts)
+const IMPACTO: Linha[] = [
+  { nome: 'Fratura da coluna', pressurizado: 'Cinto abdominal sobre a pelve e posição de impacto.', nao: 'Cinto de ombro bem ajustado.', helicoptero: 'Impacto vertical: assentos que absorvem energia.' },
+  { nome: 'Trauma de crânio', pressurizado: 'Mãos para baixo, junto às pernas, na posição de impacto.', nao: 'Cinto de ombro evita bater no painel.', helicoptero: 'Capacete (Veja M1V8 - IV).' },
+  { nome: 'Volta ao voo', pressurizado: 'Depois da consolidação e da avaliação.', nao: 'Mesmo critério.', helicoptero: 'Mesmo critério; ejetável: 3 a 4 meses na fratura em cunha.' },
+];
+export function TipoVooImpacto() {
+  return <TipoVoo titulo="O impacto em cada tipo de voo" dados={IMPACTO} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

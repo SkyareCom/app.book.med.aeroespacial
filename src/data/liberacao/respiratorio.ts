@@ -162,4 +162,27 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'resp-mergulho',
+    pergunta: 'Mergulhou com cilindro ou teve doença descompressiva recentemente?',
+    ajuda: 'Inclui treino em câmara hipobárica e tratamento em câmara hiperbárica.',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Mergulho sem parada de descompressão há menos de 12 horas',
+        passageiro: e('nao-voar', 'Espere ao menos 12 horas para voar até 8.000 ft de cabine; acima disso, 24 horas.', 'FAA AC 61-107B 2-7.d(4)(d): 12 h após mergulho sem parada até 8.000 ft; 24 h acima de 8.000 ft.', ''),
+        tripulante: e('nao-voar', 'Não voe antes do prazo.', 'FAA AC 61-107B: 12 h (sem parada) ou 24 h (acima de 8.000 ft).', ''),
+      },
+      {
+        rotulo: 'Mergulho com parada de descompressão há menos de 24 horas',
+        passageiro: e('nao-voar', 'Espere ao menos 24 horas.', 'FAA AC 61-107B: 24 h após mergulho com parada de descompressão.', ''),
+        tripulante: e('nao-voar', 'Não voe antes de 24 horas.', 'FAA AC 61-107B: 24 h.', ''),
+      },
+      {
+        rotulo: 'Doença descompressiva tratada em câmara hiperbárica',
+        passageiro: e('avaliar', 'Voe só com a liberação do médico hiperbárico; em geral, ao menos 72 horas.', 'Não há consenso: de 72 h (mais citado, DAN) a 6 semanas; Acott, 4 semanas (St Leger Dowse et al., DDRC, 2005).', ''),
+        tripulante: e('nao-voar', 'Não voe até a liberação do médico hiperbárico e da autoridade.', 'Avaliação neurológica e de sequelas; FAA AC 61-107B 2-7.d(4)(e)–(f).', ''),
+      },
+    ],
+  },
 ];

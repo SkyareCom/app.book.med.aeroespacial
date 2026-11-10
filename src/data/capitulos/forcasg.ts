@@ -57,6 +57,12 @@
 //   transição de 0,5 s). Texto e insígnias borrados na foto do traje (quadro de avisos, papéis, posto, emblema,
 //   plaqueta e distintivo). Voo congelado em scripts/check-m1v1-frozen.cjs.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
 export const forcasg: Capitulo = {
@@ -103,8 +109,10 @@ export const forcasg: Capitulo = {
           "Os **olhos** avisam primeiro, porque a pressão dentro deles resiste ao sangue que chega. Some a **visão periférica** (de **3,4 a 4,8 G**), a imagem fica **cinza** e estreita, como um túnel, e depois **apaga** (de **4 a 5,6 G**), com a pessoa ainda consciente. Entre **4,5 e 6,3 G**, o **cérebro** perde a consciência: é o **G-LOC**. Quando o G sobe devagar, cerca de 0,1 G por segundo, a visão avisa; acima de **1 G por segundo**, o **G-LOC pode vir sem aviso**.",
           "O G-LOC tira o piloto do comando. Em 500 pessoas na centrífuga, a **inconsciência** durou em média **12 segundos**, e a **confusão** depois dela, mais **16**: cerca de **28 segundos** sem controle do avião. Na volta, podem surgir **abalos musculares** de alguns segundos e **sonhos curtos**. A Força Aérea dos EUA atribui ao G-LOC cerca de **20 mortes**. Antes do apagão completo há o **A-LOC**, a quase perda de consciência, com o piloto confuso e lento, mas acordado.",
           "O **−Gz** faz o caminho inverso: o sangue se acumula na cabeça, a visão fica **vermelha** e a inconsciência pode vir depressa. E a sequência importa: um **G negativo logo antes do positivo** baixa a tolerância, o efeito **push-pull**, presente em **12% a 31%** dos incidentes relatados. Também baixam a tolerância **desidratação, fadiga, fome, medicamentos, sedentarismo e fumo**. Nos acidentes por G-LOC, **pouca experiência no avião, menos de 30 anos e manobra anti-G mal feita** somaram 72% dos casos.",
+          "**Doenças, tratamentos e tipo de voo.** O G pesa mais em quem tem **pressão baixa**, **varizes**, **desidratação**, **anemia** ou toma remédio que baixa a pressão, e machuca o **pescoço** e a **coluna** de quem vira a cabeça sob carga. Depois de um G-LOC sem lesão, a conduta é **expectante**: o piloto se recupera em segundos, mas o episódio é relatado e revisado. A **dor no pescoço** do piloto de caça tem tratamento **não invasivo**, com **fisioterapia** e fortalecimento, e só raramente **invasivo**, com **cirurgia** para a hérnia de disco que comprime nervo; o retorno ao voo de alto G depende da recuperação e da autoridade (Veja M2V12). Quem desmaia sem G, no solo, passa por investigação antes de voltar (Veja M2V6 - III). No jato **pressurizado** de transporte, o G mal passa de 1,5; no avião leve **não pressurizado** de acrobacia, o piloto quase nunca tem traje anti-G; no **helicóptero**, o G é baixo, e o que machuca a coluna é a vibração e a postura (Veja M1V6 - IV).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 5, midia: 'tipo-voo-g' },
           { paragrafo: 1, midia: 'animacao-coluna-sangue' },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m1v7-2-tunel.jpg'), legenda: 'Sob +Gz, a visão periférica some primeiro: a imagem fica cinza e estreita, como um túnel, antes de apagar.' } },
           { paragrafo: 2, midia: 'forcas-g' },
