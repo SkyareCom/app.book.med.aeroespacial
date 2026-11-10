@@ -69,6 +69,17 @@ export function TipoVooOlhos() {
   return <TipoVoo titulo="Os olhos em cada tipo de voo" dados={OLHOS} />;
 }
 
+// ---------------------------------------------------------------- M2V5 · Orientação (registro em orientacao.ts)
+const ORIENTACAO: Linha[] = [
+  { nome: 'Ilusões e desorientação', pressurizado: 'Dois pilotos e piloto automático: quem se sente desorientado passa os comandos.', nao: 'Avião leve, muitas vezes sem habilitação de instrumentos: entrar em nuvem é a situação clássica.', helicoptero: 'Voo baixo, pairado na poeira ou na neve e um só piloto: o risco é maior.' },
+  { nome: 'Doença do labirinto', pressurizado: 'Passageiro avaliado antes; tripulante não voa com vertigem.', nao: 'Descida sem equalizar pode provocar vertigem alternobárica.', helicoptero: 'Uma crise sem copiloto não tem quem assuma o comando.' },
+  { nome: 'Cinetose', pressurizado: 'Assento perto das asas; o jato cruza acima de parte do mau tempo.', nao: 'Voo mais baixo, mais turbulência e mais enjoo.', helicoptero: 'Vibração e turbulência baixa: enjoo mais comum.' },
+  { nome: 'Remédio que dá sono', pressurizado: 'Passageiro pode usar; tripulante espera 5 intervalos de dose.', nao: 'Somado à hipóxia acima de 10.000 ft, piora o julgamento.', helicoptero: 'Proibido em serviço: o voo baixo não perdoa atraso de reação.' },
+];
+export function TipoVooOrientacao() {
+  return <TipoVoo titulo="A orientação em cada tipo de voo" dados={ORIENTACAO} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

@@ -59,6 +59,11 @@
 // perto das asas, avisar a tripulação, levar saco de enjoo) são aplicações das fontes acima. Sem fonte: [confirmar na
 // referência].
 
+// 10/11/2026, pedido do autor (doenças no texto, tratamentos expectantes, não invasivos e invasivos, prognóstico,
+// prazos e tipo de voo): parágrafo de tratamentos em 5.1, 5.4 e 5.6, tabela de remédios em 5.4, comparador por tipo de
+// aeronave e títulos de prevenção padronizados; vídeo cortado para 8 s. Os tópicos 5.2, 5.3 e 5.5 tratam de ilusões e
+// treino, não de doença, e seguem sem tabela de liberação e de remédios. Números reaproveitados do registro abaixo
+// (5 intervalos de dose; 14 CFR 91.17, 8 h) e de pressurizacao.ts (10.000 ft). Tratamentos: aplicação clínica geral.
 import { liberacaoOrientacao } from '../liberacao/orientacao';
 import type { Capitulo } from '../tipos';
 
@@ -80,9 +85,11 @@ export const orientacao: Capitulo = {
           "No voo, o labirinto tem **limites**. Uma rotação mais lenta que cerca de **2° por segundo** passa despercebida: o avião pode inclinar **20° a 30°** sem o piloto sentir. Numa curva constante, depois de **10 a 20 segundos** o líquido do canal acompanha o giro e a sensação de girar **some**; ao nivelar, o líquido continua e o corpo sente uma curva para o **lado oposto**.",
           "Os otólitos não separam **gravidade** de **aceleração**. Acelerar para a frente puxa o corpo para trás, como se o nariz tivesse subido. Numa curva coordenada, a força resultante continua apontando para o assento, e o corpo sente o avião **nivelado**. Sem horizonte, na nuvem, à noite ou na névoa, o cérebro passa a acreditar nesses sinais errados: é a **desorientação espacial**.",
           "Outros fatores pioram tudo: **hipóxia** (Veja M2V1 - IV), **fadiga** (Veja M2V8 - V), **álcool** e remédios que dão sono, e o **resfriado**, que pode trazer vertigem na descida (Veja M2V3 - III). Para o passageiro, o resultado costuma ser **enjoo**; para o piloto, pode ser a **perda de controle** do avião.",
-          "**Como manter a orientação.** Antes do voo, confira o tempo e a visibilidade no caminho e no destino, e durma bem. Durante, mantenha uma referência: o **horizonte** lá fora ou o **indicador de atitude** no painel, e não misture os dois quando o horizonte some. Evite movimentos bruscos da **cabeça** em curva. O passageiro que enjoa olha para longe, pela janela, em vez de ler.",
+          "**Doenças, tratamentos e tipo de voo.** Algumas doenças tiram uma das três fontes de orientação: as do **labirinto**, como a **vertigem posicional**, a **neurite vestibular** e a **doença de Ménière** (Veja M2V3 - III); as dos **olhos**, como a perda de campo e a visão de um olho só (Veja M2V4 - IV); e as que reduzem a sensação dos pés e das pernas, como a **neuropatia do diabetes** (Veja M2V9). O tratamento vai do **expectante**, porque a neurite e a vertigem posicional costumam passar, ao **não invasivo**, com manobras de reposicionamento, **reabilitação vestibular** e remédio na crise, e raramente ao **invasivo**, como a cirurgia na Ménière rebelde. Remédios que dão sono e álcool pioram qualquer uma delas. No avião **não pressurizado**, a hipóxia acima de 10.000 ft soma confusão à ilusão; no **helicóptero**, o voo baixo, o pairado na poeira ou na neve e a vibração tornam a desorientação mais frequente.",
+          "**Como prevenir e amenizar.** Antes do voo, confira o tempo e a visibilidade no caminho e no destino, e durma bem. Durante, mantenha uma referência: o **horizonte** lá fora ou o **indicador de atitude** no painel, e não misture os dois quando o horizonte some. Evite movimentos bruscos da **cabeça** em curva. O passageiro que enjoa olha para longe, pela janela, em vez de ler.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-orientacao' },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v5-1-horizonte.jpg'), 'Com o horizonte à vista, os olhos fazem quase todo o trabalho de orientação.') },
           { paragrafo: 2, midia: 'animacao-labirinto' },
           { paragrafo: 3, midia: 'limiar-inclinacao' },
@@ -103,9 +110,9 @@ export const orientacao: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v5-1-nuvem.jpg'), 'Dentro da nuvem, o horizonte some e o labirinto passa a mandar sinais errados.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como manter a orientação',
+              titulo: 'Como prevenir e amenizar · orientação',
               colunas: ['Momento', 'O que fazer'],
               linhas: [
                 ['Antes', 'Conferir o tempo e a visibilidade no caminho e no destino; dormir bem'],
@@ -130,7 +137,7 @@ export const orientacao: Capitulo = {
           "A **ilusão de Coriolis** é a mais forte. Numa curva longa, um movimento brusco da **cabeça**, para pegar uma carta no chão ou olhar para trás, faz o corpo sentir um giro em outro eixo, quase impossível de ignorar. Por isso, em curva e na nuvem, a cabeça fica **parada**.",
           "Os **otólitos** criam ilusões de arfagem. Na **ilusão somatogravica**, a aceleração da decolagem ou da arremetida sem visibilidade parece **nariz alto**; o piloto empurra o manche e pode levar o avião ao chão. Reduzir a potência de repente faz o contrário. Na **inversão**, nivelar de uma subida dá a sensação de cair para trás; no **elevador**, uma corrente para cima parece uma subida, e o piloto também empurra o nariz para baixo.",
           "A **vertigem por cintilação** não vem do labirinto, mas confunde do mesmo jeito: uma luz piscando de **4 a 20 vezes por segundo**, como o sol cortado pela hélice ou a luz anticolisão refletindo na nuvem, pode dar enjoo, tontura e, em pessoas sensíveis, perda de consciência. Para o passageiro, essas ilusões não oferecem risco; para o piloto, são causa conhecida de acidente.",
-          "**Como prevenir e amenizar as ilusões do labirinto.** Acredite no **indicador de atitude**, não no corpo, e espere as sensações passarem. Na decolagem e na arremetida sem visibilidade, siga a atitude e a velocidade vertical, não a sensação de nariz alto. Em curva, não abaixe nem gire a cabeça; se precisar pegar algo, nivele antes. Contra a cintilação, não olhe através da hélice, varie a rotação e, dentro da nuvem, desligue a luz anticolisão avisando o controle.",
+          "**Como prevenir e amenizar.** Acredite no **indicador de atitude**, não no corpo, e espere as sensações passarem. Na decolagem e na arremetida sem visibilidade, siga a atitude e a velocidade vertical, não a sensação de nariz alto. Em curva, não abaixe nem gire a cabeça; se precisar pegar algo, nivele antes. Contra a cintilação, não olhe através da hélice, varie a rotação e, dentro da nuvem, desligue a luz anticolisão avisando o controle.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v5-2-atitude.jpg'), 'O indicador de atitude mostra a inclinação real quando o corpo sente outra.') },
@@ -166,7 +173,7 @@ export const orientacao: Capitulo = {
           "O ambiente soma ilusões. **Água**, **neve** e terreno **sem detalhes** parecem mais altos e puxam a aproximação para baixo. **Chuva** no para-brisa dá a mesma impressão, e a **névoa** faz a pista parecer mais longe. Entrar no **nevoeiro** dá a sensação de cabrar, e o piloto pode inclinar a rampa de repente. **Luzes de aproximação** muito fortes fazem a pista parecer mais perto, levando a uma aproximação alta.",
           "No **buraco negro**, a aproximação noturna é feita sobre água ou terreno escuro, com só as luzes da pista à vista. A pista parece fora do lugar, e o piloto tende a pousar **curto**. Luzes de estradas e de trens também podem ser confundidas com as da pista (Veja M2V4 - III).",
           "Essas ilusões levam a aproximações **baixas**, que acabam antes da pista, e **altas**, que acabam longas ou com pouso duro. Para o passageiro, não há conduta; para o tripulante, o que protege é a **rampa eletrônica** ou o indicador visual de rampa, como o **PAPI** (Veja M2V4 - V), e a disposição de **arremeter** na dúvida.",
-          "**Como prevenir e amenizar as ilusões visuais.** Estude o aeroporto antes: largura e inclinação da pista, terreno em volta, luzes. Na chegada a um aeroporto desconhecido, observe-o do alto antes de pousar. Use sempre a rampa eletrônica ou o PAPI, e confira altitude e distância. Não fixe o olhar numa luz isolada no escuro. Com dúvida sobre a posição ou a altura, **arremeta**.",
+          "**Como prevenir e amenizar.** Estude o aeroporto antes: largura e inclinação da pista, terreno em volta, luzes. Na chegada a um aeroporto desconhecido, observe-o do alto antes de pousar. Use sempre a rampa eletrônica ou o PAPI, e confira altitude e distância. Não fixe o olhar numa luz isolada no escuro. Com dúvida sobre a posição ou a altura, **arremeta**.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v5-3-falso-horizonte.jpg'), 'Uma camada de nuvens inclinada pode passar por horizonte e levar o piloto a inclinar o avião.') },
@@ -201,9 +208,22 @@ export const orientacao: Capitulo = {
           "Os sinais de que a desorientação começou: o corpo diz uma coisa e o painel diz outra; a vontade de corrigir uma inclinação que os instrumentos não mostram; altitude ou velocidade mudando sem motivo; confusão ao misturar a vista de fora com o painel, como relataram **34%** dos pilotos no levantamento da FAA. O piloto que reconhece o conflito ainda pode vencê-lo pelos instrumentos; o que não reconhece segue a sensação.",
           "Muitos pilotos **não relatam** os episódios: não perceberam que estavam desorientados, acharam normal, temem perder a escala ou o certificado, ou não confiam no examinador. Para o médico, a pergunta certa separa a **vertigem verdadeira**, a sensação de girar, da tontura e do mal-estar, que têm outras causas. Desorientação que se repete, fora das situações típicas do voo, pede investigação do labirinto (Veja M2V3 - III).",
           "Voar visual para dentro do mau tempo é a situação clássica. O piloto sem habilitação de instrumentos que entra em nuvem tem, em média, menos de **3 minutos**. Para o tripulante, desorientação recorrente ou com vertigem exige avaliação antes de voltar; a ANAC e a ICAO não aceitam distúrbio vestibular permanente.",
-          "**Como agir na desorientação.** Reconheça o conflito e diga em voz alta. Olhe o **indicador de atitude** e **nivele as asas** primeiro, depois corrija arfagem e potência. Se houver outro piloto, **passe os comandos**: raramente os dois têm a mesma ilusão. Avise o controle. Depois do voo, relate o episódio; um relato honesto ajuda a evitar o próximo.",
+          "**Tratamento, prognóstico e tipo de voo.** A desorientação em si não é doença: o tratamento é **treino** e conduta. Mas episódios repetidos pedem procurar uma causa: doença do **labirinto**, **enxaqueca vestibular**, remédios, álcool, fadiga ou apneia do sono. A conduta é **expectante** quando o episódio foi único e explicado pela situação, e **não invasiva** quando há causa: reabilitação vestibular, troca do remédio, tratamento do sono. O prognóstico é bom quando a causa é tratada e o piloto treina instrumentos. O tripulante com desorientação **recorrente** ou com vertigem fica afastado até a avaliação. No **helicóptero**, o risco é maior, com voo baixo, pairado na poeira ou na neve e muitas operações com um só piloto; no avião leve **não pressurizado**, a falta de oxigênio acima de 10.000 ft sem máscara piora o julgamento.",
+          "**Como prevenir e amenizar.** Reconheça o conflito e diga em voz alta. Olhe o **indicador de atitude** e **nivele as asas** primeiro, depois corrija arfagem e potência. Se houver outro piloto, **passe os comandos**: raramente os dois têm a mesma ilusão. Avise o controle. Depois do voo, relate o episódio; um relato honesto ajuda a evitar o próximo.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · desorientação",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Anti-histamínico sedativo (meclizina, dimenidrinato)", "Sono e reflexos lentos; piora a orientação", "FAA: esperar 5 intervalos de dose"],
+                ["Remédio da crise de vertigem", "Alivia, mas dá sono", "Não voar durante o uso; a vertigem já impede"],
+                ["Álcool", "Piora o equilíbrio e a orientação", "FAA: 8 horas entre beber e voar, e nunca sob efeito"],
+              ],
+            },
+          },
           { paragrafo: 1, video: { fonte: require('@/assets/videos/m2v5-nuvem.mp4'), legenda: 'Ao entrar na nuvem, o horizonte some em segundos e só o painel continua mostrando a atitude.' } },
           { paragrafo: 2, midia: 'tempo-nuvem' },
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v5-4-painel.jpg'), 'Quando o corpo e o painel discordam, o painel tem razão.') },
@@ -220,11 +240,11 @@ export const orientacao: Capitulo = {
               ],
             },
           },
-          { paragrafo: 6, figura: foto(require('@/assets/images/topicos/m2v5-4-dois-pilotos.jpg'), 'Com dois pilotos, quem não está desorientado assume os comandos.') },
+          { paragrafo: 7, figura: foto(require('@/assets/images/topicos/m2v5-4-dois-pilotos.jpg'), 'Com dois pilotos, quem não está desorientado assume os comandos.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como agir na desorientação',
+              titulo: 'Como prevenir e amenizar · desorientação',
               colunas: ['Passo', 'O que fazer'],
               linhas: [
                 ['1. Reconhecer', 'Corpo e painel discordam: dizer em voz alta'],
@@ -250,7 +270,7 @@ export const orientacao: Capitulo = {
           "A terceira é **planejar**: conferir o tempo antes da partida, no caminho e no destino; conhecer a geografia da região; não tentar voo visual quando o tempo pode fechar; manter a prática de voo noturno. Quem voa monomotor por instrumentos com frequência pode ter um **indicador de atitude de reserva**, para não perder a referência numa pane.",
           "No avião com dois pilotos, a regra é **dividir**: um voa pelos instrumentos e o outro confere. Como raramente os dois têm a mesma ilusão, quem se sentir desorientado passa os comandos. Nas fases críticas, decolagem, arremetida e aproximação sem visibilidade, o monitoramento cruzado das atitudes protege contra a ilusão somatogravica.",
           "Para o **passageiro**, a prevenção é contra o **enjoo** (Veja M2V5 - VI). Para o **tripulante**, nenhum treino substitui a aptidão: labirinto doente, remédio que dá sono, álcool, fadiga e hipóxia tiram a capacidade de vencer a ilusão (Veja M2V7 e M2V8 - V).",
-          "**Como montar a sua prevenção.** Uma vez por ano, faça uma demonstração de ilusões em simulador ou com instrutor. Mantenha o treino de instrumentos e de voo noturno em dia. Antes de cada voo, avalie o tempo e tenha um plano de saída, inclusive dar a volta, se o tempo fechar. Em voo, mantenha a cabeça parada nas curvas e o olhar no painel quando o horizonte sumir.",
+          "**Como prevenir e amenizar.** Uma vez por ano, faça uma demonstração de ilusões em simulador ou com instrutor. Mantenha o treino de instrumentos e de voo noturno em dia. Antes de cada voo, avalie o tempo e tenha um plano de saída, inclusive dar a volta, se o tempo fechar. Em voo, mantenha a cabeça parada nas curvas e o olhar no painel quando o horizonte sumir.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v5-5-cadeira.jpg'), 'Na cadeira giratória, o piloto sente no chão como o labirinto engana.') },
@@ -285,7 +305,8 @@ export const orientacao: Capitulo = {
           "Os remédios funcionam melhor **antes** do voo. A **escopolamina** dura cerca de **4 horas** por via oral e **72 horas** em adesivo, e dá um pouco menos de sono; não serve para quem tem **glaucoma** ou risco de retenção urinária. **Dimenidrinato** e **meclizina** dão sono; a **prometazina** é a que mais dá. Os anti-histamínicos que não dão sono, como **loratadina**, **fexofenadina** e **cetirizina**, e a **ondansetrona** **não funcionam** contra o enjoo de movimento. Em crianças, todo remédio pede cuidado, e a escopolamina deve ser evitada.",
           "Para o **tripulante**, o remédio é o problema. A FAA põe **meclizina** e **dimenidrinato** entre os anti-histamínicos que dão sono: só se voa depois de **5 intervalos de dose** desde a última; a **difenidramina** pede **60 horas**. A ICAO lembra que anti-histamínicos já foram encontrados em pilotos mortos em acidentes. O aluno que enjoa costuma se adaptar com o treino; o enjoo que persiste e exige remédio é assunto para o examinador.",
           "A **vertigem** verdadeira, a sensação de girar, é outra coisa: vem de doença do labirinto, como **Ménière**, **neurite vestibular** e **vertigem posicional**, ou da pressão, como a **vertigem alternobárica** na descida. Para o tripulante, a ANAC e a ICAO não aceitam distúrbio vestibular permanente; o transitório afasta até a recuperação. Os prazos e cirurgias estão no M2V3 (Veja M2V3 - III).",
-          "**Como prevenir e amenizar a cinetose.** Escolha um assento perto das asas e na janela; durma bem antes; coma leve e evite álcool. No voo, olhe para longe, apoie a cabeça e não leia na turbulência; avise a tripulação se enjoar. O passageiro que usa remédio toma antes do embarque e não dirige depois. O tripulante não usa remédio que dá sono e conversa com o examinador se o enjoo persistir.",
+          "**Tratamentos, prognóstico e tipo de voo.** A cinetose leve tem conduta **expectante** e de hábito: assento, horizonte, refeição leve; ela costuma melhorar com a **habituação**, a exposição repetida ao voo. O tratamento **não invasivo** é o remédio tomado antes e, para o aluno piloto que enjoa muito, um programa de **adaptação** gradual com o instrutor. Não há tratamento invasivo para a cinetose; a vertigem por doença segue a causa (Veja M2V3 - III). O prognóstico é bom: o enjoo costuma diminuir com as horas de voo. No **helicóptero** e no avião leve **não pressurizado**, que voam mais baixo e sentem mais a turbulência, o enjoo é mais comum que no jato de linha, que cruza acima de boa parte do mau tempo.",
+          "**Como prevenir e amenizar.** Escolha um assento perto das asas e na janela; durma bem antes; coma leve e evite álcool. No voo, olhe para longe, apoie a cabeça e não leia na turbulência; avise a tripulação se enjoar. O passageiro que usa remédio toma antes do embarque e não dirige depois. O tripulante não usa remédio que dá sono e conversa com o examinador se o enjoo persistir.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v5-6-enjoo.jpg'), 'Na turbulência, o labirinto sente o movimento que os olhos não veem dentro da cabine.') },
@@ -320,7 +341,7 @@ export const orientacao: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · cinetose',
               colunas: ['Momento', 'O que fazer'],
@@ -335,7 +356,7 @@ export const orientacao: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
