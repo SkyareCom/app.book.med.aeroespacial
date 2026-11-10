@@ -17,6 +17,27 @@
 //   https://www.caa.co.uk/aeromedical/medical-standards/pilots/medical-conditions/gastrointestinal/digestive-guidance-material-gm/
 // - EASA, Part-MED MED.B.020 digestive system: https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-aircrew-regulation-eu-no?page=54
 // - CDC Yellow Book 2026, Travelers' Diarrhea: https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travelers-diarrhea.html
+// - 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("As doenças devem aparecer no texto e nao em
+//   tabelas isoladas / Todas com seus tratamentos indocados e influenciados pelos voos / Entrararem ma liberacao para voos /
+//   Prognostico relacionado ao voo / Periodo indicado de adiamento ou tepouso etc / Tratamentos cirurgicos ou invasivos
+//   destacados ou enfatizados" e "Tratamentos exectantes e nao invasivos também devem entrar"), com autorização para
+//   alterar o voo congelado ("Autorizo todos", 10/11/2026). Fontes novas: UK CAA, Surgical conditions (passageiro):
+//   10 dias após cirurgia abdominal; cerca de 24 h após laparoscopia; 24 h após colonoscopia com muito gás. UK CAA,
+//   Digestive guidance material (pilotos): úlcera, inapto até recuperação e cicatrização demonstrada (1ª classe);
+//   inapto durante a erradicação do H. pylori, IBP e anti-H2 aceitos na manutenção; cálculos com sintomas inapto, apto
+//   após a retirada; pancreatite inapto até avaliação, apto se a causa for removida; doença inflamatória intestinal apta
+//   em remissão estável sem corticoide sistêmico, 1ª classe com 6 meses de remissão e pouco remédio, com OML; varizes
+//   esofágicas inapto; após transplante, apto conforme avaliação; hérnia com sintomas, presa ou femoral inapto, correção
+//   com certificação sem restrição a partir de 3 a 4 semanas; colectomia por diverticulite, ao menos 3 meses. FAA, Peptic
+//   ulcer protocol: úlcera ativa em 3 meses ou sangrante em 6 meses exige prova de cicatrização; Pancreatitis
+//   disposition: biliar, episódio único, 1 mês após a alta, vesícula retirada, sem analgésico; alcoólica, recorrente ou
+//   crônica, 3 meses e análise da FAA; Cholelithiasis disposition table: assintomático ou colecistectomia sem
+//   complicação, anotar; sintomático, autorização especial. Expansão do gás: BTS 2022 (38% a 8.000 ft, registro de
+//   hipoxia.ts); a 10.000 ft, cerca de 50% pela lei de Boyle com gás saturado de vapor a 37 °C ((760 − 47)/(523 − 47),
+//   pressão de src/lib/fisiologia.ts). Linhas de tratamento (IBP, reidratação, biológicos, antivirais que curam a hepatite
+//   C na maioria, ligadura, paracentese, derivação intra-hepática, transplante, colecistectomia por vídeo, CPRE):
+//   conhecimento médico geral, sem número próprio. Ausência de banheiro no avião leve e no helicóptero: observação
+//   operacional geral.
 // Revisão clínica: intervalo ao passageiro não é o mesmo que certificação de tripulante;
 // ausência de prazo individual exige avaliação, sem extrapolação.
 // FOTOS E VÍDEO: integrados aos recursos dos tópicos; não introduzir requires inexistentes.
@@ -39,9 +60,11 @@ export const digestivo: Capitulo = {
           "Há **menos oxigênio** do que ao nível do mar na cabine pressurizada. Uma pessoa com sangramento digestivo, anemia ou doença hepática avançada pode tolerar pior essa redução, porque o sangue transporta menos oxigênio ou o organismo tem menos reserva (Veja M2V1 - I). Não atribua a uma simples indisposição uma tontura acompanhada de sangue nas fezes.",
           "O **ar seco**, a **imobilidade**, a mudança das refeições e o **fuso horário** favorecem desconforto, constipação ou desidratação quando já há perda de líquidos por diarreia ou vômitos (Veja M1V1 - IV e M2V8 - III). As forças G intensas não são um fator habitual na cabine de passageiros; na aviação acrobática, a dor súbita pode prejudicar a atuação do tripulante.",
           "Passageiro e tripulante precisam distinguir **desconforto leve** de **abdome agudo**. Dor progressiva intensa, barriga rígida, vômitos persistentes, sangue vomitado, fezes negras com mal-estar ou desmaio exigem avaliação urgente, não uma tentativa de tratar o sintoma já a bordo.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças digestivas que mais pesam no voo são o **refluxo**, a **gastrite** e a **úlcera**; a **diarreia**, o **intestino irritável** e a **doença inflamatória intestinal**; as **hepatites**, a gordura no fígado e a **cirrose**; os **cálculos da vesícula** e a **pancreatite**; e as **hérnias** e cirurgias do abdome. O tratamento vai do **expectante**, no cálculo sem sintomas, no intestino irritável leve e na hérnia que não dói, ao **não invasivo**, que é a maioria: dieta, remédio para acidez, reidratação, anti-inflamatórios do intestino e antivirais das hepatites. Os tratamentos **invasivos** são a **endoscopia**, a **cirurgia por vídeo** ou **aberta**, a retirada da vesícula e, no fígado que falha, o **transplante**. No avião **pressurizado**, a 8.000 ft o gás do intestino cresce cerca de **38%**; no **não pressurizado**, a 10.000 ft, cerca de **50%**; no **helicóptero**, o voo baixo expande menos, mas, como no avião leve, quase nunca há banheiro.",
           "**Como prevenir e amenizar.** Antes de viajar, trate sintomas ativos e discuta com o médico cirurgias recentes, doença hepática descompensada ou crises intestinais. Prefira alimentação já tolerada e leve os remédios na bagagem de mão. Durante o voo, hidrate-se conforme sua condição clínica e movimente-se quando permitido; o tripulante com sintomas incapacitantes deve suspender a atividade e buscar avaliação.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-digestivo' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v10-1-cabine.jpg'), legenda: "Na subida, o gás abdominal pode expandir e causar desconforto." } },
           { paragrafo: 2, video: { fonte: require('@/assets/videos/m2v10-gas-cabine.mp4'), legenda: "Uma passageira sente desconforto abdominal leve e encontra uma posição confortável." } },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v10-1-corredor.jpg'), legenda: "Caminhar quando permitido ajuda o conforto e a circulação." } },
@@ -87,7 +110,7 @@ export const digestivo: Capitulo = {
             midia: "animacao-gas-intestinal"
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · aparelho digestivo",
               colunas: [
@@ -128,6 +151,7 @@ export const digestivo: Capitulo = {
           "O **passageiro** com azia leve, controlada e sem sinais de alerta costuma conseguir viajar com cuidados. Se há úlcera sangrante, perfuração, dor intensa ou vômitos repetidos, **não embarcar** antes da avaliação e estabilização. O **tripulante** precisa estar sem risco de incapacitação; a ANAC avalia o requisito digestivo e a FAA utiliza disposições próprias para refluxo e úlcera, sem uma liberação automática pelo simples uso de tratamento.",
           "Voar com doença ativa omitida pode transformar sangramento ou dor intensa em emergência onde não há endoscopia nem cirurgia disponíveis. Para o tripulante, a condição que prejudica a aptidão deve ser comunicada ao examinador; continuar operando sem condições pode afetar a certificação e a segurança da operação.",
           "**Inibidores da bomba de prótons** e outros redutores de acidez podem controlar sintomas, mas o remédio não demonstra que a úlcera cicatrizou. **Anti-inflamatórios**, álcool e automedicação podem agravar lesões e sangramentos; analgésicos sedativos prejudicam atenção e julgamento. O médico deve identificar a causa, tratar e confirmar recuperação quando indicado.",
+          "**Tratamentos, prognóstico e prazos.** Na azia leve e ocasional, a conduta é **expectante**, com hábitos. O tratamento **não invasivo** é o **remédio para acidez** e, quando há a bactéria **H. pylori**, os antibióticos para erradicá-la; no Reino Unido, o tripulante fica **inapto durante a erradicação** e volta com o remédio de manutenção. Os tratamentos **invasivos** são a **endoscopia** para conter um sangramento e a **cirurgia** na perfuração ou no refluxo rebelde. Os prazos do tripulante: na FAA, úlcera ativa nos últimos **3 meses** ou que sangrou nos últimos **6 meses** exige prova de **cicatrização**; no Reino Unido, inapto até a recuperação e a cicatrização demonstrada. O passageiro com úlcera que sangrou só voa estável e com a hemoglobina adequada (Veja M2V11 - II). No jato **pressurizado**, o gás distende o estômago; no avião **não pressurizado**, distende mais; no **helicóptero** e no avião leve, uma crise longe de pista não tem atendimento.",
           "**Como prevenir e amenizar.** Coma porções menores, evite alimentos que já provocam sintomas e não se deite logo após refeições. Leve a medicação prescrita e não inicie tratamento sedativo antes de uma escala. Passageiro com sangramento, dor intensa ou vômitos persistentes deve adiar o voo; tripulante precisa da avaliação aeromédica pertinente antes de reassumir.",
         ].join('\n\n'),
         recursos: [
@@ -194,7 +218,7 @@ export const digestivo: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · refluxo e úlcera",
               colunas: [
@@ -235,6 +259,7 @@ export const digestivo: Capitulo = {
           "O **passageiro** com sintomas leves, toleráveis e sem febre ou desidratação importante pode viajar se conseguir manter líquidos; uma crise grave exige avaliação antes de embarcar. Para o **tripulante**, doença inflamatória estável pode ser compatível com aptidão após avaliação: a FAA prevê critérios para colite e o padrão europeu exige remissão estável na 1ª classe, sem corticoide sistêmico para controle.",
           "Uma exacerbação com dor, sangramento ou diarreia incapacitante pode tirar o tripulante da função de forma repentina. Na FAA, o seguimento de autorização especial para colite exige reavaliação quando a doença piora, é operada ou demanda certos medicamentos; operar durante uma exacerbação contraria a exigência de aptidão.",
           "**Solução de reidratação oral** repõe água e eletrólitos em perdas importantes. **Loperamida** pode aliviar diarreia não sanguinolenta, mas não deve ser usada isoladamente se houver **febre ou sangue nas fezes**. Antibióticos não são prevenção rotineira; tratamento de infecções, corticoides e imunossupressores exige plano médico. Para tripulantes, os efeitos e a doença de base precisam de avaliação.",
+          "**Tratamentos, prognóstico e prazos.** Na diarreia leve do viajante e no intestino irritável leve, a conduta é **expectante**: água, sais e dieta. O tratamento **não invasivo** é a **reidratação oral**, a loperamida quando não há febre nem sangue, o antibiótico em casos escolhidos e, na **doença inflamatória intestinal**, os anti-inflamatórios do intestino, os imunossupressores e os **biológicos**; o **corticoide** entra na crise. O tratamento **invasivo** é a **cirurgia**, como a retirada de parte do intestino, às vezes com **ostomia**. Os prazos do tripulante no Reino Unido: doença inflamatória só com **remissão** estável, e na 1ª classe **6 meses** em remissão com pouco remédio, começando com limitação de voo com copiloto; depois da retirada de parte do cólon por diverticulite, ao menos **3 meses**. Quem tem ostomia leva bolsas de sobra: o gás também a enche na subida. No jato **pressurizado** há banheiro; no avião leve **não pressurizado** e no **helicóptero**, quase nunca, e uma crise vira urgência de pouso.",
           "**Como prevenir e amenizar.** Antes da viagem, tenha água segura, alimentação tolerada e remédios prescritos na bagagem de mão. Reponha as perdas e evite embarcar com desidratação, febre, sangue nas fezes ou crise incapacitante. O tripulante deve se afastar durante exacerbações e voltar após avaliação do controle clínico e do tratamento.",
         ].join('\n\n'),
         recursos: [
@@ -301,7 +326,7 @@ export const digestivo: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · doenças intestinais",
               colunas: [
@@ -342,6 +367,7 @@ export const digestivo: Capitulo = {
           "Uma pessoa com alteração laboratorial isolada ou doença hepática estável não recebe automaticamente proibição de viajar: o médico precisa avaliar função, sintomas e complicações. **Hemorragia digestiva, confusão nova, icterícia importante com mal-estar ou ascite descompensada** exigem avaliação antes do embarque. A **FAA** permite decisão pelo examinador em hepatite resolvida sem sequelas e exige análise individual de doenças hepáticas ativas.",
           "Para **tripulantes**, a ANAC exige ausência de comprometimento digestivo que possa incapacitar; as normas europeias permitem avaliar função hepática após laudo gastroenterológico satisfatório, mas **varizes esofágicas** são consideradas incompatíveis com a aptidão nas diretrizes europeias citadas. Ocultar confusão, sangramento ou efeitos de remédios coloca em risco a operação.",
           "**Diuréticos** podem ajudar a controlar ascite, mas também reduzir volume e eletrólitos; **lactulose** pode aumentar evacuações; determinados sedativos pioram atenção e encefalopatia. A prescrição deve considerar metabolismo hepático e segurança da função; nenhum desses remédios, isoladamente, autoriza tripulante a voar.",
+          "**Tratamentos, prognóstico e prazos.** Na alteração isolada dos exames e na gordura no fígado inicial, a conduta é **expectante**, com acompanhamento. O tratamento **não invasivo** é perder peso, **parar o álcool** e, nas hepatites B e C, os **antivirais**, que curam a hepatite C na maioria dos casos. Os tratamentos **invasivos** são a **ligadura das varizes** por endoscopia, a **retirada do líquido** do abdome com agulha, a derivação por cateter dentro do fígado e o **transplante de fígado**. Para o tripulante, as **varizes do esôfago** tornam inapto no Reino Unido; depois do transplante, pode voltar a ser apto com avaliação favorável do gastroenterologista. O passageiro com sangramento recente, confusão nova ou barriga muito cheia de líquido adia até estabilizar. No jato **pressurizado**, a cabine já reduz o oxigênio de quem tem pouca reserva; no avião **não pressurizado**, acima de 10.000 ft, a hipóxia pode piorar a confusão da encefalopatia; no **helicóptero**, o transporte de quem sangra é aeromédico.",
           "**Como prevenir e amenizar.** Antes da viagem, confirme estabilidade do fígado, ausência de sangramento e plano para remédios, alimentação e líquidos. Evite álcool e automedicação. Na cabine, siga o plano individual de hidratação, pois ascite e diuréticos podem exigir restrições distintas. Se houver sonolência anormal, confusão, sangue vomitado ou fezes negras, não embarque nem opere.",
         ].join('\n\n'),
         recursos: [
@@ -408,7 +434,7 @@ export const digestivo: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · doenças do fígado",
               colunas: [
@@ -449,6 +475,7 @@ export const digestivo: Capitulo = {
           "**Passageiros** com cálculo assintomático e sem complicações podem receber orientação médica para viajar; dor persistente, febre, icterícia com mal-estar e vômitos importantes pedem avaliação antes. **Tripulantes** exigem decisão aeromédica individual: nas normas europeias, cálculos sintomáticos e pancreatite ativa impedem aptidão; cálculo assintomático pode ser considerado após avaliação conforme classe e contexto.",
           "Uma crise súbita pode incapacitar o tripulante no comando ou no atendimento de cabine. A FAA possui disposições separadas para cálculos e pancreatite; a ANAC avalia o risco de incapacitação digestiva. Voltar após melhora da dor sem esclarecer a causa não é suficiente para afirmar aptidão.",
           "Analgésicos e antiespasmódicos podem esconder o agravamento ou causar sonolência; após cirurgia da vesícula, aplicam-se também os critérios de recuperação de procedimento abdominal. **Antibióticos**, cirurgia ou outros tratamentos devem ser orientados pela causa, não por uma dose improvisada antes do voo.",
+          "**Tratamentos, prognóstico e prazos.** No **cálculo sem sintomas**, a conduta é **expectante**. O tratamento **não invasivo** é o da crise: analgesia, hidratação, jejum na pancreatite e antibiótico na inflamação da vesícula. O tratamento **invasivo** é a **retirada da vesícula**, quase sempre **por vídeo**, e a **endoscopia** que tira o cálculo do canal da bile. Os prazos do passageiro: cerca de **24 horas** depois de uma laparoscopia simples e **10 dias** depois de cirurgia abdominal aberta (UK CAA). Os do tripulante: na FAA, pancreatite por cálculo, episódio único, **1 mês** depois da alta, com a vesícula retirada e sem remédio para dor; pancreatite por álcool ou repetida, **3 meses** e decisão da FAA; no Reino Unido, cálculo com sintomas torna inapto até a retirada. O prognóstico é bom: retirada a vesícula, a cólica não volta. No jato **pressurizado**, a crise a bordo pede pouso alternado; no **helicóptero** e no avião leve **não pressurizado**, de um só piloto, a dor súbita é incapacitação.",
           "**Como prevenir e amenizar.** Diferencie a presença de cálculo sem sintomas de episódio recente de obstrução, febre, dor forte ou pancreatite. Leve o relatório e o plano terapêutico, evite alimentos que desencadeiem dor individualmente e não embarque com crise. O tripulante retorna somente quando a causa estiver controlada, sem efeitos incapacitantes e após avaliação aeromédica.",
         ].join('\n\n'),
         recursos: [
@@ -515,7 +542,7 @@ export const digestivo: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · vesícula e pâncreas",
               colunas: [
@@ -556,6 +583,7 @@ export const digestivo: Capitulo = {
           "O **tripulante** é avaliado por capacidade física, integridade da reparação e risco de incapacitação, com intervalos distintos na orientação britânica: cerca de **1 semana** após laparoscopia apenas diagnóstica; **3 a 4 semanas** após procedimentos laparoscópicos maiores, como colecistectomia ou hérnia inguinal; **2 a 3 meses** após cirurgia abdominal maior, como colectomia. São intervalos de referência para consideração de aptidão, não liberação automática. Após endoscopia digestiva baixa com **biópsia ou polipectomia**, a orientação britânica ao piloto é **pelo menos 48 horas** e comunicação ao examinador.",
           "Na **ANAC**, o RBAC 67 exige que cirurgia digestiva importante, desvio de fluxo ou sequelas com possibilidade de incapacitação sejam avaliados pelo examinador ou pela autoridade. **Hérnias** capazes de causar dor ou aprisionar alças intestinais também entram na avaliação: uma **obstrução** retém gás e líquidos, distende o intestino e pode agravar-se durante a subida. A **ICAO** e a **EASA** também exigem recuperação satisfatória e risco mínimo de complicação. Para ambos os perfis, dor progressiva, febre, distensão que piora, vômitos persistentes ou sangramento são motivos para **não voar**.",
           "Voar antes da cicatrização ou esconder uma complicação impede resposta rápida se houver perfuração ou hemorragia. Analgésicos com efeito sedativo diminuem vigilância e capacidade de evacuação; um remédio para a dor não substitui a revisão pós-operatória. A decisão final depende do tipo de intervenção, exame físico e orientação do cirurgião; para tripulantes, também do examinador aeromédico.",
+          "**Tratamentos, prognóstico e tipo de voo.** Na **hérnia** sem dor, a conduta pode ser **expectante**, e o tripulante pode ser apto; a hérnia que dói, presa ou femoral torna inapto até a correção. A **endoscopia** e a **colonoscopia** são procedimentos **invasivos** curtos: depois da colonoscopia, com muito gás no intestino, o passageiro espera **24 horas**. A **cirurgia por vídeo** simples pede cerca de **24 horas**; a cirurgia **aberta**, **10 dias**. Para o tripulante no Reino Unido, depois da correção de hérnia, a liberação sem restrição vem só a partir de **3 a 4 semanas**, com recuperação adequada. O prognóstico é bom quando a ferida fecha, o intestino funciona e a dor some sem remédio que dê sono. O gás que fica no abdome depois da cirurgia cresce mais no avião **não pressurizado**; no jato **pressurizado**, a cabine a 8.000 ft já basta para doer; no **helicóptero**, o voo baixo expande menos, mas a vibração e o esforço de embarcar pesam na ferida recente.",
           "**Como prevenir e amenizar.** Antes de embarcar, leve o resumo da cirurgia, confirme funcionamento intestinal, cicatrização, ausência de dor relevante e capacidade de caminhar e sentar-se com segurança. Não use o prazo mais curto de uma colonoscopia para justificar viagem após cirurgia. Tripulantes devem cumprir a reavaliação aeromédica e não retornar com dor, fraqueza ou medicamento sedativo.",
         ].join('\n\n'),
         recursos: [
@@ -642,7 +670,7 @@ export const digestivo: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · pós-operatório",
               colunas: [
@@ -670,7 +698,7 @@ export const digestivo: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Sistemas do corpo mais atingidos",
               colunas: [

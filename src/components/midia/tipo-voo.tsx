@@ -141,6 +141,18 @@ export function TipoVooSangue() {
   return <TipoVoo titulo="Sangue, câncer e infecções em cada tipo de voo" dados={SANGUE} />;
 }
 
+// ---------------------------------------------------------------- M2V10 · Digestivo (registro em digestivo.ts)
+const DIGESTIVO: Linha[] = [
+  { nome: 'Gás e distensão', pressurizado: 'A 8.000 ft, o gás do intestino cresce cerca de 38%.', nao: 'A 10.000 ft, cerca de 50%; mais alto, ainda mais.', helicoptero: 'Voo baixo expande menos; subidas e descidas repetidas.' },
+  { nome: 'Úlcera ou sangramento', pressurizado: 'Passageiro só estável e com hemoglobina adequada.', nao: 'Sem oxigênio acima de 10.000 ft: menos folga para a anemia.', helicoptero: 'Quem sangra viaja em transporte aeromédico.' },
+  { nome: 'Diarreia ou doença inflamatória', pressurizado: 'Há banheiro; reidratar e levar remédios na bagagem de mão.', nao: 'Quase nunca há banheiro: crise vira pouso de urgência.', helicoptero: 'Sem banheiro: voar só sem crise.' },
+  { nome: 'Cirurgia por vídeo ou colonoscopia', pressurizado: 'Passageiro: cerca de 24 horas (UK CAA).', nao: 'O gás residual cresce mais: respeitar o prazo.', helicoptero: 'Expande menos, mas a vibração pesa na ferida.' },
+  { nome: 'Cirurgia abdominal aberta', pressurizado: 'Passageiro: 10 dias (UK CAA).', nao: 'Mesmo prazo, com mais expansão do gás.', helicoptero: 'Mesmo prazo; tripulante após hérnia: 3 a 4 semanas (Reino Unido).' },
+];
+export function TipoVooDigestivo() {
+  return <TipoVoo titulo="O aparelho digestivo em cada tipo de voo" dados={DIGESTIVO} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

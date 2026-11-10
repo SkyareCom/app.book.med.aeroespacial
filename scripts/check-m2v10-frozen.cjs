@@ -9,6 +9,10 @@
 // parágrafo) com as traduções de cada um, "OACI" e "Ver" no espanhol, chaves do objeto sem aspas; hashes refeitos.
 // 09/11/2026 (mesmo pedido): rótulos do interativo no espanhol corrigidos (SUBIDA = ASCENSO, não TREPAR;
 // TRIPULANTE = TRIPULANTE, não MULTITUD); hash do es-ES refeito.
+// 10/11/2026: autorizado pelo autor ("Autorizo todos", sobre alterar os voos congelados para o pedido "As doenças
+// devem aparecer no texto e nao em tabelas isoladas..."): um parágrafo de tratamentos, prognóstico, prazos e tipo de voo
+// em cada tópico, o comparador "tipo de voo" e uma pergunta de tratamentos na liberação. As traduções congeladas não
+// mudaram; hashes de digestivo.ts e liberacao/digestivo.ts refeitos.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -28,8 +32,8 @@ const BLOBS = Object.freeze({
   "assets/images/topicos/m2v10-6-recuperacao.jpg": "244e1c505bbfb1d23fab49475a09e9c4d6abec18",
   "assets/videos/m2v10-gas-cabine.mp4": "33421089edfffda8eb270909769183d9c19dbec0",
   "src/components/midia/m2v10-graficos.tsx": "a24fda2cacc86652a96ed97eacdf9efc99299cea",
-  "src/data/capitulos/digestivo.ts": "aaa8a27f68923ea2e2e7075f7a23be82a7a8d48f",
-  "src/data/liberacao/digestivo.ts": "5834023a70774beb3a2af46d104cf6cc91c2592f"
+  "src/data/capitulos/digestivo.ts": "2f7b341098349f14a272b5cff9f4e413b14c4cc1",
+  "src/data/liberacao/digestivo.ts": "70f7c1305e9eaae119abb29bd7382439c47f4c05"
 });
 const I18N = Object.freeze({ 'en-US': 'cecadaf95f7ebe84', 'es-ES': '70993fbf45253697' });
 const MAX_CHAVES = 675;
