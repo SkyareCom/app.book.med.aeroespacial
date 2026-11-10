@@ -32,7 +32,9 @@ const BLOBS = Object.freeze({
   "assets/images/topicos/m2v10-6-recuperacao.jpg": "244e1c505bbfb1d23fab49475a09e9c4d6abec18",
   "assets/videos/m2v10-gas-cabine.mp4": "33421089edfffda8eb270909769183d9c19dbec0",
   "src/components/midia/m2v10-graficos.tsx": "a24fda2cacc86652a96ed97eacdf9efc99299cea",
-  "src/data/capitulos/digestivo.ts": "2f7b341098349f14a272b5cff9f4e413b14c4cc1",
+  // 10/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Nas tabelas em que houver Tripulantes e passageiros
+  //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante com motivo; hash novo.
+  "src/data/capitulos/digestivo.ts": "beabbcbd3c900eab3ae44bcfce5c761d65bd3295",
   "src/data/liberacao/digestivo.ts": "70f7c1305e9eaae119abb29bd7382439c47f4c05"
 });
 const I18N = Object.freeze({ 'en-US': 'cecadaf95f7ebe84', 'es-ES': '70993fbf45253697' });

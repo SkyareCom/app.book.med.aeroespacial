@@ -168,26 +168,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Anemia crônica compensada, sem sintomas incapacitantes",
-                  "Pode viajar após avaliação clínica e planejamento apropriado",
-                  "RBAC 67.87/67.127: análise da causa, hemograma e risco funcional; não há liberação automática"
-                ],
-                [
-                  "Hemoglobina abaixo de 8,5 g/dL",
-                  "CDC: geralmente adiar, exceto crônica estável avaliada individualmente",
-                  "Esse valor é recomendação para passageiro, não parâmetro de certificação de piloto"
-                ],
-                [
-                  "Sangramento agudo ou anemia sintomática intensa",
-                  "Não embarcar; estabilização e atendimento médico",
-                  "Não exercer função até investigação e regularização da aptidão"
-                ],
-                [
-                  "Anticoagulação oral cumarínica",
-                  "Não suspender por conta própria; avaliar indicação, estabilidade e riscos",
-                  "RBAC 67.87(c)/67.127(c): o candidato é julgado não apto sob essa condição"
-                ]
+                ["Anemia crônica compensada, sem sintomas incapacitantes", "Pode viajar: a anemia crônica estável já foi compensada pelo corpo, que tolera a cabine", "RBAC 67.87/67.127: avaliar a causa e o hemograma, porque pouca hemoglobina reduz a reserva para a hipóxia"],
+                ["Hemoglobina abaixo de 8,5 g/dL", "CDC: em geral adiar, salvo crônica estável avaliada: com tão pouca hemoglobina, a cabine deixa o oxigênio dos tecidos baixo demais", "Não voar com anemia que limite o esforço, porque falta de ar e tontura tiram o desempenho; o número do CDC é para passageiro"],
+                ["Sangramento agudo ou anemia sintomática intensa", "Não embarcar; estabilizar: o sangramento pode piorar longe do hospital e a cabine soma hipóxia", "Não exercer função até a causa estar tratada, porque desmaio e fraqueza incapacitam"],
+                ["Anticoagulação oral cumarínica", "Não suspender por conta própria: parar aumenta o risco de trombose no voo longo", "RBAC 67.87(c)/67.127(c): não apto, porque o sangramento num trauma ou por INR alto é grave"],
               ]
             }
           },
@@ -201,26 +185,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Ferro, B12 e folato",
-                  "Reposição conforme diagnóstico; o efeito depende da causa da anemia",
-                  "Registrar doença, resposta e efeitos adversos; reposição não prova aptidão imediata"
-                ],
-                [
-                  "Anticoagulante cumarínico",
-                  "Exige monitorização e atenção a interações e hemorragia",
-                  "RBAC 67: condição de inaptidão para candidato nas classes referidas"
-                ],
-                [
-                  "Anticoagulante oral direto ou heparina",
-                  "Risco de sangramento e de trombose se interrompido; requer indicação e seguimento",
-                  "Avaliação individual da doença e do fármaco; não presumir autorização"
-                ],
-                [
-                  "Analgésicos e anti-inflamatórios",
-                  "Alguns aumentam o risco hemorrágico quando combinados a anticoagulantes",
-                  "Conferir interações e efeitos na vigilância e no desempenho"
-                ]
+                ["Ferro, B12 e folato", "Reposição conforme diagnóstico; o efeito depende da causa da anemia", "Compatíveis, porque não dão sono; a volta depende da hemoglobina recuperada"],
+                ["Anticoagulante cumarínico", "Exige monitorização e atenção a interações e hemorragia", "RBAC 67: não apto, pelo risco de sangramento e pelo INR que oscila"],
+                ["Anticoagulante oral direto ou heparina", "Risco de sangramento e de trombose se interrompido; requer indicação e seguimento", "Avaliação individual, porque o risco de sangramento num trauma continua"],
+                ["Analgésicos e anti-inflamatórios", "Alguns aumentam o risco hemorrágico quando combinados a anticoagulantes", "Conferir interações, porque os anti-inflamatórios aumentam o sangramento com anticoagulante"],
               ]
             }
           },
@@ -286,26 +254,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Tratamento concluído e paciente clinicamente estável",
-                  "Considerar viagem conforme capacidade funcional e avaliações de seguimento",
-                  "Certificação depende de neoplasia, tratamento, sequelas e norma aplicável; sem automaticidade"
-                ],
-                [
-                  "Quimioterapia com imunossupressão importante",
-                  "Reavaliar; o CDC recomenda adiar se comprometimento grave",
-                  "Afastar-se da função quando tratamento ou doença afetar segurança"
-                ],
-                [
-                  "Febre durante quimioterapia ou sangramento relevante",
-                  "Não embarcar; avaliação urgente",
-                  "Não operar; avaliação médica e aeromédica antes de retorno"
-                ],
-                [
-                  "Câncer com trombose ou dispneia recente",
-                  "Investigar e estabilizar antes de viagem",
-                  "Avaliar doença, anticoagulante e risco de incapacitação"
-                ]
+                ["Tratamento concluído e paciente clinicamente estável", "Pode viajar conforme a capacidade: se anda, sobe escadas e não tem falta de ar, tolera a cabine", "Certificação conforme o tipo de câncer e as sequelas, porque o risco é de recidiva, metástase e efeito do tratamento"],
+                ["Quimioterapia com imunossupressão importante", "Reavaliar; o CDC recomenda adiar se grave: com as defesas baixas, uma infecção na viagem pode ser grave", "Afastar-se da função durante o tratamento, porque cansaço, náusea e infecção tiram o desempenho"],
+                ["Febre durante quimioterapia ou sangramento relevante", "Não embarcar; avaliação urgente: febre com defesas baixas pode ser infecção grave", "Não operar, porque é situação de risco imediato"],
+                ["Câncer com trombose ou dispneia recente", "Investigar e estabilizar antes: embolia e falta de ar pioram com a imobilidade e a cabine", "Não voar até estabilizar, porque a falta de ar e o anticoagulante pesam"],
               ]
             }
           },
@@ -319,26 +271,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Quimioterapia citotóxica",
-                  "Pode produzir anemia, neutropenia, náusea e neuropatia",
-                  "Necessária avaliação de efeitos e da função; nunca presumir aptidão em tratamento ativo"
-                ],
-                [
-                  "Imunoterapia e terapia-alvo",
-                  "Efeitos são específicos; podem incluir inflamação de órgãos ou fadiga",
-                  "Analisar eventos adversos e estabilidade com especialista e examinador"
-                ],
-                [
-                  "Antieméticos e analgésicos",
-                  "Alguns causam sonolência e afetam atenção ou reflexos",
-                  "Avaliar restrições operacionais e efeitos residuais"
-                ],
-                [
-                  "Corticoides e profilaxias",
-                  "Podem alterar imunidade, glicemia e interações medicamentosas",
-                  "Exige avaliação do regime e doença de base"
-                ]
+                ["Quimioterapia citotóxica", "Pode produzir anemia, neutropenia, náusea e neuropatia", "Não voar em tratamento ativo, porque cansaço, náusea e defesas baixas tiram o desempenho"],
+                ["Imunoterapia e terapia-alvo", "Efeitos são específicos; podem incluir inflamação de órgãos ou fadiga", "Avaliar com especialista e examinador, porque podem inflamar pulmão, intestino ou hormônios"],
+                ["Antieméticos e analgésicos", "Alguns causam sonolência e afetam atenção ou reflexos", "Não voar sob efeito dos que dão sono, porque atrasam a reação"],
+                ["Corticoides e profilaxias", "Podem alterar imunidade, glicemia e interações medicamentosas", "Avaliar a dose, porque corticoide alto muda humor, sono e açúcar"],
               ]
             }
           },
@@ -404,26 +340,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Infecção resolvida, pessoa recuperada",
-                  "Considerar viagem conforme recuperação e regras específicas do agente",
-                  "Retorno à função exige capacidade plena e avaliação quando indicada"
-                ],
-                [
-                  "Infecção respiratória contagiosa ativa",
-                  "Adiar conforme recomendações sanitárias e avaliação clínica",
-                  "Não exercer função enquanto houver risco operacional ou transmissão relevante"
-                ],
-                [
-                  "Febre alta, falta de ar ou prostração",
-                  "Não embarcar; procurar avaliação médica",
-                  "Não operar; verificar aptidão e risco de incapacitação"
-                ],
-                [
-                  "Suspeita de doença sujeita a medidas sanitárias",
-                  "Consultar serviço de saúde e exigências da rota",
-                  "Aplicar protocolos sanitários e ocupacionais pertinentes"
-                ]
+                ["Infecção resolvida, pessoa recuperada", "Pode viajar recuperado: sem febre nem contágio, a infecção não pesa mais", "Volta com a força recuperada, porque o cansaço depois da infecção ainda tira o desempenho"],
+                ["Infecção respiratória contagiosa ativa", "Adiar enquanto contagioso: a cabine cheia transmite a quem senta perto", "Não exercer função enquanto transmite, porque expõe colegas e passageiros e tira o desempenho"],
+                ["Febre alta, falta de ar ou prostração", "Não embarcar; avaliação médica: a cabine baixa o oxigênio de quem já respira mal", "Não operar, porque febre e falta de ar incapacitam"],
+                ["Suspeita de doença sujeita a medidas sanitárias", "Consultar a saúde pública antes: pode haver risco de transmissão e regra de entrada", "Seguir os protocolos sanitários, porque o tripulante doente expõe toda a cabine"],
               ]
             }
           },
@@ -437,21 +357,9 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Antibiótico prescrito",
-                  "Indicação específica; atenção a reações adversas e alergias",
-                  "Verificar infecção de base e efeitos do medicamento antes de trabalhar"
-                ],
-                [
-                  "Antiviral",
-                  "Dose, duração e interações dependem do agente",
-                  "Não constitui liberação automática para operar"
-                ],
-                [
-                  "Antitérmico",
-                  "Pode aliviar sintomas, mas não elimina contagiosidade nem gravidade",
-                  "Não usar para mascarar febre e seguir trabalhando"
-                ]
+                ["Antibiótico prescrito", "Indicação específica; atenção a reações adversas e alergias", "Voltar com a infecção controlada, porque o remédio não protege enquanto a doença está ativa"],
+                ["Antiviral", "Dose, duração e interações dependem do agente", "Não libera para operar, porque a doença e os efeitos ainda podem incapacitar"],
+                ["Antitérmico", "Pode aliviar sintomas, mas não elimina contagiosidade nem gravidade", "Não usar para esconder febre e trabalhar, porque a doença continua"],
               ]
             }
           },
@@ -517,21 +425,9 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "HIV controlado e sem intercorrências",
-                  "Em geral pode viajar, com medicação e acompanhamento regulares",
-                  "Aptidão exige avaliação da autoridade; na FAA, histórico de HIV é encaminhado para decisão"
-                ],
-                [
-                  "Imunossupressão avançada ou infecção oportunista",
-                  "CDC: preferir adiar até estabilizar e recuperar imunidade quando possível",
-                  "Não exercer função se houver risco clínico, infeccioso ou de incapacitação"
-                ],
-                [
-                  "Medicação sem fornecimento no destino",
-                  "Replanejar antes da partida; interrupção deve ser evitada",
-                  "Comprovar tratamento estável e ausência de efeitos incapacitantes"
-                ]
+                ["HIV controlado e sem intercorrências", "Pode viajar, com remédio e acompanhamento: controlado, o HIV não muda o risco do voo", "FAA: decisão da autoridade, porque avalia efeitos dos remédios e doenças associadas"],
+                ["Imunossupressão avançada ou infecção oportunista", "CDC: preferir adiar até estabilizar: com as defesas baixas, infecções da viagem são graves", "Não exercer função, porque a infecção oportunista pode incapacitar"],
+                ["Medicação sem fornecimento no destino", "Replanejar antes da partida: interromper o remédio leva à perda de controle e à resistência", "Comprovar o tratamento estável, porque a interrupção pode trazer doença"],
               ]
             }
           },
@@ -545,21 +441,9 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Antirretrovirais",
-                  "Manter esquema contínuo; verificar fuso e interações",
-                  "Revisar estabilidade e efeitos sem expor diagnóstico desnecessariamente"
-                ],
-                [
-                  "Profilaxias e tratamentos de infecções",
-                  "Dependem da imunidade e do destino; interações são relevantes",
-                  "Verificar capacidade funcional e eventuais efeitos adversos"
-                ],
-                [
-                  "Vacinas vivas",
-                  "Podem ser contraindicadas na imunossupressão avançada",
-                  "Parecer especializado; não são critério único de aptidão"
-                ]
+                ["Antirretrovirais", "Manter esquema contínuo; verificar fuso e interações", "Revisar efeitos com sigilo, porque alguns causam tontura ou alteram o sono"],
+                ["Profilaxias e tratamentos de infecções", "Dependem da imunidade e do destino; interações são relevantes", "Verificar a capacidade, porque a infecção tratada e os remédios podem cansar"],
+                ["Vacinas vivas", "Podem ser contraindicadas na imunossupressão avançada", "Parecer especializado, porque podem ser contraindicadas com imunidade baixa"],
               ]
             }
           },
@@ -624,26 +508,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Esquema adequado e pessoa sem sintomas",
-                  "Considerar viagem conforme recomendações de destino e condição clínica",
-                  "Avaliação da reação e da condição de base quando necessário"
-                ],
-                [
-                  "Vacina viva em imunossupressão importante",
-                  "Avaliar contraindicação e alternativa de itinerário com especialista",
-                  "Não exercer função com quadro clínico incapacitante; imunização requer parecer específico"
-                ],
-                [
-                  "Febre importante após vacinação",
-                  "Avaliar causa e estabilizar antes de embarcar",
-                  "Não operar até recuperação e avaliação quando pertinente"
-                ],
-                [
-                  "Vacina exigida pelo destino não disponível ou contraindicada",
-                  "Verificar regras de entrada, documentos, possível isenção e alternativas",
-                  "Seguir exigências sanitárias e ocupacionais; não omitir contraindicação"
-                ]
+                ["Esquema adequado e pessoa sem sintomas", "Pode viajar: vacinado e sem sintomas, a proteção é a esperada", "Pode voar sem sintomas, porque a vacina não afeta o desempenho"],
+                ["Vacina viva em imunossupressão importante", "Avaliar com especialista: a vacina viva pode causar a doença em quem tem defesas baixas", "Parecer específico, porque a reação pode ser grave e incapacitar"],
+                ["Febre importante após vacinação", "Estabilizar antes de embarcar: febre alta pode ser outra doença", "Não operar até recuperar, porque febre e mal-estar tiram o desempenho"],
+                ["Vacina exigida pelo destino não disponível ou contraindicada", "Verificar regras e isenção: sem a vacina exigida, a entrada pode ser negada e o risco é real", "Seguir as exigências e informar a contraindicação, porque a escala para o destino depende disso"],
               ]
             }
           },
@@ -657,26 +525,10 @@ export const sangueImunidade: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Vacinas inativadas/recombinantes",
-                  "Geralmente podem ser utilizadas em imunossuprimidos, com resposta possivelmente menor",
-                  "Avaliar sintomas, efeitos e atividade programada"
-                ],
-                [
-                  "Vacinas vivas atenuadas",
-                  "Podem ser contraindicadas em imunossupressão grave",
-                  "Requer parecer especializado; evitar decisão genérica"
-                ],
-                [
-                  "Imunossupressores",
-                  "Podem alterar segurança e resposta às vacinas",
-                  "Não suspender prescrição sem equipe assistente"
-                ],
-                [
-                  "Medicamentos para eventos adversos",
-                  "Tratam manifestações específicas e podem afetar atenção",
-                  "Considerar efeito no desempenho e período de recuperação"
-                ]
+                ["Vacinas inativadas/recombinantes", "Geralmente podem ser utilizadas em imunossuprimidos, com resposta possivelmente menor", "Em geral compatíveis, porque não causam a doença; esperar passar febre e dor"],
+                ["Vacinas vivas atenuadas", "Podem ser contraindicadas em imunossupressão grave", "Parecer especializado, porque podem dar reação e são contraindicadas na imunidade baixa"],
+                ["Imunossupressores", "Podem alterar segurança e resposta às vacinas", "Não suspender sem a equipe, porque parar faz a doença de base voltar"],
+                ["Medicamentos para eventos adversos", "Tratam manifestações específicas e podem afetar atenção", "Considerar o efeito no desempenho, porque antialérgicos e analgésicos podem dar sono"],
               ]
             }
           },

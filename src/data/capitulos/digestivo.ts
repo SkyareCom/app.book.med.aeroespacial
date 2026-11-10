@@ -171,21 +171,9 @@ export const digestivo: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Azia leve controlada, sem sinais de alerta",
-                  "Em geral, pode viajar com cuidados e medicação habitual",
-                  "Avaliar sintomas, efeitos dos remédios e exigências da ANAC/FAA; sem incapacitação"
-                ],
-                [
-                  "Úlcera ativa ou com sintomas importantes",
-                  "Avaliar antes de voar; se houver sangramento ou dor intensa, não embarcar",
-                  "Não exercer atividade até recuperação, investigação e avaliação aeromédica"
-                ],
-                [
-                  "Vômito com sangue, fezes negras com mal-estar ou dor súbita intensa",
-                  "Não voar; atendimento de urgência",
-                  "Não voar; atendimento de urgência e comunicação ao examinador"
-                ]
+                ["Azia leve controlada, sem sinais de alerta", "Pode viajar com cuidados e o remédio de sempre: refeições leves evitam que o gás e o estômago cheio piorem a azia", "Pode voar, se a azia não distrai e o remédio não dá efeito colateral, porque a azia leve não incapacita"],
+                ["Úlcera ativa ou com sintomas importantes", "Avaliar antes de voar; se houver sangramento ou dor intensa, não embarcar: a úlcera pode sangrar ou perfurar longe de cirurgia", "Não exercer atividade até a cicatrização provada, porque a dor súbita ou o sangramento incapacitam"],
+                ["Vômito com sangue, fezes negras com mal-estar ou dor súbita intensa", "Não voar; atendimento de urgência: pode ser sangramento ou perfuração, que exigem hospital", "Não voar; atendimento de urgência e comunicação ao examinador, porque é incapacitação em curso"],
               ]
             }
           },
@@ -199,21 +187,9 @@ export const digestivo: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Omeprazol e outros inibidores de ácido",
-                  "Controlam acidez; não excluem sangramento nem asseguram cicatrização da úlcera",
-                  "FAA/ANAC: considerar diagnóstico, estabilidade, efeitos adversos e decisão do examinador"
-                ],
-                [
-                  "Anti-inflamatórios não esteroidais",
-                  "Podem irritar mucosa e favorecer sangramento gastrointestinal",
-                  "Não mascarar doença ativa; revisar uso e risco com o examinador"
-                ],
-                [
-                  "Analgésicos sedativos",
-                  "Sonolência e menor atenção, além do risco ligado à doença de base",
-                  "Não exercer funções com prejuízo cognitivo; avaliação aeromédica"
-                ]
+                ["Omeprazol e outros inibidores de ácido", "Controlam acidez; não excluem sangramento nem asseguram cicatrização da úlcera", "Aceitos na manutenção, porque não dão sono; a doença de base é que decide"],
+                ["Anti-inflamatórios não esteroidais", "Podem irritar mucosa e favorecer sangramento gastrointestinal", "Evitar ou revisar com o examinador, porque podem causar ou esconder úlcera e sangramento"],
+                ["Analgésicos sedativos", "Sonolência e menor atenção, além do risco ligado à doença de base", "Não voar sob efeito, porque dão sono e lentidão"],
               ]
             }
           },
@@ -279,21 +255,9 @@ export const digestivo: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Sintomas leves, sem febre, sangue ou desidratação importante",
-                  "Pode viajar com hidratação e acesso ao banheiro se estiver funcionalmente bem",
-                  "Avaliação de estabilidade; sem urgência evacuatória incapacitante nem efeitos adversos"
-                ],
-                [
-                  "Doença inflamatória em remissão estável",
-                  "Viajar com plano de tratamento e acompanhamento",
-                  "FAA: seguir critérios da colite; EASA/UK CAA: avaliar remissão e tratamento; ANAC: avaliar risco de incapacitação"
-                ],
-                [
-                  "Febre, sangue nas fezes, desidratação ou crise grave",
-                  "Não voar agora; avaliação médica",
-                  "Não voar agora; afastar até recuperação e avaliação aeromédica"
-                ]
+                ["Sintomas leves, sem febre, sangue ou desidratação importante", "Pode viajar com água e acesso ao banheiro: sem febre nem sangue, a crise leve passa", "Pode voar se a urgência não obrigar a deixar o posto, porque a urgência evacuatória incapacita em serviço"],
+                ["Doença inflamatória em remissão estável", "Viajar com plano de tratamento: remédios à mão e plano para uma crise no destino", "Apto com remissão estável (FAA: critérios da colite; Reino Unido: 6 meses na 1ª classe), porque a crise súbita pode incapacitar"],
+                ["Febre, sangue nas fezes, desidratação ou crise grave", "Não voar agora; avaliação médica: desidratação e infecção pioram com o ar seco e longe do atendimento", "Não voar; afastar até recuperação, porque fraqueza, febre e urgência incapacitam"],
               ]
             }
           },
@@ -307,21 +271,9 @@ export const digestivo: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Sais de reidratação oral",
-                  "Recolocam água e sais perdidos nas fezes líquidas",
-                  "Não substituem avaliação se a crise torna o tripulante incapaz"
-                ],
-                [
-                  "Loperamida",
-                  "Reduz frequência das evacuações; não usar isoladamente com febre ou sangue nas fezes",
-                  "FAA: informar uso, efeitos e gravidade da colite; uso de antidiarreicos específicos pode exigir decisão"
-                ],
-                [
-                  "Corticoides sistêmicos e imunossupressores",
-                  "Controlam inflamação, mas podem causar efeitos sistêmicos e indicar doença ativa",
-                  "FAA: doses acima de 20 mg/dia de equivalente de prednisona podem exigir deferimento; EASA 1ª classe exige remissão sem esteroide sistêmico para controle"
-                ]
+                ["Sais de reidratação oral", "Recolocam água e sais perdidos nas fezes líquidas", "Compatíveis, porque repõem água e sais; a crise que incapacita afasta por si"],
+                ["Loperamida", "Reduz frequência das evacuações; não usar isoladamente com febre ou sangue nas fezes", "Uso ocasional com cuidado (FAA: informar), porque pode esconder infecção ou colite grave"],
+                ["Corticoides sistêmicos e imunossupressores", "Controlam inflamação, mas podem causar efeitos sistêmicos e indicar doença ativa", "FAA: acima de 20 mg/dia de prednisona exige decisão; EASA 1ª classe: remissão sem corticoide, porque a dose alta mostra doença ativa e muda o humor e o sono"],
               ]
             }
           },
@@ -387,21 +339,9 @@ export const digestivo: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Doença estável sem descompensação",
-                  "Avaliação clínica individual; pode viajar com cuidados conforme o quadro",
-                  "Relatório e avaliação aeromédica; FAA: protocolos por diagnóstico; ANAC: afastar risco de incapacitação"
-                ],
-                [
-                  "Ascite importante, encefalopatia, sangramento ou piora aguda",
-                  "Não voar agora; estabilizar e investigar",
-                  "Não voar; sem função operacional até avaliação e liberação"
-                ],
-                [
-                  "Varizes esofágicas",
-                  "Avaliar risco de hemorragia antes da viagem",
-                  "EASA/UK CAA: não apto; outras autoridades exigem avaliação específica"
-                ]
+                ["Doença estável sem descompensação", "Pode viajar com cuidados, se estável: sem ascite, sangramento nem confusão, a cabine é tolerada", "Apto com avaliação favorável, porque o risco está nas complicações, não no diagnóstico"],
+                ["Ascite importante, encefalopatia, sangramento ou piora aguda", "Não voar agora; estabilizar: o gás e o líquido no abdome apertam a respiração, e a confusão piora com a hipóxia", "Não voar até a liberação, porque confusão e sangramento incapacitam"],
+                ["Varizes esofágicas", "Avaliar o risco de sangramento antes da viagem: um sangramento em voo pode ser grave", "EASA/UK CAA: não apto, porque as varizes podem sangrar de repente"],
               ]
             }
           },
@@ -415,21 +355,9 @@ export const digestivo: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Diuréticos para ascite",
-                  "Perda de água e sais; tontura quando baixa a pressão",
-                  "Verificar estabilidade e efeitos; não assumir se houver tontura ou desidratação"
-                ],
-                [
-                  "Lactulose",
-                  "Aumenta evacuações e pode causar diarreia; ajuda a controlar encefalopatia",
-                  "A encefalopatia é risco de incapacitação; precisa de decisão aeromédica"
-                ],
-                [
-                  "Sedativos e álcool",
-                  "Podem agravar lentificação cerebral e comprometer a segurança",
-                  "Não operar com prejuízo da atenção; comunicar uso e doença ao examinador"
-                ]
+                ["Diuréticos para ascite", "Perda de água e sais; tontura quando baixa a pressão", "Não voar com tontura ou desidratação, porque o diurético baixa a pressão na cabine seca"],
+                ["Lactulose", "Aumenta evacuações e pode causar diarreia; ajuda a controlar encefalopatia", "Decisão aeromédica, porque mostra encefalopatia, que deixa o raciocínio lento"],
+                ["Sedativos e álcool", "Podem agravar lentificação cerebral e comprometer a segurança", "Não voar sob efeito, porque o fígado doente elimina devagar e a sedação dura mais"],
               ]
             }
           },
@@ -495,21 +423,9 @@ export const digestivo: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Cálculo sem sintomas nem sinais de complicação",
-                  "Decisão clínica individual; em geral, pode viajar com orientação",
-                  "FAA: avaliar disposições para colelitíase; EASA/UK CAA: avaliação segundo tipo e número de cálculos"
-                ],
-                [
-                  "Cólica biliar, febre, icterícia sintomática ou pancreatite ativa",
-                  "Não voar agora; investigar e tratar",
-                  "Não voar; EASA/UK CAA: inapto até recuperação/avaliação"
-                ],
-                [
-                  "Após cirurgia da vesícula",
-                  "Aplicar os critérios de cirurgia abdominal e a liberação do cirurgião",
-                  "Aplicar os critérios de cirurgia e retorno aeromédico (Veja M2V10 - VI)"
-                ]
+                ["Cálculo sem sintomas nem sinais de complicação", "Em geral, pode viajar: o cálculo silencioso raramente dá crise em voo", "FAA: anotar e emitir; Reino Unido: pode ser apto conforme os cálculos, porque o risco de cólica súbita é baixo"],
+                ["Cólica biliar, febre, icterícia sintomática ou pancreatite ativa", "Não voar agora; investigar e tratar: a dor e a infecção pioram e exigem hospital", "Não voar; inapto até a recuperação, porque a dor é incapacitante"],
+                ["Após cirurgia da vesícula", "Seguir os prazos de cirurgia abdominal e a liberação do cirurgião: o gás residual se expande na cabine", "Volta pelos critérios de cirurgia (Veja M2V10 - VI), porque a ferida e a força precisam se recuperar"],
               ]
             }
           },
@@ -523,21 +439,9 @@ export const digestivo: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Analgésicos não sedativos prescritos",
-                  "Podem aliviar dor, mas não resolvem obstrução ou pancreatite",
-                  "Tratar a causa; avaliar a estabilidade e possíveis efeitos colaterais"
-                ],
-                [
-                  "Opioides e antiespasmódicos sedativos",
-                  "Sonolência e resposta mais lenta, com risco de incapacitação",
-                  "Não desempenhar funções sob efeito; reavaliar aptidão"
-                ],
-                [
-                  "Antibióticos quando indicados",
-                  "Podem causar náusea e diarreia; não substituem investigação",
-                  "Examinador considera infecção ativa e efeitos adversos"
-                ]
+                ["Analgésicos não sedativos prescritos", "Podem aliviar dor, mas não resolvem obstrução ou pancreatite", "Compatíveis se a doença permitir, porque não dão sono; a dor que exige remédio pede avaliação"],
+                ["Opioides e antiespasmódicos sedativos", "Sonolência e resposta mais lenta, com risco de incapacitação", "Não voar sob efeito, porque dão sono e lentidão"],
+                ["Antibióticos quando indicados", "Podem causar náusea e diarreia; não substituem investigação", "Não voar com infecção ativa, porque febre e dor tiram o desempenho"],
               ]
             }
           },
@@ -603,41 +507,13 @@ export const digestivo: Capitulo = {
                 "Tripulante"
               ],
               linhas: [
-                [
-                  "Hérnia com sintomas, suspeita de encarceramento ou obstrução intestinal",
-                  "Não embarcar com dor intensa, vômitos ou distensão progressiva; procurar avaliação urgente",
-                  "RBAC 67.83 e 67.123: avaliar risco de incapacidade, hérnias e obstruções; não operar com sintomas"
-                ],
-                [
-                  "Cirurgia abdominal recente",
-                  "Evitar voo nos primeiros 10 dias; após isso, avaliação da recuperação e da cirurgia realizada",
-                  "Inapto até recuperação e decisão do examinador; referências britânicas variam por procedimento"
-                ],
-                [
-                  "Colonoscopia com insuflação de gás, sem complicação",
-                  "Evitar voo por 24 horas",
-                  "Se houve biópsia/polipectomia em endoscopia baixa: pelo menos 48 horas e informar AME (UK CAA)"
-                ],
-                [
-                  "Laparoscopia diagnóstica",
-                  "Cerca de 24 horas pelo gás residual não dispensam avaliação da recuperação",
-                  "UK CAA: considerar retorno após 1 semana, se recuperado e sem riscos"
-                ],
-                [
-                  "Laparoscopia maior (colecistectomia, hérnia)",
-                  "A orientação geral de 10 dias não é autorização automática; dependerá de recuperação e cirurgião",
-                  "UK CAA: considerar após 3 a 4 semanas, recuperação completa e avaliação"
-                ],
-                [
-                  "Cirurgia abdominal maior (colectomia)",
-                  "Evitar voo por 10 dias, no mínimo, e obter avaliação individual do pós-operatório",
-                  "UK CAA: considerar após 2 a 3 meses com recuperação e acompanhamento satisfatórios"
-                ],
-                [
-                  "Dor progressiva, febre, vômitos ou sangramento",
-                  "Não voar agora; avaliação urgente",
-                  "Não voar; verificar complicação e reavaliar aptidão"
-                ]
+                ["Hérnia com sintomas, suspeita de encarceramento ou obstrução intestinal", "Não embarcar com dor, vômitos ou distensão: o gás preso se expande e pode piorar a obstrução", "Não operar com sintomas (RBAC 67.83 e 67.123), porque a hérnia presa é emergência"],
+                ["Cirurgia abdominal recente", "Evitar voo nos primeiros 10 dias: o gás residual e a sutura recente sofrem com a expansão", "Inapto até a recuperação, porque dor, fraqueza e analgésico tiram o desempenho"],
+                ["Colonoscopia com insuflação de gás, sem complicação", "Evitar voo por 24 horas: o gás colocado no intestino ainda se expande", "Com biópsia ou polipectomia, ao menos 48 horas (UK CAA), pelo risco de sangramento no local"],
+                ["Laparoscopia diagnóstica", "Cerca de 24 horas: o gás da laparoscopia precisa ser absorvido", "UK CAA: cerca de 1 semana, recuperado, porque os cortes são pequenos"],
+                ["Laparoscopia maior (colecistectomia, hérnia)", "Seguir o cirurgião, em geral até 10 dias: a ferida interna é maior que a da pele", "UK CAA: 3 a 4 semanas, com recuperação completa, porque esforço e vibração forçam a parede do abdome"],
+                ["Cirurgia abdominal maior (colectomia)", "Evitar voo por ao menos 10 dias: a sutura do intestino e o gás preso não toleram a expansão", "UK CAA: 2 a 3 meses, porque a recuperação é longa e há risco de complicação"],
+                ["Dor progressiva, febre, vômitos ou sangramento", "Não voar agora; avaliação urgente: pode ser complicação da cirurgia", "Não voar; tratar a complicação, porque ela incapacita"],
               ]
             }
           },
@@ -651,21 +527,9 @@ export const digestivo: Capitulo = {
                 "Tripulante (FAA/ANAC)"
               ],
               linhas: [
-                [
-                  "Analgésicos não sedativos",
-                  "Podem aliviar dor, mas não confirmam cicatrização",
-                  "Confirmar ausência de dor incapacitante e efeitos adversos"
-                ],
-                [
-                  "Opioides e outros sedativos",
-                  "Sonolência, reação lenta e risco operacional",
-                  "Não exercer função com efeitos sedativos; avaliação aeromédica"
-                ],
-                [
-                  "Anticoagulantes quando prescritos",
-                  "Podem aumentar sangramento; a imobilidade também pesa no risco de trombose",
-                  "Revisão do motivo, da dose, de sangramento e do risco aeromédico (Veja M2V2 - VII)"
-                ]
+                ["Analgésicos não sedativos", "Podem aliviar dor, mas não confirmam cicatrização", "Compatíveis se a dor estiver controlada, porque não dão sono"],
+                ["Opioides e outros sedativos", "Sonolência, reação lenta e risco operacional", "Não voar sob efeito, porque dão sono e lentidão"],
+                ["Anticoagulantes quando prescritos", "Podem aumentar sangramento; a imobilidade também pesa no risco de trombose", "Revisar o motivo e a dose (Veja M2V2 - VII), porque um trauma ou sangramento ficam mais graves"],
               ]
             }
           },

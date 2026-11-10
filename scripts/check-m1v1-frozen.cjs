@@ -128,7 +128,10 @@ const ARQUIVOS = Object.freeze({
   //   devem aparecer no texto e nao em tabelas isoladas..."): parágrafo de tratamentos, prognóstico e tipo de voo nos
   //   tópicos II, VI, VII e VIII, comparador "tipo de voo", tabela de tratamentos da apneia, opção de apneia operada na
   //   liberação e remissão do sono corrigida (M3V2 → M2V8 - VII); hashes refeitos.
-  'src/data/capitulos/hipoxia.ts': 'e97c4bf707b0ba87',
+  // 10/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Nas tabelas em que houver Tripulantes e passageiros
+  //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante das
+  //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
+  'src/data/capitulos/hipoxia.ts': '73b17142b6dd3968',
   'src/data/liberacao/respiratorio.ts': '7066c8949561a7c8',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
