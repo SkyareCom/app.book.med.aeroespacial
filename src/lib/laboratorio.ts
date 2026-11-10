@@ -2,6 +2,8 @@
 // Gerado a partir dos dados: um interativo novo num voo entra no laboratório sem lista manual.
 
 import { fasesAdaptacao } from '@/data/adaptacao';
+import { fasesDeficiencias } from '@/data/deficiencias';
+import { recursosFormularios } from '@/data/medif';
 import { chaveCapitulo, secoes } from '@/data/secoes';
 import type { TipoMidia } from '@/data/tipos';
 
@@ -42,6 +44,14 @@ export function catalogoLab(): ItemLab[] {
     for (const r of f.recursos ?? []) {
       if (r.midia) add(r.midia, { grupo: 'Missões especiais', codigo: 'Especial', titulo: 'Adaptação à altitude', capa: 'adaptacao', rota: { pathname: '/adaptacao' } });
     }
+  }
+  for (const f of fasesDeficiencias) {
+    for (const r of f.recursos ?? []) {
+      if (r.midia) add(r.midia, { grupo: 'Missões especiais', codigo: 'Especial', titulo: 'Deficiências e o voo', capa: 'deficiencias', rota: { pathname: '/deficiencias' } });
+    }
+  }
+  for (const r of recursosFormularios) {
+    if (r.midia) add(r.midia, { grupo: 'Missões especiais', codigo: 'Especial', titulo: 'Liberação para voo', capa: 'deficiencias', rota: { pathname: '/liberacao-voo' } });
   }
   return itens;
 }

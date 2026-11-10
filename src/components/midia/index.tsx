@@ -15,6 +15,7 @@ import { CalculadoraCentrifuga, CurvaCarga, LinhaGLOC, PilhaTolerancia } from '@
 import { EnvelopeEjecao, LimitesImpacto, PosicaoImpacto, RiscoCapacete, TesteAssento } from '@/components/midia/m1v8-graficos';
 import { UmidadeCabine } from '@/components/midia/m1v1-umidade';
 import { LinhaAdaptacao, SubidaSegura } from '@/components/midia/adaptacao-graficos';
+import { AmputacaoVoo, AudicaoDeficiencia, AutismoVoo, CaminhoCma, CaoGuiaDocumentos, CategoriaCadeira, DeficienciaPapel, MedifFremec, PrazoAssistencia, VisaoDeficiencia } from '@/components/midia/deficiencias-graficos';
 import { BateriasCPAP, ControleAsma, PrazoVooPulmao, TesteHipoxia } from '@/components/midia/m2v1-graficos';
 import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombose } from '@/components/midia/m2v2-graficos';
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
@@ -198,6 +199,16 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'tipo-voo-orientacao': () => <TipoVooOrientacao />,
   'tipo-voo-olhos': () => <TipoVooOlhos />,
   'tipo-voo-ouvidos': () => <TipoVooOuvidos />,
+  'deficiencia-papel': () => <DeficienciaPapel />,
+  'amputacao-voo': () => <AmputacaoVoo />,
+  'categoria-cadeira': () => <CategoriaCadeira />,
+  'cao-guia-documentos': () => <CaoGuiaDocumentos />,
+  'visao-deficiencia': () => <VisaoDeficiencia />,
+  'audicao-deficiencia': () => <AudicaoDeficiencia />,
+  'autismo-voo': () => <AutismoVoo />,
+  'prazo-assistencia': () => <PrazoAssistencia />,
+  'caminho-cma': () => <CaminhoCma />,
+  'medif-fremec': () => <MedifFremec />,
   imsafe: () => <Imsafe />,
   'prazo-antidepressivo': () => <PrazoAntidepressivo />,
   'quadros-psiquiatricos': () => <QuadrosPsiquiatricos />,
@@ -362,6 +373,16 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'tipo-voo-orientacao': 'A orientação em cada tipo de voo',
   'tipo-voo-olhos': 'Os olhos em cada tipo de voo',
   'tipo-voo-ouvidos': 'Ouvidos, seios e dentes em cada tipo de voo',
+  'deficiencia-papel': 'Passageiro ou tripulante?',
+  'amputacao-voo': 'Amputação: viajar e pilotar',
+  'categoria-cadeira': 'Categorias de cadeira de rodas',
+  'cao-guia-documentos': 'Cão-guia: documentos para voar',
+  'visao-deficiencia': 'Visão monocular e certificado',
+  'audicao-deficiencia': 'Audição: passageiro e tripulante',
+  'autismo-voo': 'Autismo: a viagem por etapas',
+  'prazo-assistencia': 'Ainda dá tempo de pedir?',
+  'caminho-cma': 'O caminho até o certificado',
+  'medif-fremec': 'MEDIF ou FREMEC?',
   imsafe: 'IMSAFE: o piloto confere a si mesmo',
   'prazo-antidepressivo': 'Antidepressivo e volta ao voo',
   'quadros-psiquiatricos': 'Diagnóstico e voo',

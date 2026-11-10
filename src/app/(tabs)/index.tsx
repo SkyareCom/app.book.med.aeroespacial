@@ -13,11 +13,12 @@ import { CartaoEpisodio, Destaques, duracao, Fileira, GUTTER, rotaEpisodio, type
 import { TelaCheia } from '@/components/tela';
 import { InstalarApp } from '@/components/instalar-app';
 import { Texto } from '@/components/texto';
-import { ArteAdaptacao, ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
+import { ArteAdaptacao, ArteDeficiencias, ArteEspecialVoo, ArteTemporada, CapaEpisodio } from '@/constants/capas';
 import { Imagens } from '@/constants/imagens';
 import { BordaCapa, Cores, Espaco } from '@/constants/theme';
 import { eras } from '@/data/historia';
 import { fasesAdaptacao } from '@/data/adaptacao';
+import { fasesDeficiencias } from '@/data/deficiencias';
 import { chaveCapitulo, interativosDe, obterCapitulo, obterSecao, secoes, totalCapitulos } from '@/data/secoes';
 import { obterEspecial } from '@/lib/especiais';
 import { catalogoLab } from '@/lib/laboratorio';
@@ -145,11 +146,26 @@ export default function Home() {
         ))}
       </Fileira>
 
+      <Fileira rotulo="Missão especial" titulo="Deficiências e o voo" acao="Abrir" onAcao={() => router.push('/deficiencias')}>
+        {fasesDeficiencias.map((f, i) => (
+          <Pressable key={f.id} accessibilityRole="button" onPress={() => router.push('/deficiencias')} style={{ width: 200, gap: 6 }}>
+            <View style={styles.capaEra}>
+              <Image source={ArteDeficiencias} style={[StyleSheet.absoluteFill, { transform: [{ scale: 1.2 + i * 0.12 }] }]} contentFit="cover" />
+              <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']} style={StyleSheet.absoluteFill} />
+              <View style={{ position: 'absolute', left: 10, bottom: 8 }}>
+                <Texto t="rotulo" cor={Cores.dourado}>{f.periodo}</Texto>
+              </View>
+            </View>
+            <Texto t="item" numberOfLines={2}>{f.titulo}</Texto>
+          </Pressable>
+        ))}
+      </Fileira>
+
       <Fileira rotulo={obterEspecial('laboratorio').tipo} titulo={obterEspecial('laboratorio').titulo} acao="Abrir" onAcao={() => router.push('/laboratorio')}>
         {amostraLab().map((m) => (
           <Pressable key={m.midia} accessibilityRole="button" onPress={() => router.push({ pathname: '/laboratorio', params: { midia: m.midia } })} style={{ width: 170, gap: 6 }}>
             <View style={styles.capaLab}>
-              <Image source={m.capa === 'adaptacao' ? ArteAdaptacao : CapaEpisodio[m.capa]} style={StyleSheet.absoluteFill} contentFit="cover" />
+              <Image source={m.capa === 'adaptacao' ? ArteAdaptacao : m.capa === 'deficiencias' ? ArteDeficiencias : CapaEpisodio[m.capa]} style={StyleSheet.absoluteFill} contentFit="cover" />
               <LinearGradient colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.75)']} style={StyleSheet.absoluteFill} />
               <View style={{ position: 'absolute', left: 10, top: 8 }}>
                 <Selo texto="Interativo" cor={Cores.dourado} />

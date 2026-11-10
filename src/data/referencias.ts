@@ -76,5 +76,9 @@ export const diretrizes: Referencia[] = [
   { titulo: 'AOPA', detalhe: 'Associação de proprietários e pilotos de aeronaves (EUA): artigo sobre o estudo de 1954 da Universidade de Illinois, pilotos sem treino de instrumentos em tempo simulado' },
   { titulo: 'IEEE Transactions on Visualization and Computer Graphics', detalhe: 'Machado, Oliveira e Fernandes, 2009: modelo para simular a visão com defeito de cores' },
   { titulo: 'Leproult e Van Cauter', detalhe: 'Revisão sobre sono, perda de sono, hormônios e metabolismo (Endocrine Development, 2010)' },
-  { titulo: 'Companhias aéreas', detalhe: 'Formulário médico de passageiros (MEDIF) e regras de oxigênio e aparelhos a bordo' },
+  { titulo: 'Companhias aéreas', detalhe: 'Formulário médico de passageiros (MEDIF), cartão médico do passageiro frequente (FREMEC) e regras de oxigênio e aparelhos a bordo' },
+  { titulo: 'Legislação brasileira de acessibilidade', detalhe: 'Lei 12.764/2012 e Lei 13.977/2020 (autismo e CIPTEA), Lei 14.624/2023 (cordão de girassóis), Decreto 5.904/2006 (cão-guia) e Ofício Circular 28/2019 da ANAC (documentos do cão-guia)' },
+  { titulo: 'UK CAA · deficiências e neurodesenvolvimento', detalhe: 'Certificação médica de pilotos com deficiência (prova de voo médica, próteses, comandos manuais, paraplegia), condições do neurodesenvolvimento (autismo e TDAH) e tabela de códigos de limitação' },
+  { titulo: 'FAA · deficiências', detalhe: 'Statement of Demonstrated Ability (SODA), pilotos surdos e visão monocular' },
+  { titulo: 'Ottobock', detalhe: 'Orientação para viajar com prótese: volume do coto na cabine, bateria e inspeção de segurança' },
 ];
