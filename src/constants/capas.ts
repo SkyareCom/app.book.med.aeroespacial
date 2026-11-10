@@ -64,5 +64,7 @@ export const ArteEspecialVoo = require('@/assets/images/capas/especial-voo.jpg')
 // Adaptação: o alpinista do M1V1 - II; Liberação: o passageiro com concentrador do M2V1 - IX; Exame CMA: médico lendo
 // exames (cli-03), a mesma capa do card no M3V1.
 export const ArteAdaptacao = require('@/assets/images/topicos/m1v1-2-alpinista.jpg');
+// Missão especial Deficiências e o voo: foto provisória da ponte de embarque até chegar a capa própria.
+export const ArteDeficiencias = require('@/assets/images/topicos/m2v6-7-cadeira.jpg');
 export const ArteLiberacao = require('@/assets/images/topicos/m2v1-9-concentrador.jpg');
 export const ArteExameCMA = require('@/assets/images/capas/cli-03.jpg');

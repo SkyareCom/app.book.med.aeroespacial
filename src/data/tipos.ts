@@ -148,7 +148,17 @@ export type TipoMidia =
   | 'infeccao-voo'
   | 'hiv-viagem'
   | 'vacinas-voo'
-  | 'animacao-hemoglobina';
+  | 'animacao-hemoglobina'
+  | 'deficiencia-papel'
+  | 'amputacao-voo'
+  | 'categoria-cadeira'
+  | 'cao-guia-documentos'
+  | 'visao-deficiencia'
+  | 'audicao-deficiencia'
+  | 'autismo-voo'
+  | 'prazo-assistencia'
+  | 'caminho-cma'
+  | 'medif-fremec';
 
 export interface ConteudoTopico {
   // Prosa contínua; dois saltos de linha separam parágrafos.

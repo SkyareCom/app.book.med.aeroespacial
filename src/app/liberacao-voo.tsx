@@ -10,8 +10,10 @@ import { rotaEpisodio } from '@/components/streaming';
 import { RelacionadosEspecial } from '@/components/especiais';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
+import { TextoCorrente } from '@/components/texto-corrente';
 import { ArteLiberacao } from '@/constants/capas';
 import { BordaCapa, Cores, Espaco, Raio } from '@/constants/theme';
+import { recursosFormularios, textoFormularios } from '@/data/medif';
 import type { NivelLiberacao, PerfilPaciente } from '@/data/tipos';
 import { avaliarLiberacao, blocosLiberacao, comentarioVeredito, NOME_NIVEL, type QuemResponde } from '@/lib/liberacao';
 
@@ -135,6 +137,12 @@ export default function LiberacaoVoo() {
 
         <BotaoPrincipal rotulo="Recomeçar" secundario onPress={() => { setRespostas({}); rolagem.current?.scrollTo({ y: 0, animated: true }); }} />
       </View>
+
+      <Painel style={styles.bloco}>
+        <Texto t="rotulo" cor={Cores.destaque}>Formulários da companhia aérea</Texto>
+        <Texto t="titulo">MEDIF e FREMEC</Texto>
+        <TextoCorrente texto={textoFormularios} recursos={recursosFormularios} />
+      </Painel>
 
       <Painel>
         <Texto t="rotulo" cor={Cores.textoApagado}>Aviso</Texto>
