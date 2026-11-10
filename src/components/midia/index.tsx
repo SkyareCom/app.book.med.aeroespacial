@@ -20,6 +20,7 @@ import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombos
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
 import { FusoInsulina, HormoniosVoo, ImcVoo, PrazoDiabetes, RemediosPeso, SemaforoGlicemia, TireoideVoo } from '@/components/midia/m2v9-graficos';
 import { BiliarDecidir, DigestivoVoo, FigadoRisco, IntestinoCrise, PrazoCirurgiaDigestiva, RefluxoVoo } from '@/components/midia/m2v10-graficos';
+import { TipoVooCoracao } from '@/components/midia/tipo-voo';
 import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo, AnimacaoHemoglobina } from '@/components/midia/m2v11-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
@@ -178,6 +179,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'hiv-viagem': () => <HIVViagem />,
   'vacinas-voo': () => <VacinasVoo />,
   'animacao-hemoglobina': () => <AnimacaoHemoglobina />,
+  'tipo-voo-coracao': () => <TipoVooCoracao />,
   imsafe: () => <Imsafe />,
   'prazo-antidepressivo': () => <PrazoAntidepressivo />,
   'quadros-psiquiatricos': () => <QuadrosPsiquiatricos />,
@@ -323,6 +325,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'hiv-viagem': 'HIV e viagens',
   'vacinas-voo': 'Vacinação do viajante',
   'animacao-hemoglobina': 'Hemácias e oxigênio na cabine',
+  'tipo-voo-coracao': 'O coração em cada tipo de voo',
   imsafe: 'IMSAFE: o piloto confere a si mesmo',
   'prazo-antidepressivo': 'Antidepressivo e volta ao voo',
   'quadros-psiquiatricos': 'Diagnóstico e voo',

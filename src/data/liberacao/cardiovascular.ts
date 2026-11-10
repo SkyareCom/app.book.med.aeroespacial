@@ -1,7 +1,8 @@
 // Formulário de liberação para voo seguro · bloco do coração e vasos (M2V2 · Coração e vasos sanguíneos).
 // Cada resposta tem um efeito para o passageiro e outro para o tripulante, com texto leigo e texto para o médico.
 // Fontes no registro de revisão de src/data/capitulos/coracao.ts (UK CAA; CDC Yellow Book com IATA 2020 e BTS 2022;
-// ANAC, RBAC 67.79, 67.87(c), 67.119(b)(2) e 67.15(c); FAA, Guia do AME; ICAO, Doc 8984). Sem fonte: [confirmar na
+// ANAC, RBAC 67.79, 67.87(c), 67.119(b)(2) e 67.15(c); FAA, Guia do AME; ICAO, Doc 8984; Canadian Cardiovascular
+// Society, Flying: Cardiovascular Conditions, ccs.ca, consultado em 10/11/2026). Sem fonte: [confirmar na
 // referência].
 
 import type { EfeitoLiberacao, PerguntaLiberacao } from '../tipos';
@@ -98,6 +99,34 @@ export const liberacaoCardiovascular: PerguntaLiberacao[] = [
         rotulo: 'Desfibrilador (CDI)',
         passageiro: e('cuidados', 'Pode voar quando estiver estável. Leve o cartão do aparelho e avise no controle de segurança.', 'CDI: voar quando estável (UK CAA).', '2.4'),
         tripulante: e('nao-voar', 'O desfibrilador ativo impede o voo como tripulante.', 'FAA: CDI ativo desqualifica todas as classes. ICAO (Doc 8984, 1.9.1): desfibrilador implantável impede. RBAC 67.79(a)(3).', '2.4'),
+      },
+    ],
+  },
+  {
+    id: 'card-procedimento',
+    pergunta: 'Fez procedimento invasivo ou cirurgia no coração recentemente?',
+    ajuda: 'Os prazos do passageiro variam entre as fontes (CAA britânica e sociedade canadense de cardiologia); o médico decide.',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Angioplastia com stent nos últimos 3 dias',
+        passageiro: e('avaliar', 'Confirme com o cardiologista; sem complicação, em geral se viaja em 1 a 3 dias.', 'Stent sem complicação: 3 dias (UK CAA) ou 1 dia (CCS, NYHA I–II); após infarto, valem os prazos do infarto.', '2.3'),
+        tripulante: e('nao-voar', 'Não voe; há prazo longo e decisão da autoridade.', 'FAA: 3 meses e autorização especial. RBAC 67.79: ao menos 180 dias, apto com restrição.', '2.3'),
+      },
+      {
+        rotulo: 'Ablação, cardioversão ou implante de marca-passo ou desfibrilador nos últimos dias',
+        passageiro: e('avaliar', 'Em geral se viaja em 1 a 2 dias se tudo correu bem; confirme com o médico.', 'CCS: 1 dia após procedimento de arritmia supraventricular, 2 dias após ventricular; implante: 1 dia sem pneumotórax e aparelho programado. Atenção à trombose na 1ª semana.', '2.4'),
+        tripulante: e('nao-voar', 'Não voe até o prazo e a decisão da autoridade.', 'FAA: ablação 3 meses; cardioversão 1 mês; marca-passo 2 meses; CDI ativo desqualifica.', '2.4'),
+      },
+      {
+        rotulo: 'Cirurgia aberta do tórax (ponte de safena ou troca de válvula) nas últimas 2 semanas',
+        passageiro: e('nao-voar', 'Espere o prazo da cirurgia antes de voar.', 'UK CAA: 10 a 14 dias pelo ar no tórax. CCS: 4 dias (voo < 2 h) ou 7 dias (≥ 2 h) com Hb ≥ 90 g/L; abaixo disso, oxigênio.', '2.3'),
+        tripulante: e('nao-voar', 'Não voe; prazo de meses e decisão da autoridade.', 'FAA: ponte 6 meses; válvula, decisão da FAA. ICAO: bioprótese ou plastia mitral após 6 meses, restrito. RBAC 67.79(a)(3) e (a)(11).', '2.5'),
+      },
+      {
+        rotulo: 'Choque do desfibrilador com desmaio no último mês',
+        passageiro: e('nao-voar', 'Adie a viagem e procure o cardiologista.', 'CCS: 1 mês após intervenção do aparelho com pré-síncope grave ou síncope.', '2.4'),
+        tripulante: e('nao-voar', 'O desfibrilador ativo impede o voo como tripulante.', 'FAA e ICAO: CDI impede.', '2.4'),
       },
     ],
   },
