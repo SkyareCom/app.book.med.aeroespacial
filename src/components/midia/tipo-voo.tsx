@@ -43,6 +43,19 @@ export function TipoVooCoracao() {
   return <TipoVoo titulo="O coração em cada tipo de voo" dados={CORACAO} />;
 }
 
+// ---------------------------------------------------------------- M2V3 · Ouvidos, seios e dentes (registro em ouvidos.ts)
+const OUVIDOS: Linha[] = [
+  { nome: 'Ouvido entupido ou barotrauma', pressurizado: 'Descida de 8.000 ft: cerca de 195 mmHg sobre o tímpano. Adiar se não equaliza.', nao: 'Descida de 10.000 ft: cerca de 237 mmHg, mais do que na cabine pressurizada.', helicoptero: 'Altitudes menores, mas subidas e descidas repetidas em pouco tempo.' },
+  { nome: 'Cirurgia do ouvido', pressurizado: 'Passageiro: ao menos 10 dias, com liberação do otorrino.', nao: 'Mesmo prazo; a variação maior de pressão pede ainda mais cuidado.', helicoptero: 'Mesmo prazo; tripulante após estapedectomia: 1 a 3 meses (ICAO).' },
+  { nome: 'Vertigem', pressurizado: 'Passageiro avaliado antes; tripulante não voa até se recuperar.', nao: 'Descida sem equalizar pode provocar vertigem alternobárica.', helicoptero: 'Com um só piloto, ninguém assume o comando numa crise.' },
+  { nome: 'Perda auditiva', pressurizado: 'Ruído de cabine menor; avisos também por escrito se preciso.', nao: 'Ruído maior no avião leve: fone e capacete são essenciais.', helicoptero: 'Ruído intenso: proteção auditiva e comunicação pelo fone.' },
+  { nome: 'Sinusite ou nariz entupido', pressurizado: 'Não voar resfriado como tripulante; passageiro pensa em adiar.', nao: 'Variação de pressão maior, dor mais forte na descida.', helicoptero: 'Descidas rápidas e repetidas pioram a dor do seio bloqueado.' },
+  { nome: 'Dente tratado há pouco', pressurizado: 'Respeitar o prazo: 24 h a 2 semanas, conforme o procedimento.', nao: 'Variações maiores: prazo cumprido com rigor.', helicoptero: 'Variações frequentes: prazo cumprido com rigor.' },
+];
+export function TipoVooOuvidos() {
+  return <TipoVoo titulo="Ouvidos, seios e dentes em cada tipo de voo" dados={OUVIDOS} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });

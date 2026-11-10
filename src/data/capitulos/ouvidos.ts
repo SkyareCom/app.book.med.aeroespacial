@@ -72,6 +72,13 @@
 //   dor aguda e breve na subida; II pulpite reversível, dor surda latejante na subida; III polpa necrótica, dor surda
 //   latejante na descida; IV lesão periapical, dor forte e persistente na subida e na descida; exame dentário a cada 6
 //   meses para tripulantes; tratamento concluído antes de se expor à variação de pressão.
+// 10/11/2026, pedido do autor (doenças no texto com tratamentos expectantes, não invasivos e invasivos, prognóstico,
+// prazos e tipo de voo): parágrafo "Tratamentos, prognóstico e tipo de voo" em cada tópico; tabelas de remédios em 3.3 a
+// 3.6; comparador por tipo de aeronave; vídeo cortado para 8 s (padrão de mídias). Fontes novas: GPnotebook, ENT
+// disorders and flying (CAA, IATA Medical Manual 11ª ed.: cirurgia do ouvido médio, não apto até 9 dias, 10 dias ou mais
+// com atestado do otorrino; amigdalectomia: sangramento nos dias 1–2 e 7–10); NHS Worcestershire, Myringotomy and grommet
+// insertion aftercare (voar é seguro com o tubo); pressão padrão ICAO calculada em src/lib/fisiologia.ts (8.000 ft
+// 565 mmHg; 10.000 ft 523 mmHg). Tratamentos sem número próprio: aplicação clínica geral.
 // Sem fonte: [confirmar na referência]. Prazos não estimados.
 
 import { liberacaoOuvidos } from '../liberacao/ouvidos';
@@ -95,9 +102,11 @@ export const ouvidos: Capitulo = {
           "As diferenças grandes aparecem mesmo em altitudes baixas: descer de **6.500 ft** ao nível do mar já significa cerca de **150 mmHg** de diferença sobre o tímpano. Com **200 a 500 mmHg**, o tímpano pode **romper**. Os seios da face têm aberturas pequenas para o nariz e sofrem do mesmo jeito; um dente com cárie, restauração recente ou inflamação pode doer com a variação de pressão.",
           "Em **85% ou mais** dos casos, a falha em equalizar vem de uma doença do nariz e da garganta: o **resfriado**, a **alergia** e a **sinusite** incham a mucosa e fecham as aberturas. Por isso a regra mais importante deste voo é simples: **não voar resfriado ou com o nariz entupido**, sobretudo como tripulante.",
           "O ouvido também **ouve e equilibra**. A tripulação precisa entender o rádio e os colegas no ruído da cabine, e o labirinto informa a posição da cabeça; uma vertigem súbita na descida pode **incapacitar** o piloto (Veja M2V3 - III). Para o passageiro, a dor costuma passar sem sequela, mas pode trazer **tontura**, **perda auditiva**, **perfuração** e **zumbido**.",
-          "**Como equalizar.** Na subida, em geral não é preciso fazer nada. Na descida, comece **cedo** e repita: engula, boceje, mastigue ou contraia a garganta; se não bastar, feche a boca, aperte o nariz e sopre com delicadeza contra as narinas fechadas, a **manobra de Valsalva**. Não durma durante a descida. Bebês sofrem mais: **amamentar** na subida e na descida protege a criança da dor. Se a orelha travar, continue tentando antes de a pressão de fora subir mais.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças deste voo são o **barotrauma do ouvido** e a **otite média serosa**, as **perfurações** e as **cirurgias do ouvido**, a **vertigem**, a **perda auditiva**, a **sinusite** com a **aerossinusite** e a **barodontalgia**. O tratamento tem três níveis: o **expectante**, que espera o resfriado passar e o tímpano cicatrizar; o **não invasivo**, com descongestionante, corticoide nasal, remédio da alergia e manobras de equalização e de reposicionamento do labirinto; e o **invasivo**: **tubo de ventilação** no tímpano, **timpanoplastia**, **estapedectomia**, **cirurgia dos seios** e tratamento dentário. A diferença de pressão depende do tipo de voo: descer de uma cabine **pressurizada** a 8.000 ft ao nível do mar muda cerca de **195 mmHg**; de um avião **não pressurizado** a 10.000 ft, cerca de **237 mmHg**. No **helicóptero**, as altitudes são menores, mas as **subidas e descidas repetidas** em pouco tempo, como no resgate e no offshore, cobram mais de quem equaliza mal.",
+          "**Como prevenir e amenizar.** Na subida, em geral não é preciso fazer nada. Na descida, comece **cedo** e repita: engula, boceje, mastigue ou contraia a garganta; se não bastar, feche a boca, aperte o nariz e sopre com delicadeza contra as narinas fechadas, a **manobra de Valsalva**. Não durma durante a descida. Bebês sofrem mais: **amamentar** na subida e na descida protege a criança da dor. Se a orelha travar, continue tentando antes de a pressão de fora subir mais.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-ouvidos' },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v3-1-descida.jpg'), 'Na descida, a pressão da cabine sobe e o ar precisa voltar a entrar no ouvido médio.') },
           { paragrafo: 2, midia: 'animacao-ouvido' },
           { paragrafo: 3, midia: 'pressao-descida' },
@@ -116,11 +125,11 @@ export const ouvidos: Capitulo = {
             },
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v3-1-bebe.jpg'), 'Amamentar na subida e na descida ajuda o bebê a equalizar a pressão do ouvido.') },
-          { paragrafo: 6, video: { fonte: require('@/assets/videos/m2v3-equalizar.mp4'), legenda: 'Na descida, engolir, bocejar ou a manobra de Valsalva abrem a tuba auditiva e igualam a pressão do ouvido.' } },
+          { paragrafo: 7, video: { fonte: require('@/assets/videos/m2v3-equalizar.mp4'), legenda: 'Na descida, engolir, bocejar ou a manobra de Valsalva abrem a tuba auditiva e igualam a pressão do ouvido.' } },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como equalizar o ouvido',
+              titulo: 'Como prevenir e amenizar · ouvido',
               colunas: ['Momento', 'O que fazer'],
               linhas: [
                 ['Subida', 'Em geral nada: o ar sai sozinho'],
@@ -146,6 +155,7 @@ export const ouvidos: Capitulo = {
           "Para o **passageiro**, o barotrauma em geral não é grave. Quem tem **infecção de ouvido, nariz ou seios** ou **congestão forte** pode **adiar o voo** para evitar a dor e a lesão. Para o **tripulante**, os sinais e sintomas do barotrauma **não são compatíveis com o voo**: ele só volta depois de o processo agudo passar por completo e o exame do tímpano estar normal. O resfriado deve ser reavaliado em **7 a 10 dias**.",
           "Voar resfriado é o caminho mais comum para o barotrauma. O piloto que desconsidera o resfriado arrisca uma **incapacitação aguda** pela dor no ouvido ou nos seios e, em alguns casos, **vertigem e perda auditiva irreversíveis**, que podem afastá-lo do voo para sempre. O líquido que fica semanas no ouvido também pode deixar **perda auditiva permanente**.",
           "**Remédios.** O passageiro pode usar **descongestionante oral ou nasal** para aliviar os sintomas e mantém o **remédio de alergia** de sempre. Para o piloto, a FAA lembra que o **spray** ou as **gotas** em geral **não protegem o bastante** e que o **descongestionante oral** pode prejudicar muito o desempenho. **Antibiótico** e **anti-histamínico** em uso: a ICAO orienta **não voar durante o tratamento**.",
+          "**Tratamentos, prognóstico e tipo de voo.** O barotrauma leve tem conduta **expectante**: o ouvido se recupera em dias, à medida que a tuba volta a abrir. O tratamento **não invasivo** usa **descongestionante**, **corticoide nasal** quando há alergia, analgésico e manobras de **autoinsuflação**; antibiótico só se houver infecção. Quando o líquido não sai em semanas ou o barotrauma se repete, o otorrino pode fazer a **miringotomia** e colocar um **tubo de ventilação** no tímpano: com ele, o ouvido iguala a pressão sozinho, e voar é seguro. O prognóstico é bom: o tímpano perfurado em geral cicatriza e a audição volta; o barotrauma do **ouvido interno** é o que pode deixar perda e vertigem permanentes. O passageiro adia o voo enquanto não consegue equalizar; o tripulante só volta com o tímpano normal. No avião **não pressurizado** e no **helicóptero** com descidas repetidas, quem acabou de ter barotrauma tem mais chance de repetir a lesão.",
           "**Como prevenir e amenizar.** Antes do voo, confira o nariz: entupido ou com resfriado, o tripulante **não voa** e o passageiro pensa em adiar. Comece a equalizar **cedo** na descida e não durma nela. Se a orelha travar e doer, avise a tripulação e continue as manobras. Depois do voo, dor que não passa, **saída de líquido**, **perda auditiva** ou **vertigem** pedem avaliação médica. Quem usa **protetor de inserção** confere o canal de ventilação: inserção apertada favorece o barotrauma.",
           "**Não voe hoje** com resfriado, nariz entupido, dor de ouvido, ouvido cheio que não destrava ou vertigem. O médico olha o **tímpano** e o gradua pela escala de Teed, testa a **manobra de Valsalva**, pede **audiometria** se houver perda e examina o equilíbrio se houver vertigem.",
         ].join('\n\n'),
@@ -182,7 +192,7 @@ export const ouvidos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · barotrauma do ouvido',
               colunas: ['Momento', 'O que fazer'],
@@ -209,10 +219,23 @@ export const ouvidos: Capitulo = {
           "A **vertigem** verdadeira é a sensação de girar. No voo, a **vertigem alternobárica** aparece na descida, quando um ouvido equaliza antes do outro; a **fístula perilinfática** é a lesão do ouvido interno pela pressão. Fora do voo, pesam a **doença de Ménière**, a **neurite vestibular**, a **labirintite** e a **vertigem posicional**. Na cabine, qualquer uma delas soma-se à desorientação espacial (Veja M2V5).",
           "Para o **tripulante**: a ICAO e a ANAC exigem que não haja **distúrbio vestibular**, **disfunção significativa da tuba** nem **perfuração não cicatrizada**; a **perfuração única e seca** não torna inapto, desde que a audição cumpra o requisito. Na ANAC, o transtorno vestibular **permanente** torna não apto, e o **transitório**, até a condição se restabelecer. Depois da **estapedectomia**, a ICAO pede **1 a 3 meses sem voar**, avaliação especializada e, depois, voo com restrição a **tripulação múltipla por 2 anos**. A **timpanoplastia** com tímpano íntegro e audição normal não deixa restrição. Na FAA, a perfuração **resolvida** sem sintomas permite emitir o certificado, e a cirurgia do ouvido é decidida pela própria FAA com o relatório do cirurgião; a vertigem **transitória**, como a labirintite aguda ou a vertigem posicional benigna, pode não desqualificar depois da recuperação completa.",
           "Voar com uma vertigem ativa ou cedo demais depois de uma cirurgia é arriscar **incapacitação** em plena descida. Quem operou o estribo precisa saber que **resfriados** e infecções do nariz ameaçam a ventilação do ouvido médio.",
+          "**Tratamentos, prognóstico e tipo de voo.** A perfuração pequena e seca tem conduta **expectante**: muitas cicatrizam sozinhas, com o ouvido protegido da água. A **vertigem posicional** se trata com **manobras de reposicionamento** no consultório, sem cirurgia; a **neurite vestibular**, com remédio na fase aguda e **reabilitação vestibular**; a **doença de Ménière**, com menos sal e remédios e, nos casos rebeldes, injeção no ouvido ou cirurgia. Entre as cirurgias, a **timpanoplastia** fecha o tímpano, a **estapedectomia** troca o estribo por uma prótese e a **mastoidectomia** retira a doença do osso atrás da orelha. O passageiro espera ao menos **10 dias** depois de uma cirurgia do ouvido médio, com liberação do otorrino; o tripulante, **1 a 3 meses** depois da estapedectomia, pela ICAO. O prognóstico depende da causa: a vertigem posicional e a neurite costumam passar; a Ménière volta em crises e, sem controle, impede o voo do tripulante. No **helicóptero** e no avião leve com **um só piloto**, uma crise de vertigem não tem quem assuma o comando.",
           "**Como prevenir e amenizar.** Respeite o prazo do cirurgião e, para o tripulante, o da autoridade. Depois de uma cirurgia do ouvido, trate qualquer resfriado antes de voar e equalize com mais cuidado na descida. Quem teve vertigem repetida ou forte em voo é encaminhado a um **otorrinolaringologista** com experiência em aviação. O **passageiro** que operou o ouvido confirma com o cirurgião quando pode voar.",
           "**Não voe hoje** com vertigem, perfuração recente ou cirurgia do ouvido sem liberação. O médico examina o tímpano com o **otoscópio pneumático**, testa a **Valsalva**, pede **audiometria** e, se houver vertigem, os **testes do equilíbrio**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · tímpano e vertigem",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Remédio contra a vertigem (antivertiginoso)", "Alivia a crise, mas costuma dar sono", "Não voar durante o uso; a vertigem ativa já impede"],
+                ["Corticoide na neurite ou na perda súbita", "Usado por poucos dias na fase aguda", "Voltar só com o quadro resolvido e avaliado"],
+                ["Gotas para o ouvido", "Tratam a infecção do ouvido externo ou da perfuração", "Afastamento temporário enquanto há infecção (ICAO)"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v3-3-cirurgia.jpg'), 'Microscópio cirúrgico em cirurgia do ouvido médio.') },
           { paragrafo: 2, midia: 'prazo-ouvido' },
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v3-3-vertigem.jpg'), 'Vertigem verdadeira é a sensação de que tudo gira.') },
@@ -232,7 +255,7 @@ export const ouvidos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · ouvido operado e vertigem',
               colunas: ['Situação', 'O que fazer'],
@@ -257,10 +280,23 @@ export const ouvidos: Capitulo = {
           "O **ruído** da cabine mascara a fala e, com o tempo, lesa o ouvido (Veja M1V6 - II). Acima de **80 dB** pode haver perda **temporária**: uma queda de 50 dB depois de 2 horas de exposição se recupera em cerca de **16 horas**, mas uma de 60 dB leva dias. Quem faz o exame logo depois de voar pode ter um audiograma **pior do que o real**. A perda **súbita** da audição em voo é rara.",
           "Para o **tripulante**, a ANAC e a ICAO usam a **audiometria tonal**: até **35 dB** em 500, 1.000 e 2.000 Hz e até **50 dB** em 3.000 Hz, **em cada ouvido**. Na ANAC, o exame é feito a cada **5 anos** abaixo dos 40 e a cada **2 anos** a partir dos 40. A FAA aceita ouvir a **voz de conversa a 1,8 m**, de costas, ou uma tabela de melhor e pior ouvido. Quem passa do limite ainda pode ser apto se **entender a fala com o ruído da cabine**, num teste especial ou em voo. Na ANAC, quem não atende em nenhum ouvido recebe a restrição de **não usar rádio** nem atuar como **comissário**.",
           "Voar ouvindo mal é arriscar **perder uma instrução** do controle ou um **alarme**. Por isso a perda auditiva se acompanha com audiogramas repetidos. O **aparelho auditivo** em geral **não é aceito em voo** para o tripulante profissional, porque o fone e o interfone da aeronave já cumprem esse papel; para os demais, só depois de avaliação.",
-          "**Como proteger a audição.** Use **protetor** sempre que o ruído for alto (Veja M1V6 - III). O **abafador** reduz em média **35 dB**; o protetor de **inserção** precisa estar bem ajustado e ter o canal de ventilação livre; os dois juntos chegam a cerca de **55 dB**, o máximo antes de o som chegar pelos ossos do crânio. O fone com **redução ativa de ruído** funciona só nos graves, até **1.200 Hz**, e pede proteção passiva junto. Mantenha o volume do fone o mais baixo que permita entender, limpe os protetores e não os use com o ouvido inflamado. Antes da audiometria, fique um tempo **longe do ruído**.",
+          "**Tratamentos, prognóstico e tipo de voo.** A perda da idade e a do ruído têm conduta **expectante** e preventiva, com audiogramas repetidos e **proteção auditiva**, porque a lesão do ouvido interno não volta. A perda de **condução** muitas vezes tem tratamento: **cera** retirada no consultório, otite tratada e cirurgias como a **timpanoplastia** e a **estapedectomia**. O **aparelho auditivo** é o tratamento **não invasivo** da perda neurossensorial; o **implante coclear**, cirúrgico, serve à perda profunda. A **perda súbita** é urgência médica: o tratamento começa o quanto antes, e o voo fica para depois da avaliação. O prognóstico no voo depende de entender a fala no ruído: no **helicóptero** e no avião leve **não pressurizado**, o ruído é maior e a comunicação depende do fone e do capacete (Veja M1V6).",
+          "**Como prevenir e amenizar.** Use **protetor** sempre que o ruído for alto (Veja M1V6 - III). O **abafador** reduz em média **35 dB**; o protetor de **inserção** precisa estar bem ajustado e ter o canal de ventilação livre; os dois juntos chegam a cerca de **55 dB**, o máximo antes de o som chegar pelos ossos do crânio. O fone com **redução ativa de ruído** funciona só nos graves, até **1.200 Hz**, e pede proteção passiva junto. Mantenha o volume do fone o mais baixo que permita entender, limpe os protetores e não os use com o ouvido inflamado. Antes da audiometria, fique um tempo **longe do ruído**.",
           "**Não voe** como tripulante sem o audiograma em dia ou com perda nova não avaliada. O médico pede a **audiometria tonal** de cada ouvido, a **voz** em sala silenciosa e, se preciso, o teste de **fala no ruído**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · audição",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Aparelho auditivo", "Melhora a audição; o fone da aeronave já amplifica", "ICAO: em geral não aceito em voo para profissionais"],
+                ["Remédios tóxicos para o ouvido", "Alguns antibióticos e quimioterápicos podem lesar a audição", "Audiograma de controle quando usados"],
+                ["Corticoide na perda súbita", "Tratamento de urgência, o quanto antes", "Não voar até a avaliação"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v3-4-audiometria.jpg'), 'Audiometria tonal: cada ouvido é testado separadamente na cabine acústica.') },
           { paragrafo: 3, midia: 'audiometria-normas' },
           {
@@ -277,11 +313,11 @@ export const ouvidos: Capitulo = {
               ],
             },
           },
-          { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v3-4-fone.jpg'), 'Fone com abafador na cabine: proteção e comunicação ao mesmo tempo.') },
+          { paragrafo: 6, figura: foto(require('@/assets/images/topicos/m2v3-4-fone.jpg'), 'Fone com abafador na cabine: proteção e comunicação ao mesmo tempo.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como proteger a audição',
+              titulo: 'Como prevenir e amenizar · audição',
               colunas: ['Situação', 'O que fazer'],
               linhas: [
                 ['Ruído alto', 'Abafador (cerca de 35 dB) ou inserção bem ajustada; os dois juntos chegam a 55 dB'],
@@ -305,10 +341,24 @@ export const ouvidos: Capitulo = {
           "Na **aerossinusite**, ou barotrauma dos seios, a abertura fica bloqueada pelo inchaço do **resfriado**, da **sinusite**, da **alergia** ou de **pólipos**, e a pressão não se iguala. Como no ouvido, ela aparece sobretudo **na descida**, com **dor forte** sobre o seio afetado; no **esfenoide**, a dor vai para a **nuca**, e o seio **maxilar** bloqueado pode doer nos **dentes de cima** (Veja M2V3 - VI). Uma **concha bolhosa**, bolsa de ar dentro do nariz, também pode causá-la.",
           "Para o **passageiro**, a regra é a mesma do ouvido: com infecção dos seios ou congestão forte, pode **adiar** o voo e usar descongestionante para aliviar. Para o **tripulante**, a ANAC exige **nariz livre** e **ausência de doença grave dos seios**, com **radiografia** dos seios no exame inicial; a ICAO pede que não haja obstrução nasal. O resfriado é reavaliado em **7 a 10 dias** e não se voa com ele.",
           "Voar com sinusite é arriscar uma dor que pode **incapacitar** o piloto na aproximação. A secreção parada no seio bloqueado favorece a **infecção**. A dor costuma aliviar em minutos com um **vasoconstritor nasal suave**, mas quem está tratando com **antibiótico** ou **anti-histamínico** não voa durante o tratamento.",
+          "**Tratamentos, prognóstico e tipo de voo.** O resfriado e a sinusite viral têm conduta **expectante**, com **lavagem do nariz com soro** e analgésico, e o tripulante é reavaliado em **7 a 10 dias**. O tratamento **não invasivo** inclui o **corticoide nasal** na alergia e na rinite, o descongestionante por poucos dias e o antibiótico quando há infecção bacteriana. Quando há **pólipos**, **concha bolhosa**, desvio do septo ou sinusite que sempre volta, o otorrino pode indicar a **cirurgia endoscópica dos seios**; o prazo para voar depois dela é o do cirurgião. O prognóstico costuma ser bom: tratada a obstrução, a aerossinusite tende a não voltar. No **helicóptero** e no avião leve, as descidas rápidas e repetidas pioram a dor de quem voa com o seio bloqueado.",
           "**Como prevenir e amenizar.** Trate a **alergia** com o remédio de sempre e cuide do nariz antes da viagem. Não voe resfriado. Na descida, mantenha as manobras do ouvido, que também ajudam o nariz. Quem tem **sinusite repetida**, pólipos ou concha bolhosa conversa com o otorrinolaringologista: muitas vezes o tratamento resolve o problema no voo. Dor nos dentes de cima que só aparece no voo pode vir do seio, e não do dente.",
           "**Não voe hoje** com sinusite, nariz entupido ou dor na face. O médico examina o nariz, palpa os seios, pergunta pelos **sprays** e **anti-histamínicos** em uso e, se preciso, pede **raio X** ou **tomografia**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · seios da face",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Corticoide nasal", "Reduz o inchaço da alergia e da rinite sem dar sono", "Em geral compatível; a doença de base decide"],
+                ["Descongestionante nasal ou oral", "Alivia por pouco tempo; o oral pode afetar o desempenho", "FAA: spray não protege o bastante; oral pode prejudicar o piloto"],
+                ["Antibiótico", "Trata a sinusite bacteriana", "ICAO: não voar durante o tratamento"],
+                ["Anti-histamínico sedativo", "Alivia a alergia, mas dá sono", "ICAO: não voar durante o tratamento"],
+              ],
+            },
+          },
           { paragrafo: 1, midia: 'mapa-seios' },
           { paragrafo: 2, figura: foto(require('@/assets/images/topicos/m2v3-5-dor-face.jpg'), 'Dor na face e na testa durante a descida: o ar ficou preso no seio.') },
           {
@@ -326,7 +376,7 @@ export const ouvidos: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v3-5-spray.jpg'), 'O spray nasal alivia por pouco tempo e não substitui o tratamento.') },
           {
-            paragrafo: 5,
+            paragrafo: 6,
             tabela: {
               titulo: 'Como prevenir e amenizar · seios da face',
               colunas: ['Situação', 'O que fazer'],
@@ -352,10 +402,36 @@ export const ouvidos: Capitulo = {
           "O tipo de dor ajuda a achar a causa. Na classificação de **Ferjentsik e Aker**, a dor **aguda e breve na subida** sugere **pulpite irreversível**; a **dor surda e latejante na subida**, **pulpite reversível**; a **dor surda na descida**, **polpa necrótica**; e a dor **forte e persistente** na subida e na descida, **lesão na raiz**. A dor que vem do **seio maxilar** bloqueado imita dor de dente (Veja M2V3 - V). Um curativo mal selado pode deixar o ar entrar sob a pele.",
           "Os **prazos depois do dentista**, sem dor, inchaço nem sangramento, são: **restauração**, 24 horas, de preferência 1 semana; **extração simples**, 24 a 48 horas; **implante sem complicação**, **extração cirúrgica** e **tratamento de canal**, 72 horas; **levantamento do seio maxilar** ou **enxerto ósseo**, pelo menos **2 semanas**. Esses prazos vêm sobretudo da experiência com tripulações militares.",
           "Para o **tripulante**, a ANAC exige dentes suficientes para mastigar sem sintomas, **sem cárie profunda**, doença da gengiva ou da raiz, **sem curativo dentário** e **sem tratamento de canal em curso**, com odontograma a cada **5 anos** e radiografia panorâmica no exame inicial. Voar com uma barodontalgia é voar com uma dor que pode **distrair** ou **incapacitar** na descida.",
+          "**Tratamentos, prognóstico e tipo de voo.** A cárie pequena e sem dor pode aguardar a consulta, em conduta **expectante**, mas o tratamento deve terminar antes da viagem. O analgésico e o antibiótico, quando indicados, são o tratamento **não invasivo** da fase de dor e infecção. O tratamento definitivo é quase sempre **invasivo**, no consultório: **restauração**, **tratamento de canal**, **extração** e **implante**, com os prazos citados acima. O prognóstico é bom: tratado o dente, a barodontalgia desaparece. No avião **não pressurizado** e no **helicóptero**, as variações de pressão são maiores ou mais frequentes, e quem acabou de fazer um procedimento respeita o prazo com mais rigor.",
           "**Como prevenir e amenizar.** Termine o tratamento dentário **antes** de se expor à variação de pressão, e marque os procedimentos longe das viagens. Tripulantes fazem **exame dentário a cada 6 meses**. Quem faz tratamento em várias sessões pede um **curativo bem selado**. Depois de levantamento do seio, prefira voltar por terra ou mar; se o voo for inevitável, espere ao menos 2 semanas e confirme que o seio não dá sintomas. Leve o **analgésico** indicado pelo dentista se o voo não puder esperar.",
           "**Não voe hoje** com dor de dente que piora com a pressão, curativo provisório ou antes do prazo do procedimento. O dentista examina o dente, testa a **vitalidade da polpa** e pede **radiografia** para achar cárie, falha da restauração ou lesão na raiz.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · dentes",
+              colunas: ["Momento ou situação", "O que fazer"],
+              linhas: [
+                ["Antes da viagem", "Terminar o tratamento dentário e marcar procedimentos longe dos voos"],
+                ["Tratamento em várias sessões", "Pedir curativo bem selado"],
+                ["Depois do procedimento", "Respeitar o prazo sem dor, inchaço nem sangramento"],
+                ["Tripulante", "Exame dentário a cada 6 meses"],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · dentes",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Analgésico comum", "Alivia a dor até o tratamento", "Compatível se a condição de base permitir voar"],
+                ["Antibiótico", "Trata a infecção dentária", "Não voar com infecção e dor ativas"],
+                ["Anestesia local do dentista", "Efeito de poucas horas", "Esperar passar o efeito antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v3-6-dentista.jpg'), 'Restauração recente é uma das causas mais comuns de dor de dente no voo.') },
           { paragrafo: 2, midia: 'classes-barodontalgia' },
           { paragrafo: 3, midia: 'prazo-dentista' },
@@ -373,9 +449,9 @@ export const ouvidos: Capitulo = {
               ],
             },
           },
-          { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v3-6-radiografia.jpg'), 'A radiografia panorâmica mostra cáries, restaurações e lesões na raiz.') },
+          { paragrafo: 6, figura: foto(require('@/assets/images/topicos/m2v3-6-radiografia.jpg'), 'A radiografia panorâmica mostra cáries, restaurações e lesões na raiz.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

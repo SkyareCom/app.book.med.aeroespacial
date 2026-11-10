@@ -1,7 +1,9 @@
 // Formulário de liberação para voo seguro · bloco dos ouvidos, seios da face e dentes (M2V3).
 // Cada resposta tem um efeito para o passageiro e outro para o tripulante, com texto leigo e texto para o médico.
 // Fontes no registro de revisão de src/data/capitulos/ouvidos.ts (ICAO Doc 8984 Part III Cap. 12; RBAC 67.97, 67.101 e
-// 67.103; FAA 14 CFR 67.105, Guia do AME Item 30 e AIM 8-1-2; CDC Yellow Book; Felkai et al., Br Dent J 2023). Sem
+// 67.103; FAA 14 CFR 67.105, Guia do AME Item 30 e AIM 8-1-2; CDC Yellow Book; Felkai et al., Br Dent J 2023;
+// GPnotebook, ENT disorders and flying (CAA e IATA Medical Manual 11ª ed.): cirurgia do ouvido médio, até 9 dias não
+// apto, 10 dias ou mais com atestado do otorrino; NHS Worcestershire, tubo de ventilação: voar é seguro). Sem
 // fonte: [confirmar na referência].
 
 import type { EfeitoLiberacao, PerguntaLiberacao } from '../tipos';
@@ -46,12 +48,17 @@ export const liberacaoOuvidos: PerguntaLiberacao[] = [
       { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
       {
         rotulo: 'Sim, no estribo (estapedectomia)',
-        passageiro: e('avaliar', 'Confirme com o cirurgião quando pode voar.', 'Prótese do estribo: risco de deslocamento e vertigem com variação súbita de pressão.', '3.3'),
+        passageiro: e('avaliar', 'Espere ao menos 10 dias e a liberação do otorrino.', 'Cirurgia do ouvido médio: até o 9º dia, não voar; a partir do 10º, com atestado do otorrino (CAA e IATA, via GPnotebook). Prótese do estribo: risco de deslocamento e vertigem com variação súbita de pressão.', '3.3'),
         tripulante: e('nao-voar', 'Não voe nos primeiros 1 a 3 meses; depois, só com avaliação especializada.', 'ICAO 12.5.3–12.5.4: 1 a 3 meses sem voar; avaliação da tuba e sem vertigem na Valsalva; depois restrição a tripulação múltipla por 2 anos; FAA: decisão da FAA com relatório do cirurgião.', '3.3'),
       },
       {
+        rotulo: 'Tubo de ventilação no tímpano',
+        passageiro: e('cuidados', 'Pode voar: o tubo iguala a pressão sozinho.', 'Tubo de ventilação: voar é seguro com o tubo no lugar (NHS, Worcestershire).', '3.2'),
+        tripulante: e('avaliar', 'Leve o relatório do otorrino ao examinador.', 'ICAO 12.5.1: miringotomia sem restrição; avaliar a doença de base e a tuba.', '3.2'),
+      },
+      {
         rotulo: 'Sim, outra cirurgia do ouvido',
-        passageiro: e('avaliar', 'Confirme com o cirurgião quando pode voar.', 'Cirurgia do ouvido: prazo definido pelo cirurgião.', '3.3'),
+        passageiro: e('avaliar', 'Espere ao menos 10 dias e a liberação do otorrino.', 'Cirurgia do ouvido médio: até o 9º dia, não voar; a partir do 10º, com atestado do otorrino (CAA e IATA, via GPnotebook).', '3.3'),
         tripulante: e('avaliar', 'Só volte a voar com a liberação do examinador.', 'ICAO 12.5.1 e 12.5.7: miringotomia e mastoidectomia simples e timpanoplastia sem restrição se sem vertigem e com audição normal; mastoidectomia radical, avaliação completa; FAA: decisão da FAA.', '3.3'),
       },
     ],
