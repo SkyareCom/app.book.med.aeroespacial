@@ -78,6 +78,22 @@
 //   ordem, a disciplina ou a segurança (texto literal: [confirmar na referência]).
 // Condutas práticas sem número próprio (respirar devagar, avisar a tripulação, pedir água em vez de bebida, conversar com
 // um colega) são aplicações das fontes acima. Sem fonte: [confirmar na referência].
+// - Doenças, tratamentos e tipo de voo (acrescentado em 10/11/2026, a pedido do autor: "As doenças devem aparecer no
+//   texto e nao em tabelas isoladas / Todas com seus tratamentos indocados e influenciados pelos voos / Entrararem ma
+//   liberacao para voos / Prognostico relacionado ao voo / Periodo indicado de adiamento ou tepouso etc / Tratamentos
+//   cirurgicos ou invasivos destacados ou enfatizados" e "Tratamentos exectantes e nao invasivos também devem entrar"):
+//   FAA, Guide for Aviation Medical Examiners, Item 47, Antidepressants (consultado em 10/11/2026): sem sintomas ou
+//   história de psicose, ideação suicida, eletroconvulsoterapia, ISRS combinados ou outros psicotrópicos; ao parar o
+//   remédio, ao menos 60 dias sem ele, com relatório favorável. A página cita estabilidade clínica de 3 meses contínuos;
+//   o texto mantém os 6 meses do protocolo noticiado em 2024 [confirmar na referência]. AvWeb, 28/05/2026: a FAA
+//   acrescentou ao AME Guide orientações sobre psicoterapia ("Counseling or therapy is encouraged when medically
+//   appropriate"). Psychiatric Times, Travel and serious mental illness: desidratação e calor podem levar à intoxicação
+//   pelo remédio; exames de lítio e clozapina no destino; antipsicótico de depósito com data ajustada à viagem; fuso e
+//   horário dos remédios; só a psicose aguda com perigo para si ou outros impede a viagem. Elmenhorst et al., Thorax,
+//   03/05/2024 (WebMD, 17/06/2024): 48 adultos; após álcool moderado, sono em câmara com pressão de cabine: saturação
+//   abaixo de 90% em 201 de 240 minutos e frequência cardíaca mediana de 88 bpm. Comparador "tipo de voo": hipóxia acima
+//   de 10.000 ft (Veja M2V1), restrição a voo com copiloto (ICAO, Apêndice 2) e um só piloto no helicóptero são
+//   aplicações das fontes acima; prazo de viagem do passageiro após eletroconvulsoterapia: [confirmar na referência].
 
 import { liberacaoMente } from '../liberacao/mente';
 import type { Capitulo } from '../tipos';
@@ -100,9 +116,11 @@ export const mente: Capitulo = {
           "Os transtornos mentais são **comuns** também entre pilotos. Num questionário anônimo com 1.848 pilotos de linha, **12,6%** tinham sinais de provável **depressão**, e **4,1%** contaram ter tido pensamentos de morte nas duas semanas anteriores. A depressão foi mais frequente entre quem usava remédio para dormir e entre quem tinha sofrido **assédio**.",
           "O maior risco, muitas vezes, é **esconder**. A ICAO reconhece que proibir de forma absoluta faz o aviador evitar o tratamento ou não declarar a doença, e que o tripulante nem sempre conta ao examinador o remédio que toma. Por isso as autoridades caminharam para regras que permitem **tratar e voltar**: antidepressivos aceitos com acompanhamento e programas de apoio por pares.",
           "Para o tripulante, a regra é a mesma em toda a missão: o que pesa é a chance de **incapacitação**, súbita ou sutil. A ANAC e a ICAO listam os transtornos mentais que impedem a licença quando atrapalham o exercício seguro; a decisão é sempre individual, com psiquiatra e psicólogo. Para o passageiro, o ponto central é estar **estável** e com o tratamento em dia.",
-          "**Como cuidar da mente antes de voar.** Antes de cada voo, passe pelo checklist **IMSAFE** da FAA: doença, remédio, estresse, álcool nas últimas 24 horas, fadiga, alimentação e emoção. Não leve os problemas para o cockpit: se a cabeça não está no voo, diga. Durma, coma e beba água. O passageiro ansioso planeja a viagem com calma, leva o tratamento em dia e avisa a tripulação se precisar de ajuda.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças da mente que mais pesam no voo são a **depressão**, a **ansiedade** e o **medo de voar**, o **transtorno bipolar** e as **psicoses**, e o uso de **álcool** e outras substâncias. O tratamento vai do **expectante**, com acompanhamento nas reações leves ao estresse, ao **não invasivo**, que resolve a maioria dos casos: **psicoterapia**, como a terapia cognitivo-comportamental, e remédios. O tratamento **invasivo** é raro e fica para os casos graves: a **internação** e a **eletroconvulsoterapia**, feita sob anestesia. Tratada cedo, a doença costuma permitir a volta ao voo; escondida, piora e afasta por mais tempo. No avião **não pressurizado**, a hipóxia acima de 10.000 ft soma lentidão ao raciocínio; no **helicóptero**, muitas operações têm um só piloto, e a restrição a voar com copiloto, comum na liberação, não se cumpre.",
+          "**Como prevenir e amenizar.** Antes de cada voo, passe pelo checklist **IMSAFE** da FAA: doença, remédio, estresse, álcool nas últimas 24 horas, fadiga, alimentação e emoção. Não leve os problemas para o cockpit: se a cabeça não está no voo, diga. Durma, coma e beba água. O passageiro ansioso planeja a viagem com calma, leva o tratamento em dia e avisa a tripulação se precisar de ajuda.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-mente' },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v7-1-checklist.jpg'), 'Antes de conferir o avião, o piloto confere a si mesmo.') },
           { paragrafo: 2, midia: 'imsafe' },
           {
@@ -121,7 +139,7 @@ export const mente: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v7-1-hotel.jpg'), 'Pernoite longe de casa, fuso e sono curto pesam sobre o humor.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · a mente no voo',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -148,9 +166,24 @@ export const mente: Capitulo = {
           "Para o tripulante, a ANAC e a ICAO não aceitam, de início, depressão tratada com antidepressivo; o psiquiatra pode liberar depois de avaliar o caso. A ICAO orienta: com um **ISRS** aceito, dose **estável há pelo menos 4 semanas**, efeitos mínimos, sem pensamento suicida, sem psicose e com sono normal, a autoridade pode liberar, em geral com **copiloto**. Se a dose mudar, para de voar; ao retirar o remédio, fica em solo durante a retirada e mais **2 semanas**.",
           "A **FAA** aceita **8 antidepressivos**: fluoxetina, sertralina, citalopram e escitalopram, bupropiona, desvenlafaxina, duloxetina e venlafaxina, **um de cada vez**, depois de **6 meses** estável na mesma dose e sem efeito colateral importante, com autorização especial. Na **ansiedade**, a ICAO pede **6 meses** sem sintomas e sem remédio psicotrópico; a reação a um estresse forte, como luto ou separação, afasta por um tempo e é reavaliada depois.",
           "Voar deprimido ou em crise de ansiedade é voar com **incapacitação sutil**: mais lento, distraído, indeciso. Para o tripulante, esconder o diagnóstico ou o remédio do examinador é infração à norma e pode invalidar o certificado. Para o passageiro, a depressão e a ansiedade **estáveis** não impedem o voo; o **medo de voar** pode virar hiperventilação a bordo e tem tratamento: a terapia cognitivo-comportamental funciona para muitas pessoas.",
+          "**Tratamentos, prognóstico e prazos.** Na depressão leve e na reação ao estresse, a conduta pode ser **expectante**, com acompanhamento. O tratamento **não invasivo** é a base: **psicoterapia**, que também trata o **medo de voar** e o pânico, e **antidepressivo**, de preferência um **ISRS**. O tratamento **invasivo**, a **eletroconvulsoterapia**, fica para a depressão grave ou resistente; para o tripulante, tê-la feito **exclui** a via do antidepressivo pelo examinador da FAA, e a decisão passa à autoridade. Os prazos do tripulante: mudar a dose tira do voo; ao parar o remédio, solo durante a retirada e mais **2 semanas** (ICAO), ou **60 dias** sem o remédio (FAA); a ansiedade pede **6 meses** sem sintomas e sem remédio. O passageiro em crise ou com pensamentos de morte **adia** a viagem e procura ajuda. A ICAO aceita o ISRS estável com restrição a voar com copiloto; no **helicóptero** de um só piloto e no avião leve **não pressurizado**, essa restrição muitas vezes não se cumpre.",
           "**Como prevenir e amenizar.** Procure tratamento cedo: quanto antes, mais rápido se volta. Tripulante, fale com o examinador antes de começar o remédio e siga o protocolo da autoridade. Passageiro com medo de voar: aprenda técnicas de respiração antes, sente-se no corredor se a cabine aperta e conte à tripulação. Ansiolítico só se você já usou antes, sem problema; nunca teste um remédio novo no voo. Se pensar em se machucar, peça ajuda agora: no Brasil, o **CVV** atende pelo **188**, de graça, 24 horas.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · depressão e ansiedade",
+              colunas: ["Situação", "O que fazer"],
+              linhas: [
+                ["Tristeza ou ansiedade que não passa", "Procurar tratamento cedo; tripulante fala com o examinador antes do remédio"],
+                ["Medo de voar", "Terapia cognitivo-comportamental; respirar devagar; avisar a tripulação"],
+                ["Em uso de antidepressivo", "Tomar no horário, ajustado ao fuso; levar receita e relatório"],
+                ["Mudança de dose ou retirada", "Tripulante fica em solo até estabilizar"],
+                ["Pensamento de morte", "Não voar; CVV 188 ou ajuda médica imediata"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v7-2-consulta.jpg'), 'Tratar cedo e contar ao examinador é o caminho mais curto de volta ao voo.') },
           { paragrafo: 2, midia: 'animacao-antidepressivo' },
           { paragrafo: 3, midia: 'prazo-antidepressivo' },
@@ -200,9 +233,23 @@ export const mente: Capitulo = {
           "Para o passageiro, o que decide é a **estabilidade**. Quem tem psicose bem controlada pode voar, às vezes com um **acompanhante** que garanta o remédio e ajude se houver problema; nos casos mais difíceis, um profissional de saúde. Comportamento **imprevisível, agressivo, desorganizado ou perturbador** contraindica o voo, e a companhia pode recusar o embarque. O médico e a companhia combinam a liberação pelo **MEDIF**.",
           "**Surto a bordo: como abordar.** Sintomas psiquiátricos respondem por até **3%** das emergências médicas em voo, e intoxicação ou abstinência por outro tanto. A **tripulação** conduz a situação e avisa o comandante; o profissional de saúde que se oferece diz a sua formação e não atua se bebeu ou tomou remédio que afete o julgamento. O primeiro passo é a **conversa**: criar vínculo, tentar acalmar e perguntar pelo diagnóstico, pelos remédios, pela última dose e se eles estão a bordo. Depois, procurar outra causa: **álcool e drogas**, intoxicação ou abstinência, sinais vitais e respiração, com água e oxigênio se preciso.",
           "Se a conversa não basta, o médico voluntário pode considerar um **benzodiazepínico** ou um **antipsicótico**, se houver no kit: o kit mínimo exigido pela FAA não precisa ter nenhum dos dois, e a AsMA recomenda incluir haloperidol e um sedativo injetável. Se o passageiro fica **agressivo**, a **segurança vem antes do tratamento**: a tripulação segue o protocolo da empresa, que pode incluir **contenção** ou **pouso alternado**. Pela Convenção de Tóquio, o comandante pode impor medidas razoáveis, inclusive contenção, e pedir ajuda a tripulantes e passageiros; pelo Código Brasileiro de Aeronáutica, pode desembarcar quem põe o voo em risco. Quem decide o pouso alternado é o comandante, com o despacho da empresa.",
+          "**Tratamentos, prognóstico e tipo de voo.** O transtorno bipolar e as psicoses não têm conduta expectante: o tratamento **não invasivo** é contínuo, com **estabilizador do humor**, como o **lítio**, ou **antipsicótico**, e psicoterapia. O **invasivo** é a **internação** na crise e, nos casos graves, a **eletroconvulsoterapia**. Para o passageiro, o prognóstico no voo depende da **estabilidade**: quem está estável voa; quem está em crise, agitado ou com risco para si ou para outros **adia** até a alta e a liberação do psiquiatra. O lítio pede cuidado extra: a **desidratação** pode levar à **intoxicação** pelo remédio, então beba água e evite álcool no voo. Quem toma antipsicótico de depósito combina a data da injeção com a viagem. Para o tripulante, a psicose breve pode ser liberada depois de **1 ano** estável sem antipsicótico; a mania leva a impedimento de longo prazo. No avião leve **não pressurizado** e no **helicóptero**, não há tripulação de cabine para ajudar numa crise.",
           "**Como prevenir e amenizar.** Mantenha o remédio no horário, ajustado ao fuso com o médico, e leve o suficiente na bagagem de mão. Durma antes do voo e evite álcool. Viaje com quem conhece a sua rotina e avise a companhia se for sozinho. Se surgir agitação a bordo, peça ajuda à tripulação cedo, antes de a crise crescer.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 8,
+            tabela: {
+              titulo: "Remédios e voo · bipolar e psicose",
+              colunas: ["Remédio ou tratamento", "Efeito que importa no voo", "Passageiro e tripulante"],
+              linhas: [
+                ["Lítio", "Desidratação pode levar à intoxicação", "Passageiro: beber água, evitar álcool; tripulante: a doença de base impede"],
+                ["Antipsicótico oral", "Sono e reflexos lentos em parte das pessoas", "Passageiro: dose no horário; tripulante: psicose breve só após 1 ano sem antipsicótico (ICAO)"],
+                ["Antipsicótico de depósito", "Injeção em data marcada", "Passageiro: combinar a data com a viagem"],
+                ["Internação ou eletroconvulsoterapia", "Tratamento da crise grave", "Passageiro: voar só com alta e liberação; tripulante: decisão da autoridade"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v7-3-acompanhante.jpg'), 'Com a doença estável, um acompanhante de confiança torna a viagem mais segura.') },
           { paragrafo: 2, midia: 'quadros-psiquiatricos' },
           {
@@ -234,7 +281,7 @@ export const mente: Capitulo = {
             },
           },
           {
-            paragrafo: 8,
+            paragrafo: 9,
             tabela: {
               titulo: 'Como prevenir e amenizar · bipolar e psicose',
               colunas: ['Momento', 'O que fazer'],
@@ -260,9 +307,23 @@ export const mente: Capitulo = {
           "A regra para o tripulante tem números. A **FAA** proíbe atuar até **8 horas** depois de qualquer bebida alcoólica, sob influência de álcool ou droga, ou com **0,04 g/dL** ou mais no sangue ou no ar expirado. A ICAO lembra que a tradição é **12 horas**, mas que uma intoxicação maior pede mais tempo; o checklist IMSAFE da FAA pergunta por álcool nas últimas **24 horas**. No Brasil, o **RBAC 120** obriga as empresas a ter um programa de prevenção, com exames prévios, **aleatórios**, depois de acidente e por suspeita.",
           "Dependência e abuso suspendem o certificado. A ICAO cita como tradição **3 anos** de sobriedade, mas programas com colegas, empresa, médico e autoridade devolvem pilotos ao voo em **3 a 4 meses**, com acompanhamento de pelo menos **2 anos**. Nos EUA, é o programa **HIMS**, criado nos anos 1970 por pilotos e FAA: tratamento interno de ao menos **28 dias**, abstinência total, testes aleatórios e monitoramento que costuma durar de **5 a 7 anos**.",
           "Voar sob efeito é voar com o julgamento comprometido, e é **infração** à norma. Para o passageiro, usar o álcool para dormir no voo não ajuda o sono, e o comportamento perturbador pode impedir o voo. Quem tem dependência deve se **desintoxicar antes** de viajar, para não ter abstinência em pleno voo. Remédio para dormir também conta: sedativos de curta ação pedem **8 a 12 horas** antes de qualquer tarefa de aviação (Veja M2V8).",
+          "**Tratamentos, prognóstico e tipo de voo.** No uso eventual, a conduta é de hábito: respeitar os prazos e não beber antes de voar. Na **dependência**, o tratamento começa pela **desintoxicação**, que o passageiro deve fazer **antes** de viajar, porque a **abstinência** também causa emergências a bordo. Segue com tratamento **não invasivo**, com psicoterapia, grupos e **abstinência total**, e às vezes com **internação**, de ao menos **28 dias** no programa HIMS. O prognóstico é bom com acompanhamento: programas com colegas, empresa, médico e autoridade devolvem pilotos ao voo em **3 a 4 meses**, com acompanhamento de ao menos **2 anos**. Na cabine **pressurizada**, num estudo em câmara, quem dormiu depois de beber passou **201 de 240 minutos** com a saturação de oxigênio abaixo de **90%**. No avião **não pressurizado** acima de 10.000 ft, a hipóxia soma-se ao álcool no julgamento; no **helicóptero**, valem as mesmas **8 horas** e **0,04 g/dL**.",
           "**Como prevenir e amenizar.** Tripulante: nada de álcool nas horas antes do voo, contando com folga, e nunca beber para dormir no pernoite. Se a bebida virou problema, procure o programa da empresa ou o programa de apoio por pares: a volta ao voo existe, e o silêncio é o que mais custa. Passageiro: beba água, modere o álcool, e quem está em tratamento de dependência viaja com o tratamento em dia e, se preciso, com acompanhante.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · álcool e substâncias",
+              colunas: ["Situação", "Efeito que importa no voo", "Passageiro e tripulante"],
+              linhas: [
+                ["Bebida antes de dormir no voo", "Saturação abaixo de 90% em boa parte do sono, na câmara", "Passageiro: evitar; tripulante: proibido nas 8 h antes"],
+                ["Abstinência de álcool", "Pode causar emergência a bordo", "Passageiro: desintoxicar antes de viajar"],
+                ["Sedativos e opioides", "Somam efeito ao álcool", "Tripulante: não voar sob efeito"],
+                ["Tratamento da dependência", "Internação de ao menos 28 dias e abstinência total (HIMS)", "Tripulante: volta com testes e acompanhamento por anos"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v7-4-agua.jpg'), 'No pernoite antes do voo, água no lugar da bebida.') },
           { paragrafo: 2, midia: 'alcool-voo' },
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v7-4-teste.jpg'), 'O teste de álcool no ar expirado pode ser feito de surpresa, antes do voo.') },
@@ -281,7 +342,7 @@ export const mente: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · álcool',
               colunas: ['Momento', 'O que fazer'],
@@ -307,9 +368,24 @@ export const mente: Capitulo = {
           "Os testes têm **limites**. A ICAO lembra que o teste psicológico raramente funciona como triagem: testes de personalidade sozinhos não preveem doença mental nem garantem a aptidão para a carreira. Eles ajudam nas mãos de um psiquiatra, junto com a entrevista, e os testes **neuropsicológicos** servem para medir o efeito de uma doença ou lesão e acompanhar a evolução.",
           "Por isso, a ferramenta mais importante é a **conversa honesta**. A história contada pelo próprio tripulante, pela família e pelos registros médicos pesa mais que qualquer teste. O examinador pergunta sobre humor, sono, álcool, remédios e estresse; a FAA pede que o piloto seja totalmente honesto sobre o histórico e os remédios.",
           "Omitir um diagnóstico ou um remédio no exame é **infração** e pode invalidar o certificado e o seguro, além de deixar o problema sem tratamento. O caminho inverso funciona melhor: declarar, tratar e cumprir o prazo da autoridade. Para o passageiro, não há avaliação psicológica; o que existe é o **MEDIF**, quando o médico e a companhia combinam a viagem.",
-          "**Como se preparar.** Durma bem na véspera, vá descansado e sem álcool. Leve os relatórios do seu médico, se fizer tratamento. Responda com sinceridade: o examinador está ali para avaliar o risco no voo, não para julgar a vida. Se não entender uma pergunta, pergunte. Se o resultado pedir acompanhamento, ele costuma ser o caminho de volta, não o fim da carreira.",
+          "**Tratamentos e a avaliação.** Estar em tratamento não reprova ninguém por si só. A **psicoterapia**, tratamento **não invasivo**, é incentivada pela FAA quando indicada e conta a favor quando relatada. Os **remédios** precisam ser declarados: o antidepressivo segue o protocolo da autoridade, e o sedativo pede intervalo antes do voo. Os tratamentos **invasivos**, como a **eletroconvulsoterapia** e a **internação** psiquiátrica, pedem parecer do psiquiatra e decisão da autoridade antes da volta ao voo. O prognóstico da carreira é melhor para quem declara: o problema contado, com relatório do médico, vira acompanhamento; o escondido vira infração. A avaliação é a mesma para quem voa avião **pressurizado**, **não pressurizado** ou **helicóptero**; o que muda é a classe do certificado.",
+          "**Como prevenir e amenizar.** Como se preparar: durma bem na véspera, vá descansado e sem álcool. Leve os relatórios do seu médico, se fizer tratamento. Responda com sinceridade: o examinador está ali para avaliar o risco no voo, não para julgar a vida. Se não entender uma pergunta, pergunte. Se o resultado pedir acompanhamento, ele costuma ser o caminho de volta, não o fim da carreira.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · avaliação psicológica",
+              colunas: ["Remédio ou tratamento", "Na avaliação", "Prazo para voar"],
+              linhas: [
+                ["Antidepressivo ISRS", "Declarar; segue o protocolo da autoridade", "ICAO: dose estável há 4 semanas; FAA: 6 meses"],
+                ["Sedativo de curta ação", "Declarar", "ICAO: 8 a 12 h antes de tarefa de aviação"],
+                ["Parar um remédio", "Declarar a data", "ICAO: retirada e mais 2 semanas; FAA: 60 dias sem o remédio"],
+                ["Psicoterapia", "Relatar; conta a favor", "Sem prazo próprio"],
+                ["Eletroconvulsoterapia ou internação", "Declarar; parecer do psiquiatra", "Decisão da autoridade"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v7-5-teste.jpg'), 'Os testes avaliam personalidade, atenção, memória e raciocínio.') },
           { paragrafo: 2, midia: 'avaliacao-psicologica' },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v7-5-entrevista.jpg'), 'A conversa honesta com o examinador pesa mais que qualquer teste.') },
@@ -327,9 +403,9 @@ export const mente: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
-              titulo: 'Como se preparar · avaliação psicológica',
+              titulo: 'Como prevenir e amenizar · avaliação psicológica',
               colunas: ['Momento', 'O que fazer'],
               linhas: [
                 ['Véspera', 'Dormir bem; nada de álcool'],
@@ -353,9 +429,35 @@ export const mente: Capitulo = {
           "A ICAO conta que, quando os pilotos souberam que tratar a dependência de álcool **não encerrava a carreira**, acabou a \"conspiração do silêncio\": os colegas passaram a ajudar em vez de esconder. Os programas que juntam **colegas**, empresa, médico e autoridade devolvem pilotos ao voo com acompanhamento, e o mesmo princípio vale para a depressão e a ansiedade.",
           "Os sinais de que um colega não está bem: mudança de humor, isolamento, **irritação**, erros fora do comum, faltas, cheiro de álcool, falar em desistir de tudo. A abordagem é simples: em particular, dizer o que notou, ouvir sem julgar e oferecer o caminho, o programa de apoio, o médico, o examinador. Se o colega falar em morrer ou se machucar, não o deixe sozinho e busque ajuda na hora.",
           "Calar tem custo dos dois lados: o colega segue sem tratamento e o risco sobe para todos a bordo. Para o tripulante, voar sabendo que não está apto é infração à norma; para quem percebe, a obrigação é com a segurança, e o programa de apoio existe para fazer isso **sem destruir a carreira** de ninguém. Para o passageiro, a ajuda vem da tripulação: avisar cedo é sempre melhor.",
-          "**Como pedir e oferecer ajuda.** Se você não está bem, fale com alguém de confiança, com o programa de apoio da empresa ou do sindicato, ou com o seu médico. Se um colega não está bem, pergunte, ouça e acompanhe até a ajuda. Se houver risco de suicídio, procure ajuda imediata: no Brasil, o **CVV** atende pelo **188**, de graça, 24 horas; em emergência, o **SAMU**, pelo 192.",
+          "**Tratamento, retorno e tipo de voo.** O apoio por pares não substitui o tratamento: ele **encaminha**. Dali o colega segue para o que o caso pede: conduta **expectante**, com escuta e acompanhamento, nas crises da vida, como luto e separação; tratamento **não invasivo**, com psicoterapia e remédio, na depressão e na ansiedade; e, nos casos graves, **internação** ou programa para a dependência. O prognóstico é bom: quando os pilotos souberam que tratar não encerrava a carreira, os colegas passaram a ajudar em vez de esconder. A volta ao voo segue o **prazo** de cada doença e a decisão do examinador. Na aviação de linha **pressurizada** europeia, o programa de pares é obrigatório desde 2021; quem voa sozinho, no **helicóptero** ou no avião leve **não pressurizado**, não tem um colega ao lado para notar a mudança, e o autoexame do IMSAFE pesa ainda mais.",
+          "**Como prevenir e amenizar.** Como pedir e oferecer ajuda: se você não está bem, fale com alguém de confiança, com o programa de apoio da empresa ou do sindicato, ou com o seu médico. Se um colega não está bem, pergunte, ouça e acompanhe até a ajuda. Se houver risco de suicídio, procure ajuda imediata: no Brasil, o **CVV** atende pelo **188**, de graça, 24 horas; em emergência, o **SAMU**, pelo 192.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Liberação para voo · retorno após tratamento",
+              colunas: ["Situação", "Passageiro", "Tripulante"],
+              linhas: [
+                ["Crise da vida, sem doença", "Pode voar", "Pode voar se apto no IMSAFE"],
+                ["Depressão ou ansiedade tratada", "Pode voar", "Prazo da doença e parecer do psiquiatra"],
+                ["Dependência em programa", "Pode voar, sem álcool", "Retorno pelo programa (HIMS ou PPSP)"],
+                ["Crise com risco para si", "Não voar; ajuda imediata", "Não voar; ajuda imediata"],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · retorno após tratamento",
+              colunas: ["Tratamento", "O que pesa no retorno"],
+              linhas: [
+                ["Psicoterapia", "Relatar ao examinador; não impede por si só"],
+                ["Antidepressivo", "Dose estável e protocolo da autoridade"],
+                ["Tratamento da dependência", "Abstinência, testes aleatórios e acompanhamento"],
+              ],
+            },
+          },
           { paragrafo: 1, video: { fonte: require('@/assets/videos/m2v7-pares.mp4'), legenda: 'Uma conversa entre colegas, em particular, é muitas vezes o primeiro passo do tratamento.' } },
           { paragrafo: 2, figura: foto(require('@/assets/images/topicos/m2v7-6-pares.jpg'), 'O apoio por pares é confidencial e não punitivo.') },
           { paragrafo: 3, midia: 'apoio-colega' },
@@ -375,7 +477,7 @@ export const mente: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v7-6-telefone.jpg'), 'Pedir ajuda cedo é sinal de responsabilidade, não de fraqueza.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

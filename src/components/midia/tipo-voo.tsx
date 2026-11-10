@@ -92,6 +92,18 @@ export function TipoVooCerebro() {
   return <TipoVoo titulo="O cérebro em cada tipo de voo" dados={CEREBRO} />;
 }
 
+// ---------------------------------------------------------------- M2V7 · Mente (registro em mente.ts)
+const MENTE: Linha[] = [
+  { nome: 'Depressão ou ansiedade', pressurizado: 'ICAO: ISRS estável aceito com restrição a voar com copiloto.', nao: 'Hipóxia acima de 10.000 ft deixa o raciocínio mais lento.', helicoptero: 'Muitas vezes um só piloto: a restrição a voar com copiloto não se cumpre.' },
+  { nome: 'Medo de voar', pressurizado: 'Respirar devagar e avisar a tripulação; terapia antes da viagem.', nao: 'Avião pequeno sente mais a turbulência; explique o voo antes.', helicoptero: 'Ruído e vibração altos: fone e explicação antes ajudam.' },
+  { nome: 'Bipolar ou psicose', pressurizado: 'Passageiro estável voa, às vezes com acompanhante; em crise, adia.', nao: 'Sem tripulação de cabine para ajudar numa crise.', helicoptero: 'Sem tripulação de cabine; paciente em crise só com equipe médica.' },
+  { nome: 'Álcool', pressurizado: 'Dormir depois de beber: saturação abaixo de 90% em 201 de 240 minutos (câmara).', nao: 'Acima de 10.000 ft sem oxigênio, a hipóxia soma-se ao álcool.', helicoptero: 'Mesma regra: 8 horas e 0,04 g/dL; o voo baixo não perdoa reflexo lento.' },
+  { nome: 'Remédio que dá sono', pressurizado: 'Passageiro só se já usou antes; tripulante: 8 a 12 h antes.', nao: 'Somado à hipóxia, piora o julgamento.', helicoptero: 'Proibido em serviço: o voo baixo exige reação rápida.' },
+];
+export function TipoVooMente() {
+  return <TipoVoo titulo="A mente em cada tipo de voo" dados={MENTE} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });
