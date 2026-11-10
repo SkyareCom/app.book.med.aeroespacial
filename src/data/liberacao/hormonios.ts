@@ -174,4 +174,26 @@ export const liberacaoHormonios: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'hormonios-cirurgia',
+    pergunta: 'Fez cirurgia da tireoide ou cirurgia para emagrecer nos últimos 3 meses?',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Cirurgia da tireoide',
+        passageiro: e('avaliar', 'Viaje com a liberação do cirurgião.', 'Prazo do passageiro: conforme a recuperação e o cirurgião [confirmar na referência].', '9.4'),
+        tripulante: e('nao-voar', 'Não voe até a recuperação e a função da tireoide estável.', 'UK CAA Thyroid Dysfunction: cirurgia, inapto até a recuperação e eutireoideo; exame anual.', '9.4'),
+      },
+      {
+        rotulo: 'Cirurgia bariátrica aberta ou por vídeo',
+        passageiro: e('avaliar', 'Espere cerca de 10 dias e a liberação do cirurgião.', 'UK CAA: evitar voo nos 10 dias seguintes à cirurgia abdominal (Veja M2V10).', '9.5'),
+        tripulante: e('nao-voar', 'Não voe; a volta exige relatórios e avaliação do examinador.', 'UK CAA Obesity information sheet (v31, 29/07/2026): inapto por até 3 meses, conforme o procedimento e a recuperação; relatórios de recuperação completa sem efeitos incapacitantes; avaliação final do AME.', '9.5'),
+      },
+      {
+        rotulo: 'Procedimento endoscópico para emagrecer',
+        passageiro: e('cuidados', 'Confirme o prazo com o médico que fez o procedimento.', 'Prazo conforme o procedimento [confirmar na referência].', '9.5'),
+        tripulante: e('avaliar', 'Fale com o examinador; o prazo costuma ser bem menor.', 'UK CAA Obesity information sheet: procedimentos endoscópicos reduzem bastante o período de inaptidão.', '9.5'),
+      },
+    ],
+  },
 ];

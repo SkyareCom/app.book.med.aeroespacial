@@ -116,6 +116,18 @@ export function TipoVooSono() {
   return <TipoVoo titulo="O sono em cada tipo de voo" dados={SONO} />;
 }
 
+// ---------------------------------------------------------------- M2V9 · Hormônios (registro em hormonios.ts)
+const HORMONIOS: Linha[] = [
+  { nome: 'Diabetes com insulina', pressurizado: 'Passageiro voa; Reino Unido certifica piloto de linha com copiloto.', nao: 'Subida maior: mais bolhas na bomba; hipóxia acima de 10.000 ft imita a hipoglicemia.', helicoptero: 'Um só piloto: o protocolo com copiloto não se cumpre.' },
+  { nome: 'Diabetes sem insulina', pressurizado: 'Medir a cada 4 a 6 horas nos voos longos.', nao: 'Lanche à mão: escalas e atrasos sem serviço de bordo.', helicoptero: 'Prazo de cada remédio novo antes de voar (FAA).' },
+  { nome: 'Tireoide', pressurizado: 'Estável: sem restrição; levotiroxina a cada 24 h com o fuso.', nao: 'Descontrolada: a taquicardia tem menos folga na hipóxia.', helicoptero: 'Visão dupla da doença de Graves pesa no voo baixo.' },
+  { nome: 'Obesidade', pressurizado: 'Voo longo: trombose; assento do corredor e caminhar.', nao: 'Hipoventilação: mais hipóxia acima de 10.000 ft.', helicoptero: 'Espaço e peso a bordo entram no planejamento.' },
+  { nome: 'Cirurgia bariátrica', pressurizado: 'Passageiro: cerca de 10 dias, com o cirurgião.', nao: 'Tripulante: até 3 meses inapto (Reino Unido).', helicoptero: 'Tripulante: até 3 meses inapto (Reino Unido).' },
+];
+export function TipoVooHormonios() {
+  return <TipoVoo titulo="Os hormônios em cada tipo de voo" dados={HORMONIOS} />;
+}
+
 const styles = StyleSheet.create({
   marca: { paddingLeft: Espaco.sm, borderLeftWidth: 2, borderLeftColor: Cores.dourado },
 });
