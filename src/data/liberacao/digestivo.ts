@@ -531,5 +531,100 @@ export const liberacaoDigestivo: PerguntaLiberacao[] = [
         }
       }
     ]
+  },
+  {
+    id: "digestivo-tratamento",
+    pergunta: "Está em algum destes tratamentos ou teve algum destes quadros?",
+    ajuda: "Os prazos do tripulante variam entre autoridades; o examinador decide.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: {
+          nivel: "liberado",
+          leigo: "",
+          medico: ""
+        },
+        tripulante: {
+          nivel: "liberado",
+          leigo: "",
+          medico: ""
+        }
+      },
+      {
+        rotulo: "Tratamento para erradicar o H. pylori agora",
+        passageiro: {
+          nivel: "liberado",
+          leigo: "Pode voar; tome os remédios no horário.",
+          medico: "Sem restrição ao passageiro.",
+          topico: "10.2"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não voe durante a erradicação; volte com o remédio de manutenção.",
+          medico: "UK CAA (digestive GM): inapto durante a erradicação do H. pylori; IBP e anti-H2 aceitos na manutenção.",
+          topico: "10.2"
+        }
+      },
+      {
+        rotulo: "Doença inflamatória intestinal em remissão",
+        passageiro: {
+          nivel: "cuidados",
+          leigo: "Pode voar; leve os remédios e bolsas de ostomia de sobra, se usar.",
+          medico: "Remissão estável; plano para crise.",
+          topico: "10.3"
+        },
+        tripulante: {
+          nivel: "avaliar",
+          leigo: "Fale com o examinador; a remissão precisa estar estável.",
+          medico: "UK CAA: 1ª classe com 6 meses de remissão e pouco remédio, começando com limitação de voo com copiloto; sem corticoide sistêmico para controle. FAA: AASI Colitis.",
+          topico: "10.3"
+        }
+      },
+      {
+        rotulo: "Varizes do esôfago ou ligadura recente",
+        passageiro: {
+          nivel: "avaliar",
+          leigo: "Voe só com o hepatologista de acordo e sem sangramento recente.",
+          medico: "Avaliar sangramento, hemoglobina e encefalopatia; CDC: adiar com Hb < 8,5 g/dL.",
+          topico: "10.4"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não voe; as varizes tornam inapto.",
+          medico: "UK CAA (digestive GM): varizes esofágicas, inapto nas classes 1 e 2.",
+          topico: "10.4"
+        }
+      },
+      {
+        rotulo: "Pancreatite nos últimos 3 meses",
+        passageiro: {
+          nivel: "avaliar",
+          leigo: "Voe só depois da alta, sem dor forte e comendo.",
+          medico: "Avaliação clínica; sem prazo fixo ao passageiro.",
+          topico: "10.5"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não voe até o prazo e a liberação.",
+          medico: "FAA: por cálculo, episódio único, 1 mês após a alta com vesícula retirada; por álcool ou recorrente, 3 meses e análise da FAA. UK CAA: inapto até avaliação e causa removida.",
+          topico: "10.5"
+        }
+      },
+      {
+        rotulo: "Transplante de fígado",
+        passageiro: {
+          nivel: "cuidados",
+          leigo: "Pode voar estável; leve os imunossupressores na bagagem de mão.",
+          medico: "Imunossupressão e vacinação (Veja M2V11 - V).",
+          topico: "10.4"
+        },
+        tripulante: {
+          nivel: "avaliar",
+          leigo: "Fale com o examinador; pode voltar com avaliação favorável.",
+          medico: "UK CAA (digestive GM): após transplante, apto conforme avaliação gastroenterológica satisfatória.",
+          topico: "10.4"
+        }
+      }
+    ]
   }
 ];

@@ -17,6 +17,23 @@
 // https://www.cdc.gov/yellow-book/hcp/travelers-with-additional-considerations/travelers-with-chronic-illnesses.html
 // https://www.cdc.gov/yellow-book/hcp/travelers-with-additional-considerations/immunocompromised-travelers.html
 // https://www.cdc.gov/yellow-book/hcp/travelers-with-additional-considerations/travelers-with-hiv.html
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("As doenças devem aparecer no texto e nao em
+// tabelas isoladas / Todas com seus tratamentos indocados e influenciados pelos voos / Entrararem ma liberacao para voos /
+// Prognostico relacionado ao voo / Periodo indicado de adiamento ou tepouso etc / Tratamentos cirurgicos ou invasivos
+// destacados ou enfatizados" e "Tratamentos exectantes e nao invasivos também devem entrar"). Fontes novas:
+// OMS, Tuberculosis and air travel: guidelines for prevention and control, 3ª ed. (2013; cópia do Georgia DPH):
+// tuberculose sensível, não voar até 2 baciloscopias negativas (a maioria deixa de transmitir com cerca de 2 semanas de
+// tratamento adequado, seção 5.2); multirresistente e extensivamente resistente, 2 culturas negativas seguidas.
+// CDC, Measles airline recommendations: tripulante com sarampo isolado até 4 dias após o início do exantema; febre com
+// exantema ou sarampo: não viajar até liberação médica ou sanitária.
+// British Thoracic Society 2022 (registro de hipoxia.ts, M2V1): 4 semanas após retirar o dreno de cirurgia torácica (2 se
+// essencial); 1 semana após biópsia percutânea, procedimento pleural ou broncoscopia com biópsia; TVP ou TEP recentes, 2
+// semanas. IATA (registro de coracao.ts, M2V2 - VII): trombose com anticoagulante estável; embolia a partir de 5 dias.
+// UK CAA: 10 dias após cirurgia abdominal (registro de digestivo.ts, M2V10). Cirurgia do crânio 10 a 14 dias (registro
+// de cerebro.ts, M2V6). Linhas de tratamento (ferro, vitaminas, anticoagulante, transfusão, endoscopia, vigilância ativa,
+// quimioterapia, radioterapia, cirurgia, antirretroviral para todos): conhecimento médico geral, sem número próprio.
+// Comparador "tipo de voo": aplicações das fontes acima (hipóxia acima de 10.000 ft, Veja M2V1; expansão de gás, Veja
+// M1V1 - II). Prazo de voo após transfusão: [confirmar na referência].
 // Padrão: docs/modelo-sistemas.md; prosa progressiva sem cabeçalhos artificiais.
 // Números citados do CDC referem-se ao passageiro, não a critério de CMA.
 // Fotos e vídeo serão acrescentados após produção unitária, sem placeholders.
@@ -40,9 +57,11 @@ export const sangueImunidade: Capitulo = {
           "**Para o passageiro**, estabilidade clínica, saturação, hemograma e limitações funcionais orientam a avaliação individual; receber alta ou ter diagnóstico controlado não equivale necessariamente a estar apto para viagem longa. **Para o tripulante**, além de tolerar a cabine, é necessário manter atenção, resistência e segurança operacional. A ANAC considera anemia, doenças hematológicas, coagulação e risco de incapacitação nas regras do certificado médico, com distinção entre classes.",
           "Uma alteração hematológica importante pode provocar **cansaço intenso, palpitações, tontura, falta de ar ou desmaio**. Sangramento, trombose ou infecção aguda podem surgir ou se agravar longe do atendimento. O voo prolongado também favorece estase venosa pela imobilidade, em especial após cirurgia, em atividade neoplásica e com trombose prévia. Essa vulnerabilidade decorre do estado de coagulação e do fluxo sanguíneo, não do simples fato de estar dentro de um avião (Veja M2V2).",
           "Exames úteis incluem hemograma, plaquetas e estudos de coagulação quando indicados, sempre interpretados com sintomas, tratamento e evolução. **Anticoagulantes** reduzem eventos trombóticos em situações específicas, mas exigem avaliação do risco hemorrágico e das interações; jamais devem ser interrompidos apenas para viajar. A quimioterapia, a imunossupressão e alguns antivirais também exigem atenção a efeitos adversos e à continuidade do esquema prescrito.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças deste voo que mais pesam na viagem aérea são a **anemia**, a **doença falciforme**, os distúrbios da coagulação e a **trombose**, o **câncer**, as **infecções transmissíveis** e a imunidade reduzida, como no **HIV** não controlado. O tratamento vai do **expectante**, na anemia leve e estável e no traço falciforme, ao **não invasivo**, que é a maioria: ferro, vitaminas, anticoagulante, antibiótico, antirretroviral e quimioterapia. Os tratamentos **invasivos** pedem prazo antes do voo: **transfusão**, **cirurgia**, **biópsia**, drenagem e procedimentos por cateter. No avião **pressurizado**, a cabine até 8.000 ft já reduz a oferta de oxigênio a quem tem pouca hemoglobina; no **não pressurizado**, acima de 10.000 ft sem oxigênio, essa reserva some mais rápido, e a cabine pequena não tem a filtragem do jato; no **helicóptero**, o transporte de quem sangra ou está instável é aeromédico, com equipe e oxigênio.",
           "**Como prevenir e amenizar.** Planeje a viagem quando a condição estiver estável; leve relatório clínico, lista de medicamentos e reserva para atrasos. Em voos prolongados, movimente pernas e caminhe quando for seguro, respeitando restrições médicas. Evite embarcar com sangramento, desmaios, febre importante ou dispneia não investigada. O médico deve registrar a capacidade funcional, a possibilidade de assistência e, quando necessário, a solicitação de suporte à companhia aérea.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-sangue' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m2v11-1-sangue-altitude.jpg'), legenda: "A hemoglobina leva o oxigênio; com menos dela, sobra menos margem na cabine." } },
           { paragrafo: 4, video: { fonte: require('@/assets/videos/m2v11-sangue-voo.mp4'), legenda: "Do laboratório à cabine: o exame mostra a reserva que o voo vai exigir." } },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v11-1-planejamento-voo.jpg'), legenda: "Planejar a viagem com o médico considera a doença, o tratamento e o destino." } },
@@ -88,7 +107,7 @@ export const sangueImunidade: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · sangue e defesa",
               colunas: [
@@ -129,6 +148,7 @@ export const sangueImunidade: Capitulo = {
           "**O passageiro** precisa de controle da causa da anemia, avaliação de sintomas e do eventual suporte de oxigênio. Pessoas com crise falciforme recente devem ser avaliadas antes do deslocamento; o CDC considera prudente adiar viagens quando houve crise nos **nove dias anteriores**. **O tripulante** segue requisitos próprios: no Brasil, o RBAC 67, itens 67.87 e 67.127, condiciona aptidão hematológica à avaliação e determina inaptidão diante de hipercoagulabilidade, distúrbio hemorrágico ou anticoagulação oral cumarínica.",
           "Quem voa com anemia sintomática pode apresentar **dispneia, pré-síncope e incapacidade funcional**. Uma hemorragia ativa pode descompensar rapidamente; uma trombose venosa pode embolizar para o pulmão, produzindo dor torácica e queda da oxigenação. A presença de plaquetas muito baixas, sangramentos espontâneos ou um evento trombótico recente muda a decisão. Critérios para passageiros, pilotos brasileiros e pilotos de outras jurisdições **não devem ser tratados como intercambiáveis**.",
           "**Anticoagulantes** como antagonistas da vitamina K, heparinas e anticoagulantes orais diretos são prescritos para prevenir ou tratar trombose em indicações distintas. A suspensão indevida pode precipitar evento tromboembólico; o uso sem acompanhamento favorece hemorragia. Para anticoagulação cumarínica, a regra brasileira citada determina inaptidão do candidato nas classes correspondentes; orientações estrangeiras podem adotar avaliações diferentes. Não extrapole permissões de outro país para o CMA brasileiro.",
+          "**Tratamentos, prognóstico e prazos.** Na anemia leve e estável e no traço falciforme, a conduta é **expectante**, com acompanhamento. O tratamento **não invasivo** corrige a causa: **ferro**, por boca ou na veia, vitamina B12 ou ácido fólico, controle do sangramento e, na trombose, **anticoagulante** por meses ou por tempo indefinido. Os tratamentos **invasivos** são a **transfusão de sangue**, a **endoscopia** ou a **cirurgia** para conter um sangramento e, na embolia grave, a **trombólise** ou o **procedimento por cateter**. Os prazos do passageiro: hemoglobina abaixo de **8,5 g/dL**, adiar; crise falciforme nos **9 dias** anteriores, adiar; trombose na perna, voar com o anticoagulante estável; embolia, a partir de **5 dias** (IATA) ou **2 semanas** (sociedade britânica), com oxigênio normal (Veja M2V2 - VII). No avião **não pressurizado**, sem oxigênio acima de 10.000 ft, a anemia e a doença falciforme têm menos folga; no **helicóptero**, quem sangra viaja em transporte aeromédico.",
           "**Como prevenir e amenizar.** Trate a causa da anemia e confirme estabilidade antes da viagem. Leve exames relevantes, informações sobre crises anteriores, contato médico e prescrição. Informe qualquer sangramento, dor torácica, dispneia ou edema assimétrico de perna. Em viagens longas, organize movimento e medidas preventivas individualizadas; **não ajuste anticoagulante por conta própria**. O médico deve documentar risco de sangramento, trombose, capacidade funcional e necessidade de suporte.",
         ].join('\n\n'),
         recursos: [
@@ -205,7 +225,7 @@ export const sangueImunidade: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · anemia e anticoagulação",
               colunas: [
@@ -246,6 +266,7 @@ export const sangueImunidade: Capitulo = {
           "**Para o passageiro**, a decisão considera hemograma, infecção, atividade da doença, tratamento recente, necessidade de suporte e acesso a atendimento no destino. O CDC recomenda adiar viagem diante de sangramento importante ou imunossupressão, anemia ou trombocitopenia graves. **Para o tripulante**, doença ativa, terapias incapacitantes e possíveis efeitos cognitivos precisam de investigação e avaliação aeromédica; as normas da autoridade competente e o tipo de neoplasia determinam o caminho de certificação.",
           "Viajar sem avaliação durante **neutropenia febril**, sangramento, vômitos persistentes ou dor incapacitante pode resultar em emergência a bordo e atraso no tratamento. Febre em paciente sob quimioterapia exige avaliação médica rápida: pode ser o único sinal de infecção grave. Uma trombose ou embolia pulmonar pode causar falta de ar súbita, e intervenções cirúrgicas recentes exigem consideração especial. Alta hospitalar, ausência de dor e aparência saudável não substituem a análise do risco.",
           "**Quimioterápicos, terapias-alvo, imunoterapia, corticoides e medicamentos de suporte** têm perfis diferentes de toxicidade e interação. Náusea, fadiga, neuropatia, diarreia e sonolência podem reduzir a segurança de deslocamento ou de operação. A vacinação durante imunossupressão exige avaliação específica, e vacinas vivas podem ser contraindicadas. Nunca reorganize ciclos de quimioterapia, suspenda anticoagulação profilática nem inicie medicamento preventivo sem concordância do oncologista.",
+          "**Tratamentos, prognóstico e prazos.** No câncer, a conduta **expectante** existe: a **vigilância ativa** de alguns tumores de baixo risco e o seguimento depois do tratamento. Os tratamentos **não invasivos** são a **quimioterapia**, a hormonioterapia, a **imunoterapia**, as terapias-alvo e a **radioterapia**. Os **invasivos** são a **cirurgia**, a **biópsia**, o cateter e a drenagem de líquido do tórax ou do abdome, e cada um tem prazo: cerca de **10 dias** depois da cirurgia abdominal (Veja M2V10), **4 semanas** depois de retirar o dreno de uma cirurgia do tórax e **1 semana** depois de biópsia por agulha do pulmão ou broncoscopia com biópsia (Veja M2V1), e **10 a 14 dias** depois de cirurgia do crânio (Veja M2V6). Febre durante a quimioterapia, sangramento ou plaquetas muito baixas adiam qualquer voo. O prognóstico no voo depende da reserva, não do diagnóstico. Depois de cirurgia, o ar que fica no corpo se expande mais no avião **não pressurizado**; no **helicóptero**, o voo baixo expande menos, mas o prazo vale do mesmo jeito.",
           "**Como prevenir e amenizar.** Planeje a viagem com o oncologista e leve relatório, hemograma recente quando indicado e informações sobre complicações e medicações. Avalie risco de trombose e suporte antes de voos prolongados; mantenha máscara e higiene quando houver indicação de proteção contra infecções. Adie na presença de febre, sangramento, dispneia nova ou incapacidade para se alimentar e hidratar. O profissional deve verificar também assistência no destino, seguros e eventual necessidade de MEDIF.",
         ].join('\n\n'),
         recursos: [
@@ -322,7 +343,7 @@ export const sangueImunidade: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · câncer e quimioterapia",
               colunas: [
@@ -363,6 +384,7 @@ export const sangueImunidade: Capitulo = {
           "**O passageiro** com doença aguda transmissível deve consultar recomendações sanitárias e adiar a viagem quando houver risco relevante de transmissão ou incapacidade clínica. Não existe um prazo único aplicável a influenza, COVID-19, tuberculose, meningite ou outras infecções. **O tripulante** não deve exercer atividade com febre incapacitante, sintomas que afetem atenção ou doença que comprometa desempenho; retorno exige estabilidade e cumprimento das regras sanitárias e aeromédicas aplicáveis.",
           "Voar com **falta de ar, hipoxemia, prostração intensa ou febre persistente** pode agravar a condição e dificultar atendimento oportuno. Pessoas contagiosas podem gerar transmissão a bordo ou no destino, mesmo sem contato prolongado com todos os ocupantes. Tuberculose pulmonar infecciosa, infecção respiratória grave ou suspeita de doença de notificação exigem coordenação com serviços de saúde; o viajante não deve usar a ausência de sintomas de outras pessoas como prova de segurança.",
           "**Antibióticos, antivirais e antitérmicos** tratam indicações específicas; nenhum medicamento é autorização automática para embarcar. O efeito da infecção, a interação entre fármacos e as reações adversas precisam ser avaliados, especialmente para quem opera aeronaves. Máscaras adequadas, higiene das mãos, etiqueta respiratória e ventilação são medidas complementares quando indicadas. A prescrição não deve ser iniciada ou interrompida para simplesmente esconder febre e superar uma triagem.",
+          "**Tratamentos, prognóstico e prazos.** Nas viroses leves, a conduta é **expectante**: repouso, água e antitérmico, voando só sem febre e sem falta de ar. O tratamento **não invasivo** é o **antibiótico** ou o **antiviral** quando indicado. O **invasivo** fica para as formas graves: **internação**, **drenagem** de um abscesso ou de líquido no pulmão. Alguns prazos são claros: no **sarampo**, o isolamento vai até **4 dias** depois do início das manchas, e a volta depende de liberação médica; na **tuberculose** sensível, só se voa depois de **2 exames de escarro negativos**, o que costuma levar cerca de **2 semanas** de tratamento adequado; na tuberculose **multirresistente**, só depois de **2 culturas negativas** seguidas; pneumonia com oxigênio baixo adia o voo (Veja M2V1). No jato **pressurizado**, os filtros ajudam, mas não protegem quem senta perto de um doente; no avião leve **não pressurizado** e no **helicóptero**, a cabine é pequena e os ocupantes ficam muito próximos.",
           "**Como prevenir e amenizar.** Antes do voo, verifique sintomas, orientações locais e recomendações de saúde pública para o destino. Adie se estiver contagioso conforme a doença, com dispneia ou clinicamente instável. Se surgirem sintomas durante a viagem, avise a tripulação e siga os procedimentos de segurança. Após o pouso, procure avaliação quando houver sinais de gravidade. Planejamento, vacinação adequada e respeito à privacidade reduzem riscos sem discriminação.",
         ].join('\n\n'),
         recursos: [
@@ -434,7 +456,7 @@ export const sangueImunidade: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · infecções",
               colunas: [
@@ -475,6 +497,7 @@ export const sangueImunidade: Capitulo = {
           "**Para o passageiro**, a decisão deve ser individual e baseada na estabilidade clínica, não apenas na sorologia. Quem apresenta infecção oportunista ativa ou imunossupressão importante pode precisar adiar o deslocamento. **Para o tripulante**, é indispensável seguir as regras de certificação aplicáveis: a FAA exige avaliação central para histórico de HIV, sem decisão automática pelo examinador; no Brasil, o enquadramento depende da investigação clínica e das regras vigentes de aptidão, com proteção das informações médicas.",
           "Interromper a **terapia antirretroviral** pode favorecer perda de controle virológico e risco de resistência. Uma viagem sem acesso a medicamentos, com fuso horário mal planejado ou sem cuidado no destino pode dificultar a continuidade. Em quem apresenta imunodeficiência avançada, infecções comuns podem evoluir de modo mais grave; febre e sintomas respiratórios exigem atenção. A presença de HIV isoladamente não significa risco infeccioso para os demais passageiros durante o convívio cotidiano.",
           "**Antirretrovirais** devem ser mantidos conforme prescrição, com atenção a interações com antibióticos, profilaxias, medicamentos contra malária e outros produtos de viagem. Vacinas inativadas costumam ser utilizáveis, enquanto algumas vacinas vivas dependem do grau de imunossupressão e podem ser contraindicadas. Levar medicamentos em embalagem identificada e documentação apropriada facilita fiscalização sem exigir exposição pública desnecessária do diagnóstico. Restrições legais de entrada variam entre países e devem ser verificadas antes da reserva.",
+          "**Tratamentos, prognóstico e tipo de voo.** No HIV não há conduta expectante: o tratamento **não invasivo** com **antirretrovirais** é indicado para todos e mantido sem pausas, com profilaxias quando a imunidade está baixa. Não há tratamento invasivo para o HIV; procedimentos entram só para complicações. O prognóstico é bom: com a carga viral suprimida, a vida e as viagens seguem normais, e o passageiro voa sem restrição. Infecção oportunista ativa ou imunidade muito baixa pedem **adiar** até o controle. Para o tripulante, a decisão é da autoridade, com base na estabilidade e nos efeitos dos remédios. A altitude e o tipo de aeronave não mudam o vírus: no jato **pressurizado** de longa distância, o desafio é o **fuso** no horário das doses; no avião **não pressurizado** e no **helicóptero**, valem as mesmas regras de remédio e de sintomas.",
           "**Como prevenir e amenizar.** Organize o horário das doses para atravessar fusos sem interrupções, leve reserva para atrasos e localize atendimento médico no destino. Revise vacinação e profilaxia com infectologista ou medicina de viagem. Se houver doença oportunista, febre importante ou descompensação, avalie o adiamento. Para o tripulante, atualize documentos e informe ao examinador de modo confidencial; a decisão deve se apoiar na capacidade funcional e nos critérios aeromédicos vigentes.",
         ].join('\n\n'),
         recursos: [
@@ -541,7 +564,7 @@ export const sangueImunidade: Capitulo = {
             }
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · HIV",
               colunas: [

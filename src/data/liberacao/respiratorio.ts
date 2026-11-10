@@ -151,9 +151,37 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
         tripulante: e('nao-voar', 'Não voe como tripulante até tratar e o médico examinador liberar.', 'FAA: apneia do sono desqualificante até tratamento eficaz; sintomas com risco imediato, adiar. 14 CFR 61.53.', '3.7'),
       },
       {
+        rotulo: 'Sim, operado (vias aéreas, estimulador implantado ou cirurgia bariátrica)',
+        passageiro: e('cuidados', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo após cirurgia das vias aéreas: conforme o cirurgião [confirmar na referência]; cirurgia bariátrica: cerca de 10 dias (UK CAA, Veja M2V10).', '3.7'),
+        tripulante: e('avaliar', 'Volte a voar só quando o novo estudo do sono mostrar o tratamento eficaz.', 'FAA (OSA): certificação após tratamento eficaz comprovado; UK CAA: cirurgia bariátrica, inapto por até 3 meses.', '3.7'),
+      },
+      {
         rotulo: 'Não sei, mas ronco alto e tenho sono durante o dia',
         passageiro: e('cuidados', 'Procure avaliação do sono antes de uma viagem longa e evite álcool e calmantes no voo.', 'Suspeita de AOS: encaminhar para avaliação do sono; orientar como AOS não tratada (BTS 2022).', '3.7'),
         tripulante: e('avaliar', 'Conte ao médico examinador: talvez precise de uma avaliação do sono.', 'FAA: alto risco, Specification Sheet B e 90 dias para a avaliação; sintomas com risco imediato, adiar.', '3.7'),
+      },
+    ],
+  },
+  {
+    id: 'resp-mergulho',
+    pergunta: 'Mergulhou com cilindro ou teve doença descompressiva recentemente?',
+    ajuda: 'Inclui treino em câmara hipobárica e tratamento em câmara hiperbárica.',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Mergulho sem parada de descompressão há menos de 12 horas',
+        passageiro: e('nao-voar', 'Espere ao menos 12 horas para voar até 8.000 ft de cabine; acima disso, 24 horas.', 'FAA AC 61-107B 2-7.d(4)(d): 12 h após mergulho sem parada até 8.000 ft; 24 h acima de 8.000 ft.', ''),
+        tripulante: e('nao-voar', 'Não voe antes do prazo.', 'FAA AC 61-107B: 12 h (sem parada) ou 24 h (acima de 8.000 ft).', ''),
+      },
+      {
+        rotulo: 'Mergulho com parada de descompressão há menos de 24 horas',
+        passageiro: e('nao-voar', 'Espere ao menos 24 horas.', 'FAA AC 61-107B: 24 h após mergulho com parada de descompressão.', ''),
+        tripulante: e('nao-voar', 'Não voe antes de 24 horas.', 'FAA AC 61-107B: 24 h.', ''),
+      },
+      {
+        rotulo: 'Doença descompressiva tratada em câmara hiperbárica',
+        passageiro: e('avaliar', 'Voe só com a liberação do médico hiperbárico; em geral, ao menos 72 horas.', 'Não há consenso: de 72 h (mais citado, DAN) a 6 semanas; Acott, 4 semanas (St Leger Dowse et al., DDRC, 2005).', ''),
+        tripulante: e('nao-voar', 'Não voe até a liberação do médico hiperbárico e da autoridade.', 'Avaliação neurológica e de sequelas; FAA AC 61-107B 2-7.d(4)(e)–(f).', ''),
       },
     ],
   },

@@ -111,4 +111,27 @@ export const liberacaoMente: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'mente-tratamento',
+    pergunta: 'Fez tratamento psiquiátrico invasivo, internação ou programa para dependência?',
+    ajuda: 'Psicoterapia e remédios estão nas perguntas acima; aqui entram os tratamentos de casos graves.',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Eletroconvulsoterapia',
+        passageiro: e('avaliar', 'Combine a data da viagem com o psiquiatra.', 'Tratamento sob anestesia; prazo de viagem: [confirmar na referência].', '7.2'),
+        tripulante: e('nao-voar', 'Não voe; a volta depende do psiquiatra e da autoridade.', 'FAA, AME Guide (antidepressivos): história de eletroconvulsoterapia exclui a via do ISRS pelo examinador; RBAC 67.75(c).', '7.2'),
+      },
+      {
+        rotulo: 'Internação psiquiátrica recente',
+        passageiro: e('avaliar', 'Viaje só com alta e liberação do psiquiatra; um acompanhante ajuda.', 'UK CAA: condição estável; comportamento imprevisível contraindica; acompanhante se preciso.', '7.3'),
+        tripulante: e('nao-voar', 'Não voe até o parecer do psiquiatra e a decisão da autoridade.', 'RBAC 67.75(g): parecer psiquiátrico; ICAO 9.5–9.6.', '7.3'),
+      },
+      {
+        rotulo: 'Programa ou internação para álcool ou outra substância',
+        passageiro: e('cuidados', 'Pode voar sem álcool; a desintoxicação vem antes da viagem.', 'AsMA: desintoxicar antes de viajar; abstinência causa emergências em voo (Joshi 2019).', '7.4'),
+        tripulante: e('avaliar', 'A volta é pelo programa, com testes e acompanhamento.', 'HIMS: internação ≥ 28 dias, abstinência, monitoramento de 5 a 7 anos; ICAO 9.12.15–9.12.18: retorno em 3 a 4 meses, acompanhamento ≥ 2 anos; RBAC 120: 6 exames em 12 meses.', '7.4'),
+      },
+    ],
+  },
 ];

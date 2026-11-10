@@ -85,6 +85,11 @@
 // mão, avisar a tripulação, pedir assento no corredor) são aplicações das fontes acima. Sem fonte: [confirmar na
 // referência].
 
+// 10/11/2026, pedido do autor (doenças no texto, tratamentos expectantes, não invasivos e invasivos, prognóstico,
+// prazos e tipo de voo): parágrafo "Tratamentos, prognóstico e tipo de voo" em cada tópico; tabelas de remédios e de
+// prevenção que faltavam; comparador por tipo de aeronave; vídeo cortado para 8 s. Números reaproveitados do registro
+// abaixo (IATA: AVC 4º/5º–14º dia; cirurgia intracraniana 10 a 14 dias; ICAO: propranolol 3 meses, levodopa aceita,
+// agonistas não) e de M2V5 (cintilação 4 a 20 Hz) e M1V2 (pressão a 10.000 ft). Tratamentos: aplicação clínica geral.
 import { liberacaoCerebro } from '../liberacao/cerebro';
 import type { Capitulo } from '../tipos';
 
@@ -106,9 +111,11 @@ export const cerebro: Capitulo = {
           "Pela **lei de Boyle** (Veja M1V1 - II), o gás preso numa cavidade fechada se expande cerca de **38%** a 8.000 ft. Dentro do **crânio** não costuma haver ar, mas depois de uma **cirurgia** ou de um **trauma** pode ficar uma bolha. Ela cresce na subida e aperta o cérebro, que não tem para onde ir: é por isso que existe prazo para voar depois de operar a cabeça.",
           "As doenças do cérebro raramente pioram por causa do voo; o problema é que podem **incapacitar de repente**. Em questionários com mais de 3.000 pilotos de linha, **desmaio** foi **7%** e **dor de cabeça 6%** das incapacitações em voo relatadas. Entre passageiros, numa série de quase 12 mil emergências, **síncope ou pré-síncope** foram **37,4%** e **convulsão 5,8%**; o **AVC** foi raro, mas levou mais a desvio e internação.",
           "Para o tripulante, a norma pergunta uma coisa só: qual o risco de **perder a consciência ou a capacidade** em voo. A ICAO considera inaceitável um risco acima de **1% ao ano** e lembra que, com dois pilotos, o outro assume. A ANAC, a FAA e a ICAO tratam epilepsia, AVC, perda de consciência sem causa e trauma com sequela como **impedimento**, com prazos para reavaliar.",
-          "**Como proteger o cérebro no voo.** Antes, **durma bem**, coma e beba água; leve os remédios na **bagagem de mão**, com o horário ajustado ao fuso (Veja M2V8). Durante, beba água, evite **álcool**, levante devagar e não fique muito tempo em pé no corredor. Se vier tontura, aura, fraqueza de um lado ou confusão, **sente-se e avise a tripulação** na hora. O tripulante não voa com sono atrasado nem com remédio que dê sono.",
+          "**Doenças, tratamentos e tipo de voo.** As doenças deste voo são a **epilepsia**, o **desmaio**, a **enxaqueca**, o **AVC** e o ataque isquêmico transitório, o **trauma craniano** com as **cirurgias do cérebro** e as doenças **degenerativas**, como Parkinson, esclerose múltipla e demência. O tratamento pode ser **expectante**, observando depois de uma crise única ou de um desmaio explicado; **não invasivo**, com remédios, sono regular e reabilitação; ou **invasivo**: **trombectomia** no AVC, **cirurgia do aneurisma**, **neurocirurgia** do trauma, **cirurgia da epilepsia** e **estimulação cerebral profunda** no Parkinson e no tremor. Na cabine **pressurizada**, a saturação fica perto de 93% a 8.000 ft; no avião **não pressurizado**, ela cai mais a 10.000 ft, e o cérebro lesado tem menos margem. No **helicóptero**, a luz piscando das pás e a vibração podem ser gatilho em quem tem epilepsia ou enxaqueca, e com **um só piloto** a incapacitação vira acidente.",
+          "**Como prevenir e amenizar.** Antes, **durma bem**, coma e beba água; leve os remédios na **bagagem de mão**, com o horário ajustado ao fuso (Veja M2V8). Durante, beba água, evite **álcool**, levante devagar e não fique muito tempo em pé no corredor. Se vier tontura, aura, fraqueza de um lado ou confusão, **sente-se e avise a tripulação** na hora. O tripulante não voa com sono atrasado nem com remédio que dê sono.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-cerebro' },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-1-piloto.jpg'), 'O raciocínio fica mais lento com pouco oxigênio muito antes de qualquer sintoma.') },
           { paragrafo: 2, midia: 'gatilhos-cerebro' },
           { paragrafo: 3, midia: 'animacao-ar-cranio' },
@@ -129,7 +136,7 @@ export const cerebro: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v6-1-noite.jpg'), 'Voo noturno e fuso cortam o sono, um gatilho conhecido de convulsão e enxaqueca.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · o cérebro em voo',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -156,9 +163,23 @@ export const cerebro: Capitulo = {
           "No voo, o risco é a crise chegar com **privação de sono**, sono interrompido ou **fuso**, que baixam o limiar. A bordo, o kit médico raramente tem anticonvulsivante, e uma crise longa pode obrigar a **desviar**. Para o passageiro, a CAA britânica pede esperar pelo menos **24 horas** depois de uma convulsão; quem tem epilepsia **não controlada** ou uma crise **nova** precisa de liberação médica, e a AsMA não recomenda voar depois de crise no **último mês**.",
           "Para o tripulante, a regra é rígida. A **ANAC** não aceita epilepsia nem EEG com **grafoelementos epileptiformes**, e o EEG faz parte do exame inicial. A **ICAO** trata epilepsia como impedimento quase sempre permanente e, depois de uma **crise única**, só considera voltar após **4 anos** sem crise e sem remédio: sem fatores de risco, a chance de voltar a ter crise é de cerca de **30%** nesse período, e depois disso se aproxima da população geral. A **FAA** emite só para a **crise febril simples** até os 5 anos; crise única sem causa espera **4 anos**, os últimos 2 sem remédio; epilepsia, **10 anos** sem crise, os últimos **3** sem remédio, e a decisão é da própria FAA.",
           "Voar sem liberação é arriscado dos dois lados. A crise no cockpit é **incapacitação súbita**; para o tripulante, omitir a crise no exame médico é infração à norma e pode invalidar o certificado e o seguro. Para o passageiro, uma crise a bordo pode significar desvio e atendimento sem estrutura; a companhia pode exigir o formulário médico (**MEDIF**) de quem teve crise recente.",
+          "**Tratamentos, prognóstico e tipo de voo.** Depois de uma **primeira crise** com causa clara e exames normais, a conduta pode ser **expectante**, sem remédio, com observação. A epilepsia se trata de forma **não invasiva** com **anticonvulsivante** e regularidade do sono; quando os remédios falham, há tratamentos **invasivos**: a **cirurgia da epilepsia**, que retira o ponto de origem das crises, e o **estimulador do nervo vago**. O prognóstico depende do controle: muitas pessoas ficam anos sem crise com o remédio, e o passageiro controlado voa como qualquer outro; o voo pede manter as doses no horário com o fuso. O tripulante com epilepsia continua impedido pela ANAC. No **helicóptero**, a luz do sol cortada pelas pás pode piscar na faixa que desencadeia crises sensíveis à luz; no avião leve com **um só piloto**, uma crise não tem quem assuma o comando.",
           "**Como prevenir e amenizar.** Tome o anticonvulsivante **no horário**, ajustando ao fuso com o médico, e leve o suficiente para a viagem toda, mais o remédio de emergência, na **bagagem de mão**. Durma antes do voo e evite álcool. Viaje com alguém que saiba o que fazer e avise a tripulação de que tem epilepsia. Os anticonvulsivantes são **incompatíveis** com a função de tripulante: quem precisa deles não voa como piloto até cumprir o prazo da autoridade.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · convulsão",
+              colunas: ["Momento ou situação", "O que fazer"],
+              linhas: [
+                ["Antes da viagem", "Dormir bem e levar o anticonvulsivante e o remédio de emergência na bagagem de mão"],
+                ["Com fuso horário", "Ajustar o horário das doses com o médico, sem pular nenhuma"],
+                ["Crise a bordo", "Proteger a cabeça, virar de lado e avisar a tripulação"],
+                ["Tripulante", "Informar qualquer crise ao examinador antes de voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-2-neurologista.jpg'), 'A história do que aconteceu, contada por quem viu, pesa mais que o EEG.') },
           { paragrafo: 2, midia: 'prazo-convulsao' },
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v6-2-remedio.jpg'), 'O anticonvulsivante viaja na bagagem de mão, com o horário ajustado ao fuso.') },
@@ -203,9 +224,22 @@ export const cerebro: Capitulo = {
           "No avião, síncope e pré-síncope são a **emergência mais comum**: **37,4%** dos casos numa série de quase 12 mil emergências em voo. Pesam a **desidratação** do ar seco, o **álcool**, o jejum, a espera em pé na fila do banheiro e o levantar rápido depois de horas sentado. A **hipóxia leve** da cabine soma-se aos outros fatores (Veja M2V1).",
           "Para o tripulante, a ICAO trata a síncope como impedimento **até achar a causa**. Com um ou dois episódios **benignos e explicados**, pode bastar **3 meses** de observação; episódios **repetidos** que exigem tratamento pedem **6 a 12 meses**. A ANAC não aceita perda de consciência **recorrente sem explicação**; num episódio **único**, o examinador decide junto com a ANAC. A FAA adia para a própria FAA a perda de consciência sem explicação.",
           "Desmaiar no comando é **incapacitação total**, mesmo que dure segundos. Para o passageiro, o desmaio benigno não impede o voo, mas desmaios **repetidos**, sem causa ou com o coração envolvido precisam de avaliação antes; a AsMA lembra que separar o vasovagal da **arritmia** é o que decide.",
-          "**Como prevenir e amenizar o desmaio.** Antes, coma algo e beba água; evite álcool na véspera e a bordo. Durante, mexa as pernas sentado, beba água e **levante devagar**, em dois tempos. No primeiro sinal do pródromo, **sente-se ou deite-se** com as pernas para cima e avise a tripulação; não tente chegar ao banheiro. Quem já desmaiou deve pedir **assento no corredor** e contar ao médico antes da viagem.",
+          "**Tratamentos, prognóstico e tipo de voo.** O desmaio **vasovagal** explicado tem conduta **expectante** e **não invasiva**: água, sal quando o médico indica, evitar os gatilhos e as **manobras de contrapressão**, cruzar as pernas e apertar as mãos ao sentir o aviso. Quando a causa é o **coração**, o tratamento segue a doença, às vezes com **marca-passo** ou **ablação** (Veja M2V2 - IV). O prognóstico do desmaio reflexo é bom; o de causa cardíaca depende do tratamento. A bordo, deitar a pessoa e elevar as pernas resolve a maioria dos casos. No avião **não pressurizado**, a hipóxia soma-se à queda de pressão; no **helicóptero** e no avião com **um só piloto**, um único desmaio no comando é incapacitação total.",
+          "**Como prevenir e amenizar.** Antes, coma algo e beba água; evite álcool na véspera e a bordo. Durante, mexa as pernas sentado, beba água e **levante devagar**, em dois tempos. No primeiro sinal do pródromo, **sente-se ou deite-se** com as pernas para cima e avise a tripulação; não tente chegar ao banheiro. Quem já desmaiou deve pedir **assento no corredor** e contar ao médico antes da viagem.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · desmaio",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Remédios de pressão e diuréticos", "Podem baixar a pressão ao levantar e facilitar o desmaio", "Ajustar com o médico; levantar devagar"],
+                ["Remédios que dão sono", "Somam tontura e queda de pressão", "FAA: esperar 5 intervalos de dose"],
+                ["Álcool", "Dilata os vasos e desidrata", "FAA: 8 horas entre beber e voar"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-3-corredor.jpg'), 'A espera em pé no corredor, depois de horas sentado, é um momento típico de desmaio.') },
           { paragrafo: 2, midia: 'desmaio-convulsao' },
           { paragrafo: 3, video: { fonte: require('@/assets/videos/m2v6-desmaio.mp4'), legenda: 'Desmaio e pré-desmaio são a emergência médica mais comum a bordo.' } },
@@ -224,7 +258,7 @@ export const cerebro: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v6-3-agua.jpg'), 'Água, levantar devagar e sentar no primeiro aviso evitam a maior parte dos desmaios.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · desmaio',
               colunas: ['Momento', 'O que fazer'],
@@ -251,7 +285,8 @@ export const cerebro: Capitulo = {
           "Para o tripulante, o que importa é a **aura** e a **velocidade** da crise. Um pequeno brilho na periferia da visão pode não atrapalhar; perder **metade do campo visual** é inaceitável. A crise que se instala em **minutos** também é. A ANAC não aceita enxaqueca com **fenômenos oculares e neurológicos focais transitórios**. A ICAO aceita **1 ou 2 crises por ano**, mas **várias por mês** impedem, com observação de **6 a 12 meses** depois do controle. A **cefaleia em salvas**, dor muito forte em volta do olho por **30 a 45 minutos**, impede enquanto durar a salva.",
           "A **FAA** emite para a dor de cabeça tensional com menos de **2 dias de dor por mês** e analgésico comum; a enxaqueca segue uma lista de verificação do examinador; a enxaqueca **complicada**, a **retiniana** e a dor depois de trauma vão para a decisão da FAA. Os remédios também contam: os de **crise** só servem para uso **ocasional**, com prazo antes de voar, e vários preventivos são **proibidos**.",
           "Voar em crise é voar com dor, enjoo e, às vezes, sem parte da visão: é **incapacitação parcial**. Para o tripulante, usar um remédio proibido ou voar dentro do prazo do remédio é infração à norma. Uma dor de cabeça **súbita e muito forte**, sem causa conhecida, ou com fraqueza, confusão ou perda de visão, **não** é enxaqueca até prova em contrário: é sinal de alerta de AVC (Veja M2V6 - V).",
-          "**Como prevenir e amenizar a enxaqueca no voo.** Antes, durma, coma e beba água; evite os seus gatilhos conhecidos e o vinho tinto. Leve o remédio de crise na **bagagem de mão** e tome no **início** da dor. A bordo, use tampão de ouvido ou fone contra o ruído, óculos escuros ou máscara de olhos e não pule refeições. O tripulante só usa os remédios aceitos e respeita o prazo depois da dose.",
+          "**Tratamentos, prognóstico e tipo de voo.** A enxaqueca rara e leve tem conduta **expectante**: diário de crises e controle dos gatilhos. O tratamento **não invasivo** usa o remédio da crise, tomado no início, e, quando as crises são frequentes, um **preventivo** diário; os aceitos e os proibidos para o tripulante mudam muito (Veja a tabela de remédios deste tópico). Nos casos rebeldes, existem tratamentos por **injeção**, como a toxina botulínica, e bloqueios de nervo, procedimentos pequenos e não cirúrgicos. O prognóstico costuma ser bom: muitas pessoas reduzem bastante as crises com o preventivo e os hábitos. No avião **não pressurizado**, a hipóxia acima de 10.000 ft pode disparar a crise; no **helicóptero**, ruído, vibração, sol e luz piscando pelas pás somam gatilhos.",
+          "**Como prevenir e amenizar.** Antes, durma, coma e beba água; evite os seus gatilhos conhecidos e o vinho tinto. Leve o remédio de crise na **bagagem de mão** e tome no **início** da dor. A bordo, use tampão de ouvido ou fone contra o ruído, óculos escuros ou máscara de olhos e não pule refeições. O tripulante só usa os remédios aceitos e respeita o prazo depois da dose.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-4-luz.jpg'), 'Luz forte, ruído e sono curto somam gatilhos de enxaqueca na mesma viagem.') },
@@ -288,7 +323,7 @@ export const cerebro: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · enxaqueca',
               colunas: ['Momento', 'O que fazer'],
@@ -315,9 +350,22 @@ export const cerebro: Capitulo = {
           "Para o passageiro, o prazo depende da gravidade. Pelos critérios da **IATA**, o AVC não é aceito até o **4º dia**; do **5º ao 14º**, só com quadro estável e acompanhante de enfermagem, e com **oxigênio** nas duas primeiras semanas. A **CAA** britânica aconselha esperar **2 semanas**, e a AsMA fala em **2 a 4 semanas** de observação. Depois de um **AIT**, a IATA e a CAA pedem pelo menos **2 dias** e a investigação feita; **AITs repetidos** ou em crescendo impedem o voo.",
           "Para o tripulante, a **ANAC** não aceita infarto cerebral ou cerebelar, insuficiência vascular cerebral, **aneurisma** nem **hemorragia** meníngea ou cerebral. A **ICAO** considera voltar só com a causa tratada e o risco de repetir abaixo de **1% ao ano**: depois do primeiro ano, a recorrência média é de cerca de **4% ao ano**. A observação vai de **1 ano** (forame oval fechado, dissecção, AVC lacunar) a **2 anos** (AVC por aterosclerose); no hemorrágico, **1 a 2 anos**. A **FAA** pede **2 anos** depois de AVC cortical ou AIT e **1 ano** no subcortical, sempre com decisão da própria FAA.",
           "Voar cedo demais expõe a um **novo AVC** longe de um hospital, sem o tratamento que salva cérebro; por isso a IATA pede **oxigênio** a bordo nas duas primeiras semanas. Para o tripulante, voar sem a liberação é infração à norma; para o passageiro, a companhia pode exigir o **MEDIF** e recusar o embarque, e o seguro-viagem pode não cobrir.",
+          "**Tratamentos, prognóstico e tipo de voo.** Na fase aguda, o AVC isquêmico pode ser tratado com **trombólise**, remédio na veia que dissolve o coágulo, ou **trombectomia**, um cateter que o retira; o hemorrágico pode precisar de **cirurgia** ou de tratamento do **aneurisma** por cateter. Depois, vem o tratamento **não invasivo**: **antiagregante** ou anticoagulante, estatina, controle da pressão e do diabetes e **reabilitação**. Na **estenose da carótida**, a artéria do pescoço, pode haver **cirurgia** ou **stent**. O AIT pede investigação rápida, não conduta expectante, porque avisa um AVC próximo. O prognóstico depende do tamanho da lesão e da recuperação; o risco de um novo evento é maior nas primeiras semanas, e é por isso que a IATA pede oxigênio nesse período. No avião **não pressurizado**, sem oxigênio, a margem do cérebro lesado é ainda menor.",
           "**Como prevenir e amenizar.** Respeite o prazo e leve o relatório médico. Peça **oxigênio** à companhia com antecedência se o AVC tiver menos de 2 semanas, **cadeira de rodas** e embarque antecipado se houver fraqueza, e viaje com acompanhante. Tome os remédios no horário, inclusive o anticoagulante (Veja M2V2 - VII), beba água e mexa as pernas. Se aparecer um sinal novo a bordo, **avise a tripulação na hora**: o piloto pode desviar para um hospital.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · AVC e AIT",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Antiagregante (aspirina, clopidogrel)", "Previne um novo evento; mais sangramento em trauma", "Não interromper; a doença decide a aptidão"],
+                ["Anticoagulante", "Usado na fibrilação atrial; dose no horário com o fuso", "RBAC 67.87(c): cumarínico, não apto (Veja M2V11 - II)"],
+                ["Estatina e remédios de pressão", "Reduzem o risco de um novo AVC", "Compatíveis, conforme a lista da autoridade"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-5-comissaria.jpg'), 'Rosto caído, braço fraco e fala enrolada: a tripulação precisa saber na hora.') },
           { paragrafo: 2, midia: 'prazo-avc' },
           {
@@ -337,7 +385,7 @@ export const cerebro: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v6-5-oxigenio.jpg'), 'Nas duas primeiras semanas depois do AVC, o passageiro voa com oxigênio e acompanhante.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · depois de AVC ou AIT',
               colunas: ['Momento', 'O que fazer'],
@@ -363,9 +411,22 @@ export const cerebro: Capitulo = {
           "Depois de uma **cirurgia do crânio** ou de um trauma com fratura, pode ficar **ar dentro da cabeça**. Na subida, ele se expande cerca de **38%** a 8.000 ft e comprime o cérebro. Por isso, pelos critérios da **IATA**, o passageiro não voa até o **9º dia** depois de cirurgia do crânio e, a partir do **10º**, só com o crânio **sem ar** na imagem; a AsMA fala em **10 a 14 dias** de observação, e a CAA pede a liberação do neurocirurgião.",
           "Para o tripulante, a **ANAC** não aceita cirurgia cerebral ou trauma com **sequela** que afete a função. A **FAA** adia sempre para a própria FAA: concussão leve, **6 meses**; trauma moderado, **12 meses**; trauma grave, com sangue no cérebro ou amnésia de mais de 24 horas, **5 anos**. A **ICAO** observa de **3 a 6 meses** na síndrome pós-concussão, **1 a 2 anos** no hematoma epidural simples, **2 anos** no subdural e no hematoma dentro do cérebro, e até **5 anos** nos casos graves. **Tumor** benigno retirado pede **1 ano**; o maligno costuma impedir para sempre.",
           "Voar com ar no crânio pode causar **dor de cabeça forte**, piora neurológica e convulsão em pleno voo. Voltar ao cockpit antes do prazo expõe à **crise pós-traumática**, que é mais provável justamente no primeiro ano. Para o tripulante, depois de acidente com colisão ou parada brusca, a ANAC pode exigir laudo de **neurologista** no novo exame.",
+          "**Tratamentos, prognóstico e tipo de voo.** A concussão leve tem conduta **expectante**: repouso, volta gradual às atividades e observação dos sinais de alarme. O tratamento **não invasivo** inclui a **reabilitação** para tontura, memória e atenção. Os casos graves passam por **neurocirurgia**: drenagem de sangramento, **craniotomia** e correção de fratura, e o ar que fica no crânio depois disso pede **10 a 14 dias** antes de voar como passageiro. O prognóstico da concussão leve é bom; no trauma moderado e grave, o risco de **convulsão** tardia pesa por meses, e é ele que define os prazos longos do tripulante. No avião **não pressurizado**, o ar no crânio se expande mais que na cabine pressurizada; no **helicóptero**, a vibração e o ruído pioram a dor de cabeça e a tontura da síndrome pós-concussão.",
           "**Como prevenir e amenizar.** Use **capacete** e cinto, inclusive no avião. Depois de qualquer pancada com desmaio, vômito, confusão ou dor de cabeça que piora, procure atendimento antes de viajar. Depois de cirurgia do crânio, só embarque com a **liberação escrita** do neurocirurgião e, de preferência, com imagem mostrando que não há ar. O tripulante conta ao examinador qualquer trauma com perda de consciência, por menor que pareça.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · trauma craniano",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Anticonvulsivante preventivo", "Usado depois de trauma grave; dá sono e lentidão", "Incompatível com o voo enquanto em uso"],
+                ["Analgésico comum", "Alivia a dor de cabeça pós-concussão", "Compatível se a condição de base permitir voar"],
+                ["Opioide", "Sono e queda da atenção", "FAA: Do Not Fly"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-6-neurocirurgiao.jpg'), 'A imagem mostra se ainda há ar dentro do crânio antes de liberar o voo.') },
           { paragrafo: 2, midia: 'gravidade-tce' },
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v6-6-ressonancia.jpg'), 'Depois de trauma ou cirurgia, a ressonância ajuda a medir o risco de crise.') },
@@ -385,7 +446,7 @@ export const cerebro: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · trauma e cirurgia',
               colunas: ['Momento', 'O que fazer'],
@@ -411,9 +472,22 @@ export const cerebro: Capitulo = {
           "Para o tripulante, a regra é **estabilidade e função**. Pela ICAO, o tremor essencial não impede sem prejuízo, e o propranolol pede **3 meses** de observação. O **Parkinson** em si não impede: a **levodopa** pode ser aceita, os agonistas dopaminérgicos não, e a reavaliação é periódica. A **esclerose múltipla** impede de início; depois de um surto e de estabilidade, observam-se **3 meses** nos casos leves e **6 a 12 meses** nos mais significativos, e os imunomoduladores não impedem. A amnésia global transitória pede **1 ano** ou mais sem novo episódio. A ANAC não aceita doença que tire **equilíbrio, sensibilidade, força ou coordenação**.",
           "Para o passageiro, voar costuma ser possível; o que muda é a **ajuda**. Quem tem fraqueza, rigidez, desequilíbrio ou lentidão precisa de **cadeira de rodas**, embarque antecipado e assento acessível; quem tem urgência urinária, assento perto do **banheiro**. Na demência, o ambiente estranho, a rotina quebrada, o sono curto e o confinamento podem trazer **agitação**: o acompanhante é recomendado.",
           "A viagem mexe com a rotina, e é aí que os sintomas pesam: na demência, sono curto e confinamento agitam; no Parkinson e na epilepsia, a CAA britânica pede seguir o **horário dos remédios** à risca nas viagens longas; e os sintomas que mais comprometem o voo do tripulante são **vertigem** e **visão dupla**, que a ICAO cita na esclerose múltipla. Para o tripulante, esconder um diagnóstico progressivo do examinador é infração à norma; para o passageiro, viajar sem pedir ajuda aumenta o risco de **queda** no embarque e no corredor.",
+          "**Tratamentos, prognóstico e tipo de voo.** Muitas dessas doenças começam com conduta **expectante**, acompanhando a função a cada consulta. O tratamento **não invasivo** é o principal: **levodopa** e outros remédios no Parkinson, os que mudam o curso da **esclerose múltipla**, betabloqueador no tremor, além de **fisioterapia** e terapia ocupacional. Nos casos selecionados de Parkinson e de tremor que não respondem aos remédios, a **estimulação cerebral profunda**, com eletrodos implantados no cérebro, é o tratamento **invasivo**. O prognóstico é de progressão, rápida em uns e lenta em outros, e o voo do tripulante depende de a função continuar estável. Para o passageiro, voos longos, fusos e o confinamento pesam mais que o tipo de aeronave; no **helicóptero** e no avião leve, o embarque e o espaço apertado exigem mais ajuda.",
           "**Como prevenir e amenizar.** Peça **assistência** ao comprar a passagem: cadeira de rodas, embarque antecipado e assento perto do banheiro, se precisar. Leve os remédios na bagagem de mão e mantenha o **horário**, sobretudo no Parkinson, ajustando ao fuso com o médico. Na esclerose múltipla, leve o relatório do neurologista com os remédios em uso. Na demência, viaje com um **acompanhante** que conheça a rotina. O tripulante faz o acompanhamento periódico que a autoridade pedir.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · doenças degenerativas",
+              colunas: ["Remédio ou classe", "Efeito que importa no voo", "Tripulante (FAA/ANAC)"],
+              linhas: [
+                ["Levodopa", "Melhora a lentidão e a rigidez; horário fixo", "ICAO: pode ser aceita"],
+                ["Agonista dopaminérgico", "Pode causar sono súbito", "ICAO: não aceito"],
+                ["Propranolol no tremor", "Reduz o tremor; tontura no início", "ICAO: 3 meses de observação"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: foto(require('@/assets/images/topicos/m2v6-7-tremor.jpg'), 'O tremor essencial costuma ser mais incômodo que incapacitante.') },
           { paragrafo: 2, midia: 'doencas-progressivas' },
           {
@@ -433,7 +507,7 @@ export const cerebro: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v6-7-cadeira.jpg'), 'Cadeira de rodas e embarque antecipado evitam quedas de quem tem lentidão ou desequilíbrio.') },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · doenças degenerativas',
               colunas: ['Condição', 'O que fazer'],
@@ -447,7 +521,7 @@ export const cerebro: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],

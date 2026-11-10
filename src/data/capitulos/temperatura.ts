@@ -38,6 +38,13 @@
 // - Ernsting's (5ª ed.) e Fundamentals (5ª ed.), capítulos de estresse térmico e sobrevivência [confirmar capítulo e página].
 // Fotos premium geradas por IA pelo autor (pessoas fictícias): topicos/m1v4-*.jpg.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("Em todos os voos / Insira informações sobre as
+//   principais doenças relacionadas a cada tema...", "As doenças devem aparecer no texto e nao em tabelas isoladas...",
+//   "Tratamentos exectantes e nao invasivos também devem entrar" e "Aplique em tudo"), com autorização para alterar os
+//   voos congelados ("Autorizo todos", 10/11/2026): parágrafo de tratamentos (expectante, não invasivo e invasivo),
+//   prognóstico, prazos e tipo de voo, e comparador "tipo de voo". Prazos e números vêm das fontes deste registro ou do
+//   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
+//   Prazo de volta ao voo após insolação, hipotermia grave ou congelamento: [confirmar na referência].
 import type { Capitulo } from '../tipos';
 
 export const temperatura: Capitulo = {
@@ -55,8 +62,10 @@ export const temperatura: Capitulo = {
           "O calor age em degraus. Com a temperatura central entre **37,5 e 37,8 °C**, vem o **estresse térmico**: caem a coordenação, a atenção, a visão, a decisão e a cautela, justamente o que o voo exige. Entre **38,3 e 40,6 °C**, a **exaustão pelo calor** traz fadiga, náusea, tontura, cãibras, respiração rápida e até desmaio. **Acima de 40,6 °C**, o controle da temperatura falha: é a **insolação**, com confusão, comportamento estranho e coma. O suor para, e a pele fica **quente e seca**.",
           "O calor anda junto com a **desidratação**. Cerca de **dois terços do corpo são água**. A **sede só aparece quando já se perdeu cerca de 2% do peso**; por volta de 5%, chegam fadiga, náusea e instabilidade emocional. Com mais perda, aparecem dor de cabeça, confusão, delírio e falência dos rins.",
           "A prevenção é simples e diária: **beber antes da sede**, cerca de **1,9 litro por dia** como base, mais no calor e no esforço, e **manter a urina clara**. Álcool e cafeína aumentam a perda de água. Quem muda para um clima quente leva **uma a duas semanas para se aclimatar**.",
+          "**Doenças, tratamentos e tipo de voo.** O calor tem três degraus de doença, e cada um tem o seu tratamento. No **estresse térmico**, a conduta é **expectante** e de hábito: sombra, pausa e água. Na **exaustão pelo calor**, o tratamento é **não invasivo**: deitar num lugar fresco, tirar o excesso de roupa, resfriar a pele e beber água com sais. A **insolação** é emergência: **resfriamento rápido**, de preferência em água fria, e tratamento **invasivo** no hospital, com **soro na veia** e vigilância dos rins e do cérebro. Quem teve insolação só volta a voar depois da recuperação e da avaliação médica; a exaustão pede ao menos o dia de descanso e a reidratação completa. No jato **pressurizado**, o risco está no solo, com a cabine parada ao sol; no avião leve **não pressurizado** e no **helicóptero**, a cabine envidraçada esquenta como estufa, o capacete e o macacão retêm calor, e o voo baixo não refresca.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 5, midia: 'tipo-voo-temperatura' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v4-cabine-sol.jpg'), legenda: 'Avião parado ao sol, cabine abafada e macacão encharcado: o calor começa a pesar antes mesmo da decolagem.' } },
           { paragrafo: 2, midia: 'termometro-corpo' },
           { paragrafo: 3, midia: 'desidratacao' },
@@ -75,6 +84,7 @@ export const temperatura: Capitulo = {
           "A **água fria** é o cenário mais traiçoeiro, e a regra é **1-10-1**. No **primeiro minuto**, o **choque frio** provoca respiração ofegante: o perigo é **aspirar água**, por isso controlar a respiração vem antes de tudo. Depois, há cerca de **10 minutos de movimentos úteis** antes de os músculos falharem. A hipotermia leva **pelo menos meia hora** e, por volta de **1 hora**, à inconsciência. **A maioria das mortes acontece no começo, não pela hipotermia.**",
           "O resgate pede delicadeza. **Isole do chão, proteja cabeça e pescoço** e use uma **barreira contra vento e umidade**; a roupa molhada só sai num ambiente aquecido. Na forma leve, a pessoa fica sentada ou deitada por 30 minutos, recebe **bebida quente e calórica** se estiver alerta e **calor nas axilas, no tórax e nas costas**. Nas formas moderada e grave, **sempre deitada**, sem comida, com evacuação cuidadosa.",
           "Aquecer braços e pernas primeiro, ou mover demais o corpo, devolve sangue frio ao centro e baixa ainda mais a temperatura: é o **afterdrop**, que pode desencadear arritmia. Pela mesma razão, a vítima retirada da água fria pode **colapsar no próprio resgate**. E os sinais habituais de morte não valem aqui: **pupilas fixas e rigidez podem existir em quem ainda pode ser reanimado**.",
+          "**Tratamentos, prognóstico e tipo de voo.** Na **hipotermia leve**, o tratamento é **não invasivo**: abrigo, roupa seca, isolamento e **reaquecimento passivo**, com bebida quente se a pessoa estiver alerta. Na **moderada**, entra o **reaquecimento ativo** do tronco, com mantas térmicas e calor nas axilas e no tórax. Na **grave**, o tratamento é **invasivo**, no hospital: soro aquecido na veia e, nos casos extremos, **circulação extracorpórea**, que aquece o sangue fora do corpo. O **congelamento** de dedos, nariz e orelhas se trata com reaquecimento em água morna, e a **cirurgia** de tecido morto só vem semanas depois, quando o limite da lesão fica claro. O prognóstico da hipotermia tratada a tempo é bom. No jato **pressurizado**, o risco é o pouso forçado em região fria; no avião leve **não pressurizado**, o aquecimento é fraco; no **helicóptero** de resgate, a vítima viaja **deitada**, aquecida e sem movimentos bruscos, por causa do afterdrop.",
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, video: { fonte: require('@/assets/videos/m1v4-frio.mp4'), legenda: 'No frio intenso, o corpo treme para gerar calor e cada respiração vira vapor: o tremor é a primeira defesa.' } },

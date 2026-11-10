@@ -193,4 +193,21 @@ export const liberacaoCerebro: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'neuro-temperatura',
+    pergunta: 'Teve insolação, exaustão pelo calor, hipotermia ou congelamento recentemente?',
+    opcoes: [
+      { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
+      {
+        rotulo: 'Exaustão pelo calor nas últimas 24 horas',
+        passageiro: e('cuidados', 'Descanse, reidrate e evite o calor antes de embarcar.', 'Exaustão pelo calor (38,3 a 40,6 °C): repouso, resfriamento e reidratação (Flight Safety Foundation, 2001; registro de temperatura.ts).', ''),
+        tripulante: e('nao-voar', 'Não voe até descansar e se reidratar por completo.', 'Estresse térmico reduz coordenação, atenção e decisão (Flight Safety Foundation, 2001).', ''),
+      },
+      {
+        rotulo: 'Insolação, hipotermia grave ou congelamento',
+        passageiro: e('avaliar', 'Voe só depois da alta e da liberação do médico.', 'Avaliar rins, cérebro e lesões de tecido; prazo conforme a recuperação [confirmar na referência].', ''),
+        tripulante: e('nao-voar', 'Não voe até a recuperação e a avaliação médica.', 'Retorno após avaliação clínica e exames normais [confirmar na referência].', ''),
+      },
+    ],
+  },
 ];

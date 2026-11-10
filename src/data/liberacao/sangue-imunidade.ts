@@ -364,5 +364,85 @@ export const liberacaoSangue: PerguntaLiberacao[] = [
         }
       }
     ]
+  },
+  {
+    id: "m2v11-procedimento",
+    pergunta: "Fez transfusão, cirurgia, biópsia ou drenagem recentemente, ou está com tuberculose ou sarampo?",
+    ajuda: "Os prazos variam com o procedimento; o médico que o fez confirma a liberação.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: {
+          nivel: "liberado",
+          leigo: "",
+          medico: ""
+        },
+        tripulante: {
+          nivel: "liberado",
+          leigo: "",
+          medico: ""
+        }
+      },
+      {
+        rotulo: "Transfusão de sangue nos últimos dias",
+        passageiro: {
+          nivel: "avaliar",
+          leigo: "Confirme com o médico se a hemoglobina e os sintomas permitem voar.",
+          medico: "CDC: adiar com hemoglobina < 8,5 g/dL, salvo anemia crônica estável; prazo após transfusão: [confirmar na referência].",
+          topico: "11.2"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não voe até a causa estar tratada e o examinador liberar.",
+          medico: "RBAC 67.87/67.127: aptidão hematológica por avaliação; FAA Item 48: anemia com investigação.",
+          topico: "11.2"
+        }
+      },
+      {
+        rotulo: "Cirurgia do abdome ou do tórax por câncer",
+        passageiro: {
+          nivel: "nao-voar",
+          leigo: "Espere o prazo da cirurgia: cerca de 10 dias no abdome e 4 semanas depois de retirar o dreno no tórax.",
+          medico: "UK CAA: 10 dias após cirurgia abdominal (registro de digestivo.ts); BTS 2022: 4 semanas após retirar o dreno (2 se essencial).",
+          topico: "11.3"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não voe até a recuperação e a decisão da autoridade.",
+          medico: "FAA Item 48, Neoplasms: avaliação da neoplasia e do tratamento; RBAC 67.",
+          topico: "11.3"
+        }
+      },
+      {
+        rotulo: "Biópsia de pulmão por agulha ou broncoscopia com biópsia na última semana",
+        passageiro: {
+          nivel: "nao-voar",
+          leigo: "Espere 1 semana; se houve pneumotórax, 1 semana depois de resolvido.",
+          medico: "BTS 2022: 1 semana após biópsia percutânea, procedimento pleural ou broncoscopia com biópsia.",
+          topico: "11.3"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não voe até o prazo e a liberação.",
+          medico: "BTS 2022; avaliação aeromédica.",
+          topico: "11.3"
+        }
+      },
+      {
+        rotulo: "Tuberculose ou sarampo em tratamento ou isolamento",
+        passageiro: {
+          nivel: "nao-voar",
+          leigo: "Não voe até o médico ou a saúde pública liberar.",
+          medico: "OMS, Tuberculosis and air travel (3ª ed.): sensível, 2 baciloscopias negativas; multirresistente, 2 culturas negativas seguidas. CDC: sarampo, isolamento até 4 dias após o início do exantema e liberação médica.",
+          topico: "11.4"
+        },
+        tripulante: {
+          nivel: "nao-voar",
+          leigo: "Não exerça função até deixar de transmitir e ser liberado.",
+          medico: "CDC (tripulante com sarampo): isolamento até 4 dias após o exantema; OMS para tuberculose.",
+          topico: "11.4"
+        }
+      }
+    ]
   }
 ];

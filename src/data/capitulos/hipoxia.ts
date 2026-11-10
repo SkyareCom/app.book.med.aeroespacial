@@ -62,6 +62,19 @@
 //   (14 CFR 91.211); treinamento em câmara recomendado. Oxigênio e pouso na suspeita de monóxido, e respiração lenta
 //   consciente após excluir a hipóxia, são condutas práticas sem número próprio. Voo congelado de novo.
 
+// 10/11/2026 · Doenças, tratamentos e tipo de voo, a pedido do autor ("As doenças devem aparecer no texto e nao em
+//   tabelas isoladas / Todas com seus tratamentos indocados e influenciados pelos voos / Entrararem ma liberacao para voos
+//   / Prognostico relacionado ao voo / Periodo indicado de adiamento ou tepouso etc / Tratamentos cirurgicos ou invasivos
+//   destacados ou enfatizados" e "Tratamentos exectantes e nao invasivos também devem entrar"), com autorização para
+//   alterar o voo congelado ("Autorizo todos", 10/11/2026): um parágrafo de tratamentos (expectante, não invasivo e
+//   invasivo), prognóstico e tipo de voo nos tópicos II, VI, VII e VIII; comparador "tipo de voo"; tabela de tratamentos
+//   da apneia; opção de apneia operada na liberação. Prazos: BTS 2022 (acima); FAA OSA ("once effective treatment is
+//   shown"); UK CAA, Obesity information sheet (cirurgia bariátrica, até 3 meses) e Surgical conditions (10 dias após
+//   cirurgia abdominal). Expansão de 50% a 10.000 ft: lei de Boyle com gás saturado a 37 °C, (760 − 47)/(523 − 47).
+//   Linhas de tratamento (redução de volume pulmonar por cirurgia ou válvula, transplante, aparelho intraoral, cirurgia
+//   das vias aéreas, estimulador do hipoglosso, aspiração e dreno, pleurodese, câmara hiperbárica no monóxido, dreno
+//   antes do transporte aeromédico, monóxido pelo aquecimento por escapamento no avião leve): conhecimento médico e
+//   aeronáutico geral, sem número próprio. Remissão do sono corrigida de "M3V2" para "M2V8 - VII".
 import type { Capitulo } from '../tipos';
 import { liberacaoRespiratorio } from '../liberacao/respiratorio';
 
@@ -130,6 +143,7 @@ export const hipoxia: Capitulo = {
           "Na **hipóxia estagnante**, o sangue não chega com o fluxo necessário, como nos distúrbios circulatórios ou nas acelerações que reduzem o sangue no cérebro (Veja M1V7). Na **hipóxia histotóxica**, o oxigênio chega, mas a célula não consegue usá-lo; o exemplo clássico é o **cianeto**.",
           "Os mecanismos se somam. Um piloto anêmico, ou exposto a monóxido de carbono, tem menos reserva para enfrentar a altitude. Em aviões a pistão, **vazamentos do escapamento** são um risco real, mesmo perto do solo.",
           "Reconhecer o mecanismo orienta a resposta. O oxigênio suplementar ajuda em muitas situações, mas **não substitui corrigir a causa**: pressurização falha, cabine contaminada, anemia, problema circulatório ou exposição tóxica.",
+          "**Doenças, tratamentos e tipo de voo.** Cada tipo de hipóxia tem as suas doenças. A **hipóxica** vem da **asma**, da **DPOC**, da **apneia do sono**, do **pneumotórax** e da **pneumonia** (Veja M2V1 - VI a IX); a **hipêmica**, da **anemia** e da intoxicação por **monóxido de carbono** (Veja M2V11 - II); a **estagnante**, da **insuficiência cardíaca** (Veja M2V2). O tratamento vai do **expectante**, no pneumotórax pequeno sem sintomas, acompanhado com raio X, ao **não invasivo**, que é a maioria: **oxigênio**, bombinhas, **CPAP** e antibiótico. Os **invasivos** são o **dreno no tórax**, a **cirurgia** do pulmão e, na intoxicação grave por monóxido, a **câmara hiperbárica**. No avião **pressurizado**, a cabine chega a 8.000 ft; no **não pressurizado**, o oxigênio suplementar é obrigatório acima de certas altitudes (Veja M1V2), e o aquecimento da cabine pelo escapamento pode vazar monóxido; no **helicóptero**, que voa baixo, a hipóxia de altitude é rara, salvo na montanha.",
           "**Como prevenir cada tipo.** A **hipóxica** se previne com pressurização e oxigênio nas altitudes certas. A **hipêmica**, tratando a anemia antes de voar (Veja M2V11) e desconfiando do **monóxido de carbono** em aviões a pistão: dor de cabeça, tontura ou sonolência com o aquecimento ligado pedem oxigênio e pouso. A **estagnante** das acelerações se previne com a manobra e o traje anti-G (Veja M1V7). A **histotóxica** aparece sobretudo na fumaça de incêndio, em que o **cianeto** e o monóxido se somam: proteção respiratória e saída rápida (Veja M3V8).",
         ].join('\n\n'),
         recursos: [
@@ -150,7 +164,7 @@ export const hipoxia: Capitulo = {
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-2-escapamento.jpg'), legenda: 'Inverno num monomotor: gás do escapamento entrando pela ventilação do aquecedor causa sonolência e dor de cabeça.' } },
           { paragrafo: 5, midia: 'classificar-hipoxia' },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir cada tipo de hipóxia',
               colunas: ['Tipo', 'Exemplo', 'Como prevenir'],
@@ -242,6 +256,7 @@ export const hipoxia: Capitulo = {
           "A queda do gás carbônico no sangue, a **hipocapnia**, contrai os vasos do cérebro e reduz o fluxo de sangue nele, além de causar **alcalose respiratória**. Nos casos intensos, o cálcio ionizado cai e surgem **formigamento em volta da boca e nas mãos, espasmos musculares** e mal-estar.",
           "No voo, **hipóxia e hiperventilação podem coexistir ou ser confundidas**. Tratar hipóxia como ansiedade atrasa uma intervenção vital. Por isso, sintoma inexplicado em altitude pede primeiro a checagem do oxigênio e da pressurização.",
           "A ordem é fixa: **oxigênio adequado primeiro, sistema verificado e altitude corrigida, se preciso**. Só depois de excluir a hipóxia vale orientar a respiração mais lenta. **Respirar em saco de papel não é seguro** diante dessa dúvida.",
+          "**Doenças, tratamentos e tipo de voo.** A hiperventilação repetida costuma ter uma causa: **ansiedade**, **pânico** e **medo de voar** (Veja M2V7 - II), mas também **asma**, dor e febre. Na crise isolada, a conduta é **expectante** e de respiração: falar devagar, contar a respiração e, antes de tudo, conferir o oxigênio. O tratamento **não invasivo** da causa é a **terapia cognitivo-comportamental**, o treino respiratório e, quando indicado, o remédio, que tem regras para o tripulante (Veja M2V7 - II). Não há tratamento invasivo para a hiperventilação. O prognóstico é bom: tratada a ansiedade, as crises diminuem. No jato **pressurizado**, o passageiro ansioso tem tripulação para ajudar; no avião **não pressurizado**, acima de 10.000 ft, hipóxia e hiperventilação se confundem, e o oxigênio vem primeiro; no **helicóptero**, ruído, vibração e voo baixo somam estresse.",
           "**Como prevenir e amenizar.** O treinamento em câmara ensina a separar a hipóxia da hiperventilação e mostra como o próprio corpo responde. Em situações de estresse, como turbulência forte ou emergência, perceba a respiração acelerada cedo. Diante de sintomas em altitude, a sequência não muda: **oxigênio primeiro**, sistema e pressurização verificados, altitude corrigida. Excluída a hipóxia, **desacelere a respiração**, de forma consciente, até os sintomas passarem. Nunca use **saco de papel** em voo, porque ele pode piorar uma hipóxia não reconhecida.",
         ].join('\n\n'),
         recursos: [
@@ -262,7 +277,7 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v1-5-oxigenio.jpg'), legenda: 'Na dúvida entre ansiedade e hipóxia, primeiro o oxigênio; só depois se orienta a respiração mais lenta.' } },
           {
-            paragrafo: 5,
+            paragrafo: 6,
             tabela: {
               titulo: 'Como prevenir e amenizar a hiperventilação',
               colunas: ['Situação', 'O que fazer'],
@@ -289,9 +304,11 @@ export const hipoxia: Capitulo = {
           "Para o **passageiro**, a regra é a estabilidade: voar só com a doença **estável** e com o uso da bombinha de alívio **no nível de sempre**. Depois de uma **piora da DPOC**, a British Thoracic Society considera prudente esperar **6 semanas**, embora os dados sejam poucos. Para o **tripulante**, as regras são mais duras. No RBAC 67, a **asma** está entre as condições que tornam o candidato **não apto** na 1ª classe, e a **doença pulmonar crônica** também, salvo investigação que mostre baixa chance de afetar o voo. A FAA emite o certificado para a asma **controlada**: sintomas em até **2 dias por semana**, no máximo **2 consultas** por crise e **2 cursos de corticoide oral** por ano, **nenhuma internação** no último ano e **VEF1 e CVF de 80% ou mais** do previsto antes do broncodilatador. Na DPOC, a decisão é sempre da FAA.",
           "Voar sem liberação cobra do corpo e da licença. Uma **crise em voo** soma o fechamento dos brônquios ao ar mais pobre da cabine, longe de um pronto-socorro. O tripulante responde também à autoridade: pela FAA, **não pode atuar como tripulante** quem sabe, ou deveria saber, de uma condição ou de um tratamento que o impede de cumprir os requisitos do certificado; pela ANAC, quem percebe uma **diminuição da aptidão** não deve exercer as prerrogativas da licença.",
           "Toda a medicação, inclusive o **espaçador**, vai na **bagagem de mão**, com a bombinha de alívio **à mão** durante o voo. Quem usa caneta de **adrenalina** a mantém acessível, e quem tem asma grave combina com o especialista levar **corticoide oral** para uma emergência. Para o tripulante, a FAA aceita **corticoide inalado**, **broncodilatador de longa ação**, **montelucaste** e o **salbutamol** de alívio; os **anticorpos monoclonais** ficam fora do caminho simplificado. No RBAC 67, o **corticoide oral contínuo** passa pelo julgamento do examinador.",
+          "**Tratamentos, prognóstico e tipo de voo.** A asma e a DPOC não têm conduta expectante: o tratamento **não invasivo** é a base, com **bombinhas** de manutenção e de alívio, **parar de fumar**, **reabilitação pulmonar**, vacinas e, na DPOC avançada, **oxigênio**. Os tratamentos **invasivos** ficam para o enfisema grave: a **redução do volume do pulmão**, por cirurgia ou por **válvula** colocada na broncoscopia, e o **transplante de pulmão**; depois de cirurgia torácica, o passageiro espera **4 semanas** após a retirada do dreno (Veja M2V1 - VIII), e o tripulante depende da decisão da autoridade. O prognóstico no voo é bom quando a doença está estável. No jato **pressurizado**, quem precisa de oxigênio combina o concentrador portátil com a companhia; no avião **não pressurizado**, acima de 10.000 ft sem oxigênio, a saturação de quem tem DPOC cai mais depressa; no **helicóptero**, o voo é baixo, mas o ar frio e a poeira do rotor podem disparar uma crise de asma.",
           "**Não voe hoje** com crise em curso, com uso da bombinha acima do habitual ou, na DPOC, com piora nas últimas 6 semanas. **Converse com o médico antes de comprar a passagem** se a saturação em repouso for de 95% ou menos ou se a falta de ar aparecer em esforços pequenos. O médico confere a espirometria, a saturação, as crises do último ano e, se preciso, pede o teste de simulação de altitude.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-pulmao' },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-6-bombinha.jpg'), legenda: 'Bombinha com espaçador na bagagem de mão e ao alcance durante todo o voo.' } },
           {
             paragrafo: 3,
@@ -323,7 +340,7 @@ export const hipoxia: Capitulo = {
               ],
             },
           },
-          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v1-6-espirometria.jpg'), legenda: 'A espirometria mede o VEF1 e a CVF: para a FAA, 80% ou mais do previsto antes do broncodilatador.' } },
+          { paragrafo: 7, figura: { imagem: require('@/assets/images/topicos/m2v1-6-espirometria.jpg'), legenda: 'A espirometria mede o VEF1 e a CVF: para a FAA, 80% ou mais do previsto antes do broncodilatador.' } },
           {
             paragrafo: 4,
             tabela: {
@@ -351,10 +368,25 @@ export const hipoxia: Capitulo = {
           "No avião, dois problemas se somam. Dormir a bordo junta as **pausas da apneia** à **saturação já mais baixa da cabine** (Veja M2V1 - I); por isso o CPAP deve ser usado nos voos noturnos. No tripulante, a apneia sem tratamento é um problema de **fadiga** (Veja M2V8): a sonolência acompanha o piloto até a cabine de comando.",
           "O **passageiro** com apneia pode voar, desde que leve o tratamento: o **CPAP** vai na bagagem de mão, com carta do médico e **aprovação prévia da companhia** para o aparelho e as baterias. Para o **tripulante**, a FAA considera a apneia **desqualificante** até que se demonstre **tratamento eficaz**; quem trata recebe uma autorização especial com acompanhamento, e quem o examinador classifica como **alto risco** tem **90 dias** para enviar a avaliação do sono. Sintomas que ameaçam a segurança na hora fazem o examinador **adiar** o certificado. O RBAC 67 não traz item próprio para a apneia; ela entra pela regra das condições que afetam a segurança do voo, a critério do examinador.",
           "Voar com apneia sem tratamento é voar com **sono acumulado**, que derruba a atenção e os reflexos. O tripulante que sabe da condição e voa sem tratá-la descumpre a regra que proíbe atuar com condição médica que o impeça de cumprir os requisitos do certificado (FAA) ou com a aptidão diminuída (ANAC).",
-          "Prefira **voos diurnos** e evite dormir neles; nos voos noturnos, **use o CPAP a bordo**, sempre o seu próprio aparelho. Fique sem **álcool e calmantes** por **12 horas** antes e durante a viagem, e leve **baterias para 1,5 vez** a duração da viagem. Para o tripulante, remédio para dormir tem regra própria: a FAA não permite o uso diário de indutores do sono (Veja M3V2).",
+          "Prefira **voos diurnos** e evite dormir neles; nos voos noturnos, **use o CPAP a bordo**, sempre o seu próprio aparelho. Fique sem **álcool e calmantes** por **12 horas** antes e durante a viagem, e leve **baterias para 1,5 vez** a duração da viagem. Para o tripulante, remédio para dormir tem regra própria: a FAA não permite o uso diário de indutores do sono (Veja M2V8 - VII).",
+          "**Tratamentos, prognóstico e tipo de voo.** Na apneia leve, sem sonolência, a conduta pode começar por hábitos: **perder peso**, dormir de lado e evitar álcool e calmantes à noite. O tratamento **não invasivo** padrão é o **CPAP**; para alguns, o **aparelho na boca** que avança a mandíbula. Os tratamentos **invasivos** ficam para casos escolhidos: **cirurgia** das amígdalas, do palato ou dos ossos da face, o **estimulador do nervo da língua**, implantado, e a **cirurgia bariátrica** quando há obesidade (Veja M2V9 - V). Depois de qualquer um deles, o tripulante só volta com **tratamento eficaz comprovado**, em geral por um novo estudo do sono. O prognóstico é bom: tratada, a sonolência some e o risco de fadiga cai. No jato **pressurizado**, o CPAP vai a bordo nos voos noturnos; no avião leve **não pressurizado**, os voos são curtos e diurnos, mas a sonolência no comando soma-se à hipóxia acima de 10.000 ft; no **helicóptero** de um só piloto, não há quem assuma se o sono vencer.",
           "**Não voe como tripulante** com apneia diagnosticada e sem tratamento, nem com sonolência que já atrapalha o dia. O **passageiro** que ronca alto, acorda cansado e cochila sem querer deve procurar avaliação antes de uma viagem longa. O médico confere o diagnóstico, o **uso do CPAP registrado pelo aparelho** e a sonolência durante o dia.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Remédios e voo · apneia do sono",
+              colunas: ["Tratamento", "Tipo", "Tripulante"],
+              linhas: [
+                ["Perder peso, dormir de lado, sem álcool à noite", "Hábitos", "Volta só com a apneia tratada"],
+                ["CPAP", "Não invasivo", "Volta com tratamento eficaz e uso registrado pelo aparelho"],
+                ["Aparelho na boca", "Não invasivo", "Volta com eficácia comprovada no estudo do sono"],
+                ["Cirurgia das vias aéreas ou estimulador implantado", "Invasivo", "Volta com novo estudo do sono mostrando eficácia"],
+                ["Cirurgia bariátrica", "Invasivo", "Reino Unido: inapto por até 3 meses (Veja M2V9 - V)"],
+              ],
+            },
+          },
           { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v1-7-cpap-aviao.jpg'), legenda: 'No voo noturno, o CPAP vai a bordo e é usado durante o sono, com baterias para toda a viagem.' } },
           {
             paragrafo: 3,
@@ -369,7 +401,7 @@ export const hipoxia: Capitulo = {
             },
           },
           { paragrafo: 5, midia: 'baterias-cpap' },
-          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v1-7-sonolencia.jpg'), legenda: 'Na cabine de comando, a apneia sem tratamento vira sono acumulado, desatenção e erros.' } },
+          { paragrafo: 7, figura: { imagem: require('@/assets/images/topicos/m2v1-7-sonolencia.jpg'), legenda: 'Na cabine de comando, a apneia sem tratamento vira sono acumulado, desatenção e erros.' } },
           {
             paragrafo: 4,
             tabela: {
@@ -398,6 +430,7 @@ export const hipoxia: Capitulo = {
           "Para o **passageiro**, a British Thoracic Society é clara: **não voar até 7 dias depois da resolução completa no raio X**. Pneumotórax fechado e não tratado, em geral, impede o voo. Depois de **toracotomia com pleurodese cirúrgica**, a recorrência é tão baixa que não há restrição extra; na **videotoracoscopia**, a recorrência relatada é cerca de **4 vezes maior**. Depois de **cirurgia torácica**, a espera é de **4 semanas** após a retirada do dreno nas viagens não essenciais, ou **2 semanas** se a viagem for essencial. Depois de **biópsia de pulmão**, procedimento na pleura ou **broncoscopia com biópsia**, **1 semana**, contada da resolução se tiver havido pneumotórax.",
           "Para o **tripulante**, o prazo é mais longo. No RBAC 67, **pneumotórax não resolvido** torna o candidato **não apto**, e a doença bolhosa do pulmão fica a critério do examinador. Pela FAA, o pneumotórax **espontâneo** exige raio X com a resolução e a confirmação de que **não há bolhas** com risco de nova crise, e a decisão é da própria FAA; quem teve **mais de um episódio** só volta depois da cirurgia que corrige a causa, em geral **3 meses** depois dela. No **traumático**, a FAA emite o certificado **3 meses depois da resolução**. A autoridade da Nova Zelândia considera relevante, sem cirurgia, o episódio de menos de **5 anos** na Classe 1 e de menos de **3 anos** na Classe 2.",
           "Voar com pneumotórax não resolvido é levar para a cabine um **volume de ar que cresce** com a subida. Nenhum remédio impede essa expansão: a proteção é **cumprir o prazo** e ter o **raio X de controle** em mãos. Para o tripulante, voar nessas condições descumpre a proibição de atuar com condição que impede os requisitos do certificado.",
+          "**Tratamentos, prognóstico e tipo de voo.** No pneumotórax pequeno e sem sintomas, a conduta pode ser **expectante**: repouso e **raio X de controle** até o ar ser absorvido, às vezes com **oxigênio**, que acelera a absorção. Os tratamentos **invasivos** vêm quando há falta de ar ou o pneumotórax é grande: **aspiração com agulha**, **dreno no tórax** e, na recorrência ou em quem voa por profissão, a **cirurgia**, por **videotoracoscopia** ou por toracotomia, com **pleurodese** para colar o pulmão à parede. Os prazos estão acima: 7 dias depois da resolução para o passageiro, meses e decisão da autoridade para o tripulante. O prognóstico depende da cirurgia: sem ela, a volta do pneumotórax é o risco que pesa. O ar preso cresce cerca de **38%** a 8.000 ft no jato **pressurizado** e cerca de **50%** a 10.000 ft no avião **não pressurizado**; no **helicóptero**, o voo baixo expande menos, e o transporte aeromédico de quem tem pneumotórax costuma pedir o **dreno antes da decolagem**.",
           "**Não voe** com dor no peito ou falta de ar súbita, com pneumotórax ainda visível no raio X ou antes do prazo depois de cirurgia, biópsia ou broncoscopia. O médico registra a **data da resolução no raio X**, o tipo de tratamento e se houve recorrência: é essa data que conta os dias.",
         ].join('\n\n'),
         recursos: [
@@ -420,7 +453,7 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v1-8-consulta.jpg'), legenda: 'Com o raio X de controle normal e o prazo cumprido, o passageiro pode voltar a voar.' } },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Checklist antes de voar depois de pneumotórax',
               colunas: ['Item', 'O que fazer'],
@@ -447,6 +480,7 @@ export const hipoxia: Capitulo = {
           "O resultado decide o oxigênio. Com **PaO2 de 6,6 kPa (50 mmHg) ou mais**, ou **saturação de 85% ou mais**, o oxigênio a bordo **não é necessário**. Abaixo disso, ele é **recomendado**, ajustado para manter a saturação em pelo menos **85%** no adulto. Sem o teste, alguns casos já têm fluxo definido, em geral **2 litros por minuto**, e quem usa oxigênio em casa **soma 2 litros por minuto** ao fluxo de sempre. Concentradores portáteis raramente passam de **3 litros por minuto** contínuos.",
           "Algumas situações pedem só tempo. Com **pneumonia** e saturação no solo **abaixo de 94%**, a viagem não essencial espera **7 dias**. Depois de **trombose venosa profunda ou embolia pulmonar**, a espera é de **2 semanas**.",
           "Voar precisando de oxigênio sem tê-lo combinado é arriscar a **hipóxia** que a cabine provoca justamente em quem tem menos reserva (Veja M2V1 - IV). Oxigênio e aparelhos precisam de **aprovação prévia da companhia**, que costuma pedir o **formulário médico (MEDIF)** preenchido pelo médico. Para o tripulante, a lógica é outra: na DPOC, a FAA exige saturação em repouso de **96% ou mais** para a autorização especial.",
+          "**Doenças, tratamentos e tipo de voo.** Quem mais precisa do teste e do oxigênio a bordo tem **DPOC**, **fibrose pulmonar**, **hipertensão pulmonar**, **fibrose cística** ou doença do coração com pouca reserva, ou acabou de ter **pneumonia**. A conduta é **expectante** quando a saturação em repouso passa de 95%; o tratamento **não invasivo** é o **oxigênio** no voo, com o fluxo definido pelo teste, além do tratamento da doença: antibiótico na pneumonia, remédios do pulmão e da circulação. O tratamento **invasivo** mais extremo é o **transplante de pulmão**, e depois dele a volta ao voo é decidida com a equipe do transplante. O prognóstico é bom quando o oxigênio é combinado antes. No jato **pressurizado**, o concentrador portátil aprovado vai na cabine; no avião **não pressurizado**, a cabine é a altitude real, e o oxigênio precisa estar disponível já em altitudes menores; no **helicóptero**, o transporte de quem depende de oxigênio é aeromédico.",
           "**Não embarque** sem o oxigênio combinado se o teste mostrou a necessidade. Na decisão, o médico usa a saturação em repouso, a resposta ao esforço, o resultado do teste e o **fluxo que manteve a saturação em 85%**; é esse número que vai para o MEDIF.",
         ].join('\n\n'),
         recursos: [
@@ -468,7 +502,7 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v1-9-concentrador.jpg'), legenda: 'Com o concentrador portátil aprovado pela companhia, o oxigênio segue com o passageiro durante o voo.' } },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
