@@ -46,6 +46,9 @@
 //   prazos e tipo de voo): parágrafo novo em cada tópico, comparador "tipo de voo" e pergunta de cirurgias na liberação,
 //   com as fontes acima; linhas de tratamento (fisioterapia, infiltração, artroscopia, fixação, prótese) sem número
 //   próprio: conhecimento médico geral.
+// Mídia (10/11/2026): 10 fotos e 1 vídeo gerados por IA e enviados pelo autor; pessoas fictícias. Retoques: número de
+//   assento "14C" apagado (m2v12-3-gesso); capa de livro com letras desfocada no vídeo (m2v12-coluna-voo), cortado
+//   para 8 s e sem áudio.
 // Sem prazo de voo para passageiro depois de cirurgia da coluna ou de prótese de quadril e joelho nas fontes consultadas:
 //   o texto diz que o prazo é do cirurgião, sem número.
 import type { Capitulo } from '../tipos';
@@ -71,6 +74,9 @@ export const ossosMusculos: Capitulo = {
           '**Como prevenir e amenizar.** Antes do voo, confira se a lesão está estável e se o gesso tem o tempo mínimo. Durante o voo, levante-se e mexa as pernas quando for seguro, prefira o corredor e apoie as costas no encosto. Leve na bagagem de mão o remédio de uso diário e evite dormir com remédio que dá sono num voo longo. O tripulante não assume a função com dor que limite o movimento ou com remédio sedativo.',
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v12-1-assistencia.jpg'), legenda: "A assistência no embarque é um direito de quem tem mobilidade reduzida; peça com 48 horas." } },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m2v12-coluna-voo.mp4'), legenda: "Com a bota imobilizadora, mexer o tornozelo livre e levantar com cuidado ajudam a circulação no voo." } },
+          { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m2v12-1-assento.jpg'), legenda: "Apoio lombar e pernas esticadas no corredor: a coluna agradece nas horas sentado." } },
           { paragrafo: 6, midia: 'tipo-voo-ossos' },
           { paragrafo: 1, midia: 'ossos-voo' },
           { paragrafo: 1, midia: 'animacao-tala-pneumatica' },
@@ -119,6 +125,8 @@ export const ossosMusculos: Capitulo = {
           '**Como prevenir e amenizar.** Ajuste o assento antes de decolar, com a lombar apoiada e os braços alcançando os comandos sem esticar. Em voos longos, levante-se e alongue quando for seguro. Na crise, prefira o analgésico comum e procure o médico se houver dormência ou fraqueza. O tripulante com remédio que dá sono conta o prazo de espera antes de voltar à escala.',
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v12-2-exame.jpg'), legenda: "O exame de força e dos reflexos separa a dor comum da hérnia que comprime o nervo." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v12-2-helicoptero.jpg'), legenda: "Óculos de visão noturna no capacete somam peso ao pescoço do piloto de helicóptero." } },
           { paragrafo: 1, midia: 'remedio-dor-espera' },
           {
             paragrafo: 3,
@@ -177,6 +185,8 @@ export const ossosMusculos: Capitulo = {
           '**Como prevenir e amenizar.** Respeite 24 ou 48 horas depois do gesso, conforme a duração do voo. Na tala pneumática, solte um pouco de ar antes da subida. Prefira o **corredor**, mexa os dedos e o joelho livre e caminhe quando for seguro e permitido. Peça cadeira de rodas e assistência com antecedência. Dor crescente, dedos frios ou falta de ar pedem ajuda da tripulação.',
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v12-3-tala.jpg'), legenda: "Na tala de ar, soltar um pouco de ar antes de voar evita que ela aperte na subida." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v12-3-gesso.jpg'), legenda: "Perna engessada no assento do corredor, apoiada e com os dedos em movimento." } },
           { paragrafo: 1, midia: 'gesso-prazo' },
           {
             paragrafo: 3,
@@ -235,6 +245,8 @@ export const ossosMusculos: Capitulo = {
           '**Como prevenir e amenizar.** Peça assistência com 48 horas, leve a ajuda técnica e informe se a prótese passa pelo detector. Em voos longos, mexa a articulação e confira o encaixe da prótese, que pode afrouxar ou apertar com o inchaço. O tripulante leva ao examinador o relatório funcional e, quando pedido, faz a prova de voo; qualquer piora encerra a SODA até nova avaliação.',
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v12-4-simulador.jpg'), legenda: "A prova prática mostra ao examinador que a prótese opera os pedais com segurança." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v12-4-protese.jpg'), legenda: "Com a prótese bem adaptada, o embarque segue como o de qualquer passageiro." } },
           { paragrafo: 1, midia: 'protese-certificacao' },
           {
             paragrafo: 3,
@@ -293,6 +305,8 @@ export const ossosMusculos: Capitulo = {
           '**Como prevenir e amenizar.** Inclua no treino semanal exercícios para pescoço, tronco e pernas, com orientação profissional. Antes de puxar G, encoste a cabeça e posicione o olhar; no helicóptero, ajuste o contrapeso dos óculos e alterne a postura nos intervalos. Depois de uma lesão, volte quando a função estiver recuperada e o examinador concordar.',
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v12-5-caca.jpg'), legenda: "Cabeça apoiada no encosto antes da manobra: menos carga no pescoço quando o G chega." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v12-5-exercicio.jpg'), legenda: "Exercício resistido do pescoço, com orientação, fortalece a musculatura que segura a cabeça sob carga." } },
           { paragrafo: 1, midia: 'carga-pescoco' },
           {
             paragrafo: 3,
