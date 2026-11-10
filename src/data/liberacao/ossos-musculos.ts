@@ -198,4 +198,15 @@ export const liberacaoOssos: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'm2v12-cirurgia',
+    pergunta: 'Fez cirurgia de coluna, prótese de articulação ou cirurgia de fratura nos últimos meses?',
+    ajuda: 'As fontes consultadas não dão prazo fixo ao passageiro: o prazo é do cirurgião.',
+    opcoes: [
+      { rotulo: 'Não', passageiro: { nivel: 'liberado', leigo: '', medico: '' }, tripulante: { nivel: 'liberado', leigo: '', medico: '' } },
+      { rotulo: 'Cirurgia de disco ou de coluna', passageiro: { nivel: 'avaliar', leigo: 'Voe com a liberação do cirurgião; levante-se e ande no voo longo.', medico: 'Prazo do cirurgião; CDC: cirurgia recente é fator de risco de trombose em voo > 4 h.', topico: '12.2' }, tripulante: { nivel: 'avaliar', leigo: 'Volte sem sintomas, recuperado e sem remédio que dê sono; fale com o examinador.', medico: 'FAA Item 43, nota 14: cirurgia de disco não desqualifica; AME emite se assintomático, recuperado, sem medicação e sem déficit. RBAC 67.95(b)(4): hérnia com sintoma neurológico.', topico: '12.2' } },
+      { rotulo: 'Prótese de quadril, joelho ou ombro', passageiro: { nivel: 'avaliar', leigo: 'Voe com a liberação do cirurgião e previna a trombose.', medico: 'Prazo do cirurgião (sem número nas fontes consultadas); meia de compressão 15 a 30 mmHg no risco alto (CDC).', topico: '12.4' }, tripulante: { nivel: 'avaliar', leigo: 'Volte sem dor e com a função recuperada; fale com o examinador.', medico: 'FAA Item 42: limitação que interfira, decisão da FAA; SODA possível na condição estável. RBAC 67.95(a).', topico: '12.4' } },
+      { rotulo: 'Fixação de fratura com placa, parafuso ou haste', passageiro: { nivel: 'avaliar', leigo: 'Voe com a liberação do cirurgião; peça assento com espaço se a perna estiver imobilizada.', medico: 'Prazo do cirurgião; UK CAA: gesso 24/48 h; trombose (CDC).', topico: '12.3' }, tripulante: { nivel: 'nao-voar', leigo: 'Não voe até a consolidação e a força para operar os comandos e sair da aeronave.', medico: 'RBAC 67.95(b)(1)–(2); ICAO 6.3.2.23: avaliação funcional.', topico: '12.3' } },
+    ],
+  },
 ];

@@ -156,6 +156,7 @@ export type TipoMidia =
   | 'carga-pescoco'
   | 'animacao-tala-pneumatica'
   | 'tipo-voo-coracao'
+  | 'tipo-voo-ossos'
   | 'tipo-voo-impacto'
   | 'tipo-voo-g'
   | 'tipo-voo-ruido'

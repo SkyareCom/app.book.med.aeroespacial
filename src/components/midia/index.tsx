@@ -20,7 +20,7 @@ import { NyhaOxigenio, PrazoCoracao, PressaoNormas, ProlapsoMitral, RiscoTrombos
 import { AudiometriaNormas, ClassesBarodontalgia, EscalaTeed, MapaSeios, PrazoDentista, PrazoOuvido, PressaoDescida } from '@/components/midia/m2v3-graficos';
 import { FusoInsulina, HormoniosVoo, ImcVoo, PrazoDiabetes, RemediosPeso, SemaforoGlicemia, TireoideVoo } from '@/components/midia/m2v9-graficos';
 import { BiliarDecidir, DigestivoVoo, FigadoRisco, IntestinoCrise, PrazoCirurgiaDigestiva, RefluxoVoo } from '@/components/midia/m2v10-graficos';
-import { TipoVooCoracao, TipoVooOuvidos, TipoVooOlhos, TipoVooOrientacao, TipoVooCerebro, TipoVooMente, TipoVooSono, TipoVooHormonios, TipoVooSangue, TipoVooDigestivo, TipoVooPulmao, TipoVooGases, TipoVooCabine, TipoVooDescompressao, TipoVooTemperatura, TipoVooRadiacao, TipoVooRuido, TipoVooG, TipoVooImpacto } from '@/components/midia/tipo-voo';
+import { TipoVooCoracao, TipoVooOuvidos, TipoVooOlhos, TipoVooOrientacao, TipoVooCerebro, TipoVooMente, TipoVooSono, TipoVooHormonios, TipoVooSangue, TipoVooDigestivo, TipoVooPulmao, TipoVooGases, TipoVooCabine, TipoVooDescompressao, TipoVooTemperatura, TipoVooRadiacao, TipoVooRuido, TipoVooG, TipoVooImpacto, TipoVooOssos } from '@/components/midia/tipo-voo';
 import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo, AnimacaoHemoglobina } from '@/components/midia/m2v11-graficos';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
@@ -187,6 +187,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'carga-pescoco': () => <CargaPescoco />,
   'animacao-tala-pneumatica': () => <AnimacaoTalaPneumatica />,
   'tipo-voo-coracao': () => <TipoVooCoracao />,
+  'tipo-voo-ossos': () => <TipoVooOssos />,
   'tipo-voo-impacto': () => <TipoVooImpacto />,
   'tipo-voo-g': () => <TipoVooG />,
   'tipo-voo-ruido': () => <TipoVooRuido />,
@@ -357,6 +358,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'carga-pescoco': 'A carga no pescoço sob G',
   'animacao-tala-pneumatica': 'A tala pneumática na subida',
   'tipo-voo-coracao': 'O coração em cada tipo de voo',
+  'tipo-voo-ossos': 'Coluna, ossos e músculos em cada tipo de voo',
   'tipo-voo-impacto': 'O impacto em cada tipo de voo',
   'tipo-voo-g': 'As forças G em cada tipo de voo',
   'tipo-voo-ruido': 'O ruído em cada tipo de voo',

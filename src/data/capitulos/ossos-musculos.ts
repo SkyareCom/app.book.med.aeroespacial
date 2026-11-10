@@ -42,6 +42,10 @@
 //   reduz a dor; capacete mais leve e com centro de gravidade ajustado; posicionar a cabeça antes do G.
 // Remissões coerentes com M1V6 - IV (vibração 4 a 8 Hz), M1V7 - IV (check six), M1V8 - III (ejeção, 3 a 4 meses),
 //   M2V2 - VII (trombose) e M1V1 - II (Boyle). Padrão: docs/modelo-sistemas.md.
+// 10/11/2026 ("Aplique em tudo", pedido das doenças com tratamentos expectantes, não invasivos e invasivos, prognóstico,
+//   prazos e tipo de voo): parágrafo novo em cada tópico, comparador "tipo de voo" e pergunta de cirurgias na liberação,
+//   com as fontes acima; linhas de tratamento (fisioterapia, infiltração, artroscopia, fixação, prótese) sem número
+//   próprio: conhecimento médico geral.
 // Sem prazo de voo para passageiro depois de cirurgia da coluna ou de prótese de quadril e joelho nas fontes consultadas:
 //   o texto diz que o prazo é do cirurgião, sem número.
 import type { Capitulo } from '../tipos';
@@ -63,9 +67,11 @@ export const ossosMusculos: Capitulo = {
           '**Para o passageiro**, a pergunta é se ele aguenta ficar sentado, se a lesão incha e se consegue sair do avião numa evacuação. **Para o tripulante**, a ICAO e a ANAC olham a **função**: não pode haver alteração de ossos, articulações, músculos ou tendões capaz de atrapalhar o exercício seguro da licença. Sequelas e defeitos anatômicos pedem, em regra, **avaliação funcional**, e não só o diagnóstico.',
           'Voar sem condição tem custo. A **dor** distrai e cansa; a **limitação de movimento** pode impedir o alcance de um comando ou a saída rápida; o **remédio para dor** pode dar sono. Na perna engessada, a imobilidade favorece a **trombose**, que pode embolizar para o pulmão (Veja M2V2 - VII). Por isso, a decisão considera a lesão, o tratamento e a tarefa da pessoa a bordo.',
           'Os **analgésicos comuns**, como paracetamol e ibuprofeno, em geral não impedem o voo do piloto se a doença de base for aceitável. Já os **relaxantes musculares** e os **opioides** dão sono e lentidão: para a FAA, quem toma não voa até cumprir um prazo de espera. O detalhe de cada classe está nos tópicos seguintes.',
+          "**Doenças, tratamentos e tipo de voo.** As doenças deste voo que mais pesam no ar são a **dor no pescoço e nas costas**, a **hérnia de disco**, as **fraturas**, a **artrose** e a **artrite**, as **próteses** e a **amputação**. O tratamento vai do **expectante**, na dor comum que melhora em semanas com movimento, ao **não invasivo**, que resolve a maioria: **fisioterapia**, exercício, analgésico que não dá sono, **gesso** ou **tala**. Os tratamentos **invasivos** são a **cirurgia da coluna**, a **fixação de fratura** com placas e parafusos, a **prótese de quadril ou de joelho** e a infiltração na articulação; o prazo depois deles é do cirurgião, e o tripulante volta sem dor, sem remédio que dê sono e com a força recuperada. No jato **pressurizado**, pesam as horas sentado e a trombose; no avião leve **não pressurizado**, a cabine apertada e o esforço de embarque; no **helicóptero**, a **vibração** e a postura torta, e no caça, a carga do G no pescoço.",
           '**Como prevenir e amenizar.** Antes do voo, confira se a lesão está estável e se o gesso tem o tempo mínimo. Durante o voo, levante-se e mexa as pernas quando for seguro, prefira o corredor e apoie as costas no encosto. Leve na bagagem de mão o remédio de uso diário e evite dormir com remédio que dá sono num voo longo. O tripulante não assume a função com dor que limite o movimento ou com remédio sedativo.',
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, midia: 'tipo-voo-ossos' },
           { paragrafo: 1, midia: 'ossos-voo' },
           { paragrafo: 1, midia: 'animacao-tala-pneumatica' },
           {
@@ -83,7 +89,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · ossos e músculos',
               colunas: ['Momento ou situação', 'O que fazer'],
@@ -109,6 +115,7 @@ export const ossosMusculos: Capitulo = {
           '**O passageiro** com dor sem sinais neurológicos pode voar, com cuidados de postura e movimento. **O tripulante** depende da função: a ANAC considera inapto quem tem **hérnia discal com sintomatologia neurológica** ou desvio da coluna sintomático que afete a segurança. A FAA manda a hérnia sintomática para decisão central; depois de **cirurgia de disco**, o examinador pode liberar quem está **sem sintomas, recuperado, sem remédio e sem déficit neurológico**.',
           'Voar com crise de dor tem dois riscos: a dor que **tira a atenção** e o **movimento limitado**, que impede girar o pescoço para olhar o tráfego ou alcançar um comando. A **fraqueza** numa perna pode atrapalhar o pedal e a evacuação. Para o tripulante, esconder o quadro do examinador expõe o certificado e a investigação de um eventual incidente.',
           'Os **analgésicos comuns** e os **anti-inflamatórios** sem receita costumam ser aceitos pela FAA se a condição de base permite voar, mas as versões **"PM"**, com difenidramina, dão sono e são **Do Not Fly**. Os **relaxantes musculares**, como ciclobenzaprina e carisoprodol, e os **analgésicos opioides**, como codeína, morfina e tramadol, também são **Do Not Fly**: a espera é de **5 meias-vidas** ou, sem esse dado, **5 vezes o intervalo entre as doses**.',
+          "**Tratamentos, prognóstico e prazos.** Na dor no pescoço ou nas costas sem sinais nos nervos, a conduta é **expectante** e ativa: manter o movimento, que costuma resolver em semanas. O tratamento **não invasivo** é a **fisioterapia**, o fortalecimento e o analgésico comum; o **relaxante muscular** e o **opioide** tiram do voo pelo tempo de 5 meias-vidas (FAA). Os tratamentos **invasivos** são a **infiltração** perto do nervo e a **cirurgia de disco**, para a hérnia que comprime o nervo com fraqueza ou dor que não cede. Pela FAA, a cirurgia de disco **não desqualifica**: o examinador libera o piloto **sem sintomas, recuperado, sem remédio e sem déficit**; a hérnia com sintomas nos nervos vai à decisão da FAA, e no Brasil torna inapto (RBAC 67). O prognóstico é bom para a maioria. No jato **pressurizado**, levantar e andar ajuda; no avião leve **não pressurizado**, o assento fixo cansa; no **helicóptero**, a postura e a vibração mantêm a dor, e os óculos de visão noturna pesam no pescoço.",
           '**Como prevenir e amenizar.** Ajuste o assento antes de decolar, com a lombar apoiada e os braços alcançando os comandos sem esticar. Em voos longos, levante-se e alongue quando for seguro. Na crise, prefira o analgésico comum e procure o médico se houver dormência ou fraqueza. O tripulante com remédio que dá sono conta o prazo de espera antes de voltar à escala.',
         ].join('\n\n'),
         recursos: [
@@ -140,7 +147,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · pescoço e costas',
               colunas: ['Momento ou situação', 'O que fazer'],
@@ -166,6 +173,7 @@ export const ossosMusculos: Capitulo = {
           '**Para o passageiro**, a maioria das companhias espera **24 horas** depois do gesso em voos de **menos de 2 horas** e **48 horas** nos mais longos. Se a viagem for urgente, o gesso pode ser **aberto ao meio** (bivalvado). Quem teve lesão nos **7 dias** anteriores deve falar com a companhia. **Para o tripulante**, membro engessado ou fratura sem consolidar é deficiência funcional: não há como garantir comandos, pedais e evacuação.',
           'Voar antes do prazo arrisca **dor intensa, dedos frios ou dormentes** e compressão de nervo no meio do voo, longe de quem possa abrir o gesso. A trombose pode aparecer **até semanas depois** do voo, como dor e inchaço na panturrilha ou falta de ar súbita. A companhia pode recusar o embarque de quem não cumpre o prazo, e o seguro pode não cobrir a complicação.',
           'Para quem tem **risco alto de trombose**, o médico pode indicar **meia de compressão** de 15 a 30 mmHg no tornozelo e, caso a caso, **heparina** injetável antes do voo. Analgésico depois da cirurgia é frequente: os **opioides** dão sono e, para o tripulante, são **Do Not Fly**. Anticoagulante já prescrito não se suspende por conta própria (Veja M2V11 - II).',
+          "**Tratamentos, prognóstico e prazos.** A fratura sem desvio pode ter tratamento **expectante**, com proteção e repouso relativo; a maioria tem tratamento **não invasivo**, com **gesso**, **tala** ou bota. O tratamento **invasivo** é a **cirurgia**: redução e fixação com **placas, parafusos ou hastes**, indicada quando o osso desviou, a articulação foi atingida ou a fratura é instável. Os prazos do passageiro: **24 horas** depois do gesso em voo de menos de 2 horas e **48 horas** em voo mais longo; depois de cirurgia, o prazo é do cirurgião, e o risco de **trombose** pesa nas primeiras semanas (Veja M2V2 - VII). O tripulante volta quando o osso consolidou e a força e o movimento permitem operar os comandos e sair da aeronave; na fratura em cunha da coluna, **3 a 4 meses** longe do assento ejetável (Veja M1V8 - III). No jato **pressurizado**, a perna engessada pede assento com espaço; no avião leve **não pressurizado**, a tala de ar se expande mais; no **helicóptero**, o embarque e a vibração doem na fratura recente.",
           '**Como prevenir e amenizar.** Respeite 24 ou 48 horas depois do gesso, conforme a duração do voo. Na tala pneumática, solte um pouco de ar antes da subida. Prefira o **corredor**, mexa os dedos e o joelho livre e caminhe quando for seguro e permitido. Peça cadeira de rodas e assistência com antecedência. Dor crescente, dedos frios ou falta de ar pedem ajuda da tripulação.',
         ].join('\n\n'),
         recursos: [
@@ -197,7 +205,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · fraturas e gesso',
               colunas: ['Momento ou situação', 'O que fazer'],
@@ -223,6 +231,7 @@ export const ossosMusculos: Capitulo = {
           '**O passageiro** com deficiência ou mobilidade reduzida tem direito a assistência: a ANAC pede aviso com **48 horas** de antecedência, transporta **sem custo** uma ajuda técnica de locomoção e não acomoda essa pessoa junto à **saída de emergência**. **O tripulante** passa por avaliação funcional: a ANAC não aceita sequela que afete a segurança, e a FAA pede relatório de força, amplitude e dor e pode exigir **prova de voo médica**. Quem passa recebe a **SODA**, que não expira enquanto a condição não piorar.',
           'Pilotar sem essa avaliação é arriscado e irregular: a perna que não freia a tempo ou o braço que não alcança um comando aparecem justamente na emergência. Para o passageiro, viajar sem pedir assistência pode significar ficar sem cadeira de rodas na conexão ou sem ajuda para chegar ao assento. Prótese que machuca o coto num voo longo também tira o conforto e a mobilidade na chegada.',
           'Os **anti-inflamatórios** e os **analgésicos comuns** em geral são aceitos pela FAA se a doença de base permite voar. O **corticoide em dose alta**, acima de **20 mg de prednisona por dia**, é **Do Not Issue**: o examinador não libera, e a decisão é da FAA. A **lidocaína** em adesivo ou creme é aceita com cuidado: não deve ir para as mãos.',
+          "**Tratamentos, prognóstico e certificação.** Na **artrose** e na **artrite** leves, a conduta é **expectante** e de exercício. O tratamento **não invasivo** é a fisioterapia, o controle do peso, o analgésico e o anti-inflamatório e, na artrite, os remédios que controlam a doença, alguns com regras para o tripulante. Os tratamentos **invasivos** são a **infiltração** da articulação, a **artroscopia** e a **prótese** de quadril, joelho ou ombro; na **amputação**, a cirurgia do coto e a adaptação da **prótese**. Depois da prótese, o passageiro segue o prazo do cirurgião e a prevenção de trombose; o tripulante volta sem dor e com a função recuperada. Na amputação e na limitação estável, a FAA pode dar a **declaração de capacidade demonstrada**, que não expira, depois de uma prova prática. No jato **pressurizado**, pedir assistência com 48 horas; no avião leve **não pressurizado**, conferir o alcance dos pedais e dos comandos; no **helicóptero**, os pedais e o coletivo exigem as duas pernas e os dois braços (Veja a missão especial Deficiências e o voo).",
           '**Como prevenir e amenizar.** Peça assistência com 48 horas, leve a ajuda técnica e informe se a prótese passa pelo detector. Em voos longos, mexa a articulação e confira o encaixe da prótese, que pode afrouxar ou apertar com o inchaço. O tripulante leva ao examinador o relatório funcional e, quando pedido, faz a prova de voo; qualquer piora encerra a SODA até nova avaliação.',
         ].join('\n\n'),
         recursos: [
@@ -254,7 +263,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · próteses e articulações',
               colunas: ['Momento ou situação', 'O que fazer'],
@@ -280,6 +289,7 @@ export const ossosMusculos: Capitulo = {
           '**Para o passageiro**, depois de uma lesão vale a regra do médico assistente: andar pelo corredor, sentar e levantar e carregar a bagagem de mão sem dor. **Para o tripulante**, a volta depende do examinador: a ANAC e a FAA querem força, amplitude e coordenação suficientes para a função, e o militar que se ejetou pode ficar afastado do assento ejetável por meses (Veja M1V8 - III).',
           'Voltar cedo demais tem custo. O músculo ainda fraco cansa no meio da jornada, a dor reaparece e o piloto passa a **evitar movimentos**, como olhar para trás. Uma **lesão nova** sobre a antiga pode afastar por mais tempo. Esconder a limitação do examinador expõe o certificado e o seguro.',
           'O **exercício resistido** com elástico, feito com regularidade, aumentou a força e a resistência do pescoço de pilotos e reduziu a dor. Outras medidas ajudam: **capacete mais leve** e com o peso bem distribuído, **contrapeso** para os óculos de visão noturna e **posicionar a cabeça antes** de puxar o G. Analgésico não substitui o treino: tira a dor, mas não devolve a força.',
+          "**Tratamentos e volta ao voo.** Depois de uma lesão, a volta segue degraus: repouso relativo, **reabilitação** com fisioterapia, treino de força e, por fim, a prova prática de operar os comandos e sair da aeronave. O tratamento **não invasivo** é o centro: **exercício resistido** do pescoço e do tronco, que também previne a próxima crise. Quando houve tratamento **invasivo**, como cirurgia de coluna ou prótese, a reabilitação é mais longa, e o tripulante volta só sem dor, sem remédio que dê sono e com a liberação do examinador. O prognóstico é bom para quem mantém o treino. No jato **pressurizado**, o retorno pede aguentar a jornada sentado; no avião leve **não pressurizado**, a força para os comandos e para sair rápido; no **helicóptero** e no caça, a resistência do pescoço ao capacete, aos óculos de visão noturna e ao G.",
           '**Como prevenir e amenizar.** Inclua no treino semanal exercícios para pescoço, tronco e pernas, com orientação profissional. Antes de puxar G, encoste a cabeça e posicione o olhar; no helicóptero, ajuste o contrapeso dos óculos e alterne a postura nos intervalos. Depois de uma lesão, volte quando a função estiver recuperada e o examinador concordar.',
         ].join('\n\n'),
         recursos: [
@@ -311,7 +321,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Como prevenir e amenizar · condicionamento e retorno',
               colunas: ['Momento ou situação', 'O que fazer'],
@@ -324,7 +334,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'Sistemas do corpo mais atingidos',
               colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
