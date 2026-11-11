@@ -19,13 +19,14 @@ const ASSINATURAS = Object.freeze({
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
   '1.2': 'ededaeb6f4fb0ee9', // M1V1 - II: Leis dos gases
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  '1.3': '33bef580d2a0815b', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor; 30/10/2026: foco no organismo, autorizado pelo autor)
+  '1.3': 'e47c8d9a229ec10a', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor; 30/10/2026: foco no organismo, autorizado pelo autor)
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  '1.4': '8b1364ad3b58eab5', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine; 30/10/2026: tabela de sistemas do corpo, autorizada pelo autor)
+  '1.4': '3ef614c241d1dd21', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine; 30/10/2026: tabela de sistemas do corpo, autorizada pelo autor)
 });
 // 11/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Finalize todos os blocos incompletos"): M1V1 a M1V8 e M2V1 ganharam
 //   parágrafos, orientação e tabela 'Como prevenir e amenizar', questões novas e fotos recortadas em 16:9; hashes refeitos.
+//   11/11/2026 (tarde): fotos de abertura de 1.3, 1.4, 4.2 e 4.3 e vídeo m2v1-hipoxia enviados pelo autor; hashes refeitos.
 const ASSINATURA_TESTE = 'c6e638544fa5ea23';
 
 // FNV-1a 64 bits por unidade UTF-16; detecta alterações acidentais byte a byte
@@ -107,7 +108,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
   // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/temperatura.ts': '73638a155d9765b8',
+  'src/data/capitulos/temperatura.ts': '46d518ee9bced2cd',
   'src/components/midia/m1v4-graficos.tsx': '5673a269f5b6358b',
   'assets/videos/m1v4-frio.mp4': '99d9b1c4488079cb',
   'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
@@ -133,7 +134,7 @@ const ARQUIVOS = Object.freeze({
   // 10/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Nas tabelas em que houver Tripulantes e passageiros
   //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante das
   //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
-  'src/data/capitulos/hipoxia.ts': '74f6dcbb4504b9f1',
+  'src/data/capitulos/hipoxia.ts': 'e86dbb124a703a2b',
   'src/data/liberacao/respiratorio.ts': '7066c8949561a7c8',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
@@ -196,7 +197,7 @@ const ARQUIVOS = Object.freeze({
   // fotos, vídeo e interativo do M1V1 e as capas dos 8 voos e da missão.
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  'src/data/capitulos/atmosfera.ts': 'dc0defa2d1f73949',
+  'src/data/capitulos/atmosfera.ts': 'f84a109d64dfe013',
   'src/components/midia/m1v1-umidade.tsx': '7699b9377a454c7d',
   'assets/videos/m1v1-curvatura.mp4': 'd0c6a7c850ab75f8',
   'assets/images/topicos/m1v1-1-balao.jpg': 'cda576be862919c5',

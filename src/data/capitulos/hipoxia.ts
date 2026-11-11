@@ -298,6 +298,7 @@ export const hipoxia: Capitulo = {
           "**Como prevenir e amenizar.** Aprenda a sua **assinatura de hipóxia** no treinamento em câmara: ela tende a se repetir e é o alarme mais rápido. À noite, a visão é a primeira a sofrer, e a FAA recomenda oxigênio já **acima de 5.000 ft**. Em altitude, qualquer sintoma estranho, como dor de cabeça, tontura, calor no rosto, visão escurecida ou bocejos, pede **oxigênio primeiro** e só depois a investigação. Na cabine, combine com o colega observar o outro: lábios azulados podem faltar, mas a **confusão** e a **lentidão** aparecem.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 3, video: { fonte: require('@/assets/videos/m2v1-hipoxia.mp4'), legenda: 'Na câmara hipobárica, sem a máscara, a escrita fica lenta e o olhar perde o foco antes de o aluno perceber; o instrutor recoloca o oxigênio.' } },
           {
             paragrafo: 5,
             tabela: {

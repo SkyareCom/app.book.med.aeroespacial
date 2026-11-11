@@ -206,6 +206,7 @@ export const atmosfera: Capitulo = {
           "**Como prevenir e amenizar.** A atmosfera padrão é uma régua; o corpo responde ao ar do dia. Em **aeroporto alto e dia quente**, o piloto calcula a **altitude-densidade** antes de decolar, porque o avião precisa de mais pista e sobe pior. O altímetro deve receber o **ajuste de pressão local** sempre que informado, porque um ajuste errado muda a altura real sobre o terreno. Quem desembarca numa **cidade de grande altitude** sente a pressão baixa já no solo: nos primeiros dias, **suba devagar**, beba água e evite esforço e álcool.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v1-3-radiossonda.jpg'), legenda: 'Lançamento de radiossonda ao amanhecer: na subida, o balão mede pressão, temperatura e umidade, e mostra quanto o ar do dia se afasta da atmosfera padrão.' } },
           {
             paragrafo: 6,
             tabela: {
@@ -252,6 +253,7 @@ export const atmosfera: Capitulo = {
           "**Como prevenir e amenizar.** Em voo longo, **beba água** aos poucos e reduza o álcool e o café, que aumentam a perda de líquido. Quem tem olho seco usa **lágrima artificial** e troca as **lentes de contato pelos óculos**; o **soro fisiológico** no nariz alivia a mucosa ressecada. No solo, com calor úmido, **não espere o avião parado ao sol** com as portas fechadas: ventile a cabine, use roupa leve e beba antes de ter sede (Veja M1V4 - I).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v1-4-janela-gelo.jpg'), legenda: 'Cristais de gelo na borda da janela em cruzeiro: lá fora, o ar é gelado e muito seco; dentro, beber água aos poucos ajuda contra a cabine seca.' } },
           {
             paragrafo: 7,
             tabela: {

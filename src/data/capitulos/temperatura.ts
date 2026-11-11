@@ -105,6 +105,7 @@ export const temperatura: Capitulo = {
           "**Como prevenir e amenizar.** Em voo sobre **água fria** ou região gelada, vista roupa adequada ao terreno sobrevoado, saiba onde está o **colete salva-vidas** e onde ficam as saídas. Na água, **controle a respiração no primeiro minuto** e depois, se não puder sair, **encolha o corpo abraçando os joelhos**, para perder menos calor. No resgate, aqueça o **tronco**, não braços e pernas, e mova a vítima com delicadeza. A tripulação usa **traje de imersão** quando o operador exigir e treina a saída da aeronave na água.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v4-2-agua-fria.jpg'), legenda: 'Saindo da água fria depois de um pouso forçado: tremor forte e respiração ofegante são os primeiros sinais, e o perigo continua fora da água.' } },
           {
             paragrafo: 7,
             tabela: {
@@ -151,6 +152,7 @@ export const temperatura: Capitulo = {
           "**Como prevenir e amenizar.** A sobrevivência começa antes da decolagem. Em voo sobre **área remota**, use **roupa e calçado** adequados ao terreno, registre o **plano de voo** e confira o **ELT** e o **kit**. Preste atenção à demonstração de segurança e conte as fileiras até a saída. Depois de um pouso forçado, **fique perto da aeronave**, conte os ocupantes e acione os sinais; no calor, **poupe o suor na sombra**, e no frio, isole-se do chão.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v4-3-abrigo.jpg'), legenda: 'Abrigo montado junto à asa: perto da aeronave, a pessoa é mais fácil de achar, e o kit garante sinal, água e calor.' } },
           {
             paragrafo: 6,
             tabela: {

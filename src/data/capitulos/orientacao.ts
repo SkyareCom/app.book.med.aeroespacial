@@ -266,6 +266,7 @@ export const orientacao: Capitulo = {
           "**Como prevenir e amenizar.** Reconheça o conflito e diga em voz alta. Olhe o **indicador de atitude** e **nivele as asas** primeiro, depois corrija arfagem e potência. Se houver outro piloto, **passe os comandos**: raramente os dois têm a mesma ilusão. Avise o controle. Depois do voo, relate o episódio; um relato honesto ajuda a evitar o próximo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v5-4-nuvem.jpg'), legenda: 'Dentro da nuvem, o horizonte some: sem referência visual, o ouvido interno engana, e só os instrumentos mostram a atitude real.' } },
           {
             paragrafo: 6,
             tabela: {
