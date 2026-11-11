@@ -47,6 +47,9 @@
 //   Prazo de volta ao voo após insolação, hipotermia grave ou congelamento: [confirmar na referência].
 import type { Capitulo } from '../tipos';
 
+// 11/11/2026 (pedido do autor "Finalize todos os blocos incompletos"): orientação "Como prevenir e amenizar" com tabela
+//   de decisão e motivo nos tópicos 4.1 a 4.3 e 4 questões novas. Aclimatação ao calor e aumento do suor: Fundamentals of
+//   Aerospace Medicine e FAA AM-400-09/1; postura de proteção na água fria (HELP): manuais de sobrevivência no mar.
 export const temperatura: Capitulo = {
   numero: 4,
   titulo: 'Temperatura e sobrevivência',
@@ -63,8 +66,22 @@ export const temperatura: Capitulo = {
           "O calor anda junto com a **desidratação**. Cerca de **dois terços do corpo são água**. A **sede só aparece quando já se perdeu cerca de 2% do peso**; por volta de 5%, chegam fadiga, náusea e instabilidade emocional. Com mais perda, aparecem dor de cabeça, confusão, delírio e falência dos rins.",
           "A prevenção é simples e diária: **beber antes da sede**, cerca de **1,9 litro por dia** como base, mais no calor e no esforço, e **manter a urina clara**. Álcool e cafeína aumentam a perda de água. Quem muda para um clima quente leva **uma a duas semanas para se aclimatar**.",
           "**Doenças, tratamentos e tipo de voo.** O calor tem três degraus de doença, e cada um tem o seu tratamento. No **estresse térmico**, a conduta é **expectante** e de hábito: sombra, pausa e água. Na **exaustão pelo calor**, o tratamento é **não invasivo**: deitar num lugar fresco, tirar o excesso de roupa, resfriar a pele e beber água com sais. A **insolação** é emergência: **resfriamento rápido**, de preferência em água fria, e tratamento **invasivo** no hospital, com **soro na veia** e vigilância dos rins e do cérebro. Quem teve insolação só volta a voar depois da recuperação e da avaliação médica; a exaustão pede ao menos o dia de descanso e a reidratação completa. No jato **pressurizado**, o risco está no solo, com a cabine parada ao sol; no avião leve **não pressurizado** e no **helicóptero**, a cabine envidraçada esquenta como estufa, o capacete e o macacão retêm calor, e o voo baixo não refresca.",
+          "**Como prevenir e amenizar.** Beba **antes da sede** e mantenha a **urina clara**. Use roupa leve e evite esperar no avião **parado ao sol** com as portas fechadas. Nas primeiras **uma a duas semanas** num clima quente, vá com calma, porque o corpo ainda não sua de forma eficiente. **Pele quente e seca, confusão ou desmaio** são emergência: resfrie a pessoa e chame socorro. O tripulante com sinais de **exaustão pelo calor** não voa até se recuperar, porque o calor tira atenção e julgamento antes de tirar a força.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · calor",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Dia quente com espera no solo", "Beber antes da sede e evitar a cabine fechada ao sol: o suor não dá conta", "Ventilar a cabine e hidratar antes da partida, porque o estresse térmico já reduz a atenção"],
+                ["Sinais de exaustão pelo calor", "Adiar e resfriar: deitar em lugar fresco e beber, porque tontura e náusea pioram a bordo", "Não voar até recuperar, porque fadiga, tontura e desmaio incapacitam"],
+                ["Pele quente e seca com confusão", "Emergência: resfriar na hora e chamar socorro, porque a insolação pode matar", "Não voar e tratar como emergência, porque o cérebro já está falhando"],
+                ["Chegada a clima quente", "Ir com calma nos primeiros dias: a aclimatação leva de 1 a 2 semanas", "Aumentar a hidratação nas primeiras semanas, porque o corpo ainda não sua de forma eficiente"],
+              ],
+            },
+          },
           { paragrafo: 5, midia: 'tipo-voo-temperatura' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v4-cabine-sol.jpg'), legenda: 'Avião parado ao sol, cabine abafada e macacão encharcado: o calor começa a pesar antes mesmo da decolagem.' } },
           { paragrafo: 2, midia: 'termometro-corpo' },
@@ -85,8 +102,21 @@ export const temperatura: Capitulo = {
           "O resgate pede delicadeza. **Isole do chão, proteja cabeça e pescoço** e use uma **barreira contra vento e umidade**; a roupa molhada só sai num ambiente aquecido. Na forma leve, a pessoa fica sentada ou deitada por 30 minutos, recebe **bebida quente e calórica** se estiver alerta e **calor nas axilas, no tórax e nas costas**. Nas formas moderada e grave, **sempre deitada**, sem comida, com evacuação cuidadosa.",
           "Aquecer braços e pernas primeiro, ou mover demais o corpo, devolve sangue frio ao centro e baixa ainda mais a temperatura: é o **afterdrop**, que pode desencadear arritmia. Pela mesma razão, a vítima retirada da água fria pode **colapsar no próprio resgate**. E os sinais habituais de morte não valem aqui: **pupilas fixas e rigidez podem existir em quem ainda pode ser reanimado**.",
           "**Tratamentos, prognóstico e tipo de voo.** Na **hipotermia leve**, o tratamento é **não invasivo**: abrigo, roupa seca, isolamento e **reaquecimento passivo**, com bebida quente se a pessoa estiver alerta. Na **moderada**, entra o **reaquecimento ativo** do tronco, com mantas térmicas e calor nas axilas e no tórax. Na **grave**, o tratamento é **invasivo**, no hospital: soro aquecido na veia e, nos casos extremos, **circulação extracorpórea**, que aquece o sangue fora do corpo. O **congelamento** de dedos, nariz e orelhas se trata com reaquecimento em água morna, e a **cirurgia** de tecido morto só vem semanas depois, quando o limite da lesão fica claro. O prognóstico da hipotermia tratada a tempo é bom. No jato **pressurizado**, o risco é o pouso forçado em região fria; no avião leve **não pressurizado**, o aquecimento é fraco; no **helicóptero** de resgate, a vítima viaja **deitada**, aquecida e sem movimentos bruscos, por causa do afterdrop.",
+          "**Como prevenir e amenizar.** Em voo sobre **água fria** ou região gelada, vista roupa adequada ao terreno sobrevoado, saiba onde está o **colete salva-vidas** e onde ficam as saídas. Na água, **controle a respiração no primeiro minuto** e depois, se não puder sair, **encolha o corpo abraçando os joelhos**, para perder menos calor. No resgate, aqueça o **tronco**, não braços e pernas, e mova a vítima com delicadeza. A tripulação usa **traje de imersão** quando o operador exigir e treina a saída da aeronave na água.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · frio",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Voo sobre água fria", "Saber onde estão o colete e as saídas: a regra 1-10-1 dá pouco tempo", "Traje de imersão quando exigido e treino de saída, porque o choque frio tira o controle da respiração"],
+                ["Dentro da água gelada", "Controlar a respiração e encolher o corpo: o perigo é aspirar água e perder calor", "Usar os 10 minutos úteis para sair ou se prender a algo, porque depois os músculos falham"],
+                ["Resgate de vítima fria", "Aquecer o tronco, não braços e pernas: o afterdrop pode causar arritmia", "Mover com delicadeza e aquecer o centro, porque o movimento brusco devolve sangue frio ao coração"],
+              ],
+            },
+          },
           { paragrafo: 1, video: { fonte: require('@/assets/videos/m1v4-frio.mp4'), legenda: 'No frio intenso, o corpo treme para gerar calor e cada respiração vira vapor: o tremor é a primeira defesa.' } },
           {
             paragrafo: 2,
@@ -118,8 +148,21 @@ export const temperatura: Capitulo = {
           "Em geral, o melhor é **ficar perto da aeronave**: ela é maior e mais fácil de achar do que uma pessoa andando. Para ser visto, um **espelho de sinalização** pode ser avistado a **mais de 40 km** num dia de sol, **três fogueiras** são o sinal internacional de socorro, e **sinais no chão** de cerca de **5,5 por 0,9 metro**, com bom contraste, falam com as aeronaves de busca.",
           "Cada ambiente muda a tática. No **deserto**, a regra é **poupar o suor, não a água**: ficar na sombra, que pode ser cerca de **22 °C mais fresca**, trabalhar à noite e usar **roupas claras, folgadas e em camadas**. No **frio**, as camadas de roupa e o isolamento do chão são o abrigo (Veja M1V4 - II). Na **água**, valem o controle da respiração e o 1-10-1.",
           "Sobrevive quem se prepara. O **kit** cabe num colete: canivete, lanterna com pilhas, corda, sinalizador, bússola, primeiros socorros, fósforos à prova d'água, repelente, luvas, **água e comida**. Roupas adequadas ao terreno sobrevoado, **treinamento de sobrevivência** e, acima de tudo, **não entrar em pânico e manter a vontade de sobreviver**.",
+          "**Como prevenir e amenizar.** A sobrevivência começa antes da decolagem. Em voo sobre **área remota**, use **roupa e calçado** adequados ao terreno, registre o **plano de voo** e confira o **ELT** e o **kit**. Preste atenção à demonstração de segurança e conte as fileiras até a saída. Depois de um pouso forçado, **fique perto da aeronave**, conte os ocupantes e acione os sinais; no calor, **poupe o suor na sombra**, e no frio, isole-se do chão.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · sobrevivência",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Antes do voo sobre área remota", "Vestir roupa e calçado adequados ao terreno: num pouso fora, é com eles que se sobrevive", "Plano de voo, ELT testado e kit a bordo, porque o resgate começa pela informação registrada"],
+                ["Depois do pouso forçado", "Ficar perto da aeronave: ela é maior e mais fácil de achar do que uma pessoa", "Contar os ocupantes e acionar o ELT, porque os primeiros cinco minutos decidem muito"],
+                ["Calor sem água suficiente", "Poupar o suor na sombra e trabalhar à noite: o corpo perde água mais rápido do que repõe", "Mesma conduta e racionar o esforço, porque a desidratação tira o julgamento"],
+              ],
+            },
+          },
           { paragrafo: 2, midia: 'regra-tres' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v4-sinal-espelho.jpg'), legenda: 'Perto da aeronave, o espelho de sinalização aponta o sol para a busca; ao fundo, fogueiras de sinalização.' } },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v4-sinal-solo.jpg'), legenda: 'Visto do alto: um X grande e contrastante no chão avisa às aeronaves de busca que o grupo não consegue seguir.' } },
@@ -222,6 +265,54 @@ export const temperatura: Capitulo = {
       opcoes: ['Comida, água, abrigo, ar', 'Ar, abrigo, descanso, água, comida', 'Água, comida, ar, abrigo', 'Abrigo, comida, ar, água'],
       correta: 1,
       explicacao: 'Ar (3 minutos), abrigo (3 horas), descanso (30 horas), água (3 dias) e comida (30 dias).',
+    },
+    {
+      topico: "4.1",
+      pergunta: "Quanto tempo o corpo leva, em geral, para se aclimatar a um clima quente?",
+      opcoes: [
+        "Algumas horas",
+        "Um a dois dias",
+        "Uma a duas semanas",
+        "Seis meses",
+      ],
+      correta: 2,
+      explicacao: "Quem muda para um clima quente leva uma a duas semanas para se aclimatar; nesse período, a hidratação e o ritmo pedem mais cuidado.",
+    },
+    {
+      topico: "4.1",
+      pergunta: "Com que temperatura central começa o estresse térmico, que já reduz atenção e decisão?",
+      opcoes: [
+        "Entre 36,0 e 36,5 °C",
+        "Entre 37,5 e 37,8 °C",
+        "Acima de 40,6 °C",
+        "Acima de 42 °C",
+      ],
+      correta: 1,
+      explicacao: "Entre 37,5 e 37,8 °C vem o estresse térmico: caem coordenação, atenção, visão e decisão, justamente o que o voo exige.",
+    },
+    {
+      topico: "4.2",
+      pergunta: "A partir de que temperatura central se define a hipotermia?",
+      opcoes: [
+        "37 °C ou menos",
+        "36 °C ou menos",
+        "35 °C ou menos",
+        "30 °C ou menos",
+      ],
+      correta: 2,
+      explicacao: "Hipotermia é a temperatura central de 35 °C ou menos; por volta de 34 °C, o cérebro já funciona mais devagar.",
+    },
+    {
+      topico: "4.3",
+      pergunta: "Qual é o sinal internacional de socorro feito com fogo?",
+      opcoes: [
+        "Uma fogueira grande",
+        "Duas fogueiras lado a lado",
+        "Três fogueiras",
+        "Uma fogueira com fumaça preta",
+      ],
+      correta: 2,
+      explicacao: "Três fogueiras são o sinal internacional de socorro; com o espelho de sinalização e os sinais no chão, ajudam as aeronaves de busca a achar o local.",
     },
   ],
 };

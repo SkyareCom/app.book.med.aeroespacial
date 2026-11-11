@@ -64,6 +64,11 @@
 //   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
+// 11/11/2026 (pedido do autor "Finalize todos os blocos incompletos"; voos congelados autorizados com "Autorizo todos"):
+//   parágrafos novos em 8.2, 8.3 e 8.4, orientação "Como prevenir e amenizar" com tabela de decisão e motivo e 4 questões
+//   novas. Cinto de ombro nos assentos dianteiros de aviões pequenos fabricados após 18/07/1978: 14 CFR 91.205(b)(13);
+//   espuma de absorção do capacete que só funciona uma vez e encaixe destacável dos óculos de visão noturna: Fundamentals of
+//   Aerospace Medicine e US Army Aeromedical Research Laboratory; avaliação após ejeção: textos já registrados neste arquivo.
 export const impacto: Capitulo = {
   numero: 8,
   titulo: 'Impacto e ejeção',
@@ -80,8 +85,21 @@ export const impacto: Capitulo = {
           "A direção muda tudo. **De frente ou de costas**, com o corpo apoiado no encosto ou nos cintos, a carga se espalha pelo tronco e o limite de risco alto chega a **46 G**. **No eixo da coluna**, de cima para baixo, o mesmo nível de risco aparece com cerca de **23 G**, porque as **vértebras** recebem a carga uma sobre a outra. No +Z, o risco **alto** corresponde a **50%** de chance de **fratura da coluna**; o **moderado**, a **5%**; o **baixo**, a **0,5%**.",
           "A forma de prender o corpo pesa tanto quanto o número. Na Força Aérea britânica, o modelo previa cerca de **4%** de lesões da coluna nas ejeções, e a taxa real foi de **30% a 50%**, por causa do **tipo de cinto** e da folga entre o corpo e o assento. Cinto de **tronco bem ajustado** acopla o corpo ao assento e reduz o **rebote**, que aumenta a carga nas vértebras.",
           "**Doenças, tratamentos e tipo de voo.** As lesões do impacto são a **fratura da coluna**, as **fraturas** de braços e pernas, o **trauma de crânio** e as lesões dos órgãos do abdome e do tórax. A **fratura em cunha estável** se trata de forma **não invasiva**, com repouso relativo, colete e fisioterapia, e afasta o piloto de aviões com assento ejetável por **3 a 4 meses** (Veja M1V8 - III). A fratura **instável** ou que ameaça a medula pede tratamento **invasivo**: **cirurgia** com parafusos e hastes. O trauma de crânio vai do **expectante**, na concussão leve, à **cirurgia** do hematoma, com prazos próprios (Veja M2V6). O retorno ao voo depende da consolidação, da força e da avaliação (Veja M2V12). No jato **pressurizado**, a proteção é o **cinto abdominal** sobre a pelve e a posição de impacto; no avião leve **não pressurizado**, o **cinto de ombro**; no **helicóptero**, o impacto é sobretudo **vertical**, e os assentos que absorvem energia protegem a coluna.",
+          "**Como prevenir e amenizar.** Sentado, use o **cinto baixo e justo sobre a pelve**, o osso que aguenta a carga. Na cabine de comando, o **cinto de tronco bem ajustado** acopla o corpo ao assento e reduz o rebote que carrega as vértebras. Depois de um **pouso duro ou acidente**, dor nas costas ou no pescoço pede exame antes do próximo voo, porque a fratura em cunha pode ser silenciosa; e qualquer **pancada na cabeça** pede avaliação, porque a concussão tira atenção e reação.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · impacto",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Sentado em qualquer fase do voo", "Cinto baixo e justo sobre a pelve: o osso aguenta a carga, o abdome não", "Cinto de tronco bem ajustado, porque a folga aumenta o rebote e a carga nas vértebras"],
+                ["Dor nas costas depois de pouso duro", "Procurar avaliação antes de voar de novo: a fratura em cunha pode passar despercebida", "Afastar-se e fazer exame da coluna, porque a fratura afasta do assento ejetável por 3 a 4 meses"],
+                ["Pancada na cabeça", "Avaliação médica antes do próximo voo: o trauma pode dar sintomas tardios", "Não voar até a liberação, porque a concussão tira atenção e reação"],
+              ],
+            },
+          },
           { paragrafo: 5, midia: 'tipo-voo-impacto' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v8-1-treno.jpg'), legenda: 'No trenó de impacto, o boneco instrumentado mede a carga que chegaria à cabeça, à coluna e às pernas de uma pessoa.' } },
           { paragrafo: 2, midia: 'limites-impacto' },
@@ -109,8 +127,23 @@ export const impacto: Capitulo = {
           "Os limites do teste são **limites do corpo**. A carga que passa da pelve para a **coluna lombar** não pode passar de cerca de **680 kg-força**, para evitar **fratura por compressão das vértebras**. Onde a **cabeça** pode bater, o índice de lesão da cabeça (**HIC**) não pode passar de **1.000**, por causa do **trauma craniano**. Cada **fêmur** recebe no máximo cerca de **1.020 kg-força**. E o **cinto abdominal tem de ficar sobre a pelve**, osso que aguenta a carga, e a alça sobre o ombro.",
           "A **posição de impacto** também protege. Em **17 testes** em trenó, a FAA viu que apoiar **as mãos e a cabeça no encosto da frente** só ajudava se o encosto fosse travado; com encosto que **tomba** ou que **absorve energia**, piorava a batida da cabeça. Com as **mãos para baixo, junto às pernas**, o risco na **cabeça e no pescoço** caiu de forma significativa em todos os encostos, e a recomendação oficial da FAA mudou.",
           "Fora do acidente, o cinto protege na **turbulência**. Pela FAA, o lugar mais seguro para uma **criança com menos de 2 anos** é um **dispositivo de retenção aprovado**, e não o colo: os braços de um adulto **não seguram a criança** numa turbulência inesperada.",
+          "Nos **aviões leves**, o **cinto de ombro** reduz o trauma de cabeça e de tronco no acidente, e a FAA o exige nos assentos dianteiros dos aviões pequenos fabricados depois de **julho de 1978**. No **helicóptero**, os **tirantes de quatro ou cinco pontos** prendem o tronco a um assento que **absorve energia** ao se deformar, poupando a coluna na queda vertical (Veja M1V8 - I).",
+          "**Como prevenir e amenizar.** Mantenha o **cinto afivelado** sempre que estiver sentado, baixo e justo sobre a pelve. Guarde a **bagagem** no compartimento ou sob o assento da frente, porque objetos soltos viram projéteis. Para a **criança com menos de 2 anos**, prefira um **dispositivo de retenção aprovado** em assento próprio. Num pouso de emergência, siga a tripulação: com encosto que tomba ou absorve energia, as **mãos para baixo, junto às pernas**, protegem mais a cabeça e o pescoço.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · retenção",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Criança com menos de 2 anos", "Dispositivo de retenção aprovado em assento próprio: os braços do adulto não seguram a criança", "Orientar os pais, porque a turbulência inesperada solta a criança do colo"],
+                ["Bagagem de mão", "Guardar no compartimento ou sob o assento da frente: objetos soltos viram projéteis", "Conferir antes da decolagem e do pouso, porque o objeto solto fere no impacto"],
+                ["Pouso de emergência", "Assumir a posição de impacto indicada; com encosto que tomba, mãos para baixo junto às pernas: protege a cabeça e o pescoço", "Comandar a posição de impacto, porque ela reduz as lesões de cabeça e pescoço"],
+                ["Avião leve ou helicóptero", "Usar o cinto de ombro ou os tirantes: o tronco preso reduz a batida da cabeça", "Tirantes ajustados antes da partida, porque o assento que absorve energia só protege o corpo preso a ele"],
+              ],
+            },
+          },
           { paragrafo: 1, midia: 'teste-assento' },
           { paragrafo: 2, tabela: {
             titulo: 'Limites do teste de assento (14 CFR 25.562)',
@@ -139,8 +172,22 @@ export const impacto: Capitulo = {
           "O preço é cobrado da **coluna**. A aceleração para cima empurra o corpo contra o assento no eixo das vértebras, no **limite da tolerância humana**. Historicamente, **20% a 30%** das ejeções terminam com **fratura da coluna**, e a **cervical** e a **torácica** são as mais vulneráveis. A fratura mais comum, por **compressão em cunha**, costuma ser estável e tratada sem cirurgia, mas afasta o piloto de aviões com assento ejetável por **3 a 4 meses**, e a **ressonância da coluna** depois da ejeção virou rotina.",
           "Numa revisão de **1.710 ejeções**, **10,5%** dos tripulantes morreram e **29,8%** tiveram **lesão grave**. Entre as lesões graves, **61,6%** foram na **coluna**, **27,3%** nos **braços e pernas** e **8,9%** na **cabeça**. Na Força Aérea de Israel, de 1990 a 2019, foram 37 ejeções, com **5,4%** de mortes e **18,9%** de lesões graves.",
           "O que mais decide a sobrevivência é ejetar **dentro do envelope** do assento, a combinação de altura, velocidade e atitude para a qual ele foi feito. Em 232 ejeções com foguete, **95,7%** sobreviveram dentro do envelope e só **23,8%** fora dele. **Abaixo de cerca de 150 metros**, a sobrevivência caiu para cerca de **50%**. A proteção é **decidir cedo**, sentar com o corpo **bem preso ao assento** e treinar a sequência no simulador (Veja M3V12).",
+          "Depois de qualquer ejeção, o tripulante é examinado **mesmo sem dor**: ressonância da coluna, exame neurológico e avaliação de ouvidos, olhos e pele, porque a fratura em cunha pode ser silenciosa. O **apoio psicológico** também faz parte, e a volta ao assento ejetável espera a **consolidação** da coluna e a **liberação médica** (Veja M2V12 - V).",
+          "**Como prevenir e amenizar.** A proteção começa antes da emergência: **sentar com o corpo bem preso** ao assento, a cabeça apoiada no encosto e o equipamento no lugar, porque a folga aumenta a lesão da coluna. Na emergência, **decidir cedo**, dentro do envelope do assento, porque fora dele a sobrevivência despenca. A sequência é **treinada no simulador**, e depois da ejeção vem o exame da coluna mesmo sem dor.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · ejeção",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Decisão de ejetar", "Não se aplica: só aviões militares e de treinamento têm assento ejetável", "Decidir cedo, dentro do envelope, porque fora dele a sobrevivência caiu para 23,8%"],
+                ["Postura no assento", "Não se aplica: a postura de ejeção é do tripulante", "Corpo preso e cabeça no encosto, porque a folga aumenta a lesão da coluna"],
+                ["Depois da ejeção", "Não se aplica: a avaliação é do tripulante ejetado", "Ressonância da coluna mesmo sem dor, porque a fratura em cunha costuma ser estável e silenciosa"],
+              ],
+            },
+          },
           { paragrafo: 1, midia: 'animacao-ejecao' },
           { paragrafo: 3, tabela: {
             titulo: 'Lesões na ejeção',
@@ -170,12 +217,27 @@ export const impacto: Capitulo = {
           "No impacto, a cabeça continua andando quando o corpo para e bate na estrutura. O **capacete** espalha a pancada por uma área maior e **absorve parte da energia** antes que ela chegue ao **crânio** e ao **cérebro**. É por isso que pilotos de **helicóptero** e de **caça** voam de capacete.",
           "O Exército dos EUA mediu o efeito em acidentes de helicóptero **graves, mas sobrevivíveis**. Com o capacete antigo, dos anos 1950, quem voava sem ele teve **lesão fatal na cabeça 2,4 vezes** mais. Com o capacete moderno, o risco de **lesão fatal na cabeça** foi **6,3 vezes maior** sem capacete, e **7,5 vezes** para quem estava sem capacete nos **assentos de trás**.",
           "O capacete tem um custo: **peso na cabeça**. Sob G alto e na ejeção, cada grama a mais carrega a **coluna cervical** (Veja M1V7). A proteção é o capacete **certo e bem ajustado**, preso pela jugular, e o **pescoço fortalecido**. Nos aviões de passageiros, o papel do capacete fica com o **assento**: onde a cabeça pode bater, o HIC não pode passar de 1.000.",
+          "O capacete precisa **caber**. Folgado, ele gira na cabeça e perde a proteção; apertado demais, causa dor e pressão que tiram a atenção no voo longo. Por isso é ajustado ao tamanho e ao formato da cabeça e **revisado depois de qualquer pancada**: a espuma interna que absorve a energia se deforma e **só protege uma vez**.",
+          "Hoje o capacete carrega também **visor**, **óculos de visão noturna** e mostradores, que aumentam o peso e deslocam o centro de gravidade para a frente. Sob G e na ejeção, esse peso extra força ainda mais o pescoço; por isso os óculos de visão noturna usam **encaixe que se solta** no impacto, e o pescoço fortalecido continua sendo parte da proteção (Veja M1V7 - IV).",
+          "**Como prevenir e amenizar.** Quem voa de **helicóptero** ou **caça** usa o capacete certo, **ajustado e preso pela jugular**, e o troca ou revisa depois de qualquer pancada. Equipamentos no capacete pedem **pescoço fortalecido** e encaixes que se soltam. No passeio de helicóptero, siga o operador e **afivele os tirantes**: o tronco preso reduz a batida da cabeça. Na cabine de passageiros, o assento e o cinto cumprem o papel do capacete.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · capacetes",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Voo de helicóptero ou caça", "Passeio de helicóptero: afivelar os tirantes e seguir o operador: o tronco preso reduz a batida da cabeça", "Capacete certo, ajustado e preso pela jugular, porque sem ele o risco de lesão fatal na cabeça chegou a 6,3 vezes"],
+                ["Capacete depois de pancada", "Não se aplica: o passageiro não usa capacete próprio", "Revisar ou trocar, porque a espuma que absorve a energia só funciona uma vez"],
+                ["Visor e óculos de visão noturna", "Não se aplica: o equipamento é da tripulação", "Encaixe que se solta e pescoço fortalecido, porque o peso na frente aumenta a carga cervical"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v8-4-helicoptero.jpg'), legenda: 'Pilotos de helicóptero voam de capacete: num acidente, ele protege o crânio e o cérebro.' } },
           { paragrafo: 2, midia: 'risco-capacete' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v8-4-ajuste.jpg'), legenda: 'O capacete só protege bem se estiver ajustado à cabeça e preso pela jugular.' } },
-          { paragrafo: 3, tabela: {
+          { paragrafo: 5, tabela: {
             titulo: 'Sistemas do corpo mais atingidos',
             colunas: ['Sistema', 'O que acontece', 'Proteção e prevenção'],
             linhas: [
@@ -238,6 +300,54 @@ export const impacto: Capitulo = {
       opcoes: ['Igual', 'Cerca de 1,5 vez', 'Cerca de 6,3 vezes', 'Cerca de 20 vezes'],
       correta: 2,
       explicacao: 'Com o capacete moderno do Exército dos EUA, o risco foi 6,3 vezes maior sem capacete, e 7,5 vezes nos assentos de trás.',
+    },
+    {
+      topico: "8.1",
+      pergunta: "Com quantos G, aproximadamente, John Paul Stapp parou no trenó a foguete em 1954?",
+      opcoes: [
+        "Cerca de 9 G",
+        "Cerca de 16 G",
+        "Cerca de 46 G",
+        "Cerca de 100 G",
+      ],
+      correta: 2,
+      explicacao: "Stapp parou de 1.017 km/h com cerca de 46 G, preso por cintos, e saiu sem lesão permanente; sua pesquisa ajudou a criar os cintos de segurança.",
+    },
+    {
+      topico: "8.2",
+      pergunta: "No teste de assento, qual é o valor máximo do índice de lesão da cabeça (HIC) onde a cabeça pode bater?",
+      opcoes: [
+        "100",
+        "500",
+        "1.000",
+        "5.000",
+      ],
+      correta: 2,
+      explicacao: "Onde a cabeça pode bater, o HIC não pode passar de 1.000, para limitar o trauma craniano.",
+    },
+    {
+      topico: "8.3",
+      pergunta: "Historicamente, em que proporção das ejeções ocorre fratura da coluna?",
+      opcoes: [
+        "Menos de 1%",
+        "Cerca de 5%",
+        "Entre 20% e 30%",
+        "Mais de 80%",
+      ],
+      correta: 2,
+      explicacao: "Historicamente, 20% a 30% das ejeções terminam com fratura da coluna, sobretudo na cervical e na torácica; por isso a ressonância depois da ejeção virou rotina.",
+    },
+    {
+      topico: "8.4",
+      pergunta: "Por que o capacete deve ser revisado ou trocado depois de uma pancada?",
+      opcoes: [
+        "Porque a tinta descasca",
+        "Porque a espuma que absorve a energia se deforma e só protege uma vez",
+        "Porque o visor perde a cor",
+        "Porque fica mais pesado",
+      ],
+      correta: 1,
+      explicacao: "A espuma interna absorve a energia ao se deformar; depois de uma pancada, ela não protege da mesma forma na seguinte.",
     },
   ],
 };

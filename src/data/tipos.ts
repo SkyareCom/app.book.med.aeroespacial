@@ -12,6 +12,8 @@ export type TipoMidia =
   | 'grafico-tuc'
   | 'classificar-hipoxia'
   | 'leis-gases'
+  | 'classificar-radiacao'
+  | 'classificar-hiperventilacao'
   | 'forcas-g'
   | 'adaptacao-escuro'
   | 'regua-ruido'

@@ -80,6 +80,9 @@
 //   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
+// 11/11/2026 (pedido do autor "Finalize todos os blocos incompletos"): atividade "Mais ou menos radiação?" no 5.1,
+//   orientação "Como prevenir e amenizar" com tabela de decisão e motivo em 5.1 a 5.4 e 4 questões novas. Fontes já
+//   registradas neste arquivo (FAA AC 120-61B, ICRP 132, UNSCEAR, Diretiva 2013/59/Euratom, CARI-7).
 export const radiacao: Capitulo = {
   numero: 5,
   titulo: 'Radiação cósmica',
@@ -96,8 +99,22 @@ export const radiacao: Capitulo = {
           "Ao bater nos átomos do ar, cada partícula se parte numa **cascata de partículas secundárias**: nêutrons, prótons, elétrons, pósitrons, fótons e múons. O ar é a **blindagem**: no solo, quase tudo já foi absorvido, mas **a 30.000 pés só cerca de 30% dessa blindagem fica acima do avião**. Na altitude de cruzeiro, quem mais contribui para a dose são os **nêutrons**.",
           "Três fatores mudam a dose. A **altitude**: quanto mais alto, maior a taxa. A **latitude**: o campo magnético da Terra desvia as partículas, com proteção máxima no **equador geomagnético** e nula perto dos **polos**, onde a radiação chega a cerca do **dobro**; a 35.000 pés, sobre o Alasca, ela é o dobro da de Miami e o triplo da de Guam, no Pacífico. E o **ciclo solar**, de cerca de **11 anos**: com o Sol mais ativo, menos raios galácticos chegam à Terra.",
           "De vez em quando, o Sol dispara uma **tempestade de partículas**, o **evento de partículas solares**, que dura de **minutos a mais de um dia**. Quase sempre ela soma pouco à dose; raramente, muito. Pelas estimativas, um evento intenso chega a cerca de **0,1 mSv por hora** a 12.000 metros, e um extremo, dos que ocorrem uma vez por século, a cerca de **10 mSv por hora**. Perto do equador, o efeito é desprezível. No espaço, sem a blindagem do ar, a história é outra (Veja M4V3).",
+          "**Como prevenir e amenizar.** Para o passageiro eventual, não há preparo: a dose de um voo é pequena perto da radiação natural de um ano. A proteção vem do **planejamento de quem voa muito**: a empresa calcula a dose da tripulação pelas rotas e **distribui os voos polares e muito altos** na escala. Durante um **alerta de radiação solar**, descer ou desviar para latitude menor reduz a dose, porque sobra mais ar acima do avião e o campo magnético protege mais.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 2, midia: 'classificar-radiacao' },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · radiação cósmica",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Voo eventual", "Pode voar sem preparo: a dose de um voo é pequena perto da radiação natural de um ano", "Pode voar; a empresa soma a dose, porque o risco vem do acúmulo de muitas horas"],
+                ["Rota polar ou muito alta", "Pode voar: a taxa é maior, mas um voo isolado soma pouco", "Distribuir essas rotas na escala, porque perto do polo a dose chega ao dobro"],
+                ["Alerta de radiação solar", "Seguir a operação: descer ou mudar a rota reduz a dose", "Considerar descer ou desviar para latitude menor, porque a dose sobe com a altitude e a latitude"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-1-cruzeiro-noite.jpg'), legenda: 'Num cruzeiro noturno, a radiação que chega do espaço é invisível: o avião voa sob uma camada de ar bem mais fina que a do solo.' } },
           { paragrafo: 3, midia: 'animacao-chuveiro' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v5-1-rota-polar.jpg'), legenda: 'Sobre o Ártico, o campo magnético da Terra protege pouco: nas rotas polares, a taxa de radiação chega a cerca do dobro da do equador.' } },
@@ -116,8 +133,21 @@ export const radiacao: Capitulo = {
           "Na mesma altitude, a latitude pesa. A 37.000 pés, **Nova York–San Juan**, rumo ao Caribe, soma cerca de **2,7 µSv por hora**; **Londres–Nova York**, sobre o Atlântico Norte, cerca de **4,0**. A 35.000 pés, Los Angeles–Honolulu fica perto de 2,3 µSv por hora, e Seattle–Anchorage, rumo ao Alasca, perto de 3,6.",
           "Para quem voa por profissão, as horas se acumulam. O comitê científico da ONU para os efeitos da radiação (**UNSCEAR**) coloca os **tripulantes** como o **quarto grupo de trabalhadores mais expostos**, com média de cerca de **3 mSv por ano**. Na Europa, as médias dos países ficaram entre **menos de 1 e 2,6 mSv por ano**, com máximos individuais de até **7 mSv**. No Brasil, o grupo de trabalho da **CNEN** sobre o tema (GT-Aero) estimou de **1,46 a 3,37 mSv por ano**. Nenhum voo causa sintoma: o que pesa para o corpo é essa **soma ao longo da carreira** (Veja M1V5 - III).",
           "O Brasil fica longe dos polos, e isso ajuda. Sobre a **América do Sul e o Caribe**, entre 29.000 e 41.000 pés, a taxa média calculada fica entre **2,65 e 2,95 µSv por hora**, conforme o ciclo solar, abaixo dos cerca de 4,0 de Londres–Nova York. Num ano típico de voos na região, a dose soma de **1,45 a 1,67 mSv**. Nos voos domésticos, **Rio–São Paulo** soma cerca de **1,8 µSv**, e os trechos mais longos chegam a **8,8 µSv**; quem voa só no país fica, em média, perto de **0,76 mSv por ano**.",
+          "**Como prevenir e amenizar.** Quem voa muito pode **estimar a própria dose** com o CARI-7 da FAA, informando rota, altitude e data. Para a tripulação, a escala que **mistura rotas altas e polares com rotas baixas e próximas do equador** reduz a dose anual sem tirar ninguém da profissão. No Brasil, a posição longe dos polos já ajuda: nos voos domésticos, a dose de um ano fica abaixo da média mundial dos tripulantes.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · dose por rota",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Viajante frequente", "Pode estimar a dose com o CARI-7 e ajustar a frequência: a dose cresce com cada hora no ar", "Não se aplica: o tripulante tem a dose calculada pela empresa"],
+                ["Muitas horas em rotas altas e polares", "Pode voar; quem soma muitas horas acompanha a própria dose, porque é ali que ela mais cresce", "Misturar com rotas baixas e próximas do equador, porque a escala é a principal ferramenta de redução"],
+                ["Voos domésticos no Brasil", "Pode voar sem preparo: a latitude baixa reduz a taxa por hora", "Pode voar; a dose anual fica abaixo da média mundial, porque a região tem mais proteção magnética"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-2-cabine-longo.jpg'), legenda: 'Num voo longo e noturno, a dose se soma hora após hora, sem nada que se veja ou se sinta a bordo.' } },
           { paragrafo: 2, midia: 'dose-rota' },
           {
@@ -169,8 +199,21 @@ export const radiacao: Capitulo = {
           "A fase mais sensível é a **gestação**. Depois que a gravidez é comunicada, recomenda-se que o **feto receba no máximo 1 mSv** até o fim da gestação, e **não mais que 0,5 mSv num mesmo mês**. O risco estimado de **câncer fatal** por exposição antes do nascimento é de **1 em 10.000 por mSv**, maior que o do adulto. Nas **três primeiras semanas**, antes de as células se especializarem, uma partícula pode matar o embrião, risco que cai muito depressa depois dos primeiros dias. Até **20 mSv**, não se viram malformações.",
           "Por isso, **comunicar cedo** a gravidez faz diferença: com a escala ajustada, em voos mais curtos, mais baixos ou em latitudes menores, a dose do feto fica abaixo do limite. A questão da tripulante grávida vai além da radiação (Veja M2V13).",
           "**Doenças, tratamentos e tipo de voo.** As doenças ligadas à radiação do voo são as de longo prazo: **câncer**, em especial de pele e de mama nas pesquisas com tripulantes, e **catarata**. Não há tratamento para a dose recebida; a conduta é **expectante** e de vigilância: exame da pele, **mamografia** e exame dos olhos nas idades indicadas. Quando a doença aparece, o tratamento é o de qualquer caso: **não invasivo**, como a quimioterapia e a radioterapia, ou **invasivo**, como a **cirurgia do câncer** e a **cirurgia da catarata**, cada uma com prazo para voltar a voar (Veja M2V11 - III e M2V4). Na gestação, a proteção é **comunicar cedo** e ajustar a escala. No jato **pressurizado**, as rotas altas, longas e polares recebem as maiores doses; no avião leve **não pressurizado** e no **helicóptero**, que voam baixo, a dose cósmica é muito menor, e o que pesa é o **ultravioleta** pela janela.",
+          "**Como prevenir e amenizar.** A tripulante que engravida deve **comunicar a gravidez cedo**, para a empresa ajustar a escala e manter a dose do feto abaixo de **1 mSv** até o fim da gestação. A passageira grávida que voa pouco não precisa mudar os planos; quem voa muito pode estimar a dose e conversar com o obstetra. Como o **melanoma** dos tripulantes também tem relação com o sol, proteja a pele nas folgas e faça os exames de **pele, mama e olhos** nas idades indicadas.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · riscos e gestação",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Gravidez", "Pode voar: um voo isolado fica muito abaixo de 1 mSv; quem voa muito pode calcular a dose", "Comunicar cedo para ajustar a escala, porque o feto deve receber no máximo 1 mSv e não mais de 0,5 mSv num mês"],
+                ["Pele exposta ao sol nas viagens", "Proteger a pele: no melanoma pesa também o sol", "Protetor solar nas folgas e exame da pele periódico, porque o melanoma aparece mais nas pesquisas com tripulantes"],
+                ["Vigilância ao longo da carreira", "Seguir os exames da idade: o risco de um passageiro eventual não muda a rotina", "Mamografia e exame dos olhos nas idades indicadas, porque câncer de mama e catarata aparecem nas pesquisas com tripulantes"],
+              ],
+            },
+          },
           { paragrafo: 6, midia: 'tipo-voo-radiacao' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-3-consulta.jpg'), legenda: 'Na consulta de saúde ocupacional, a dose acumulada e os riscos entram na conversa como qualquer outro fator do trabalho a bordo.' } },
           { paragrafo: 2, midia: 'risco-carreira' },
@@ -204,8 +247,21 @@ export const radiacao: Capitulo = {
           "Na **União Europeia**, quando a dose pode passar de **1 mSv por ano**, a empresa aérea precisa **avaliar a exposição**, **levá-la em conta na escala** para reduzir as doses mais altas, **informar** cada tripulante da sua dose e dos riscos, e proteger a **gestante**; acima de **6 mSv**, valem as regras completas de trabalhador exposto. No **Brasil**, desde 2024 a norma básica de proteção radiológica da **CNEN**, a **NN 3.01**, reconhece a exposição dos aeronautas: para quem voa acima de **28.000 pés**, a empresa precisa **estimar a dose anual** de cada tripulante pelas rotas e horas de voo, **manter e disponibilizar os registros**, **informar os riscos** e orientar a **gestante** a comunicar a gravidez de imediato, com **nível de referência de 5 mSv por ano**.",
           "Há ferramentas práticas. Os programas **CARI** da FAA, com o **CARI-7** como versão recomendada, calculam a dose de um voo pela rota, altitude e data. Os eventos solares, porém, não são previstos com antecedência: o instituto médico da FAA emite **alertas de radiação solar** com dados da agência americana de clima espacial (**NOAA**). Num alerta, **descer** em altas latitudes reduz bastante a dose, sobretudo se a resposta for rápida. Para o corpo, a regra é sempre a mesma: **menos tempo, menos altitude e menos latitude somam menos dose**.",
           "Para o **passageiro** eventual, a dose é pequena. A ICRP recomenda **informar os passageiros** sobre a exposição e como estimá-la. Quem voa muito pode adotar um **nível de referência pessoal** e ajustar a frequência dos voos, e quem viaja a trabalho pode, caso a caso, ser tratado como trabalhador exposto.",
+          "**Como prevenir e amenizar.** O princípio é o **ALARA**: manter a dose tão baixa quanto razoavelmente possível. A empresa **calcula a dose** de cada tripulante, **informa** o resultado e os riscos, **ajusta a escala** quando a dose sobe e protege a **gestante**. O tripulante acompanha os **alertas de radiação solar** e conhece a própria dose anual. O passageiro que voa muito pode adotar um **nível de referência pessoal** e estimar as doses com o CARI-7.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · limites",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Dose que pode passar de 1 mSv por ano", "Quem voa muito pode estimar a dose e ajustar a frequência, porque 1 mSv por ano é o limite do público", "A empresa avalia, informa e ajusta a escala, porque o ALARA pede a dose mais baixa possível"],
+                ["Alerta de radiação solar", "Seguir a operação: a mudança de altitude ou de rota é feita para reduzir a dose", "Acompanhar o alerta e considerar descer ou desviar, porque o evento solar não é previsto com antecedência"],
+                ["Tripulante grávida", "Não se aplica: a regra protege a trabalhadora exposta", "Escala ajustada desde o aviso da gravidez, porque o feto é mais sensível que o adulto"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v5-4-operacoes.jpg'), legenda: 'No centro de operações, as rotas sobre o polo são as que mais somam dose; é ali que a escala e os alertas solares entram no planejamento.' } },
           {
             paragrafo: 2,
@@ -291,6 +347,54 @@ export const radiacao: Capitulo = {
       opcoes: ['Subir para escapar das partículas', 'Descer, de preferência com resposta rápida', 'Fechar as cortinas das janelas', 'Aumentar a pressurização da cabine'],
       correta: 1,
       explicacao: 'Mais ar acima do avião significa mais blindagem: descer em altas latitudes reduz bastante a dose, sobretudo se a resposta for rápida.',
+    },
+    {
+      topico: "5.1",
+      pergunta: "Que partículas formam a maior parte dos raios cósmicos galácticos?",
+      opcoes: [
+        "Elétrons",
+        "Prótons",
+        "Nêutrons",
+        "Fótons",
+      ],
+      correta: 1,
+      explicacao: "Cerca de 85% dos raios cósmicos galácticos são prótons; o restante são partículas alfa, elétrons e núcleos mais pesados.",
+    },
+    {
+      topico: "5.2",
+      pergunta: "Em que unidade se mede a dose efetiva de radiação no corpo inteiro?",
+      opcoes: [
+        "Gray",
+        "Becquerel",
+        "Sievert",
+        "Decibel",
+      ],
+      correta: 2,
+      explicacao: "A dose efetiva se mede em sievert, que pondera o tipo de radiação e a sensibilidade de cada órgão; no voo, usam-se mSv e µSv.",
+    },
+    {
+      topico: "5.3",
+      pergunta: "Depois de comunicada a gravidez, qual é a dose máxima recomendada para o feto num mesmo mês?",
+      opcoes: [
+        "0,05 mSv",
+        "0,5 mSv",
+        "5 mSv",
+        "20 mSv",
+      ],
+      correta: 1,
+      explicacao: "Recomenda-se no máximo 1 mSv para o feto até o fim da gestação e não mais que 0,5 mSv num mesmo mês.",
+    },
+    {
+      topico: "5.4",
+      pergunta: "Qual é o limite anual de dose recomendado para o público em geral?",
+      opcoes: [
+        "1 mSv",
+        "6 mSv",
+        "20 mSv",
+        "50 mSv",
+      ],
+      correta: 0,
+      explicacao: "Para o público, o limite é de 1 mSv por ano; para trabalhadores expostos, 20 mSv por ano em média de 5 anos, sem passar de 50 mSv num único ano.",
     },
   ],
 };

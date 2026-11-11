@@ -15,16 +15,18 @@ const path = require('node:path');
 
 const fonte = fs.readFileSync(path.resolve(__dirname, '../src/data/capitulos/atmosfera.ts'), 'utf8');
 const ASSINATURAS = Object.freeze({
-  '1.1': '380ad402c604b256', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
+  '1.1': '05e7930f848da37b', // M1V1 - I: Camadas da atmosfera (27/10/2026: animação do balão, padrão de mídias pedido pelo autor)
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  '1.2': '23c9b7ebd239e474', // M1V1 - II: Leis dos gases
+  '1.2': 'ededaeb6f4fb0ee9', // M1V1 - II: Leis dos gases
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  '1.3': '83cc7e95ded04f49', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor; 30/10/2026: foco no organismo, autorizado pelo autor)
+  '1.3': '33bef580d2a0815b', // M1V1 - III: Atmosfera padrão (27/10/2026: fotos do autor; 30/10/2026: foco no organismo, autorizado pelo autor)
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  '1.4': 'e1eccaacb1b4ca91', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine; 30/10/2026: tabela de sistemas do corpo, autorizada pelo autor)
+  '1.4': '8b1364ad3b58eab5', // M1V1 - IV: Temperatura e umidade (27/10/2026: simulador umidade-cabine; 30/10/2026: tabela de sistemas do corpo, autorizada pelo autor)
 });
-const ASSINATURA_TESTE = '47754a8bbeb02cb4';
+// 11/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Finalize todos os blocos incompletos"): M1V1 a M1V8 e M2V1 ganharam
+//   parágrafos, orientação e tabela 'Como prevenir e amenizar', questões novas e fotos recortadas em 16:9; hashes refeitos.
+const ASSINATURA_TESTE = 'c6e638544fa5ea23';
 
 // FNV-1a 64 bits por unidade UTF-16; detecta alterações acidentais byte a byte
 // da representação JavaScript. Não é assinatura criptográfica/controle de acesso.
@@ -80,22 +82,22 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v2-cilindro-oxigenio.jpg': '268e904a3dcf25c6',
   'assets/videos/m1v2-mascaras.mp4': 'fc5b13e1fa9999ae',
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/pressurizacao.ts': 'c3a1ad63f0d96a5d',
+  'src/data/capitulos/pressurizacao.ts': 'c19e97c402d5fe7c',
   // 04/11/2026: a pedido do autor ("Corrigir textos escondidos pelos gráficos em todo app"), o rótulo ALTITUDE (PÉS)
   // do gráfico de sistemas de oxigênio deixou de ser cortado embaixo (+4 px de altura). Novo hash.
   'src/components/midia/m1v2-graficos.tsx': '54dd9a527058f414',
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  'src/data/capitulos/descompressao.ts': 'b32018fc0c0b4f81',
+  'src/data/capitulos/descompressao.ts': '0542b7a8f934216c',
   'src/components/midia/m1v3-graficos.tsx': '301331868cfd0c8d',
-  'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7a329df60b37dbe1',
+  'assets/images/topicos/m1v2-aviao-cruzeiro.jpg': '7f61b4c41e1e77de',
   'assets/images/topicos/m1v2-aviao-quadrado.jpg': 'adae60478408d5c8',
-  'assets/images/topicos/m1v2-mascaras-cabine.jpg': '11bd27cc724154e7',
-  'assets/images/topicos/m1v2-painel-pressurizacao.jpg': '03524be1749bf625',
-  'assets/images/topicos/m1v2-piloto-mascara.jpg': '3f24651c16114376',
-  'assets/images/topicos/m1v2-regulador.jpg': 'b74e0c0c66f4fda7',
-  'assets/images/topicos/m1v2-traje-pressurizado.jpg': '78843fde8429aa4d',
-  'assets/images/topicos/m1v2-valvula-saida.jpg': '2d6d73b39f91d24c',
+  'assets/images/topicos/m1v2-mascaras-cabine.jpg': '18c110c83a295904',
+  'assets/images/topicos/m1v2-painel-pressurizacao.jpg': 'cf61c8f3b9e19b5b',
+  'assets/images/topicos/m1v2-piloto-mascara.jpg': 'cb37674b82a74950',
+  'assets/images/topicos/m1v2-regulador.jpg': '00342292da571655',
+  'assets/images/topicos/m1v2-traje-pressurizado.jpg': 'ad11ebcd7a86015e',
+  'assets/images/topicos/m1v2-valvula-saida.jpg': 'c374f7e0d9092267',
   'assets/images/topicos/m1v3-cabine-nevoa.jpg': 'adf405291a2ccd88',
   'assets/images/topicos/m1v3-camara-hiperbarica.jpg': 'd448ef242cd93e92',
   'assets/images/topicos/m1v3-camara-hipobarica.jpg': 'e07de879e933a453',
@@ -105,7 +107,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
   // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/temperatura.ts': '73e6e600c512a2cf',
+  'src/data/capitulos/temperatura.ts': '73638a155d9765b8',
   'src/components/midia/m1v4-graficos.tsx': '5673a269f5b6358b',
   'assets/videos/m1v4-frio.mp4': '99d9b1c4488079cb',
   'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
@@ -131,7 +133,7 @@ const ARQUIVOS = Object.freeze({
   // 10/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Nas tabelas em que houver Tripulantes e passageiros
   //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante das
   //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
-  'src/data/capitulos/hipoxia.ts': '73b17142b6dd3968',
+  'src/data/capitulos/hipoxia.ts': '74f6dcbb4504b9f1',
   'src/data/liberacao/respiratorio.ts': '7066c8949561a7c8',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
@@ -162,7 +164,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
   // Congelamento M1V5 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/radiacao.ts': 'f13e191f27088871',
+  'src/data/capitulos/radiacao.ts': 'e52649e7b9dc97b3',
   'src/components/midia/m1v5-graficos.tsx': '8b8fa55d9c13a1bf',
   'assets/videos/m1v5-aurora.mp4': 'aea16e089624393c',
   'assets/images/topicos/m1v5-1-cruzeiro-noite.jpg': '7ec0d4b39b7a6198',
@@ -179,7 +181,7 @@ const ARQUIVOS = Object.freeze({
   // Revisão 30/10/2026 (foco no organismo e tabela de sistemas do corpo em todos os voos) — autorizada pelo autor; hashes refeitos.
   // Congelamento M1V6 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/ruido.ts': 'c552ce1cc6d79d2d',
+  'src/data/capitulos/ruido.ts': '50f2dc5826731061',
   'src/components/midia/m1v6-graficos.tsx': 'baaa4f28582eceeb',
   'assets/videos/m1v6-rotor.mp4': 'bef1a0716bb20f5e',
   'assets/images/topicos/m1v6-1-fone-cabine.jpg': '455a68cd3c837465',
@@ -194,16 +196,16 @@ const ARQUIVOS = Object.freeze({
   // fotos, vídeo e interativo do M1V1 e as capas dos 8 voos e da missão.
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
   // 09/11/2026: autorizado pelo autor ("Revise, padronize, corrija os erros"): células das tabelas sem ponto final e tempo de leitura do M1V1; hash novo.
-  'src/data/capitulos/atmosfera.ts': '34347619f52100cc',
+  'src/data/capitulos/atmosfera.ts': 'dc0defa2d1f73949',
   'src/components/midia/m1v1-umidade.tsx': '7699b9377a454c7d',
   'assets/videos/m1v1-curvatura.mp4': 'd0c6a7c850ab75f8',
   'assets/images/topicos/m1v1-1-balao.jpg': 'cda576be862919c5',
   'assets/images/topicos/m1v1-1-tropopausa.jpg': '430a6ec77df40b30',
-  'assets/images/topicos/m1v1-2-alpinista.jpg': '6fb5606e52269d17',
-  'assets/images/topicos/m1v1-2-cilindro.jpg': 'c913a54c58b7a645',
-  'assets/images/topicos/m1v1-2-corpo.jpg': '00639f6c958ac15e',
-  'assets/images/topicos/m1v1-2-garrafa.jpg': '842bb374abd7513b',
-  'assets/images/topicos/m1v1-2-pacote.jpg': '5cb4f44f50f1ce66',
+  'assets/images/topicos/m1v1-2-alpinista.jpg': 'a70e29a5dea518a6',
+  'assets/images/topicos/m1v1-2-cilindro.jpg': '5a95d175102a89c0',
+  'assets/images/topicos/m1v1-2-corpo.jpg': '02ea74224f8ca4e2',
+  'assets/images/topicos/m1v1-2-garrafa.jpg': '6b18e76a323eafde',
+  'assets/images/topicos/m1v1-2-pacote.jpg': 'ab08ddf3a2b9556f',
   'assets/images/topicos/m1v1-3-aeroporto-quente.jpg': '94177974a285c6d9',
   'assets/images/topicos/m1v1-3-altimetro.jpg': '1602def8d4d0a9f8',
   'assets/images/topicos/m1v1-4-calor-umido.jpg': 'c0d8a7d421fbd05d',
@@ -219,7 +221,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/capas/temporada-fisiologia.jpg': '82d71e88e8415748',
   // Congelamento M1V7 — combinado com o autor ao receber as fotos e o vídeo (01/11/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/forcasg.ts': 'c2621248ab3fbb20',
+  'src/data/capitulos/forcasg.ts': '30c500e565cac6b7',
   'src/components/midia/m1v7-graficos.tsx': 'da9ba71eaa9f1b6a',
   'assets/videos/m1v7-centrifuga.mp4': '98b7204996818516',
   'assets/images/topicos/m1v7-1-caca-curva.jpg': '5caa935d0c757a67',
@@ -232,7 +234,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v7-4-check-six.jpg': '1431eebe08f2c046',
   // Congelamento M1V8 — combinado com o autor ao receber as fotos e o vídeo (31/10/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/impacto.ts': 'f25fab3396b3c09e',
+  'src/data/capitulos/impacto.ts': '2677e63e7b9d7bc7',
   'src/components/midia/m1v8-graficos.tsx': '5c18b0e9709a77a1',
   'assets/videos/m1v8-ejecao.mp4': '303230e7bd2e71c4',
   'assets/images/topicos/m1v8-1-treno.jpg': '87a9ba3f77fcb9a3',

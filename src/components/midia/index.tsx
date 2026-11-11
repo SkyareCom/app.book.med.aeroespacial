@@ -54,12 +54,33 @@ const CASOS_ARRITMIA = [
   { texto: 'Uma única crise depois de vômitos intensos, sem repetir.', resposta: 'Paroxística', explicacao: 'Episódio com causa definida, que termina sozinho; a ICAO o trata como apresentação própria da fibrilação atrial.' },
 ];
 
+// M1V5 · fatores que mudam a dose de radiação cósmica (FAA AC 120-61B; texto do tópico 5.1).
+const CASOS_RADIACAO = [
+  { texto: 'O mesmo voo, a 41.000 ft em vez de 31.000 ft.', resposta: 'Mais dose', explicacao: 'Quanto mais alto, menos ar sobra acima do avião para servir de blindagem.' },
+  { texto: 'Uma rota perto do polo, em vez de uma perto do equador.', resposta: 'Mais dose', explicacao: 'Perto dos polos, o campo magnético não desvia as partículas, e a radiação chega a cerca do dobro.' },
+  { texto: 'O mesmo voo no máximo do ciclo solar, em vez do mínimo.', resposta: 'Menos dose', explicacao: 'Com o Sol mais ativo, menos raios galácticos chegam à Terra.' },
+  { texto: 'Um voo de 13 horas, em vez de um de 2 horas, na mesma rota.', resposta: 'Mais dose', explicacao: 'A dose cresce com o tempo no ar.' },
+  { texto: 'Um cruzeiro sobre o Brasil, em vez do Atlântico Norte.', resposta: 'Menos dose', explicacao: 'O Brasil fica longe dos polos, e a taxa por hora é menor que a de Londres–Nova York.' },
+  { texto: 'Descer durante um alerta de radiação solar numa rota de alta latitude.', resposta: 'Menos dose', explicacao: 'Mais ar acima do avião absorve parte das partículas solares.' },
+];
+
+// M2V1 · hipóxia ou hiperventilação (FAA AM-400-09/3 e texto do tópico 3.5): na dúvida em altitude, oxigênio primeiro.
+const CASOS_HIPERVENTILACAO = [
+  { texto: 'Num voo sem oxigênio a 20.000 ft, o piloto fica eufórico e tonto, e os lábios estão azulados.', resposta: 'Hipóxia', explicacao: 'Sem oxigênio acima de 10.000 ft, a pressão do oxigênio cai, e os lábios azulados mostram sangue pouco oxigenado.' },
+  { texto: 'Num voo baixo, com turbulência forte, um aluno ansioso respira rápido e sente formigamento nos lábios.', resposta: 'Hiperventilação', explicacao: 'Sem altitude que explique hipóxia, a respiração rápida pela ansiedade elimina gás carbônico demais.' },
+  { texto: 'A 25.000 ft, com formigamento e tontura, o piloto não sabe se é hipóxia ou hiperventilação.', resposta: 'Hipóxia', explicacao: 'Em altitude, trate como hipóxia: oxigênio a 100% primeiro e, depois, respiração mais lenta.' },
+  { texto: 'Na cabine pressurizada normal, uma passageira em pânico fica com as mãos contraídas em garra.', resposta: 'Hiperventilação', explicacao: 'A falta de gás carbônico causa espasmo nas mãos; a cabine normal não explica hipóxia.' },
+  { texto: 'Os sintomas passam quando a pessoa desacelera a respiração e conversa em voz alta.', resposta: 'Hiperventilação', explicacao: 'Falar e respirar devagar devolvem o gás carbônico ao normal.' },
+];
+
 export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'simulador-o2': () => <SimuladorO2 />,
   'simulador-visao': () => <SimuladorVisao />,
   'grafico-tuc': () => <GraficoTUC />,
   'classificar-hipoxia': () => <AtividadeClassificar titulo="Qual é o tipo de hipóxia?" categorias={['Hipóxica', 'Hipêmica', 'Estagnante', 'Histotóxica']} casos={CASOS_HIPOXIA} />,
   'leis-gases': () => <LeisDosGases />,
+  'classificar-radiacao': () => <AtividadeClassificar titulo="Mais ou menos radiação?" categorias={['Mais dose', 'Menos dose']} casos={CASOS_RADIACAO} />,
+  'classificar-hiperventilacao': () => <AtividadeClassificar titulo="Hipóxia ou hiperventilação?" categorias={['Hipóxia', 'Hiperventilação']} casos={CASOS_HIPERVENTILACAO} />,
   'forcas-g': () => <SimuladorForcasG />,
   'adaptacao-escuro': () => <AdaptacaoEscuro />,
   'regua-ruido': () => <CalculadoraRuido />,
@@ -241,6 +262,8 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'grafico-tuc': 'Tempo de consciência útil',
   'classificar-hipoxia': 'Tipos de hipóxia',
   'leis-gases': 'Gases em expansão',
+  'classificar-radiacao': 'Mais ou menos radiação',
+  'classificar-hiperventilacao': 'Hipóxia ou hiperventilação',
   'forcas-g': 'Forças G',
   'adaptacao-escuro': 'Visão no escuro',
   'regua-ruido': 'Ruído e audição',

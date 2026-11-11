@@ -78,6 +78,10 @@
 //   voo de Sistemas citado na remissão; linhas de tratamento sem número próprio são conhecimento médico geral.
 import type { Capitulo } from '../tipos';
 
+// 11/11/2026 (pedido do autor "Finalize todos os blocos incompletos"): orientação "Como prevenir e amenizar" com tabela
+//   de decisão e motivo em 6.1 a 6.4 e 4 questões novas. Fontes já registradas neste arquivo (FAA, NIOSH, NR-15, NR-9,
+//   estudo CEMAL); proteção dupla (plugue sob o fone) acima de cerca de 100 dB: NIOSH, Criteria for a Recommended
+//   Standard, 1998; balanceamento do rotor: manutenção de rotina do fabricante [confirmar na referência do operador].
 export const ruido: Capitulo = {
   numero: 6,
   titulo: 'Ruído e vibração',
@@ -94,8 +98,21 @@ export const ruido: Capitulo = {
           "A bordo, o nível depende da aeronave. Pelos dados da **FAA**, a cabine de um **jato de transporte** fica entre **60 e 88 dB**; a cabine de comando de um **monomotor pequeno**, entre **70 e 90**; a de um **helicóptero de rotor único**, entre **80 e 102**. Perto de um **motor a jato**, no pátio, o som vai de **130 a 160 dB**. Para comparar, a conversa fica entre 60 e 65 dB. Nas cabines do monomotor e do helicóptero, o topo da faixa passa de **85 dB(A)**, o nível em que o tempo seguro por dia começa a encolher (Veja M1V6 - III).",
           "As medições em voo mostram o mesmo quadro. Num jato comercial, a cabine de passageiros ficou entre **60 e 65 dB(A)** antes da decolagem, **80 a 85** em cruzeiro e **75 a 80** no pouso. Nas cabines de comando de jatos e turboélices de linha aérea, a média do voo ficou entre **70 e 79 dB(A)**. O som que chega ao ouvido do piloto pelo **fone**, porém, pode passar do ruído da própria cabine (Veja M1V6 - III). Em voos longos, esse ruído pesa no **conforto** e no **bem-estar** de passageiros e tripulantes.",
           "Além do ruído contínuo, há o **ruído de impacto**, que dura menos de **1 segundo** e costuma passar de **140 dB**, como uma explosão. O ouvido sente **desconforto** a partir de cerca de **120 dB** e **dor** a **130 dB**; a **140 dB**, o **tímpano** pode se romper.",
+          "**Como prevenir e amenizar.** Em voo longo, um **fone com cancelamento de ruído** ou **plugues** deixam a viagem menos cansativa; com fone de ouvido, mantenha o **volume baixo**, porque o som somado ao da cabine pode passar de 85 dB(A). No **pátio**, perto de motores, ninguém fica sem protetor, porque o ruído ali passa do limiar de dor. O tripulante usa o fone de comunicação no **volume mínimo** que permita entender.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · ruído a bordo",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Cabine de passageiros em cruzeiro", "Pode voar; fone com cancelamento ou plugue em voo longo: 80 a 85 dB(A) por horas cansam", "Pode voar; usar o fone no volume mínimo, porque o som do fone soma ao da cabine"],
+                ["Pátio perto de motor ligado", "Seguir o caminho indicado e afastar-se: o ruído do motor passa do limiar de dor", "Protetor auricular sempre, porque acima de 115 dB(A) ninguém pode ficar sem proteção"],
+                ["Ruído de impacto", "Proteger os ouvidos e afastar-se: a 140 dB o tímpano pode romper", "Protetor adequado nas tarefas com estampido, porque um único impacto pode lesar o ouvido"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-1-fone-cabine.jpg'), legenda: 'Na cabine de comando, o fone leva ao ouvido as mensagens e, junto, uma parte do ruído do voo.' } },
           { paragrafo: 3, midia: 'regua-decibeis' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v6-1-medicao-cabine.jpg'), legenda: 'O medidor de nível sonoro, perto da altura da cabeça, mostra quanto ruído chega a quem está a bordo.' } },
@@ -129,8 +146,21 @@ export const ruido: Capitulo = {
           "O ruído pesa além da audição. Pela FAA, acima de **90 dB** pioram as tarefas que pedem **vigilância**, **concentração**, **cálculo** e **noção de tempo**. O NIOSH associa o ruído a **estresse**, queda de **desempenho** e, possivelmente, **hipertensão**, mas considera os dados insuficientes para fixar limites para esses efeitos. Na cabine, o ruído também define o **volume mínimo do fone** para entender as mensagens (Veja M3V6).",
           "A audição faz parte do **exame para o certificado médico**. A **FAA** aceita ouvir uma **voz de conversa** a cerca de **2 metros**, de costas para o examinador, ou uma **audiometria** dentro de limites por frequência. A **ANAC** pede **audiometria de 250 a 8.000 Hz**, sem aparelho auditivo; na 2ª e na 4ª classe, aceita o **teste de voz a 2 metros**, e na 1ª classe o exame do ouvido é feito por **otorrinolaringologista**. A avaliação clínica do ouvido fica em outro voo (Veja M2V3).",
           "**Tratamentos, prognóstico e tipo de voo.** Na **perda temporária**, a conduta é **expectante**: silêncio e proteção, e a audição volta em horas. A **perda induzida por ruído** não tem cura; o tratamento é **não invasivo**: parar a progressão com proteção e, quando a conversa fica difícil, **aparelho auditivo**. A **surdez súbita**, de um ouvido, em horas, é urgência: o tratamento é **corticoide** por boca e, se não basta, **injeção dentro do ouvido**, um tratamento **invasivo**; o tripulante não voa até a avaliação (Veja M2V3). Na perda profunda, o tratamento **invasivo** é o **implante coclear**. O **zumbido** se trata com orientação, som de fundo e terapia. O prognóstico depende de proteger cedo: a perda já instalada não volta. No jato **pressurizado**, a cabine é mais silenciosa; no avião leve **não pressurizado** e no **helicóptero**, o ruído passa de 90 dB, e o **fone com proteção** é obrigatório.",
+          "**Como prevenir e amenizar.** **Zumbido ou ouvido abafado** depois de um voo barulhento são sinais de perda temporária: descanse em **silêncio** e evite novo ruído até a audição voltar. Como a perda começa em 4.000 Hz sem ser percebida, quem trabalha exposto faz **audiometria periódica**, que mostra a queda antes que a conversa fique difícil. Quem já tem perda confirmada continua voando, mas **protege os ouvidos** para não piorar.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · perda auditiva",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Zumbido ou ouvido abafado depois do voo", "Descansar em silêncio e evitar novo ruído: a perda temporária costuma voltar em horas", "Afastar-se do ruído até a audição voltar, porque a repetição torna a lesão permanente"],
+                ["Perda confirmada na audiometria", "Pode voar; proteger os ouvidos para não piorar", "Avaliação para o certificado, porque o que decide é entender a comunicação no rádio"],
+                ["Exposição repetida acima de 85 dB(A)", "Usar proteção nos voos e lazeres barulhentos: a perda se soma à da idade", "Audiometria periódica no programa de conservação auditiva, porque a perda começa em 4.000 Hz sem ser percebida"],
+              ],
+            },
+          },
           { paragrafo: 6, midia: 'tipo-voo-ruido' },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-2-audiometria.jpg'), legenda: 'Na cabine de audiometria, o piloto aperta o botão a cada som que ouve; o exame mostra a perda antes que ele a perceba.' } },
           { paragrafo: 2, midia: 'faixas-audicao' },
@@ -176,8 +206,21 @@ export const ruido: Capitulo = {
           "Na cabine de comando, o risco maior pode vir do próprio **fone**. Num estudo britânico em voos de linha aérea, o ruído da cabine ficou entre 70 e 79 dB(A), mas o som no ouvido, pelo fone, ficou entre **77 e 89 dB(A)**: **80 dB(A) ou mais em 80% dos voos** e **85 ou mais em 40%**. Com isso, a exposição diária passaria de **85 dB(A)** em **30% a 40% das jornadas**. Todo o risco veio do **fone aberto**, que não veda o ouvido; nos voos curtos, os autores não previram risco. Ou seja, o ouvido do piloto pode sofrer mais com o fone do que com a cabine.",
           "Proteger é **vedar** ou **cancelar** o som. Pela FAA, **plugues de espuma moldável** atenuam **30 a 35 dB**, e o **fone de comunicação** protege mais ou menos como um **abafador**. A maioria dos protetores atenua bem acima de **1.000 Hz**; nos **graves**, funciona melhor o fone com **cancelamento ativo de ruído (ANR)**, que gera um som inverso ao do ambiente. No estudo britânico, os melhores fones ANR reduziram o som em **10 a 13 dB** em voo, e os fones de concha e os ANR mantiveram o som no ouvido em até **80 dB(A)**. Acima de **115 dB**, a FAA recomenda **plugue mais abafador**; **plugue mais ANR** dá a maior proteção individual.",
           "O número do rótulo exagera a proteção real. O NIOSH recomenda descontar do **índice de redução de ruído (NRR)** **25%** nos abafadores, **50%** nos plugues moldáveis e **70%** nos demais plugues; a OSHA desconta a metade de todos. Quem trabalha exposto faz **audiometrias periódicas** no programa de saúde ocupacional da empresa (Veja M3V7). E o ouvido não separa o trabalho do lazer: o ruído em **casa**, no **carro** e em **festas** soma ao do voo.",
+          "**Como prevenir e amenizar.** Escolha o protetor pelo ambiente: **plugue de espuma** bem inserido, **abafador** ou **fone com cancelamento ativo**, que protege melhor nos graves. Lembre que o rótulo exagera: desconte o **NRR** como recomenda o NIOSH. No **helicóptero** e perto de motores, a proteção dupla, **plugue sob o fone**, cobre o que um só não cobre. Na cabine de comando, o fone no **volume mínimo** é a proteção mais barata.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · proteção auditiva",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Fone de comunicação", "Fone com cancelamento e volume baixo no entretenimento: o som somado pode passar de 85 dB(A)", "Volume mínimo e cancelamento ativo, porque o som pelo fone chega a 89 dB(A) em voos de linha"],
+                ["Helicóptero", "Usar o fone ou o protetor oferecido: a cabine chega a 102 dB", "Plugue sob o fone, porque a proteção dupla cobre os graves do rotor"],
+                ["Escolha pelo rótulo", "Contar com menos do que diz o rótulo: a proteção real é menor", "Descontar o NRR e fazer audiometria periódica, porque só ela mostra se a proteção funcionou"],
+              ],
+            },
+          },
           { paragrafo: 1, midia: 'regua-ruido' },
           {
             paragrafo: 2,
@@ -223,8 +266,21 @@ export const ruido: Capitulo = {
           "A coluna também sente. Num estudo com **seis helicópteros**, a dose estimada para um dia de 8 horas, a **A(8)**, ficou entre **0,32 e 0,51 m/s²**, na faixa em que o risco à saúde começa a ser considerado, num grupo com **alta incidência de dor lombar**. A **postura** é um dos fatores principais, sobretudo no helicóptero, e as **almofadas** comuns podem até **amplificar** a faixa de 4 a 8 Hz (Veja M2V12).",
           "**Doenças, tratamentos e tipo de voo.** A vibração se liga à **dor lombar** e à **dor no pescoço**, e a das ferramentas de manutenção, à **síndrome da vibração de mão e braço**, com dedos brancos e dormentes. Na dor lombar comum, a conduta é **expectante** e de movimento: a maioria melhora em semanas. O tratamento **não invasivo** é a **fisioterapia**, o exercício, o analgésico sem efeito de sono e o ajuste do **assento** e da postura. O **invasivo**, a **cirurgia da coluna**, fica para a hérnia de disco que comprime um nervo e não melhora, e o tripulante volta só depois da recuperação e da avaliação (Veja M2V12). O prognóstico é bom quando se corta a exposição: assento, postura e pausas. No jato **pressurizado**, a vibração é baixa; no avião leve **não pressurizado**, o motor a pistão vibra mais; no **helicóptero**, as pás vibram justamente na faixa que embaça a visão e cansa a coluna.",
           "No Brasil, a vibração de corpo inteiro tem **nível de ação** de **0,5 m/s²** e **limite de exposição** de **1,1 m/s²**, ambos para a jornada de 8 horas, no **Anexo 1 da NR-9**; acima do limite, a **NR-15** caracteriza **insalubridade** de grau médio. A norma também avalia o **valor da dose de vibração (VDV)**, que pesa os solavancos: ação em **9,1** e limite em **21 m/s¹·⁷⁵**. A **União Europeia** usa 0,5 e **1,15 m/s²**. Como a dose cresce com a vibração e com o tempo, reduzi-la depende do **assento**, da **postura** e das **horas expostas**.",
+          "**Como prevenir e amenizar.** Ajuste o **assento** e o **apoio lombar** antes de decolar e evite voar torto por longos períodos: a postura soma à vibração na dor lombar. Nas pausas, **levante-se e alongue**. Vibração diferente da habitual, que **embaça os instrumentos**, deve ser relatada, porque pode indicar desbalanceamento do rotor. O operador mede a exposição e segue os limites da **NR-9**.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · vibração",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Voo curto de helicóptero", "Pode voar: a exposição curta não chega aos limites", "Ajustar assento, apoio lombar e pausas na jornada longa, porque a postura torta soma à vibração"],
+                ["Dor lombar comum", "Pode voar com movimento e apoio lombar: ficar parado piora", "Voar se a dor não limitar os comandos, porque a dor que tira a atenção afasta da função"],
+                ["Visão embaçada pela vibração", "Pode voar: a visão volta quando a vibração para", "Relatar e revisar o rotor, porque a vibração de 12,5 a 31,5 Hz tira a leitura dos instrumentos"],
+              ],
+            },
+          },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-4-offshore.jpg'), legenda: 'No voo para as plataformas de petróleo, a tripulação passa horas sentada sobre a vibração do rotor.' } },
           { paragrafo: 2, midia: 'animacao-vibracao' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v6-4-painel.jpg'), legenda: 'Com a vibração, ponteiros e telas tremem diante dos olhos, e a leitura dos instrumentos fica mais difícil.' } },
@@ -309,6 +365,54 @@ export const ruido: Capitulo = {
       opcoes: ['De 1 a 2 Hz', 'De 4 a 8 Hz', 'De 12,5 a 31,5 Hz', 'Acima de 1.000 Hz'],
       correta: 2,
       explicacao: 'O olho balança dentro do crânio; a faixa mais sensível vai de 12,5 a 31,5 Hz, onde ficam as frequências de passagem das pás do rotor.',
+    },
+    {
+      topico: "6.1",
+      pergunta: "Na escala de decibéis, o que acontece com a energia do som a cada 3 dB a mais?",
+      opcoes: [
+        "Aumenta 3%",
+        "Dobra",
+        "Triplica",
+        "Multiplica por dez",
+      ],
+      correta: 1,
+      explicacao: "A escala é logarítmica: cada 3 dB a mais dobram a energia do som, e cada 10 dB a multiplicam por dez.",
+    },
+    {
+      topico: "6.2",
+      pergunta: "No estudo com 3.130 pilotos civis brasileiros, em quantos havia suspeita de perda auditiva induzida por ruído?",
+      opcoes: [
+        "Cerca de 3%",
+        "Cerca de 12,8%",
+        "Cerca de 29,3%",
+        "Mais de 60%",
+      ],
+      correta: 2,
+      explicacao: "A suspeita apareceu em 29,3% dos pilotos, em 12,8% nos dois ouvidos, e a frequência mais atingida foi 4.000 Hz.",
+    },
+    {
+      topico: "6.3",
+      pergunta: "Pela FAA, quanto atenuam os plugues de espuma moldável?",
+      opcoes: [
+        "5 a 10 dB",
+        "15 a 20 dB",
+        "30 a 35 dB",
+        "60 a 70 dB",
+      ],
+      correta: 2,
+      explicacao: "Bem inseridos, os plugues de espuma atenuam 30 a 35 dB; na prática, o NIOSH recomenda descontar parte do valor do rótulo.",
+    },
+    {
+      topico: "6.4",
+      pergunta: "No Brasil, qual é o limite de exposição à vibração de corpo inteiro numa jornada de 8 horas?",
+      opcoes: [
+        "0,32 m/s²",
+        "0,5 m/s²",
+        "1,1 m/s²",
+        "5,0 m/s²",
+      ],
+      correta: 2,
+      explicacao: "Pelo Anexo 1 da NR-9, o nível de ação é 0,5 m/s² e o limite de exposição é 1,1 m/s², ambos para 8 horas.",
     },
   ],
 };

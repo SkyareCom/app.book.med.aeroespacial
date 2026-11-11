@@ -74,6 +74,10 @@
 //   Expansão de 1,5 vez a 10.000 ft: (760 − 47) ÷ (523 − 47), pressão de src/lib/fisiologia.ts.
 import type { Capitulo } from '../tipos';
 
+// 11/11/2026 (pedido do autor "Finalize todos os blocos incompletos"): orientação "Como prevenir e amenizar" e tabela
+//   com decisão e motivo em cada tópico; 6 questões novas. Oxigênio da tripulação acima de 12.500 ft por mais de 30 min e
+//   sempre acima de 14.000 ft; passageiros acima de 15.000 ft: 14 CFR 91.211 (FAA). Altitude-densidade: FAA Pilot's
+//   Handbook of Aeronautical Knowledge (FAA-H-8083-25), cap. 4 e 11. Intervalo mergulho-voo: DAN/UHMS (Veja M1V3 - III).
 export const atmosfera: Capitulo = {
   numero: 1,
   titulo: 'Atmosfera e ambiente de voo',
@@ -91,9 +95,22 @@ export const atmosfera: Capitulo = {
           "A atmosfera se organiza em camadas. A **troposfera**, onde vivemos e voamos, guarda quase todo o vapor de água, as nuvens e o tempo. Nela, o ar esfria com a altura até a **tropopausa**, cuja altitude varia com a latitude e a estação.",
           "Acima vêm a **estratosfera**, que guarda parte importante do **ozônio**; a **mesosfera**, onde muitos meteoros se desintegram; a **termosfera**, das auroras e da órbita da Estação Espacial Internacional; e a **exosfera**. **A linha de Kármán, a 100 km, marca por convenção o início do espaço**, mas o ar não termina ali de repente.",
           "Para o corpo humano, a subida tem três faixas: a **zona fisiológica**, até cerca de 10.000 ft; a **faixa de deficiência fisiológica**, de 10.000 a 50.000 ft, que pede oxigênio e pressurização; e as altitudes acima disso. Na **linha de Armstrong, a 63.000 ft (19 km)**, a pressão cai a 47 mmHg, a pressão de vapor da água a 37 °C: **sem pressurização, os líquidos expostos do corpo podem ferver**.",
+          "**Como prevenir e amenizar.** O ar continua com 21% de oxigênio, mas a pressão cai, e é a pressão que decide quanto oxigênio chega ao sangue. Na cabine pressurizada, a altitude fica em geral até **8.000 ft**, o que basta para quem é saudável. Quem tem **doença do pulmão ou do coração** deve perguntar ao médico, antes do voo, se precisa de **oxigênio a bordo** (Veja M2V1). Na aviação não pressurizada, a regra da FAA exige **oxigênio para a tripulação acima de 12.500 ft** por mais de 30 minutos e sempre acima de 14.000 ft, porque a falta de oxigênio tira o julgamento antes de dar qualquer aviso.",
         ].join('\n\n'),
         recursos: [
-          { paragrafo: 1, figura: { imagem: require('@/assets/images/cenas/hero.jpg'), legenda: 'A atmosfera vista da órbita: a faixa azul fina no horizonte concentra quase todo o ar do planeta.' } },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · altitude",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Pessoa saudável em cabine pressurizada", "Pode voar sem preparo: até 8.000 ft de cabine, o oxigênio que chega ao sangue ainda basta", "Pode voar: a pressurização mantém a tripulação dentro da zona fisiológica"],
+                ["Doença do pulmão ou do coração", "Avaliar com o médico antes e pedir oxigênio pelo MEDIF se indicado: a reserva já é menor no solo", "Avaliação do examinador, porque a cabine baixa ainda mais um oxigênio que já é pouco"],
+                ["Avião não pressurizado acima de 12.500 ft", "Acima de 15.000 ft, só com oxigênio fornecido: sem ele, a consciência útil encurta", "Oxigênio obrigatório após 30 min e sempre acima de 14.000 ft, porque a hipóxia tira o julgamento sem aviso"],
+              ],
+            },
+          },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v1-1-orbita.jpg'), legenda: 'A atmosfera vista da órbita: a faixa azul fina no horizonte concentra quase todo o ar do planeta.' } },
           { paragrafo: 1, midia: 'composicao-ar' },
           { paragrafo: 2, midia: 'animacao-balao' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v1-1-tropopausa.jpg'), legenda: 'Os aviões de linha cruzam perto do teto do tempo: abaixo, as nuvens da troposfera; acima, o céu cada vez mais escuro.' } },
@@ -117,8 +134,22 @@ export const atmosfera: Capitulo = {
           "**Lei de Charles:** com a pressão constante, o volume acompanha a temperatura absoluta; num recipiente rígido, quem acompanha é a pressão (**Gay-Lussac**). Como o corpo regula a própria temperatura, o efeito aparece nos equipamentos: no frio, o **cilindro de oxigênio** marca menos pressão sem ter perdido gás.",
           "Na prática, **expansão de gás, falta de oxigênio e bolhas de nitrogênio são três problemas diferentes com a mesma origem: a queda de pressão**. Antes do voo, merecem atenção os resfriados e as sinusites, que dificultam equalizar, e todo gás retido no corpo, como um pneumotórax não drenado ou uma bolha no olho após certas cirurgias.",
           "**Doenças, tratamentos e tipo de voo.** Cada lei tem as suas doenças. Boyle explica o **barotrauma** do ouvido, dos seios e dos dentes (Veja M2V3), o **pneumotórax** (Veja M2V1 - VIII), o gás que distende o intestino depois de uma cirurgia (Veja M2V10) e a bolha no olho depois de cirurgia de retina (Veja M2V4); Dalton explica a **hipóxia** (Veja M2V1); Henry, a **doença descompressiva** (Veja M1V3 - II). O tratamento vai do **expectante**, no ouvido entupido que volta sozinho em dias, ao **não invasivo**, com descongestionante, corticoide no nariz e **oxigênio**, até o **invasivo**: abrir o tímpano ou pôr um **tubo de ventilação**, **drenar o tórax** e tratar na **câmara hiperbárica**. Em cada caso, o prazo para voar está no voo do sistema. No jato **pressurizado**, o gás preso cresce **1,4 vez** a 8.000 ft; no avião **não pressurizado**, cerca de **1,5 vez** a 10.000 ft e **2,1 vezes** a 18.000 ft; no **helicóptero**, as altitudes são menores, mas as subidas e descidas se repetem várias vezes no mesmo voo.",
+          "**Como prevenir e amenizar.** Não voe com o **nariz entupido**: o ar preso no ouvido e nos seios da face não consegue voltar na descida. Na descida, **engula, boceje ou faça a manobra de Valsalva** com delicadeza, e acorde a criança para mamar ou beber. Antes de voo **não pressurizado**, evite bebidas com gás e alimentos que fermentam. Depois de **mergulho com cilindro**, espere de 12 a 24 h antes de voar, conforme o tipo de mergulho (Veja M1V3 - III). Dor forte que não passa depois do pouso pede avaliação médica.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 9,
+            tabela: {
+              titulo: "Como prevenir e amenizar · gases",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Resfriado ou sinusite com nariz entupido", "Adiar se possível: o ar não volta ao ouvido na descida e pode romper o tímpano", "Não voar, porque a dor súbita na descida pode incapacitar na fase mais crítica"],
+                ["Ouvido tampado na descida", "Engolir, bocejar ou Valsalva suave: abre a tuba e iguala a pressão", "Igualar cedo e pedir descida mais lenta se preciso, porque a dor piora quanto maior a diferença"],
+                ["Voo depois de mergulho com cilindro", "Esperar 12 a 24 h: o nitrogênio dissolvido forma bolhas se a pressão cair cedo", "Mesmo intervalo ou maior, conforme o operador, porque a doença descompressiva incapacita"],
+                ["Voo não pressurizado e barriga estufada", "Evitar gás e fermentados antes: o gás do intestino se expande na subida", "Mesmo cuidado, porque a distensão dói e tira a atenção"],
+              ],
+            },
+          },
           { paragrafo: 8, midia: 'tipo-voo-gases' },
           {
             paragrafo: 1,
@@ -172,8 +203,21 @@ export const atmosfera: Capitulo = {
           "O **altímetro** é um barômetro: mede a pressão e a converte em altitude usando essa régua. Ajustado em **1.013,25 hPa**, mostra a **altitude-pressão**, a referência dos níveis de voo e dos cálculos operacionais. A altura real pode ser outra, porque depende do ar daquele dia e do ajuste usado. **Para o corpo, conta a pressão real**: é ela que define quanto oxigênio chega ao pulmão e quanto o gás preso se expande (Veja M1V1 - II).",
           "Num dia quente, o ar fica menos denso, e a umidade o deixa ainda mais leve. O avião então se comporta como se estivesse mais alto: é a **altitude-densidade**, a altitude padrão que teria a mesma densidade do ar real. **Motor, hélice e asa rendem menos.** No exemplo da FAA, a 8.000 ft, com 27 °C e ponto de orvalho de 24 °C, a altitude-densidade chega a **11.564 ft**, quase 500 ft a mais do que sem a umidade. No corpo, o mesmo dia quente e úmido pesa de outro jeito: **o suor evapora mal e o calor se acumula** (Veja M1V1 - IV).",
           "Os números fisiológicos deste app, como a pressão do oxigênio e a expansão dos gases, usam a atmosfera padrão para poderem ser comparados. **No voo real, valem a pressão, a temperatura e a umidade do momento.**",
+          "**Como prevenir e amenizar.** A atmosfera padrão é uma régua; o corpo responde ao ar do dia. Em **aeroporto alto e dia quente**, o piloto calcula a **altitude-densidade** antes de decolar, porque o avião precisa de mais pista e sobe pior. O altímetro deve receber o **ajuste de pressão local** sempre que informado, porque um ajuste errado muda a altura real sobre o terreno. Quem desembarca numa **cidade de grande altitude** sente a pressão baixa já no solo: nos primeiros dias, **suba devagar**, beba água e evite esforço e álcool.",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Como prevenir e amenizar · ar do dia",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Aeroporto alto em dia quente", "Pode voar: o efeito é no desempenho do avião, não no passageiro", "Calcular a altitude-densidade antes de decolar, porque o avião precisa de mais pista e sobe pior"],
+                ["Ajuste do altímetro", "Não se aplica: é tarefa da tripulação", "Ajustar sempre que informado, porque um ajuste errado deixa o avião mais baixo do que o indicado"],
+                ["Chegada a cidade de grande altitude", "Subir devagar nos primeiros dias, com água e sem álcool: a pressão é baixa já no solo", "Descanso antes de nova jornada, porque a hipóxia do solo soma à da cabine"],
+              ],
+            },
+          },
           { paragrafo: 2, midia: 'atmosfera-padrao' },
           { paragrafo: 3, figura: { imagem: require('@/assets/images/topicos/m1v1-3-altimetro.jpg'), legenda: 'O altímetro é um barômetro: o botão de ajuste escolhe a pressão de referência que ele vai converter em altitude.' } },
           { paragrafo: 4, midia: 'altitude-densidade' },
@@ -205,8 +249,21 @@ export const atmosfera: Capitulo = {
           "O resultado é o **ressecamento de olhos, nariz, garganta e boca**, mais intenso em quem usa lentes de contato. **Boca seca não prova desidratação**: a avaliação considera sintomas, tempo de exposição e a condição de cada pessoa.",
           "**Doenças, tratamentos e tipo de voo.** O ar seco agrava o **olho seco**, a **rinite** e a **desidratação** de quem já bebe pouco, toma diurético ou tem diarreia. A conduta é quase sempre **expectante** e de hábito: água, menos álcool e cafeína. O tratamento **não invasivo** é a **lágrima artificial**, o soro no nariz e, para quem usa lente de contato, trocar pelos óculos nos voos longos. O tratamento **invasivo**, a **hidratação na veia**, fica para a desidratação grave, que adia o voo até a recuperação. O prognóstico é ótimo: os sintomas somem em horas no solo. No jato **pressurizado**, o cruzeiro longo com umidade de 10% a 20% é o que mais resseca; no avião leve **não pressurizado** e no **helicóptero**, os voos são curtos, e o que pesa é o calor da cabine parada ao sol (Veja M1V4 - I).",
           "No solo, o extremo se inverte. **No calor úmido, o suor evapora devagar e o corpo perde calor com dificuldade**; no frio intenso, o vento e a roupa inadequada aceleram a perda de calor (Veja M1V4).",
+          "**Como prevenir e amenizar.** Em voo longo, **beba água** aos poucos e reduza o álcool e o café, que aumentam a perda de líquido. Quem tem olho seco usa **lágrima artificial** e troca as **lentes de contato pelos óculos**; o **soro fisiológico** no nariz alivia a mucosa ressecada. No solo, com calor úmido, **não espere o avião parado ao sol** com as portas fechadas: ventile a cabine, use roupa leve e beba antes de ter sede (Veja M1V4 - I).",
         ].join('\n\n'),
         recursos: [
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · ar seco e calor",
+              colunas: ['Situação', 'Passageiro', 'Tripulante'],
+              linhas: [
+                ["Voo longo em ar seco", "Pode voar com água aos poucos e menos álcool e café: a cabine resseca, mas não desidrata quem bebe", "Hidratar durante a jornada, porque a sede e a dor de cabeça tiram a atenção"],
+                ["Olho seco ou lente de contato", "Pode voar com lágrima artificial e óculos: a lente resseca e irrita mais no ar seco", "Levar óculos de reserva, porque a lente que incomoda tira a visão na hora errada"],
+                ["Calor úmido em solo", "Evitar esperar na cabine fechada ao sol: o suor não evapora e o corpo esquenta", "Ventilar a cabine e beber antes de ter sede, porque o calor reduz o desempenho antes da decolagem"],
+              ],
+            },
+          },
           {
             paragrafo: 2,
             tabela: {
@@ -290,6 +347,78 @@ export const atmosfera: Capitulo = {
       ],
       correta: 1,
       explicacao: 'O ar externo de altitude é pobre em vapor de água. A climatização mantém o conforto térmico, mas a umidade pode continuar baixa e irritar olhos e mucosas.',
+    },
+    {
+      topico: "1.1",
+      pergunta: "Até que altitude vai, aproximadamente, a zona fisiológica, em que o corpo saudável se adapta sem oxigênio extra?",
+      opcoes: [
+        "5.000 ft",
+        "10.000 ft",
+        "25.000 ft",
+        "50.000 ft",
+      ],
+      correta: 1,
+      explicacao: "Até cerca de 10.000 ft, o corpo saudável compensa a queda de pressão; acima disso começa a faixa de deficiência fisiológica, que pede oxigênio e pressurização.",
+    },
+    {
+      topico: "1.1",
+      pergunta: "Em qual camada da atmosfera ficam quase todo o vapor de água, as nuvens e o tempo?",
+      opcoes: [
+        "Estratosfera",
+        "Mesosfera",
+        "Troposfera",
+        "Termosfera",
+      ],
+      correta: 2,
+      explicacao: "A troposfera, onde vivemos e voamos, guarda quase todo o vapor de água e o tempo, e nela o ar esfria com a altura até a tropopausa.",
+    },
+    {
+      topico: "1.2",
+      pergunta: "Qual lei dos gases explica a formação de bolhas de nitrogênio na doença descompressiva?",
+      opcoes: [
+        "Lei de Boyle",
+        "Lei de Henry",
+        "Lei de Charles",
+        "Lei de Dalton",
+      ],
+      correta: 1,
+      explicacao: "Pela lei de Henry, o gás dissolvido acompanha a pressão: quando ela cai, os tecidos ficam supersaturados de nitrogênio, que tende a sair em bolhas.",
+    },
+    {
+      topico: "1.2",
+      pergunta: "Por que entra menos oxigênio no sangue em altitude, se o ar continua com cerca de 21% de oxigênio?",
+      opcoes: [
+        "Porque o nitrogênio ocupa o lugar do oxigênio",
+        "Porque o frio fecha os alvéolos",
+        "Porque a pressão parcial do oxigênio cai junto com a pressão total",
+        "Porque a umidade da cabine dilui o oxigênio",
+      ],
+      correta: 2,
+      explicacao: "Pela lei de Dalton, a pressão parcial do oxigênio é a sua parte da pressão total; quando a total cai, cai também a força que empurra o oxigênio para o sangue.",
+    },
+    {
+      topico: "1.3",
+      pergunta: "Quais valores a atmosfera padrão fixa ao nível do mar?",
+      opcoes: [
+        "0 °C e 1.000 hPa",
+        "15 °C e 1.013,25 hPa",
+        "20 °C e 760 hPa",
+        "25 °C e 29,92 hPa",
+      ],
+      correta: 1,
+      explicacao: "O modelo fixa 15 °C e 1.013,25 hPa (760 mmHg ou 29,92 inHg) ao nível do mar, com densidade de 1,225 kg/m³.",
+    },
+    {
+      topico: "1.4",
+      pergunta: "Qual é a umidade relativa frequente numa cabine em cruzeiro?",
+      opcoes: [
+        "Entre 10% e 20%",
+        "Entre 40% e 60%",
+        "Entre 70% e 80%",
+        "Acima de 90%",
+      ],
+      correta: 0,
+      explicacao: "O ar de fora em grande altitude é muito seco; aquecido e levado à cabine, deixa a umidade frequentemente entre 10% e 20% em cruzeiro, o que resseca olhos e mucosas.",
     },
   ],
 };
