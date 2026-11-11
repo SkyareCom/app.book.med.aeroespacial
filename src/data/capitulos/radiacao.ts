@@ -199,7 +199,7 @@ export const radiacao: Capitulo = {
           "A fase mais sensível é a **gestação**. Depois que a gravidez é comunicada, recomenda-se que o **feto receba no máximo 1 mSv** até o fim da gestação, e **não mais que 0,5 mSv num mesmo mês**. O risco estimado de **câncer fatal** por exposição antes do nascimento é de **1 em 10.000 por mSv**, maior que o do adulto. Nas **três primeiras semanas**, antes de as células se especializarem, uma partícula pode matar o embrião, risco que cai muito depressa depois dos primeiros dias. Até **20 mSv**, não se viram malformações.",
           "Por isso, **comunicar cedo** a gravidez faz diferença: com a escala ajustada, em voos mais curtos, mais baixos ou em latitudes menores, a dose do feto fica abaixo do limite. A questão da tripulante grávida vai além da radiação (Veja M2V13).",
           "**Doenças, tratamentos e tipo de voo.** As doenças ligadas à radiação do voo são as de longo prazo: **câncer**, em especial de pele e de mama nas pesquisas com tripulantes, e **catarata**. Não há tratamento para a dose recebida; a conduta é **expectante** e de vigilância: exame da pele, **mamografia** e exame dos olhos nas idades indicadas. Quando a doença aparece, o tratamento é o de qualquer caso: **não invasivo**, como a quimioterapia e a radioterapia, ou **invasivo**, como a **cirurgia do câncer** e a **cirurgia da catarata**, cada uma com prazo para voltar a voar (Veja M2V11 - III e M2V4). Na gestação, a proteção é **comunicar cedo** e ajustar a escala. No jato **pressurizado**, as rotas altas, longas e polares recebem as maiores doses; no avião leve **não pressurizado** e no **helicóptero**, que voam baixo, a dose cósmica é muito menor, e o que pesa é o **ultravioleta** pela janela.",
-          "**Como prevenir e amenizar.** A tripulante que engravida deve **comunicar a gravidez cedo**, para a empresa ajustar a escala e manter a dose do feto abaixo de **1 mSv** até o fim da gestação. A passageira grávida que voa pouco não precisa mudar os planos; quem voa muito pode estimar a dose e conversar com o obstetra. Como o **melanoma** dos tripulantes também tem relação com o sol, proteja a pele nas folgas e faça os exames de **pele, mama e olhos** nas idades indicadas.",
+          "**Como prevenir e amenizar.** A tripulante que engravida deve **comunicar a gravidez cedo**: no Brasil, a 1ª e a 2ª classes deixam de voar desde a confirmação (Veja M2V13 - II); onde a regra permite voar, a empresa ajusta a escala e mantém a dose do feto abaixo de **1 mSv** até o fim da gestação. A passageira grávida que voa pouco não precisa mudar os planos; quem voa muito pode estimar a dose e conversar com o obstetra. Como o **melanoma** dos tripulantes também tem relação com o sol, proteja a pele nas folgas e faça os exames de **pele, mama e olhos** nas idades indicadas.",
         ].join('\n\n'),
         recursos: [
           {
@@ -208,7 +208,7 @@ export const radiacao: Capitulo = {
               titulo: "Como prevenir e amenizar · riscos e gestação",
               colunas: ['Situação', 'Passageiro', 'Tripulante'],
               linhas: [
-                ["Gravidez", "Pode voar: um voo isolado fica muito abaixo de 1 mSv; quem voa muito pode calcular a dose", "Comunicar cedo para ajustar a escala, porque o feto deve receber no máximo 1 mSv e não mais de 0,5 mSv num mês"],
+                ["Gravidez", "Pode voar: um voo isolado fica muito abaixo de 1 mSv; quem voa muito pode calcular a dose", "Comunicar cedo: no Brasil, a 1ª e a 2ª classes deixam de voar; onde a regra permite voar, a escala mantém o feto abaixo de 1 mSv e de 0,5 mSv por mês (Veja M2V13 - II)"],
                 ["Pele exposta ao sol nas viagens", "Proteger a pele: no melanoma pesa também o sol", "Protetor solar nas folgas e exame da pele periódico, porque o melanoma aparece mais nas pesquisas com tripulantes"],
                 ["Vigilância ao longo da carreira", "Seguir os exames da idade: o risco de um passageiro eventual não muda a rotina", "Mamografia e exame dos olhos nas idades indicadas, porque câncer de mama e catarata aparecem nas pesquisas com tripulantes"],
               ],
@@ -258,7 +258,7 @@ export const radiacao: Capitulo = {
               linhas: [
                 ["Dose que pode passar de 1 mSv por ano", "Quem voa muito pode estimar a dose e ajustar a frequência, porque 1 mSv por ano é o limite do público", "A empresa avalia, informa e ajusta a escala, porque o ALARA pede a dose mais baixa possível"],
                 ["Alerta de radiação solar", "Seguir a operação: a mudança de altitude ou de rota é feita para reduzir a dose", "Acompanhar o alerta e considerar descer ou desviar, porque o evento solar não é previsto com antecedência"],
-                ["Tripulante grávida", "Não se aplica: a regra protege a trabalhadora exposta", "Escala ajustada desde o aviso da gravidez, porque o feto é mais sensível que o adulto"],
+                ["Tripulante grávida", "Não se aplica: a regra protege a trabalhadora exposta", "No Brasil, afastada do voo desde a confirmação; na Europa, escala ajustada, porque o feto é mais sensível que o adulto (Veja M2V13 - II)"],
               ],
             },
           },

@@ -28,6 +28,8 @@ const ASSINATURAS = Object.freeze({
 //   parágrafos, orientação e tabela 'Como prevenir e amenizar', questões novas e fotos recortadas em 16:9; hashes refeitos.
 //   11/11/2026 (tarde): fotos de abertura de 1.3, 1.4, 4.2 e 4.3 e vídeo m2v1-hipoxia enviados pelo autor; hashes refeitos.
 //   11/11/2026: foto de abertura de 6.3 (m1v6-3-protetor) enviada pelo autor; hash refeito.
+//   11/11/2026: M1V5 (5.3 e 5.4) passou a dizer que, no Brasil, a tripulante grávida de 1ª e 2ª classes deixa de voar
+//   (RBAC 67.93/67.133), coerente com o M2V13; autorizado pelo autor ("Autorizo todos"); hash refeito.
 const ASSINATURA_TESTE = 'c6e638544fa5ea23';
 
 // FNV-1a 64 bits por unidade UTF-16; detecta alterações acidentais byte a byte
@@ -166,7 +168,7 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-piloto-dor.jpg': 'ba581322737531f6',
   // Congelamento M1V5 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/radiacao.ts': 'e52649e7b9dc97b3',
+  'src/data/capitulos/radiacao.ts': '7d649886f3c7774d',
   'src/components/midia/m1v5-graficos.tsx': '8b8fa55d9c13a1bf',
   'assets/videos/m1v5-aurora.mp4': 'aea16e089624393c',
   'assets/images/topicos/m1v5-1-cruzeiro-noite.jpg': '7ec0d4b39b7a6198',

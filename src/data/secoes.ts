@@ -15,6 +15,7 @@ import { hormonios } from './capitulos/hormonios';
 import { digestivo } from './capitulos/digestivo';
 import { sangueImunidade } from './capitulos/sangue-imunidade';
 import { ossosMusculos } from './capitulos/ossos-musculos';
+import { mulher } from './capitulos/mulher';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -81,7 +82,7 @@ export const secoes: Secao[] = [
       { ...digestivo, numero: 10 },
       { ...sangueImunidade, numero: 11 },
       { ...ossosMusculos, numero: 12 },
-      cap(13, 'Saúde da mulher', ['Gestação', 'Ciclo menstrual e menopausa']),
+      { ...mulher, numero: 13 },
       // 02/11/2026: rins e envelhecimento ganharam voos próprios, no fim da missão, para não mudar a numeração
       // citada nos voos congelados (M2V12 e M2V13).
       cap(14, 'Rins e vias urinárias', ['Cálculo renal', 'Doença renal']),

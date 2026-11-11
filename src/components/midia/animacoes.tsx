@@ -1055,6 +1055,53 @@ export function AnimacaoTalaPneumatica() {
   );
 }
 
+// M2V13 · A bomba da panturrilha: sentada e parada, o sangue anda devagar nas veias da perna e o coágulo se forma com
+// mais facilidade; caminhando, a panturrilha espreme a veia e as válvulas mandam o sangue para cima. CDC Yellow Book
+// (trombose em viagens de ≥ 4 h; gestante com risco ≥ 5 vezes maior). Esquema, sem escala.
+export function AnimacaoPanturrilha() {
+  const c = useCiclo(10000);
+  const t = c.fase;
+  const andando = t >= 0.5;
+  const aperto = andando ? 0.5 + 0.5 * Math.sin(((t - 0.5) / 0.5) * Math.PI * 8) : 0;
+  const vel = andando ? 0.9 : 0.12;
+  const fase = andando ? 'CAMINHANDO: A PANTURRILHA EMPURRA O SANGUE PARA CIMA' : 'SENTADA E PARADA: O SANGUE FICA LENTO NA PERNA';
+  const cor = andando ? Cores.acerto : Cores.erro;
+  const H = 200;
+  return (
+    <Quadro titulo="A bomba da panturrilha" instrucao="Esquema: parada, a veia da perna esvazia devagar; caminhando, o músculo espreme a veia e as válvulas levam o sangue ao coração." ciclo={c} altura={H}>
+      {(w) => {
+        const vx = w / 2, y0 = 182, y1 = 40;
+        const larg = 14 - 5 * aperto;
+        const pontos = Array.from({ length: 12 }, (_, i) => {
+          const base = ((i / 12 + t * vel * 6) % 1);
+          const y = y0 - base * (y0 - y1);
+          return { y, i };
+        });
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{fase}</SvgText>
+            <Ellipse cx={vx - 28} cy={128} rx={22 + 6 * aperto} ry={38} fill="#8A4B5C" fillOpacity={0.65} />
+            <Ellipse cx={vx + 28} cy={128} rx={22 + 6 * aperto} ry={38} fill="#8A4B5C" fillOpacity={0.65} />
+            <Rect x={vx - larg / 2} y={y1} width={larg} height={y0 - y1} rx={larg / 2} fill="#2E4F7A" stroke="#7FB3E0" strokeWidth={1.2} />
+            {[70, 110, 150].map((vy) => (
+              <Path key={vy} d={`M ${vx - larg / 2} ${vy + 6} L ${vx} ${vy - 2} L ${vx + larg / 2} ${vy + 6}`} stroke="#CFE8FF" strokeWidth={1.5} fill="none" />
+            ))}
+            {pontos.map((p) => (
+              <Circle key={p.i} cx={vx} cy={p.y} r={3} fill="#E05A6A" />
+            ))}
+            {!andando ? <Circle cx={vx} cy={y0 - 8} r={6} fill="#B33A4A" fillOpacity={0.5 + 0.5 * t * 2} /> : null}
+            <SvgText x={vx + 40} y={y1 + 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>PARA O CORAÇÃO</SvgText>
+            <SvgText x={vx + 56} y={128} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>PANTURRILHA</SvgText>
+            <SvgText x={10} y={H - 10} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>VÁLVULAS IMPEDEM A VOLTA DO SANGUE</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
+
 // M2V10 · Gás intestinal sob menor pressão de cabine: lei de Boyle (Veja M1V1 - II).
 // Esquema didático: o aumento do volume não é previsão clínica de tamanho de alça nem simulação cirúrgica.
 export function AnimacaoGasIntestinal() {
