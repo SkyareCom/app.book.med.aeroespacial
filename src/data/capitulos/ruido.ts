@@ -209,6 +209,7 @@ export const ruido: Capitulo = {
           "**Como prevenir e amenizar.** Escolha o protetor pelo ambiente: **plugue de espuma** bem inserido, **abafador** ou **fone com cancelamento ativo**, que protege melhor nos graves. Lembre que o rótulo exagera: desconte o **NRR** como recomenda o NIOSH. No **helicóptero** e perto de motores, a proteção dupla, **plugue sob o fone**, cobre o que um só não cobre. Na cabine de comando, o fone no **volume mínimo** é a proteção mais barata.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m1v6-3-protetor.jpg'), legenda: 'No pátio, o protetor tipo concha e a distância do turboélice ligado protegem o ouvido de um ruído que passa do limite seguro em minutos.' } },
           {
             paragrafo: 6,
             tabela: {

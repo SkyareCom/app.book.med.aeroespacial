@@ -27,6 +27,7 @@ const ASSINATURAS = Object.freeze({
 // 11/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Finalize todos os blocos incompletos"): M1V1 a M1V8 e M2V1 ganharam
 //   parágrafos, orientação e tabela 'Como prevenir e amenizar', questões novas e fotos recortadas em 16:9; hashes refeitos.
 //   11/11/2026 (tarde): fotos de abertura de 1.3, 1.4, 4.2 e 4.3 e vídeo m2v1-hipoxia enviados pelo autor; hashes refeitos.
+//   11/11/2026: foto de abertura de 6.3 (m1v6-3-protetor) enviada pelo autor; hash refeito.
 const ASSINATURA_TESTE = 'c6e638544fa5ea23';
 
 // FNV-1a 64 bits por unidade UTF-16; detecta alterações acidentais byte a byte
@@ -182,7 +183,7 @@ const ARQUIVOS = Object.freeze({
   // Revisão 30/10/2026 (foco no organismo e tabela de sistemas do corpo em todos os voos) — autorizada pelo autor; hashes refeitos.
   // Congelamento M1V6 — combinado com o autor ao receber as fotos e o vídeo (30/10/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/ruido.ts': '50f2dc5826731061',
+  'src/data/capitulos/ruido.ts': '5eef5202faca98f5',
   'src/components/midia/m1v6-graficos.tsx': 'baaa4f28582eceeb',
   'assets/videos/m1v6-rotor.mp4': 'bef1a0716bb20f5e',
   'assets/images/topicos/m1v6-1-fone-cabine.jpg': '455a68cd3c837465',
