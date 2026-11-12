@@ -63,6 +63,7 @@ export const envelhecimento: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, faça uma consulta **4 a 6 semanas** antes de viagens longas, leve a **lista de remédios** e a carta do médico e peça **assistência** à companhia se precisar. Durante, beba **água mesmo sem sede**, levante devagar, sentando um pouco antes de ficar de pé, caminhe e mexa as panturrilhas, use **óculos** de perto à mão e evite remédios para dormir que dão confusão. Depois, dê ao corpo um ou dois dias a mais para se ajustar ao fuso.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v15-1-janela.jpg'), legenda: "Reserva menor, mesma viagem: com preparo, água e movimento, a idade sozinha não impede o voo." } },
           {
             paragrafo: 2,
             tabela: {
@@ -78,6 +79,7 @@ export const envelhecimento: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'idade-voo' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v15-1-remedios.jpg'), legenda: "A lista de remédios e a carta do médico viajam na bagagem de mão: juntos, os remédios somam sono, tontura e confusão." } },
           {
             paragrafo: 6,
             tabela: {
@@ -122,6 +124,7 @@ export const envelhecimento: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-cristalino' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v15-2-oculos.jpg'), legenda: "Óculos de perto e par de reserva: a presbiopia corrigida não tira ninguém do voo." } },
           {
             paragrafo: 3,
             tabela: {
@@ -148,6 +151,7 @@ export const envelhecimento: Capitulo = {
             },
           },
           { paragrafo: 5, midia: 'visao-idade' },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v15-2-audicao.jpg'), legenda: "Audiometria no exame: a perda começa pelos agudos, onde ficam as consoantes das mensagens de rádio." } },
           {
             paragrafo: 6,
             tabela: {
@@ -191,6 +195,7 @@ export const envelhecimento: Capitulo = {
           "**Como prevenir e amenizar.** Cuide dos fatores que o exame mede: **pressão**, colesterol, açúcar, peso, cigarro e atividade física, com controle desde cedo. Anote a data de vencimento do certificado e marque o exame com folga, levando ECG, exames de sangue e relatórios dentro do prazo pedido. Dor no peito, falta de ar ao esforço, palpitação ou desmaio são motivo para **não voar** e procurar o médico antes do próximo voo, sem esperar o exame.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v15-3-ecg.jpg'), legenda: "Eletrocardiograma no exame: na FAA, na primeira solicitação depois dos 35 anos e todo ano depois dos 40." } },
           {
             paragrafo: 2,
             tabela: {
@@ -217,6 +222,7 @@ export const envelhecimento: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v15-3-pressao.jpg'), legenda: "Pressão, colesterol e açúcar acompanhados desde cedo: o exame mede o que a rotina previne." } },
           {
             paragrafo: 6,
             tabela: {
@@ -260,6 +266,7 @@ export const envelhecimento: Capitulo = {
           "**Como prevenir e amenizar.** Planeje a carreira com o calendário na mão: aos **60**, o certificado passa a 6 meses e o voo com um só piloto no transporte comercial termina; aos **65**, termina o transporte comercial internacional. Mantenha a saúde do coração, a visão e a audição em dia para chegar lá apto. Antes de voar para outro país depois dos 65, confira se ele aceita pilotos dessa idade. A experiência continua valendo na instrução, na segurança de voo e na aviação geral.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v15-4-cabine.jpg'), legenda: "Dois pilotos na cabine: se um passa mal, o outro assume; por isso o limite é de 65 anos com mais de um piloto e de 60 com um só." } },
           {
             paragrafo: 2,
             tabela: {
@@ -288,6 +295,7 @@ export const envelhecimento: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v15-4-instrutor.jpg'), legenda: "Depois dos 65, a experiência segue na instrução e na aviação geral, onde a regra do país permitir." } },
           {
             paragrafo: 6,
             tabela: {
@@ -358,6 +366,8 @@ export const envelhecimento: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v15-5-corredor.jpg'), legenda: "Levantar devagar e segurar nos encostos: a pressão demora a se ajustar depois de horas sentado." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m2v15-voo.mp4'), legenda: "Pés para cima e para baixo e alguns passos no corredor: no idoso, o movimento afasta a trombose e a tontura ao levantar." } },
           {
             paragrafo: 6,
             tabela: {
