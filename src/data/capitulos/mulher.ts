@@ -114,6 +114,8 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Escolha o **assento do corredor**, perto do banheiro, e use o **cinto abaixo da barriga**, sobre o quadril; se houver alça de ombro, ela passa entre os seios. **Caminhe** a cada uma ou duas horas, mexa as panturrilhas sentada, beba água e use **meias de compressão** no voo longo. Leve na bagagem de mão o cartão do pré-natal, o atestado e os remédios. Evite refrigerantes e alimentos que formam gás antes do voo, e engula ou boceje na descida para abrir o ouvido.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-2-corredor.jpg'), legenda: "Caminhar no corredor a cada uma ou duas horas: a panturrilha bombeia o sangue, e a gestante, com risco de trombose maior, é quem mais ganha." } },
+          { paragrafo: 7, figura: { imagem: require('@/assets/images/topicos/m2v13-2-cinto.jpg'), legenda: "Cinto abaixo da barriga, sobre o quadril e o alto das coxas: numa freada ou turbulência, a força vai para o osso, e não para o útero." } },
           { paragrafo: 9, video: { fonte: require('@/assets/videos/m2v13-voo.mp4'), legenda: "Pés para cima e para baixo e alguns passos no corredor: a panturrilha bombeia o sangue e afasta a trombose." } },
           { paragrafo: 3, midia: 'gestacao-semanas' },
           {
@@ -188,6 +190,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Nas primeiras semanas depois do parto, prefira **voos curtos**, o **corredor** e o movimento das pernas, com água e meias de compressão se o médico indicar. Leve na bagagem de mão absorventes, a receita dos remédios e, se amamenta, a bomba de leite; o **leite materno** costuma ter exceção nas regras de líquidos, mas confirme com o aeroporto. Ofereça o peito ou a mamadeira ao bebê na subida e na descida. A tripulante marca o exame de revalidação antes de entrar na escala.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v13-3-revalidacao.jpg'), legenda: "Exame de revalidação na volta da licença: a tripulante só retoma a escala depois da recuperação completa conferida pelo examinador." } },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-3-amamentacao.jpg'), legenda: "Mamar na subida e na descida: engolir abre a tuba auditiva e alivia o ouvido do bebê." } },
           { paragrafo: 2, midia: 'pos-parto-voo' },
           {

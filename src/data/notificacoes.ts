@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 24;
+export const VERSAO_NOTIFICACOES = 25;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'saude-mulher',
+    rotulo: 'Voo disponível',
+    titulo: 'Saúde da mulher',
+    texto: 'O voo 13 da Missão Sistemas chegou: gestação e voo trimestre a trimestre, parto e perda gestacional, amamentação, ciclo menstrual, pílula e fuso horário, endometriose e menopausa, com as regras para passageira e tripulante.',
+    destino: '/capitulo/sistemas/13',
+  },
   {
     id: 'ossos-musculos',
     rotulo: 'Voo disponível',

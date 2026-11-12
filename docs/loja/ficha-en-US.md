@@ -10,7 +10,7 @@ Aerospace medicine: the human body at altitude, in aviation and in space.
 ## Descrição completa (1733/4000)
 Papos de Altitude is an aerospace medicine app-book. It explains, as clearly as possible, what happens to the human body when it goes up: in an airliner cabin, in a fighter cockpit, on a mountain or in a spacecraft.
 
-There are now 21 flights ready, with 114 topics, 172 interactive simulators, calculators and charts, 231 photos, 21 videos and 220 test questions.
+There are now 21 flights ready, with 114 topics, 172 interactive simulators, calculators and charts, 241 photos, 22 videos and 220 test questions.
 
 Each flight combines progressive text, photos, animations, practical tables and a final test. In the body-systems flights you will find what changes at altitude, how to prevent problems, when it is fine to fly as a passenger or crew member and which medicines are compatible with flying.
 
