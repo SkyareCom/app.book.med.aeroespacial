@@ -64,6 +64,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, confira em que fase está e o que ela pede: a semana da gestação na ida e na volta, o horário da pílula no fuso de destino, a hemoglobina se o sangramento é intenso. Durante o voo longo, **beba água**, levante-se e mexa as panturrilhas, prefira o **corredor** e use o **cinto baixo**, sobre o quadril. A tripulante informa ao examinador a gravidez e qualquer remédio hormonal novo, porque ambos mudam a decisão sobre o certificado.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m2v13-1-nariz.jpg'), legenda: "Soro no nariz na descida: com a rinite da gravidez, a tuba auditiva custa a abrir, e o soro ajuda o ouvido a igualar a pressão." } },
           { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-1-cabine.jpg'), legenda: "Água aos poucos no voo longo: o ar seco da cabine resseca e desidrata, e beber ajuda a circulação." } },
           { paragrafo: 3, midia: 'animacao-panturrilha' },
           { paragrafo: 5, midia: 'mulher-voo' },
