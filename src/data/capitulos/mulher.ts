@@ -187,6 +187,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Nas primeiras semanas depois do parto, prefira **voos curtos**, o **corredor** e o movimento das pernas, com água e meias de compressão se o médico indicar. Leve na bagagem de mão absorventes, a receita dos remédios e, se amamenta, a bomba de leite; o **leite materno** costuma ter exceção nas regras de líquidos, mas confirme com o aeroporto. Ofereça o peito ou a mamadeira ao bebê na subida e na descida. A tripulante marca o exame de revalidação antes de entrar na escala.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-3-amamentacao.jpg'), legenda: "Mamar na subida e na descida: engolir abre a tuba auditiva e alivia o ouvido do bebê." } },
           { paragrafo: 2, midia: 'pos-parto-voo' },
           {
             paragrafo: 3,
@@ -245,6 +246,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Leve na bagagem de mão absorventes ou coletor, o anti-inflamatório que já usa e a cartela da pílula. No voo longo, com a pílula combinada, **caminhe**, mexa as panturrilhas, beba água e use **meias de compressão** se tiver outro fator de risco. Programe um alarme para tomar a pílula no **horário de casa**. Antes de voar num avião sem banheiro, use proteção para o fluxo esperado. A tripulante informa ao examinador o contraceptivo e qualquer remédio novo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-4-pilula.jpg'), legenda: "Pílula no quarto de hotel: manter o horário de casa evita que o fuso tire a proteção." } },
           { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v13-4-colica.jpg'), legenda: "Cólica a bordo: o anti-inflamatório de costume, tomado antes do voo, controla a dor sem dar sono." } },
           { paragrafo: 5, midia: 'pilula-fuso' },
           {
