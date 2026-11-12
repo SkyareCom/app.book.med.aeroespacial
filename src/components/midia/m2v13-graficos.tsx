@@ -60,7 +60,7 @@ function Explorador({ titulo, instrucao, itens, rotulo1, rotulo2 }: { titulo: st
 const FASES: Item[] = [
   { nome: 'Ciclo menstrual', corpo: 'Cólica e sangramento intenso distraem; a anemia soma tontura à cabine a 8.000 ft.', fazer: 'Analgésico de costume, ferro se faltar e hemoglobina conferida antes do voo.' },
   { nome: 'Pílula combinada', corpo: 'O estrogênio aumenta a coagulação; no voo de mais de 4 h, a trombose fica mais provável.', fazer: 'Caminhar, mexer as panturrilhas, beber água e manter a pílula no horário de casa.' },
-  { nome: 'Gestação', corpo: 'O feto tolera a cabine, mas o risco de trombose é pelo menos 5 vezes maior e a complicação fica longe de ajuda.', fazer: 'Respeitar o limite de semanas, usar o cinto abaixo da barriga e levar o atestado.' },
+  { nome: 'Gestação e voo', corpo: 'O feto tolera a cabine, mas o risco de trombose é pelo menos 5 vezes maior e a complicação fica longe de ajuda.', fazer: 'Respeitar o limite de semanas, usar o cinto abaixo da barriga e levar o atestado.' },
   { nome: 'Pós-parto', corpo: 'O sangue coagula ainda mais nas primeiras semanas, e a anemia e o cansaço pesam.', fazer: 'Voos curtos, pernas em movimento e, para a tripulante, novo exame de revalidação.' },
   { nome: 'Menopausa', corpo: 'Ondas de calor e sono ruim derrubam a atenção; a terapia hormonal oral aumenta a coagulação.', fazer: 'Roupa em camadas, sono protegido e via pela pele se o médico indicar.' },
 ];

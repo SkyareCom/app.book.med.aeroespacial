@@ -97,7 +97,7 @@ export const mulher: Capitulo = {
     },
     {
       id: '13.2',
-      titulo: "Gestação",
+      titulo: "Gestação e voo",
       pergunta: "Até quando a gestante pode voar como passageira, e por que a tripulante grávida para antes?",
       conteudo: {
         texto: [
@@ -113,6 +113,19 @@ export const mulher: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 3, midia: 'gestacao-semanas' },
+          {
+            paragrafo: 2,
+            tabela: {
+              titulo: "Gestação e voo · trimestre a trimestre",
+              colunas: ["Fase", "Passageira", "Tripulante"],
+              linhas: [
+                ["1º trimestre, até 12 semanas", "Pode voar sem complicação; sangramento ou dor impedem até o diagnóstico: é a fase de maior risco de perda e de gravidez ectópica", "Brasil, 1ª e 2ª classes: não apta desde a confirmação; ICAO e 4ª classe: só a partir do fim da 12ª semana, porque o risco de perda é maior no começo"],
+                ["2º trimestre, de 13 a 27 semanas", "Melhor fase para viajar: o enjoo costuma passar e as complicações são menos frequentes que no 1º e no 3º trimestres", "EASA e ICAO: apta até o fim da 26ª semana com avaliação obstétrica; Brasil, 1ª e 2ª classes: não apta, porque o RBAC 67 suspende a função a bordo"],
+                ["3º trimestre, de 28 a 36 semanas", "Pode voar com atestado se a companhia pedir; limite de 36 semanas, ou 32 em gêmeos, porque o parto prematuro fica mais provável", "Não voar, porque passou do limite de 26 semanas e o risco obstétrico cresce"],
+                ["Depois de 36 semanas", "Não voar: o parto pode começar a bordo, longe de ajuda", "Não voar, porque o parto está próximo"],
+              ],
+            },
+          },
           {
             paragrafo: 4,
             tabela: {
