@@ -1146,6 +1146,52 @@ export function AnimacaoCalculo() {
   );
 }
 
+// M2V15 · O cristalino que endurece: o cristalino jovem engrossa para focar perto; com a idade (presbiopia, a partir dos
+// 40 e poucos anos), ele não engrossa, e o foco cai atrás da retina; a lente dos óculos de perto devolve o foco.
+// Fisiologia (Guyton & Hall). Esquema, sem escala.
+export function AnimacaoCristalino() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  const etapa = t < 0.34 ? 0 : t < 0.67 ? 1 : 2;
+  const fase = etapa === 0 ? 'AOS 25 ANOS: O CRISTALINO ENGROSSA E FOCA PERTO' : etapa === 1 ? 'AOS 55 ANOS: O CRISTALINO NÃO ENGROSSA E A LETRA BORRA' : 'COM ÓCULOS DE PERTO: O FOCO VOLTA À RETINA';
+  const cor = etapa === 1 ? Cores.erro : Cores.acerto;
+  const H = 200;
+  return (
+    <Quadro titulo="O cristalino que endurece" instrucao="Esquema: para ler de perto, o cristalino jovem engrossa; com a idade, ele endurece e o foco cai atrás da retina; os óculos de perto corrigem." ciclo={c} altura={H}>
+      {(w) => {
+        const ox = w * 0.62, oy = 110, r = 62;
+        const lx = ox - r + 22;
+        const espessura = etapa === 1 ? 7 : 14;
+        const retina = ox + r - 4;
+        const focoX = etapa === 1 ? retina + 26 : retina;
+        const fonteX = 34;
+        const raios = [-14, 0, 14];
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{fase}</SvgText>
+            <Circle cx={ox} cy={oy} r={r} fill="#1B2E45" stroke="#9CCBEA" strokeWidth={1.5} />
+            <Path d={`M ${retina - 6} ${oy - 40} Q ${retina + 6} ${oy} ${retina - 6} ${oy + 40}`} stroke="#E05A6A" strokeWidth={3} fill="none" />
+            <Ellipse cx={lx} cy={oy} rx={espessura} ry={26} fill="#CFE8FF" fillOpacity={0.7} stroke="#FFFFFF" strokeWidth={1} />
+            {etapa === 2 ? <Rect x={lx - 52} y={oy - 30} width={8} height={60} rx={4} fill="#E8D27A" fillOpacity={0.8} /> : null}
+            <Rect x={fonteX - 6} y={oy - 18} width={8} height={36} rx={2} fill="#F3EEDC" />
+            {raios.map((d) => (
+              <G key={d}>
+                <Line x1={fonteX + 2} y1={oy} x2={lx} y2={oy + d * 1.6} stroke="#E8D27A" strokeWidth={1.3} />
+                <Line x1={lx} y1={oy + d * 1.6} x2={focoX} y2={oy} stroke="#E8D27A" strokeWidth={1.3} />
+              </G>
+            ))}
+            <Circle cx={focoX} cy={oy} r={etapa === 1 ? 3 : 4} fill={etapa === 1 ? Cores.erro : Cores.acerto} />
+            <SvgText x={fonteX - 10} y={oy + 34} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>LETRA</SvgText>
+            <SvgText x={lx - 30} y={oy - 36} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>CRISTALINO</SvgText>
+            <SvgText x={retina - 30} y={oy + 58} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>RETINA</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 // M2V10 · Gás intestinal sob menor pressão de cabine: lei de Boyle (Veja M1V1 - II).
 // Esquema didático: o aumento do volume não é previsão clínica de tamanho de alça nem simulação cirúrgica.
 export function AnimacaoGasIntestinal() {

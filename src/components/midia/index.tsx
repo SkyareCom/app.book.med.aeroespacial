@@ -25,13 +25,14 @@ import { TipoVooCoracao, TipoVooOuvidos, TipoVooOlhos, TipoVooOrientacao, TipoVo
 import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo, AnimacaoHemoglobina } from '@/components/midia/m2v11-graficos';
 import { GestacaoSemanas, MenopausaVoo, MulherVoo, PilulaFuso, PosPartoVoo } from '@/components/midia/m2v13-graficos';
 import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/components/midia/m2v14-graficos';
+import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
 import { AssentoEnjoo, CondutaDesorientacao, IlusaoPista, IlusaoSomatogravica, IlusoesLabirinto, LimiarInclinacao, TempoNuvem } from '@/components/midia/m2v5-graficos';
 import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoTalaPneumatica, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva, AnimacaoPanturrilha, AnimacaoCalculo } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoTalaPneumatica, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva, AnimacaoPanturrilha, AnimacaoCalculo, AnimacaoCristalino } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -222,6 +223,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'prostata-remedios': () => <ProstataRemedios />,
   'cancer-uro-faa': () => <CancerUroFaa />,
   'animacao-calculo': () => <AnimacaoCalculo />,
+  'idade-voo': () => <IdadeVoo />,
+  'visao-idade': () => <VisaoIdade />,
+  'validade-cma': () => <ValidadeCma />,
+  'limite-idade': () => <LimiteIdade />,
+  'passageiro-idoso': () => <PassageiroIdoso />,
+  'animacao-cristalino': () => <AnimacaoCristalino />,
   'tipo-voo-coracao': () => <TipoVooCoracao />,
   'tipo-voo-ossos': () => <TipoVooOssos />,
   'tipo-voo-impacto': () => <TipoVooImpacto />,
@@ -417,6 +424,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'prostata-remedios': 'Remédios de próstata e bexiga',
   'cancer-uro-faa': 'Câncer do rim e da próstata e certificado',
   'animacao-calculo': 'A pedra que desce',
+  'idade-voo': 'O corpo que envelhece no voo',
+  'visao-idade': 'Visão de perto e idade',
+  'validade-cma': 'Validade do certificado médico',
+  'limite-idade': 'Idade e transporte comercial internacional',
+  'passageiro-idoso': 'O passageiro idoso, passo a passo',
+  'animacao-cristalino': 'O cristalino que endurece',
   'tipo-voo-coracao': 'O coração em cada tipo de voo',
   'tipo-voo-ossos': 'Coluna, ossos e músculos em cada tipo de voo',
   'tipo-voo-impacto': 'O impacto em cada tipo de voo',

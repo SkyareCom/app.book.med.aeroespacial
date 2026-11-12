@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 28;
+export const VERSAO_NOTIFICACOES = 29;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'envelhecimento',
+    rotulo: 'Voo disponível',
+    titulo: 'Envelhecimento e limites de idade',
+    texto: 'O voo 15 fecha a Missão Sistemas: o corpo que envelhece no voo, visão, audição e atenção com a idade, eletrocardiograma e validade do certificado, limites de idade do piloto e os direitos e cuidados do passageiro idoso.',
+    destino: '/capitulo/sistemas/15',
+  },
   {
     id: 'rins-vias-urinarias',
     rotulo: 'Voo disponível',
