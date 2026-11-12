@@ -64,6 +64,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, confira em que fase está e o que ela pede: a semana da gestação na ida e na volta, o horário da pílula no fuso de destino, a hemoglobina se o sangramento é intenso. Durante o voo longo, **beba água**, levante-se e mexa as panturrilhas, prefira o **corredor** e use o **cinto baixo**, sobre o quadril. A tripulante informa ao examinador a gravidez e qualquer remédio hormonal novo, porque ambos mudam a decisão sobre o certificado.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-1-cabine.jpg'), legenda: "Água aos poucos no voo longo: o ar seco da cabine resseca e desidrata, e beber ajuda a circulação." } },
           { paragrafo: 3, midia: 'animacao-panturrilha' },
           { paragrafo: 5, midia: 'mulher-voo' },
           {
@@ -112,6 +113,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Escolha o **assento do corredor**, perto do banheiro, e use o **cinto abaixo da barriga**, sobre o quadril; se houver alça de ombro, ela passa entre os seios. **Caminhe** a cada uma ou duas horas, mexa as panturrilhas sentada, beba água e use **meias de compressão** no voo longo. Leve na bagagem de mão o cartão do pré-natal, o atestado e os remédios. Evite refrigerantes e alimentos que formam gás antes do voo, e engula ou boceje na descida para abrir o ouvido.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 9, video: { fonte: require('@/assets/videos/m2v13-voo.mp4'), legenda: "Pés para cima e para baixo e alguns passos no corredor: a panturrilha bombeia o sangue e afasta a trombose." } },
           { paragrafo: 3, midia: 'gestacao-semanas' },
           {
             paragrafo: 2,
@@ -243,6 +245,7 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Leve na bagagem de mão absorventes ou coletor, o anti-inflamatório que já usa e a cartela da pílula. No voo longo, com a pílula combinada, **caminhe**, mexa as panturrilhas, beba água e use **meias de compressão** se tiver outro fator de risco. Programe um alarme para tomar a pílula no **horário de casa**. Antes de voar num avião sem banheiro, use proteção para o fluxo esperado. A tripulante informa ao examinador o contraceptivo e qualquer remédio novo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v13-4-colica.jpg'), legenda: "Cólica a bordo: o anti-inflamatório de costume, tomado antes do voo, controla a dor sem dar sono." } },
           { paragrafo: 5, midia: 'pilula-fuso' },
           {
             paragrafo: 3,
@@ -302,6 +305,8 @@ export const mulher: Capitulo = {
           "**Como prevenir e amenizar.** Use **roupa em camadas** e de tecido leve, mantenha a ventilação da cabine aberta e leve água. Proteja o **sono** antes das jornadas noturnas e dos voos que cruzam fusos (Veja M2V8 - IV). Com terapia hormonal **oral** e voo longo, caminhe, mexa as panturrilhas e pergunte ao médico se a via pela pele serve para você. A tripulante informa ao examinador o início ou a troca da terapia hormonal e de qualquer remédio para os sintomas.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v13-5-calor.jpg'), legenda: "Onda de calor na cabine de comando: ajustar a ventilação antes da fase crítica evita que o calor distraia." } },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v13-5-exercicio.jpg'), legenda: "Exercício com carga nas folgas: o osso responde à força e perde menos massa depois da menopausa." } },
           { paragrafo: 2, midia: 'menopausa-voo' },
           {
             paragrafo: 3,
