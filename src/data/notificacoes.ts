@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 25;
+export const VERSAO_NOTIFICACOES = 26;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'liberacao-gestacao',
+    rotulo: 'Atualização',
+    titulo: 'Gestação e voo na Liberação para voo',
+    texto: 'O formulário Liberação para voo seguro ganhou Gestação e voo: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional, com o veredito para passageira e tripulante.',
+    destino: '/liberacao-voo',
+  },
   {
     id: 'saude-mulher',
     rotulo: 'Voo disponível',

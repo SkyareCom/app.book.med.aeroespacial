@@ -52,6 +52,15 @@ export default function LiberacaoVoo() {
         <Texto cor={Cores.textoSuave}>Perguntas de cada sistema do corpo, com os prazos de repouso, o que muda para o tripulante e um veredito com comentário no final.</Texto>
       </CartaoImagem>
 
+      <Pressable accessibilityRole="link" onPress={() => router.push(rotaEpisodio('sistemas', 13))}>
+        <Painel style={{ ...styles.destaque, borderLeftColor: Cores.dourado }}>
+          <Selo texto="Destaque" cor={Cores.dourado} />
+          <Texto t="item">Gestação e voo</Texto>
+          <Texto cor={Cores.textoSuave}>Passageira e tripulante: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional. Responda no bloco Saúde da mulher.</Texto>
+          <Texto t="rotulo" cor={Cores.dourado}>Ir ao voo</Texto>
+        </Painel>
+      </Pressable>
+
       <Painel style={styles.bloco}>
         <Texto t="rotulo" cor={Cores.destaque}>Quem responde</Texto>
         <Opcoes
@@ -91,6 +100,7 @@ export default function LiberacaoVoo() {
             <View style={{ flex: 1, gap: 2 }}>
               <Texto t="rotulo" cor={Cores.destaque}>Missão 2 · Voo {b.numero}</Texto>
               <Texto t="item">{b.titulo}</Texto>
+              {b.numero === 13 ? <Texto t="rotulo" cor={Cores.dourado}>Inclui Gestação e voo</Texto> : null}
             </View>
             <Texto t="rotulo" cor={Cores.dourado}>Ir ao voo</Texto>
           </Pressable>
@@ -157,6 +167,7 @@ export default function LiberacaoVoo() {
 
 const styles = StyleSheet.create({
   bloco: { gap: Espaco.md },
+  destaque: { gap: Espaco.sm, borderLeftWidth: 4 },
   pergunta: { gap: Espaco.sm },
   voo: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, padding: Espaco.md, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(6,10,18,0.6)' },
   veredito: { gap: Espaco.sm, padding: Espaco.lg, borderRadius: Raio, borderWidth: 1.5, backgroundColor: 'rgba(6,10,18,0.82)' },
