@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 27;
+export const VERSAO_NOTIFICACOES = 28;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'rins-vias-urinarias',
+    rotulo: 'Voo disponível',
+    titulo: 'Rins e vias urinárias',
+    texto: 'O voo 14 da Missão Sistemas chegou: água e banheiro no voo, pedra nos rins e cólica renal, doença renal, diálise e transplante, próstata, bexiga e infecção urinária, sangue na urina e cirurgias, com as regras para passageiro e tripulante.',
+    destino: '/capitulo/sistemas/14',
+  },
   {
     id: 'liberacao-topicos',
     rotulo: 'Atualização',

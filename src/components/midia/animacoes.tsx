@@ -1102,6 +1102,50 @@ export function AnimacaoPanturrilha() {
 }
 
 
+// M2V14 · A pedra que desce: parada no rim, o cálculo costuma não doer; quando entala no ureter, a urina para, o rim
+// incha atrás do bloqueio e vem a cólica; ao chegar à bexiga, a dor passa. CAA da Nova Zelândia, MIS 021 (cólica
+// imprevisível e incapacitante; pedras < 5 mm podem passar). Esquema, sem escala.
+export function AnimacaoCalculo() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  const etapa = t < 0.3 ? 0 : t < 0.75 ? 1 : 2;
+  const fase = etapa === 0 ? 'PARADA NO RIM: EM GERAL SEM DOR' : etapa === 1 ? 'ENTALADA NO URETER: CÓLICA RENAL' : 'NA BEXIGA: A DOR PASSA';
+  const cor = etapa === 1 ? Cores.erro : etapa === 0 ? Cores.dourado : Cores.acerto;
+  const H = 220;
+  return (
+    <Quadro titulo="A pedra que desce" instrucao="Esquema: a pedra solta-se do rim, entala no ureter, a urina para e o rim incha atrás do bloqueio; na bexiga, a dor passa." ciclo={c} altura={H}>
+      {(w) => {
+        const rx = w * 0.3, ry = 62;
+        const bx = w * 0.62, by = 180;
+        const entalo = 0.55;
+        // posição da pedra ao longo do ureter (0 = pelve do rim, 1 = bexiga)
+        let u = 0;
+        if (etapa === 1) u = Math.min(entalo, ((t - 0.3) / 0.2) * entalo);
+        if (etapa === 2) u = entalo + ((t - 0.75) / 0.25) * (1 - entalo);
+        const p0 = { x: rx + 18, y: ry + 28 }, p1 = { x: bx - 16, y: by - 18 };
+        const sx = p0.x + (p1.x - p0.x) * u, sy = p0.y + (p1.y - p0.y) * u;
+        const inchaco = etapa === 1 && t > 0.5 ? Math.min(1, (t - 0.5) / 0.2) : 0;
+        const pulso = etapa === 1 && t > 0.5 ? 0.5 + 0.5 * Math.sin(t * 90) : 0;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{fase}</SvgText>
+            <Ellipse cx={rx} cy={ry} rx={34 + 8 * inchaco} ry={44 + 8 * inchaco} fill="#8A4B5C" fillOpacity={0.75} stroke={inchaco ? Cores.erro : '#C98A99'} strokeWidth={1.5 + 2 * pulso} />
+            <Ellipse cx={rx + 12} cy={ry + 6} rx={12 + 6 * inchaco} ry={16 + 6 * inchaco} fill="#E8D27A" fillOpacity={0.35 + 0.3 * inchaco} />
+            <Line x1={p0.x} y1={p0.y} x2={p1.x} y2={p1.y} stroke="#E8D27A" strokeOpacity={0.5} strokeWidth={6} strokeLinecap="round" />
+            <Ellipse cx={bx} cy={by} rx={34} ry={24} fill="#3A6E95" fillOpacity={0.6} stroke="#9CCBEA" strokeWidth={1.2} />
+            <Circle cx={etapa === 0 ? rx + 4 : sx} cy={etapa === 0 ? ry + 14 : sy} r={5} fill="#F3EEDC" stroke="#8C7A4B" strokeWidth={1.5} />
+            {etapa === 1 && t > 0.5 ? <SvgText x={rx + 48} y={ry - 30} fill={Cores.erro} fontSize={9} fontFamily={Fonte}>RIM INCHADO · DOR</SvgText> : null}
+            <SvgText x={rx - 30} y={ry + 64} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>RIM</SvgText>
+            <SvgText x={(p0.x + p1.x) / 2 + 10} y={(p0.y + p1.y) / 2} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>URETER</SvgText>
+            <SvgText x={bx + 40} y={by + 4} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>BEXIGA</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
 // M2V10 · Gás intestinal sob menor pressão de cabine: lei de Boyle (Veja M1V1 - II).
 // Esquema didático: o aumento do volume não é previsão clínica de tamanho de alça nem simulação cirúrgica.
 export function AnimacaoGasIntestinal() {

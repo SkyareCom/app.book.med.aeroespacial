@@ -24,13 +24,14 @@ import { BiliarDecidir, DigestivoVoo, FigadoRisco, IntestinoCrise, PrazoCirurgia
 import { TipoVooCoracao, TipoVooOuvidos, TipoVooOlhos, TipoVooOrientacao, TipoVooCerebro, TipoVooMente, TipoVooSono, TipoVooHormonios, TipoVooSangue, TipoVooDigestivo, TipoVooPulmao, TipoVooGases, TipoVooCabine, TipoVooDescompressao, TipoVooTemperatura, TipoVooRadiacao, TipoVooRuido, TipoVooG, TipoVooImpacto, TipoVooOssos } from '@/components/midia/tipo-voo';
 import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo, AnimacaoHemoglobina } from '@/components/midia/m2v11-graficos';
 import { GestacaoSemanas, MenopausaVoo, MulherVoo, PilulaFuso, PosPartoVoo } from '@/components/midia/m2v13-graficos';
+import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/components/midia/m2v14-graficos';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
 import { AssentoEnjoo, CondutaDesorientacao, IlusaoPista, IlusaoSomatogravica, IlusoesLabirinto, LimiarInclinacao, TempoNuvem } from '@/components/midia/m2v5-graficos';
 import { AcuidadeNormas, CampoVisual, ColiriosVoo, PapiCores, PontoCegoNoturno, PrazoCirurgiaOlho, UvAltitude, ZonasLaser } from '@/components/midia/m2v4-graficos';
 import { CochiloCafeina, DirecaoJetLag, MedidorFadiga, PlanoJetLag, RelogioHormonal, RepousoAeronauta } from '@/components/midia/m2v8-graficos';
-import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoTalaPneumatica, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva, AnimacaoPanturrilha } from '@/components/midia/animacoes';
+import { AnimacaoAfterdrop, AnimacaoBalao, AnimacaoBolhas, AnimacaoCascata, AnimacaoChuveiro, AnimacaoColunaSangue, AnimacaoCoracao, AnimacaoValvula, AnimacaoRelogio, AnimacaoMapaJetLag, AnimacaoOuvido, AnimacaoVarredura, AnimacaoLabirinto, AnimacaoArCranio, AnimacaoAntidepressivo, AnimacaoBombaInsulina, AnimacaoGasIntestinal, AnimacaoTalaPneumatica, AnimacaoEjecao, AnimacaoVibracao, AnimacaoHiperventilacao, AnimacaoPressaoPositiva, AnimacaoPanturrilha, AnimacaoCalculo } from '@/components/midia/animacoes';
 import { GraficoTUC } from '@/components/midia/grafico-tuc';
 import { AdaptacaoEscuro, LeisDosGases, PerdaOssea, RiscoAeromedico, SimuladorForcasG } from '@/components/midia/laboratorios';
 import { SimuladorO2 } from '@/components/midia/simulador-o2';
@@ -215,6 +216,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'pilula-fuso': () => <PilulaFuso />,
   'menopausa-voo': () => <MenopausaVoo />,
   'animacao-panturrilha': () => <AnimacaoPanturrilha />,
+  'rins-voo': () => <RinsVoo />,
+  'calculo-faa': () => <CalculoFaa />,
+  'tfg-voo': () => <TfgVoo />,
+  'prostata-remedios': () => <ProstataRemedios />,
+  'cancer-uro-faa': () => <CancerUroFaa />,
+  'animacao-calculo': () => <AnimacaoCalculo />,
   'tipo-voo-coracao': () => <TipoVooCoracao />,
   'tipo-voo-ossos': () => <TipoVooOssos />,
   'tipo-voo-impacto': () => <TipoVooImpacto />,
@@ -404,6 +411,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'pilula-fuso': 'Pílula e fuso horário',
   'menopausa-voo': 'A menopausa no voo',
   'animacao-panturrilha': 'A bomba da panturrilha',
+  'rins-voo': 'Os rins no voo',
+  'calculo-faa': 'Pedra nos rins e certificado',
+  'tfg-voo': 'TFG e certificado',
+  'prostata-remedios': 'Remédios de próstata e bexiga',
+  'cancer-uro-faa': 'Câncer do rim e da próstata e certificado',
+  'animacao-calculo': 'A pedra que desce',
   'tipo-voo-coracao': 'O coração em cada tipo de voo',
   'tipo-voo-ossos': 'Coluna, ossos e músculos em cada tipo de voo',
   'tipo-voo-impacto': 'O impacto em cada tipo de voo',
