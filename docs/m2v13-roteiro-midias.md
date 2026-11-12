@@ -20,4 +20,4 @@ textos, logotipos, insígnias, crachás ou telas legíveis. Ambiente civil. Foto
 | 9 | `m2v13-5-calor.jpg` | 13.5 Menopausa | 1 (abertura) | Piloto de cerca de 50 anos ajustando a saída de ar |
 | 10 | `m2v13-5-exercicio.jpg` | 13.5 Menopausa | 6 | Mulher madura com halteres leves num quarto de hotel |
 
-**Vídeo:** `m2v13-voo.mp4`, 13.1, após o parágrafo 6. 6 a 8 s, sem áudio, 16:9, H.264.
+**Vídeo:** `m2v13-voo.mp4`, 13.2 Gestação e voo, após o parágrafo 9 (Como prevenir e amenizar: caminhar e mexer as panturrilhas). 6 a 8 s, sem áudio, 16:9, H.264.
