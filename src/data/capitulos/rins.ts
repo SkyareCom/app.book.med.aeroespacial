@@ -113,6 +113,7 @@ export const rins: Capitulo = {
           },
           { paragrafo: 3, midia: 'rins-voo' },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v14-1-corredor.jpg'), legenda: "Ir ao banheiro antes do embarque e quando o aviso de cintos permitir: a bexiga não fica cheia por horas." } },
+          { paragrafo: 7, video: { fonte: require('@/assets/videos/m2v14-voo.mp4'), legenda: "Água à vista e em goles: o piloto bebe antes da sede e não deixa a urina concentrar." } },
           {
             paragrafo: 8,
             tabela: {
