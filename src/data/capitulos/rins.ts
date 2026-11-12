@@ -249,6 +249,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v14-3-dialise.jpg'), legenda: "Diálise marcada no destino antes de comprar a passagem: o voo vai nos dias sem sessão, e nenhuma diálise fica para trás." } },
           {
             paragrafo: 7,
             tabela: {
@@ -338,6 +339,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 7, figura: { imagem: require('@/assets/images/topicos/m2v14-4-sonda.jpg'), legenda: "Bolsa coletora esvaziada antes do embarque e bolsas extras na bagagem de mão: a sonda viaja sem susto." } },
           {
             paragrafo: 8,
             tabela: {
