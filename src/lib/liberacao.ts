@@ -7,16 +7,41 @@ import type { EfeitoLiberacao, NivelLiberacao, PerfilPaciente, PerguntaLiberacao
 
 export type QuemResponde = 'passageiro' | 'tripulante' | 'medico';
 
+export interface TopicoLiberacao {
+  id: string;
+  titulo: string;
+  perguntas: PerguntaLiberacao[];
+}
+
 export interface BlocoSistema {
   numero: number;
   titulo: string;
   perguntas: PerguntaLiberacao[];
+  topicos: TopicoLiberacao[]; // cada tópico do voo com as suas perguntas, na ordem do voo
+}
+
+// Tópico de uma pergunta: o campo `topico` ou, sem ele, o primeiro `topico` citado nas respostas.
+export function topicoDaPergunta(p: PerguntaLiberacao): string | undefined {
+  if (p.topico) return p.topico;
+  for (const o of p.opcoes) {
+    const t = o.passageiro.topico || o.tripulante.topico;
+    if (t) return t;
+  }
+  return undefined;
 }
 
 export function blocosLiberacao(): BlocoSistema[] {
   const secao = obterSecao('sistemas');
   if (!secao) return [];
-  return secao.capitulos.filter((c) => c.liberacao?.length).map((c) => ({ numero: c.numero, titulo: c.titulo, perguntas: c.liberacao! }));
+  return secao.capitulos
+    .filter((c) => c.liberacao?.length)
+    .map((c) => {
+      const perguntas = c.liberacao!;
+      const topicos: TopicoLiberacao[] = c.topicos.map((t) => ({ id: t.id, titulo: t.titulo, perguntas: perguntas.filter((p) => topicoDaPergunta(p) === t.id) }));
+      const soltas = perguntas.filter((p) => !topicos.some((t) => t.perguntas.includes(p)));
+      if (soltas.length && topicos[0]) topicos[0].perguntas.unshift(...soltas);
+      return { numero: c.numero, titulo: c.titulo, perguntas, topicos: topicos.filter((t) => t.perguntas.length) };
+    });
 }
 
 export const ORDEM_NIVEL: NivelLiberacao[] = ['nao-voar', 'avaliar', 'cuidados', 'liberado'];

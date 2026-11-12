@@ -246,6 +246,7 @@ export interface EfeitoLiberacao {
 }
 export interface PerguntaLiberacao {
   id: string;
+  topico?: string; // tópico em que a pergunta aparece no formulário; sem ele, vale o primeiro tópico das respostas
   pergunta: string;
   ajuda?: string;
   opcoes: { rotulo: string; passageiro: EfeitoLiberacao; tripulante: EfeitoLiberacao }[];

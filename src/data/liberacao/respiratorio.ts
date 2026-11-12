@@ -164,6 +164,7 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
   },
   {
     id: 'resp-mergulho',
+    topico: '3.9',
     pergunta: 'Mergulhou com cilindro ou teve doença descompressiva recentemente?',
     ajuda: 'Inclui treino em câmara hipobárica e tratamento em câmara hiperbárica.',
     opcoes: [
@@ -182,6 +183,221 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
         rotulo: 'Doença descompressiva tratada em câmara hiperbárica',
         passageiro: e('avaliar', 'Voe só com a liberação do médico hiperbárico; em geral, ao menos 72 horas.', 'Não há consenso: de 72 h (mais citado, DAN) a 6 semanas; Acott, 4 semanas (St Leger Dowse et al., DDRC, 2005).', ''),
         tripulante: e('nao-voar', 'Não voe até a liberação do médico hiperbárico e da autoridade.', 'Avaliação neurológica e de sequelas; FAA AC 61-107B 2-7.d(4)(e)–(f).', ''),
+      },
+    ],
+  },
+  {
+    id: 'resp-oxigenio-noite',
+    pergunta: "Vai voar em avião sem pressurização acima de 10.000 ft de dia ou de 5.000 ft à noite?",
+    ajuda: "Voo comercial tem cabine pressurizada: nesse caso, responda Não.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '3.1' },
+      },
+      {
+        rotulo: "Sim, de dia acima de 10.000 ft",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Use oxigênio: a FAA recomenda acima de 10.000 ft de dia.",
+          medico: "FAA: oxigênio recomendado acima de 10.000 ft de dia; saturação perto de 89% a 10.000 ft em quem não tem doença.",
+          topico: '3.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Use oxigênio: acima de 10.000 ft de cabine, o tripulante deve usar oxigênio.",
+          medico: "ICAO: tripulante com oxigênio acima de 10.000 ft de cabine; FAA recomenda acima de 10.000 ft de dia.",
+          topico: '3.1',
+        },
+      },
+      {
+        rotulo: "Sim, à noite acima de 5.000 ft",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "À noite, a visão é a primeira a sofrer: a FAA recomenda oxigênio acima de 5.000 ft.",
+          medico: "FAA: oxigênio recomendado acima de 5.000 ft à noite, pela perda precoce da visão noturna.",
+          topico: '3.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "À noite, a visão é a primeira a sofrer: a FAA recomenda oxigênio acima de 5.000 ft.",
+          medico: "FAA: oxigênio recomendado acima de 5.000 ft à noite, pela perda precoce da visão noturna.",
+          topico: '3.1',
+        },
+      },
+    ],
+  },
+  {
+    id: 'resp-monoxido',
+    pergunta: "Voa em avião a pistão com o aquecimento da cabine ligado?",
+    ajuda: "O aquecimento passa pelo escapamento e pode trazer monóxido de carbono.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.2' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '3.2' },
+      },
+      {
+        rotulo: "Sim, sem sintomas",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Fique atento: dor de cabeça, tontura ou sonolência com o aquecimento ligado pedem oxigênio e pouso.",
+          medico: "Risco de hipóxia hipêmica por monóxido de carbono em aviões a pistão.",
+          topico: '3.2',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Fique atento: dor de cabeça, tontura ou sonolência com o aquecimento ligado pedem oxigênio e pouso.",
+          medico: "Risco de hipóxia hipêmica por monóxido de carbono em aviões a pistão.",
+          topico: '3.2',
+        },
+      },
+      {
+        rotulo: "Sim, e já tive dor de cabeça, tontura ou sono com o aquecimento ligado",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Procure avaliação médica antes do próximo voo nesse avião.",
+          medico: "Suspeita de exposição a monóxido de carbono (hipóxia hipêmica): avaliar antes de liberar.",
+          topico: '3.2',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Não voe como tripulante até a avaliação médica.",
+          medico: "Suspeita de exposição a monóxido de carbono (hipóxia hipêmica): avaliar antes de liberar.",
+          topico: '3.2',
+        },
+      },
+    ],
+  },
+  {
+    id: 'resp-tcu-altitude',
+    pergunta: "Vai voar em avião sem pressurização acima de 12.500 ft?",
+    ajuda: "Conheça o tempo de consciência útil da altitude e saiba onde está a máscara.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.3' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '3.3' },
+      },
+      {
+        rotulo: "Sim, entre 12.500 e 14.000 ft por mais de 30 minutos",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.3' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Use oxigênio depois de 30 minutos nessa faixa.",
+          medico: "Regra americana: tripulante com oxigênio após 30 minutos entre 12.500 e 14.000 ft.",
+          topico: '3.3',
+        },
+      },
+      {
+        rotulo: "Sim, entre 14.000 e 15.000 ft",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.3' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Use oxigênio o tempo todo.",
+          medico: "Regra americana: tripulante com oxigênio o tempo todo acima de 14.000 ft.",
+          topico: '3.3',
+        },
+      },
+      {
+        rotulo: "Sim, acima de 15.000 ft",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Todos a bordo usam oxigênio acima de 15.000 ft.",
+          medico: "Regra americana: oxigênio para todos os ocupantes acima de 15.000 ft.",
+          topico: '3.3',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Use oxigênio o tempo todo; todos a bordo também usam.",
+          medico: "Regra americana: tripulante acima de 14.000 ft e todos os ocupantes acima de 15.000 ft com oxigênio.",
+          topico: '3.3',
+        },
+      },
+    ],
+  },
+  {
+    id: 'resp-sintomas-hipoxia',
+    pergunta: "Já teve em voo dor de cabeça, tontura, calor no rosto, visão escurecida ou confusão sem explicação?",
+    ajuda: "Em altitude, qualquer sintoma estranho pede oxigênio primeiro.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.4' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '3.4' },
+      },
+      {
+        rotulo: "Sim, e conheço a minha assinatura de hipóxia do treino em câmara",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Em voo, oxigênio primeiro e depois a investigação.",
+          medico: "Assinatura de hipóxia conhecida: tende a se repetir e é o alarme mais rápido.",
+          topico: '3.4',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Em voo, oxigênio primeiro; combine com o colega observar o outro.",
+          medico: "Assinatura de hipóxia conhecida: tende a se repetir e é o alarme mais rápido.",
+          topico: '3.4',
+        },
+      },
+      {
+        rotulo: "Sim, sem saber a causa",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Leve o episódio ao médico antes do próximo voo.",
+          medico: "Sintomas sem causa em altitude: investigar doença do pulmão, anemia e monóxido de carbono.",
+          topico: '3.4',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Leve o episódio ao médico examinador antes do próximo voo.",
+          medico: "Sintomas sem causa em altitude: investigar doença do pulmão, anemia e monóxido de carbono; considerar treinamento em câmara.",
+          topico: '3.4',
+        },
+      },
+    ],
+  },
+  {
+    id: 'resp-hiperventilacao',
+    pergunta: "Respira rápido, com formigamento ou tontura, em turbulência ou outras situações de estresse no voo?",
+    ajuda: "A hiperventilação e a hipóxia dão sintomas parecidos.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.5' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '3.5' },
+      },
+      {
+        rotulo: "Sim, às vezes",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Avise a tripulação e desacelere a respiração. Nunca use saco de papel em voo.",
+          medico: "Excluída a hipóxia, respiração lenta e consciente; saco de papel contraindicado em voo.",
+          topico: '3.5',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Oxigênio primeiro, sistema e altitude verificados; depois desacelere a respiração.",
+          medico: "Sequência: oxigênio, pressurização, altitude; excluída a hipóxia, respiração lenta. Treino em câmara ajuda a diferenciar.",
+          topico: '3.5',
+        },
+      },
+      {
+        rotulo: "Sim, com frequência",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Converse com o seu médico antes da viagem.",
+          medico: "Hiperventilação recorrente: investigar ansiedade e treinar o controle da respiração.",
+          topico: '3.5',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Leve ao médico examinador antes do próximo voo.",
+          medico: "Hiperventilação recorrente: investigar ansiedade; treinamento em câmara para separar da hipóxia.",
+          topico: '3.5',
+        },
       },
     ],
   },

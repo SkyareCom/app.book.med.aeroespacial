@@ -120,4 +120,147 @@ export const liberacaoSono: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'sono-madrugada',
+    pergunta: "O voo cai entre 1 e 5 horas do seu relógio biológico?",
+    ajuda: "É a faixa de pior desempenho do dia.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '8.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '8.1' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Planeje o sono e não dirija sonolento ao chegar.",
+          medico: "Janela circadiana de baixo desempenho (1 a 5 horas): orientar sono e cautela ao dirigir.",
+          topico: '8.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Planeje o sono antes e deixe as tarefas difíceis fora dessa faixa quando puder.",
+          medico: "Janela circadiana de baixo desempenho (1 a 5 horas): planejar sono e carga de trabalho.",
+          topico: '8.1',
+        },
+      },
+    ],
+  },
+  {
+    id: 'sono-refeicao-noite',
+    pergunta: "Trabalha ou viaja de madrugada e faz a refeição principal nesse horário?",
+    ajuda: "De madrugada, o corpo tolera menos a glicose.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '8.2' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '8.2' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Prefira refeições leves de madrugada e a refeição principal no horário de dia.",
+          medico: "Tolerância à glicose menor de madrugada; grelina alta e leptina baixa após noites curtas.",
+          topico: '8.2',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Prefira refeições leves de madrugada e a refeição principal no horário de dia.",
+          medico: "Tolerância à glicose menor de madrugada; grelina alta e leptina baixa após noites curtas.",
+          topico: '8.2',
+        },
+      },
+    ],
+  },
+  {
+    id: 'sono-direcao',
+    pergunta: "Para que lado vai cruzar os fusos?",
+    ajuda: "Leste: por exemplo, do Brasil para a Europa. Oeste: do Brasil para o Pacífico.",
+    opcoes: [
+      {
+        rotulo: "Não vou cruzar fusos",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '8.3' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '8.3' },
+      },
+      {
+        rotulo: "Leste",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Adiante o sono e procure luz pela manhã; não dirija sonolento no primeiro dia.",
+          medico: "Voo para leste: avanço de fase, mais difícil; luz matinal.",
+          topico: '8.3',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Adiante o sono e procure luz pela manhã.",
+          medico: "Voo para leste: avanço de fase, mais difícil; luz matinal.",
+          topico: '8.3',
+        },
+      },
+      {
+        rotulo: "Oeste",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Atrase o sono e aproveite a luz do fim do dia; não dirija sonolento no primeiro dia.",
+          medico: "Voo para oeste: atraso de fase; luz no fim do dia.",
+          topico: '8.3',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Atrase o sono e aproveite a luz do fim do dia.",
+          medico: "Voo para oeste: atraso de fase; luz no fim do dia.",
+          topico: '8.3',
+        },
+      },
+      {
+        rotulo: "Fico menos de 2 dias no destino",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Fique no horário de casa.",
+          medico: "Estadia curta (menos de 2 dias): manter o horário de origem.",
+          topico: '8.3',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Fique no horário de casa.",
+          medico: "Estadia curta (menos de 2 dias): manter o horário de origem.",
+          topico: '8.3',
+        },
+      },
+    ],
+  },
+  {
+    id: 'sono-repouso-jornada',
+    pergunta: "No repouso antes desta jornada, teve a oportunidade de sono prevista?",
+    ajuda: "Pergunta para o tripulante.",
+    opcoes: [
+      {
+        rotulo: "Sim",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '8.6' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '8.6' },
+      },
+      {
+        rotulo: "Saio de uma sequência de madrugadas ou de jornadas longas",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '8.6' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "A recuperação pede 2 noites seguidas de sono livre.",
+          medico: "Recuperação após madrugadas ou jornadas longas: 2 noites consecutivas de sono livre.",
+          topico: '8.6',
+        },
+      },
+      {
+        rotulo: "Não tive 8 horas seguidas de oportunidade de sono",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '8.6' },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Avise a empresa antes de assumir.",
+          medico: "14 CFR 117: sem as 8 horas de oportunidade de sono ininterrupto, o tripulante notifica a empresa.",
+          topico: '8.6',
+        },
+      },
+    ],
+  },
 ];

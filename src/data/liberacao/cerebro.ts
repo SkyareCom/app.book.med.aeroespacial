@@ -195,6 +195,7 @@ export const liberacaoCerebro: PerguntaLiberacao[] = [
   },
   {
     id: 'neuro-temperatura',
+    topico: '6.1',
     pergunta: 'Teve insolação, exaustão pelo calor, hipotermia ou congelamento recentemente?',
     opcoes: [
       { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
@@ -207,6 +208,48 @@ export const liberacaoCerebro: PerguntaLiberacao[] = [
         rotulo: 'Insolação, hipotermia grave ou congelamento',
         passageiro: e('avaliar', 'Voe só depois da alta e da liberação do médico.', 'Avaliar rins, cérebro e lesões de tecido; prazo conforme a recuperação [confirmar na referência].', ''),
         tripulante: e('nao-voar', 'Não voe até a recuperação e a avaliação médica.', 'Retorno após avaliação clínica e exames normais [confirmar na referência].', ''),
+      },
+    ],
+  },
+  {
+    id: 'cer-preparo-voo',
+    pergunta: "Vai voar com sono atrasado, sem comer ou sem beber água?",
+    ajuda: "O cérebro em altitude sente primeiro a falta de sono, de comida e de água.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '6.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '6.1' },
+      },
+      {
+        rotulo: "Sim, sem comer ou sem beber água",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Coma e beba água antes e durante o voo, evite álcool e levante devagar.",
+          medico: "Jejum e desidratação somam-se à hipóxia leve da cabine: orientar hidratação e refeição.",
+          topico: '6.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Coma e beba água antes de assumir.",
+          medico: "Jejum e desidratação somam-se à hipóxia leve da cabine: orientar hidratação e refeição.",
+          topico: '6.1',
+        },
+      },
+      {
+        rotulo: "Sim, com sono atrasado",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Durma o que puder antes, beba água e avise a tripulação se vier tontura, fraqueza de um lado ou confusão.",
+          medico: "Sono atrasado pesa no cérebro em altitude: orientar sono e sinais de alerta (tontura, aura, fraqueza de um lado, confusão).",
+          topico: '6.1',
+        },
+        tripulante: {
+          nivel: 'nao-voar',
+          leigo: "O tripulante não voa com sono atrasado.",
+          medico: "Sono atrasado: não assumir a função até o repouso (Veja M2V8).",
+          topico: '6.1',
+        },
       },
     ],
   },

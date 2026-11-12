@@ -14,6 +14,7 @@ const e = (nivel: EfeitoLiberacao['nivel'], leigo: string, medico: string, topic
 export const liberacaoOuvidos: PerguntaLiberacao[] = [
   {
     id: 'orl-nariz',
+    topico: '3.1',
     pergunta: 'Está resfriado, com sinusite, alergia em crise ou nariz entupido?',
     opcoes: [
       { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
@@ -116,6 +117,48 @@ export const liberacaoOuvidos: PerguntaLiberacao[] = [
         rotulo: 'Perda por ruído ou aparelho auditivo, estável',
         passageiro: ok('3.1'),
         tripulante: e('avaliar', 'Mostre a audiometria ao examinador e use proteção auditiva.', 'ANAC: audiometria sem aparelho; 2ª e 4ª classes aceitam voz a 2 metros. FAA: voz a 2 metros ou audiometria nos limites.', '3.4'),
+      },
+    ],
+  },
+  {
+    id: 'ouv-sinusite-repetida',
+    pergunta: "Tem sinusite repetida, pólipos ou dor no rosto ou nos dentes de cima que aparece no voo?",
+    ajuda: "Dor nos dentes de cima que só aparece no voo pode vir do seio, e não do dente.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '3.5' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '3.5' },
+      },
+      {
+        rotulo: "Sim, em tratamento e sem dor nos últimos voos",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Mantenha o remédio de sempre, cuide do nariz antes da viagem e faça as manobras na descida.",
+          medico: "Doença sinusal controlada: manter tratamento; não voar resfriado.",
+          topico: '3.5',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Mantenha o remédio de sempre e não voe resfriado.",
+          medico: "Doença sinusal controlada: manter tratamento; não voar resfriado.",
+          topico: '3.5',
+        },
+      },
+      {
+        rotulo: "Sim, com dor nos voos",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Converse com o otorrinolaringologista: muitas vezes o tratamento resolve o problema no voo.",
+          medico: "Barossinusite repetida: avaliação otorrinolaringológica (pólipos, concha bolhosa).",
+          topico: '3.5',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Leve ao otorrinolaringologista e ao médico examinador antes do próximo voo.",
+          medico: "Barossinusite repetida: avaliação otorrinolaringológica (pólipos, concha bolhosa) antes de liberar.",
+          topico: '3.5',
+        },
       },
     ],
   },

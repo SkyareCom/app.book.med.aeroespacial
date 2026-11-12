@@ -56,4 +56,112 @@ export const liberacaoOrientacao: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'ori-sem-horizonte',
+    pergunta: "Vai pilotar sem horizonte visível, à noite, dentro de nuvem ou sobre a água?",
+    ajuda: "Passageiro: responda Não.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '5.1' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.1' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Mantenha uma referência: o indicador de atitude quando o horizonte some, sem misturar os dois, e evite mover a cabeça em curva.",
+          medico: "Sem horizonte, o sistema vestibular engana: referência única nos instrumentos; confirmar tempo e visibilidade antes.",
+          topico: '5.1',
+        },
+      },
+    ],
+  },
+  {
+    id: 'ori-ilusoes-labirinto',
+    pergunta: "Sente inclinação falsa, giro que continua depois da curva ou nariz alto na decolagem sem visibilidade?",
+    ajuda: "São ilusões do labirinto: o corpo erra quando falta a visão de fora.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.2' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '5.2' },
+      },
+      {
+        rotulo: "Às vezes, e sigo o indicador de atitude",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.2' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Acredite no indicador de atitude e espere a sensação passar; em curva, não abaixe nem gire a cabeça.",
+          medico: "Ilusões vestibulares esperadas em voo por instrumentos: manejo por treino e disciplina de instrumentos.",
+          topico: '5.2',
+        },
+      },
+      {
+        rotulo: "Com frequência ou também em voo visual",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Converse com o médico: pode haver um problema do labirinto.",
+          medico: "Sensações vestibulares fora do voo por instrumentos: investigar doença vestibular.",
+          topico: '5.2',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Fale com o médico examinador antes do próximo voo.",
+          medico: "Sensações vestibulares fora do voo por instrumentos: investigar doença vestibular antes de liberar.",
+          topico: '5.2',
+        },
+      },
+    ],
+  },
+  {
+    id: 'ori-pouso-noturno',
+    pergunta: "Vai pousar à noite ou num aeroporto que não conhece?",
+    ajuda: "Pista inclinada, estreita ou sem luzes em volta engana a visão.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.3' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '5.3' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.3' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Estude o aeroporto antes, use a rampa eletrônica ou o PAPI e, com dúvida sobre a altura, arremeta.",
+          medico: "Ilusões visuais de aproximação: briefing do aeroporto, referência de rampa e critério de arremetida.",
+          topico: '5.3',
+        },
+      },
+    ],
+  },
+  {
+    id: 'ori-treino-ilusoes',
+    pergunta: "Fez no último ano uma demonstração de ilusões em simulador ou com instrutor?",
+    ajuda: "Pergunta para quem pilota.",
+    opcoes: [
+      {
+        rotulo: "Sim, e o treino de instrumentos e noturno está em dia",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.5' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '5.5' },
+      },
+      {
+        rotulo: "Não sou piloto",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.5' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '5.5' },
+      },
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '5.5' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Faça a demonstração uma vez por ano e mantenha o treino de instrumentos e de voo noturno em dia.",
+          medico: "Prevenção da desorientação espacial: demonstração anual de ilusões e proficiência em instrumentos.",
+          topico: '5.5',
+        },
+      },
+    ],
+  },
 ];

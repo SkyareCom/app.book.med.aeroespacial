@@ -133,4 +133,95 @@ export const liberacaoOlhos: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'olh-olho-seco',
+    pergunta: "Os olhos secam, ardem ou incomodam em voos longos?",
+    ajuda: "O ar da cabine é seco.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '4.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '4.1' },
+      },
+      {
+        rotulo: "Sim, e melhora em terra",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Pisque mais, use lágrima artificial sem conservante, tire a lente se incomodar e não esfregue os olhos.",
+          medico: "Olho seco de cabine: lágrima artificial sem conservante; reavaliar se não melhorar em terra.",
+          topico: '4.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Leve lágrima artificial sem conservante, os óculos em dia e um par de reserva.",
+          medico: "Olho seco de cabine: lágrima artificial sem conservante; óculos de reserva a bordo.",
+          topico: '4.1',
+        },
+      },
+      {
+        rotulo: "Sim, com dor, vermelhidão ou visão borrada que não passam",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Procure o oftalmologista antes do próximo voo.",
+          medico: "Dor, olho vermelho ou visão borrada persistentes: avaliação oftalmológica.",
+          topico: '4.1',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Não voe como tripulante até a avaliação do oftalmologista.",
+          medico: "Sintoma visual persistente: avaliação oftalmológica antes de retornar à função.",
+          topico: '4.1',
+        },
+      },
+    ],
+  },
+  {
+    id: 'olho-varredura',
+    pergunta: "Ao pilotar em voo visual, faz a varredura do céu por setores?",
+    ajuda: "Pergunta para quem pilota.",
+    opcoes: [
+      {
+        rotulo: "Sim",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '4.4' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '4.4' },
+      },
+      {
+        rotulo: "Não sou piloto",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '4.4' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '4.4' },
+      },
+      {
+        rotulo: "Não ou só às vezes",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '4.4' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Divida o céu em setores de 10° e pare 1 segundo em cada um; mova a cabeça atrás das colunas e olhe mais para fora na subida, na descida e perto de aeroportos.",
+          medico: "Varredura visual por setores de 10° com pausa de 1 s; foco distante periódico contra a miopia de campo vazio.",
+          topico: '4.4',
+        },
+      },
+    ],
+  },
+  {
+    id: 'olho-noite',
+    pergunta: "Vai pilotar à noite?",
+    ajuda: "Os olhos levam tempo para se adaptar ao escuro.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '4.3' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '4.3' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '4.3' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Chegue com tempo para os olhos se adaptarem, evite luz branca forte e não fume antes; para achar algo fraco, olhe de lado.",
+          medico: "Adaptação ao escuro, iluminação mínima da cabine, visão excêntrica a 5° a 10°; oxigênio acima de 5.000 ft à noite em voo não pressurizado.",
+          topico: '4.3',
+        },
+      },
+    ],
+  },
 ];

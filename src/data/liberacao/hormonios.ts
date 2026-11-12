@@ -196,4 +196,31 @@ export const liberacaoHormonios: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'hor-horario-remedio',
+    pergunta: "Toma remédio em horário fixo e vai cruzar fusos?",
+    ajuda: "Hormônios, insulina, anticoncepcional e outros remédios de horário.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '9.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '9.1' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Combine com o médico o horário no fuso de destino e leve os remédios e um lanche na bagagem de mão.",
+          medico: "Ajuste do horário da medicação ao fuso de destino; medicação na bagagem de mão.",
+          topico: '9.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Combine com o médico o horário no fuso de destino e leve os remédios na bagagem de mão.",
+          medico: "Ajuste do horário da medicação ao fuso de destino; medicação na bagagem de mão.",
+          topico: '9.1',
+        },
+      },
+    ],
+  },
 ];

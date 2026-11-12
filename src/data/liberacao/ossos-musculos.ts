@@ -209,4 +209,83 @@ export const liberacaoOssos: PerguntaLiberacao[] = [
       { rotulo: 'Fixação de fratura com placa, parafuso ou haste', passageiro: { nivel: 'avaliar', leigo: 'Voe com a liberação do cirurgião; peça assento com espaço se a perna estiver imobilizada.', medico: 'Prazo do cirurgião; UK CAA: gesso 24/48 h; trombose (CDC).', topico: '12.3' }, tripulante: { nivel: 'nao-voar', leigo: 'Não voe até a consolidação e a força para operar os comandos e sair da aeronave.', medico: 'RBAC 67.95(b)(1)–(2); ICAO 6.3.2.23: avaliação funcional.', topico: '12.3' } },
     ],
   },
+  {
+    id: 'oss-movimento-hoje',
+    pergunta: "Alguma dor ou rigidez limita o movimento hoje, como virar o pescoço ou sair rápido do assento?",
+    ajuda: "Vale para qualquer osso, músculo ou articulação.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '12.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '12.1' },
+      },
+      {
+        rotulo: "Sim, leve, sem limitar o movimento",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Prefira o corredor, levante-se e mexa as pernas quando for seguro e apoie as costas no encosto.",
+          medico: "Dor leve sem limitação funcional: liberar com orientações de mobilidade.",
+          topico: '12.1',
+        },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Pode assumir se não usar remédio que dá sono.",
+          medico: "Dor leve sem limitação funcional e sem medicação sedativa.",
+          topico: '12.1',
+        },
+      },
+      {
+        rotulo: "Sim, limita o movimento",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Confira se a lesão está estável, prefira o corredor e leve o remédio de uso diário na bagagem de mão.",
+          medico: "Limitação funcional no passageiro: confirmar estabilidade da lesão; evitar sedativo em voo longo.",
+          topico: '12.1',
+        },
+        tripulante: {
+          nivel: 'nao-voar',
+          leigo: "Não assuma a função com dor que limite o movimento.",
+          medico: "Dor com limitação funcional: não apto para a função até a recuperação.",
+          topico: '12.1',
+        },
+      },
+    ],
+  },
+  {
+    id: 'oss-retorno-voo',
+    pergunta: "Está voltando a voar depois de uma lesão de osso, músculo ou articulação?",
+    ajuda: "O retorno depende da função recuperada, não só do tempo.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '12.5' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '12.5' },
+      },
+      {
+        rotulo: "Sim, com a função recuperada e o examinador de acordo",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '12.5' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Mantenha no treino semanal exercícios para pescoço, tronco e pernas.",
+          medico: "Retorno com função recuperada e concordância do examinador; manter condicionamento.",
+          topico: '12.5',
+        },
+      },
+      {
+        rotulo: "Sim, ainda sem a função recuperada",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Confira com o seu médico se a lesão está estável para a viagem.",
+          medico: "Lesão em recuperação: confirmar estabilidade para a viagem.",
+          topico: '12.5',
+        },
+        tripulante: {
+          nivel: 'nao-voar',
+          leigo: "Volte quando a função estiver recuperada e o examinador concordar.",
+          medico: "Retorno ao voo só com função recuperada e concordância do examinador.",
+          topico: '12.5',
+        },
+      },
+    ],
+  },
 ];

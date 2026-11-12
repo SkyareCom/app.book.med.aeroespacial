@@ -134,4 +134,105 @@ export const liberacaoMente: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'men-imsafe',
+    pergunta: "Passou hoje pelo checklist IMSAFE: doença, remédio, estresse, álcool, fadiga, alimentação e emoção?",
+    ajuda: "Se a cabeça não está no voo, diga.",
+    opcoes: [
+      {
+        rotulo: "Sim, tudo em ordem",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '7.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '7.1' },
+      },
+      {
+        rotulo: "Um ou mais itens falharam",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Planeje a viagem com calma, leve o tratamento em dia e avise a tripulação se precisar de ajuda.",
+          medico: "Item do IMSAFE alterado no passageiro: orientar conforme o item (remédio, álcool, sono, ansiedade).",
+          topico: '7.1',
+        },
+        tripulante: {
+          nivel: 'nao-voar',
+          leigo: "Não assuma o voo até o item ser resolvido.",
+          medico: "IMSAFE (FAA) com item falho: não apto para a função até a correção.",
+          topico: '7.1',
+        },
+      },
+    ],
+  },
+  {
+    id: 'men-avaliacao-psicologica',
+    pergunta: "Tem avaliação psicológica ou exame médico aeronáutico marcado?",
+    ajuda: "Pergunta para o tripulante.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '7.5' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '7.5' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '7.5' },
+        tripulante: {
+          nivel: 'cuidados',
+          leigo: "Durma bem na véspera, vá sem álcool, leve os relatórios do seu médico e responda com sinceridade.",
+          medico: "Preparo para a avaliação: relatórios do médico assistente; o examinador avalia o risco no voo.",
+          topico: '7.5',
+        },
+      },
+      {
+        rotulo: "Sim, e o resultado pediu acompanhamento",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '7.5' },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Siga o acompanhamento: ele costuma ser o caminho de volta, não o fim da carreira.",
+          medico: "Acompanhamento indicado na avaliação psicológica: decisão do examinador.",
+          topico: '7.5',
+        },
+      },
+    ],
+  },
+  {
+    id: 'men-pedir-ajuda',
+    pergunta: "Tem passado por um período difícil, com tristeza, sobrecarga ou noites mal dormidas?",
+    ajuda: "Pedir ajuda é parte da segurança do voo.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '7.6' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '7.6' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Fale com alguém de confiança ou com o seu médico.",
+          medico: "Sofrimento psíquico: acolher e encaminhar ao cuidado adequado.",
+          topico: '7.6',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Procure o programa de apoio por pares da empresa ou do sindicato, ou o seu médico.",
+          medico: "Apoio por pares e avaliação médica antes de seguir voando.",
+          topico: '7.6',
+        },
+      },
+      {
+        rotulo: "Tenho pensado em me machucar ou em morrer",
+        passageiro: {
+          nivel: 'nao-voar',
+          leigo: "Procure ajuda agora: no Brasil, o CVV atende pelo 188, de graça, 24 horas; em emergência, o SAMU, pelo 192.",
+          medico: "Risco de suicídio: ajuda imediata e avaliação de urgência.",
+          topico: '7.6',
+        },
+        tripulante: {
+          nivel: 'nao-voar',
+          leigo: "Não voe. Procure ajuda agora: no Brasil, o CVV atende pelo 188, de graça, 24 horas; em emergência, o SAMU, pelo 192.",
+          medico: "Risco de suicídio: afastar da função, ajuda imediata e avaliação de urgência.",
+          topico: '7.6',
+        },
+      },
+    ],
+  },
 ];

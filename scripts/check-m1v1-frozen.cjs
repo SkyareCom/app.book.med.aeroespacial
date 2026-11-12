@@ -138,7 +138,9 @@ const ARQUIVOS = Object.freeze({
   //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante das
   //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
   'src/data/capitulos/hipoxia.ts': 'e86dbb124a703a2b',
-  'src/data/liberacao/respiratorio.ts': '7066c8949561a7c8',
+  // 12/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Todos os topicos dos sistemas entram com formulários
+  //   no card especial"): cinco perguntas novas na liberação, uma para cada tópico I a V, e a do mergulho ligada ao tópico IX; hash novo.
+  'src/data/liberacao/respiratorio.ts': 'c1cf63692c68f6f5',
   'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
   'assets/images/topicos/m2v1-6-espirometria.jpg': '6d40f50ca00797ad',

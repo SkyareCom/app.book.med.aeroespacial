@@ -99,6 +99,10 @@ if (missao === 2) {
       ['liberado', 'cuidados', 'avaliar', 'nao-voar'].includes(o.tripulante.nivel)),
       'Formulário sem alternativas completas para passageiro e tripulante: ' + q.id);
   }
+  // Cada tópico do voo entra no formulário Liberação para voo seguro com ao menos uma pergunta.
+  const topicoDe = (q) => q.topico || q.opcoes.map(o => o.passageiro?.topico || o.tripulante?.topico).find(Boolean);
+  for (const t of todos) exigir((cap.liberacao ?? []).some(q => topicoDe(q) === t.id),
+    'Tópico sem pergunta no formulário de liberação: ' + t.id + ' ' + t.titulo);
 }
 for (const formato of ['interativo', 'animação', 'tabela']) exigir(formatos.has(formato),
   'Falta o formato obrigatório ' + formato + '.');

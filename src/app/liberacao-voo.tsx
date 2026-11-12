@@ -49,7 +49,7 @@ export default function LiberacaoVoo() {
       <CartaoImagem imagem={ArteLiberacao} altura={190} style={BordaCapa}>
         <Selo texto="Formulário" cor={Cores.dourado} />
         <Texto t="titulo">Voar é seguro?</Texto>
-        <Texto cor={Cores.textoSuave}>Perguntas de cada sistema do corpo, com os prazos de repouso, o que muda para o tripulante e um veredito com comentário no final.</Texto>
+        <Texto cor={Cores.textoSuave}>Perguntas de cada tópico de cada sistema do corpo, com os prazos de repouso, o que muda para o tripulante e um veredito com comentário no final.</Texto>
       </CartaoImagem>
 
       <Pressable accessibilityRole="link" onPress={() => router.push(rotaEpisodio('sistemas', 13))}>
@@ -104,17 +104,23 @@ export default function LiberacaoVoo() {
             </View>
             <Texto t="rotulo" cor={Cores.dourado}>Ir ao voo</Texto>
           </Pressable>
-          {b.perguntas.map((p) => (
-            <Painel key={p.id} style={styles.pergunta}>
-              <Texto t="item">{p.pergunta}</Texto>
-              {p.ajuda ? <Texto cor={Cores.textoApagado}>{p.ajuda}</Texto> : null}
-              <Opcoes
-                itens={p.opcoes.map((o, i) => [i, o.rotulo] as [number, string])}
-                valor={respostas[p.id]}
-                onChange={(i) => setRespostas((r) => ({ ...r, [p.id]: i }))}
-                colunas={1}
-              />
-            </Painel>
+          {b.topicos.map((t) => (
+            <View key={t.id} style={styles.topico}>
+              <Texto t="rotulo" cor={Cores.destaque} semTraducao>{`M2V${b.numero} - ${romano(t.id)}`}</Texto>
+              <Texto t="item">{t.titulo}</Texto>
+              {t.perguntas.map((p) => (
+                <Painel key={p.id} style={styles.pergunta}>
+                  <Texto t="item">{p.pergunta}</Texto>
+                  {p.ajuda ? <Texto cor={Cores.textoApagado}>{p.ajuda}</Texto> : null}
+                  <Opcoes
+                    itens={p.opcoes.map((o, i) => [i, o.rotulo] as [number, string])}
+                    valor={respostas[p.id]}
+                    onChange={(i) => setRespostas((r) => ({ ...r, [p.id]: i }))}
+                    colunas={1}
+                  />
+                </Painel>
+              ))}
+            </View>
           ))}
         </View>
       ))}
@@ -168,6 +174,7 @@ export default function LiberacaoVoo() {
 const styles = StyleSheet.create({
   bloco: { gap: Espaco.md },
   destaque: { gap: Espaco.sm, borderLeftWidth: 4 },
+  topico: { gap: Espaco.sm, marginTop: Espaco.sm },
   pergunta: { gap: Espaco.sm },
   voo: { flexDirection: 'row', alignItems: 'center', gap: Espaco.md, padding: Espaco.md, borderRadius: Raio, borderWidth: 1, borderColor: Cores.linha, backgroundColor: 'rgba(6,10,18,0.6)' },
   veredito: { gap: Espaco.sm, padding: Espaco.lg, borderRadius: Raio, borderWidth: 1.5, backgroundColor: 'rgba(6,10,18,0.82)' },

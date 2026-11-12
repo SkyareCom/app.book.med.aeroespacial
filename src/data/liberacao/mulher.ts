@@ -227,4 +227,31 @@ export const liberacaoMulher: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'm2v13-fase',
+    pergunta: "Começou um remédio hormonal novo ou mudou de fase, como gestação, pós-parto ou menopausa?",
+    ajuda: "Cada fase pede um cuidado diferente no voo.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '13.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '13.1' },
+      },
+      {
+        rotulo: "Sim",
+        passageiro: {
+          nivel: 'cuidados',
+          leigo: "Confira o que a fase pede: a semana da gestação na volta, o horário da pílula no fuso de destino; no voo longo, água, corredor e pernas em movimento.",
+          medico: "Mudança de fase ou hormônio novo: revisar trombose, horário da medicação e idade gestacional.",
+          topico: '13.1',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Informe o examinador: a gravidez e o remédio hormonal novo mudam a decisão sobre o certificado.",
+          medico: "Gravidez ou hormônio novo: comunicar ao examinador antes de voar.",
+          topico: '13.1',
+        },
+      },
+    ],
+  },
 ];

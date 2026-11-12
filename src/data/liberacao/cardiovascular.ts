@@ -197,4 +197,46 @@ export const liberacaoCardiovascular: PerguntaLiberacao[] = [
       },
     ],
   },
+  {
+    id: 'card-sintomas-oxigenio',
+    pergunta: "Teve dor no peito, falta de ar, palpitação ou desmaio recente, ou o médico indicou oxigênio a bordo?",
+    ajuda: "A cabine tem menos oxigênio que o solo.",
+    opcoes: [
+      {
+        rotulo: "Não",
+        passageiro: { nivel: 'liberado', leigo: '', medico: '', topico: '2.1' },
+        tripulante: { nivel: 'liberado', leigo: '', medico: '', topico: '2.1' },
+      },
+      {
+        rotulo: "O médico indicou oxigênio a bordo",
+        passageiro: {
+          nivel: 'avaliar',
+          leigo: "Combine o oxigênio com a companhia antes do voo, pelo MEDIF.",
+          medico: "Oxigênio a bordo: prescrição e MEDIF enviados à companhia antes do voo.",
+          topico: '2.1',
+        },
+        tripulante: {
+          nivel: 'avaliar',
+          leigo: "Informe o examinador antes do próximo voo.",
+          medico: "Necessidade de oxigênio: informar ao examinador antes de voar.",
+          topico: '2.1',
+        },
+      },
+      {
+        rotulo: "Tive dor no peito, falta de ar, palpitação ou desmaio sem avaliação",
+        passageiro: {
+          nivel: 'nao-voar',
+          leigo: "Não voe antes da avaliação do médico. A bordo, esses sintomas pedem aviso imediato à tripulação.",
+          medico: "Sintoma cardiovascular novo sem investigação: avaliar antes de liberar.",
+          topico: '2.1',
+        },
+        tripulante: {
+          nivel: 'nao-voar',
+          leigo: "Não voe e informe o examinador antes do próximo voo.",
+          medico: "Piora da saúde cardiovascular: informar ao examinador e investigar antes de retornar.",
+          topico: '2.1',
+        },
+      },
+    ],
+  },
 ];
