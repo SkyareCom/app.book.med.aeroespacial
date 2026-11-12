@@ -7,16 +7,16 @@ Papos de Altitude
 ## Descrição curta (80/80)
 Medicina aeroespacial: el cuerpo humano en altitud, en aviación y en el espacio.
 
-## Descrição completa (1782/4000)
+## Descrição completa (1802/4000)
 Papos de Altitude es un app-book de medicina aeroespacial. Explica, de la forma más clara posible, lo que le ocurre al cuerpo humano cuando sube: en la cabina de un avión, en el cockpit de un caza, en una montaña o en una nave espacial.
 
-Hoy hay 20 vuelos listos, con 109 temas, 166 simuladores, calculadoras y gráficos interactivos, 231 fotos, 21 vídeos y 207 preguntas de test.
+Hoy hay 21 vuelos listos, con 114 temas, 172 simuladores, calculadoras y gráficos interactivos, 241 fotos, 22 vídeos y 220 preguntas de test.
 
 Cada vuelo combina texto progresivo, fotos, animaciones, tablas prácticas y un test final. En los vuelos de sistemas del cuerpo encontrarás qué cambia en altitud, cómo prevenir, cuándo se puede volar como pasajero o tripulante y qué medicamentos son compatibles con el vuelo.
 
 Vuelos listos
 Conceptos: Atmósfera y ambiente de vuelo · Presurización y oxígeno suplementario · Descompresión · Temperatura y supervivencia · Radiación cósmica · Ruido y vibración · Fuerzas G · Impacto y eyección
-Sistemas: Pulmones, oxígeno e hipoxia · Corazón y vasos sanguíneos · Oídos, senos paranasales y dientes · Ojos y visión · Laberinto y orientación espacial · Cerebro y sistema nervioso · Salud mental y comportamiento · Sueño, reloj biológico y fatiga · Hormonas y metabolismo · Estómago, intestino e hígado · Sangre, cáncer e infecciones · Columna, huesos y músculos
+Sistemas: Pulmones, oxígeno e hipoxia · Corazón y vasos sanguíneos · Oídos, senos paranasales y dientes · Ojos y visión · Laberinto y orientación espacial · Cerebro y sistema nervioso · Salud mental y comportamiento · Sueño, reloj biológico y fatiga · Hormonas y metabolismo · Estómago, intestino e hígado · Sangre, cáncer e infecciones · Columna, huesos y músculos · Salud de la mujer
 
 Hecho para pilotos, tripulantes de cabina, médicos, estudiantes, pasajeros y curiosos. La app incluye también el Examen CMA, para prepararse para el reconocimiento médico aeronáutico, la Autorización para volar, el Laboratorio con todos los interactivos y un ranking de conocimiento. Disponible en portugués, inglés y español.
 
