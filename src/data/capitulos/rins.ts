@@ -95,6 +95,7 @@ export const rins: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, chegue bem hidratado e vá ao **banheiro** antes de embarcar. Durante, beba **água antes de ter sede**, em goles distribuídos, e use a cor da urina como guia: **clara** é bom sinal. Modere o **álcool** e a **cafeína**, prefira o **corredor** se urina muito e levante quando o aviso de cintos permitir. Leve os remédios na **bagagem de mão**, com folga, e ajuste o horário ao fuso com o médico. O tripulante deixa uma **garrafa à vista**, que permita medir o que bebeu, e não adia o banheiro para depois do pouso.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v14-1-agua.jpg'), legenda: "Beber água em goles ao longo do voo, antes da sede: a urina clara mostra que o rim tem a água de que precisa." } },
           {
             paragrafo: 2,
             tabela: {
@@ -111,6 +112,7 @@ export const rins: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'rins-voo' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v14-1-corredor.jpg'), legenda: "Ir ao banheiro antes do embarque e quando o aviso de cintos permitir: a bexiga não fica cheia por horas." } },
           {
             paragrafo: 8,
             tabela: {
@@ -144,6 +146,7 @@ export const rins: Capitulo = {
         ].join('\n\n'),
         recursos: [
           { paragrafo: 1, midia: 'animacao-calculo' },
+          { paragrafo: 2, figura: { imagem: require('@/assets/images/topicos/m2v14-2-colica.jpg'), legenda: "Cólica renal: a pedra entala no ureter, o rim incha atrás do bloqueio e a dor nas costas desce para a virilha." } },
           {
             paragrafo: 3,
             tabela: {
@@ -171,6 +174,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v14-2-imagem.jpg'), legenda: "A imagem confere se sobrou pedra no rim: sem pedra retida, o piloto pode voltar a voar." } },
           {
             paragrafo: 7,
             tabela: {
@@ -216,6 +220,7 @@ export const rins: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, confirme a **diálise no destino**, leve o **relatório do nefrologista**, a lista de remédios e os últimos exames, e escolha voos nos dias sem sessão. Durante, siga o **limite de líquido** do seu nefrologista em vez de beber à vontade, caminhe e mexa as pernas para o inchaço não piorar e tome o imunossupressor no horário combinado. O transplantado prefere água engarrafada no destino e protege a pele do sol. O tripulante guarda a **TFG**, a hemoglobina e a proteína na urina dos últimos **90 dias** para o examinador.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v14-3-remedios.jpg'), legenda: "Remédios do rim na bagagem de mão, com estoque maior que o necessário: a mala despachada pode atrasar, e o imunossupressor não pode esperar." } },
           {
             paragrafo: 2,
             tabela: {
@@ -256,6 +261,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m2v14-3-medico.jpg'), legenda: "Exames de função renal em dia: a TFG, a hemoglobina e a proteína na urina decidem a certificação do tripulante." } },
           {
             paragrafo: 8,
             tabela: {
@@ -288,6 +294,7 @@ export const rins: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, vá ao **banheiro** antes de embarcar e escolha o **corredor**. Durante, beba água em goles distribuídos, sem grandes volumes de uma vez, evite **álcool** e **antialérgicos que dão sono**, e não segure a urina por horas: vá ao banheiro quando o aviso permitir e antes da descida. Quem usa **sonda** esvazia a bolsa antes do embarque e leva bolsas extras. **Febre**, dor nas costas ou não conseguir urinar pedem aviso à tripulação. O tripulante começa remédio novo de próstata ou bexiga **fora da escala** e só volta depois do prazo da autoridade.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v14-4-corredor.jpg'), legenda: "Lugar no corredor e banheiro antes da descida: a bexiga não fica cheia demais, e a próstata aumentada não trava a urina." } },
           {
             paragrafo: 2,
             tabela: {
@@ -315,6 +322,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v14-4-urologista.jpg'), legenda: "Remédio novo de próstata ou bexiga começa fora da escala: a pressão é conferida deitado e em pé antes da volta ao voo." } },
           {
             paragrafo: 6,
             tabela: {
@@ -361,6 +369,7 @@ export const rins: Capitulo = {
           "**Como prevenir e amenizar.** Nunca ignore o **sangue visível** na urina: procure o médico antes de voar. Depois da cirurgia, respeite o prazo do cirurgião e os mínimos de **24 horas** após vídeo e **10 dias** após cirurgia aberta, caminhe no corredor e mexa as panturrilhas (Veja M2V2 - VII). Leve na bagagem de mão o **relatório da cirurgia**, a lista de remédios e, com sonda, bolsas extras. O tripulante guarda o **PSA**, os laudos e a nota do oncologista ou do urologista de até **90 dias** e volta só com a liberação da autoridade.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v14-5-exame.jpg'), legenda: "A fita de urina mostra o sangue que os olhos não veem: positivo em 2 de 3 fitas, o sangue invisível é investigado." } },
           {
             paragrafo: 2,
             tabela: {
@@ -388,6 +397,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v14-5-recuperacao.jpg'), legenda: "Caminhar no corredor nos dias depois da cirurgia: a panturrilha bombeia o sangue e afasta a trombose." } },
           {
             paragrafo: 6,
             tabela: {
@@ -401,6 +411,7 @@ export const rins: Capitulo = {
               ],
             },
           },
+          { paragrafo: 7, figura: { imagem: require('@/assets/images/topicos/m2v14-5-relatorio.jpg'), legenda: "Relatório da cirurgia e laudos na bagagem de mão: o médico do destino e o examinador encontram o que precisam." } },
           {
             paragrafo: 8,
             tabela: {
