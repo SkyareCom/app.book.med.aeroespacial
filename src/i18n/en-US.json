@@ -14319,9 +14319,6 @@
 "Cinto abaixo da barriga, sobre o quadril e o alto das coxas: numa freada ou turbulência, a força vai para o osso, e não para o útero.":"Belt below the bump, over the hips and upper thighs: in braking or turbulence, the force goes to the bone, not the uterus.",
 "Exame de revalidação na volta da licença: a tripulante só retoma a escala depois da recuperação completa conferida pelo examinador.":"Revalidation exam on return from leave: a crew member resumes the roster only after the examiner confirms full recovery.",
 "O voo 13 da Missão Sistemas chegou: gestação e voo trimestre a trimestre, parto e perda gestacional, amamentação, ciclo menstrual, pílula e fuso horário, endometriose e menopausa, com as regras para passageira e tripulante.":"Flight 13 of the Systems Mission has arrived: pregnancy and flying trimester by trimester, childbirth and pregnancy loss, breastfeeding, the menstrual cycle, the pill and time zones, endometriosis and menopause, with the rules for passengers and crew.",
-"Destaque":"Highlight",
-"Inclui Gestação e voo":"Includes Pregnancy and flying",
-"Passageira e tripulante: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional. Responda no bloco Saúde da mulher.":"Passenger and crew member: weeks of pregnancy on the outbound and return flights, the airline certificate, postpartum and pregnancy loss. Answer in the Women's health block.",
 "Vai voar em avião sem pressurização acima de 10.000 ft de dia ou de 5.000 ft à noite?":"Will you fly in an unpressurized aircraft above 10,000 ft by day or 5,000 ft at night?",
 "Voo comercial tem cabine pressurizada: nesse caso, responda Não.":"Airline flights have a pressurized cabin: in that case, answer No.",
 "Sim, de dia acima de 10.000 ft":"Yes, by day above 10,000 ft",
@@ -14538,10 +14535,8 @@
 "Piora da saúde cardiovascular: informar ao examinador e investigar antes de retornar.":"Worsening cardiovascular health: report to the examiner and investigate before returning.",
 "{0} perguntas · {1} tópicos · {2} sistema":"{0} questions · {1} topics · {2} system",
 "{0} perguntas · {1} tópicos · {2} sistemas":"{0} questions · {1} topics · {2} systems",
-"Para passageiro, tripulante e médico especialista: perguntas de todos os tópicos de cada sistema, Gestação e voo, prazos de repouso e um veredito com comentário.":"For passengers, crew and specialist physicians: questions on every topic of each system, Pregnancy and flying, rest periods and a verdict with a comment.",
 "Perguntas de cada tópico de cada sistema do corpo, com os prazos de repouso, o que muda para o tripulante e um veredito com comentário no final.":"Questions on every topic of each body system, with rest periods, what changes for crew members and a verdict with a comment at the end.",
 "Liberação para voo: todos os tópicos":"Flight clearance: every topic",
-"O formulário Liberação para voo seguro agora tem perguntas de todos os tópicos de cada sistema, agrupadas por tópico, e destaca Gestação e voo: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional.":"The Safe-to-fly clearance form now has questions on every topic of each system, grouped by topic, and highlights Pregnancy and flying: weeks of pregnancy on the outbound and return flights, the airline certificate, postpartum and pregnancy loss.",
 "Ao pilotar em voo visual, faz a varredura do céu por setores?":"When flying visually, do you scan the sky sector by sector?",
 "Não ou só às vezes":"No, or only sometimes",
 "Divida o céu em setores de 10° e pare 1 segundo em cada um; mova a cabeça atrás das colunas e olhe mais para fora na subida, na descida e perto de aeroportos.":"Divide the sky into 10° sectors and pause 1 second in each; move your head to look behind the windscreen posts and look outside more on climb, descent and near airports.",
@@ -14549,5 +14544,7 @@
 "Vai pilotar à noite?":"Will you fly at night?",
 "Os olhos levam tempo para se adaptar ao escuro.":"The eyes take time to adapt to the dark.",
 "Chegue com tempo para os olhos se adaptarem, evite luz branca forte e não fume antes; para achar algo fraco, olhe de lado.":"Arrive in time for your eyes to adapt, avoid bright white light and do not smoke beforehand; to find something faint, look slightly to the side.",
-"Adaptação ao escuro, iluminação mínima da cabine, visão excêntrica a 5° a 10°; oxigênio acima de 5.000 ft à noite em voo não pressurizado.":"Dark adaptation, minimal cockpit lighting, off-centre viewing at 5° to 10°; oxygen above 5,000 ft at night in unpressurized flight."
+"Adaptação ao escuro, iluminação mínima da cabine, visão excêntrica a 5° a 10°; oxigênio acima de 5.000 ft à noite em voo não pressurizado.":"Dark adaptation, minimal cockpit lighting, off-centre viewing at 5° to 10°; oxygen above 5,000 ft at night in unpressurized flight.",
+"Para passageiro, tripulante e médico especialista: perguntas de todos os tópicos de cada sistema, prazos de repouso e um veredito com comentário.":"For passengers, crew and specialist physicians: questions on every topic of each system, rest periods and a verdict with a comment.",
+"O formulário Liberação para voo seguro agora tem perguntas de todos os tópicos de cada sistema, agrupadas por tópico, com o veredito para passageiro e tripulante.":"The Safe-to-fly clearance form now has questions on every topic of each system, grouped by topic, with the verdict for passenger and crew member."
 }

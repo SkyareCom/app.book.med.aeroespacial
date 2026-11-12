@@ -14319,9 +14319,6 @@
 "Cinto abaixo da barriga, sobre o quadril e o alto das coxas: numa freada ou turbulência, a força vai para o osso, e não para o útero.":"Cinturón debajo de la barriga, sobre la cadera y la parte alta de los muslos: en un frenazo o una turbulencia, la fuerza va al hueso, y no al útero.",
 "Exame de revalidação na volta da licença: a tripulante só retoma a escala depois da recuperação completa conferida pelo examinador.":"Examen de revalidación a la vuelta de la licencia: la tripulante solo vuelve a la programación después de que el examinador confirme la recuperación completa.",
 "O voo 13 da Missão Sistemas chegou: gestação e voo trimestre a trimestre, parto e perda gestacional, amamentação, ciclo menstrual, pílula e fuso horário, endometriose e menopausa, com as regras para passageira e tripulante.":"Llegó el vuelo 13 de la Misión Sistemas: embarazo y vuelo trimestre a trimestre, parto y pérdida gestacional, lactancia, ciclo menstrual, píldora y husos horarios, endometriosis y menopausia, con las reglas para pasajera y tripulante.",
-"Destaque":"Destacado",
-"Inclui Gestação e voo":"Incluye Embarazo y vuelo",
-"Passageira e tripulante: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional. Responda no bloco Saúde da mulher.":"Pasajera y tripulante: semanas de embarazo en la ida y en la vuelta, certificado de la aerolínea, posparto y pérdida gestacional. Responda en el bloque Salud de la mujer.",
 "Vai voar em avião sem pressurização acima de 10.000 ft de dia ou de 5.000 ft à noite?":"¿Va a volar en un avión sin presurización por encima de 10.000 ft de día o de 5.000 ft de noche?",
 "Voo comercial tem cabine pressurizada: nesse caso, responda Não.":"El vuelo comercial tiene cabina presurizada: en ese caso, responda No.",
 "Sim, de dia acima de 10.000 ft":"Sí, de día por encima de 10.000 ft",
@@ -14538,10 +14535,8 @@
 "Piora da saúde cardiovascular: informar ao examinador e investigar antes de retornar.":"Empeoramiento de la salud cardiovascular: informar al examinador e investigar antes de volver.",
 "{0} perguntas · {1} tópicos · {2} sistema":"{0} preguntas · {1} temas · {2} sistema",
 "{0} perguntas · {1} tópicos · {2} sistemas":"{0} preguntas · {1} temas · {2} sistemas",
-"Para passageiro, tripulante e médico especialista: perguntas de todos os tópicos de cada sistema, Gestação e voo, prazos de repouso e um veredito com comentário.":"Para pasajero, tripulante y médico especialista: preguntas de todos los temas de cada sistema, Embarazo y vuelo, plazos de reposo y un veredicto con comentario.",
 "Perguntas de cada tópico de cada sistema do corpo, com os prazos de repouso, o que muda para o tripulante e um veredito com comentário no final.":"Preguntas de cada tema de cada sistema del cuerpo, con los plazos de reposo, lo que cambia para el tripulante y un veredicto con comentario al final.",
 "Liberação para voo: todos os tópicos":"Autorización para volar: todos los temas",
-"O formulário Liberação para voo seguro agora tem perguntas de todos os tópicos de cada sistema, agrupadas por tópico, e destaca Gestação e voo: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional.":"El formulario Autorización para volar con seguridad tiene ahora preguntas de todos los temas de cada sistema, agrupadas por tema, y destaca Embarazo y vuelo: semanas de embarazo en la ida y en la vuelta, certificado de la aerolínea, posparto y pérdida gestacional.",
 "Ao pilotar em voo visual, faz a varredura do céu por setores?":"Al pilotar en vuelo visual, ¿hace el barrido del cielo por sectores?",
 "Não ou só às vezes":"No, o solo a veces",
 "Divida o céu em setores de 10° e pare 1 segundo em cada um; mova a cabeça atrás das colunas e olhe mais para fora na subida, na descida e perto de aeroportos.":"Divida el cielo en sectores de 10° y deténgase 1 segundo en cada uno; mueva la cabeza detrás de los montantes y mire más afuera en el ascenso, el descenso y cerca de aeropuertos.",
@@ -14549,5 +14544,7 @@
 "Vai pilotar à noite?":"¿Va a pilotar de noche?",
 "Os olhos levam tempo para se adaptar ao escuro.":"Los ojos tardan en adaptarse a la oscuridad.",
 "Chegue com tempo para os olhos se adaptarem, evite luz branca forte e não fume antes; para achar algo fraco, olhe de lado.":"Llegue con tiempo para que los ojos se adapten, evite luz blanca fuerte y no fume antes; para encontrar algo tenue, mire de lado.",
-"Adaptação ao escuro, iluminação mínima da cabine, visão excêntrica a 5° a 10°; oxigênio acima de 5.000 ft à noite em voo não pressurizado.":"Adaptación a la oscuridad, iluminación mínima de cabina, visión excéntrica a 5° a 10°; oxígeno por encima de 5.000 ft de noche en vuelo no presurizado."
+"Adaptação ao escuro, iluminação mínima da cabine, visão excêntrica a 5° a 10°; oxigênio acima de 5.000 ft à noite em voo não pressurizado.":"Adaptación a la oscuridad, iluminación mínima de cabina, visión excéntrica a 5° a 10°; oxígeno por encima de 5.000 ft de noche en vuelo no presurizado.",
+"Para passageiro, tripulante e médico especialista: perguntas de todos os tópicos de cada sistema, prazos de repouso e um veredito com comentário.":"Para pasajero, tripulante y médico especialista: preguntas de todos los temas de cada sistema, plazos de reposo y un veredicto con comentario.",
+"O formulário Liberação para voo seguro agora tem perguntas de todos os tópicos de cada sistema, agrupadas por tópico, com o veredito para passageiro e tripulante.":"El formulario Autorización para volar con seguridad tiene ahora preguntas de todos los temas de cada sistema, agrupadas por tema, con el veredicto para pasajero y tripulante."
 }

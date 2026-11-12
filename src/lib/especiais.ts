@@ -94,7 +94,7 @@ export const ESPECIAIS: Especial[] = [
     rota: '/liberacao-voo',
     tipo: 'Formulário',
     titulo: 'Liberação para voo seguro',
-    sinopse: 'Para passageiro, tripulante e médico especialista: perguntas de todos os tópicos de cada sistema, Gestação e voo, prazos de repouso e um veredito com comentário.',
+    sinopse: 'Para passageiro, tripulante e médico especialista: perguntas de todos os tópicos de cada sistema, prazos de repouso e um veredito com comentário.',
     imagem: ArteLiberacao,
     meta: () => (blocosLiberacao().length === 1 ? `${perguntasLiberacao()} perguntas · ${topicosLiberacao()} tópicos · 1 sistema` : `${perguntasLiberacao()} perguntas · ${topicosLiberacao()} tópicos · ${blocosLiberacao().length} sistemas`),
     voos: [],

@@ -17,7 +17,7 @@ export const notificacoes: Notificacao[] = [
     id: 'liberacao-topicos',
     rotulo: 'Atualização',
     titulo: 'Liberação para voo: todos os tópicos',
-    texto: 'O formulário Liberação para voo seguro agora tem perguntas de todos os tópicos de cada sistema, agrupadas por tópico, e destaca Gestação e voo: semanas de gestação na ida e na volta, atestado da companhia, pós-parto e perda gestacional.',
+    texto: 'O formulário Liberação para voo seguro agora tem perguntas de todos os tópicos de cada sistema, agrupadas por tópico, com o veredito para passageiro e tripulante.',
     destino: '/liberacao-voo',
   },
   {
