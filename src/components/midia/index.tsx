@@ -26,6 +26,8 @@ import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo,
 import { GestacaoSemanas, MenopausaVoo, MulherVoo, PilulaFuso, PosPartoVoo } from '@/components/midia/m2v13-graficos';
 import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/components/midia/m2v14-graficos';
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
+import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
+import { AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
@@ -229,6 +231,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'limite-idade': () => <LimiteIdade />,
   'passageiro-idoso': () => <PassageiroIdoso />,
   'animacao-cristalino': () => <AnimacaoCristalino />,
+  'classe-certificado': () => <ClasseCertificado />,
+  'requisitos-classe': () => <RequisitosClasse />,
+  'regulacao-comparar': () => <RegulacaoComparar />,
+  'quem-examina': () => <QuemExamina />,
+  'triagem-coronaria': () => <TriagemCoronaria />,
+  'animacao-regra-1': () => <AnimacaoRegra1 />,
   'tipo-voo-coracao': () => <TipoVooCoracao />,
   'tipo-voo-ossos': () => <TipoVooOssos />,
   'tipo-voo-impacto': () => <TipoVooImpacto />,
@@ -430,6 +438,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'limite-idade': 'Idade e transporte comercial internacional',
   'passageiro-idoso': 'O passageiro idoso, passo a passo',
   'animacao-cristalino': 'O cristalino que endurece',
+  'classe-certificado': 'Classes de certificado',
+  'requisitos-classe': 'Requisitos por sistema e classe',
+  'regulacao-comparar': 'Quatro regras, o mesmo corpo',
+  'quem-examina': 'Quem examina',
+  'triagem-coronaria': 'Triagem do coração do tripulante',
+  'animacao-regra-1': 'A regra do 1%',
   'tipo-voo-coracao': 'O coração em cada tipo de voo',
   'tipo-voo-ossos': 'Coluna, ossos e músculos em cada tipo de voo',
   'tipo-voo-impacto': 'O impacto em cada tipo de voo',

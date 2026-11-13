@@ -18,6 +18,7 @@ import { ossosMusculos } from './capitulos/ossos-musculos';
 import { mulher } from './capitulos/mulher';
 import { rins } from './capitulos/rins';
 import { envelhecimento } from './capitulos/envelhecimento';
+import { certificacao } from './capitulos/certificacao';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -98,7 +99,7 @@ export const secoes: Secao[] = [
     subtitulo: 'Aptidão, segurança e medicina na operação aérea',
     sinopse: 'Quem pode voar e como voar com segurança: certificação, fatores humanos, emergências a bordo, acidentes e perícias.',
     capitulos: [
-      cap(1, 'Certificação e risco aeromédico', ['Classes de certificado', 'Regulação internacional', 'Examinador', 'Regra do 1%', 'Medicina de precisão'], ['risco-aeromedico']),
+      certificacao,
       cap(2, 'Farmacologia aeroespacial', ['Medicamentos permitidos', 'Afastamento', 'Interações']),
       cap(3, 'Seleção e treinamento', ['Seleção', 'Treinamento fisiológico', 'Formação']),
       cap(4, 'Fatores humanos e CRM', ['SHELL, Reason e HFACS', 'Consciência situacional', 'CRM e TEM', 'Automação']),
