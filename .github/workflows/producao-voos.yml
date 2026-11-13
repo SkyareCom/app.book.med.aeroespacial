@@ -46,6 +46,7 @@ jobs:
           npm test
           node scripts/check-m1v1-frozen.cjs
           node scripts/check-m2v10-frozen.cjs
+          node scripts/check-congelados.cjs
       - name: Exigir inglês e espanhol completos
         run: |
           set -euo pipefail

@@ -26,3 +26,4 @@ jobs:
         run: |
           node scripts/check-m1v1-frozen.cjs
           node scripts/check-m2v10-frozen.cjs
+          node scripts/check-congelados.cjs

@@ -32,6 +32,11 @@ jobs:
       - name: Verificar congelamento editorial de M1V1 I-IV
         run: node scripts/check-m1v1-frozen.cjs
 
+      - name: Verificar congelamento dos voos prontos
+        run: |
+          node scripts/check-m2v10-frozen.cjs
+          node scripts/check-congelados.cjs
+
       - name: Instalar dependências
         run: npm ci
 

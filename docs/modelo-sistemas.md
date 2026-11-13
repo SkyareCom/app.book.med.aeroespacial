@@ -120,3 +120,12 @@ aviso de que o formulário apoia a decisão e não substitui o médico, a autori
   "OACI" e "ACV".
 - **Tempo de leitura** (`tempoLeituraMin`) em todo voo.
 
+
+## 7. Congelamento (12/11/2026, pedido do autor: "Congele tudo que esta pronto")
+
+- M1V1–M1V8 e M2V1: `scripts/check-m1v1-frozen.cjs`; M2V10: `scripts/check-m2v10-frozen.cjs`; M2V2–M2V9, M2V11–M2V15, o
+  formulário Liberação para voo seguro, as animações publicadas e as traduções dos voos: `scripts/check-congelados.cjs`,
+  com o retrato em `scripts/congelados.json`. Os três rodam no CI e bloqueiam a publicação.
+- Voos novos põem as animações num arquivo próprio (não em `animacoes.tsx`) e só acrescentam traduções.
+- Mudar conteúdo congelado exige autorização explícita do autor; depois, `node scripts/congelar.cjs`, nova assinatura
+  em `check-congelados.cjs` e o registro da autorização no comentário do checador.
