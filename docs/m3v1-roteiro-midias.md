@@ -3,7 +3,7 @@
 **Status (13/11/2026):** capítulo com 6 tópicos (o tópico II, Requisitos por sistema, entrou com o texto integral do
 RBAC 67, Emenda 05), tabelas, interativos (5 novos e a calculadora da regra do 1%), animação própria
 (`animacoes-aviacao.tsx`), teste, referências, notificação e traduções EN/ES prontos no ramo `voo/M3V1`
-(`validar-voo M3V1 conteudo` aprovado). Faltam 12 fotos e 1 vídeo.
+(`validar-voo M3V1 conteudo` aprovado). Mídias recebidas em 13/11/2026 (12 fotos e vídeo), com textos, divisas e telas desfocados.
 
 **Padrão:** fotorrealismo editorial, pessoas fictícias, 16:9 (ideal 1600 × 893), sem textos, logotipos, insígnias,
 crachás, divisas ou telas legíveis. Ambiente civil (certificação e exame médico).

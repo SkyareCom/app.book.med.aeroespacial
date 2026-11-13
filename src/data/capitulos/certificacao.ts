@@ -315,6 +315,7 @@ export const certificacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m3v1-3-briefing.jpg'), legenda: "Tripulações de vários países, a mesma exigência: o corpo de cada um precisa estar apto no dia do voo." } },
           {
             paragrafo: 5,
             tabela: {
@@ -391,6 +392,7 @@ export const certificacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v1-4-reflexos.jpg'), legenda: "Reflexos, equilíbrio e atenção: o exame procura também a falha que muda a decisão sem sinal externo." } },
           {
             paragrafo: 7,
             tabela: {

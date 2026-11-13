@@ -10,7 +10,7 @@ Medicina aeroespacial: el cuerpo humano en altitud, en aviación y en el espacio
 ## Descrição completa (1908/4000)
 Papos de Altitude es un app-book de medicina aeroespacial. Explica, de la forma más clara posible, lo que le ocurre al cuerpo humano cuando sube: en la cabina de un avión, en el cockpit de un caza, en una montaña o en una nave espacial.
 
-Hoy hay 24 vuelos listos, con 130 temas, 192 simuladores, calculadoras y gráficos interactivos, 264 fotos, 24 vídeos y 260 preguntas de test.
+Hoy hay 24 vuelos listos, con 130 temas, 192 simuladores, calculadoras y gráficos interactivos, 276 fotos, 25 vídeos y 260 preguntas de test.
 
 Cada vuelo combina texto progresivo, fotos, animaciones, tablas prácticas y un test final. En los vuelos de sistemas del cuerpo encontrarás qué cambia en altitud, cómo prevenir, cuándo se puede volar como pasajero o tripulante y qué medicamentos son compatibles con el vuelo.
 
