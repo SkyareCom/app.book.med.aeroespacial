@@ -146,6 +146,7 @@ export const certificacao: Capitulo = {
           "**Como prevenir e amenizar.** Antes do exame, o tripulante confere os requisitos da sua classe, faz os exames de laboratório e de imagem pedidos e leva os laudos dos especialistas que acompanham qualquer condição crônica. Marca a revalidação até 45 dias antes do vencimento, para não perder dias de validade. Cuida do que mais tira pilotos do voo: pressão, açúcar, peso, colesterol, sono e saúde mental, e trata cedo. Depois de cirurgia, internação, remédio novo ou gravidez, informa a ANAC ou o examinador antes de voltar a voar. O examinador registra no CMA cada restrição e o que o candidato precisa cumprir para atuar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v1-2-esteira.jpg'), legenda: "O eletrocardiograma com teste de esteira entra no exame inicial e, na 1ª classe, a cada 1 ou 2 anos conforme a idade." } },
           {
             paragrafo: 2,
             tabela: {
@@ -214,6 +215,7 @@ export const certificacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v1-2-lampada.jpg'), legenda: "Visão de longe, de perto e de cores: os números mudam de classe para classe." } },
           {
             paragrafo: 5,
             tabela: {
