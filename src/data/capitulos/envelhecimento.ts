@@ -338,6 +338,7 @@ export const envelhecimento: Capitulo = {
           "**Como prevenir e amenizar.** Antes, peça a **assistência** na compra da passagem, prefira voos diretos e o lugar no **corredor**, perto do banheiro, e leve a carta do médico. Durante, beba **água mesmo sem sede**, caminhe e mexa as panturrilhas, levante devagar e segure nos encostos, mantenha o cinto afivelado sentado e não tome remédio para dormir que não seja o de costume. Depois, descanse e dê um dia a mais para o fuso. Quem tem esquecimento viaja com acompanhante e com o nome e o endereço anotados.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m2v15-5-assistencia.jpg'), legenda: "Assistência pedida na compra da passagem: cadeira de rodas, embarque prioritário e ajuda até a poltrona." } },
           {
             paragrafo: 2,
             tabela: {
