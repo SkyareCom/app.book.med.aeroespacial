@@ -96,4 +96,12 @@ export const diretrizes: Referencia[] = [
   { titulo: 'UK CAA · deficiências e neurodesenvolvimento', detalhe: 'Certificação médica de pilotos com deficiência (prova de voo médica, próteses, comandos manuais, paraplegia), condições do neurodesenvolvimento (autismo e TDAH) e tabela de códigos de limitação' },
   { titulo: 'FAA · deficiências', detalhe: 'Statement of Demonstrated Ability (SODA), pilotos surdos e visão monocular' },
   { titulo: 'Ottobock', detalhe: 'Orientação para viajar com prótese: volume do coto na cabine, bateria e inspeção de segurança' },
+  // M3V1 · Certificação e risco aeromédico (13/11/2026).
+  { titulo: 'ICAO · certificação médica', detalhe: 'Anexo 1, 14ª ed., Emenda 179: 1.2.4 (avaliação médica, gestão da segurança, promoção da saúde e conclusão médica credenciada), 1.2.5.2 (validade), 1.2.6.1 (diminuição da aptidão) e 6.1 (Classes 1, 2 e 3)' },
+  { titulo: 'ANAC · classes, validade e examinadores', detalhe: 'RBAC 67, Emenda 05: 67.11, 67.13, 67.15 e 67.45 (classes 1ª a 5ª, validade, médico credenciado, médico cadastrado, clínica credenciada e recursos)' },
+  { titulo: 'FAA · certificado médico e examinador', detalhe: '14 CFR 61.23, 61.53, 67.401 e 183.21; Guide for Aviation Medical Examiners (emitir, negar ou adiar; AASI); BasicMed' },
+  { titulo: 'EASA Part-MED · certificação', detalhe: 'MED.A.020 a MED.A.050 (diminuição da aptidão, classes, AeMC, AME e encaminhamento) e limitação OML' },
+  { titulo: 'Regra do 1%', detalhe: 'A. Evans (ICAO), 2009; CAA da Nova Zelândia, MIS 012; Flight Safety Foundation, AeroSafety World, julho de 2012 (incapacitação em pilotos de 1ª classe do Reino Unido)' },
+  { titulo: 'Heart e Aerospace Medicine and Human Performance', detalhe: 'Gray et al., NATO HFM 251, 2019: doença coronária assintomática em tripulantes; Gray et al., 2026: detecção e decisão aeromédica' },
+  { titulo: 'Evitação de atendimento médico por pilotos', detalhe: 'Hoffman et al.: mais de 3.500 pilotos dos EUA (Scientific American)' },
 ];
