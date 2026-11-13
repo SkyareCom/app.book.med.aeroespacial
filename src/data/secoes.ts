@@ -17,6 +17,7 @@ import { sangueImunidade } from './capitulos/sangue-imunidade';
 import { ossosMusculos } from './capitulos/ossos-musculos';
 import { mulher } from './capitulos/mulher';
 import { rins } from './capitulos/rins';
+import { envelhecimento } from './capitulos/envelhecimento';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -87,7 +88,7 @@ export const secoes: Secao[] = [
       // 02/11/2026: rins e envelhecimento ganharam voos próprios, no fim da missão, para não mudar a numeração
       // citada nos voos congelados (M2V12 e M2V13).
       { ...rins, numero: 14 },
-      cap(15, 'Envelhecimento e limites de idade', ['O piloto que envelhece', 'Idade e certificação']),
+      { ...envelhecimento, numero: 15 },
     ],
   },
   {
