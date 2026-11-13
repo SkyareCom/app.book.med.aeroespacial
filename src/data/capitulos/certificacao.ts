@@ -72,6 +72,7 @@ export const certificacao: Capitulo = {
           "**Como prevenir e amenizar.** Antes do exame, o tripulante marca a consulta com folga antes do vencimento, leva os laudos e a lista de remédios e declara tudo o que mudou desde o último exame. Entre um exame e outro, o RBAC 67 e o Anexo 1 mandam não voar quando se sabe de uma **diminuição da aptidão** e informar a ANAC ou o examinador, sobretudo depois de cirurgia, internação, remédio novo de uso contínuo ou gravidez (Veja M3V1 - II). O passageiro não precisa de certificado: a decisão de voar dele passa pelo médico assistente e, quando a companhia pede, pelo formulário médico (MEDIF).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v1-1-exame.jpg'), legenda: "O exame procura no corpo o que pode falhar na cabine; a classe define com que rigor." } },
           {
             paragrafo: 2,
             tabela: {
@@ -101,6 +102,7 @@ export const certificacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v1-1-cabine.jpg'), legenda: "Quanto mais pessoas dependem do corpo de quem voa, mais curto o prazo e mais rigoroso o exame." } },
           {
             paragrafo: 6,
             tabela: {
@@ -298,6 +300,7 @@ export const certificacao: Capitulo = {
           "**Como prevenir e amenizar.** Antes de trabalhar ou voar sob outra autoridade, o tripulante confere qual certificado médico ela exige e com que validade, e guarda cópias dos laudos e dos certificados. Quem tem emissão especial ou limitação cumpre os relatórios e os exames de acompanhamento no prazo, porque o certificado depende deles. Depois de cirurgia, internação, remédio novo ou gravidez, procura o examinador antes de voltar a voar, e não depois. O examinador explica por escrito cada limitação e o que muda se a condição piorar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v1-3-terminal.jpg'), legenda: "A mesma fisiologia, regras diferentes: quem voa sob outra autoridade confere o certificado que ela exige." } },
           { paragrafo: 2, midia: 'regulacao-comparar' },
           {
             paragrafo: 3,
@@ -355,6 +358,7 @@ export const certificacao: Capitulo = {
           "**Como prevenir e amenizar.** O tripulante escolhe o examinador com antecedência, leva os laudos do médico assistente com diagnóstico, tratamento, doses e tempo de estabilidade, e declara tudo, inclusive remédios sem receita. Pergunta o que significa cada restrição e o que a faria cair. O médico assistente escreve o laudo pensando na função de quem voa, e o examinador explica a decisão, registra as limitações e, na dúvida, adia o certificado e pede a informação que falta, em vez de negar ou emitir às pressas.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v1-4-consulta.jpg'), legenda: "O examinador responde pela segurança; o tratamento continua com o médico assistente." } },
           {
             paragrafo: 2,
             tabela: {
@@ -417,6 +421,7 @@ export const certificacao: Capitulo = {
           "**Como prevenir e amenizar.** O piloto reduz o próprio risco controlando o que mais pesa no coração e no cérebro: pressão, colesterol, açúcar, peso, cigarro, álcool e sono, e não voa doente, cansado ou com remédio novo sem orientação. Faz os exames de controle no prazo, porque é a estabilidade comprovada que sustenta o certificado. O examinador estima o risco anual com dados publicados, registra o raciocínio e, quando o risco passa um pouco do limite, considera a restrição de voar com outro piloto antes de negar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v1-5-aproximacao.jpg'), legenda: "Decolagem e pouso ocupam cerca de 10% do voo e concentram o risco de uma incapacitação virar acidente." } },
           { paragrafo: 2, midia: 'animacao-regra-1' },
           {
             paragrafo: 2,
@@ -461,6 +466,8 @@ export const certificacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v1-5-copiloto.jpg'), legenda: "Com dois pilotos, se um falha, o outro assume: é o segundo piloto que torna aceitável o risco de 1% ao ano." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v1-voo.mp4'), legenda: "O corpo do piloto também é um sistema crítico do voo." } },
           {
             paragrafo: 7,
             tabela: {
@@ -491,6 +498,7 @@ export const certificacao: Capitulo = {
           "**Como prevenir e amenizar.** O tripulante conhece o próprio risco: pergunta ao examinador sobre pressão, colesterol, açúcar e história da família, e trata cedo o que aparecer. Procura o apoio entre pares ou o médico ao primeiro sinal de sofrimento, sem esperar a crise. O examinador usa a triagem em fases, escolhe o exame pela pergunta que quer responder, explica a radiação e o risco de achados sem importância e afasta só pelo tempo da investigação, com um plano de retorno.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v1-6-tomografia.jpg'), legenda: "Do padrão igual para todos ao risco de cada corpo: o exame certo para a pergunta certa." } },
           {
             paragrafo: 2,
             tabela: {
@@ -518,6 +526,7 @@ export const certificacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v1-6-pares.jpg'), legenda: "Apoio entre pares: encontrar cedo quem precisa de ajuda e tratar sem punir." } },
           {
             paragrafo: 7,
             tabela: {
