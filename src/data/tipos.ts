@@ -176,6 +176,7 @@ export type TipoMidia =
   | 'passageiro-idoso'
   | 'animacao-cristalino'
   | 'classe-certificado'
+  | 'requisitos-classe'
   | 'regulacao-comparar'
   | 'quem-examina'
   | 'triagem-coronaria'

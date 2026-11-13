@@ -17,7 +17,7 @@ export const notificacoes: Notificacao[] = [
     id: 'certificacao',
     rotulo: 'Voo disponível',
     titulo: 'Certificação e risco aeromédico',
-    texto: 'O voo 1 abre a Missão Aviação: classes de certificado médico, as regras da ICAO, ANAC, FAA e EASA, o médico examinador, a regra do 1% e a medicina de precisão no coração e na mente de quem voa.',
+    texto: 'O voo 1 abre a Missão Aviação: classes de certificado médico, requisitos por sistema do corpo em cada classe do RBAC 67, as regras da ICAO, ANAC, FAA e EASA, o médico examinador, a regra do 1% e a medicina de precisão.',
     destino: '/capitulo/aviacao/1',
   },
   {

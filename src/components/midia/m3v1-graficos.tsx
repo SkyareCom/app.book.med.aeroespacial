@@ -59,10 +59,73 @@ export function ClasseCertificado() {
   return <Fichas tipo="Explorador" titulo="Classes de certificado" instrucao="Escolha a função para ver a classe no Brasil e na ICAO, a validade e o que mais pesa no corpo." itens={FUNCOES} />;
 }
 
+// ---------------------------------------------------------------- Requisitos por sistema e classe (RBAC 67, Subpartes C, D, F e G)
+type ClasseR = 'c1' | 'c2' | 'c4' | 'c5';
+type SistemaR = 'mente' | 'nervos' | 'coracao' | 'metabolismo' | 'olhos' | 'ouvidos' | 'gestacao';
+const REQ: Record<SistemaR, Record<ClasseR, [string, string]>> = {
+  mente: {
+    c1: ['Avaliação psicológica no inicial, depois de acidente e a cada 5 anos; parecer psiquiátrico no inicial', 'Transtornos mentais da CID-10 tornam inapto; antidepressivo só com parecer favorável do psiquiatra'],
+    c2: ['Igual à 1ª classe: avaliação psicológica a cada 5 anos', 'Mesma lista de transtornos; antidepressivo só com parecer favorável do psiquiatra'],
+    c4: ['Avaliação psicológica no inicial e depois de acidente, com parecer do médico ou de psiquiatra', 'Mesma lista de transtornos que tornam inapto'],
+    c5: ['Avaliação psicológica no inicial ou quando solicitada', 'Mesma lista de transtornos que tornam inapto'],
+  },
+  nervos: {
+    c1: ['Eletroencefalograma no inicial; na revalidação, a critério do examinador', 'Epilepsia, AVC, tumor e perda de consciência recorrente tornam inapto; episódio único é julgado com a ANAC'],
+    c2: ['Eletroencefalograma no inicial; na revalidação, a critério do examinador', 'Os mesmos critérios da 1ª classe'],
+    c4: ['Sem eletroencefalograma obrigatório', 'Epilepsia torna inapto; hemiplegia ou paraplegia aceitas se um instrutor de voo atestar proficiência'],
+    c5: ['Eletroencefalograma no inicial; na revalidação, a critério do examinador', 'Os mesmos critérios da 1ª classe'],
+  },
+  coracao: {
+    c1: ['Eletrocardiograma e esteira no inicial; todo ano a partir dos 50 e a cada 2 anos dos 30 aos 49', 'Pressão acima de 140 x 90 mmHg mantida torna inapto; depois de infarto, 1 ano e apto com restrição por até 6 meses'],
+    c2: ['Eletrocardiograma e esteira no inicial; a cada 2 anos a partir dos 50', 'Infarto: piloto após 1 ano, não piloto após 6 meses; sempre apto com restrição por até 6 meses'],
+    c4: ['Eletrocardiograma a partir dos 40 anos', 'Condição cardíaca que afete a segurança, a critério do examinador'],
+    c5: ['Eletrocardiograma e esteira no inicial; a cada 24 meses a partir dos 50', 'Infarto após 1 ano e revascularização após 180 dias; apto com restrição por até 6 meses'],
+  },
+  metabolismo: {
+    c1: ['Glicemia, colesterol, triglicerídeos, creatinina, hemograma, urina e ácido úrico', 'Insulina e glicemia abaixo de 50 ou acima de 140 mg/dL tornam inapto; IMC 40 ou mais também'],
+    c2: ['Os mesmos exames da 1ª classe', 'Os mesmos critérios; antidiabético oral com validade de até 6 meses para pilotos'],
+    c4: ['Glicemia, triglicerídeos, creatinina e hemograma', 'Só a diabetes descompensada e a hipoglicemia de difícil controle tornam inapto'],
+    c5: ['Os mesmos exames da 1ª classe', 'Insulina torna inapto; antidiabético oral com validade de até 6 meses'],
+  },
+  olhos: {
+    c1: ['20/30 em cada olho e 20/20 com os dois; J1 de perto e J6 a 1 metro', 'Visão monocular só na revalidação; cirurgia refrativa após 6 meses; lentes com óculos de reserva'],
+    c2: ['20/40 em cada olho e 20/30 com os dois; J1 de perto; o piloto privado IFR segue a 1ª classe', 'Não piloto pode ser monocular; piloto, só na revalidação'],
+    c4: ['20/40 em cada olho', 'Visão monocular aceita com 20/30 e avaliação de proficiência'],
+    c5: ['20/40 em cada olho e 20/30 com os dois; J1 de perto', 'Sem visão de cores: restrição a operações em que a cor não é indispensável'],
+  },
+  ouvidos: {
+    c1: ['Audiometria até 35 dB em 500, 1.000 e 2.000 Hz e 50 dB em 3.000 Hz; a cada 5 anos antes dos 40 e a cada 2 anos depois', 'Se falhar: teste de fala no ruído ou restrição sem rádio bilateral e sem atuar como comissário'],
+    c2: ['Piloto privado como na 1ª classe; comissário e mecânico, voz normal a 2 metros', 'Se falhar: restrição sem rádio bilateral e sem atuar como comissário'],
+    c4: ['Voz normal a 2 metros em pelo menos um ouvido', 'Se falhar: restrição sem rádio bilateral'],
+    c5: ['Audiometria como na 1ª classe, a cada 4 anos', 'Se falhar: teste de fala ou restrição sem rádio bilateral'],
+  },
+  gestacao: {
+    c1: ['Beta-HCG nas candidatas', 'Inapta desde a confirmação; novo exame depois do parto'],
+    c2: ['Beta-HCG nas candidatas', 'Inapta desde a confirmação; novo exame depois do parto'],
+    c4: ['Beta-HCG nas candidatas', 'Apta com gravidez de baixo risco entre a 12ª e a 26ª semana'],
+    c5: ['Beta-HCG nas candidatas', 'Apta com gravidez de baixo risco até a 34ª semana'],
+  },
+};
+
+export function RequisitosClasse() {
+  const [classe, setClasse] = useState<ClasseR>('c1');
+  const [sistema, setSistema] = useState<SistemaR>('coracao');
+  const [exige, decide] = REQ[sistema][classe];
+  return (
+    <MolduraMidia tipo="Explorador" titulo="Requisitos por sistema e classe" instrucao="Escolha a classe e o sistema do corpo para ver o que o RBAC 67 exige e o que torna inapto ou apto com restrição.">
+      <Opcoes itens={[['c1', '1ª classe'], ['c2', '2ª classe'], ['c4', '4ª classe'], ['c5', '5ª classe']] as [ClasseR, string][]} valor={classe} onChange={setClasse} />
+      <Opcoes itens={[['mente', 'Mente'], ['nervos', 'Sistema nervoso'], ['coracao', 'Coração'], ['metabolismo', 'Metabolismo'], ['olhos', 'Olhos'], ['ouvidos', 'Audição'], ['gestacao', 'Gestação']] as [SistemaR, string][]} valor={sistema} onChange={setSistema} />
+      <Bloco rotulo="O que se exige" cor={Cores.destaque} texto={exige} />
+      <Bloco rotulo="Inaptidão e restrição" cor={Cores.dourado} texto={decide} />
+      <Texto cor={Cores.textoApagado}>Resumo do RBAC 67, Emenda 05. A decisão final é do examinador ou da ANAC.</Texto>
+    </MolduraMidia>
+  );
+}
+
 // ---------------------------------------------------------------- Regulação internacional
 const AUTORIDADES: Ficha[] = [
   { nome: 'ICAO', linhas: [['Classes', 'Classe 1 comercial e linha aérea; Classe 2 privado, planador, balão, navegador e mecânico; Classe 3 controlador e piloto remoto'], ['Validade', '12, 60 ou 48 meses, encurtando com a idade'], ['Se o corpo não atende', 'Conclusão médica credenciada, com limitações'], ['Entre exames', 'Não exercer a licença com diminuição da aptidão']] },
-  { nome: 'ANAC', linhas: [['Classes', 'Cinco classes: 1ª comercial e linha aérea; 2ª privado, comissário, mecânico e balão; 3ª controlador; 4ª aerodesportivo e planador; 5ª piloto remoto'], ['Validade', '1ª classe 12 meses, 6 meses nas idades previstas; privado 60, 24 ou 12 meses conforme a idade'], ['Se o corpo não atende', 'Recurso à ANAC contra o parecer do examinador'], ['Entre exames', 'O Anexo 1, de que o Brasil é signatário, proíbe exercer a licença com diminuição da aptidão']] },
+  { nome: 'ANAC', linhas: [['Classes', 'Cinco classes: 1ª comercial e linha aérea; 2ª privado, comissário, mecânico e balão; 3ª controlador; 4ª aerodesportivo e planador; 5ª piloto remoto'], ['Validade', '1ª classe 12 meses, 6 meses nas idades previstas; privado 60, 24 ou 12 meses conforme a idade'], ['Se o corpo não atende', 'Recurso à ANAC contra o parecer do examinador'], ['Entre exames', 'RBAC 67: informar a ANAC ou o examinador e deixar de voar até novo julgamento']] },
   { nome: 'FAA', linhas: [['Classes', '1ª linha aérea, 2ª comercial e 3ª privado e aluno, além do BasicMed'], ['Validade', '1ª 12 meses, 6 meses a partir dos 40 para linha aérea; 3ª 60 meses antes dos 40 e 24 meses depois'], ['Se o corpo não atende', 'Emissão especial com relatórios ou SODA para defeito que não muda'], ['Entre exames', 'Não voar sabendo de condição ou remédio que impediria o certificado']] },
   { nome: 'EASA', linhas: [['Classes', 'Classe 1 comercial e linha aérea, Classe 2 privado e LAPL para aeronaves leves'], ['Validade', 'Classe 1 12 meses, 6 meses nas idades previstas; Classe 2 60, 24 ou 12 meses conforme a idade'], ['Se o corpo não atende', 'Limitação no certificado, como voar só com outro piloto qualificado'], ['Entre exames', 'Procurar o examinador sem demora após cirurgia, remédio contínuo novo, doença, gravidez ou internação']] },
 ];

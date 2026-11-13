@@ -26,7 +26,7 @@ import { SangueCabine, AnemiaVoo, CancerVoo, InfeccaoVoo, HIVViagem, VacinasVoo,
 import { GestacaoSemanas, MenopausaVoo, MulherVoo, PilulaFuso, PosPartoVoo } from '@/components/midia/m2v13-graficos';
 import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/components/midia/m2v14-graficos';
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
-import { ClasseCertificado, QuemExamina, RegulacaoComparar, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
+import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
 import { AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
@@ -232,6 +232,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'passageiro-idoso': () => <PassageiroIdoso />,
   'animacao-cristalino': () => <AnimacaoCristalino />,
   'classe-certificado': () => <ClasseCertificado />,
+  'requisitos-classe': () => <RequisitosClasse />,
   'regulacao-comparar': () => <RegulacaoComparar />,
   'quem-examina': () => <QuemExamina />,
   'triagem-coronaria': () => <TriagemCoronaria />,
@@ -438,6 +439,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'passageiro-idoso': 'O passageiro idoso, passo a passo',
   'animacao-cristalino': 'O cristalino que endurece',
   'classe-certificado': 'Classes de certificado',
+  'requisitos-classe': 'Requisitos por sistema e classe',
   'regulacao-comparar': 'Quatro regras, o mesmo corpo',
   'quem-examina': 'Quem examina',
   'triagem-coronaria': 'Triagem do coração do tripulante',
