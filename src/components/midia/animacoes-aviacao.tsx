@@ -98,3 +98,6 @@ export function AnimacaoRegra1() {
 const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
+
+// FIM DO CONGELAMENTO M3V1 (15/11/2026). Animações de voos novos da Missão Aviação entram abaixo desta linha; tudo acima
+// está congelado (scripts/check-congelados.cjs) e só muda com autorização explícita do autor.
