@@ -2,6 +2,8 @@
 // Congelamento editorial de tudo o que está pronto, autorizado pelo autor em 12/11/2026 ("Congele tudo que esta pronto").
 // Protege, pelo retrato em scripts/congelados.json:
 //   - M2V2 a M2V9 e M2V11 a M2V15: capítulo, formulário de liberação, interativos, fotos e vídeos;
+//   - M3V1 (autorizado pelo autor em 15/11/2026, "Congele"): capítulo, interativos, fotos, vídeo e a animação em
+//     src/components/midia/animacoes-aviacao.tsx até o marcador "FIM DO CONGELAMENTO M3V1";
 //   - o formulário Liberação para voo seguro (src/app/liberacao-voo.tsx e src/lib/liberacao.ts);
 //   - as animações já publicadas (src/components/midia/animacoes.tsx até o bloco do M2V10, que tem checador próprio);
 //   - as traduções EN e ES de todos os textos dos voos das Missões Conceitos e Sistemas.
@@ -13,7 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const ROOT = path.resolve(__dirname, '..');
-const MANIFESTO = 'b98a1093dea82cbbe9dd856078017ad1f8767651';
+const MANIFESTO = 'd0035760e916ccd74820b4ed7d5062bf46397a89';
 let falhas = 0;
 const erro = (m) => { console.error('CONGELAMENTO VIOLADO: ' + m); falhas++; };
 const ler = (p) => {
@@ -35,6 +37,9 @@ for (const [p, esperado] of Object.entries(m.arquivos)) {
 const anim = ler('src/components/midia/animacoes.tsx').toString('utf8');
 const corte = anim.indexOf('// M2V10 · Gás intestinal');
 if (corte < 0 || crypto.createHash('sha1').update(anim.slice(0, corte)).digest('hex') !== m.animacoes) erro('animações publicadas foram modificadas.');
+const av = ler('src/components/midia/animacoes-aviacao.tsx').toString('utf8');
+const corteAv = av.indexOf('// FIM DO CONGELAMENTO M3V1');
+if (corteAv < 0 || crypto.createHash('sha1').update(av.slice(0, corteAv)).digest('hex') !== m.animacoesAviacao) erro('animações da Missão Aviação (M3V1) foram modificadas.');
 
 const en = JSON.parse(ler('src/i18n/en-US.json').toString('utf8') || '{}');
 const es = JSON.parse(ler('src/i18n/es-ES.json').toString('utf8') || '{}');

@@ -127,5 +127,9 @@ aviso de que o formulário apoia a decisão e não substitui o médico, a autori
   formulário Liberação para voo seguro, as animações publicadas e as traduções dos voos: `scripts/check-congelados.cjs`,
   com o retrato em `scripts/congelados.json`. Os três rodam no CI e bloqueiam a publicação.
 - Voos novos põem as animações num arquivo próprio (não em `animacoes.tsx`) e só acrescentam traduções.
+- M3V1 Certificação e risco aeromédico congelado em 15/11/2026 (pedido do autor: "Congele"), no mesmo retrato de
+  `scripts/congelados.json`: capítulo, interativos (`m3v1-graficos.tsx`), fotos, vídeo, traduções e a animação em
+  `animacoes-aviacao.tsx` até o marcador "FIM DO CONGELAMENTO M3V1". Os próximos voos da Missão Aviação acrescentam
+  as animações abaixo desse marcador.
 - Mudar conteúdo congelado exige autorização explícita do autor; depois, `node scripts/congelar.cjs`, nova assinatura
   em `check-congelados.cjs` e o registro da autorização no comentário do checador.
