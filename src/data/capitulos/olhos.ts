@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 4 — Olhos e visão (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md), com o detalhamento prático do padrão do jet lag, em
 // 04/11/2026, a pedido do autor ("Olhos e visão", seguindo os padrões do app). Os tópicos da lista antiga (acuidade,
@@ -140,6 +143,7 @@ export const olhos: Capitulo = {
           "Acima das nuvens, a **luz vem de baixo**: as nuvens refletem o sol para cima e o painel fica na sombra, enquanto lá fora tudo brilha. O céu fica mais escuro e o **contraste** aumenta. O **ultravioleta** sobe cerca de **5% a cada 1.000 ft**, mas as **janelas da cabine** barram muito bem o UV; o que passa é a **luz azul**, que aumenta com a altitude e atravessa o para-brisa em 50% a 60%.",
           "A **velocidade** também cobra: um movimento acima de **10° por segundo** no campo de visão já borra a imagem. A **vibração** dos instrumentos entre **22 e 64 Hz**, comum no helicóptero, e a de **2 a 10 Hz** da turbulência atrapalham a leitura (Veja M1V6 - IV). Na acrobacia e no voo militar, a **força G** escurece a visão antes de apagar a consciência (Veja M1V7 - II).",
           "**Doenças, tratamentos e tipo de voo.** As condições deste voo são os **erros de refração** e a presbiopia, a **cegueira noturna**, a **perda de campo visual**, a **visão de um olho só**, o **defeito de cores**, as **lesões por laser** e as doenças do olho: **glaucoma**, **catarata**, **uveíte**, olho seco e doenças da **retina**. O tratamento pode ser **expectante**, acompanhando o grau e a pressão do olho; **não invasivo**, com óculos, lentes, colírios e lágrima artificial; ou **invasivo**: **laser** na córnea ou na retina, **cirurgia de catarata**, cirurgia do glaucoma e da retina. Na cabine **pressurizada**, a hipóxia leve já mexe na visão noturna. No avião **não pressurizado**, sem oxigênio, a visão noturna piora acima de **5.000 ft** à noite, e uma bolha de gás no olho se expande mais. No **helicóptero**, a vibração dos instrumentos e o voo baixo, com fios e obstáculos, exigem a melhor acuidade e o campo inteiro.",
+          "A **retina** é um dos tecidos que mais gastam oxigênio no corpo, e os **bastonetes**, que enxergam no escuro, são os primeiros a sentir a hipóxia: a visão noturna cai antes de qualquer outro sinal. A pupila tem dois comandos: o **parassimpático**, que nasce no **núcleo de Edinger-Westphal**, segue pelo **nervo oculomotor** e contrai a pupila e o músculo do foco pela **acetilcolina** nos receptores **M3**; e o **simpático**, que sobe pelo **gânglio cervical superior** e dilata a pupila pela **noradrenalina** nos receptores **alfa-1**. A imagem segue pelo **nervo óptico** até o **córtex visual**, no lobo occipital, e a **vitamina A** é a base do pigmento que capta a luz nos bastonetes (Veja M2V1).",
           "**Como prevenir e amenizar.** Antes, durma bem, traga os **óculos** em dia e o **par de reserva**, e um **óculos de sol cinza neutro**. Durante, pisque mais, use **lágrima artificial sem conservante** se o olho secar, tire a lente de contato se incomodar e não esfregue os olhos. À noite, use oxigênio quando a regra pedir (Veja M2V4 - III). Depois de voos longos, o olho seco costuma melhorar em terra; dor, vermelhidão ou visão borrada que não passam pedem avaliação (Veja M2V4 - VII).",
         ].join('\n\n'),
         recursos: [
@@ -163,7 +167,7 @@ export const olhos: Capitulo = {
           { paragrafo: 3, figura: foto(require('@/assets/images/topicos/m2v4-1-colirio.jpg'), 'Lágrima artificial sem conservante alivia o olho ressecado pelo ar seco da cabine.') },
           { paragrafo: 4, midia: 'uv-altitude' },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · olhos no voo',
               colunas: ['Momento', 'O que fazer'],
@@ -174,6 +178,21 @@ export const olhos: Capitulo = {
                 ['Acima das nuvens', 'Óculos de sol, sobretudo voando para o sol'],
                 ['À noite', 'Preservar a adaptação ao escuro e usar oxigênio quando a regra pedir'],
                 ['Depois', 'Dor, vermelhidão ou visão borrada que não passam: avaliação'],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-olhos' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · olhos e visão",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Parassimpático", "Núcleo de Edinger-Westphal e nervo oculomotor, com acetilcolina nos receptores M3", "Contrai a pupila e acomoda o foco de perto"],
+                ["Simpático", "Gânglio cervical superior, com noradrenalina nos receptores alfa-1 do músculo dilatador", "Dilata a pupila no escuro e no susto"],
+                ["Centro no sistema nervoso", "Nervo óptico, núcleo geniculado lateral do tálamo e córtex visual do lobo occipital", "A hipóxia deixa a percepção mais lenta e estreita o campo"],
+                ["Pigmento e vitamina", "Rodopsina dos bastonetes, feita a partir da vitamina A", "Leva cerca de meia hora para se refazer no escuro; a hipóxia atrasa a adaptação"],
+                ["Consumo de oxigênio", "Retina com consumo muito alto e circulação própria", "Os bastonetes sentem a hipóxia primeiro: a visão noturna cai cedo"],
               ],
             },
           },

@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 · Voo 15 — Envelhecimento e limites de idade. Ramo editorial voo/M2V15; fotos e vídeo entram depois da produção.
 // Gerado a partir de roteiro revisado (abertura + quatro tópicos de condição, no modelo de docs/modelo-sistemas.md).
 // REGISTRO DE REVISÃO · 12/11/2026. Normas e fontes primárias conferidas:
@@ -60,6 +63,7 @@ export const envelhecimento: Capitulo = {
           "Com a idade também aumentam os **remédios**. Cada um pode ser seguro sozinho, mas juntos somam sono, tontura ao levantar e confusão, e o **antialérgico** antigo e o **calmante** usados para dormir no voo são os mais lembrados entre os que o idoso deve evitar. A combinação de remédios, desidratação e pouco oxigênio explica muitos desmaios e quedas a bordo. Por isso a lista de remédios vai sempre junto na bagagem de mão (Veja M2V15 - V).",
           "Para o **tripulante**, a idade muda o calendário dos exames e, no transporte comercial internacional, o limite para voar. Num estudo europeu com mais de **82 mil** pilotos, a parte da inaptidão causada pelo **coração** subiu de **8%** entre 20 e 40 anos para **28%** entre 61 e 65 e **48%** acima de 65. As capacidades de atenção e de velocidade caíram com a idade, mas o **raciocínio** se manteve, e a experiência compensa muito do resto (Veja M2V15 - III e IV).",
           "O que pode acontecer a bordo, quando a reserva acaba: **desmaio** ao levantar depois de horas sentado, **queda** no corredor, **confusão** à noite num lugar desconhecido, falta de ar em quem já tem doença do coração e **trombose** nas pernas depois de um voo longo. Quase tudo isso se previne com preparo, água, movimento e remédios certos, e é por isso que a idade, sozinha, não impede ninguém de voar como passageiro.",
+          "Com a idade, o comando autônomo fica mais lento. O **barorreflexo**, que usa os sensores do pescoço e da aorta e o **núcleo do trato solitário** para segurar a pressão quando a pessoa levanta, responde menos, e vem a tontura ao ficar de pé. O coração responde menos aos receptores **beta**, e o **vago**, que freia e dá variabilidade ao ritmo, perde força, enquanto o tom do **simpático** em repouso tende a subir. O **centro da sede**, no hipotálamo, fica menos sensível, e o rim concentra menos a urina, por isso a desidratação chega antes. A **glândula pineal** produz menos **melatonina**, e o sono fica mais leve. Na altitude, essas reservas menores somam com a hipóxia e com os remédios (Veja M2V15 - III).",
           "**Como prevenir e amenizar.** Antes do voo, faça uma consulta **4 a 6 semanas** antes de viagens longas, leve a **lista de remédios** e a carta do médico e peça **assistência** à companhia se precisar. Durante, beba **água mesmo sem sede**, levante devagar, sentando um pouco antes de ficar de pé, caminhe e mexa as panturrilhas, use **óculos** de perto à mão e evite remédios para dormir que dão confusão. Depois, dê ao corpo um ou dois dias a mais para se ajustar ao fuso.",
         ].join('\n\n'),
         recursos: [
@@ -94,7 +98,7 @@ export const envelhecimento: Capitulo = {
             },
           },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: "Como prevenir e amenizar · o corpo que envelhece",
               colunas: ["Momento", "Passageiro", "Tripulante"],
@@ -102,6 +106,21 @@ export const envelhecimento: Capitulo = {
                 ["Antes do voo", "Consulta 4 a 6 semanas antes, lista de remédios e assistência pedida: o preparo repõe a reserva que falta", "Exames e certificado em dia para a idade: o calendário muda aos 40 e aos 60"],
                 ["Durante o voo", "Água sem esperar a sede, levantar devagar, caminhar e óculos à mão", "Óculos de perto de reserva e água à vista: a presbiopia e a desidratação chegam sem aviso"],
                 ["Depois do voo", "Um ou dois dias a mais para o fuso, sem calmante", "Proteger o sono no pernoite: o sono leve rende menos"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-envelhecimento' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · o corpo que envelhece",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Barorreflexo", "Sensores do pescoço e da aorta e núcleo do trato solitário", "Responde menos com a idade: tontura ao levantar depois de horas sentado"],
+                ["Simpático", "Tom em repouso maior e receptores beta do coração menos sensíveis", "O coração acelera menos na hipóxia e no esforço"],
+                ["Parassimpático", "Nervo vago com menos força", "Menor variabilidade do ritmo do coração"],
+                ["Sede e água", "Centro da sede no hipotálamo e hormônio antidiurético", "Sede menos sensível e rim que concentra menos: desidratação mais cedo"],
+                ["Sono", "Glândula pineal e melatonina", "Menos melatonina e sono mais leve, que se ajusta mais devagar ao fuso"],
               ],
             },
           },

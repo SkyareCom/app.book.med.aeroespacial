@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 9 — Hormônios e metabolismo (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md), com o detalhamento prático do padrão do jet lag, em
 // 04/11/2026, a pedido do autor ("Siga para o próximo voo, M2V9 Hormônios e metabolismo"). A lista antiga (diabetes,
@@ -124,6 +127,7 @@ export const hormonios: Capitulo = {
           "O **ar seco** (Veja M1V1 - IV) e a **imobilidade** somam riscos. O açúcar alto faz urinar mais e desidrata. A **obesidade**, com IMC de **30** ou mais, é fator de risco para trombose em viagens de mais de **4 horas** (Veja M2V2 - VII). E a cabine apertada limita o movimento justamente de quem mais precisa andar.",
           "O **fuso horário** mexe nos remédios (Veja M2V8 - III). Indo para o **leste**, o dia encurta; para o **oeste**, alonga. Quando o dia perde ou ganha mais de **2 horas**, a dose de insulina pode precisar de ajuste. A insulina viaja na **bagagem de mão**: no porão, o frio pode congelá-la, e a mala pode se perder.",
           "**Doenças, tratamentos e tipo de voo.** As doenças hormonais que mais pesam no voo são o **diabetes**, com o risco de **hipoglicemia**, as doenças da **tireoide**, a **obesidade** e, mais rara, a falta de cortisol da **doença de Addison**, que exige levar a cortisona sempre à mão. O tratamento vai do **expectante**, nas alterações leves em acompanhamento, ao **não invasivo**, que é a regra: dieta, atividade, remédios por boca, **insulina** e hormônio de reposição. Os tratamentos **invasivos** e ablativos são a **cirurgia da tireoide**, o **iodo radioativo** e a **cirurgia bariátrica**, cada um com prazo de afastamento. No avião **pressurizado**, a cabine fica entre 6.000 e 8.000 ft; no **não pressurizado**, a subida maior aumenta as bolhas da bomba de insulina, e acima de 10.000 ft a hipóxia confunde-se com a hipoglicemia; no **helicóptero** de um só piloto, o protocolo britânico da insulina, que exige copiloto, não se cumpre.",
+          "O **hipotálamo** comanda a **hipófise**, que comanda as outras glândulas: a tireoide, as suprarrenais e as gônadas. Na hipóxia e no estresse do voo, a medula da **suprarrenal** solta **adrenalina**, que pelos receptores **beta-2** do fígado quebra o glicogênio e sobe o açúcar do sangue, e pelos receptores **alfa-2** do pâncreas segura a **insulina**. O **cortisol** sobe e também aumenta a glicose. A hipófise posterior libera o **hormônio antidiurético**, que segura água no rim. Dentro das células, a hipóxia ativa o **HIF**, que liga as enzimas da **glicólise**, o caminho que produz energia sem oxigênio, com mais gasto de glicose e produção de lactato. Por isso a altitude e o estresse mexem com o controle do diabetes (Veja M2V9 - II).",
           "**Como prevenir e amenizar.** Antes de voar, combine com o médico o horário dos remédios no fuso de destino. No voo, beba água, ande pelo corredor quando o aviso de cintos permitir e coma nos horários de sempre, levando um lanche para o caso de atraso. Quem usa insulina leva de sobra, dividida em duas bolsas na bagagem de mão, e avisa a tripulação.",
         ].join('\n\n'),
         recursos: [
@@ -146,7 +150,7 @@ export const hormonios: Capitulo = {
           { paragrafo: 3, midia: 'hormonios-voo' },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v9-1-corredor.jpg'), 'Andar no corredor e beber água ajudam o sangue a circular.') },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · hormônios no voo',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -155,6 +159,21 @@ export const hormonios: Capitulo = {
                 ["Bagagem de mão", "Insulina e remédios de sobra, em duas bolsas: no porão podem congelar ou se perder", "Remédios, glicosímetro ou sensor e lanche, porque a hipoglicemia precisa ser medida e tratada na hora"],
                 ["Durante", "Água, andar no corredor, comer no horário: o ar seco desidrata e a imobilidade favorece a trombose", "Refeições no horário; medir o açúcar se usa remédio que o baixa, porque a hipoglicemia imita a hipóxia"],
                 ["Atraso", "Lanche com carboidrato à mão: a refeição de bordo pode atrasar horas", "Lanche com carboidrato à mão, porque o atraso não pode virar açúcar baixo em serviço"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-hormonios' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · hormônios e metabolismo",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Comando central", "Hipotálamo e hipófise", "Regulam tireoide, suprarrenais, gônadas e água do corpo"],
+                ["Simpático e adrenalina", "Medula da suprarrenal, com adrenalina nos receptores beta-2 do fígado e alfa-2 do pâncreas", "Sobe o açúcar do sangue e segura a insulina"],
+                ["Eixo do estresse", "CRH, ACTH e cortisol", "O cortisol sobe na altitude e aumenta a glicose"],
+                ["Água do corpo", "Hormônio antidiurético da hipófise posterior", "Segura água no rim quando o corpo desidrata"],
+                ["Enzimas e sensores", "HIF, que liga as enzimas da glicólise", "Mais glicose gasta sem oxigênio e mais lactato"],
               ],
             },
           },

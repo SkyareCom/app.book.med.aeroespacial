@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 · Voo 14 — Rins e vias urinárias. Ramo editorial voo/M2V14; fotos e vídeo entram depois da produção.
 // Gerado a partir de roteiro revisado (abertura + quatro tópicos de condição, no modelo de docs/modelo-sistemas.md).
 // REGISTRO DE REVISÃO · 12/11/2026. Normas e fontes primárias conferidas:
@@ -92,6 +95,7 @@ export const rins: Capitulo = {
           "O **fuso horário** mexe com os remédios do rim. **Diuréticos**, remédios de pressão e **imunossupressores** do transplantado têm hora certa. Muitas equipes de transplante aceitam uma **folga de 2 a 3 horas** no horário e, em viagens de **até 3 fusos**, o remédio pode seguir no horário de casa; acima disso, o plano de troca é combinado com a equipe (Veja M2V8 - IV). O diurético tomado antes de um voo longo faz urinar justamente quando o banheiro é difícil.",
           "Quem sente primeiro é quem já tem o rim ou a bexiga no limite: quem já teve **pedra nos rins**, quem tem **doença renal crônica**, faz **diálise** ou recebeu um **transplante**, o homem com **próstata aumentada**, quem usa **sonda** ou está com **infecção urinária** e quem acabou de passar por **cirurgia urológica**. Para o tripulante, o problema maior é a **cólica renal**, que começa sem aviso e pode tirar alguém do comando em minutos (Veja M2V14 - II).",
           "A aviação conhece bem a pedra nos rins. Num estudo com **aviadores do Exército americano**, a incidência anual foi de **4,7 casos por 1.000** aviadores, cerca do **dobro** da população masculina de referência, e o ambiente do voo, com desidratação, entrou como suspeito. A bordo, a cólica, a febre de uma infecção ou a bexiga que não esvazia podem levar a um **desvio**; para o tripulante, ainda pesam a regra da autoridade, o certificado médico e o seguro (Veja M2V14 - II a V).",
+          "O rim responde ao cérebro e aos hormônios. O **simpático** chega pelos nervos renais: pelos receptores **beta-1** libera a **renina**, que forma a **angiotensina** e a **aldosterona**, e pelos **alfa-1** fecha a entrada de sangue no rim. O **hipotálamo** sente a falta de água e manda a hipófise posterior soltar o **hormônio antidiurético**, que abre canais de água, as **aquaporinas**, e concentra a urina. Na altitude, a respiração rápida tira gás carbônico, e o rim elimina **bicarbonato** com a ajuda da enzima **anidrase carbônica**, a mesma que a acetazolamida bloqueia; costuma haver mais urina nas primeiras horas. A bexiga é comandada pelo **centro da micção** na ponte: o **parassimpático** contrai a bexiga pelos receptores **M3**, e o **simpático** a relaxa pelos **beta-3** e fecha a saída pelos **alfa-1**, alvo da tansulosina (Veja M2V14 - IV).",
           "**Como prevenir e amenizar.** Antes do voo, chegue bem hidratado e vá ao **banheiro** antes de embarcar. Durante, beba **água antes de ter sede**, em goles distribuídos, e use a cor da urina como guia: **clara** é bom sinal. Modere o **álcool** e a **cafeína**, prefira o **corredor** se urina muito e levante quando o aviso de cintos permitir. Leve os remédios na **bagagem de mão**, com folga, e ajuste o horário ao fuso com o médico. O tripulante deixa uma **garrafa à vista**, que permita medir o que bebeu, e não adia o banheiro para depois do pouso.",
         ].join('\n\n'),
         recursos: [
@@ -115,7 +119,7 @@ export const rins: Capitulo = {
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m2v14-1-corredor.jpg'), legenda: "Ir ao banheiro antes do embarque e quando o aviso de cintos permitir: a bexiga não fica cheia por horas." } },
           { paragrafo: 7, video: { fonte: require('@/assets/videos/m2v14-voo.mp4'), legenda: "Água à vista e em goles: o piloto bebe antes da sede e não deixa a urina concentrar." } },
           {
-            paragrafo: 8,
+            paragrafo: 9,
             tabela: {
               titulo: "Como prevenir e amenizar · rins no voo",
               colunas: ["Momento", "Passageiro", "Tripulante"],
@@ -124,6 +128,21 @@ export const rins: Capitulo = {
                 ["Durante o voo", "Água em goles antes da sede, pouco álcool e cafeína, corredor se urina muito: a urina não concentra", "Não adiar o banheiro: a bexiga cheia distrai, e a urina concentrada favorece a pedra"],
                 ["Fuso horário", "Remédio no horário combinado com o médico: até 3 fusos, em geral no horário de casa", "Diurético longe da decolagem, se o médico aceitar: urinar muito no voo tira o piloto da cabine"],
                 ["Sinal de alerta", "Dor forte nas costas ou no flanco, febre ou não conseguir urinar: avisar a tripulação", "Mesmos sinais: passar o comando e avisar o colega; a cólica incapacita em minutos"],
+              ],
+            },
+          },
+          { paragrafo: 8, midia: 'comando-rins' },
+          {
+            paragrafo: 8,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · rins e vias urinárias",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Simpático do rim", "Nervos renais, com receptores beta-1 e alfa-1", "Beta-1 libera renina; alfa-1 fecha a entrada de sangue no rim"],
+                ["Hormônios da água e do sal", "Hormônio antidiurético, aldosterona e peptídeo natriurético", "Na altitude costuma haver mais urina nas primeiras horas; o ar seco pede água"],
+                ["Enzima", "Anidrase carbônica dos túbulos", "Elimina bicarbonato para corrigir o sangue alcalino da hiperventilação; a acetazolamida a bloqueia"],
+                ["Centro da micção", "Centro da micção na ponte e medula sacral", "Coordena o enchimento e o esvaziamento da bexiga"],
+                ["Parassimpático e simpático da bexiga", "Acetilcolina nos M3; noradrenalina nos beta-3 e alfa-1", "M3 contrai a bexiga; alfa-1 fecha a saída e é o alvo da tansulosina"],
               ],
             },
           },

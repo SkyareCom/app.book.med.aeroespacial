@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 8 — Sono, relógio biológico e fadiga (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md) em 02/11/2026, a pedido do autor: jet lag com prevenção e
 // tratamento, efeito da direção do voo, regulação hormonal, dicas para reduzir os efeitos e detalhe nos demais itens.
@@ -151,6 +154,7 @@ export const sono: Capitulo = {
           "A vida no ar desafia os dois motores ao mesmo tempo. Os **fusos horários** deslocam o dia lá fora, a **madrugada** obriga a trabalhar quando o relógio pede sono, as **jornadas longas** aumentam a pressão do sono e o **beliche** a bordo tem ruído e movimento. Em altitude de montanha, acima de cerca de **2.700 m**, a respiração fica **periódica** durante o sono até a aclimatação (Veja M2V1).",
           "O resultado tem nome: **fadiga**. Para a ICAO, é a capacidade física ou mental reduzida pela **perda de sono**, pela **vigília prolongada**, pela **fase do relógio** ou pela **carga de trabalho**, a ponto de prejudicar a atenção e a operação segura. Ela pode ser **transitória**, resolvida por um bom sono, ou **cumulativa**, quando a recuperação não se completa dia após dia.",
           "**Doenças, tratamentos e tipo de voo.** As doenças do sono que mais pesam no voo são a **insônia**, a **apneia do sono**, a **narcolepsia** e a **hipersonia**, os **movimentos periódicos das pernas** e o **jet lag**. O tratamento vai do **expectante**, porque a insônia de uma viagem e o jet lag costumam passar em dias, ao **não invasivo**, que resolve a maioria: a **terapia cognitivo-comportamental para insônia**, a primeira escolha, a **luz** na hora certa, o **CPAP** na apneia e os remédios. O tratamento **invasivo** é exceção: a **cirurgia** das vias aéreas, em casos selecionados de apneia. No jato **pressurizado** de longa distância, pesam os fusos, a madrugada e o beliche; no avião **não pressurizado**, a hipóxia acima de 10.000 ft soma-se ao sono; no **helicóptero**, muitas vezes com um só piloto, não há quem assuma o comando se o sono vencer.",
+          "O relógio do corpo fica no **núcleo supraquiasmático**, no hipotálamo, que recebe a luz pelos olhos. Ele comanda a **glândula pineal** por um caminho do **simpático**: a **noradrenalina** dos nervos que vêm do pescoço estimula os receptores **beta-1** da pineal, que liga a enzima que fabrica a **melatonina** no escuro. Durante o dia acumula-se **adenosina** no cérebro, que aumenta a pressão de sono, e é ela que o café bloqueia. O **hipotálamo lateral** produz a **orexina**, que mantém a vigília, e o **núcleo pré-óptico** produz o **GABA**, que desliga o alerta para dormir. Na altitude, a respiração pode ficar irregular durante o sono, com pausas e despertares, e o **cortisol** acompanha o relógio, subindo de manhã (Veja M2V8 - II).",
           "**Como prevenir e amenizar.** Como usar o relógio a seu favor: a necessidade de sono varia de pessoa para pessoa, mas ninguém se treina para dormir menos: perder algumas horas por noite já prejudica o desempenho depois de **2 ou 3 dias**. Com a **idade**, a qualidade do sono piora, e o mesmo horário passa a render um sono mais leve. O dia do relógio tem horas fortes e fracas: o pior desempenho fica entre **1 e 5 horas**, a segunda queda vem no **meio da tarde**, e nas horas antes de deitar o relógio segura a vigília. Planeje o sono, o trabalho e as tarefas difíceis com esse mapa na cabeça.",
         ].join('\n\n'),
         recursos: [
@@ -173,7 +177,7 @@ export const sono: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v8-1-beliche.jpg'), 'No beliche de descanso a bordo, o sono costuma ser mais curto e leve que em casa.') },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · o dia do relógio biológico',
               colunas: ['Hora do relógio do corpo', 'O que o corpo faz', 'O que fazer'],
@@ -183,6 +187,21 @@ export const sono: Capitulo = {
                 ['Meio da tarde (cerca de 15 a 17 h)', 'Segunda queda do alerta, com ou sem almoço', 'Melhor hora para um cochilo curto'],
                 ['Horas antes de deitar', 'O relógio segura a vigília', 'Deitar mais cedo que o habitual rende pouco sono'],
                 ['Cerca de 2 h antes de deitar', 'A melatonina começa a subir', 'Pouca luz forte'],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-sono' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · sono e relógio biológico",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Relógio central", "Núcleo supraquiasmático do hipotálamo, guiado pela luz dos olhos", "O fuso desalinha o relógio do dia local"],
+                ["Simpático e pineal", "Noradrenalina nos receptores beta-1 da glândula pineal", "Liga a enzima que fabrica melatonina no escuro; a luz desliga"],
+                ["Pressão de sono", "Adenosina acumulada no cérebro durante a vigília", "Aumenta o sono; o café bloqueia seus receptores"],
+                ["Vigília e sono", "Orexina do hipotálamo lateral e GABA do núcleo pré-óptico", "Os remédios para dormir reforçam o GABA; por isso dão sono e lentidão"],
+                ["Hormônios e altitude", "Cortisol, que sobe de manhã, e respiração controlada pelo tronco cerebral", "Na altitude, a respiração no sono fica irregular, com pausas e despertares"],
               ],
             },
           },
