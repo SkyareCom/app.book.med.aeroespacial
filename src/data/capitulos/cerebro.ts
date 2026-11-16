@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 6 — Cérebro e sistema nervoso (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md), com o detalhamento prático do padrão do jet lag, em
 // 04/11/2026, a pedido do autor ("Vamos seguir para o próximo voo"). A lista antiga (epilepsia, síncope, cefaleia, AVC,
@@ -112,6 +115,7 @@ export const cerebro: Capitulo = {
           "As doenças do cérebro raramente pioram por causa do voo; o problema é que podem **incapacitar de repente**. Em questionários com mais de 3.000 pilotos de linha, **desmaio** foi **7%** e **dor de cabeça 6%** das incapacitações em voo relatadas. Entre passageiros, numa série de quase 12 mil emergências, **síncope ou pré-síncope** foram **37,4%** e **convulsão 5,8%**; o **AVC** foi raro, mas levou mais a desvio e internação.",
           "Para o tripulante, a norma pergunta uma coisa só: qual o risco de **perder a consciência ou a capacidade** em voo. A ICAO considera inaceitável um risco acima de **1% ao ano** e lembra que, com dois pilotos, o outro assume. A ANAC, a FAA e a ICAO tratam epilepsia, AVC, perda de consciência sem causa e trauma com sequela como **impedimento**, com prazos para reavaliar.",
           "**Doenças, tratamentos e tipo de voo.** As doenças deste voo são a **epilepsia**, o **desmaio**, a **enxaqueca**, o **AVC** e o ataque isquêmico transitório, o **trauma craniano** com as **cirurgias do cérebro** e as doenças **degenerativas**, como Parkinson, esclerose múltipla e demência. O tratamento pode ser **expectante**, observando depois de uma crise única ou de um desmaio explicado; **não invasivo**, com remédios, sono regular e reabilitação; ou **invasivo**: **trombectomia** no AVC, **cirurgia do aneurisma**, **neurocirurgia** do trauma, **cirurgia da epilepsia** e **estimulação cerebral profunda** no Parkinson e no tremor. Na cabine **pressurizada**, a saturação fica perto de 93% a 8.000 ft; no avião **não pressurizado**, ela cai mais a 10.000 ft, e o cérebro lesado tem menos margem. No **helicóptero**, a luz piscando das pás e a vibração podem ser gatilho em quem tem epilepsia ou enxaqueca, e com **um só piloto** a incapacitação vira acidente.",
+          "O cérebro regula o próprio sangue. Quando o oxigênio cai, os vasos cerebrais se abrem, pela ação da **adenosina** e do **óxido nítrico**; quando a respiração rápida baixa o **gás carbônico**, eles se fecham, e é por isso que hiperventilar dá tontura (Veja M2V1 - V). Sem oxigênio, o neurônio não consegue manter a **bomba de sódio e potássio**, a enzima que gasta energia para manter a carga elétrica, e a função cai em segundos. O **córtex pré-frontal**, que julga e planeja, é dos primeiros a falhar, antes da consciência; o **sistema reticular ativador**, no tronco cerebral, mantém o estado de alerta e também sofre com a hipóxia. O **hipotálamo** comanda o sistema autônomo e os hormônios, ligando o cérebro ao resto do corpo.",
           "**Como prevenir e amenizar.** Antes, **durma bem**, coma e beba água; leve os remédios na **bagagem de mão**, com o horário ajustado ao fuso (Veja M2V8). Durante, beba água, evite **álcool**, levante devagar e não fique muito tempo em pé no corredor. Se vier tontura, aura, fraqueza de um lado ou confusão, **sente-se e avise a tripulação** na hora. O tripulante não voa com sono atrasado nem com remédio que dê sono.",
         ].join('\n\n'),
         recursos: [
@@ -136,7 +140,7 @@ export const cerebro: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v6-1-noite.jpg'), 'Voo noturno e fuso cortam o sono, um gatilho conhecido de convulsão e enxaqueca.') },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · o cérebro em voo',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -146,6 +150,21 @@ export const cerebro: Capitulo = {
                 ["Durante", "Água, sem álcool, levantar devagar: evita desidratação e queda de pressão ao ficar de pé", "Água, refeição na hora, descanso programado, porque fome e cansaço baixam a atenção"],
                 ["Sinal de alerta", "Sentar e avisar a tripulação: deitado ou sentado, um desmaio não vira queda", "Passar os comandos e avisar o controle, porque o sintoma pode virar incapacitação"],
                 ["Depois de cirurgia ou trauma na cabeça", "Só voar com a liberação do médico: ar ou sangue no crânio pioram com a cabine", "Avaliação antes de voltar, porque o risco de crise e de lentidão continua por meses"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-cerebro' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · cérebro e sistema nervoso",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Fluxo de sangue", "Vasos cerebrais regulados por adenosina, óxido nítrico e gás carbônico", "Abrem na falta de oxigênio e fecham quando a hiperventilação baixa o gás carbônico"],
+                ["Energia do neurônio", "Bomba de sódio e potássio, enzima que gasta a energia do oxigênio e da glicose", "Sem oxigênio, a carga elétrica se perde e a função cai em segundos"],
+                ["Julgamento", "Córtex pré-frontal", "Falha cedo na hipóxia: a pessoa decide mal antes de perceber"],
+                ["Alerta", "Sistema reticular ativador do tronco cerebral", "Sono, sedativos e hipóxia reduzem o estado de alerta"],
+                ["Comando do corpo", "Hipotálamo, que liga o cérebro ao sistema autônomo e à hipófise", "Na altitude, aumenta o simpático e o cortisol"],
               ],
             },
           },

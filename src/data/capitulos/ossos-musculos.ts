@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 · Voo 12 — Coluna, ossos e músculos. Ramo editorial voo/M2V12; fotos e vídeo entram depois da produção.
 // REGISTRO DE REVISÃO · 10/11/2026. Normas e fontes primárias conferidas:
 // ICAO Anexo 1, 14ª ed., Emenda 179, 6.3.2.23 e Nota: anomalia de ossos, articulações, músculos, tendões ou estruturas
@@ -71,6 +74,7 @@ export const ossosMusculos: Capitulo = {
           'Voar sem condição tem custo. A **dor** distrai e cansa; a **limitação de movimento** pode impedir o alcance de um comando ou a saída rápida; o **remédio para dor** pode dar sono. Na perna engessada, a imobilidade favorece a **trombose**, que pode embolizar para o pulmão (Veja M2V2 - VII). Por isso, a decisão considera a lesão, o tratamento e a tarefa da pessoa a bordo.',
           'Os **analgésicos comuns**, como paracetamol e ibuprofeno, em geral não impedem o voo do piloto se a doença de base for aceitável. Já os **relaxantes musculares** e os **opioides** dão sono e lentidão: para a FAA, quem toma não voa até cumprir um prazo de espera. O detalhe de cada classe está nos tópicos seguintes.',
           "**Doenças, tratamentos e tipo de voo.** As doenças deste voo que mais pesam no ar são a **dor no pescoço e nas costas**, a **hérnia de disco**, as **fraturas**, a **artrose** e a **artrite**, as **próteses** e a **amputação**. O tratamento vai do **expectante**, na dor comum que melhora em semanas com movimento, ao **não invasivo**, que resolve a maioria: **fisioterapia**, exercício, analgésico que não dá sono, **gesso** ou **tala**. Os tratamentos **invasivos** são a **cirurgia da coluna**, a **fixação de fratura** com placas e parafusos, a **prótese de quadril ou de joelho** e a infiltração na articulação; o prazo depois deles é do cirurgião, e o tripulante volta sem dor, sem remédio que dê sono e com a força recuperada. No jato **pressurizado**, pesam as horas sentado e a trombose; no avião leve **não pressurizado**, a cabine apertada e o esforço de embarque; no **helicóptero**, a **vibração** e a postura torta, e no caça, a carga do G no pescoço.",
+          "O movimento nasce no **córtex motor**, é ajustado pelo **cerebelo** e pelos **núcleos da base** e desce pela medula até os **neurônios motores**, que soltam **acetilcolina** na placa motora e contraem o músculo. A postura depende dos **fusos musculares** e dos sinais de posição das articulações, que voltam à medula e ao cerebelo. O **simpático** ajusta o sangue do músculo: os receptores **beta-2** abrem os vasos no esforço. Na hipóxia, o músculo produz mais **lactato** e se cansa antes, e a coordenação fina piora quando o cerebelo recebe menos oxigênio. O osso é regulado pelo **paratormônio**, pela **vitamina D** e pela **calcitonina**, que controlam o cálcio do sangue (Veja M2V5 - I).",
           '**Como prevenir e amenizar.** Antes do voo, confira se a lesão está estável e se o gesso tem o tempo mínimo. Durante o voo, levante-se e mexa as pernas quando for seguro, prefira o corredor e apoie as costas no encosto. Leve na bagagem de mão o remédio de uso diário e evite dormir com remédio que dá sono num voo longo. O tripulante não assume a função com dor que limite o movimento ou com remédio sedativo.',
         ].join('\n\n'),
         recursos: [
@@ -95,7 +99,7 @@ export const ossosMusculos: Capitulo = {
             },
           },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · ossos e músculos',
               colunas: ['Momento ou situação', 'O que fazer'],
@@ -104,6 +108,21 @@ export const ossosMusculos: Capitulo = {
                 ['No embarque', 'Pedir assistência com 48 h de antecedência quando precisar de cadeira de rodas ou ajuda'],
                 ['Durante o voo', 'Mexer pernas e pés, levantar quando for seguro e apoiar as costas no encosto'],
                 ['Tripulante', 'Não assumir a função com dor que limite o movimento ou com remédio que dá sono'],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-ossos-musculos' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · ossos, músculos e articulações",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Centro no sistema nervoso", "Córtex motor, cerebelo, núcleos da base e neurônios motores da medula", "Com menos oxigênio no cerebelo, a coordenação fina piora"],
+                ["Placa motora", "Acetilcolina nos receptores nicotínicos do músculo", "Contrai o músculo; os relaxantes musculares agem nesse caminho ou na medula"],
+                ["Simpático", "Noradrenalina e adrenalina nos receptores beta-2 dos vasos do músculo", "Abre os vasos no esforço e prepara o músculo para agir"],
+                ["Energia do músculo", "Mioglobina, que guarda oxigênio, e enzimas da glicólise", "Na hipóxia, mais lactato e cansaço mais cedo"],
+                ["Hormônios do osso", "Paratormônio, vitamina D e calcitonina", "Controlam o cálcio do sangue e a força do osso"],
               ],
             },
           },

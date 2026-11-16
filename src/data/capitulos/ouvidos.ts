@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 3 — Ouvidos, seios da face e dentes (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md), já com o detalhamento prático do padrão do jet lag, em
 // 03/11/2026, a pedido do autor ("Siga para o próximo voo, seguindo os padrões do app"). Os tópicos da lista antiga
@@ -103,6 +106,7 @@ export const ouvidos: Capitulo = {
           "Em **85% ou mais** dos casos, a falha em equalizar vem de uma doença do nariz e da garganta: o **resfriado**, a **alergia** e a **sinusite** incham a mucosa e fecham as aberturas. Por isso a regra mais importante deste voo é simples: **não voar resfriado ou com o nariz entupido**, sobretudo como tripulante.",
           "O ouvido também **ouve e equilibra**. A tripulação precisa entender o rádio e os colegas no ruído da cabine, e o labirinto informa a posição da cabeça; uma vertigem súbita na descida pode **incapacitar** o piloto (Veja M2V3 - III). Para o passageiro, a dor costuma passar sem sequela, mas pode trazer **tontura**, **perda auditiva**, **perfuração** e **zumbido**.",
           "**Doenças, tratamentos e tipo de voo.** As doenças deste voo são o **barotrauma do ouvido** e a **otite média serosa**, as **perfurações** e as **cirurgias do ouvido**, a **vertigem**, a **perda auditiva**, a **sinusite** com a **aerossinusite** e a **barodontalgia**. O tratamento tem três níveis: o **expectante**, que espera o resfriado passar e o tímpano cicatrizar; o **não invasivo**, com descongestionante, corticoide nasal, remédio da alergia e manobras de equalização e de reposicionamento do labirinto; e o **invasivo**: **tubo de ventilação** no tímpano, **timpanoplastia**, **estapedectomia**, **cirurgia dos seios** e tratamento dentário. A diferença de pressão depende do tipo de voo: descer de uma cabine **pressurizada** a 8.000 ft ao nível do mar muda cerca de **195 mmHg**; de um avião **não pressurizado** a 10.000 ft, cerca de **237 mmHg**. No **helicóptero**, as altitudes são menores, mas as **subidas e descidas repetidas** em pouco tempo, como no resgate e no offshore, cobram mais de quem equaliza mal.",
+          "A pressão do ouvido médio depende de um gesto muscular: ao engolir ou bocejar, o músculo **tensor do véu palatino**, comandado pelo **nervo trigêmeo**, abre a **tuba auditiva** e equaliza o ar. O nariz é regulado pelo **sistema nervoso autônomo**: o **simpático**, pela **noradrenalina** nos receptores **alfa** dos vasos, desincha a mucosa, e é nesse ponto que agem os descongestionantes; o **parassimpático**, pelo nervo que passa no **gânglio pterigopalatino**, aumenta o muco e o inchaço. No resfriado e na alergia, a **histamina** e outros mediadores incham a mucosa e fecham a tuba. O som chega pelo **nervo coclear** aos núcleos do tronco e ao **córtex auditivo**, no lobo temporal (Veja M1V1 - II).",
           "**Como prevenir e amenizar.** Na subida, em geral não é preciso fazer nada. Na descida, comece **cedo** e repita: engula, boceje, mastigue ou contraia a garganta; se não bastar, feche a boca, aperte o nariz e sopre com delicadeza contra as narinas fechadas, a **manobra de Valsalva**. Não durma durante a descida. Bebês sofrem mais: **amamentar** na subida e na descida protege a criança da dor. Se a orelha travar, continue tentando antes de a pressão de fora subir mais.",
         ].join('\n\n'),
         recursos: [
@@ -125,9 +129,9 @@ export const ouvidos: Capitulo = {
             },
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v3-1-bebe.jpg'), 'Amamentar na subida e na descida ajuda o bebê a equalizar a pressão do ouvido.') },
-          { paragrafo: 7, video: { fonte: require('@/assets/videos/m2v3-equalizar.mp4'), legenda: 'Na descida, engolir, bocejar ou a manobra de Valsalva abrem a tuba auditiva e igualam a pressão do ouvido.' } },
+          { paragrafo: 8, video: { fonte: require('@/assets/videos/m2v3-equalizar.mp4'), legenda: 'Na descida, engolir, bocejar ou a manobra de Valsalva abrem a tuba auditiva e igualam a pressão do ouvido.' } },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · ouvido',
               colunas: ['Momento', 'O que fazer'],
@@ -138,6 +142,21 @@ export const ouvidos: Capitulo = {
                 ['Durante a descida', 'Ficar acordado e repetir as manobras'],
                 ['Bebês', 'Amamentar na subida e na descida'],
                 ['Resfriado ou nariz entupido', 'Tripulante não voa; passageiro pode adiar a viagem'],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-ouvidos' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Comando muscular", "Nervo trigêmeo no músculo tensor do véu palatino", "Abre a tuba ao engolir; na descida, se ela não abre, a pressão de fora empurra o tímpano"],
+                ["Simpático", "Noradrenalina nos receptores alfa dos vasos do nariz", "Desincha a mucosa; é o alvo dos descongestionantes"],
+                ["Parassimpático", "Fibras que passam no gânglio pterigopalatino, com acetilcolina nas glândulas", "Mais muco e mais inchaço, que fecham a tuba e os seios"],
+                ["Mediadores", "Histamina e outros mediadores da inflamação na mucosa", "No resfriado e na alergia, a mucosa incha e o gás preso não sai na mudança de pressão"],
+                ["Centro no sistema nervoso", "Nervo coclear, núcleos do tronco cerebral e córtex auditivo do lobo temporal", "O ruído da cabine cansa a via e esconde os agudos"],
               ],
             },
           },

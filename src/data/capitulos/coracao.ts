@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 2 — Coração e vasos sanguíneos (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md) em 02/11/2026, a pedido do autor ("Siga com os outros voos").
 // Os tópicos da lista antiga (débito cardíaco, coração na altitude, coração sob aceleração, exames cardiológicos)
@@ -116,6 +119,7 @@ export const coracao: Capitulo = {
           "Horas **sentado**, no **ar seco** da cabine (Veja M1V1 - IV), deixam o sangue parado nas veias das pernas e favorecem a **trombose** (Veja M2V2 - VII). Os **fusos horários** bagunçam o horário dos remédios do coração (Veja M2V8), e as **acelerações** do voo de caça empurram o sangue para longe da cabeça (Veja M1V7).",
           "Para o tripulante, a pergunta é outra: o risco de **incapacitação**. Infarto, AVC e ruptura da aorta podem tirar o piloto de ação de uma vez; uma arritmia leve pode só **distrair**. Com **um só piloto**, a incapacitação tende a virar acidente, e por isso a medicina aeroespacial calcula o risco anual de cada condição (Veja M3V1). O **eletrocardiograma** periódico serve para **achar casos**, não basta sozinho para afastar ninguém.",
           "**Doenças, tratamentos e tipo de voo.** O tratamento tem três níveis: o **expectante**, que acompanha com consultas e exames sem intervir; o **não invasivo**, com mudança de hábitos, remédios, reabilitação cardíaca, meia de compressão e oxigênio; e o **invasivo**. As doenças do coração que mais pesam no voo são a **pressão alta**, a **doença das coronárias** (angina e infarto), as **arritmias**, as doenças das **válvulas** e as **congênitas**, a **insuficiência cardíaca** e a **trombose**, cada uma num tópico deste voo. Os tratamentos **invasivos** pedem atenção especial, porque cada um tem o seu prazo antes de voar: o **cateterismo com stent**, a **ablação**, o implante de **marca-passo** ou **desfibrilador** e as **cirurgias abertas**, como a ponte de safena e a troca de válvula. Na cabine **pressurizada**, a saturação fica perto de **93%** a 8.000 ft. No avião **não pressurizado**, a cabine sobe junto com o avião: perto de **10.000 ft** a saturação já cai para cerca de **89%**, e a tripulação só é obrigada a usar oxigênio acima de **12.500 ft** (Veja M1V2); para quem tem pouca reserva, é uma diferença grande. No **helicóptero**, em geral sem pressurização e voando baixo, pesam mais a **vibração**, o **ruído** e o voo com **um só piloto**, em que a incapacitação tende a virar acidente (Veja M1V6).",
+          "O coração tem ritmo próprio, mas quem ajusta a velocidade e a força é o **sistema nervoso autônomo**. O **simpático** nasce no bulbo, na região chamada **bulbo ventrolateral rostral**, desce pela medula e solta **noradrenalina** nos receptores **beta-1** do coração: a frequência e a força sobem. A medula da **suprarrenal** reforça com **adrenalina**. O **parassimpático** chega pelo **nervo vago**, com **acetilcolina** nos receptores **M2**, e freia o coração. Na hipóxia, os quimiorreceptores das carótidas aumentam o simpático e reduzem o vago, e o coração acelera; nos vasos da pele e do intestino, os receptores **alfa-1** fecham a passagem, e os das coronárias e do cérebro se abrem com a **adenosina** liberada pela falta de oxigênio (Veja M2V1 - I).",
           "**Como prevenir e amenizar.** Leve os **remédios na bagagem de mão**, com a receita e a lista de doses, e ajuste os horários quando cruzar fusos (Veja M2V8 - IV). Se o médico indicar **oxigênio a bordo**, combine com a companhia antes do voo, pelo **MEDIF**. Em voo longo, **caminhe** e mexa as pernas (Veja M2V2 - VII). **Dor no peito, falta de ar, palpitação ou desmaio** a bordo pedem aviso imediato à tripulação. Para o tripulante, o **eletrocardiograma** segue a idade e a classe, e qualquer piora da saúde deve ser informada ao examinador antes do próximo voo.",
         ].join('\n\n'),
         recursos: [
@@ -151,7 +155,7 @@ export const coracao: Capitulo = {
             },
           },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · coração',
               colunas: ['Situação', 'O que fazer'],
@@ -162,6 +166,21 @@ export const coracao: Capitulo = {
                 ['Sinais de alarme a bordo', 'Dor no peito, falta de ar, palpitação ou desmaio: avisar a tripulação na hora'],
                 ['Depois de cirurgia no tórax', 'Esperar a reabsorção do ar: 10 a 14 dias'],
                 ['Tripulante', 'ECG conforme a idade e a classe; informar ao examinador qualquer piora antes de voar'],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-coracao' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · coração e circulação",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Centro no sistema nervoso", "Bulbo ventrolateral rostral e núcleo do trato solitário, que recebe os barorreceptores e os quimiorreceptores", "Na hipóxia, mais simpático e menos vago: o coração acelera"],
+                ["Simpático", "Noradrenalina nos receptores beta-1 do coração e alfa-1 dos vasos", "Frequência e força maiores; vasos da pele e do intestino mais fechados"],
+                ["Parassimpático", "Nervo vago, com acetilcolina nos receptores M2 do nó sinusal", "Recua na hipóxia; o desmaio vasovagal é o vago disparando de repente"],
+                ["Hormônios", "Adrenalina da suprarrenal, peptídeo natriurético do átrio e sistema renina-angiotensina", "Adrenalina sobe na altitude; o coração doente gasta a reserva mais cedo"],
+                ["Sinais locais e enzimas", "Adenosina e óxido nítrico, produzido pela enzima óxido nítrico sintase", "Abrem as coronárias e os vasos do cérebro onde falta oxigênio"],
               ],
             },
           },

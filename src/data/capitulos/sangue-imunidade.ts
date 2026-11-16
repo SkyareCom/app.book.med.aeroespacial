@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 · Voo 11 — Sangue, câncer e infecções. Ramo editorial, mídias finais pendentes.
 // 09/11/2026: padronizado (pedido do autor "Revise, padronize, corrija os erros"): texto em lista de parágrafos, células
 // sem ponto final, títulos de tabela com o tema curto, colunas no padrão e remissões com o ponto fora dos parênteses.
@@ -58,6 +61,7 @@ export const sangueImunidade: Capitulo = {
           "Uma alteração hematológica importante pode provocar **cansaço intenso, palpitações, tontura, falta de ar ou desmaio**. Sangramento, trombose ou infecção aguda podem surgir ou se agravar longe do atendimento. O voo prolongado também favorece estase venosa pela imobilidade, em especial após cirurgia, em atividade neoplásica e com trombose prévia. Essa vulnerabilidade decorre do estado de coagulação e do fluxo sanguíneo, não do simples fato de estar dentro de um avião (Veja M2V2).",
           "Exames úteis incluem hemograma, plaquetas e estudos de coagulação quando indicados, sempre interpretados com sintomas, tratamento e evolução. **Anticoagulantes** reduzem eventos trombóticos em situações específicas, mas exigem avaliação do risco hemorrágico e das interações; jamais devem ser interrompidos apenas para viajar. A quimioterapia, a imunossupressão e alguns antivirais também exigem atenção a efeitos adversos e à continuidade do esquema prescrito.",
           "**Doenças, tratamentos e tipo de voo.** As doenças deste voo que mais pesam na viagem aérea são a **anemia**, a **doença falciforme**, os distúrbios da coagulação e a **trombose**, o **câncer**, as **infecções transmissíveis** e a imunidade reduzida, como no **HIV** não controlado. O tratamento vai do **expectante**, na anemia leve e estável e no traço falciforme, ao **não invasivo**, que é a maioria: ferro, vitaminas, anticoagulante, antibiótico, antirretroviral e quimioterapia. Os tratamentos **invasivos** pedem prazo antes do voo: **transfusão**, **cirurgia**, **biópsia**, drenagem e procedimentos por cateter. No avião **pressurizado**, a cabine até 8.000 ft já reduz a oferta de oxigênio a quem tem pouca hemoglobina; no **não pressurizado**, acima de 10.000 ft sem oxigênio, essa reserva some mais rápido, e a cabine pequena não tem a filtragem do jato; no **helicóptero**, o transporte de quem sangra ou está instável é aeromédico, com equipe e oxigênio.",
+          "O sensor do sangue fica no **rim**: células próximas aos túbulos percebem a queda de oxigênio pelo **HIF**, que liga o gene da **eritropoetina**. Esse hormônio vai à **medula óssea** e acelera a produção de hemácias, um processo que leva dias a semanas e não ajuda num voo de poucas horas. Mais rápido é o ajuste dentro da própria hemácia: a enzima que fabrica o **2,3-DPG** trabalha mais, e a hemoglobina solta o oxigênio com mais facilidade nos tecidos. O **simpático** chega à medula óssea, ao baço e aos gânglios linfáticos, e o **cortisol** do estresse reduz parte da defesa, o que ajuda a explicar por que o cansaço e as viagens longas facilitam infecções (Veja M2V1 - I e M2V9 - I).",
           "**Como prevenir e amenizar.** Planeje a viagem quando a condição estiver estável; leve relatório clínico, lista de medicamentos e reserva para atrasos. Em voos prolongados, movimente pernas e caminhe quando for seguro, respeitando restrições médicas. Evite embarcar com sangramento, desmaios, febre importante ou dispneia não investigada. O médico deve registrar a capacidade funcional, a possibilidade de assistência e, quando necessário, a solicitação de suporte à companhia aérea.",
         ].join('\n\n'),
         recursos: [
@@ -107,7 +111,7 @@ export const sangueImunidade: Capitulo = {
             }
           },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: "Como prevenir e amenizar · sangue e defesa",
               colunas: [
@@ -133,7 +137,22 @@ export const sangueImunidade: Capitulo = {
                 ]
               ]
             }
-          }
+          },
+          { paragrafo: 7, midia: 'comando-sangue-imunidade' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · sangue e defesa",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Sensor de oxigênio", "Células do rim com HIF", "Ligam o gene da eritropoetina quando o oxigênio cai"],
+                ["Hormônio", "Eritropoetina, do rim para a medula óssea", "Mais hemácias em dias a semanas; não ajuda no voo de poucas horas"],
+                ["Enzima da hemácia", "Enzima que fabrica o 2,3-DPG", "A hemoglobina solta o oxigênio com mais facilidade nos tecidos"],
+                ["Simpático", "Nervos na medula óssea, no baço e nos gânglios linfáticos", "Modula a saída de células de defesa no estresse"],
+                ["Eixo do estresse", "Cortisol da suprarrenal", "Reduz parte da defesa; cansaço e viagens longas facilitam infecções"],
+              ],
+            },
+          },
         ]
       }
     },

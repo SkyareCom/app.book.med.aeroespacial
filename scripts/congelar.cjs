@@ -5,6 +5,8 @@
 // scripts/check-congelados.cjs e registre a autorização no comentário do checador.
 // Congelamento autorizado pelo autor em 12/11/2026 ("Congele tudo que esta pronto").
 // M3V1 incluído com autorização do autor em 15/11/2026 ("Congele"), depois da publicação do voo.
+// Recongelado em 16/11/2026 com autorização do autor ("Autorizo"): comando nervoso e hormonal na altitude em M2V1 a
+// M2V15; src/data/comando-sistemas.ts e src/components/midia/comando-sistemas.tsx entram no retrato.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -29,7 +31,7 @@ const VOOS = {
 // Arquivos cujas traduções também ficam congeladas (Conceitos e M2V1, já protegidos em conteúdo por check-m1v1).
 const TRADUZIDOS_EXTRAS = ['atmosfera', 'descompressao', 'pressurizacao', 'radiacao', 'ruido', 'forcasg', 'impacto', 'temperatura', 'hipoxia']
   .map((c) => `src/data/capitulos/${c}.ts`).concat(['src/data/liberacao/respiratorio.ts', 'src/app/liberacao-voo.tsx']);
-const COMUNS = ['src/app/liberacao-voo.tsx', 'src/lib/liberacao.ts'];
+const COMUNS = ['src/app/liberacao-voo.tsx', 'src/lib/liberacao.ts', 'src/data/comando-sistemas.ts', 'src/components/midia/comando-sistemas.tsx'];
 
 const blob = (buf) => crypto.createHash('sha1').update('blob ' + buf.length + '\0').update(buf).digest('hex');
 const ler = (p) => fs.readFileSync(path.join(ROOT, p));
@@ -44,7 +46,7 @@ for (const [voo, [cap, lib, pref]] of Object.entries(VOOS)) {
   for (const p of lista) { arquivos[p] = blob(ler(p)); textos.push(p); }
 }
 for (const p of COMUNS) arquivos[p] = blob(ler(p));
-textos.push(...TRADUZIDOS_EXTRAS, 'src/components/midia/animacoes.tsx', 'src/components/midia/animacoes-aviacao.tsx');
+textos.push(...TRADUZIDOS_EXTRAS, 'src/data/comando-sistemas.ts', 'src/components/midia/comando-sistemas.tsx', 'src/components/midia/animacoes.tsx', 'src/components/midia/animacoes-aviacao.tsx');
 
 const anim = ler('src/components/midia/animacoes.tsx').toString('utf8');
 const corte = anim.indexOf('// M2V10 · Gás intestinal');
@@ -74,7 +76,7 @@ const chaves = Object.keys(en).filter((k) => es[k] !== undefined && literais.has
 const traducoes = {};
 for (const k of chaves) traducoes[k] = [en[k], es[k]];
 
-const manifesto = { autorizado: '12/11/2026; M3V1 em 15/11/2026', voos: Object.keys(VOOS), arquivos, animacoes, animacoesAviacao, traducoes };
+const manifesto = { autorizado: '12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026', voos: Object.keys(VOOS), arquivos, animacoes, animacoesAviacao, traducoes };
 const saida = JSON.stringify(manifesto, null, 1) + '\n';
 fs.writeFileSync(path.join(ROOT, 'scripts/congelados.json'), saida);
 console.log(`congelados.json: ${Object.keys(arquivos).length} arquivos, ${chaves.length} traduções; assinatura ${crypto.createHash('sha1').update(saida).digest('hex')}`);

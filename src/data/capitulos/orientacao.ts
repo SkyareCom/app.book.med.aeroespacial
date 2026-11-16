@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 5 — Labirinto e orientação espacial (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md), com o detalhamento prático do padrão do jet lag, em
 // 04/11/2026, a pedido do autor ("Continue para o próximo voo"). Os tópicos da lista antiga (sistemas de orientação,
@@ -91,6 +94,7 @@ export const orientacao: Capitulo = {
           "Os otólitos não separam **gravidade** de **aceleração**. Acelerar para a frente puxa o corpo para trás, como se o nariz tivesse subido. Numa curva coordenada, a força resultante continua apontando para o assento, e o corpo sente o avião **nivelado**. Sem horizonte, na nuvem, à noite ou na névoa, o cérebro passa a acreditar nesses sinais errados: é a **desorientação espacial**.",
           "Outros fatores pioram tudo: **hipóxia** (Veja M2V1 - IV), **fadiga** (Veja M2V8 - V), **álcool** e remédios que dão sono, e o **resfriado**, que pode trazer vertigem na descida (Veja M2V3 - III). Para o passageiro, o resultado costuma ser **enjoo**; para o piloto, pode ser a **perda de controle** do avião.",
           "**Doenças, tratamentos e tipo de voo.** Algumas doenças tiram uma das três fontes de orientação: as do **labirinto**, como a **vertigem posicional**, a **neurite vestibular** e a **doença de Ménière** (Veja M2V3 - III); as dos **olhos**, como a perda de campo e a visão de um olho só (Veja M2V4 - IV); e as que reduzem a sensação dos pés e das pernas, como a **neuropatia do diabetes** (Veja M2V9). O tratamento vai do **expectante**, porque a neurite e a vertigem posicional costumam passar, ao **não invasivo**, com manobras de reposicionamento, **reabilitação vestibular** e remédio na crise, e raramente ao **invasivo**, como a cirurgia na Ménière rebelde. Remédios que dão sono e álcool pioram qualquer uma delas. No avião **não pressurizado**, a hipóxia acima de 10.000 ft soma confusão à ilusão; no **helicóptero**, o voo baixo, o pairado na poeira ou na neve e a vibração tornam a desorientação mais frequente.",
+          "O labirinto manda o movimento da cabeça pelo **nervo vestibular** aos **núcleos vestibulares**, no tronco cerebral, que conversam com o **cerebelo**, com os músculos dos olhos e com o **córtex**, onde se forma a sensação de posição. Quando o labirinto, os olhos e o corpo discordam, os núcleos vestibulares acionam a **área postrema** e o **núcleo do trato solitário**, ligados ao vômito, e o **sistema autônomo** responde com palidez, suor frio e náusea: é o enjoo. Nesse caminho agem a **histamina**, nos receptores **H1**, e a **acetilcolina**, nos receptores **muscarínicos**, e por isso os remédios contra enjoo bloqueiam esses receptores e dão sono. A hipóxia e o álcool pioram o trabalho do cerebelo e a integração dos sinais (Veja M2V1).",
           "**Como prevenir e amenizar.** Antes do voo, confira o tempo e a visibilidade no caminho e no destino, e durma bem. Durante, mantenha uma referência: o **horizonte** lá fora ou o **indicador de atitude** no painel, e não misture os dois quando o horizonte some. Evite movimentos bruscos da **cabeça** em curva. O passageiro que enjoa olha para longe, pela janela, em vez de ler.",
         ].join('\n\n'),
         recursos: [
@@ -115,7 +119,7 @@ export const orientacao: Capitulo = {
           },
           { paragrafo: 5, figura: foto(require('@/assets/images/topicos/m2v5-1-nuvem.jpg'), 'Dentro da nuvem, o horizonte some e o labirinto passa a mandar sinais errados.') },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · orientação',
               colunas: ['Momento', 'O que fazer'],
@@ -125,6 +129,21 @@ export const orientacao: Capitulo = {
                 ['Em curva', 'Evitar movimentos bruscos da cabeça'],
                 ['Saindo da nuvem', 'Voltar ao voo visual só com o horizonte firme'],
                 ['Passageiro', 'Olhar para longe pela janela; evitar ler na turbulência'],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-orientacao' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · equilíbrio e orientação",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Centro no sistema nervoso", "Nervo vestibular, núcleos vestibulares, cerebelo e córtex", "Integra labirinto, olhos e corpo; a hipóxia e o álcool deixam a integração mais lenta"],
+                ["Reflexo dos olhos", "Reflexo vestíbulo-ocular, dos núcleos vestibulares aos músculos dos olhos", "Mantém a imagem parada quando a cabeça mexe; falha na curva prolongada"],
+                ["Centro do vômito", "Área postrema e núcleo do trato solitário, no bulbo", "Recebem o conflito de sinais e disparam a náusea"],
+                ["Simpático e parassimpático", "Descarga autônoma com suor, palidez e salivação", "São os sinais de alerta do enjoo, antes do vômito"],
+                ["Transmissores", "Histamina nos receptores H1 e acetilcolina nos receptores muscarínicos", "Os remédios contra enjoo os bloqueiam e por isso dão sono"],
               ],
             },
           },
