@@ -104,4 +104,10 @@ export const diretrizes: Referencia[] = [
   { titulo: 'Regra do 1%', detalhe: 'A. Evans (ICAO), 2009; CAA da Nova Zelândia, MIS 012; Flight Safety Foundation, AeroSafety World, julho de 2012 (incapacitação em pilotos de 1ª classe do Reino Unido)' },
   { titulo: 'Heart e Aerospace Medicine and Human Performance', detalhe: 'Gray et al., NATO HFM 251, 2019: doença coronária assintomática em tripulantes; Gray et al., 2026: detecção e decisão aeromédica' },
   { titulo: 'Evitação de atendimento médico por pilotos', detalhe: 'Hoffman et al.: mais de 3.500 pilotos dos EUA (Scientific American)' },
+  // M3V2 · Farmacologia aeroespacial (16/11/2026).
+  { titulo: 'FAA · remédios e voo', detalhe: 'Aeronautical Information Manual 8-1-1 e 8-1-2; OTC Medications for Pilots; Guide for Aviation Medical Examiners (remédios para dormir e disfunção erétil); 14 CFR 91.17 e Part 120' },
+  { titulo: 'UK CAA · medicação para pilotos', detalhe: 'Guidance material for medication used by pilots, versão 2.0 (2026)' },
+  { titulo: 'CASA e IFALPA', detalhe: 'CASA (Austrália): teste no solo de remédios; IFALPA: Medication and Flying (2019)' },
+  { titulo: 'NTSB', detalhe: 'Drug Use Trends in Aviation (SS-14/01, 2014): remédios em pilotos mortos em acidentes de 1990 a 2012' },
+  { titulo: 'ANAC · álcool e substâncias psicoativas', detalhe: 'RBAC 91 (Emenda 07), 91.17 e 91.19; RBAC 120 (Emenda 04): programa de prevenção e exames toxicológicos' },
 ];

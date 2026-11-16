@@ -101,3 +101,45 @@ const styles = StyleSheet.create({
 
 // FIM DO CONGELAMENTO M3V1 (15/11/2026). Animações de voos novos da Missão Aviação entram abaixo desta linha; tudo acima
 // está congelado (scripts/check-congelados.cjs) e só muda com autorização explícita do autor.
+
+// M3V2 · A meia-vida: a cada meia-vida a quantidade de remédio no sangue cai pela metade; depois de cinco, resta cerca de
+// 3% (0,5^5), base da espera de 5 meias-vidas da FAA. Registro em src/data/capitulos/farmacologia.ts. Esquema, sem escala de tempo.
+export function AnimacaoMeiaVida() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  const n = Math.min(5, Math.floor(t * 6.5));
+  const frac = Math.min(1, t * 6.5 - n);
+  const H = 214;
+  const rotulos = ['DOSE: 100%', '1 MEIA-VIDA: 50%', '2 MEIAS-VIDAS: 25%', '3 MEIAS-VIDAS: 12,5%', '4 MEIAS-VIDAS: 6,25%', '5 MEIAS-VIDAS: CERCA DE 3%'];
+  const cor = n >= 5 ? Cores.acerto : n >= 3 ? Cores.dourado : Cores.erro;
+  return (
+    <Quadro titulo="A meia-vida do remédio" instrucao="Esquema: a cada meia-vida, metade do remédio sai do sangue; depois de cinco, resta cerca de 3%, e a FAA libera o voo." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 28, base = H - 30, alto = 130, passo = (w - x0 - 16) / 6;
+        const nivel = (k: number) => base - alto * Math.pow(0.5, k);
+        let d = `M ${x0} ${nivel(0)}`;
+        const fim = n + frac;
+        for (let s = 1; s <= Math.floor(fim * 10); s++) {
+          const k = s / 10;
+          d += ` L ${x0 + k * passo} ${nivel(k)}`;
+        }
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{rotulos[n]}</SvgText>
+            <Rect x={x0} y={base} width={w - x0 - 16} height={1.5} fill={Cores.textoApagado} />
+            {[0, 1, 2, 3, 4, 5].map((k) => (
+              <G key={k}>
+                <Rect x={x0 + k * passo - 9} y={nivel(k)} width={18} height={base - nivel(k)} rx={3} fill={k <= n ? cor : Cores.linha} fillOpacity={k <= n ? 0.35 : 0.15} />
+                <SvgText x={x0 + k * passo} y={base + 14} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="middle">{String(k)}</SvgText>
+              </G>
+            ))}
+            <Path d={d} stroke="#E8D27A" strokeWidth={2} fill="none" />
+            <Circle cx={x0 + fim * passo} cy={nivel(fim)} r={5} fill="#F3EEDC" />
+            <SvgText x={w - 16} y={base + 26} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">MEIAS-VIDAS</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
