@@ -15,5 +15,5 @@ ramo `voo/M3V2` (`validar-voo M3V2 conteudo` aprovado). Faltam 8 fotos e 1 víde
 | 7 | `m3v2-4-rotulo.jpg` | 2.4 Interações | 1 | Duas embalagens de antigripal lado a lado, sem texto legível |
 | 8 | `m3v2-4-coleta.jpg` | 2.4 Interações | 4 | Coleta de urina para exame toxicológico em sala de saúde do aeroporto |
 
-**Vídeo:** `m3v2-voo.mp4`, 2.1, após o parágrafo 6: passageira idosa à noite no avião recusa o comprimido para dormir
+**Vídeo:** `m3v2-voo.mp4`, 2.1, após o parágrafo 6: passageira idosa à noite no avião aceita o comprimido para dormir (cena de alerta; placas de saída desfocadas)
 e bebe água; a comissária sorri. 8 s, sem áudio, 16:9, H.264.

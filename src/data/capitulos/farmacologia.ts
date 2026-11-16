@@ -64,6 +64,7 @@ export const farmacologia: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, o passageiro leva a lista de remédios e as doses na bagagem de mão e combina com o médico o horário no novo fuso; o tripulante testa todo remédio novo no solo, lê a composição dos produtos combinados e procura o examinador quando o tratamento for contínuo. Durante o voo, ninguém toma remédio cujo efeito ainda não conhece, e o tripulante não toma nenhum que dê sono. Depois, quem sentir sono, tontura ou visão alterada não volta ao comando até o efeito passar e o prazo de espera terminar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v2-1-comprimido.jpg'), legenda: "No voo, os efeitos que importam são o sono, a tontura, a visão e o raciocínio." } },
           {
             paragrafo: 2,
             tabela: {
@@ -92,6 +93,8 @@ export const farmacologia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v2-1-farmaceutica.jpg'), legenda: "Avisar o médico e o farmacêutico de que se é piloto pode mudar a escolha do remédio." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v2-voo.mp4'), legenda: "Remédio para dormir a bordo: no idoso, soma confusão, quedas e horas imóvel, o que favorece a trombose." } },
           {
             paragrafo: 7,
             tabela: {
@@ -122,6 +125,7 @@ export const farmacologia: Capitulo = {
           "**Como prevenir e amenizar.** Antes de comprar qualquer remédio, o tripulante lê a composição e confere se há antialérgico antigo, codeína ou descongestionante; prefere os antialérgicos que não dão sono, o corticoide nasal e o soro para o nariz; e, para viagens a áreas de malária, pede ao médico um remédio aceito pela autoridade. No uso contínuo, informa o examinador antes de começar e cumpre o período de observação. O passageiro testa em casa o remédio contra enjoo e evita dirigir enquanto o sono durar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v2-2-composicao.jpg'), legenda: "A decisão junta a doença, o remédio e a estabilidade do tratamento." } },
           { paragrafo: 2, midia: 'semaforo-remedio' },
           {
             paragrafo: 3,
@@ -291,6 +295,7 @@ export const farmacologia: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'combina-remedio' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m3v2-4-coleta.jpg'), legenda: "O exame toxicológico procura álcool, opiáceos, canabinoides, cocaína e anfetaminas." } },
           {
             paragrafo: 5,
             tabela: {
