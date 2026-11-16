@@ -27,7 +27,8 @@ import { GestacaoSemanas, MenopausaVoo, MulherVoo, PilulaFuso, PosPartoVoo } fro
 import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/components/midia/m2v14-graficos';
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
 import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
-import { AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
+import { AnimacaoMeiaVida, AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
+import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
 import { DesmaioConvulsao, DoencasProgressivas, GatilhosCerebro, GravidadeTce, PrazoAvc, PrazoConvulsao, RemediosEnxaqueca } from '@/components/midia/m2v6-graficos';
@@ -237,6 +238,11 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'quem-examina': () => <QuemExamina />,
   'triagem-coronaria': () => <TriagemCoronaria />,
   'animacao-regra-1': () => <AnimacaoRegra1 />,
+  'remedio-voo': () => <RemedioVoo />,
+  'semaforo-remedio': () => <SemaforoRemedio />,
+  'espera-remedio': () => <EsperaRemedio />,
+  'combina-remedio': () => <CombinaRemedio />,
+  'animacao-meia-vida': () => <AnimacaoMeiaVida />,
   'tipo-voo-coracao': () => <TipoVooCoracao />,
   'tipo-voo-ossos': () => <TipoVooOssos />,
   'tipo-voo-impacto': () => <TipoVooImpacto />,
@@ -444,6 +450,11 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'quem-examina': 'Quem examina',
   'triagem-coronaria': 'Triagem do coração do tripulante',
   'animacao-regra-1': 'A regra do 1%',
+  'remedio-voo': 'O remédio no corpo que voa',
+  'semaforo-remedio': 'Semáforo dos remédios do tripulante',
+  'espera-remedio': 'Quanto esperar depois da última dose',
+  'combina-remedio': 'Combinações que pesam no voo',
+  'animacao-meia-vida': 'A meia-vida do remédio',
   'tipo-voo-coracao': 'O coração em cada tipo de voo',
   'tipo-voo-ossos': 'Coluna, ossos e músculos em cada tipo de voo',
   'tipo-voo-impacto': 'O impacto em cada tipo de voo',

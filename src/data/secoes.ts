@@ -19,6 +19,7 @@ import { mulher } from './capitulos/mulher';
 import { rins } from './capitulos/rins';
 import { envelhecimento } from './capitulos/envelhecimento';
 import { certificacao } from './capitulos/certificacao';
+import { farmacologia } from './capitulos/farmacologia';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -100,7 +101,7 @@ export const secoes: Secao[] = [
     sinopse: 'Quem pode voar e como voar com segurança: certificação, fatores humanos, emergências a bordo, acidentes e perícias.',
     capitulos: [
       certificacao,
-      cap(2, 'Farmacologia aeroespacial', ['Medicamentos permitidos', 'Afastamento', 'Interações']),
+      farmacologia,
       cap(3, 'Seleção e treinamento', ['Seleção', 'Treinamento fisiológico', 'Formação']),
       cap(4, 'Fatores humanos e CRM', ['SHELL, Reason e HFACS', 'Consciência situacional', 'CRM e TEM', 'Automação']),
       cap(5, 'Segurança de voo', ['SMS', 'Cultura justa', 'Dados de voo', 'CENIPA', 'Incapacitação em voo']),
