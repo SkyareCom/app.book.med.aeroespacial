@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 1 — Pulmões, oxigênio e hipóxia (o número do voo é definido em secoes.ts).
 // 02/11/2026: título trocado de "Respiração e hipóxia" para "Pulmões, oxigênio e hipóxia", com autorização do autor
 //   (padrão dos títulos da missão Sistemas); conteúdo intacto; hash refeito.
@@ -101,11 +104,12 @@ export const hipoxia: Capitulo = {
           "Ao nível do mar, a **pressão alveolar de oxigênio** fica perto de **100 mmHg**. A 8.000 ft (2.400 m), cai para **65 a 70 mmHg**, e a saturação de pessoas saudáveis costuma ficar entre **90% e 93%**, conforme a resposta da respiração.",
           "A **curva de dissociação da oxi-hemoglobina** explica o perigo: no início, a saturação resiste; depois de certo ponto, cada nova queda de pressão derruba a saturação cada vez mais rápido. Altitude, tempo de exposição, respiração e doenças mudam essa resposta. Descobrir em qual das quatro etapas o oxigênio falhou é o primeiro passo para corrigir.",
           "O corpo reage à queda. Em minutos, a **respiração** e o **coração** aceleram para levar mais oxigênio; em dias de altitude, o rim estimula a produção de mais **hemácias**. Na cabine, porém, o voo é curto demais para essa adaptação lenta: conta só a resposta imediata, que custa esforço e varia de pessoa para pessoa.",
+          "Quem percebe a falta de oxigênio são os **quimiorreceptores** dos **corpos carotídeos**, no pescoço, e do arco da aorta. Quando o oxigênio do sangue cai, eles disparam pelos nervos **glossofaríngeo** e **vago** até o **núcleo do trato solitário**, no bulbo, que aciona os **centros respiratórios** do tronco cerebral. Daí parte a ordem pelo **nervo frênico** ao diafragma: a respiração fica mais funda e mais rápida. O **sistema simpático** solta **noradrenalina** e **adrenalina**, que abrem os brônquios pelos receptores **beta-2**. Dentro das células, a hipóxia ativa o **HIF**, fator que liga os genes da **eritropoetina** e das enzimas que produzem energia sem oxigênio, e as hemácias produzem mais **2,3-DPG**, que ajuda a soltar o oxigênio nos tecidos (Veja M1V2).",
           "**Como prevenir e amenizar.** Cada etapa tem a sua proteção. No **ar**, a pressurização ou o oxigênio suplementar; a FAA recomenda oxigênio acima de **10.000 ft de dia** e acima de **5.000 ft à noite**, e a ICAO lembra que, acima de **10.000 ft** de cabine, o tripulante deve usar oxigênio. No **alvéolo**, controlar a doença do pulmão antes de voar (Veja M2V1 - VI). No **sangue**, tratar a **anemia** e evitar o **monóxido de carbono** (Veja M2V1 - II). No **tecido**, cuidar da circulação. A saturação cai com a altitude de forma previsível: cerca de **93%** a 8.000 ft, **89%** a 10.000 ft e **80%** a 15.000 ft em quem não tem doença.",
         ].join('\n\n'),
         recursos: [
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · caminho do oxigênio",
               colunas: ["Situação", "Passageiro", "Tripulante"],
@@ -134,7 +138,7 @@ export const hipoxia: Capitulo = {
           },
           { paragrafo: 4, midia: 'simulador-o2' },
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: 'O oxigênio do sangue em cada altitude',
               colunas: ['Altitude', 'Saturação aproximada', 'O que acontece'],
@@ -146,6 +150,21 @@ export const hipoxia: Capitulo = {
                 ['15.000 ft (4.550 m)', '80%', 'Todos prejudicados, alguns gravemente'],
                 ['20.000 ft (6.100 m)', '65%', 'Perda da consciência útil em cerca de 10 minutos'],
                 ['25.000 ft (7.600 m)', 'Abaixo de 60%', 'Consciência útil de 2,5 minutos ou menos'],
+              ],
+            },
+          },
+          { paragrafo: 6, midia: 'comando-hipoxia' },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · respiração e oxigênio",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Sensores", "Corpos carotídeos e aórticos, pelos nervos glossofaríngeo e vago", "Disparam quando o oxigênio do sangue cai e aumentam a respiração"],
+                ["Centro no sistema nervoso", "Núcleo do trato solitário e centros respiratórios do bulbo, com saída pelo nervo frênico", "Respiração mais funda e rápida; o gás carbônico cai e o sangue fica alcalino"],
+                ["Simpático", "Noradrenalina e adrenalina nos receptores beta-2 dos brônquios", "Brônquios mais abertos para passar mais ar"],
+                ["Parassimpático", "Nervo vago, com acetilcolina nos receptores muscarínicos M3 dos brônquios", "Fecha os brônquios e aumenta o muco; pesa na asma"],
+                ["Hormônios e enzimas", "HIF nas células, eritropoetina do rim e 2,3-DPG das hemácias", "Mais hemácias em dias, oxigênio solto mais fácil nos tecidos; os vasos do pulmão se fecham onde falta ar"],
               ],
             },
           },

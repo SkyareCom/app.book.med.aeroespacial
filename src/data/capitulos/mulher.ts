@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 · Voo 13 — Saúde da mulher. Ramo editorial voo/M2V13; fotos e vídeo entram depois da produção.
 // Gerado a partir de roteiro revisado (abertura + quatro tópicos de condição, no modelo de docs/modelo-sistemas.md).
 // REGISTRO DE REVISÃO · 11/11/2026. Normas e fontes primárias conferidas:
@@ -61,6 +64,7 @@ export const mulher: Capitulo = {
           "**Gás, nariz e ar seco.** Na gravidez, a progesterona deixa o intestino mais lento, e o **gás** preso se expande na subida e estufa a barriga (Veja M1V1 - II). A **rinite da gravidez** entope o nariz e dificulta abrir o ouvido na descida (Veja M2V3 - II). O **ar seco** da cabine, somado a **náuseas e vômitos** ou a uma **menstruação intensa**, desidrata e baixa a pressão; quem já tem **anemia** pelo sangramento sente mais a hipóxia (Veja M2V11 - II).",
           "**Jornada, fuso e radiação.** O **fuso horário** desloca o horário da **pílula** e dos hormônios, e uma dose atrasada além do limite deixa de proteger contra a gravidez. A **privação de sono** do trabalho em turnos foi associada a mais **abortos espontâneos**, além de pesar no desempenho (Veja M2V8 - V). E o **feto** é mais sensível à **radiação cósmica** que o adulto: depois de comunicada a gravidez, recomenda-se que ele receba no máximo **1 mSv** até o fim da gestação (Veja M1V5 - III).",
           "**Doenças, tratamentos e tipo de voo.** As condições deste voo são a **gestação** e suas complicações, o **parto**, a **perda gestacional** e a **gravidez ectópica**, a **cólica** e o **sangramento intenso**, a **endometriose**, a **contracepção hormonal** e a **menopausa**. A conduta vai do **expectante**, no ciclo normal e na gravidez sem complicação, ao **não invasivo**, com remédios, hormônios e meias de compressão, e ao **invasivo**: cesárea, curetagem e cirurgias ginecológicas, cada uma com o seu prazo. No jato **pressurizado**, pesam as horas sentada e a cabine a 8.000 ft; no avião leve **não pressurizado**, a altitude real e a falta de banheiro; no **helicóptero**, a vibração e os cintos sobre o abdome.",
+          "O ciclo começa no **hipotálamo**, que solta o **GnRH** em pulsos; a hipófise responde com o **LH** e o **FSH**, que comandam o ovário e a produção de **estrogênio** e **progesterona**. A progesterona estimula os **centros respiratórios** do tronco cerebral, e por isso a respiração fica mais funda na segunda metade do ciclo e na gestação. O útero recebe o **simpático**, que contrai pelos receptores **alfa-1** e relaxa pelos **beta-2**, e na gravidez a **ocitocina** da hipófise posterior comanda as contrações e a saída do leite. O estresse, o fuso e as jornadas alteram o pulso do GnRH e podem desregular o ciclo, e a placenta depende do oxigênio do sangue da mãe (Veja M2V13 - II e M2V8).",
           "**Como prevenir e amenizar.** Antes do voo, confira em que fase está e o que ela pede: a semana da gestação na ida e na volta, o horário da pílula no fuso de destino, a hemoglobina se o sangramento é intenso. Durante o voo longo, **beba água**, levante-se e mexa as panturrilhas, prefira o **corredor** e use o **cinto baixo**, sobre o quadril. A tripulante informa ao examinador a gravidez e qualquer remédio hormonal novo, porque ambos mudam a decisão sobre o certificado.",
         ].join('\n\n'),
         recursos: [
@@ -83,7 +87,7 @@ export const mulher: Capitulo = {
             },
           },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: "Como prevenir e amenizar · a mulher no voo",
               colunas: ["Situação", "Passageira", "Tripulante"],
@@ -91,6 +95,21 @@ export const mulher: Capitulo = {
                 ["Voo longo com pílula combinada, gravidez ou pós-parto", "Pode voar caminhando, com água e meias de compressão: o sangue coagula mais e a perna parada favorece a trombose", "Mexer as pernas nas pausas e hidratar, porque a jornada longa soma imobilidade ao risco hormonal"],
                 ["Viagem cruzando fusos", "Manter a pílula no horário de casa ou mudar aos poucos: o atraso além da janela tira a proteção", "Mesmo cuidado na escala, porque o horário muda a cada pernoite"],
                 ["Gravidez confirmada", "Pode voar se a gestação está sem complicação e dentro do limite da companhia: o risco é a complicação longe de ajuda (Veja M2V13 - II)", "Informar o examinador; no Brasil, a 1ª e a 2ª classes ficam não aptas, porque a função a bordo soma radiação, jornada e risco obstétrico"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-mulher' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · saúde da mulher",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Comando central", "GnRH do hipotálamo, LH e FSH da hipófise", "Estresse, fuso e jornadas alteram o pulso e podem desregular o ciclo"],
+                ["Hormônios do ovário", "Estrogênio e progesterona", "A progesterona estimula a respiração; o estrogênio aumenta o risco de trombose com a imobilidade"],
+                ["Simpático", "Noradrenalina nos receptores alfa-1 e beta-2 do útero", "Alfa-1 contrai e beta-2 relaxa o músculo do útero"],
+                ["Gestação", "Ocitocina da hipófise posterior e hormônios da placenta", "Comandam contrações e leite; a placenta depende do oxigênio da mãe"],
+                ["Centro respiratório", "Tronco cerebral, estimulado pela progesterona", "Respiração mais funda na gestação e na segunda metade do ciclo"],
               ],
             },
           },

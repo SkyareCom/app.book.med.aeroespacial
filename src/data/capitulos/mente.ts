@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão 2 (Sistemas) · Voo 7 — Saúde mental e comportamento (o número do voo é definido em secoes.ts).
 // Escrito no modelo de Sistemas (docs/modelo-sistemas.md), com o detalhamento prático do padrão do jet lag, em
 // 04/11/2026, a pedido do autor ("Siga para o próximo voo"). A lista antiga (depressão e ansiedade, humor e
@@ -117,6 +120,7 @@ export const mente: Capitulo = {
           "O maior risco, muitas vezes, é **esconder**. A ICAO reconhece que proibir de forma absoluta faz o aviador evitar o tratamento ou não declarar a doença, e que o tripulante nem sempre conta ao examinador o remédio que toma. Por isso as autoridades caminharam para regras que permitem **tratar e voltar**: antidepressivos aceitos com acompanhamento e programas de apoio por pares.",
           "Para o tripulante, a regra é a mesma em toda a missão: o que pesa é a chance de **incapacitação**, súbita ou sutil. A ANAC e a ICAO listam os transtornos mentais que impedem a licença quando atrapalham o exercício seguro; a decisão é sempre individual, com psiquiatra e psicólogo. Para o passageiro, o ponto central é estar **estável** e com o tratamento em dia.",
           "**Doenças, tratamentos e tipo de voo.** As doenças da mente que mais pesam no voo são a **depressão**, a **ansiedade** e o **medo de voar**, o **transtorno bipolar** e as **psicoses**, e o uso de **álcool** e outras substâncias. O tratamento vai do **expectante**, com acompanhamento nas reações leves ao estresse, ao **não invasivo**, que resolve a maioria dos casos: **psicoterapia**, como a terapia cognitivo-comportamental, e remédios. O tratamento **invasivo** é raro e fica para os casos graves: a **internação** e a **eletroconvulsoterapia**, feita sob anestesia. Tratada cedo, a doença costuma permitir a volta ao voo; escondida, piora e afasta por mais tempo. No avião **não pressurizado**, a hipóxia acima de 10.000 ft soma lentidão ao raciocínio; no **helicóptero**, muitas operações têm um só piloto, e a restrição a voar com copiloto, comum na liberação, não se cumpre.",
+          "O medo e o estresse têm endereço no cérebro. A **amígdala** detecta a ameaça e aciona o **hipotálamo**, que dispara dois caminhos: o rápido, pelo **simpático** e pela **adrenalina** da suprarrenal, que acelera o coração e a respiração; e o lento, o **eixo hipotálamo-hipófise-suprarrenal**, em que o **CRH** do hipotálamo libera o **ACTH** da hipófise e este, o **cortisol**. O **locus coeruleus**, no tronco cerebral, espalha **noradrenalina** pelo cérebro e mantém a vigilância, e os núcleos da **rafe** produzem a **serotonina**, ligada ao humor, que é o alvo dos antidepressivos. Na ansiedade, a respiração acelerada pode causar **hiperventilação**, que imita a hipóxia, e a hipóxia, por sua vez, pode trazer euforia e julgamento pior (Veja M2V1 - V).",
           "**Como prevenir e amenizar.** Antes de cada voo, passe pelo checklist **IMSAFE** da FAA: doença, remédio, estresse, álcool nas últimas 24 horas, fadiga, alimentação e emoção. Não leve os problemas para o cockpit: se a cabeça não está no voo, diga. Durma, coma e beba água. O passageiro ansioso planeja a viagem com calma, leva o tratamento em dia e avisa a tripulação se precisar de ajuda.",
         ].join('\n\n'),
         recursos: [
@@ -139,7 +143,7 @@ export const mente: Capitulo = {
           },
           { paragrafo: 4, figura: foto(require('@/assets/images/topicos/m2v7-1-hotel.jpg'), 'Pernoite longe de casa, fuso e sono curto pesam sobre o humor.') },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: 'Como prevenir e amenizar · a mente no voo',
               colunas: ['Momento', 'Passageiro', 'Tripulante'],
@@ -149,6 +153,21 @@ export const mente: Capitulo = {
                 ["Álcool", "Moderação; nada de beber para dormir: o álcool fragmenta o sono e soma-se aos remédios", "Nada nas horas antes do voo (FAA: 8 h; IMSAFE: 24 h), porque o efeito no julgamento dura mais que a sensação"],
                 ["Durante", "Água, respiração calma, avisar a tripulação se precisar: a ajuda cedo evita que a crise cresça", "Dizer quando a cabeça não está no voo, porque a distração é incapacitação sutil"],
                 ["Depois", "Procurar ajuda se o medo ou o humor pesarem: tratados, deixam de limitar as viagens", "Conversar com um colega ou com o programa de apoio, porque tratar cedo devolve ao voo mais rápido"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-mente' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · mente e emoções",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Detector de ameaça", "Amígdala, ligada ao hipotálamo", "Dispara a resposta de medo diante de turbulência ou emergência"],
+                ["Simpático", "Hipotálamo, simpático e adrenalina da suprarrenal", "Coração e respiração rápidos; pode levar à hiperventilação"],
+                ["Eixo do estresse", "CRH do hipotálamo, ACTH da hipófise e cortisol da suprarrenal", "O cortisol sobe na altitude e no estresse prolongado e pesa no sono e no humor"],
+                ["Vigilância", "Locus coeruleus, que espalha noradrenalina pelo cérebro", "Mantém a atenção; em excesso, aumenta a ansiedade"],
+                ["Humor", "Núcleos da rafe, que produzem serotonina", "Alvo dos antidepressivos; a hipóxia pode trazer euforia e julgamento pior"],
               ],
             },
           },

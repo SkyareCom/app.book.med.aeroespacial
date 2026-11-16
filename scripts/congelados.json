@@ -1,5 +1,5 @@
 {
- "autorizado": "12/11/2026; M3V1 em 15/11/2026",
+ "autorizado": "12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026",
  "voos": [
   "M2V2",
   "M2V3",
@@ -17,7 +17,7 @@
   "M3V1"
  ],
  "arquivos": {
-  "src/data/capitulos/coracao.ts": "21b64bd132fd631fbdada1f115982a95aeccd35d",
+  "src/data/capitulos/coracao.ts": "3c37d6e204d128e460f885c3e2645e4c759fa84c",
   "src/components/midia/m2v2-graficos.tsx": "45a7aba40e9ca0e05e2152dd779117bde476a0cc",
   "src/data/liberacao/cardiovascular.ts": "85529893a356525dfcacc5279c0c69382a63de08",
   "assets/images/topicos/m2v2-1-cabine.jpg": "a3ba4be8d603abe72183c841e27f5a8e71d83714",
@@ -35,7 +35,7 @@
   "assets/images/topicos/m2v2-6-oxigenio.jpg": "42548e56035771bb7a85f63d9a0b50cc827480d8",
   "assets/images/topicos/m2v2-7-panturrilha.jpg": "f19eccb2b999fdbed6beaed79526ca669523ec07",
   "assets/images/topicos/m2v2-7-meia.jpg": "6c1b42dd41a40fc6e08c8ff2220adf92d0c748ea",
-  "src/data/capitulos/ouvidos.ts": "a6ac23b90c5b104d189c7c0e6af0f72c917a8260",
+  "src/data/capitulos/ouvidos.ts": "5de619f4f020f9bd50006a7a887ad6527d9d9975",
   "src/components/midia/m2v3-graficos.tsx": "1667920173eecacd72a365b45ac007da2a5f99f7",
   "src/data/liberacao/ouvidos.ts": "85f919d422ccd3276f202722d6667246782e29aa",
   "assets/images/topicos/m2v3-1-descida.jpg": "63408a7d6439024a461d4651b5d712200e0fa696",
@@ -51,7 +51,7 @@
   "assets/images/topicos/m2v3-5-spray.jpg": "e0d6a0efdbf6525679713668b3a36212d9303b8f",
   "assets/images/topicos/m2v3-6-dentista.jpg": "677659537ff416e8c1452a985a14d6d5e57f2010",
   "assets/images/topicos/m2v3-6-radiografia.jpg": "8d99d606983d5e8db09abc64103a5599b5f2d688",
-  "src/data/capitulos/olhos.ts": "5d873c6c35123cf87c566cea95e0c06e36f879c7",
+  "src/data/capitulos/olhos.ts": "5100abbd44f68c7d0f651c6e62b47227f19fc17f",
   "src/components/midia/m2v4-graficos.tsx": "64b82529fc53f1d9c6b10086db96dc9fc0bdfcf5",
   "src/data/liberacao/olhos.ts": "54b9460e1243938a2ab035612140363f8a4af770",
   "assets/images/topicos/m2v4-1-nuvens.jpg": "5efec3c178bfd721785b64ac02cfca32e4f29aa5",
@@ -71,7 +71,7 @@
   "assets/images/topicos/m2v4-7-tonometria.jpg": "cb197e6e8f302a15ee334ffe4aa3f2ee5a6347f3",
   "assets/images/topicos/m2v4-8-laser.jpg": "9b8dc1692022c8a07fc61c870ade2ef748111308",
   "assets/images/topicos/m2v4-8-protetor.jpg": "af0810575b9367100f5ea1449a57d35868464300",
-  "src/data/capitulos/orientacao.ts": "9ad9a44a71455134ba178c85e80c6bc25cdac520",
+  "src/data/capitulos/orientacao.ts": "74a7e8ab1a7ff62f7e50c9892f948c251ad7e724",
   "src/components/midia/m2v5-graficos.tsx": "75ab6cf010b4d81f07968f618305c6224667412b",
   "src/data/liberacao/orientacao.ts": "c2325f686c7b560def01ff22cb3727206be6b8c7",
   "assets/images/topicos/m2v5-1-horizonte.jpg": "a4674a23e6125aa85652267df0154865f9d5fa44",
@@ -88,7 +88,7 @@
   "assets/images/topicos/m2v5-5-simulador.jpg": "b9c1d6e581b84abebff112da6a2257b1c1a9281b",
   "assets/images/topicos/m2v5-6-enjoo.jpg": "0c496c88527e80d3a44a1111b093f0470b998ef2",
   "assets/images/topicos/m2v5-6-janela.jpg": "4ab44a9a8b4265f9077b87e2a03c22554f5c2822",
-  "src/data/capitulos/cerebro.ts": "de362adaa717a083a3e49f38962dcb67d6d26130",
+  "src/data/capitulos/cerebro.ts": "c5515d089013065aedd8c7d4b07cc391e7390b34",
   "src/components/midia/m2v6-graficos.tsx": "2c462589ed4722de0938ad7af7ea6bf7f5532f13",
   "src/data/liberacao/cerebro.ts": "d93a6d2c03ab8bdf37fbfcf366a0ca459dc83752",
   "assets/images/topicos/m2v6-1-piloto.jpg": "df68001c58157b2a18a73e3a766a7836610557a0",
@@ -106,7 +106,7 @@
   "assets/images/topicos/m2v6-6-ressonancia.jpg": "2866238c7c3f4c0717d9b5fd7065f3ca0fbf826d",
   "assets/images/topicos/m2v6-7-tremor.jpg": "92ca49a0c31ad178826b7ba2c233791882263ded",
   "assets/images/topicos/m2v6-7-cadeira.jpg": "a122a1a84fd1fa89f89a8aa91b2a6edc70e83cc1",
-  "src/data/capitulos/mente.ts": "6a2b798fc2b057ca5822ec0336e65ed453727f73",
+  "src/data/capitulos/mente.ts": "649d67d524d68addf2ad00181d384f7f5376c001",
   "src/components/midia/m2v7-graficos.tsx": "8c9da546de78edae1e1465bc70276b2d83134399",
   "src/data/liberacao/mente.ts": "c09644ff797728ccb88b65aafb7b7151740b0c36",
   "assets/images/topicos/m2v7-1-checklist.jpg": "2b2ceda139847f408bea1cee5f5097b0d1ec5d3b",
@@ -122,7 +122,7 @@
   "assets/videos/m2v7-pares.mp4": "bbac399851152ae99795c21dc83643ad7a6a23fd",
   "assets/images/topicos/m2v7-6-pares.jpg": "9e7e1e6d2f01e270991f27a966ce872cdb246ca9",
   "assets/images/topicos/m2v7-6-telefone.jpg": "0e97882059dcb72d6ac6231bbd7315ec48963421",
-  "src/data/capitulos/sono.ts": "49bebc9699c46553e9ec1eec37d9c7d57107d43c",
+  "src/data/capitulos/sono.ts": "025ed175114aec03d1bce3a9a427b3f4b83029eb",
   "src/components/midia/m2v8-graficos.tsx": "b94485af5ce2dd4bb4296f7663a605e5ec3a6d6b",
   "src/data/liberacao/sono.ts": "83ad2434d31558f7fe7a70d8a17127836ac77569",
   "assets/images/topicos/m2v8-1-amanhecer.jpg": "e6994bf215a04272cf0288f3610605040dab8821",
@@ -141,7 +141,7 @@
   "assets/images/topicos/m2v8-6-revezamento.jpg": "e0a7c2151cd7d6fca7815d5e834447baf64d5e1a",
   "assets/images/topicos/m2v8-7-quarto.jpg": "33fb5962824076020d7d167b63f887dc979169cb",
   "assets/images/topicos/m2v8-7-estudo.jpg": "f8cb14a11cf96507b137e9b59876b856d9c29e5b",
-  "src/data/capitulos/hormonios.ts": "50be0d29b6bcb9f0e1ba2806d7d06c89ccaae3d3",
+  "src/data/capitulos/hormonios.ts": "54b4c2ec080960e3298235e7789887624a32377d",
   "src/components/midia/m2v9-graficos.tsx": "f0f4d3c1abcdc072902d0118e7504791ebac134d",
   "src/data/liberacao/hormonios.ts": "2d06211a08383338de11d71af20c5852ef292366",
   "assets/images/topicos/m2v9-1-refeicao.jpg": "0761602359fd98770f2ea96d28f1985ff967b07a",
@@ -155,7 +155,7 @@
   "assets/images/topicos/m2v9-4-aeroporto.jpg": "10837df00a26a01c3ab8f8adcc87a05205573164",
   "assets/images/topicos/m2v9-5-panturrilha.jpg": "941c0ea5c08e60ae876def9f5968c282a0bec44d",
   "assets/images/topicos/m2v9-5-cpap.jpg": "c947fa96df05def4f743342fa0007b9ecf9050a8",
-  "src/data/capitulos/sangue-imunidade.ts": "6926f51bfa70f0b7751c8a5c9f01b5a91cfb4648",
+  "src/data/capitulos/sangue-imunidade.ts": "25c22c3d97233614b6b485244f1fba18996f9fa1",
   "src/components/midia/m2v11-graficos.tsx": "53bf8bda57722a2b18f05e7066c172dac25ede27",
   "src/data/liberacao/sangue-imunidade.ts": "985d39b00b15a963bfca67792722659d45c247ae",
   "assets/images/topicos/m2v11-1-sangue-altitude.jpg": "d3bea0cf4dfbfed0331e4a4e714369dbed3eb122",
@@ -171,7 +171,7 @@
   "assets/images/topicos/m2v11-5-medicamentos.jpg": "17b6194efc7dcd090ab17a485113e11fa9545898",
   "assets/images/topicos/m2v11-6-vacinacao.jpg": "012ffc5ec06747f5c46b117cecf525fd785af792",
   "assets/images/topicos/m2v11-6-carteira.jpg": "13e24b70bc834103d6e6186e2ab7e2a226adac46",
-  "src/data/capitulos/ossos-musculos.ts": "b6ca749f927c326346ecb2ee9e0ac7644aa458c0",
+  "src/data/capitulos/ossos-musculos.ts": "c2338cb54acfe3ed80376fe7e6e6c0518c89a5e6",
   "src/components/midia/m2v12-graficos.tsx": "5b3b029ef17baea45401f76b8db14c3d10568f9e",
   "src/data/liberacao/ossos-musculos.ts": "ee8f1f3c00c395c6f86a6cca12dcf3165782b2f7",
   "assets/images/topicos/m2v12-1-assistencia.jpg": "91cb1679df5bbec805e8bb8435eafa78c3b51624",
@@ -185,7 +185,7 @@
   "assets/images/topicos/m2v12-4-protese.jpg": "ed10e8cac77b1abdd2cf7b7750cb888b4159c128",
   "assets/images/topicos/m2v12-5-caca.jpg": "9915500946d0b532db3e00c7d237f4aaba108872",
   "assets/images/topicos/m2v12-5-exercicio.jpg": "f577d6fe8e5f2e9d0140e339d8f0c7acf32a9c3f",
-  "src/data/capitulos/mulher.ts": "7331caa09f6b3adfe51d9cf48e2e28bfcb7462db",
+  "src/data/capitulos/mulher.ts": "511dc63932698e68e85a56db8508120601074e4f",
   "src/components/midia/m2v13-graficos.tsx": "8b14f2d94902e59928ff99f5698a59e80cc4924d",
   "src/data/liberacao/mulher.ts": "f10e206bff5eae8fac598514b723607fd31cb385",
   "assets/images/topicos/m2v13-1-nariz.jpg": "e62a56c7fa5fb4986e7a184e4a5ac0f35d09f741",
@@ -199,7 +199,7 @@
   "assets/images/topicos/m2v13-4-colica.jpg": "404c5d8bca243aacf9b669e40d3149ae27b91f6e",
   "assets/images/topicos/m2v13-5-calor.jpg": "31b29baff21ee165e70fedb2153235c9b62ba7bc",
   "assets/images/topicos/m2v13-5-exercicio.jpg": "e01e2b6293a9a9a6d6a787117ac9bd3d2d06aa93",
-  "src/data/capitulos/rins.ts": "8512fe2b0b00b0994c9cf3242c89f26d48555eb7",
+  "src/data/capitulos/rins.ts": "2cb793511879a65fcb5de79f79efe3bbad5a9461",
   "src/components/midia/m2v14-graficos.tsx": "90536894296d346472ed2b5f2bbfa7d2a5e21cbc",
   "src/data/liberacao/rins.ts": "22165dbdca1f6df22570279db3a7030192e28eaa",
   "assets/images/topicos/m2v14-1-agua.jpg": "767c5801525d49554bdb1169472cb134796ab485",
@@ -216,7 +216,7 @@
   "assets/images/topicos/m2v14-5-exame.jpg": "6515d3b077a82bac5af89e0c04432a504d7b1ef9",
   "assets/images/topicos/m2v14-5-recuperacao.jpg": "1d0798d640f4e7a3496e641d36bbd7c5cccfb7e2",
   "assets/images/topicos/m2v14-5-relatorio.jpg": "d63635ea86380b91a4bb5885a3b137ccde4b5485",
-  "src/data/capitulos/envelhecimento.ts": "293c6edac8c08b7bc904917eeb8ce36520451303",
+  "src/data/capitulos/envelhecimento.ts": "160b196558ddbaf7fed3cc336d8d5c6c79e17fdb",
   "src/components/midia/m2v15-graficos.tsx": "714bb4996e151264f3232534828346093aca0052",
   "src/data/liberacao/envelhecimento.ts": "48370999184b7daf7bf3292ee1d379e8bc61cad9",
   "assets/images/topicos/m2v15-1-janela.jpg": "8c044df24729953fbc0bdb1b1c3b2c61c120ee4c",
@@ -246,7 +246,9 @@
   "assets/images/topicos/m3v1-6-tomografia.jpg": "40df5a3aa1865b3716b0f31f729c25b7522dd24f",
   "assets/images/topicos/m3v1-6-pares.jpg": "3d452a39cbaeac93c3e9994f9d4e7df8a48e7d35",
   "src/app/liberacao-voo.tsx": "26312840acdaaf0a205485c1b3a2c581f2ea8199",
-  "src/lib/liberacao.ts": "f9c5b2fbf949ad6bc21c27a01d550d163b3e0f7d"
+  "src/lib/liberacao.ts": "f9c5b2fbf949ad6bc21c27a01d550d163b3e0f7d",
+  "src/data/comando-sistemas.ts": "7d0d367bad11dcb71c6f707bc81edf59d6ec169b",
+  "src/components/midia/comando-sistemas.tsx": "7eb89fc3bfee460e18186cdc8690d8d7f6c0c86d"
  },
  "animacoes": "d7ff759635d80900b7f315baa6146aca615c5817",
  "animacoesAviacao": "669cdfa096e9e6d4108795f45fe2bcb3733ccada",
@@ -2995,6 +2997,10 @@
    "The **1% rule** was born in the early 1980s, at aviation cardiology meetings, to decide which pilots with heart disease could fly. The idea was to treat the pilot's body as any critical aircraft system is treated, which must cause a catastrophic failure less than **once every 1 billion hours** of flight. The same target came to apply to fatal accidents with a medical cause.",
    "La **regla del 1%** nació a comienzos de los años 1980, en reuniones de cardiología aeronáutica, para decidir qué pilotos con enfermedad del corazón podían volar. La idea fue tratar el cuerpo del piloto como se trata cualquier sistema crítico de la aeronave, que debe causar un fallo catastrófico menos de **1 vez cada 1.000 millones de horas** de vuelo. La misma meta pasó a valer para los accidentes mortales de causa médica."
   ],
+  "A **retina** é um dos tecidos que mais gastam oxigênio no corpo, e os **bastonetes**, que enxergam no escuro, são os primeiros a sentir a hipóxia: a visão noturna cai antes de qualquer outro sinal. A pupila tem dois comandos: o **parassimpático**, que nasce no **núcleo de Edinger-Westphal**, segue pelo **nervo oculomotor** e contrai a pupila e o músculo do foco pela **acetilcolina** nos receptores **M3**; e o **simpático**, que sobe pelo **gânglio cervical superior** e dilata a pupila pela **noradrenalina** nos receptores **alfa-1**. A imagem segue pelo **nervo óptico** até o **córtex visual**, no lobo occipital, e a **vitamina A** é a base do pigmento que capta a luz nos bastonetes (Veja M2V1).": [
+   "The **retina** is one of the tissues that uses the most oxygen in the body, and the **rods**, which see in the dark, are the first to feel hypoxia: night vision falls before any other sign. The pupil has two controls: the **parasympathetic**, which arises in the **Edinger-Westphal nucleus**, travels along the **oculomotor nerve** and constricts the pupil and the focusing muscle through **acetylcholine** on **M3** receptors; and the **sympathetic**, which rises through the **superior cervical ganglion** and dilates the pupil through **noradrenaline** on **alpha-1** receptors. The image travels along the **optic nerve** to the **visual cortex**, in the occipital lobe, and **vitamin A** is the basis of the pigment that captures light in the rods (See M2V1).",
+   "La **retina** es uno de los tejidos que más oxígeno gastan en el cuerpo, y los **bastones**, que ven en la oscuridad, son los primeros en sentir la hipoxia: la visión nocturna cae antes que cualquier otra señal. La pupila tiene dos mandos: el **parasimpático**, que nace en el **núcleo de Edinger-Westphal**, sigue por el **nervio oculomotor** y contrae la pupila y el músculo del enfoque por la **acetilcolina** en los receptores **M3**; y el **simpático**, que sube por el **ganglio cervical superior** y dilata la pupila por la **noradrenalina** en los receptores **alfa-1**. La imagen sigue por el **nervio óptico** hasta la **corteza visual**, en el lóbulo occipital, y la **vitamina A** es la base del pigmento que capta la luz en los bastones (Ver M2V1)."
+  ],
   "A **síncope** é a perda rápida da consciência e do tônus por falta de sangue no cérebro inteiro, com recuperação sozinha. Acontece com **3%** da população. A mais comum é a **vasovagal** (reflexa): a pressão cai, às vezes com o coração lento, e a pessoa amolece e escorrega. A síncope **súbita**, sem aviso, quase sempre vem do **coração** (Veja M2V2 - IV).": [
    "**Syncope** is a rapid loss of consciousness and muscle tone from lack of blood to the whole brain, with spontaneous recovery. It happens to **3%** of the population. The most common is **vasovagal** (reflex) syncope: blood pressure drops, sometimes with a slow heart, and the person goes limp and slumps. **Sudden** syncope, without warning, almost always comes from the **heart** (See M2V2 - IV).",
    "El **síncope** es la pérdida rápida de la conciencia y del tono por falta de sangre en todo el cerebro, con recuperación espontánea. Le ocurre al **3%** de la población. El más común es el **vasovagal** (reflejo): la presión cae, a veces con el corazón lento, y la persona se afloja y se desliza. El síncope **súbito**, sin aviso, casi siempre viene del **corazón** (Ver M2V2 - IV)."
@@ -3523,6 +3529,10 @@
    "Haemoglobin carries oxygen; with less of it, there is less margin in the cabin.",
    "La hemoglobina transporta el oxígeno; con menos de ella, queda menos margen en la cabina."
   ],
+  "A hemoglobina solta o oxigênio com mais facilidade nos tecidos": [
+   "Haemoglobin releases oxygen more easily in the tissues",
+   "La hemoglobina suelta el oxígeno con más facilidad en los tejidos"
+  ],
   "A hiperventilação baixa o gás carbônico e causa formigamento e espasmos: o sangue fica alcalino, sobra menos cálcio livre, e nervos e músculos ficam irritáveis": [
    "Hyperventilation lowers carbon dioxide and causes tingling and spasms: the blood becomes alkaline, less free calcium remains, and nerves and muscles become irritable",
    "La hiperventilación baja el dióxido de carbono y causa hormigueo y espasmos: la sangre se vuelve alcalina, queda menos calcio libre, y los nervios y los músculos se vuelven irritables"
@@ -3554,6 +3564,10 @@
   "A hipóxia altera o julgamento antes dos sinais visíveis, e a pessoa pode não perceber que está em perigo.": [
    "Hypoxia impairs judgment before visible signs appear, and the person may not realize they are in danger.",
    "La hipoxia altera el juicio antes de los signos visibles, y la persona puede no darse cuenta de que está en peligro."
+  ],
+  "A hipóxia deixa a percepção mais lenta e estreita o campo": [
+   "Hypoxia slows perception and narrows the field",
+   "La hipoxia hace la percepción más lenta y estrecha el campo"
   ],
   "A hipóxia é traiçoeira: **começa sem dor e sem falta de ar clara**. O julgamento, a atenção e a coordenação pioram enquanto a pessoa ainda se sente bem. Essa distância entre o que se sente e o que se consegue fazer é o maior risco a bordo.": [
    "Hypoxia is treacherous: **it starts without pain and without clear shortness of breath**. Judgment, attention and coordination deteriorate while the person still feels fine. This gap between what one feels and what one can do is the greatest risk on board.",
@@ -3911,6 +3925,10 @@
    "The pressure inside the eye resists the incoming blood; vision fails before the brain loses consciousness.",
    "La presión dentro del ojo resiste a la sangre que llega; la visión falla antes de que el cerebro pierda la conciencia."
   ],
+  "A pressão do ouvido médio depende de um gesto muscular: ao engolir ou bocejar, o músculo **tensor do véu palatino**, comandado pelo **nervo trigêmeo**, abre a **tuba auditiva** e equaliza o ar. O nariz é regulado pelo **sistema nervoso autônomo**: o **simpático**, pela **noradrenalina** nos receptores **alfa** dos vasos, desincha a mucosa, e é nesse ponto que agem os descongestionantes; o **parassimpático**, pelo nervo que passa no **gânglio pterigopalatino**, aumenta o muco e o inchaço. No resfriado e na alergia, a **histamina** e outros mediadores incham a mucosa e fecham a tuba. O som chega pelo **nervo coclear** aos núcleos do tronco e ao **córtex auditivo**, no lobo temporal (Veja M1V1 - II).": [
+   "Middle-ear pressure depends on a muscular action: when swallowing or yawning, the **tensor veli palatini** muscle, controlled by the **trigeminal nerve**, opens the **Eustachian tube** and equalises the air. The nose is regulated by the **autonomic nervous system**: the **sympathetic** branch, through **noradrenaline** on the vessels' **alpha** receptors, shrinks the mucosa, and this is where decongestants act; the **parasympathetic** branch, through the nerve passing the **pterygopalatine ganglion**, increases mucus and swelling. In colds and allergy, **histamine** and other mediators swell the mucosa and close the tube. Sound travels along the **cochlear nerve** to the brainstem nuclei and the **auditory cortex**, in the temporal lobe (See M1V1 - II).",
+   "La presión del oído medio depende de un gesto muscular: al tragar o bostezar, el músculo **tensor del velo del paladar**, comandado por el **nervio trigémino**, abre la **trompa auditiva** e iguala el aire. La nariz está regulada por el **sistema nervioso autónomo**: el **simpático**, por la **noradrenalina** en los receptores **alfa** de los vasos, deshincha la mucosa, y es ahí donde actúan los descongestionantes; el **parasimpático**, por el nervio que pasa por el **ganglio pterigopalatino**, aumenta el moco y la hinchazón. En el resfriado y la alergia, la **histamina** y otros mediadores hinchan la mucosa y cierran la trompa. El sonido llega por el **nervio coclear** a los núcleos del tronco y a la **corteza auditiva**, en el lóbulo temporal (Ver M1V1 - II)."
+  ],
   "A pressão do oxigênio cai: 108 mmHg a 8.000 ft e 70 mmHg a 18.000 ft; começa a hipóxia; com menos pressão, menos oxigênio passa do pulmão ao sangue, e o cérebro é o primeiro a sentir": [
    "Oxygen pressure falls: 108 mmHg at 8,000 ft and 70 mmHg at 18,000 ft; hypoxia begins; with less pressure, less oxygen passes from the lung into the blood, and the brain is the first to feel it",
    "La presión del oxígeno cae: 108 mmHg a 8.000 ft y 70 mmHg a 18.000 ft; comienza la hipoxia; con menos presión, menos oxígeno pasa del pulmón a la sangre, y el cerebro es el primero en notarlo"
@@ -3942,6 +3960,10 @@
   "A primeira defesa é **conhecer a ilusão**. Sentir no chão como o labirinto engana, numa **cadeira de Bárány** ou num **simulador de desorientação**, ensina a reconhecer o conflito quando ele aparecer no voo. A ICAO recomenda que o piloto veja o instrutor demonstrar as manobras que provocam desorientação.": [
    "The first defense is **knowing the illusion**. Feeling on the ground how the inner ear deceives, in a **Bárány chair** or a **disorientation simulator**, teaches you to recognize the conflict when it shows up in flight. ICAO recommends that pilots have an instructor demonstrate the maneuvers that cause disorientation.",
    "La primera defensa es **conocer la ilusión**. Sentir en tierra cómo engaña el laberinto, en una **silla de Bárány** o en un **simulador de desorientación**, enseña a reconocer el conflicto cuando aparezca en vuelo. La OACI recomienda que el piloto vea al instructor demostrar las maniobras que provocan desorientación."
+  ],
+  "A progesterona estimula a respiração; o estrogênio aumenta o risco de trombose com a imobilidade": [
+   "Progesterone stimulates breathing; oestrogen increases the risk of thrombosis with immobility",
+   "La progesterona estimula la respiración; el estrógeno aumenta el riesgo de trombosis con la inmovilidad"
   ],
   "A proporção dos gases se mantém na faixa de voo; o que cai é a pressão, que perto de 18.000 ft é metade da do nível do mar.": [
    "The proportion of gases holds within the flight range; what falls is pressure, which near 18,000 ft is half that at sea level.",
@@ -4531,6 +4553,10 @@
    "Miscarriage, threatened or complete",
    "Aborto espontáneo, amenazado o completo"
   ],
+  "Abre a tuba ao engolir; na descida, se ela não abre, a pressão de fora empurra o tímpano": [
+   "Opens the tube when swallowing; on descent, if it does not open, outside pressure pushes the eardrum",
+   "Abre la trompa al tragar; en el descenso, si no se abre, la presión de fuera empuja el tímpano"
+  ],
   "Abre o kit médico; o kit mínimo da FAA não precisa ter antipsicótico nem benzodiazepínico.": [
    "Opens the medical kit; the FAA minimum kit does not have to contain an antipsychotic or a benzodiazepine.",
    "Abre el botiquín médico; el botiquín mínimo de la FAA no tiene por qué incluir antipsicótico ni benzodiacepina."
@@ -4538,6 +4564,18 @@
   "Abre os brônquios em minutos": [
    "Opens the airways within minutes",
    "Abre los bronquios en minutos"
+  ],
+  "Abre os vasos no esforço e prepara o músculo para agir": [
+   "Opens the vessels during exertion and prepares the muscle for action",
+   "Abre los vasos en el esfuerzo y prepara el músculo para actuar"
+  ],
+  "Abrem as coronárias e os vasos do cérebro onde falta oxigênio": [
+   "Open the coronary and brain vessels where oxygen is lacking",
+   "Abren las coronarias y los vasos del cerebro donde falta oxígeno"
+  ],
+  "Abrem na falta de oxigênio e fecham quando a hiperventilação baixa o gás carbônico": [
+   "Open when oxygen is lacking and narrow when hyperventilation lowers carbon dioxide",
+   "Se abren con la falta de oxígeno y se cierran cuando la hiperventilación baja el gas carbónico"
   ],
   "Abrigo montado junto à asa: perto da aeronave, a pessoa é mais fácil de achar, e o kit garante sinal, água e calor.": [
    "Shelter built next to the wing: near the aircraft, the person is easier to find, and the kit provides signalling, water and warmth.",
@@ -4666,6 +4704,14 @@
   "Acender o farol na direção do feixe": [
    "Turn the landing light toward the beam",
    "Encender el faro en dirección al haz"
+  ],
+  "Acetilcolina nos M3; noradrenalina nos beta-3 e alfa-1": [
+   "Acetylcholine on M3; noradrenaline on beta-3 and alpha-1",
+   "Acetilcolina en los M3; noradrenalina en los beta-3 y alfa-1"
+  ],
+  "Acetilcolina nos receptores nicotínicos do músculo": [
+   "Acetylcholine on the muscle's nicotinic receptors",
+   "Acetilcolina en los receptores nicotínicos del músculo"
   ],
   "Achado": [
    "Finding",
@@ -4867,6 +4913,14 @@
    "Adaptation with exposure; sedating medications incompatible with flying (FAA OTC Medications for Pilots).",
    "Adaptación con la exposición; medicamentos sedantes incompatibles con el vuelo (FAA OTC Medications for Pilots)."
   ],
+  "Adenosina acumulada no cérebro durante a vigília": [
+   "Adenosine accumulated in the brain during wakefulness",
+   "Adenosina acumulada en el cerebro durante la vigilia"
+  ],
+  "Adenosina e óxido nítrico, produzido pela enzima óxido nítrico sintase": [
+   "Adenosine and nitric oxide, made by the enzyme nitric oxide synthase",
+   "Adenosina y óxido nítrico, producido por la enzima óxido nítrico sintasa"
+  ],
   "Adesivo ou gel na pele": [
    "Patch or gel on the skin",
    "Parche o gel en la piel"
@@ -4946,6 +5000,14 @@
   "Adie; procure avaliação e siga orientação sanitária.": [
    "Postpone; seek evaluation and follow health guidance.",
    "Posponer; buscar evaluación y seguir las orientaciones sanitarias."
+  ],
+  "Adrenalina da suprarrenal, peptídeo natriurético do átrio e sistema renina-angiotensina": [
+   "Adrenaline from the adrenal, atrial natriuretic peptide and the renin-angiotensin system",
+   "Adrenalina de la suprarrenal, péptido natriurético auricular y sistema renina-angiotensina"
+  ],
+  "Adrenalina sobe na altitude; o coração doente gasta a reserva mais cedo": [
+   "Adrenaline rises at altitude; a diseased heart uses up its reserve sooner",
+   "La adrenalina sube en la altitud; el corazón enfermo gasta su reserva antes"
   ],
   "Aeronaves leves e planador": [
    "Light aircraft and gliders",
@@ -5167,6 +5229,10 @@
    "Controlled allergy",
    "Alergia controlada"
   ],
+  "Alerta": [
+   "Alertness",
+   "Alerta"
+  ],
   "Alerta de cabine acima de 10.000 ft": [
    "Cabin alert above 10,000 ft",
    "Alerta de cabina por encima de 10.000 ft"
@@ -5174,6 +5240,10 @@
   "Alerta de radiação solar": [
    "Solar radiation alert",
    "Alerta de radiación solar"
+  ],
+  "Alfa-1 contrai e beta-2 relaxa o músculo do útero": [
+   "Alpha-1 contracts and beta-2 relaxes the uterine muscle",
+   "Alfa-1 contrae y beta-2 relaja el músculo del útero"
   ],
   "Alfabloqueador (doxazosina)": [
    "Alpha-blocker (doxazosin)",
@@ -5359,6 +5429,10 @@
    "Person's height",
    "Altura de la persona"
   ],
+  "Alvo dos antidepressivos; a hipóxia pode trazer euforia e julgamento pior": [
+   "Target of antidepressants; hypoxia can bring euphoria and poorer judgement",
+   "Blanco de los antidepresivos; la hipoxia puede traer euforia y peor juicio"
+  ],
   "Alça de ombro": [
    "Shoulder strap",
    "Correa de hombro"
@@ -5410,6 +5484,10 @@
   "Amputação, prótese ou órtese: investigação específica e decisão da ANAC; na 4ª classe, avaliação por examinador credenciado": [
    "Amputation, prosthesis or orthosis: specific investigation and ANAC decision; in Class 4, assessment by an accredited examiner",
    "Amputación, prótesis u órtesis: estudio específico y decisión de la ANAC; en la 4.ª clase, evaluación por examinador acreditado"
+  ],
+  "Amígdala, ligada ao hipotálamo": [
+   "Amygdala, linked to the hypothalamus",
+   "Amígdala, unida al hipotálamo"
   ],
   "Analgésico \"PM\" (com difenidramina)": [
    "\"PM\" painkiller (with diphenhydramine)",
@@ -5590,6 +5668,10 @@
   "Angioplastia ou ponte sem infarto": [
    "Angioplasty or bypass without a heart attack",
    "Angioplastia o bypass sin infarto"
+  ],
+  "Anidrase carbônica dos túbulos": [
+   "Carbonic anhydrase in the tubules",
+   "Anhidrasa carbónica de los túbulos"
   ],
   "Animação": [
    "Animation",
@@ -6919,6 +7001,10 @@
    "It rises by 3%",
    "Aumenta un 3%"
   ],
+  "Aumenta o sono; o café bloqueia seus receptores": [
+   "Increases sleepiness; coffee blocks its receptors",
+   "Aumenta el sueño; el café bloquea sus receptores"
+  ],
   "Aumentar a altitude para economizar combustível": [
    "Climb higher to save fuel",
    "Subir más para ahorrar combustible"
@@ -7615,6 +7701,10 @@
    "Barodontalgia: tooth with prior disease (Ferjentsik and Aker classes); rule out maxillary barosinusitis.",
    "Barodontalgia: diente con enfermedad previa (clases de Ferjentsik y Aker); descartar barosinusitis maxilar."
   ],
+  "Barorreflexo": [
+   "Baroreflex",
+   "Barorreflejo"
+  ],
   "Barossinusite repetida: avaliação otorrinolaringológica (pólipos, concha bolhosa) antes de liberar.": [
    "Recurrent barosinusitis: ENT assessment (polyps, concha bullosa) before clearing.",
    "Barosinusitis repetida: evaluación otorrinolaringológica (pólipos, concha bullosa) antes de liberar."
@@ -7747,6 +7837,10 @@
    "Benzodiazepine or sedative",
    "Benzodiacepina o sedante"
   ],
+  "Beta-1 libera renina; alfa-1 fecha a entrada de sangue no rim": [
+   "Beta-1 releases renin; alpha-1 narrows blood inflow to the kidney",
+   "Beta-1 libera renina; alfa-1 cierra la entrada de sangre al riñón"
+  ],
   "Beta-HCG nas candidatas": [
    "Beta-HCG in female applicants",
    "Beta-HCG en las candidatas"
@@ -7847,6 +7941,10 @@
    "Insulin pump: about 1 to 1.4 extra units on the climb",
    "Bomba de insulina: cerca de 1 a 1,4 unidades de más en el ascenso"
   ],
+  "Bomba de sódio e potássio, enzima que gasta a energia do oxigênio e da glicose": [
+   "Sodium-potassium pump, an enzyme that spends the energy from oxygen and glucose",
+   "Bomba de sodio y potasio, enzima que gasta la energía del oxígeno y la glucosa"
+  ],
   "Bombinha com espaçador na bagagem de mão e ao alcance durante todo o voo.": [
    "Inhaler with spacer in hand luggage and within reach throughout the flight.",
    "Inhalador con espaciador en el equipaje de mano y al alcance durante todo el vuelo."
@@ -7910,6 +8008,14 @@
   "Broncodilatador de longa ação": [
    "Long-acting bronchodilator",
    "Broncodilatador de acción prolongada"
+  ],
+  "Brônquios mais abertos para passar mais ar": [
+   "Wider bronchi to let more air through",
+   "Bronquios más abiertos para que pase más aire"
+  ],
+  "Bulbo ventrolateral rostral e núcleo do trato solitário, que recebe os barorreceptores e os quimiorreceptores": [
+   "Rostral ventrolateral medulla and nucleus of the solitary tract, which receives baroreceptors and chemoreceptors",
+   "Bulbo ventrolateral rostral y núcleo del tracto solitario, que recibe los barorreceptores y quimiorreceptores"
   ],
   "Bupropiona, desvenlafaxina, duloxetina, venlafaxina": [
    "Bupropion, desvenlafaxine, duloxetine, venlafaxine",
@@ -8074,6 +8180,14 @@
   "CPAP; sem álcool nem calmantes 12 h antes do voo": [
    "CPAP; no alcohol or sedatives 12 h before the flight",
    "CPAP; sin alcohol ni calmantes 12 h antes del vuelo"
+  ],
+  "CRH do hipotálamo, ACTH da hipófise e cortisol da suprarrenal": [
+   "Hypothalamic CRH, pituitary ACTH and adrenal cortisol",
+   "CRH del hipotálamo, ACTH de la hipófisis y cortisol de la suprarrenal"
+  ],
+  "CRH, ACTH e cortisol": [
+   "CRH, ACTH and cortisol",
+   "CRH, ACTH y cortisol"
   ],
   "CRISTALINO": [
    "LENS",
@@ -8450,6 +8564,30 @@
   "Centro aeromédico, AME ou o médico de família, se a lei do país permitir": [
    "Aeromedical centre, AME or the family doctor, if national law allows",
    "Centro aeromédico, AME o el médico de familia, si la ley del país lo permite"
+  ],
+  "Centro da micção": [
+   "Micturition centre",
+   "Centro de la micción"
+  ],
+  "Centro da micção na ponte e medula sacral": [
+   "Micturition centre in the pons and the sacral cord",
+   "Centro de la micción en el puente y médula sacra"
+  ],
+  "Centro da sede no hipotálamo e hormônio antidiurético": [
+   "Thirst centre in the hypothalamus and antidiuretic hormone",
+   "Centro de la sed en el hipotálamo y hormona antidiurética"
+  ],
+  "Centro do vômito": [
+   "Vomiting centre",
+   "Centro del vómito"
+  ],
+  "Centro no sistema nervoso": [
+   "Centre in the nervous system",
+   "Centro en el sistema nervioso"
+  ],
+  "Centro respiratório": [
+   "Respiratory centre",
+   "Centro respiratorio"
   ],
   "Centrífuga": [
    "Centrifuge",
@@ -9299,6 +9437,10 @@
    "With age, the thirst alarm and the kidney's ability to save water decline: water runs short before the warning, which is why you drink even without thirst.",
    "Con la edad, la alarma de la sed y la capacidad del riñón de guardar agua disminuyen: el agua falta antes del aviso, y por eso se bebe aunque no haya sed."
   ],
+  "Com a idade, o comando autônomo fica mais lento. O **barorreflexo**, que usa os sensores do pescoço e da aorta e o **núcleo do trato solitário** para segurar a pressão quando a pessoa levanta, responde menos, e vem a tontura ao ficar de pé. O coração responde menos aos receptores **beta**, e o **vago**, que freia e dá variabilidade ao ritmo, perde força, enquanto o tom do **simpático** em repouso tende a subir. O **centro da sede**, no hipotálamo, fica menos sensível, e o rim concentra menos a urina, por isso a desidratação chega antes. A **glândula pineal** produz menos **melatonina**, e o sono fica mais leve. Na altitude, essas reservas menores somam com a hipóxia e com os remédios (Veja M2V15 - III).": [
+   "With age, autonomic control becomes slower. The **baroreflex**, which uses sensors in the neck and aorta and the **nucleus of the solitary tract** to hold blood pressure when a person stands up, responds less, and dizziness on standing follows. The heart responds less to **beta** receptors, and the **vagus**, which slows the heart and gives variability to its rhythm, loses strength, while resting **sympathetic** tone tends to rise. The **thirst centre**, in the hypothalamus, becomes less sensitive, and the kidney concentrates urine less, which is why dehydration arrives sooner. The **pineal gland** produces less **melatonin**, and sleep becomes lighter. At altitude, these smaller reserves add up with hypoxia and medicines (See M2V15 - III).",
+   "Con la edad, el mando autónomo se vuelve más lento. El **barorreflejo**, que usa los sensores del cuello y de la aorta y el **núcleo del tracto solitario** para sostener la presión cuando la persona se levanta, responde menos, y llega el mareo al ponerse de pie. El corazón responde menos a los receptores **beta**, y el **vago**, que frena y da variabilidad al ritmo, pierde fuerza, mientras el tono del **simpático** en reposo tiende a subir. El **centro de la sed**, en el hipotálamo, se vuelve menos sensible, y el riñón concentra menos la orina, por eso la deshidratación llega antes. La **glándula pineal** produce menos **melatonina**, y el sueño se vuelve más ligero. En la altitud, esas reservas menores se suman a la hipoxia y a los medicamentos (Ver M2V15 - III)."
+  ],
   "Com a meia-lua ou o bifocal, o piloto lê a carta e olha a pista sem trocar de óculos.": [
    "With half-eye or bifocal glasses, the pilot reads the chart and looks at the runway without changing glasses.",
    "Con la media luna o el bifocal, el piloto lee la carta y mira la pista sin cambiar de anteojos."
@@ -9415,6 +9557,10 @@
    "With fewer than 2 time zones there is no jet lag: just look after the previous night's sleep.",
    "Con menos de 2 husos no hay jet lag: cuide solo el sueño de la noche anterior."
   ],
+  "Com menos oxigênio no cerebelo, a coordenação fina piora": [
+   "With less oxygen in the cerebellum, fine coordination worsens",
+   "Con menos oxígeno en el cerebelo, la coordinación fina empeora"
+  ],
   "Com metformina ou outro remédio que baixa pouco o açúcar": [
    "With metformin or another medicine that lowers sugar little",
    "Con metformina u otro medicamento que baja poco el azúcar"
@@ -9519,9 +9665,93 @@
    "Eat and drink water before and during the flight, avoid alcohol and stand up slowly.",
    "Coma y beba agua antes y durante el vuelo, evite el alcohol y levántese despacio."
   ],
+  "Comandam contrações e leite; a placenta depende do oxigênio da mãe": [
+   "Command contractions and milk; the placenta depends on the mother's oxygen",
+   "Comandan contracciones y leche; la placenta depende del oxígeno de la madre"
+  ],
+  "Comandam náusea e vômito no enjoo e na intoxicação": [
+   "Command nausea and vomiting in motion sickness and poisoning",
+   "Comandan náusea y vómito en el mareo y la intoxicación"
+  ],
   "Comandar a posição de impacto, porque ela reduz as lesões de cabeça e pescoço": [
    "Command the brace position, because it reduces head and neck injuries",
    "Ordenar la posición de impacto, porque reduce las lesiones de cabeza y cuello"
+  ],
+  "Comando": [
+   "Command",
+   "Mando"
+  ],
+  "Comando central": [
+   "Central command",
+   "Mando central"
+  ],
+  "Comando do corpo": [
+   "Command of the body",
+   "Mando del cuerpo"
+  ],
+  "Comando muscular": [
+   "Muscular control",
+   "Control muscular"
+  ],
+  "Comando nervoso e hormonal na altitude · aparelho digestivo": [
+   "Nervous and hormonal control at altitude · digestive system",
+   "Control nervioso y hormonal en la altitud · aparato digestivo"
+  ],
+  "Comando nervoso e hormonal na altitude · coração e circulação": [
+   "Nervous and hormonal control at altitude · heart and circulation",
+   "Control nervioso y hormonal en la altitud · corazón y circulación"
+  ],
+  "Comando nervoso e hormonal na altitude · cérebro e sistema nervoso": [
+   "Nervous and hormonal control at altitude · brain and nervous system",
+   "Control nervioso y hormonal en la altitud · cerebro y sistema nervioso"
+  ],
+  "Comando nervoso e hormonal na altitude · equilíbrio e orientação": [
+   "Nervous and hormonal control at altitude · balance and orientation",
+   "Control nervioso y hormonal en la altitud · equilibrio y orientación"
+  ],
+  "Comando nervoso e hormonal na altitude · hormônios e metabolismo": [
+   "Nervous and hormonal control at altitude · hormones and metabolism",
+   "Control nervioso y hormonal en la altitud · hormonas y metabolismo"
+  ],
+  "Comando nervoso e hormonal na altitude · mente e emoções": [
+   "Nervous and hormonal control at altitude · mind and emotions",
+   "Control nervioso y hormonal en la altitud · mente y emociones"
+  ],
+  "Comando nervoso e hormonal na altitude · o corpo que envelhece": [
+   "Nervous and hormonal control at altitude · the ageing body",
+   "Control nervioso y hormonal en la altitud · el cuerpo que envejece"
+  ],
+  "Comando nervoso e hormonal na altitude · olhos e visão": [
+   "Nervous and hormonal control at altitude · eyes and vision",
+   "Control nervioso y hormonal en la altitud · ojos y visión"
+  ],
+  "Comando nervoso e hormonal na altitude · ossos, músculos e articulações": [
+   "Nervous and hormonal control at altitude · bones, muscles and joints",
+   "Control nervioso y hormonal en la altitud · huesos, músculos y articulaciones"
+  ],
+  "Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face": [
+   "Nervous and hormonal control at altitude · ears, nose and sinuses",
+   "Control nervioso y hormonal en la altitud · oídos, nariz y senos paranasales"
+  ],
+  "Comando nervoso e hormonal na altitude · respiração e oxigênio": [
+   "Nervous and hormonal control at altitude · breathing and oxygen",
+   "Control nervioso y hormonal en la altitud · respiración y oxígeno"
+  ],
+  "Comando nervoso e hormonal na altitude · rins e vias urinárias": [
+   "Nervous and hormonal control at altitude · kidneys and urinary tract",
+   "Control nervioso y hormonal en la altitud · riñones y vías urinarias"
+  ],
+  "Comando nervoso e hormonal na altitude · sangue e defesa": [
+   "Nervous and hormonal control at altitude · blood and defence",
+   "Control nervioso y hormonal en la altitud · sangre y defensa"
+  ],
+  "Comando nervoso e hormonal na altitude · saúde da mulher": [
+   "Nervous and hormonal control at altitude · women's health",
+   "Control nervioso y hormonal en la altitud · salud de la mujer"
+  ],
+  "Comando nervoso e hormonal na altitude · sono e relógio biológico": [
+   "Nervous and hormonal control at altitude · sleep and the body clock",
+   "Control nervioso y hormonal en la altitud · sueño y reloj biológico"
   ],
   "Combinado com a companhia pelo MEDIF; quem precisa de oxigênio não opera a aeronave": [
    "Arranged with the airline through the MEDIF; anyone who needs oxygen does not operate the aircraft",
@@ -10699,6 +10929,10 @@
    "Consult occupational health and examiner when indicated.",
    "Consultar a salud ocupacional y examinador cuando esté indicado."
   ],
+  "Consumo de oxigênio": [
+   "Oxygen use",
+   "Consumo de oxígeno"
+  ],
   "Contar 7 dias a partir da resolução no raio X": [
    "Count 7 days from resolution on the X-ray",
    "Contar 7 días a partir de la resolución en la radiografía"
@@ -10783,9 +11017,17 @@
    "Contraceptives and hormone therapy do not disqualify for the FAA when there are no side effects; oestrogen, however, calls for care against thrombosis on long flights.",
    "Los anticonceptivos y la terapia hormonal no descalifican para la FAA cuando no hay efectos secundarios; el estrógeno, sin embargo, pide cuidado contra la trombosis en el vuelo largo."
   ],
+  "Contrai a pupila e acomoda o foco de perto": [
+   "Constricts the pupil and accommodates for near focus",
+   "Contrae la pupila y acomoda el enfoque de cerca"
+  ],
   "Contrai a pupila e escurece a visão à noite": [
    "Constricts the pupil and darkens night vision",
    "Contrae la pupila y oscurece la visión de noche"
+  ],
+  "Contrai o músculo; os relaxantes musculares agem nesse caminho ou na medula": [
+   "Contracts the muscle; muscle relaxants act on this pathway or in the spinal cord",
+   "Contrae el músculo; los relajantes musculares actúan en este camino o en la médula"
   ],
   "Contraindicado nas primeiras 4 a 6 semanas: insuficiência ou arritmia aumentam o risco na cabine": [
    "Contraindicated for the first 4 to 6 weeks: failure or arrhythmia increase the risk in the cabin",
@@ -10858,6 +11100,10 @@
   "Controlam a sonolência": [
    "Control sleepiness",
    "Controlan la somnolencia"
+  ],
+  "Controlam o cálcio do sangue e a força do osso": [
+   "Control blood calcium and bone strength",
+   "Controlan el calcio de la sangre y la fuerza del hueso"
   ],
   "Controlar a pressão; remédios compatíveis com o voo": [
    "Control blood pressure; medicines compatible with flying",
@@ -10987,6 +11233,14 @@
    "Seizure, stroke and loss of consciousness",
    "Convulsión, ACV y pérdida de conciencia"
   ],
+  "Coordena movimento e secreção mesmo sem ordens de fora": [
+   "Coordinates movement and secretion even without outside orders",
+   "Coordina movimiento y secreción incluso sin órdenes de fuera"
+  ],
+  "Coordena o enchimento e o esvaziamento da bexiga": [
+   "Coordinates bladder filling and emptying",
+   "Coordina el llenado y el vaciado de la vejiga"
+  ],
   "Cor dos olhos": [
    "Eye color",
    "Color de los ojos"
@@ -11014,6 +11268,10 @@
   "Coração e cérebro: a incapacitação súbita no comando atinge todos a bordo": [
    "Heart and brain: sudden incapacitation at the controls affects everyone on board",
    "Corazón y cerebro: la incapacitación súbita a los mandos afecta a todos a bordo"
+  ],
+  "Coração e respiração rápidos; pode levar à hiperventilação": [
+   "Fast heart and breathing; may lead to hyperventilation",
+   "Corazón y respiración rápidos; puede llevar a la hiperventilación"
   ],
   "Coração e vasos": [
    "Heart and vessels",
@@ -11082,6 +11340,10 @@
   "Corpo pressionado contra o encosto": [
    "Body pressed against the seatback",
    "Cuerpo presionado contra el respaldo"
+  ],
+  "Corpos carotídeos e aórticos, pelos nervos glossofaríngeo e vago": [
+   "Carotid and aortic bodies, via the glossopharyngeal and vagus nerves",
+   "Cuerpos carotídeos y aórticos, por los nervios glosofaríngeo y vago"
   ],
   "Corre para a frente": [
    "Jumps forward",
@@ -11163,9 +11425,17 @@
    "Cortisol",
    "Cortisol"
   ],
+  "Cortisol da suprarrenal": [
+   "Cortisol from the adrenal",
+   "Cortisol de la suprarrenal"
+  ],
   "Cortisol no pico; a luz adianta o relógio": [
    "Cortisol at its peak; light advances the clock",
    "Cortisol en el pico; la luz adelanta el reloj"
+  ],
+  "Cortisol, que sobe de manhã, e respiração controlada pelo tronco cerebral": [
+   "Cortisol, which rises in the morning, and breathing controlled by the brainstem",
+   "Cortisol, que sube por la mañana, y respiración controlada por el tronco cerebral"
   ],
   "Costuma beber pouca água no voo para não ir ao banheiro?": [
    "Do you usually drink little water in flight to avoid the toilet?",
@@ -11419,6 +11689,10 @@
    "Cancer: clinical risk before traveling",
    "Cáncer: riesgo clínico antes de viajar"
   ],
+  "Células do rim com HIF": [
+   "Kidney cells with HIF",
+   "Células del riñón con HIF"
+  ],
   "Cérebro": [
    "Brain",
    "Cerebro"
@@ -11482,6 +11756,14 @@
   "Córnea e superfície do olho": [
    "Cornea and eye surface",
    "Córnea y superficie del ojo"
+  ],
+  "Córtex motor, cerebelo, núcleos da base e neurônios motores da medula": [
+   "Motor cortex, cerebellum, basal ganglia and spinal motor neurons",
+   "Corteza motora, cerebelo, núcleos de la base y neuronas motoras de la médula"
+  ],
+  "Córtex pré-frontal": [
+   "Prefrontal cortex",
+   "Corteza prefrontal"
   ],
   "DECOLAGEM": [
    "TAKE-OFF",
@@ -12235,6 +12517,10 @@
    "Weekly rest",
    "Descanso semanal"
   ],
+  "Descarga autônoma com suor, palidez e salivação": [
+   "Autonomic discharge with sweating, pallor and salivation",
+   "Descarga autónoma con sudor, palidez y salivación"
+  ],
   "Descartar doença concomitante; planejar certificado ou ajuste de rota quando pertinente.": [
    "Rule out concomitant disease; plan certificate or route adjustment when relevant.",
    "Descartar enfermedad concomitante; certificado de plano o ajuste de ruta cuando corresponda."
@@ -12359,6 +12645,10 @@
    "Dehydration, worse with high sugar",
    "Deshidratación, peor con azúcar alto"
   ],
+  "Desincha a mucosa; é o alvo dos descongestionantes": [
+   "Shrinks the mucosa; it is the target of decongestants",
+   "Deshincha la mucosa; es el blanco de los descongestionantes"
+  ],
   "Desincha o nariz": [
    "Unblocks the nose",
    "Deshincha la nariz"
@@ -12467,6 +12757,10 @@
    "Destination",
    "Destino"
   ],
+  "Detector de ameaça": [
+   "Threat detector",
+   "Detector de amenaza"
+  ],
   "Determinar agente, contagiosidade e condição clínica individual; não há prazo único.": [
    "Determine agent, contagiousness and individual clinical condition; there is no single deadline.",
    "Determinar agente, contagiosidad y condición clínica individual; no hay un plazo único."
@@ -12539,6 +12833,10 @@
    "Dilates the pupil and paralyzes focus",
    "Dilata la pupila y paraliza el enfoque"
   ],
+  "Dilata a pupila no escuro e no susto": [
+   "Dilates the pupil in the dark and when startled",
+   "Dilata la pupila en la oscuridad y en el susto"
+  ],
   "Dilata as artérias; pode baixar a pressão": [
    "Dilates the arteries; may lower blood pressure",
    "Dilata las arterias; puede bajar la presión"
@@ -12586,6 +12884,14 @@
   "Discutir prevenção individual; manter terapia prescrita": [
    "Discuss individual prevention; maintain prescribed therapy",
    "Discutir la prevención individual; mantener la terapia prescrita"
+  ],
+  "Dispara a resposta de medo diante de turbulência ou emergência": [
+   "Triggers the fear response in turbulence or an emergency",
+   "Dispara la respuesta de miedo ante turbulencia o emergencia"
+  ],
+  "Disparam quando o oxigênio do sangue cai e aumentam a respiração": [
+   "Fire when blood oxygen falls and increase breathing",
+   "Disparan cuando el oxígeno de la sangre baja y aumentan la respiración"
   ],
   "Dispensa da inspeção de segurança": [
    "Exemption from the security check",
@@ -13431,6 +13737,10 @@
    "Axis",
    "Eje"
   ],
+  "Eixo do estresse": [
+   "Stress axis",
+   "Eje del estrés"
+  ],
   "Eixos G": [
    "G axes",
    "Ejes G"
@@ -13526,6 +13836,10 @@
   "Elevou o limite para 70 anos": [
    "It raised the limit to 70",
    "Elevó el límite a 70 años"
+  ],
+  "Elimina bicarbonato para corrigir o sangue alcalino da hiperventilação; a acetazolamida a bloqueia": [
+   "Excretes bicarbonate to correct the alkaline blood of hyperventilation; acetazolamide blocks it",
+   "Elimina bicarbonato para corregir la sangre alcalina de la hiperventilación; la acetazolamida la bloquea"
   ],
   "Elimina água e sal; pede atenção à hidratação": [
    "Removes water and salt; calls for attention to hydration",
@@ -13851,6 +14165,14 @@
    "Endometriosis, first diagnosis",
    "Endometriosis, primer diagnóstico"
   ],
+  "Energia do músculo": [
+   "Muscle energy",
+   "Energía del músculo"
+  ],
+  "Energia do neurônio": [
+   "Neuron energy",
+   "Energía de la neurona"
+  ],
   "Engolir abre a tuba auditiva e iguala a pressão do ouvido; por isso, mamar na subida e na descida ajuda.": [
    "Swallowing opens the Eustachian tube and equalises ear pressure; that is why feeding during climb and descent helps.",
    "Tragar abre la trompa auditiva e iguala la presión del oído; por eso, mamar en la subida y el descenso ayuda."
@@ -14011,6 +14333,22 @@
    "People who see worse at night include those with uncorrected **presbyopia**, those who had **refractive surgery** and were left with **halos** or loss of contrast, those who wear **dark lenses**, which are for daytime only, and those with **night blindness**, nyctalopia, which makes a crew member unfit until evaluation. Flying at night like this, without clearance, increases the risk of not seeing another aircraft, the terrain or the runway.",
    "Ve peor de noche quien tiene **presbicia** sin corregir, quien se hizo **cirugía refractiva** y quedó con **halos** o pérdida de contraste, quien usa **lente oscura**, que es solo para el día, y quien tiene **ceguera nocturna**, la nictalopía, que vuelve al tripulante no apto hasta la evaluación. Volar de noche así, sin liberación, aumenta el riesgo de no ver otro avión, el terreno o la pista."
   ],
+  "Enzima": [
+   "Enzyme",
+   "Enzima"
+  ],
+  "Enzima da hemácia": [
+   "Red-cell enzyme",
+   "Enzima del glóbulo rojo"
+  ],
+  "Enzima que fabrica o 2,3-DPG": [
+   "Enzyme that makes 2,3-DPG",
+   "Enzima que fabrica el 2,3-DPG"
+  ],
+  "Enzimas e sensores": [
+   "Enzymes and sensors",
+   "Enzimas y sensores"
+  ],
   "Epilepsia": [
    "Epilepsy",
    "Epilepsia"
@@ -14062,6 +14400,10 @@
   "Equipar": [
    "Equip",
    "Equipar"
+  ],
+  "Eritropoetina, do rim para a medula óssea": [
+   "Erythropoietin, from the kidney to the bone marrow",
+   "Eritropoyetina, del riñón a la médula ósea"
   ],
   "Erros dos dois lados custam caro. O tripulante que voa com condição escondida arrisca desmaio, arritmia ou decisão errada no comando, além de perder a cobertura do seguro e, num acidente, responder na investigação. No Brasil, quem voa em condição proibida pelo RBAC 67 tem o CMA cassado e só pode pedir outro depois de **180 dias**; a omissão de informação também leva à cassação, e a fraude, a pelo menos **12 meses** de espera e à comunicação ao Ministério Público. O examinador que deixa passar um achado ou emite fora das regras pode perder a credencial e responder perante a autoridade e o conselho de medicina. Por isso, na dúvida, o examinador **adia** e pede laudos, em vez de decidir sozinho.": [
    "Mistakes on either side are costly. A crew member who flies with a hidden condition risks fainting, arrhythmia or a wrong decision at the controls, besides losing insurance cover and, after an accident, facing the investigation. In Brazil, anyone who flies in a condition prohibited by RBAC 67 has the certificate revoked and may only apply again after **180 days**; omitting information also leads to revocation, and fraud to a wait of at least **12 months** and a report to the Public Prosecutor's Office. An examiner who misses a finding or issues outside the rules may lose the designation and answer to the authority and the medical council. That is why, when in doubt, the examiner **defers** and asks for reports instead of deciding alone.",
@@ -14126,6 +14468,10 @@
   "Escolha do voo": [
    "Flight choice",
    "Elección del vuelo"
+  ],
+  "Escolha o comando para ver onde ele nasce, como chega ao órgão e o que a hipóxia e a baixa pressão fazem com ele.": [
+   "Choose a control to see where it starts, how it reaches the organ and what hypoxia and low pressure do to it.",
+   "Elija el mando para ver dónde nace, cómo llega al órgano y qué le hacen la hipoxia y la baja presión."
   ],
   "Escolha o país e a classe para ver quem pode fazer o exame.": [
    "Choose the country and class to see who may do the examination.",
@@ -14586,6 +14932,14 @@
   "Estresse térmico reduz coordenação, atenção e decisão (Flight Safety Foundation, 2001).": [
    "Heat stress reduces coordination, attention and decision-making (Flight Safety Foundation, 2001).",
    "El estrés térmico reduce la coordinación, la atención y la decisión (Flight Safety Foundation, 2001)."
+  ],
+  "Estresse, fuso e jornadas alteram o pulso e podem desregular o ciclo": [
+   "Stress, time zones and duty periods alter the pulse and can disrupt the cycle",
+   "El estrés, el huso y las jornadas alteran el pulso y pueden desregular el ciclo"
+  ],
+  "Estrogênio e progesterona": [
+   "Oestrogen and progesterone",
+   "Estrógeno y progesterona"
   ],
   "Estrogênio soma risco de trombose ao voo longo; meias de compressão abaixo do joelho se houver outro fator.": [
    "Oestrogen adds thrombosis risk to a long flight; below-knee compression stockings if another factor is present.",
@@ -16011,6 +16365,10 @@
    "Talk after the flight, calmly; suggest rest and an assessment. Safety comes first.",
    "Habla después del vuelo, con calma; sugiere descanso y evaluación. La seguridad es lo primero."
   ],
+  "Falha cedo na hipóxia: a pessoa decide mal antes de perceber": [
+   "Fails early in hypoxia: the person decides badly before noticing",
+   "Falla pronto en la hipoxia: la persona decide mal antes de darse cuenta"
+  ],
   "Falha nas placas, mas reconhece as cores da aviação": [
    "Fails the plates but recognizes aviation colors",
    "Falla en las láminas, pero reconoce los colores de la aviación"
@@ -16163,6 +16521,10 @@
    "Fever, chills or back pain change the answer.",
    "Fiebre, escalofríos o dolor de espalda cambian la respuesta."
   ],
+  "Fecha os brônquios e aumenta o muco; pesa na asma": [
+   "Narrows the bronchi and increases mucus; matters in asthma",
+   "Cierra los bronquios y aumenta el moco; pesa en el asma"
+  ],
   "Fechar as cortinas das janelas": [
    "Close the window shades",
    "Cerrar las cortinillas de las ventanas"
@@ -16278,6 +16640,10 @@
   "Fez tratamento psiquiátrico invasivo, internação ou programa para dependência?": [
    "Have you had invasive psychiatric treatment, hospital admission or a dependence programme?",
    "¿Hizo tratamiento psiquiátrico invasivo, internación o programa para dependencia?"
+  ],
+  "Fibras que passam no gânglio pterigopalatino, com acetilcolina nas glândulas": [
+   "Fibres passing through the pterygopalatine ganglion, with acetylcholine on the glands",
+   "Fibras que pasan por el ganglio pterigopalatino, con acetilcolina en las glándulas"
   ],
   "Fica inapto por 5 anos": [
    "Is unfit for 5 years",
@@ -16555,6 +16921,10 @@
    "Low heart rate, tiredness on exertion",
    "Frecuencia baja, cansancio con el esfuerzo"
   ],
+  "Frequência e força maiores; vasos da pele e do intestino mais fechados": [
+   "Higher rate and force; skin and gut vessels narrower",
+   "Frecuencia y fuerza mayores; vasos de la piel y del intestino más cerrados"
+  ],
   "Fumante": [
    "Smoker",
    "Fumador"
@@ -16662,6 +17032,10 @@
   "Garrafa à vista que permita medir o que bebe: a sede chega tarde e o volume medido não engana": [
    "Bottle in sight that lets you measure what you drink: thirst comes late and a measured volume does not deceive",
    "Botella a la vista que permita medir lo que bebe: la sed llega tarde y el volumen medido no engaña"
+  ],
+  "Gastrina, secretina e colecistocinina": [
+   "Gastrin, secretin and cholecystokinin",
+   "Gastrina, secretina y colecistocinina"
   ],
   "Gatilhos do voo para o cérebro": [
    "Flight triggers for the brain",
@@ -16791,6 +17165,14 @@
    "Gliptins, GLP-1, SGLT2, glitazones, acarbose",
    "Gliptinas, GLP-1, SGLT2, glitazonas, acarbosa"
   ],
+  "Glândula pineal e melatonina": [
+   "Pineal gland and melatonin",
+   "Glándula pineal y melatonina"
+  ],
+  "GnRH do hipotálamo, LH e FSH da hipófise": [
+   "GnRH from the hypothalamus, LH and FSH from the pituitary",
+   "GnRH del hipotálamo, LH y FSH de la hipófisis"
+  ],
   "Gotas para o ouvido": [
    "Ear drops",
    "Gotas para el oído"
@@ -16863,6 +17245,10 @@
    "Gas left over from keyhole surgery grows in the abdomen",
    "El gas que quedó de la cirugía por vídeo crece en el abdomen"
   ],
+  "Gânglio cervical superior, com noradrenalina nos receptores alfa-1 do músculo dilatador": [
+   "Superior cervical ganglion, with noradrenaline on the alpha-1 receptors of the dilator muscle",
+   "Ganglio cervical superior, con noradrenalina en los receptores alfa-1 del músculo dilatador"
+  ],
   "Gônadas e descendência": [
    "Gonads and offspring",
    "Gónadas y descendencia"
@@ -16870,6 +17256,14 @@
   "HIC (lesão da cabeça)": [
    "HIC (head injury)",
    "HIC (lesión de la cabeza)"
+  ],
+  "HIF nas células, eritropoetina do rim e 2,3-DPG das hemácias": [
+   "HIF in cells, erythropoietin from the kidney and 2,3-DPG in red cells",
+   "HIF en las células, eritropoyetina del riñón y 2,3-DPG de los glóbulos rojos"
+  ],
+  "HIF, que liga as enzimas da glicólise": [
+   "HIF, which switches on the enzymes of glycolysis",
+   "HIF, que enciende las enzimas de la glucólisis"
   ],
   "HIMS: internação ≥ 28 dias, abstinência, monitoramento de 5 a 7 anos; ICAO 9.12.15–9.12.18: retorno em 3 a 4 meses, acompanhamento ≥ 2 anos; RBAC 120: 6 exames em 12 meses.": [
    "HIMS: inpatient treatment ≥ 28 days, abstinence, monitoring for 5 to 7 years; ICAO 9.12.15–9.12.18: return in 3 to 4 months, follow-up ≥ 2 years; RBAC 120: 6 tests in 12 months.",
@@ -17107,6 +17501,18 @@
    "Stable hypothyroidism, on replacement",
    "Hipotiroidismo estable, con reposición"
   ],
+  "Hipotálamo e hipófise": [
+   "Hypothalamus and pituitary",
+   "Hipotálamo e hipófisis"
+  ],
+  "Hipotálamo, que liga o cérebro ao sistema autônomo e à hipófise": [
+   "Hypothalamus, which links the brain to the autonomic system and the pituitary",
+   "Hipotálamo, que une el cerebro al sistema autónomo y a la hipófisis"
+  ],
+  "Hipotálamo, simpático e adrenalina da suprarrenal": [
+   "Hypothalamus, sympathetic system and adrenaline from the adrenal",
+   "Hipotálamo, simpático y adrenalina de la suprarrenal"
+  ],
   "Hipoventilação da obesidade": [
    "Obesity hypoventilation",
    "Hipoventilación por obesidad"
@@ -17150,6 +17556,14 @@
   "Hipóxica": [
    "Hypoxic",
    "Hipóxica"
+  ],
+  "Histamina e outros mediadores da inflamação na mucosa": [
+   "Histamine and other inflammatory mediators in the mucosa",
+   "Histamina y otros mediadores de la inflamación en la mucosa"
+  ],
+  "Histamina nos receptores H1 e acetilcolina nos receptores muscarínicos": [
+   "Histamine on H1 receptors and acetylcholine on muscarinic receptors",
+   "Histamina en los receptores H1 y acetilcolina en los receptores muscarínicos"
   ],
   "Historicamente, 20% a 30% das ejeções terminam com fratura da coluna, sobretudo na cervical e na torácica; por isso a ressonância depois da ejeção virou rotina.": [
    "Historically, 20% to 30% of ejections end with a spinal fracture, mainly cervical and thoracic; that is why MRI after ejection became routine.",
@@ -17227,6 +17641,14 @@
    "Hormone",
    "Hormona"
   ],
+  "Hormônio antidiurético da hipófise posterior": [
+   "Antidiuretic hormone from the posterior pituitary",
+   "Hormona antidiurética de la hipófisis posterior"
+  ],
+  "Hormônio antidiurético, aldosterona e peptídeo natriurético": [
+   "Antidiuretic hormone, aldosterone and natriuretic peptide",
+   "Hormona antidiurética, aldosterona y péptido natriurético"
+  ],
   "Hormônio do crescimento": [
    "Growth hormone",
    "Hormona del crecimiento"
@@ -17235,9 +17657,29 @@
    "Hormones",
    "Hormonas"
   ],
+  "Hormônios da água e do sal": [
+   "Water and salt hormones",
+   "Hormonas del agua y la sal"
+  ],
+  "Hormônios do osso": [
+   "Bone hormones",
+   "Hormonas del hueso"
+  ],
+  "Hormônios do ovário": [
+   "Ovarian hormones",
+   "Hormonas del ovario"
+  ],
   "Hormônios do sono e do relógio": [
    "Hormones of sleep and the clock",
    "Hormonas del sueño y del reloj"
+  ],
+  "Hormônios e altitude": [
+   "Hormones and altitude",
+   "Hormonas y altitud"
+  ],
+  "Hormônios e enzimas": [
+   "Hormones and enzymes",
+   "Hormonas y enzimas"
   ],
   "Hormônios e metabolismo": [
    "Hormones and metabolism",
@@ -18531,6 +18973,10 @@
    "Insomnia worsens mood; sleeping pills weigh on the next day: sleep regulates emotions, and the sedative keeps acting on the brain after waking",
    "El insomnio empeora el ánimo; el somnífero pesa al día siguiente: el sueño regula las emociones, y el sedante sigue actuando en el cerebro después de despertar"
   ],
+  "Integra labirinto, olhos e corpo; a hipóxia e o álcool deixam a integração mais lenta": [
+   "Integrates labyrinth, eyes and body; hypoxia and alcohol slow the integration",
+   "Integra laberinto, ojos y cuerpo; la hipoxia y el alcohol hacen la integración más lenta"
+  ],
   "Internação de ao menos 28 dias e abstinência total (HIMS)": [
    "Inpatient treatment of at least 28 days and total abstinence (HIMS)",
    "Internación de al menos 28 días y abstinencia total (HIMS)"
@@ -18758,6 +19204,10 @@
   "Julga recursos e também pode examinar": [
    "Rules on appeals and may also examine",
    "Resuelve recursos y también puede examinar"
+  ],
+  "Julgamento": [
+   "Judgment",
+   "Juicio"
   ],
   "Julgamento e reflexos piores no dia seguinte": [
    "Poorer judgement and reflexes the next day",
@@ -19022,6 +19472,10 @@
   "Lesões na ejeção": [
    "Injuries in ejection",
    "Lesiones en la eyección"
+  ],
+  "Leva cerca de meia hora para se refazer no escuro; a hipóxia atrasa a adaptação": [
+   "Takes about half an hour to rebuild in the dark; hypoxia delays adaptation",
+   "Tarda cerca de media hora en rehacerse en la oscuridad; la hipoxia retrasa la adaptación"
   ],
   "Levantamento do seio ou enxerto ósseo": [
    "Sinus lift or bone graft",
@@ -19543,6 +19997,14 @@
    "Lidocaine patch or cream",
    "Lidocaína en parche o crema"
   ],
+  "Liga a enzima que fabrica melatonina no escuro; a luz desliga": [
+   "Switches on the enzyme that makes melatonin in the dark; light switches it off",
+   "Enciende la enzima que fabrica melatonina en la oscuridad; la luz la apaga"
+  ],
+  "Ligam o gene da eritropoetina quando o oxigênio cai": [
+   "Switch on the erythropoietin gene when oxygen falls",
+   "Encienden el gen de la eritropoyetina cuando el oxígeno baja"
+  ],
   "Limiar de convulsão mais baixo; mais crises de enxaqueca": [
    "Lower seizure threshold; more migraine attacks",
    "Umbral de convulsión más bajo; más crisis de migraña"
@@ -19674,6 +20136,10 @@
   "Local": [
    "Location",
    "Lugar"
+  ],
+  "Locus coeruleus, que espalha noradrenalina pelo cérebro": [
+   "Locus coeruleus, which spreads noradrenaline through the brain",
+   "Locus coeruleus, que reparte noradrenalina por el cerebro"
   ],
   "Logo ao acordar": [
    "Right after waking",
@@ -19819,6 +20285,10 @@
    "Lithium",
    "Litio"
   ],
+  "M3 contrai a bexiga; alfa-1 fecha a saída e é o alvo da tansulosina": [
+   "M3 contracts the bladder; alpha-1 closes the outlet and is the target of tamsulosin",
+   "M3 contrae la vejiga; alfa-1 cierra la salida y es el blanco de la tamsulosina"
+  ],
   "MEDIF e FREMEC": [
    "MEDIF and FREMEC",
    "MEDIF y FREMEC"
@@ -19951,9 +20421,29 @@
    "More testing also has a cost for the body and the career. Radiation adds up over the years, unimportant findings lead to more tests, and a false positive can take someone off flying for no reason. That is why screening is guided by risk rather than done the same way for everyone. Health data require confidentiality, and the result serves the crew member's health first: plaque found early is treated with medicine, physical activity and control of risk factors, and treatment may allow a return to flying.",
    "Más pruebas también tienen un precio para el cuerpo y para la carrera. La radiación se suma con los años, los hallazgos sin importancia llevan a nuevas pruebas, y el falso positivo puede apartar a alguien del vuelo sin motivo. Por eso el cribado se guía por el riesgo, y no se hace igual en todos. Los datos de salud exigen confidencialidad, y el resultado sirve primero a la salud del tripulante: la placa descubierta pronto se trata con medicamentos, actividad física y control de los factores de riesgo, y el tratamiento puede permitir el regreso al vuelo."
   ],
+  "Mais glicose gasta sem oxigênio e mais lactato": [
+   "More glucose used without oxygen and more lactate",
+   "Más glucosa gastada sin oxígeno y más lactato"
+  ],
   "Mais grelina, menos leptina e pior uso da glicose com noites curtas: sem sono, o hormônio da fome sobe, o da saciedade cai e as células respondem pior à insulina": [
    "More ghrelin, less leptin and poorer glucose use with short nights: without sleep, the hunger hormone rises, the satiety hormone falls and cells respond less to insulin",
    "Más grelina, menos leptina y peor uso de la glucosa con noches cortas: sin sueño, la hormona del hambre sube, la de la saciedad cae y las células responden peor a la insulina"
+  ],
+  "Mais hemácias em dias a semanas; não ajuda no voo de poucas horas": [
+   "More red cells in days to weeks; does not help on a flight of a few hours",
+   "Más glóbulos rojos en días a semanas; no ayuda en el vuelo de pocas horas"
+  ],
+  "Mais hemácias em dias, oxigênio solto mais fácil nos tecidos; os vasos do pulmão se fecham onde falta ar": [
+   "More red cells within days, oxygen released more easily in tissues; lung vessels constrict where air is lacking",
+   "Más glóbulos rojos en días, oxígeno liberado más fácilmente en los tejidos; los vasos del pulmón se cierran donde falta aire"
+  ],
+  "Mais movimento e mais suco digestivo": [
+   "More movement and more digestive juice",
+   "Más movimiento y más jugo digestivo"
+  ],
+  "Mais muco e mais inchaço, que fecham a tuba e os seios": [
+   "More mucus and swelling, which close the tube and sinuses",
+   "Más moco y más hinchazón, que cierran la trompa y los senos"
   ],
   "Mais ou menos radiação?": [
    "More or less radiation?",
@@ -20099,6 +20589,14 @@
    "Persistently above 140/90 mmHg",
    "Mantenida por encima de 140 x 90 mmHg"
   ],
+  "Mantém a atenção; em excesso, aumenta a ansiedade": [
+   "Maintains attention; in excess, increases anxiety",
+   "Mantiene la atención; en exceso, aumenta la ansiedad"
+  ],
+  "Mantém a imagem parada quando a cabeça mexe; falha na curva prolongada": [
+   "Keeps the image still when the head moves; fails in a prolonged turn",
+   "Mantiene la imagen quieta cuando la cabeza se mueve; falla en el viraje prolongado"
+  ],
   "Mantém a saturação em pelo menos 85% no adulto": [
    "Keeps saturation at 85% or more in adults",
    "Mantiene la saturación en al menos 85% en el adulto"
@@ -20179,6 +20677,10 @@
    "Flight engineer",
    "Mecánico de vuelo"
   ],
+  "Mediadores": [
+   "Mediators",
+   "Mediadores"
+  ],
   "Medicamentos": [
    "Medications",
    "Medicamentos"
@@ -20238,6 +20740,10 @@
   "Medo, claustrofobia, hiperventilação": [
    "Fear, claustrophobia, hyperventilation",
    "Miedo, claustrofobia, hiperventilación"
+  ],
+  "Medula da suprarrenal, com adrenalina nos receptores beta-2 do fígado e alfa-2 do pâncreas": [
+   "Adrenal medulla, with adrenaline on the liver's beta-2 and the pancreas's alpha-2 receptors",
+   "Médula suprarrenal, con adrenalina en los receptores beta-2 del hígado y alfa-2 del páncreas"
   ],
   "Medula óssea": [
    "Bone marrow",
@@ -20335,6 +20841,10 @@
    "Lower partial pressure of oxygen",
    "Baja presión parcial de oxígeno"
   ],
+  "Menor variabilidade do ritmo do coração": [
+   "Less heart-rate variability",
+   "Menor variabilidad del ritmo del corazón"
+  ],
   "Menos de 1%": [
    "Less than 1%",
    "Menos del 1%"
@@ -20350,6 +20860,10 @@
   "Menos hemoglobina reduz o conteúdo de oxigênio transportado pelo sangue.": [
    "Less hemoglobin reduces the oxygen content carried by the blood.",
    "Menos hemoglobina reduce el contenido de oxígeno transportado por la sangre."
+  ],
+  "Menos melatonina e sono mais leve, que se ajusta mais devagar ao fuso": [
+   "Less melatonin and lighter sleep, which adjusts more slowly to time zones",
+   "Menos melatonina y sueño más ligero, que se ajusta más despacio al huso"
   ],
   "Menos neutrófilos enfraquecem a defesa; febre pode sinalizar infecção grave.": [
    "Fewer neutrophils weaken the defense; Fever can signal serious infection.",
@@ -20567,6 +21081,10 @@
    "Cardiomyopathy",
    "Miocardiopatía"
   ],
+  "Mioglobina, que guarda oxigênio, e enzimas da glicólise": [
+   "Myoglobin, which stores oxygen, and glycolysis enzymes",
+   "Mioglobina, que guarda oxígeno, y enzimas de la glucólisis"
+  ],
   "Miopia de campo vazio, presbiopia, borrão com vibração: sem nada para focar o olho relaxa para perto, o cristalino endurece com a idade, e a vibração tira a imagem do lugar na retina": [
    "Empty-field myopia, presbyopia, blur from vibration: with nothing to focus on the eye relaxes to near focus, the lens stiffens with age, and vibration moves the image off its place on the retina",
    "Miopía de campo vacío, presbicia, visión borrosa por vibración: sin nada que enfocar el ojo se relaja hacia cerca, el cristalino se endurece con la edad, y la vibración saca la imagen de su lugar en la retina"
@@ -20590,6 +21108,10 @@
   "Moderação; nada de beber para dormir: o álcool fragmenta o sono e soma-se aos remédios": [
    "Moderation; no drinking to sleep: alcohol fragments sleep and adds to medicines",
    "Moderación; nada de beber para dormir: el alcohol fragmenta el sueño y se suma a los medicamentos"
+  ],
+  "Modula a saída de células de defesa no estresse": [
+   "Modulates the release of defence cells under stress",
+   "Modula la salida de células de defensa en el estrés"
   ],
   "Momento": [
    "Moment",
@@ -20971,6 +21493,10 @@
    "Under the FAA, how long does an airline captain's Class 1 last from age 40?",
    "En la FAA, ¿cuánto vale la 1.ª clase del comandante de línea aérea a partir de los 40 años?"
   ],
+  "Na altitude costuma haver mais urina nas primeiras horas; o ar seco pede água": [
+   "At altitude there is usually more urine in the first hours; dry air calls for water",
+   "En la altitud suele haber más orina en las primeras horas; el aire seco pide agua"
+  ],
   "Na altitude de cruzeiro, a pressão lá fora é baixa demais para o corpo (Veja M1V1 - I). A **pressurização** resolve isso comprimindo ar dentro da cabine, para que o corpo viva numa **altitude de cabine** muito menor que a altitude de voo. Mas a cabine não fica ao nível do mar: num estudo com **502 voluntários** em câmara, a **saturação de oxigênio** caiu cerca de **4 pontos** a 8.000 ft e, depois de **3 a 9 horas** a 7.000 ou 8.000 ft, cresceram as queixas de **desconforto**, sem aumento do mal da montanha.": [
    "At cruise altitude, the pressure outside is too low for the body (See M1V1 - I). **Pressurization** solves this by compressing air inside the cabin, so that the body lives at a **cabin altitude** much lower than the flight altitude. But the cabin is not at sea level: in a chamber study with **502 volunteers**, **oxygen saturation** fell about **4 points** at 8,000 ft and, after **3 to 9 hours** at 7,000 or 8,000 ft, complaints of **discomfort** increased, with no increase in mountain sickness.",
    "En la altitud de crucero, la presión exterior es demasiado baja para el cuerpo (Ver M1V1 - I). La **presurización** lo resuelve comprimiendo aire dentro de la cabina, para que el cuerpo viva en una **altitud de cabina** mucho menor que la altitud de vuelo. Pero la cabina no queda a nivel del mar: en un estudio con **502 voluntarios** en cámara, la **saturación de oxígeno** cayó cerca de **4 puntos** a 8.000 ft y, después de **3 a 9 horas** a 7.000 u 8.000 ft, aumentaron las quejas de **incomodidad**, sin aumento del mal de montaña."
@@ -20978,6 +21504,14 @@
   "Na altitude de cruzeiro, que partículas mais contribuem para a dose de radiação?": [
    "At cruise altitude, which particles contribute most to the radiation dose?",
    "En la altitud de crucero, ¿qué partículas contribuyen más a la dosis de radiación?"
+  ],
+  "Na altitude, a respiração no sono fica irregular, com pausas e despertares": [
+   "At altitude, breathing in sleep becomes irregular, with pauses and awakenings",
+   "En la altitud, la respiración en el sueño se vuelve irregular, con pausas y despertares"
+  ],
+  "Na altitude, aumenta o simpático e o cortisol": [
+   "At altitude, increases sympathetic activity and cortisol",
+   "En la altitud, aumenta el simpático y el cortisol"
   ],
   "Na aproximação noturna, as luzes da pista são quase tudo o que o piloto vê.": [
    "On a night approach, the runway lights are almost all the pilot sees.",
@@ -21162,6 +21696,18 @@
   "Na explosiva, em geral em menos de 0,5 segundo, o ar preso nos pulmões fica com pressão maior que a da cabine: é o maior risco de lesão pulmonar.": [
    "In explosive decompression, usually in less than 0.5 second, the air trapped in the lungs ends up at a higher pressure than the cabin: this is the greatest risk of lung injury.",
    "En la explosiva, por lo general en menos de 0,5 segundos, el aire atrapado en los pulmones queda con una presión mayor que la de la cabina: es el mayor riesgo de lesión pulmonar."
+  ],
+  "Na hipóxia e no estresse, desvia o sangue e deixa a digestão lenta": [
+   "In hypoxia and stress, diverts blood and slows digestion",
+   "En la hipoxia y el estrés, desvía la sangre y hace la digestión lenta"
+  ],
+  "Na hipóxia, mais lactato e cansaço mais cedo": [
+   "In hypoxia, more lactate and earlier fatigue",
+   "En la hipoxia, más lactato y cansancio más temprano"
+  ],
+  "Na hipóxia, mais simpático e menos vago: o coração acelera": [
+   "In hypoxia, more sympathetic and less vagal activity: the heart speeds up",
+   "En la hipoxia, más simpático y menos vago: el corazón se acelera"
   ],
   "Na hora": [
    "At the moment",
@@ -21447,13 +21993,53 @@
    "Treated urological cancer: assess anaemia and infection.",
    "Neoplasia urológica tratada: evaluar anemia e infección."
   ],
+  "Nervo coclear, núcleos do tronco cerebral e córtex auditivo do lobo temporal": [
+   "Cochlear nerve, brainstem nuclei and auditory cortex of the temporal lobe",
+   "Nervio coclear, núcleos del tronco cerebral y corteza auditiva del lóbulo temporal"
+  ],
+  "Nervo trigêmeo no músculo tensor do véu palatino": [
+   "Trigeminal nerve to the tensor veli palatini muscle",
+   "Nervio trigémino en el músculo tensor del velo del paladar"
+  ],
+  "Nervo vago com menos força": [
+   "Vagus nerve with less strength",
+   "Nervio vago con menos fuerza"
+  ],
+  "Nervo vago, com acetilcolina nos receptores M2 do nó sinusal": [
+   "Vagus nerve, with acetylcholine on the M2 receptors of the sinus node",
+   "Nervio vago, con acetilcolina en los receptores M2 del nodo sinusal"
+  ],
+  "Nervo vago, com acetilcolina nos receptores M3": [
+   "Vagus nerve, with acetylcholine on M3 receptors",
+   "Nervio vago, con acetilcolina en los receptores M3"
+  ],
+  "Nervo vago, com acetilcolina nos receptores muscarínicos M3 dos brônquios": [
+   "Vagus nerve, with acetylcholine on the M3 muscarinic receptors of the bronchi",
+   "Nervio vago, con acetilcolina en los receptores muscarínicos M3 de los bronquios"
+  ],
+  "Nervo vestibular, núcleos vestibulares, cerebelo e córtex": [
+   "Vestibular nerve, vestibular nuclei, cerebellum and cortex",
+   "Nervio vestibular, núcleos vestibulares, cerebelo y corteza"
+  ],
+  "Nervo óptico, núcleo geniculado lateral do tálamo e córtex visual do lobo occipital": [
+   "Optic nerve, lateral geniculate nucleus of the thalamus and visual cortex of the occipital lobe",
+   "Nervio óptico, núcleo geniculado lateral del tálamo y corteza visual del lóbulo occipital"
+  ],
   "Nervos e pele: formigamento, coceira e manchas": [
    "Nerves and skin: tingling, itching and blotches",
    "Nervios y piel: hormigueo, picazón y manchas"
   ],
+  "Nervos na medula óssea, no baço e nos gânglios linfáticos": [
+   "Nerves in the bone marrow, spleen and lymph nodes",
+   "Nervios en la médula ósea, el bazo y los ganglios linfáticos"
+  ],
   "Nervos periféricos": [
    "Peripheral nerves",
    "Nervios periféricos"
+  ],
+  "Nervos renais, com receptores beta-1 e alfa-1": [
+   "Renal nerves, with beta-1 and alpha-1 receptors",
+   "Nervios renales, con receptores beta-1 y alfa-1"
   ],
   "Nervoso e visão": [
    "Nervous system and vision",
@@ -21835,6 +22421,10 @@
    "During the rest before this duty, did you get the planned sleep opportunity?",
    "En el reposo antes de esta jornada, ¿tuvo la oportunidad de sueño prevista?"
   ],
+  "No resfriado e na alergia, a mucosa incha e o gás preso não sai na mudança de pressão": [
+   "In colds and allergy, the mucosa swells and trapped gas cannot escape when pressure changes",
+   "En el resfriado y la alergia, la mucosa se hincha y el gas atrapado no sale con el cambio de presión"
+  ],
   "No resgate": [
    "During rescue",
    "En el rescate"
@@ -21954,6 +22544,34 @@
   "Noites curtas: mais fome e mais vontade de doces e massas": [
    "Short nights: more hunger and more craving for sweets and starchy foods",
    "Noches cortas: más hambre y más ganas de dulces y harinas"
+  ],
+  "Noradrenalina e adrenalina nos receptores beta-2 dos brônquios": [
+   "Noradrenaline and adrenaline on the beta-2 receptors of the bronchi",
+   "Noradrenalina y adrenalina en los receptores beta-2 de los bronquios"
+  ],
+  "Noradrenalina e adrenalina nos receptores beta-2 dos vasos do músculo": [
+   "Noradrenaline and adrenaline on the beta-2 receptors of muscle vessels",
+   "Noradrenalina y adrenalina en los receptores beta-2 de los vasos del músculo"
+  ],
+  "Noradrenalina nos receptores alfa da parede e dos vasos do intestino": [
+   "Noradrenaline on the alpha receptors of the gut wall and vessels",
+   "Noradrenalina en los receptores alfa de la pared y los vasos del intestino"
+  ],
+  "Noradrenalina nos receptores alfa dos vasos do nariz": [
+   "Noradrenaline on the alpha receptors of the nasal vessels",
+   "Noradrenalina en los receptores alfa de los vasos de la nariz"
+  ],
+  "Noradrenalina nos receptores alfa-1 e beta-2 do útero": [
+   "Noradrenaline on the uterus's alpha-1 and beta-2 receptors",
+   "Noradrenalina en los receptores alfa-1 y beta-2 del útero"
+  ],
+  "Noradrenalina nos receptores beta-1 da glândula pineal": [
+   "Noradrenaline on the beta-1 receptors of the pineal gland",
+   "Noradrenalina en los receptores beta-1 de la glándula pineal"
+  ],
+  "Noradrenalina nos receptores beta-1 do coração e alfa-1 dos vasos": [
+   "Noradrenaline on the heart's beta-1 receptors and the vessels' alpha-1 receptors",
+   "Noradrenalina en los receptores beta-1 del corazón y alfa-1 de los vasos"
   ],
   "Normal, ou cólica que passa com o remédio de costume": [
    "Normal, or period pain relieved by the usual medicine",
@@ -23783,6 +24401,22 @@
    "Level or exposure",
    "Nivel o exposición"
   ],
+  "Núcleo de Edinger-Westphal e nervo oculomotor, com acetilcolina nos receptores M3": [
+   "Edinger-Westphal nucleus and oculomotor nerve, with acetylcholine on M3 receptors",
+   "Núcleo de Edinger-Westphal y nervio oculomotor, con acetilcolina en los receptores M3"
+  ],
+  "Núcleo do trato solitário e centros respiratórios do bulbo, com saída pelo nervo frênico": [
+   "Nucleus of the solitary tract and medullary respiratory centres, with output through the phrenic nerve",
+   "Núcleo del tracto solitario y centros respiratorios del bulbo, con salida por el nervio frénico"
+  ],
+  "Núcleo supraquiasmático do hipotálamo, guiado pela luz dos olhos": [
+   "Suprachiasmatic nucleus of the hypothalamus, guided by light from the eyes",
+   "Núcleo supraquiasmático del hipotálamo, guiado por la luz de los ojos"
+  ],
+  "Núcleos da rafe, que produzem serotonina": [
+   "Raphe nuclei, which produce serotonin",
+   "Núcleos del rafe, que producen serotonina"
+  ],
   "Número": [
    "Figure",
    "Cifra"
@@ -23894,6 +24528,10 @@
   "O **gás que expande** também conta. Depois de uma **cirurgia no tórax**, como a ponte de safena, sobra ar dentro do peito, e ele cresce com a subida (Veja M1V1 - II); por isso o passageiro espera de **10 a 14 dias** para o ar ser reabsorvido (Veja M2V2 - III).": [
    "The **expanding gas** also counts. After **chest surgery**, such as bypass surgery, air remains inside the chest, and it expands during the climb (See M1V1 - II); that is why the passenger waits **10 to 14 days** for the air to be reabsorbed (See M2V2 - III).",
    "El **gas que se expande** también cuenta. Después de una **cirugía de tórax**, como el bypass coronario, queda aire dentro del pecho, y se expande con el ascenso (Ver M1V1 - II); por eso el pasajero espera de **10 a 14 días** para que el aire se reabsorba (Ver M2V2 - III)."
+  ],
+  "O **hipotálamo** comanda a **hipófise**, que comanda as outras glândulas: a tireoide, as suprarrenais e as gônadas. Na hipóxia e no estresse do voo, a medula da **suprarrenal** solta **adrenalina**, que pelos receptores **beta-2** do fígado quebra o glicogênio e sobe o açúcar do sangue, e pelos receptores **alfa-2** do pâncreas segura a **insulina**. O **cortisol** sobe e também aumenta a glicose. A hipófise posterior libera o **hormônio antidiurético**, que segura água no rim. Dentro das células, a hipóxia ativa o **HIF**, que liga as enzimas da **glicólise**, o caminho que produz energia sem oxigênio, com mais gasto de glicose e produção de lactato. Por isso a altitude e o estresse mexem com o controle do diabetes (Veja M2V9 - II).": [
+   "The **hypothalamus** commands the **pituitary**, which commands the other glands: the thyroid, the adrenals and the gonads. In hypoxia and the stress of flight, the **adrenal** medulla releases **adrenaline**, which through the liver's **beta-2** receptors breaks down glycogen and raises blood sugar, and through the pancreas's **alpha-2** receptors holds back **insulin**. **Cortisol** rises and also increases glucose. The posterior pituitary releases **antidiuretic hormone**, which holds water in the kidney. Inside cells, hypoxia activates **HIF**, which switches on the enzymes of **glycolysis**, the pathway that produces energy without oxygen, with greater use of glucose and production of lactate. That is why altitude and stress affect diabetes control (See M2V9 - II).",
+   "El **hipotálamo** comanda la **hipófisis**, que comanda las demás glándulas: la tiroides, las suprarrenales y las gónadas. En la hipoxia y el estrés del vuelo, la médula de la **suprarrenal** libera **adrenalina**, que por los receptores **beta-2** del hígado rompe el glucógeno y sube el azúcar de la sangre, y por los receptores **alfa-2** del páncreas frena la **insulina**. El **cortisol** sube y también aumenta la glucosa. La hipófisis posterior libera la **hormona antidiurética**, que retiene agua en el riñón. Dentro de las células, la hipoxia activa el **HIF**, que enciende las enzimas de la **glucólisis**, el camino que produce energía sin oxígeno, con mayor gasto de glucosa y producción de lactato. Por eso la altitud y el estrés alteran el control de la diabetes (Ver M2V9 - II)."
   ],
   "O **jet lag** é o descompasso entre o **relógio biológico** e o **horário do lugar** depois de cruzar fusos rapidamente. Ele começa a contar a partir de **2 fusos** e traz, em **1 a 2 dias**, **insônia** ou **sono durante o dia**, cansaço, dificuldade de concentração, mal-estar e problemas do **estômago e do intestino**. Numa pesquisa, **68%** dos viajantes a negócios tinham esses sintomas com frequência.": [
    "**Jet lag** is the mismatch between the **biological clock** and **local time** after crossing time zones quickly. It counts from **2 time zones** and brings, within **1 to 2 days**, **insomnia** or **daytime sleepiness**, tiredness, difficulty concentrating, malaise and **stomach and bowel** problems. In one survey, **68%** of business travelers often had these symptoms.",
@@ -24247,6 +24885,10 @@
    "Cold shock, with gasping and inhaling water",
    "El choque frío, con respiración jadeante y aspiración de agua"
   ],
+  "O ciclo começa no **hipotálamo**, que solta o **GnRH** em pulsos; a hipófise responde com o **LH** e o **FSH**, que comandam o ovário e a produção de **estrogênio** e **progesterona**. A progesterona estimula os **centros respiratórios** do tronco cerebral, e por isso a respiração fica mais funda na segunda metade do ciclo e na gestação. O útero recebe o **simpático**, que contrai pelos receptores **alfa-1** e relaxa pelos **beta-2**, e na gravidez a **ocitocina** da hipófise posterior comanda as contrações e a saída do leite. O estresse, o fuso e as jornadas alteram o pulso do GnRH e podem desregular o ciclo, e a placenta depende do oxigênio do sangue da mãe (Veja M2V13 - II e M2V8).": [
+   "The cycle begins in the **hypothalamus**, which releases **GnRH** in pulses; the pituitary responds with **LH** and **FSH**, which command the ovary and the production of **oestrogen** and **progesterone**. Progesterone stimulates the brainstem's **respiratory centres**, which is why breathing becomes deeper in the second half of the cycle and in pregnancy. The uterus receives the **sympathetic** supply, which contracts it through **alpha-1** receptors and relaxes it through **beta-2** receptors, and in pregnancy **oxytocin** from the posterior pituitary commands contractions and milk let-down. Stress, time zones and duty periods alter the GnRH pulse and can disrupt the cycle, and the placenta depends on oxygen in the mother's blood (See M2V13 - II and M2V8).",
+   "El ciclo empieza en el **hipotálamo**, que libera la **GnRH** en pulsos; la hipófisis responde con la **LH** y la **FSH**, que comandan el ovario y la producción de **estrógeno** y **progesterona**. La progesterona estimula los **centros respiratorios** del tronco cerebral, y por eso la respiración se hace más profunda en la segunda mitad del ciclo y en el embarazo. El útero recibe el **simpático**, que lo contrae por los receptores **alfa-1** y lo relaja por los **beta-2**, y en el embarazo la **oxitocina** de la hipófisis posterior comanda las contracciones y la salida de la leche. El estrés, el huso y las jornadas alteran el pulso de la GnRH y pueden desregular el ciclo, y la placenta depende del oxígeno de la sangre de la madre (Ver M2V13 - II y M2V8)."
+  ],
   "O cilindro de oxigênio de bordo é inspecionado com o manômetro à vista e longe de óleo e graxa.": [
    "The on-board oxygen cylinder is inspected with the gauge in view and away from oil and grease.",
    "El cilindro de oxígeno de a bordo se inspecciona con el manómetro a la vista y lejos de aceite y grasa."
@@ -24262,6 +24904,10 @@
   "O concentrador portátil aprovado pela companhia leva o oxigênio combinado no MEDIF durante todo o voo.": [
    "The portable concentrator approved by the airline delivers the oxygen arranged in the MEDIF throughout the flight.",
    "El concentrador portátil aprobado por la aerolínea lleva el oxígeno acordado en el MEDIF durante todo el vuelo."
+  ],
+  "O coração acelera menos na hipóxia e no esforço": [
+   "The heart speeds up less in hypoxia and exertion",
+   "El corazón se acelera menos en la hipoxia y el esfuerzo"
   ],
   "O coração com pouco sangue nas coronárias perde o ritmo e deixa o cérebro sem fluxo em segundos (Veja M2V2)": [
    "A heart short of blood in the coronary arteries loses its rhythm and leaves the brain without flow within seconds (See M2V2)",
@@ -24282,6 +24928,10 @@
   "O coração em movimento no ecocardiograma: a cada batida, as válvulas se abrem e se fecham para empurrar o sangue num só sentido.": [
    "The heart in motion on the echocardiogram: with each beat, the valves open and close to push blood in one direction only.",
    "El corazón en movimiento en el ecocardiograma: con cada latido, las válvulas se abren y se cierran para empujar la sangre en un solo sentido."
+  ],
+  "O coração tem ritmo próprio, mas quem ajusta a velocidade e a força é o **sistema nervoso autônomo**. O **simpático** nasce no bulbo, na região chamada **bulbo ventrolateral rostral**, desce pela medula e solta **noradrenalina** nos receptores **beta-1** do coração: a frequência e a força sobem. A medula da **suprarrenal** reforça com **adrenalina**. O **parassimpático** chega pelo **nervo vago**, com **acetilcolina** nos receptores **M2**, e freia o coração. Na hipóxia, os quimiorreceptores das carótidas aumentam o simpático e reduzem o vago, e o coração acelera; nos vasos da pele e do intestino, os receptores **alfa-1** fecham a passagem, e os das coronárias e do cérebro se abrem com a **adenosina** liberada pela falta de oxigênio (Veja M2V1 - I).": [
+   "The heart has its own rhythm, but speed and force are adjusted by the **autonomic nervous system**. The **sympathetic** branch arises in the medulla, in the region called the **rostral ventrolateral medulla**, travels down the spinal cord and releases **noradrenaline** on the heart's **beta-1** receptors: rate and force rise. The **adrenal** medulla reinforces this with **adrenaline**. The **parasympathetic** branch arrives through the **vagus nerve**, with **acetylcholine** on **M2** receptors, and slows the heart. In hypoxia, the carotid chemoreceptors raise sympathetic and lower vagal activity, and the heart speeds up; in the vessels of the skin and gut, **alpha-1** receptors narrow the passage, while those of the coronary arteries and brain open with the **adenosine** released by the lack of oxygen (See M2V1 - I).",
+   "El corazón tiene ritmo propio, pero quien ajusta la velocidad y la fuerza es el **sistema nervioso autónomo**. El **simpático** nace en el bulbo, en la región llamada **bulbo ventrolateral rostral**, baja por la médula y libera **noradrenalina** en los receptores **beta-1** del corazón: la frecuencia y la fuerza suben. La médula de la **suprarrenal** refuerza con **adrenalina**. El **parasimpático** llega por el **nervio vago**, con **acetilcolina** en los receptores **M2**, y frena el corazón. En la hipoxia, los quimiorreceptores carotídeos aumentan el simpático y reducen el vago, y el corazón se acelera; en los vasos de la piel y del intestino, los receptores **alfa-1** cierran el paso, y los de las coronarias y del cerebro se abren con la **adenosina** liberada por la falta de oxígeno (Ver M2V1 - I)."
   ],
   "O coração é o risco que mais cresce com a idade, e é por isso que o ECG e a validade do certificado mudam aos 35, 40 e 60 anos.": [
    "The heart is the risk that grows most with age, which is why the ECG and certificate validity change at 35, 40 and 60.",
@@ -24327,6 +24977,14 @@
    "The body works within a narrow temperature range. In the heat, it defends itself by **sweating**: the evaporation of sweat carries heat away. In humid heat, this cooling fails (See M1V1 - IV), and the problem grows in a cockpit parked in the sun, in uniform or during exertion on the ground.",
    "El cuerpo trabaja en una franja estrecha de temperatura. Con calor, se defiende **sudando**: la evaporación del sudor se lleva el calor. En el calor húmedo, ese enfriamiento falla (Ver M1V1 - IV), y el problema crece en una cabina parada al sol, con el uniforme o durante el esfuerzo en tierra."
   ],
+  "O cortisol sobe na altitude e aumenta a glicose": [
+   "Cortisol rises at altitude and increases glucose",
+   "El cortisol sube en la altitud y aumenta la glucosa"
+  ],
+  "O cortisol sobe na altitude e no estresse prolongado e pesa no sono e no humor": [
+   "Cortisol rises at altitude and in prolonged stress and weighs on sleep and mood",
+   "El cortisol sube en la altitud y en el estrés prolongado y pesa en el sueño y el humor"
+  ],
   "O cristalino endurece e perde a capacidade de focar perto": [
    "The lens stiffens and loses its ability to focus up close",
    "El cristalino se endurece y pierde la capacidad de enfocar de cerca"
@@ -24350,6 +25008,10 @@
   "O cérebro passa a confiar só no labirinto, que engana": [
    "The brain starts trusting only the inner ear, which deceives",
    "El cerebro pasa a confiar solo en el laberinto, que engaña"
+  ],
+  "O cérebro regula o próprio sangue. Quando o oxigênio cai, os vasos cerebrais se abrem, pela ação da **adenosina** e do **óxido nítrico**; quando a respiração rápida baixa o **gás carbônico**, eles se fecham, e é por isso que hiperventilar dá tontura (Veja M2V1 - V). Sem oxigênio, o neurônio não consegue manter a **bomba de sódio e potássio**, a enzima que gasta energia para manter a carga elétrica, e a função cai em segundos. O **córtex pré-frontal**, que julga e planeja, é dos primeiros a falhar, antes da consciência; o **sistema reticular ativador**, no tronco cerebral, mantém o estado de alerta e também sofre com a hipóxia. O **hipotálamo** comanda o sistema autônomo e os hormônios, ligando o cérebro ao resto do corpo.": [
+   "The brain regulates its own blood supply. When oxygen falls, cerebral vessels open, through the action of **adenosine** and **nitric oxide**; when fast breathing lowers **carbon dioxide**, they narrow, which is why hyperventilating causes dizziness (See M2V1 - V). Without oxygen, the neuron cannot maintain the **sodium-potassium pump**, the enzyme that spends energy to keep the electrical charge, and function fails within seconds. The **prefrontal cortex**, which judges and plans, is among the first to fail, before consciousness; the **reticular activating system**, in the brainstem, maintains alertness and also suffers with hypoxia. The **hypothalamus** commands the autonomic system and the hormones, linking the brain to the rest of the body.",
+   "El cerebro regula su propia sangre. Cuando el oxígeno baja, los vasos cerebrales se abren, por la acción de la **adenosina** y del **óxido nítrico**; cuando la respiración rápida baja el **gas carbónico**, se cierran, y por eso hiperventilar da mareo (Ver M2V1 - V). Sin oxígeno, la neurona no consigue mantener la **bomba de sodio y potasio**, la enzima que gasta energía para mantener la carga eléctrica, y la función cae en segundos. La **corteza prefrontal**, que juzga y planifica, es de las primeras en fallar, antes que la conciencia; el **sistema reticular activador**, en el tronco cerebral, mantiene el estado de alerta y también sufre con la hipoxia. El **hipotálamo** comanda el sistema autónomo y las hormonas, uniendo el cerebro al resto del cuerpo."
   ],
   "O defeito também pode ser **adquirido**, num olho mais que no outro e às vezes piorando: doenças da **retina**, do **nervo óptico**, **glaucoma** avançado e remédios como a **hidroxicloroquina**, o **etambutol** e o **digitálico**. O **sildenafil**, para disfunção erétil, deixa tudo **azulado** em **3% a 11%** dos usuários por até 5 horas ou mais; a FAA pede **8 horas** sem voar depois dele (Veja M2V4 - VII).": [
    "The deficiency can also be **acquired**, in one eye more than the other and sometimes worsening: diseases of the **retina**, the **optic nerve**, advanced **glaucoma** and medicines such as **hydroxychloroquine**, **ethambutol** and **digitalis**. **Sildenafil**, for erectile dysfunction, makes everything look **bluish** in **3% to 11%** of users for up to 5 hours or more; the FAA requires **8 hours** without flying after it (See M2V4 - VII).",
@@ -24475,6 +25137,10 @@
    "The cold in the hold can freeze insulin, and the bag can get lost. In flight, it does not need a fridge.",
    "El frío de la bodega puede congelar la insulina, y la maleta puede perderse. En el vuelo no necesita nevera."
   ],
+  "O fuso desalinha o relógio do dia local": [
+   "Time zones misalign the clock from local day",
+   "El huso desalinea el reloj del día local"
+  ],
   "O fuso desloca o horário da pílula; a radiação soma dose ao feto": [
    "Time zones shift the pill time; radiation adds dose to the fetus",
    "El huso desplaza el horario de la píldora; la radiación suma dosis al feto"
@@ -24535,6 +25201,10 @@
    "The kit that fits in a vest",
    "El kit que cabe en un chaleco"
   ],
+  "O labirinto manda o movimento da cabeça pelo **nervo vestibular** aos **núcleos vestibulares**, no tronco cerebral, que conversam com o **cerebelo**, com os músculos dos olhos e com o **córtex**, onde se forma a sensação de posição. Quando o labirinto, os olhos e o corpo discordam, os núcleos vestibulares acionam a **área postrema** e o **núcleo do trato solitário**, ligados ao vômito, e o **sistema autônomo** responde com palidez, suor frio e náusea: é o enjoo. Nesse caminho agem a **histamina**, nos receptores **H1**, e a **acetilcolina**, nos receptores **muscarínicos**, e por isso os remédios contra enjoo bloqueiam esses receptores e dão sono. A hipóxia e o álcool pioram o trabalho do cerebelo e a integração dos sinais (Veja M2V1).": [
+   "The labyrinth sends head movement along the **vestibular nerve** to the **vestibular nuclei**, in the brainstem, which communicate with the **cerebellum**, the eye muscles and the **cortex**, where the sense of position is formed. When the labyrinth, eyes and body disagree, the vestibular nuclei activate the **area postrema** and the **nucleus of the solitary tract**, linked to vomiting, and the **autonomic system** responds with pallor, cold sweat and nausea: this is motion sickness. **Histamine**, on **H1** receptors, and **acetylcholine**, on **muscarinic** receptors, act along this pathway, which is why motion-sickness medicines block these receptors and cause drowsiness. Hypoxia and alcohol worsen the work of the cerebellum and the integration of signals (See M2V1).",
+   "El laberinto envía el movimiento de la cabeza por el **nervio vestibular** a los **núcleos vestibulares**, en el tronco cerebral, que se comunican con el **cerebelo**, con los músculos de los ojos y con la **corteza**, donde se forma la sensación de posición. Cuando el laberinto, los ojos y el cuerpo discrepan, los núcleos vestibulares activan el **área postrema** y el **núcleo del tracto solitario**, ligados al vómito, y el **sistema autónomo** responde con palidez, sudor frío y náusea: es el mareo. En ese camino actúan la **histamina**, en los receptores **H1**, y la **acetilcolina**, en los receptores **muscarínicos**, y por eso los medicamentos contra el mareo bloquean esos receptores y dan sueño. La hipoxia y el alcohol empeoran el trabajo del cerebelo y la integración de las señales (Ver M2V1)."
+  ],
   "O labirinto tem duas peças. Os **canais semicirculares**, três anéis cheios de líquido, sentem a **rotação** nos três eixos: rolar, arfar e guinar. Os **otólitos** sentem a **gravidade** e a **aceleração** em linha reta. Os dois funcionam bem no chão, onde os movimentos são curtos e a gravidade aponta sempre para baixo.": [
    "The inner ear has two parts. The **semicircular canals**, three fluid-filled rings, sense **rotation** about the three axes: roll, pitch and yaw. The **otoliths** sense **gravity** and straight-line **acceleration**. Both work well on the ground, where movements are short and gravity always points down.",
    "El laberinto tiene dos partes. Los **canales semicirculares**, tres anillos llenos de líquido, sienten la **rotación** en los tres ejes: alabeo, cabeceo y guiñada. Los **otolitos** sienten la **gravedad** y la **aceleración** en línea recta. Los dos funcionan bien en tierra, donde los movimientos son cortos y la gravedad apunta siempre hacia abajo."
@@ -24563,6 +25233,10 @@
    "Fear of flying can turn into hyperventilation; breathing slowly and telling the crew help.",
    "El miedo a volar puede acabar en hiperventilación; respirar despacio y avisar a la tripulación ayudan."
   ],
+  "O medo e o estresse têm endereço no cérebro. A **amígdala** detecta a ameaça e aciona o **hipotálamo**, que dispara dois caminhos: o rápido, pelo **simpático** e pela **adrenalina** da suprarrenal, que acelera o coração e a respiração; e o lento, o **eixo hipotálamo-hipófise-suprarrenal**, em que o **CRH** do hipotálamo libera o **ACTH** da hipófise e este, o **cortisol**. O **locus coeruleus**, no tronco cerebral, espalha **noradrenalina** pelo cérebro e mantém a vigilância, e os núcleos da **rafe** produzem a **serotonina**, ligada ao humor, que é o alvo dos antidepressivos. Na ansiedade, a respiração acelerada pode causar **hiperventilação**, que imita a hipóxia, e a hipóxia, por sua vez, pode trazer euforia e julgamento pior (Veja M2V1 - V).": [
+   "Fear and stress have an address in the brain. The **amygdala** detects the threat and activates the **hypothalamus**, which triggers two pathways: the fast one, through the **sympathetic** system and **adrenaline** from the adrenal gland, which speeds up the heart and breathing; and the slow one, the **hypothalamic-pituitary-adrenal axis**, in which hypothalamic **CRH** releases pituitary **ACTH**, which in turn releases **cortisol**. The **locus coeruleus**, in the brainstem, spreads **noradrenaline** through the brain and maintains vigilance, and the **raphe** nuclei produce **serotonin**, linked to mood, which is the target of antidepressants. In anxiety, fast breathing can cause **hyperventilation**, which mimics hypoxia, and hypoxia in turn can bring euphoria and poorer judgement (See M2V1 - V).",
+   "El miedo y el estrés tienen dirección en el cerebro. La **amígdala** detecta la amenaza y activa el **hipotálamo**, que dispara dos caminos: el rápido, por el **simpático** y la **adrenalina** de la suprarrenal, que acelera el corazón y la respiración; y el lento, el **eje hipotálamo-hipófisis-suprarrenal**, en el que la **CRH** del hipotálamo libera la **ACTH** de la hipófisis y esta, el **cortisol**. El **locus coeruleus**, en el tronco cerebral, reparte **noradrenalina** por el cerebro y mantiene la vigilancia, y los núcleos del **rafe** producen la **serotonina**, ligada al humor, que es el blanco de los antidepresivos. En la ansiedad, la respiración acelerada puede causar **hiperventilación**, que imita la hipoxia, y la hipoxia, a su vez, puede traer euforia y peor juicio (Ver M2V1 - V)."
+  ],
   "O mesmo nível exigido dos sistemas críticos da aeronave": [
    "The same level required of the aircraft's critical systems",
    "El mismo nivel exigido a los sistemas críticos de la aeronave"
@@ -24578,6 +25252,10 @@
   "O movimento brusco da cabeça numa curva prolongada dá a sensação de giro em outro eixo, a ilusão de Coriolis.": [
    "An abrupt head movement in a prolonged turn gives the sensation of rotation about another axis, the Coriolis illusion.",
    "El movimiento brusco de la cabeza en un viraje prolongado da la sensación de giro en otro eje, la ilusión de Coriolis."
+  ],
+  "O movimento nasce no **córtex motor**, é ajustado pelo **cerebelo** e pelos **núcleos da base** e desce pela medula até os **neurônios motores**, que soltam **acetilcolina** na placa motora e contraem o músculo. A postura depende dos **fusos musculares** e dos sinais de posição das articulações, que voltam à medula e ao cerebelo. O **simpático** ajusta o sangue do músculo: os receptores **beta-2** abrem os vasos no esforço. Na hipóxia, o músculo produz mais **lactato** e se cansa antes, e a coordenação fina piora quando o cerebelo recebe menos oxigênio. O osso é regulado pelo **paratormônio**, pela **vitamina D** e pela **calcitonina**, que controlam o cálcio do sangue (Veja M2V5 - I).": [
+   "Movement originates in the **motor cortex**, is fine-tuned by the **cerebellum** and **basal ganglia** and travels down the spinal cord to the **motor neurons**, which release **acetylcholine** at the motor end plate and contract the muscle. Posture depends on **muscle spindles** and joint position signals, which return to the spinal cord and cerebellum. The **sympathetic** system adjusts the muscle's blood: **beta-2** receptors open the vessels during exertion. In hypoxia, muscle produces more **lactate** and tires sooner, and fine coordination worsens when the cerebellum receives less oxygen. Bone is regulated by **parathyroid hormone**, **vitamin D** and **calcitonin**, which control blood calcium (See M2V5 - I).",
+   "El movimiento nace en la **corteza motora**, es ajustado por el **cerebelo** y los **núcleos de la base** y baja por la médula hasta las **neuronas motoras**, que liberan **acetilcolina** en la placa motora y contraen el músculo. La postura depende de los **husos musculares** y de las señales de posición de las articulaciones, que vuelven a la médula y al cerebelo. El **simpático** ajusta la sangre del músculo: los receptores **beta-2** abren los vasos en el esfuerzo. En la hipoxia, el músculo produce más **lactato** y se cansa antes, y la coordinación fina empeora cuando el cerebelo recibe menos oxígeno. El hueso está regulado por la **parathormona**, la **vitamina D** y la **calcitonina**, que controlan el calcio de la sangre (Ver M2V5 - I)."
   ],
   "O movimento é menor perto das asas; olhar o horizonte e evitar ler também ajudam.": [
    "Motion is smaller near the wings; looking at the horizon and avoiding reading also help.",
@@ -24818,6 +25496,10 @@
   "O que a ejeção faz com a coluna, e quando ela salva?": [
    "What does ejection do to the spine, and when does it save lives?",
    "¿Qué le hace la eyección a la columna, y cuándo salva?"
+  ],
+  "O que a hipóxia e a baixa pressão fazem": [
+   "What hypoxia and low pressure do",
+   "Qué hacen la hipoxia y la baja presión"
   ],
   "O que a radiação de voo pode causar, e por que a gestação pede atenção especial?": [
    "What can flight radiation cause, and why does pregnancy call for special attention?",
@@ -25163,6 +25845,10 @@
    "The wall clock",
    "El reloj de pared"
   ],
+  "O relógio do corpo fica no **núcleo supraquiasmático**, no hipotálamo, que recebe a luz pelos olhos. Ele comanda a **glândula pineal** por um caminho do **simpático**: a **noradrenalina** dos nervos que vêm do pescoço estimula os receptores **beta-1** da pineal, que liga a enzima que fabrica a **melatonina** no escuro. Durante o dia acumula-se **adenosina** no cérebro, que aumenta a pressão de sono, e é ela que o café bloqueia. O **hipotálamo lateral** produz a **orexina**, que mantém a vigília, e o **núcleo pré-óptico** produz o **GABA**, que desliga o alerta para dormir. Na altitude, a respiração pode ficar irregular durante o sono, com pausas e despertares, e o **cortisol** acompanha o relógio, subindo de manhã (Veja M2V8 - II).": [
+   "The body clock sits in the **suprachiasmatic nucleus**, in the hypothalamus, which receives light through the eyes. It commands the **pineal gland** through a **sympathetic** pathway: **noradrenaline** from nerves coming from the neck stimulates the pineal's **beta-1** receptors, which switch on the enzyme that makes **melatonin** in the dark. During the day **adenosine** accumulates in the brain, increasing sleep pressure, and it is this that coffee blocks. The **lateral hypothalamus** produces **orexin**, which maintains wakefulness, and the **preoptic nucleus** produces **GABA**, which switches off alertness for sleep. At altitude, breathing can become irregular during sleep, with pauses and awakenings, and **cortisol** follows the clock, rising in the morning (See M2V8 - II).",
+   "El reloj del cuerpo está en el **núcleo supraquiasmático**, en el hipotálamo, que recibe la luz por los ojos. Comanda la **glándula pineal** por un camino del **simpático**: la **noradrenalina** de los nervios que vienen del cuello estimula los receptores **beta-1** de la pineal, que enciende la enzima que fabrica la **melatonina** en la oscuridad. Durante el día se acumula **adenosina** en el cerebro, que aumenta la presión de sueño, y es ella la que bloquea el café. El **hipotálamo lateral** produce la **orexina**, que mantiene la vigilia, y el **núcleo preóptico** produce el **GABA**, que apaga el alerta para dormir. En la altitud, la respiración puede volverse irregular durante el sueño, con pausas y despertares, y el **cortisol** sigue al reloj, subiendo por la mañana (Ver M2V8 - II)."
+  ],
   "O relógio interno tem ciclo um pouco maior que 24 horas; atrasar é mais fácil que adiantar. O ajuste é de cerca de 1 h por dia para o leste e 1,5 h para o oeste.": [
    "The internal clock has a cycle slightly longer than 24 hours; delaying is easier than advancing. Adjustment is about 1 h per day eastward and 1.5 h westward.",
    "El reloj interno tiene un ciclo un poco mayor que 24 horas; atrasar es más fácil que adelantar. El ajuste es de cerca de 1 h por día hacia el este y 1,5 h hacia el oeste."
@@ -25206,6 +25892,10 @@
   "O rim produz a eritropoietina, que manda a medula fazer glóbulos vermelhos; sem ela, vem a anemia, e o pouco oxigênio da cabine pesa mais.": [
    "The kidney produces erythropoietin, which tells the marrow to make red blood cells; without it, anaemia follows, and the cabin's low oxygen weighs more.",
    "El riñón produce la eritropoyetina, que ordena a la médula fabricar glóbulos rojos; sin ella, llega la anemia, y el poco oxígeno de la cabina pesa más."
+  ],
+  "O rim responde ao cérebro e aos hormônios. O **simpático** chega pelos nervos renais: pelos receptores **beta-1** libera a **renina**, que forma a **angiotensina** e a **aldosterona**, e pelos **alfa-1** fecha a entrada de sangue no rim. O **hipotálamo** sente a falta de água e manda a hipófise posterior soltar o **hormônio antidiurético**, que abre canais de água, as **aquaporinas**, e concentra a urina. Na altitude, a respiração rápida tira gás carbônico, e o rim elimina **bicarbonato** com a ajuda da enzima **anidrase carbônica**, a mesma que a acetazolamida bloqueia; costuma haver mais urina nas primeiras horas. A bexiga é comandada pelo **centro da micção** na ponte: o **parassimpático** contrai a bexiga pelos receptores **M3**, e o **simpático** a relaxa pelos **beta-3** e fecha a saída pelos **alfa-1**, alvo da tansulosina (Veja M2V14 - IV).": [
+   "The kidney responds to the brain and to hormones. The **sympathetic** supply arrives through the renal nerves: through **beta-1** receptors it releases **renin**, which forms **angiotensin** and **aldosterone**, and through **alpha-1** receptors it narrows blood inflow to the kidney. The **hypothalamus** senses water shortage and tells the posterior pituitary to release **antidiuretic hormone**, which opens water channels, the **aquaporins**, and concentrates the urine. At altitude, fast breathing removes carbon dioxide, and the kidney excretes **bicarbonate** with the help of the enzyme **carbonic anhydrase**, the same one acetazolamide blocks; there is usually more urine in the first hours. The bladder is commanded by the **micturition centre** in the pons: the **parasympathetic** branch contracts the bladder through **M3** receptors, and the **sympathetic** relaxes it through **beta-3** receptors and closes the outlet through **alpha-1** receptors, the target of tamsulosin (See M2V14 - IV).",
+   "El riñón responde al cerebro y a las hormonas. El **simpático** llega por los nervios renales: por los receptores **beta-1** libera la **renina**, que forma la **angiotensina** y la **aldosterona**, y por los **alfa-1** cierra la entrada de sangre al riñón. El **hipotálamo** siente la falta de agua y manda a la hipófisis posterior liberar la **hormona antidiurética**, que abre canales de agua, las **acuaporinas**, y concentra la orina. En la altitud, la respiración rápida quita gas carbónico, y el riñón elimina **bicarbonato** con la ayuda de la enzima **anhidrasa carbónica**, la misma que bloquea la acetazolamida; suele haber más orina en las primeras horas. La vejiga está comandada por el **centro de la micción** en el puente: el **parasimpático** contrae la vejiga por los receptores **M3**, y el **simpático** la relaja por los **beta-3** y cierra la salida por los **alfa-1**, blanco de la tamsulosina (Ver M2V14 - IV)."
   ],
   "O rim saudável não sente; na doença renal, a anemia faz o pouco oxigênio pesar mais.": [
    "A healthy kidney does not notice; in kidney disease, anaemia makes the low oxygen weigh more.",
@@ -25255,6 +25945,10 @@
    "Noise",
    "El ruido"
   ],
+  "O ruído da cabine cansa a via e esconde os agudos": [
+   "Cabin noise tires the pathway and hides high pitches",
+   "El ruido de la cabina cansa la vía y oculta los agudos"
+  ],
   "O ruído da cabine esconde as consoantes do rádio": [
    "Cockpit noise hides the consonants on the radio",
    "El ruido de la cabina oculta las consonantes de la radio"
@@ -25298,6 +25992,10 @@
   "O segredo está no gradiente. Com oxigênio puro a 2,8 atmosferas, a diferença de pressão de nitrogênio entre a bolha e o tecido chega a **2.086 mmHg, contra 142 mmHg na superfície**: o nitrogênio sai da bolha muito mais depressa. Nem todo centro hiperbárico trata a doença descompressiva de altitude, e **localizar o serviço certo faz parte da conduta**.": [
    "The secret is in the gradient. With pure oxygen at 2.8 atmospheres, the nitrogen pressure difference between the bubble and the tissue reaches **2,086 mmHg, versus 142 mmHg at the surface**: nitrogen leaves the bubble much faster. Not every hyperbaric center treats altitude decompression sickness, and **finding the right service is part of the response**.",
    "El secreto está en el gradiente. Con oxígeno puro a 2,8 atmósferas, la diferencia de presión de nitrógeno entre la burbuja y el tejido llega a **2.086 mmHg, contra 142 mmHg en la superficie**: el nitrógeno sale de la burbuja mucho más deprisa. No todo centro hiperbárico trata la enfermedad descompresiva de altitud, y **localizar el servicio adecuado forma parte de la conducta**."
+  ],
+  "O sensor do sangue fica no **rim**: células próximas aos túbulos percebem a queda de oxigênio pelo **HIF**, que liga o gene da **eritropoetina**. Esse hormônio vai à **medula óssea** e acelera a produção de hemácias, um processo que leva dias a semanas e não ajuda num voo de poucas horas. Mais rápido é o ajuste dentro da própria hemácia: a enzima que fabrica o **2,3-DPG** trabalha mais, e a hemoglobina solta o oxigênio com mais facilidade nos tecidos. O **simpático** chega à medula óssea, ao baço e aos gânglios linfáticos, e o **cortisol** do estresse reduz parte da defesa, o que ajuda a explicar por que o cansaço e as viagens longas facilitam infecções (Veja M2V1 - I e M2V9 - I).": [
+   "The blood's sensor sits in the **kidney**: cells near the tubules sense the fall in oxygen through **HIF**, which switches on the **erythropoietin** gene. This hormone travels to the **bone marrow** and speeds up red-cell production, a process that takes days to weeks and does not help on a flight of a few hours. Faster is the adjustment inside the red cell itself: the enzyme that makes **2,3-DPG** works harder, and haemoglobin releases oxygen more easily in the tissues. The **sympathetic** system reaches the bone marrow, spleen and lymph nodes, and stress **cortisol** reduces part of the body's defence, which helps explain why tiredness and long trips make infections easier (See M2V1 - I and M2V9 - I).",
+   "El sensor de la sangre está en el **riñón**: células cercanas a los túbulos perciben la caída del oxígeno por el **HIF**, que enciende el gen de la **eritropoyetina**. Esa hormona va a la **médula ósea** y acelera la producción de glóbulos rojos, un proceso que tarda días a semanas y no ayuda en un vuelo de pocas horas. Más rápido es el ajuste dentro del propio glóbulo rojo: la enzima que fabrica el **2,3-DPG** trabaja más, y la hemoglobina suelta el oxígeno con más facilidad en los tejidos. El **simpático** llega a la médula ósea, al bazo y a los ganglios linfáticos, y el **cortisol** del estrés reduce parte de la defensa, lo que ayuda a explicar por qué el cansancio y los viajes largos facilitan las infecciones (Ver M2V1 - I y M2V9 - I)."
   ],
   "O sol cortado pela hélice pode piscar na faixa que causa vertigem por cintilação.": [
    "The sun cut by the propeller can flash in the range that causes flicker vertigo.",
@@ -25495,6 +26193,10 @@
    "Note",
    "Observación"
   ],
+  "Ocitocina da hipófise posterior e hormônios da placenta": [
+   "Oxytocin from the posterior pituitary and placental hormones",
+   "Oxitocina de la hipófisis posterior y hormonas de la placenta"
+  ],
   "Oeste": [
    "West",
    "Oeste"
@@ -25671,6 +26373,10 @@
    "Where is the night blind spot?",
    "¿Dónde está el punto ciego nocturno?"
   ],
+  "Onde nasce e como chega": [
+   "Where it starts and how it arrives",
+   "Dónde nace y cómo llega"
+  ],
   "Onde o corpo guarda gás durante o voo. Na subida esse gás se expande; na descida, precisa voltar a entrar.": [
    "Where the body holds gas during flight. During climb this gas expands; during descent, it needs to get back in.",
    "Dónde guarda gas el cuerpo durante el vuelo. En el ascenso ese gas se expande; en el descenso, necesita volver a entrar."
@@ -25726,6 +26432,10 @@
   "Opioides após a cirurgia": [
    "Opioids after surgery",
    "Opioides tras la cirugía"
+  ],
+  "Orexina do hipotálamo lateral e GABA do núcleo pré-óptico": [
+   "Orexin from the lateral hypothalamus and GABA from the preoptic nucleus",
+   "Orexina del hipotálamo lateral y GABA del núcleo preóptico"
   ],
   "Organizar documentação sanitária exigida sem exposição desnecessária de dados": [
    "Organize required health documentation without unnecessary data exposure",
@@ -25834,6 +26544,10 @@
   "Os aviões de linha cruzam perto do teto do tempo: abaixo, as nuvens da troposfera; acima, o céu cada vez mais escuro.": [
    "Airliners cruise near the top of the weather: below, the clouds of the troposphere; above, an ever darker sky.",
    "Los aviones de línea cruzan cerca del techo del tiempo: abajo, las nubes de la troposfera; arriba, el cielo cada vez más oscuro."
+  ],
+  "Os bastonetes sentem a hipóxia primeiro: a visão noturna cai cedo": [
+   "Rods feel hypoxia first: night vision falls early",
+   "Los bastones sienten la hipoxia primero: la visión nocturna cae pronto"
   ],
   "Os cones se ajustam em minutos e os bastonetes continuam ganhando sensibilidade até cerca de 30 minutos.": [
    "Cones adjust within minutes and rods keep gaining sensitivity up to about 30 minutes.",
@@ -25955,6 +26669,10 @@
    "The airport clocks show local time; the body clock is still on the home time zone.",
    "Los relojes del aeropuerto marcan la hora local; el reloj del cuerpo sigue en el huso de casa."
   ],
+  "Os remédios contra enjoo os bloqueiam e por isso dão sono": [
+   "Motion-sickness medicines block them, which is why they cause drowsiness",
+   "Los medicamentos contra el mareo los bloquean y por eso dan sueño"
+  ],
   "Os remédios de pressão vão na bagagem de mão, separados por dia, com o horário ajustado ao fuso.": [
    "Blood pressure medicines go in carry-on baggage, sorted by day, with timing adjusted to the time zone.",
    "Los medicamentos para la presión van en el equipaje de mano, separados por día, con el horario ajustado al huso."
@@ -25962,6 +26680,10 @@
   "Os remédios funcionam melhor **antes** do voo. A **escopolamina** dura cerca de **4 horas** por via oral e **72 horas** em adesivo, e dá um pouco menos de sono; não serve para quem tem **glaucoma** ou risco de retenção urinária. **Dimenidrinato** e **meclizina** dão sono; a **prometazina** é a que mais dá. Os anti-histamínicos que não dão sono, como **loratadina**, **fexofenadina** e **cetirizina**, e a **ondansetrona** **não funcionam** contra o enjoo de movimento. Em crianças, todo remédio pede cuidado, e a escopolamina deve ser evitada.": [
    "Medications work best **before** the flight. **Scopolamine** lasts about **4 hours** orally and **72 hours** as a patch, and is slightly less sedating; it is not for people with **glaucoma** or risk of urinary retention. **Dimenhydrinate** and **meclizine** cause drowsiness; **promethazine** causes the most. Non-drowsy antihistamines, such as **loratadine**, **fexofenadine** and **cetirizine**, and **ondansetron** **do not work** against motion sickness. In children, any medication calls for caution, and scopolamine should be avoided.",
    "Los medicamentos funcionan mejor **antes** del vuelo. La **escopolamina** dura cerca de **4 horas** por vía oral y **72 horas** en parche, y da un poco menos de sueño; no sirve para quien tiene **glaucoma** o riesgo de retención urinaria. El **dimenhidrinato** y la **meclizina** dan sueño; la **prometazina** es la que más da. Los antihistamínicos que no dan sueño, como la **loratadina**, la **fexofenadina** y la **cetirizina**, y el **ondansetrón** **no funcionan** contra el mareo por movimiento. En niños, todo medicamento requiere cuidado, y la escopolamina debe evitarse."
+  ],
+  "Os remédios para dormir reforçam o GABA; por isso dão sono e lentidão": [
+   "Sleep medicines reinforce GABA; that is why they cause drowsiness and slowness",
+   "Los medicamentos para dormir refuerzan el GABA; por eso dan sueño y lentitud"
   ],
   "Os remédios pedem cuidado dobrado. Para dor e febre, o **paracetamol** é a escolha; os **anti-inflamatórios**, como ibuprofeno, devem ser evitados a partir da **20ª semana**, porque podem reduzir o líquido em volta do bebê. O **enjoo** tem remédios seguros na gestação, mas alguns dão **sono**. Quem tem risco alto de trombose pode receber **heparina** do obstetra antes do voo longo; para as demais, bastam movimento, água e **meias de compressão**. O **ferro** continua no horário de sempre.": [
    "Medicines need double care. For pain and fever, **paracetamol** is the choice; **anti-inflammatories**, such as ibuprofen, should be avoided from the **20th week**, because they can reduce the fluid around the baby. **Nausea** has medicines that are safe in pregnancy, but some cause **sleepiness**. Women at high risk of thrombosis may be given **heparin** by the obstetrician before a long flight; for the rest, movement, water and **compression stockings** are enough. **Iron** stays on its usual schedule.",
@@ -26811,6 +27533,18 @@
    "Stopping a medicine",
    "Dejar un medicamento"
   ],
+  "Parassimpático": [
+   "Parasympathetic",
+   "Parasimpático"
+  ],
+  "Parassimpático e simpático da bexiga": [
+   "Bladder parasympathetic and sympathetic",
+   "Parasimpático y simpático de la vejiga"
+  ],
+  "Paratormônio, vitamina D e calcitonina": [
+   "Parathyroid hormone, vitamin D and calcitonin",
+   "Parathormona, vitamina D y calcitonina"
+  ],
   "Parecer especializado, porque podem dar reação e são contraindicadas na imunidade baixa": [
    "Specialist opinion, because they can cause reactions and are contraindicated with low immunity",
    "Dictamen especializado, porque pueden dar reacción y están contraindicadas con inmunidad baja"
@@ -27579,6 +28313,10 @@
    "Pyelonephritis: acute febrile illness, unfit until resolved.",
    "Pielonefritis: enfermedad febril aguda, no apto hasta la resolución."
   ],
+  "Pigmento e vitamina": [
+   "Pigment and vitamin",
+   "Pigmento y vitamina"
+  ],
   "Pilocarpina": [
    "Pilocarpine",
    "Pilocarpina"
@@ -27754,6 +28492,10 @@
   "Placa calcificada relevante, com eventos acima de 1% ao ano": [
    "Relevant calcified plaque, with events above 1% per year",
    "Placa calcificada relevante, con eventos por encima del 1% al año"
+  ],
+  "Placa motora": [
+   "Motor end plate",
+   "Placa motora"
   ],
   "Planejamento": [
    "Planning",
@@ -30275,6 +31017,10 @@
    "Oxygen pressure in the lungs",
    "Presión de oxígeno en el pulmón"
   ],
+  "Pressão de sono": [
+   "Sleep pressure",
+   "Presión de sueño"
+  ],
   "Pressão do olho alta sem diagnóstico": [
    "High eye pressure without a diagnosis",
    "Presión del ojo alta sin diagnóstico"
@@ -31611,6 +32357,10 @@
    "Anyone who went through a rapid decompression stays off flying for 24 hours, because ears, lungs and nitrogen bubbles can give late signs.",
    "Quien pasó por una descompresión rápida se queda 24 horas sin volar, porque oídos, pulmones y burbujas de nitrógeno pueden dar signos tardíos."
   ],
+  "Quem percebe a falta de oxigênio são os **quimiorreceptores** dos **corpos carotídeos**, no pescoço, e do arco da aorta. Quando o oxigênio do sangue cai, eles disparam pelos nervos **glossofaríngeo** e **vago** até o **núcleo do trato solitário**, no bulbo, que aciona os **centros respiratórios** do tronco cerebral. Daí parte a ordem pelo **nervo frênico** ao diafragma: a respiração fica mais funda e mais rápida. O **sistema simpático** solta **noradrenalina** e **adrenalina**, que abrem os brônquios pelos receptores **beta-2**. Dentro das células, a hipóxia ativa o **HIF**, fator que liga os genes da **eritropoetina** e das enzimas que produzem energia sem oxigênio, e as hemácias produzem mais **2,3-DPG**, que ajuda a soltar o oxigênio nos tecidos (Veja M1V2).": [
+   "Oxygen shortage is sensed by the **chemoreceptors** of the **carotid bodies**, in the neck, and of the aortic arch. When blood oxygen falls, they fire through the **glossopharyngeal** and **vagus** nerves to the **nucleus of the solitary tract**, in the medulla, which drives the **respiratory centres** of the brainstem. From there the command travels through the **phrenic nerve** to the diaphragm: breathing becomes deeper and faster. The **sympathetic system** releases **noradrenaline** and **adrenaline**, which open the bronchi through **beta-2** receptors. Inside cells, hypoxia activates **HIF**, a factor that switches on the genes for **erythropoietin** and for the enzymes that produce energy without oxygen, and red cells produce more **2,3-DPG**, which helps release oxygen in the tissues (See M1V2).",
+   "Quien percibe la falta de oxígeno son los **quimiorreceptores** de los **cuerpos carotídeos**, en el cuello, y del arco aórtico. Cuando el oxígeno de la sangre baja, disparan por los nervios **glosofaríngeo** y **vago** hasta el **núcleo del tracto solitario**, en el bulbo, que activa los **centros respiratorios** del tronco cerebral. De ahí parte la orden por el **nervio frénico** al diafragma: la respiración se hace más profunda y más rápida. El **sistema simpático** libera **noradrenalina** y **adrenalina**, que abren los bronquios por los receptores **beta-2**. Dentro de las células, la hipoxia activa el **HIF**, factor que enciende los genes de la **eritropoyetina** y de las enzimas que producen energía sin oxígeno, y los glóbulos rojos producen más **2,3-DPG**, que ayuda a soltar el oxígeno en los tejidos (Ver M1V2)."
+  ],
   "Quem pode examinar": [
    "Who may examine",
    "Quién puede examinar"
@@ -32111,6 +32861,10 @@
    "Slower reactions and vertigo",
    "Reacción más lenta y vértigo"
   ],
+  "Recebem o conflito de sinais e disparam a náusea": [
+   "Receive the conflict of signals and trigger nausea",
+   "Reciben el conflicto de señales y disparan la náusea"
+  ],
   "Recebi transplante de rim": [
    "I have had a kidney transplant",
    "Recibí un trasplante de riñón"
@@ -32162,6 +32916,10 @@
   "Recorrência: mesmo prazo de 7 dias após a resolução (BTS 2022); discutir a indicação cirúrgica.": [
    "Recurrence: same 7-day period after resolution (BTS 2022); discuss the indication for surgery.",
    "Recurrencia: mismo plazo de 7 días tras la resolución (BTS 2022); discutir la indicación quirúrgica."
+  ],
+  "Recua na hipóxia; o desmaio vasovagal é o vago disparando de repente": [
+   "Withdraws in hypoxia; a vasovagal faint is the vagus firing suddenly",
+   "Se retira en la hipoxia; el desmayo vasovagal es el vago disparando de golpe"
   ],
   "Recuperar com 2 noites seguidas de sono livre": [
    "Recover with 2 consecutive nights of unrestricted sleep",
@@ -32223,6 +32981,10 @@
    "Reduces tremor; dizziness at first",
    "Reduce el temblor; mareo al inicio"
   ],
+  "Reduz parte da defesa; cansaço e viagens longas facilitam infecções": [
+   "Reduces part of the defence; tiredness and long trips make infections easier",
+   "Reduce parte de la defensa; el cansancio y los viajes largos facilitan las infecciones"
+  ],
   "Reduzem o risco de um novo AVC": [
    "Reduce the risk of another stroke",
    "Reducen el riesgo de un nuevo ACV"
@@ -32282,6 +33044,14 @@
   "Referência": [
    "Reference",
    "Referencia"
+  ],
+  "Reflexo dos olhos": [
+   "Eye reflex",
+   "Reflejo de los ojos"
+  ],
+  "Reflexo vestíbulo-ocular, dos núcleos vestibulares aos músculos dos olhos": [
+   "Vestibulo-ocular reflex, from the vestibular nuclei to the eye muscles",
+   "Reflejo vestíbulo-ocular, de los núcleos vestibulares a los músculos de los ojos"
   ],
   "Reflexos, equilíbrio e atenção: o exame procura também a falha que muda a decisão sem sinal externo.": [
    "Reflexes, balance and attention: the examination also looks for the failure that changes decisions without any outward sign.",
@@ -32370,6 +33140,14 @@
   "Regras próprias da anticoagulação (Veja M2V11 - II)": [
    "Own anticoagulation rules (See M2V11 - II)",
    "Reglas propias de la anticoagulación (Ver M2V11 - II)"
+  ],
+  "Regulam o ácido do estômago, o pâncreas e a vesícula": [
+   "Regulate stomach acid, the pancreas and the gallbladder",
+   "Regulan el ácido del estómago, el páncreas y la vesícula"
+  ],
+  "Regulam tireoide, suprarrenais, gônadas e água do corpo": [
+   "Regulate thyroid, adrenals, gonads and body water",
+   "Regulan tiroides, suprarrenales, gónadas y agua del cuerpo"
   ],
   "Regulação da temperatura": [
    "Temperature regulation",
@@ -32518,6 +33296,10 @@
   "Relógio biológico": [
    "Biological clock",
    "Reloj biológico"
+  ],
+  "Relógio central": [
+   "Central clock",
+   "Reloj central"
   ],
   "Remédio": [
    "Medication",
@@ -33307,6 +34089,14 @@
    "Slow breathing; cognitive-behavioural therapy",
    "Respiración lenta; terapia cognitivo-conductual"
   ],
+  "Respiração mais funda e rápida; o gás carbônico cai e o sangue fica alcalino": [
+   "Deeper, faster breathing; carbon dioxide falls and the blood becomes alkaline",
+   "Respiración más profunda y rápida; el gas carbónico baja y la sangre se vuelve alcalina"
+  ],
+  "Respiração mais funda na gestação e na segunda metade do ciclo": [
+   "Deeper breathing in pregnancy and in the second half of the cycle",
+   "Respiración más profunda en el embarazo y en la segunda mitad del ciclo"
+  ],
   "Respiração no sono": [
    "Breathing during sleep",
    "Respiración en el sueño"
@@ -33326,6 +34116,10 @@
   "Responda às seis perguntas do checklist da FAA antes de voar. Toque em cada uma que for sim.": [
    "Answer the six questions of the FAA checklist before flying. Tap each one that is a yes.",
    "Responde las seis preguntas del checklist de la FAA antes de volar. Toca cada una que sea sí."
+  ],
+  "Responde menos com a idade: tontura ao levantar depois de horas sentado": [
+   "Responds less with age: dizziness on standing after hours of sitting",
+   "Responde menos con la edad: mareo al levantarse tras horas sentado"
   ],
   "Responder com sinceridade; perguntar se não entender": [
    "Answer honestly; ask if you do not understand",
@@ -33386,6 +34180,10 @@
   "Retenção urinária: sondagem e investigação antes do voo.": [
    "Urinary retention: catheterisation and investigation before flying.",
    "Retención urinaria: sondaje e investigación antes del vuelo."
+  ],
+  "Retina com consumo muito alto e circulação própria": [
+   "Retina with very high consumption and its own circulation",
+   "Retina con consumo muy alto y circulación propia"
   ],
   "Retina com gás C3F8 ou C2F6": [
    "Retina with C3F8 or C2F6 gas",
@@ -33670,6 +34468,10 @@
   "Ritual": [
    "Routine",
    "Ritual"
+  ],
+  "Rodopsina dos bastonetes, feita a partir da vitamina A": [
+   "Rhodopsin in the rods, made from vitamin A",
+   "Rodopsina de los bastones, hecha a partir de la vitamina A"
   ],
   "Rolamentos": [
    "Rolls",
@@ -34051,6 +34853,14 @@
    "Sedation added to immobility: advise mobility and avoid extra doses on board.",
    "Sedación sumada a la inmovilidad: orientar movilidad y evitar dosis extra a bordo."
   ],
+  "Sede e água": [
+   "Thirst and water",
+   "Sed y agua"
+  ],
+  "Sede menos sensível e rim que concentra menos: desidratação mais cedo": [
+   "Less sensitive thirst and a kidney that concentrates less: earlier dehydration",
+   "Sed menos sensible y riñón que concentra menos: deshidratación más temprana"
+  ],
   "Sede só com 2% do peso perdido; 5%, fadiga e náusea; depois, confusão e falência dos rins; com menos água, o volume de sangue cai, e o cérebro e o rim recebem menos fluxo": [
    "Thirst only at 2% of body weight lost; 5%, fatigue and nausea; then confusion and kidney failure; with less water, blood volume falls, and the brain and kidney receive less flow",
    "Sed solo con el 2% del peso perdido; 5%, fatiga y náuseas; después, confusión e insuficiencia renal; con menos agua, el volumen de sangre cae, y el cerebro y el riñón reciben menos flujo"
@@ -34178,6 +34988,10 @@
   "Segundos depois da descompressão: névoa súbita, papéis e poeira no ar e as máscaras já caídas.": [
    "Seconds after the decompression: sudden fog, papers and dust in the air and the masks already down.",
    "Segundos después de la descompresión: niebla súbita, papeles y polvo en el aire y las máscaras ya caídas."
+  ],
+  "Segura água no rim quando o corpo desidrata": [
+   "Holds water in the kidney when the body dehydrates",
+   "Retiene agua en el riñón cuando el cuerpo se deshidrata"
   ],
   "Segurança do aeroporto": [
    "Airport security",
@@ -34358,6 +35172,10 @@
   "Sem oxigênio a bordo: o teste mostrou que a cabine não derruba a saturação abaixo do seguro": [
    "No in-flight oxygen: the test showed the cabin does not drop saturation below safe levels",
    "Sin oxígeno a bordo: la prueba mostró que la cabina no baja la saturación por debajo de lo seguro"
+  ],
+  "Sem oxigênio, a carga elétrica se perde e a função cai em segundos": [
+   "Without oxygen, the electrical charge is lost and function fails within seconds",
+   "Sin oxígeno, la carga eléctrica se pierde y la función cae en segundos"
   ],
   "Sem oxigênio, numa exposição súbita, o TCU encolhe com a altitude: cerca de **20 a 30 minutos a 18.000 ft**, **3 a 5 minutos a 25.000 ft**, **1 a 2 minutos a 30.000 ft**, **30 segundos a 1 minuto a 35.000 ft** e **15 a 20 segundos a 40.000 ft**. São estimativas, não prazos garantidos.": [
    "Without oxygen, in a sudden exposure, the TUC shrinks with altitude: about **20 to 30 minutes at 18,000 ft**, **3 to 5 minutes at 25,000 ft**, **1 to 2 minutes at 30,000 ft**, **30 seconds to 1 minute at 35,000 ft** and **15 to 20 seconds at 40,000 ft**. These are estimates, not guaranteed limits.",
@@ -34542,6 +35360,18 @@
   "Sensor contínuo": [
    "Continuous sensor",
    "Sensor continuo"
+  ],
+  "Sensor de oxigênio": [
+   "Oxygen sensor",
+   "Sensor de oxígeno"
+  ],
+  "Sensores": [
+   "Sensors",
+   "Sensores"
+  ],
+  "Sensores do pescoço e da aorta e núcleo do trato solitário": [
+   "Sensors in the neck and aorta and the nucleus of the solitary tract",
+   "Sensores del cuello y de la aorta y núcleo del tracto solitario"
   ],
   "Sentado": [
    "Seated",
@@ -35091,6 +35921,26 @@
    "Sympathomimetics.",
    "Simpaticomiméticos."
   ],
+  "Simpático": [
+   "Sympathetic",
+   "Simpático"
+  ],
+  "Simpático do rim": [
+   "Renal sympathetic",
+   "Simpático del riñón"
+  ],
+  "Simpático e adrenalina": [
+   "Sympathetic and adrenaline",
+   "Simpático y adrenalina"
+  ],
+  "Simpático e parassimpático": [
+   "Sympathetic and parasympathetic",
+   "Simpático y parasimpático"
+  ],
+  "Simpático e pineal": [
+   "Sympathetic and pineal",
+   "Simpático y pineal"
+  ],
   "Simula 25.000 ft para acelerar a saída das bolhas.": [
    "It simulates 25,000 ft to speed the release of bubbles.",
    "Simula 25.000 ft para acelerar la salida de las burbujas."
@@ -35146,6 +35996,10 @@
   "Sinais e sintomas": [
    "Signs and symptoms",
    "Signos y síntomas"
+  ],
+  "Sinais locais e enzimas": [
+   "Local signals and enzymes",
+   "Señales locales y enzimas"
   ],
   "Sinais próprios": [
    "Distinctive signs",
@@ -35295,6 +36149,18 @@
    "Nervous system and performance",
    "Sistema nervioso y rendimiento"
   ],
+  "Sistema nervoso entérico, na parede do intestino": [
+   "Enteric nervous system, in the gut wall",
+   "Sistema nervioso entérico, en la pared del intestino"
+  ],
+  "Sistema próprio": [
+   "Own system",
+   "Sistema propio"
+  ],
+  "Sistema reticular ativador do tronco cerebral": [
+   "Reticular activating system of the brainstem",
+   "Sistema reticular activador del tronco cerebral"
+  ],
   "Sistemas de demanda dependem de boa vedação; barba e bigode atrapalham o ajuste da máscara.": [
    "Demand systems depend on a good seal; beards and mustaches spoil the mask fit.",
    "Los sistemas a demanda dependen de un buen sellado; la barba y el bigote estorban el ajuste de la máscara."
@@ -35330,6 +36196,10 @@
   "Sobe cerca de 28% com 2 noites de 4 h": [
    "Rises about 28% with 2 nights of 4 h",
    "Sube cerca del 28% con 2 noches de 4 h"
+  ],
+  "Sobe o açúcar do sangue e segura a insulina": [
+   "Raises blood sugar and holds back insulin",
+   "Sube el azúcar de la sangre y frena la insulina"
   ],
   "Sobre a barriga, bem apertado": [
    "Over the bump, tight",
@@ -35559,6 +36429,10 @@
    "Sleep, body clock and fatigue",
    "Sueño, reloj biológico y fatiga"
   ],
+  "Sono, sedativos e hipóxia reduzem o estado de alerta": [
+   "Sleep, sedatives and hypoxia reduce alertness",
+   "El sueño, los sedantes y la hipoxia reducen el estado de alerta"
+  ],
   "Sono, tontura e lentidão de reação": [
    "Drowsiness, dizziness and slow reactions",
    "Sueño, mareo y lentitud de reacción"
@@ -35746,6 +36620,10 @@
   "São os que têm estrogênio e aumentam a coagulação.": [
    "These contain oestrogen and increase clotting.",
    "Son los que tienen estrógeno y aumentan la coagulación."
+  ],
+  "São os sinais de alerta do enjoo, antes do vômito": [
+   "These are the warning signs of motion sickness, before vomiting",
+   "Son las señales de alerta del mareo, antes del vómito"
   ],
   "Série histórica": [
    "Historical series",
@@ -36551,6 +37429,10 @@
    "Bluish tint for hours",
    "Tono azulado por horas"
   ],
+  "Tom em repouso maior e receptores beta do coração menos sensíveis": [
+   "Higher resting tone and less sensitive cardiac beta receptors",
+   "Tono en reposo mayor y receptores beta del corazón menos sensibles"
+  ],
   "Toma remédio em horário fixo e vai cruzar fusos?": [
    "Do you take medicine at a fixed time and will you cross time zones?",
    "¿Toma un medicamento en horario fijo y va a cruzar husos horarios?"
@@ -36690,6 +37572,10 @@
   "Transfusão de sangue nos últimos dias": [
    "Blood transfusion in the last few days",
    "Transfusión de sangre en los últimos días"
+  ],
+  "Transmissores": [
+   "Transmitters",
+   "Transmisores"
   ],
   "Transmissão e segurança do voo": [
    "Transmission and flight safety",
@@ -37166,6 +38052,10 @@
   "Trombose, queda e confusão são os três riscos do idoso no voo.": [
    "Thrombosis, falls and confusion are the three risks for older people in flight.",
    "Trombosis, caída y confusión son los tres riesgos del mayor en vuelo."
+  ],
+  "Tronco cerebral, estimulado pela progesterona": [
+   "Brainstem, stimulated by progesterone",
+   "Tronco cerebral, estimulado por la progesterona"
   ],
   "Troposfera": [
    "Troposphere",
@@ -37891,6 +38781,10 @@
    "Scanning, the right glasses and a spare",
    "Barrido, anteojos correctos y reserva"
   ],
+  "Vasos cerebrais regulados por adenosina, óxido nítrico e gás carbônico": [
+   "Cerebral vessels regulated by adenosine, nitric oxide and carbon dioxide",
+   "Vasos cerebrales regulados por adenosina, óxido nítrico y gas carbónico"
+  ],
   "Vasos do cérebro": [
    "Brain vessels",
    "Vasos del cerebro"
@@ -38107,9 +39001,17 @@
    "Vibration from 12.5 to 31.5 Hz blurs vision and instrument reading: in this range the eye shakes inside the orbit and the image slips on the retina",
    "La vibración de 12,5 a 31,5 Hz nubla la visión y la lectura de los instrumentos: en esta franja el ojo se balancea dentro de la órbita y la imagen se desliza en la retina"
   ],
+  "Vigilância": [
+   "Surveillance",
+   "Vigilancia"
+  ],
   "Vigilância ao longo da carreira": [
    "Surveillance throughout the career",
    "Vigilancia a lo largo de la carrera"
+  ],
+  "Vigília e sono": [
+   "Wake and sleep",
+   "Vigilia y sueño"
   ],
   "Visor e óculos de visão noturna": [
    "Visor and night-vision goggles",
@@ -38939,6 +39841,10 @@
    "Sipping water on a long flight: the cabin's dry air dries and dehydrates, and drinking helps circulation.",
    "Agua de a poco en el vuelo largo: el aire seco de la cabina reseca y deshidrata, y beber ayuda a la circulación."
   ],
+  "Água do corpo": [
+   "Body water",
+   "Agua del cuerpo"
+  ],
   "Água e comida": [
    "Water and food",
    "Agua y comida"
@@ -39050,6 +39956,10 @@
   "Área atrófica no tímpano": [
    "Atrophic area on the eardrum",
    "Área atrófica en el tímpano"
+  ],
+  "Área postrema e núcleo do trato solitário, no bulbo": [
+   "Area postrema and nucleus of the solitary tract, in the medulla",
+   "Área postrema y núcleo del tracto solitario, en el bulbo"
   ],
   "É a faixa de pior desempenho do dia.": [
    "It is the worst-performance window of the day.",

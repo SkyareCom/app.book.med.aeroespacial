@@ -1,3 +1,6 @@
+// REGISTRO DE REVISÃO · 16/11/2026, autorizado pelo autor ("Autorizo"): parágrafo, tabela e explorador "Comando nervoso e
+// hormonal na altitude" no tópico de abertura (simpático, parassimpático, centros do SNC, hormônios e enzimas). Fontes:
+// Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 // Missão Sistemas · M2V10 — Estômago, intestino e fígado. Publicado em 06/11/2026; revisão de padronização em 09/11/2026
 // (pedido do autor: "Revise, padronize, corrija os erros"): células sem ponto final, títulos de tabela com o tema,
 // remissão no padrão, tempo de leitura e uma frase sem sujeito.
@@ -61,6 +64,7 @@ export const digestivo: Capitulo = {
           "O **ar seco**, a **imobilidade**, a mudança das refeições e o **fuso horário** favorecem desconforto, constipação ou desidratação quando já há perda de líquidos por diarreia ou vômitos (Veja M1V1 - IV e M2V8 - III). As forças G intensas não são um fator habitual na cabine de passageiros; na aviação acrobática, a dor súbita pode prejudicar a atuação do tripulante.",
           "Passageiro e tripulante precisam distinguir **desconforto leve** de **abdome agudo**. Dor progressiva intensa, barriga rígida, vômitos persistentes, sangue vomitado, fezes negras com mal-estar ou desmaio exigem avaliação urgente, não uma tentativa de tratar o sintoma já a bordo.",
           "**Doenças, tratamentos e tipo de voo.** As doenças digestivas que mais pesam no voo são o **refluxo**, a **gastrite** e a **úlcera**; a **diarreia**, o **intestino irritável** e a **doença inflamatória intestinal**; as **hepatites**, a gordura no fígado e a **cirrose**; os **cálculos da vesícula** e a **pancreatite**; e as **hérnias** e cirurgias do abdome. O tratamento vai do **expectante**, no cálculo sem sintomas, no intestino irritável leve e na hérnia que não dói, ao **não invasivo**, que é a maioria: dieta, remédio para acidez, reidratação, anti-inflamatórios do intestino e antivirais das hepatites. Os tratamentos **invasivos** são a **endoscopia**, a **cirurgia por vídeo** ou **aberta**, a retirada da vesícula e, no fígado que falha, o **transplante**. No avião **pressurizado**, a 8.000 ft o gás do intestino cresce cerca de **38%**; no **não pressurizado**, a 10.000 ft, cerca de **50%**; no **helicóptero**, o voo baixo expande menos, mas, como no avião leve, quase nunca há banheiro.",
+          "O intestino tem um sistema nervoso próprio, o **sistema nervoso entérico**, que coordena o movimento e a secreção, mas recebe ordens de fora. O **parassimpático**, pelo **nervo vago**, solta **acetilcolina** nos receptores **M3** e aumenta o movimento e o suco digestivo. O **simpático**, pela **noradrenalina** nos receptores **alfa**, freia o movimento e fecha os vasos do intestino. Na hipóxia e no estresse, o simpático desvia o sangue do intestino para o coração e o cérebro, e a digestão fica mais lenta; o gás preso se expande com a queda de pressão (Veja M1V1 - II). A **área postrema**, no bulbo, percebe toxinas e conflitos de sinais e comanda a náusea e o vômito, e hormônios como a **gastrina** e a **colecistocinina** regulam o estômago e a vesícula.",
           "**Como prevenir e amenizar.** Antes de viajar, trate sintomas ativos e discuta com o médico cirurgias recentes, doença hepática descompensada ou crises intestinais. Prefira alimentação já tolerada e leve os remédios na bagagem de mão. Durante o voo, hidrate-se conforme sua condição clínica e movimente-se quando permitido; o tripulante com sintomas incapacitantes deve suspender a atividade e buscar avaliação.",
         ].join('\n\n'),
         recursos: [
@@ -110,7 +114,7 @@ export const digestivo: Capitulo = {
             midia: "animacao-gas-intestinal"
           },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: "Como prevenir e amenizar · aparelho digestivo",
               colunas: [
@@ -136,7 +140,22 @@ export const digestivo: Capitulo = {
                 ]
               ]
             }
-          }
+          },
+          { paragrafo: 7, midia: 'comando-digestivo' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal na altitude · aparelho digestivo",
+              colunas: ["Comando", "Onde nasce e como chega", "O que a hipóxia e a baixa pressão fazem"],
+              linhas: [
+                ["Sistema próprio", "Sistema nervoso entérico, na parede do intestino", "Coordena movimento e secreção mesmo sem ordens de fora"],
+                ["Parassimpático", "Nervo vago, com acetilcolina nos receptores M3", "Mais movimento e mais suco digestivo"],
+                ["Simpático", "Noradrenalina nos receptores alfa da parede e dos vasos do intestino", "Na hipóxia e no estresse, desvia o sangue e deixa a digestão lenta"],
+                ["Centro do vômito", "Área postrema e núcleo do trato solitário, no bulbo", "Comandam náusea e vômito no enjoo e na intoxicação"],
+                ["Hormônios", "Gastrina, secretina e colecistocinina", "Regulam o ácido do estômago, o pâncreas e a vesícula"],
+              ],
+            },
+          },
         ]
       }
     },

@@ -137,7 +137,8 @@ const ARQUIVOS = Object.freeze({
   // 10/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Nas tabelas em que houver Tripulantes e passageiros
   //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante das
   //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
-  'src/data/capitulos/hipoxia.ts': 'e86dbb124a703a2b',
+  // 16/11/2026: autorizado pelo autor ("Autorizo"; pedido "Em todos os sistemas agregar informações sobre estímulos noradrenérgicos e beta-adrenérgicos, simpático ou parassimpático, locais do cérebro e do SNC que comandam cada sistema, enzimas e hormônios estimulados pela hipóxia, altitude e hipobarismo"): parágrafo, tabela "Comando nervoso e hormonal na altitude" e explorador no tópico de abertura; hash novo.
+  'src/data/capitulos/hipoxia.ts': '8b033bf8e0c9c6fc',
   // 12/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Todos os topicos dos sistemas entram com formulários
   //   no card especial"): cinco perguntas novas na liberação, uma para cada tópico I a V, e a do mergulho ligada ao tópico IX; hash novo.
   'src/data/liberacao/respiratorio.ts': 'c1cf63692c68f6f5',
