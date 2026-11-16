@@ -143,3 +143,108 @@ export function AnimacaoMeiaVida() {
     </Quadro>
   );
 }
+
+// M3V3 · O voo na câmara: perfil do curso de fisiologia de 1 dia do CAMI (FAA, AC 61-107B): subida com oxigênio,
+// descompressão rápida de 8.000 para 18.000 ft e demonstração de hipóxia a 25.000 ft sem máscara, com a máscara de volta
+// ao primeiro sinal. Registro em src/data/capitulos/selecao.ts. Esquema, sem escala de tempo.
+export function AnimacaoCamara() {
+  const c = useCiclo(15000);
+  const t = c.fase;
+  const H = 214;
+  // perfil (fase → altitude em ft)
+  const pontos: [number, number][] = [[0, 0], [0.14, 8000], [0.22, 8000], [0.25, 18000], [0.36, 18000], [0.46, 25000], [0.82, 25000], [1, 0]];
+  const altDe = (f: number) => {
+    for (let k = 1; k < pontos.length; k++) {
+      const [f0, a0] = pontos[k - 1];
+      const [f1, a1] = pontos[k];
+      if (f <= f1) return a0 + ((a1 - a0) * (f - f0)) / (f1 - f0);
+    }
+    return 0;
+  };
+  const semMascara = t >= 0.52 && t < 0.74;
+  const etapa = t < 0.22 ? 0 : t < 0.36 ? 1 : t < 0.52 ? 2 : t < 0.74 ? 3 : t < 0.82 ? 4 : 5;
+  const linha1 = ['SUBIDA COM OXIGÊNIO ATÉ 8.000 FT', 'DESCOMPRESSÃO RÁPIDA: 8.000 → 18.000 FT', 'SUBIDA A 25.000 FT COM MÁSCARA', 'HIPÓXIA A 25.000 FT: MÁSCARA FORA', 'PRIMEIRO SINAL: MÁSCARA DE VOLTA', 'DESCIDA E FIM DO TREINO'][etapa];
+  const linha2 = ['O AR DA CÂMARA É RETIRADO AOS POUCOS', 'O AR PRESO NO CORPO SE EXPANDE DE UMA VEZ', 'OXIGÊNIO A 100% PELA MÁSCARA', 'OBSERVE OS PRIMEIROS SINAIS: A SUA ASSINATURA', 'O DESEMPENHO VOLTA EM SEGUNDOS', 'OUVIDOS: ENGOLIR E COMPENSAR NA DESCIDA'][etapa];
+  const cor = semMascara ? Cores.erro : etapa === 1 ? Cores.dourado : Cores.acerto;
+  return (
+    <Quadro titulo="O voo na câmara" instrucao="Esquema do curso de fisiologia da FAA: descompressão rápida de 8.000 para 18.000 ft e hipóxia a 25.000 ft, com a máscara de volta ao primeiro sinal." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 46, x1 = w - 14, topo = 52, base = H - 26;
+        const y = (a: number) => base - ((base - topo) * a) / 25000;
+        const x = (f: number) => x0 + (x1 - x0) * f;
+        let d = `M ${x(0)} ${y(0)}`;
+        for (let s = 1; s <= Math.floor(t * 100); s++) d += ` L ${x(s / 100)} ${y(altDe(s / 100))}`;
+        let guia = `M ${x(0)} ${y(0)}`;
+        for (let s = 1; s <= 100; s++) guia += ` L ${x(s / 100)} ${y(altDe(s / 100))}`;
+        const pulso = semMascara ? 1 + 0.2 * Math.sin(t * 160) : 1;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{linha1}</SvgText>
+            <SvgText x={10} y={36} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>{linha2}</SvgText>
+            {[8000, 18000, 25000].map((a) => (
+              <G key={a}>
+                <Rect x={x0} y={y(a)} width={x1 - x0} height={1} fill={Cores.linha} fillOpacity={0.5} />
+                <SvgText x={x0 - 4} y={y(a) + 3} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="end">{a === 8000 ? '8.000' : a === 18000 ? '18.000' : '25.000'}</SvgText>
+              </G>
+            ))}
+            <Rect x={x(0.52)} y={y(25000) - 4} width={x(0.74) - x(0.52)} height={8} rx={3} fill={Cores.erro} fillOpacity={0.25} />
+            <Path d={guia} stroke="#9CCBEA" strokeOpacity={0.35} strokeWidth={1.5} fill="none" strokeDasharray="4 4" />
+            <Path d={d} stroke="#E8D27A" strokeWidth={2} fill="none" />
+            <Circle cx={x(t)} cy={y(altDe(t))} r={6 * pulso} fill={semMascara ? Cores.erro : '#F3EEDC'} />
+            <Rect x={x0} y={base} width={x1 - x0} height={1.5} fill={Cores.textoApagado} />
+            <SvgText x={x0 - 4} y={base + 3} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="end">FT</SvgText>
+            <SvgText x={x1} y={base + 16} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor="end">{semMascara ? 'SEM MÁSCARA' : 'COM OXIGÊNIO'}</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
+
+// M3V3 · Os degraus da carreira: horas mínimas do Anexo 1 da ICAO e do RBAC 61 (piloto privado 40 h, comercial 200 h,
+// linha aérea 1.500 h; MPL de 240 h em curso, caminho paralelo). Registro em src/data/capitulos/selecao.ts. Escala não
+// linear (raiz quadrada das horas), para que os primeiros degraus caibam na tela.
+export function AnimacaoCarreira() {
+  const c = useCiclo(13000);
+  const t = c.fase;
+  const H = 214;
+  const total = 1500;
+  const horas = Math.min(total, total * Math.pow(Math.min(1, t / 0.88), 2));
+  const marcos: { h: number; nome: string; cma: string }[] = [
+    { h: 40, nome: 'PRIVADO', cma: '2ª CLASSE' },
+    { h: 200, nome: 'COMERCIAL', cma: '1ª CLASSE' },
+    { h: 1500, nome: 'LINHA AÉREA', cma: '1ª CLASSE' },
+  ];
+  const atual = horas < 40 ? -1 : horas < 200 ? 0 : horas < 1500 ? 1 : 2;
+  const linha1 = atual < 0 ? 'ALUNO: VOO SOLO COM CMA DE 2ª CLASSE' : atual === 0 ? 'PRIVADO: 40 H (35 EM CURSO)' : atual === 1 ? 'COMERCIAL: 200 H (150 EM CURSO)' : 'LINHA AÉREA: 1.500 H, 21 ANOS';
+  const cor = atual < 0 ? Cores.textoSuave : atual === 0 ? Cores.destaque : atual === 1 ? Cores.dourado : Cores.acerto;
+  return (
+    <Quadro titulo="Os degraus da carreira" instrucao="Esquema das horas mínimas da ICAO e da ANAC: privado, comercial e linha aérea; a MPL é um caminho paralelo, em curso de 240 horas." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 16, x1 = w - 16, yb = 120;
+        const pos = (h: number) => x0 + (x1 - x0) * Math.sqrt(h / total);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{linha1}</SvgText>
+            <SvgText x={10} y={36} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>{Math.round(horas).toLocaleString('pt-BR')} H DE VOO</SvgText>
+            <Rect x={x0} y={yb - 4} width={x1 - x0} height={8} rx={4} fill={Cores.linha} fillOpacity={0.4} />
+            <Rect x={x0} y={yb - 4} width={Math.max(0, pos(horas) - x0)} height={8} rx={4} fill={cor} fillOpacity={0.8} />
+            {marcos.map((m, k) => (
+              <G key={m.nome}>
+                <Rect x={pos(m.h) - 1} y={yb - (k === 1 ? 36 : 22)} width={2} height={k === 1 ? 44 : 30} fill={k <= atual ? cor : Cores.textoApagado} />
+                <SvgText x={pos(m.h)} y={yb - (k === 1 ? 42 : 28)} fill={k <= atual ? Cores.texto : Cores.textoApagado} fontSize={9} fontFamily={Fonte} textAnchor={k === 2 ? 'end' : 'middle'}>{m.nome}</SvgText>
+                <SvgText x={pos(m.h)} y={yb + 22} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor={k === 2 ? 'end' : 'middle'}>{m.h.toLocaleString('pt-BR')} H</SvgText>
+                <SvgText x={pos(m.h)} y={yb + 34} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor={k === 2 ? 'end' : 'middle'}>{m.cma}</SvgText>
+              </G>
+            ))}
+            <Circle cx={pos(horas)} cy={yb} r={6} fill="#F3EEDC" />
+            <SvgText x={10} y={H - 28} fill={Cores.textoApagado} fontSize={9} fontFamily={Fonte}>MPL: CAMINHO PARALELO, 240 H EM CURSO</SvgText>
+            <SvgText x={10} y={H - 14} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte}>ESCALA NÃO LINEAR</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
