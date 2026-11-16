@@ -160,6 +160,7 @@ export const farmacologia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v2-2-inalador.jpg'), legenda: "A bombinha age no pulmão; o corticoide por via oral age no corpo todo." } },
           {
             paragrafo: 7,
             tabela: {
@@ -190,6 +191,7 @@ export const farmacologia: Capitulo = {
           "**Como prevenir e amenizar.** Antes de tomar, o tripulante calcula o prazo: cinco vezes a meia-vida ou cinco vezes o intervalo entre as doses, e confere se ele termina antes da próxima apresentação; se não terminar, escolhe outro remédio ou avisa a escala. Toma o remédio para dormir só de forma ocasional e no horário que deixa o prazo inteiro antes do voo. Não bebe nas horas anteriores à jornada, e no Brasil isso significa chegar sem nenhum álcool no sangue. O passageiro respeita o mesmo prazo antes de dirigir depois do pouso.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v2-3-relogio.jpg'), legenda: "O prazo depende de quanto tempo o corpo leva para eliminar o remédio." } },
           { paragrafo: 1, midia: 'animacao-meia-vida' },
           {
             paragrafo: 2,
@@ -237,6 +239,7 @@ export const farmacologia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v2-3-etilometro.jpg'), legenda: "No Brasil, o tripulante não pode ter nenhuma concentração de álcool no organismo." } },
           {
             paragrafo: 5,
             tabela: {
@@ -279,6 +282,7 @@ export const farmacologia: Capitulo = {
           "**Como prevenir e amenizar.** Antes de juntar dois remédios, o tripulante lê a composição dos dois, procura o mesmo princípio ativo repetido e pergunta ao farmacêutico sobre interações; não bebe álcool com remédio que dá sono; reduz o café quando usa descongestionante; e combina com o médico o horário da melatonina no novo fuso. Guarda a receita dos remédios em uso, porque o médico revisor pode pedi-la depois de um exame toxicológico. O passageiro evita misturar calmante, remédio para dormir e bebida no mesmo voo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v2-4-rotulo.jpg'), legenda: "Dois produtos diferentes podem trazer o mesmo antialérgico que dá sono." } },
           {
             paragrafo: 2,
             tabela: {
