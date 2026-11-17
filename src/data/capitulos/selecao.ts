@@ -82,6 +82,7 @@ export const selecao: Capitulo = {
           "**Como prevenir e amenizar.** Antes de pagar o curso, faça o **exame de 1ª classe** se o objetivo é a aviação comercial, e leve laudos de doenças e cirurgias antigas. Declare tudo: o que se esconde no inicial vira problema maior depois. Durma bem antes dos testes, porque o sono curto derruba a atenção e a memória (Veja M2V8 - V). Quem já está na carreira usa o **programa de apoio** cedo, antes de a dificuldade virar afastamento.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v3-1-exame.jpg'), legenda: "O primeiro filtro é o corpo: sem CMA válido, o aluno não voa sozinho." } },
           {
             paragrafo: 2,
             tabela: {
@@ -106,6 +107,7 @@ export const selecao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m3v3-1-teste.jpg'), legenda: "Testes de aptidão e simulador entram a critério da empresa; o mínimo é a entrevista." } },
           { paragrafo: 5, midia: 'caminho-selecao' },
           {
             paragrafo: 7,
@@ -267,6 +269,7 @@ export const selecao: Capitulo = {
           "**Como prevenir e amenizar.** Planeje a carreira pelo **degrau mais alto**: quem quer a linha aérea faz o exame de **1ª classe** antes de começar o curso de piloto privado. Durante a formação, trate o **sono** como parte do treino, porque o cérebro cansado aprende e decide pior, e não voe doente nem com remédio que dá sono (Veja M2V8 - V e M3V2). Registre as horas com cuidado: elas são a moeda de cada licença.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v3-4-aluna.jpg'), legenda: "Cada degrau da carreira pede idade, CMA e horas: o primeiro começa na volta de inspeção." } },
           {
             paragrafo: 2,
             tabela: {
