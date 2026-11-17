@@ -246,6 +246,7 @@ export const fatoresHumanos: Capitulo = {
           "**Como prevenir e amenizar.** Saiba sempre em que **modo** o avião está e anuncie cada mudança em voz alta. Quando a automação faz algo que você não entende, **desça um nível**: do piloto automático ao diretor de voo, do diretor de voo ao voo manual. Pratique o voo manual quando a empresa permitir e as condições forem boas, e treine panes de automação no simulador. Em voo longo, divida a vigilância com o colega e use os descansos previstos (Veja M2V8 - VI).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v4-4-telas.jpg'), legenda: "Menos mãos no manche, mais olhos nas telas: a automação mudou o trabalho do corpo." } },
           {
             paragrafo: 2,
             tabela: {
