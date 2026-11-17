@@ -5,6 +5,8 @@
 // scripts/check-congelados.cjs e registre a autorização no comentário do checador.
 // Congelamento autorizado pelo autor em 12/11/2026 ("Congele tudo que esta pronto").
 // M3V1 incluído com autorização do autor em 15/11/2026 ("Congele"), depois da publicação do voo.
+// M3V2 e M3V3 incluídos com autorização do autor em 17/11/2026 ("Congele"), depois da publicação dos voos; o marcador
+// das animações da Missão Aviação passou a ser "FIM DO CONGELAMENTO M3V3".
 // Recongelado em 16/11/2026 com autorização do autor ("Autorizo"): comando nervoso e hormonal na altitude em M2V1 a
 // M2V15; src/data/comando-sistemas.ts e src/components/midia/comando-sistemas.tsx entram no retrato.
 const fs = require('node:fs');
@@ -27,6 +29,8 @@ const VOOS = {
   M2V14: ['rins', 'rins', 'm2v14'],
   M2V15: ['envelhecimento', 'envelhecimento', 'm2v15'],
   M3V1: ['certificacao', null, 'm3v1'],
+  M3V2: ['farmacologia', null, 'm3v2'],
+  M3V3: ['selecao', null, 'm3v3'],
 };
 // Arquivos cujas traduções também ficam congeladas (Conceitos e M2V1, já protegidos em conteúdo por check-m1v1).
 const TRADUZIDOS_EXTRAS = ['atmosfera', 'descompressao', 'pressurizacao', 'radiacao', 'ruido', 'forcasg', 'impacto', 'temperatura', 'hipoxia']
@@ -54,8 +58,8 @@ if (corte < 0) throw new Error('marcador do M2V10 não encontrado em animacoes.t
 const animacoes = crypto.createHash('sha1').update(anim.slice(0, corte)).digest('hex');
 // Missão Aviação: animações congeladas até o marcador; voos novos acrescentam abaixo dele.
 const aviacao = ler('src/components/midia/animacoes-aviacao.tsx').toString('utf8');
-const corteAv = aviacao.indexOf('// FIM DO CONGELAMENTO M3V1');
-if (corteAv < 0) throw new Error('marcador do M3V1 não encontrado em animacoes-aviacao.tsx');
+const corteAv = aviacao.indexOf('// FIM DO CONGELAMENTO M3V3');
+if (corteAv < 0) throw new Error('marcador do M3V3 não encontrado em animacoes-aviacao.tsx');
 const animacoesAviacao = crypto.createHash('sha1').update(aviacao.slice(0, corteAv)).digest('hex');
 
 // Literais de texto das fontes: '...', "...", `...` sem ${} e texto JSX entre > e <.
@@ -76,7 +80,7 @@ const chaves = Object.keys(en).filter((k) => es[k] !== undefined && literais.has
 const traducoes = {};
 for (const k of chaves) traducoes[k] = [en[k], es[k]];
 
-const manifesto = { autorizado: '12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026', voos: Object.keys(VOOS), arquivos, animacoes, animacoesAviacao, traducoes };
+const manifesto = { autorizado: '12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026; M3V2 e M3V3 em 17/11/2026', voos: Object.keys(VOOS), arquivos, animacoes, animacoesAviacao, traducoes };
 const saida = JSON.stringify(manifesto, null, 1) + '\n';
 fs.writeFileSync(path.join(ROOT, 'scripts/congelados.json'), saida);
 console.log(`congelados.json: ${Object.keys(arquivos).length} arquivos, ${chaves.length} traduções; assinatura ${crypto.createHash('sha1').update(saida).digest('hex')}`);
