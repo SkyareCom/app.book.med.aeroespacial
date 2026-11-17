@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
   pausa: { alignItems: 'flex-end', marginTop: 2 },
 });
 
-// FIM DO CONGELAMENTO M3V1 (15/11/2026). Animações de voos novos da Missão Aviação entram abaixo desta linha; tudo acima
-// está congelado (scripts/check-congelados.cjs) e só muda com autorização explícita do autor.
+// M3V1 congelado em 15/11/2026; M3V2 e M3V3 em 17/11/2026 (autorização do autor: "Congele"). O marcador do fim do
+// congelamento fica no fim das animações do M3V3.
 
 // M3V2 · A meia-vida: a cada meia-vida a quantidade de remédio no sangue cai pela metade; depois de cinco, resta cerca de
 // 3% (0,5^5), base da espera de 5 meias-vidas da FAA. Registro em src/data/capitulos/farmacologia.ts. Esquema, sem escala de tempo.
@@ -248,3 +248,6 @@ export function AnimacaoCarreira() {
     </Quadro>
   );
 }
+
+// FIM DO CONGELAMENTO M3V3 (17/11/2026). Animações de voos novos da Missão Aviação entram abaixo desta linha; tudo acima
+// está congelado (scripts/check-congelados.cjs) e só muda com autorização explícita do autor.

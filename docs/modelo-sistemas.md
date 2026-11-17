@@ -131,5 +131,9 @@ aviso de que o formulário apoia a decisão e não substitui o médico, a autori
   `scripts/congelados.json`: capítulo, interativos (`m3v1-graficos.tsx`), fotos, vídeo, traduções e a animação em
   `animacoes-aviacao.tsx` até o marcador "FIM DO CONGELAMENTO M3V1". Os próximos voos da Missão Aviação acrescentam
   as animações abaixo desse marcador.
+- M3V2 Farmacologia aeroespacial e M3V3 Seleção e treinamento congelados em 17/11/2026 (pedido do autor: "Congele"),
+  no mesmo retrato: capítulos, interativos (`m3v2-graficos.tsx` e `m3v3-graficos.tsx`), fotos, vídeos, traduções e as
+  animações. O marcador de `animacoes-aviacao.tsx` passou a ser "FIM DO CONGELAMENTO M3V3"; os próximos voos da Missão
+  Aviação acrescentam as animações abaixo dele.
 - Mudar conteúdo congelado exige autorização explícita do autor; depois, `node scripts/congelar.cjs`, nova assinatura
   em `check-congelados.cjs` e o registro da autorização no comentário do checador.
