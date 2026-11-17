@@ -65,6 +65,7 @@ export const fatoresHumanos: Capitulo = {
           "**Como prevenir e amenizar.** Antes de cada voo, o tripulante confere o próprio **L**: sono, alimentação, remédios, álcool, doença e estresse. Relate os erros e as situações de risco, porque é assim que a empresa fecha os furos latentes. Quando algo não se encaixa, um procedimento confuso, um comando mal posicionado, um colega que não escuta, registre e proponha a mudança, em vez de contornar em silêncio.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v4-1-investigacao.jpg'), legenda: "O erro humano é o começo da investigação: a pergunta é o que levou a pessoa a errar." } },
           {
             paragrafo: 2,
             tabela: {
@@ -93,6 +94,7 @@ export const fatoresHumanos: Capitulo = {
             },
           },
           { paragrafo: 5, midia: 'hfacs-niveis' },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v4-1-relato.jpg'), legenda: "Relatar o erro é o que permite à empresa fechar os furos latentes." } },
           {
             paragrafo: 7,
             tabela: {
@@ -124,6 +126,7 @@ export const fatoresHumanos: Capitulo = {
           "**Como prevenir e amenizar.** Planeje o voo e faça o **briefing** pensando no que pode dar errado. Varra os instrumentos e o lado de fora em ciclos, sem fixar num ponto só (Veja M2V4 - IV). Nas fases críticas, corte a conversa que não é do voo. Se perceber que está **atrás do avião**, diminua a carga: reduza a velocidade, suba, use a automação certa ou peça tempo ao controle. E proteja o cérebro: sono, oxigênio, nada de álcool nem remédio que dá sono antes de voar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v4-2-cabine.jpg'), legenda: "Perceber, compreender e projetar: perder um nível é voar com um mapa errado na cabeça." } },
           {
             paragrafo: 2,
             tabela: {
@@ -150,6 +153,7 @@ export const fatoresHumanos: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v4-2-varredura.jpg'), legenda: "A consciência situacional é da tripulação: um voa e o outro monitora." } },
           {
             paragrafo: 7,
             tabela: {
@@ -182,6 +186,8 @@ export const fatoresHumanos: Capitulo = {
           "**Como prevenir e amenizar.** Faça o **briefing** com as ameaças do dia: tempo, aeroporto, cansaço e pane conhecida. Use as **chamadas padronizadas** e o checklist em voz alta. Se algo preocupa, fale de forma clara e direta, dizendo o que viu, o que preocupa e o que propõe; quem está no comando escuta e decide. Depois do voo, um **debriefing** curto transforma o erro de hoje na defesa de amanhã.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v4-3-tripulacao.jpg'), legenda: "O avião funcionava; quem falhou foi a equipe. O CRM nasceu dessa lição." } },
+          { paragrafo: 2, video: { fonte: require('@/assets/videos/m3v4-voo.mp4'), legenda: "Dizer o que viu, o que preocupa e o que propõe: quem comanda escuta e decide." } },
           {
             paragrafo: 3,
             tabela: {
@@ -207,6 +213,7 @@ export const fatoresHumanos: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v4-3-debriefing.jpg'), legenda: "O debriefing curto transforma o erro de hoje na defesa de amanhã." } },
           {
             paragrafo: 7,
             tabela: {
@@ -264,6 +271,7 @@ export const fatoresHumanos: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v4-4-manual.jpg'), legenda: "Quando a máquina devolve o avião, as mãos precisam saber o que fazer: o treino volta ao voo manual." } },
           {
             paragrafo: 7,
             tabela: {
