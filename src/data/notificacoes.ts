@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 33;
+export const VERSAO_NOTIFICACOES = 34;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'investigacao',
+    rotulo: 'Voo disponível',
+    titulo: 'Investigação e perícia',
+    texto: 'O voo 15 da Missão Aviação chegou antes da hora: a investigação que previne sem culpar, a sobrevivência e o que o corpo conta, a necropsia, a identificação de vítimas, a toxicologia forense, a perícia judicial, o nexo causal, a perícia trabalhista e o laudo.',
+    destino: '/capitulo/aviacao/15',
+  },
   {
     id: 'fatores-humanos',
     rotulo: 'Voo disponível',
