@@ -28,7 +28,8 @@ import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/c
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
 import { ComandoSistema } from '@/components/midia/comando-sistemas';
 import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
-import { AnimacaoMeiaVida, AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
+import { AnimacaoCamara, AnimacaoCarreira, AnimacaoMeiaVida, AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
+import { CaminhoSelecao, ConscienciaUtil, LicencaPiloto, TreinoCorpo } from '@/components/midia/m3v3-graficos';
 import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
 import { AlcoolVoo, ApoioColega, AvaliacaoPsicologica, Imsafe, PrazoAntidepressivo, QuadrosPsiquiatricos, SurtoBordo } from '@/components/midia/m2v7-graficos';
@@ -244,6 +245,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'espera-remedio': () => <EsperaRemedio />,
   'combina-remedio': () => <CombinaRemedio />,
   'animacao-meia-vida': () => <AnimacaoMeiaVida />,
+  'caminho-selecao': () => <CaminhoSelecao />,
+  'animacao-camara': () => <AnimacaoCamara />,
+  'consciencia-util': () => <ConscienciaUtil />,
+  'treino-corpo': () => <TreinoCorpo />,
+  'licenca-piloto': () => <LicencaPiloto />,
+  'animacao-carreira': () => <AnimacaoCarreira />,
   'comando-hipoxia': () => <ComandoSistema chave="hipoxia" />,
   'comando-coracao': () => <ComandoSistema chave="coracao" />,
   'comando-ouvidos': () => <ComandoSistema chave="ouvidos" />,
@@ -471,6 +478,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'espera-remedio': 'Quanto esperar depois da última dose',
   'combina-remedio': 'Combinações que pesam no voo',
   'animacao-meia-vida': 'A meia-vida do remédio',
+  'caminho-selecao': 'O caminho da seleção',
+  'animacao-camara': 'O voo na câmara',
+  'consciencia-util': 'Quanto tempo para agir',
+  'treino-corpo': 'O que cada treino cobra do corpo',
+  'licenca-piloto': 'Do piloto privado à linha aérea',
+  'animacao-carreira': 'Os degraus da carreira',
   'comando-hipoxia': 'Comando nervoso e hormonal na altitude · respiração e oxigênio',
   'comando-coracao': 'Comando nervoso e hormonal na altitude · coração e circulação',
   'comando-ouvidos': 'Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face',

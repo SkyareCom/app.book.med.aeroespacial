@@ -110,4 +110,11 @@ export const diretrizes: Referencia[] = [
   { titulo: 'CASA e IFALPA', detalhe: 'CASA (Austrália): teste no solo de remédios; IFALPA: Medication and Flying (2019)' },
   { titulo: 'NTSB', detalhe: 'Drug Use Trends in Aviation (SS-14/01, 2014): remédios em pilotos mortos em acidentes de 1990 a 2012' },
   { titulo: 'ANAC · álcool e substâncias psicoativas', detalhe: 'RBAC 91 (Emenda 07), 91.17 e 91.19; RBAC 120 (Emenda 04): programa de prevenção e exames toxicológicos' },
+  // M3V3 · Seleção e treinamento (16/11/2026).
+  { titulo: 'ICAO · licenças e treinamento', detalhe: 'Anexo 1, 14ª ed., Emenda 179 (licenças, desempenho humano e UPRT); Doc 10011 (UPRT, 2014); Doc 9995 (treinamento baseado em evidências, 2013)' },
+  { titulo: 'ANAC · RBAC 61', detalhe: 'Licenças, habilitações e certificados para pilotos, Emenda 16 (2024): idade, CMA e horas de cada licença' },
+  { titulo: 'Avaliação psicológica de pilotos', detalhe: 'Regulamento (UE) 2018/1042 (CAT.GEN.MPA.175 e 215); UK CAA, CAP 1938 (2020)' },
+  { titulo: 'FAA · fisiologia e qualificação', detalhe: 'AC 61-107B (voo acima de 25.000 ft, tempo de consciência útil e treino em câmara); folheto de desorientação espacial; Final Rule 78 FR 42324 (2013, copiloto com ATP)' },
+  { titulo: 'Treino de hipóxia e de escape', detalhe: 'Self et al., Aviat Space Environ Med 2011 (hipóxia normobárica × câmara); Flight Safety Foundation, Human Factors & Aviation Medicine (2000); OPITO (BOSIET e FOET); AFRL (centrífuga da USAFSAM)' },
+  { titulo: 'AAIASB · Helios 522', detalhe: 'Relatório 11/2006 (Grécia): incapacitação da tripulação por hipóxia, 2005' },
 ];

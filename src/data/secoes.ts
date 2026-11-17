@@ -20,6 +20,7 @@ import { rins } from './capitulos/rins';
 import { envelhecimento } from './capitulos/envelhecimento';
 import { certificacao } from './capitulos/certificacao';
 import { farmacologia } from './capitulos/farmacologia';
+import { selecao } from './capitulos/selecao';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -102,7 +103,7 @@ export const secoes: Secao[] = [
     capitulos: [
       certificacao,
       farmacologia,
-      cap(3, 'Seleção e treinamento', ['Seleção', 'Treinamento fisiológico', 'Formação']),
+      selecao,
       cap(4, 'Fatores humanos e CRM', ['SHELL, Reason e HFACS', 'Consciência situacional', 'CRM e TEM', 'Automação']),
       cap(5, 'Segurança de voo', ['SMS', 'Cultura justa', 'Dados de voo', 'CENIPA', 'Incapacitação em voo']),
       cap(6, 'Ergonomia e cabine de comando', ['Antropometria', 'Integração humano-sistema', 'Cabine de comando', 'Equipamentos de voo', 'Comunicação']),
