@@ -138,6 +138,7 @@ export const selecao: Capitulo = {
           "**Como prevenir e amenizar.** Faça o treino de hipóxia e **anote a sua assinatura**: os primeiros sinais que você sentiu. Não entre na câmara com **resfriado**, **sinusite** ou dor de dente, e depois de **mergulhar** respeite o mesmo intervalo exigido antes de voar (Veja M1V3 - III). No voo, ao primeiro sinal da sua assinatura ou a qualquer alarme de altitude de cabine, **máscara primeiro** e, depois, o procedimento de descompressão, sem tentar entender o problema antes (Veja M1V3 - I).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v3-2-camara.jpg'), legenda: "Na câmara, o piloto sente a hipóxia com segurança para reconhecê-la no voo." } },
           {
             paragrafo: 2,
             tabela: {
@@ -170,6 +171,8 @@ export const selecao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v3-2-oximetro.jpg'), legenda: "No solo, a mistura com menos oxigênio reproduz os sintomas sem a baixa pressão." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v3-voo.mp4'), legenda: "Sem a máscara, o desempenho cai antes de a pessoa perceber; o treino ensina a reconhecer o primeiro sinal." } },
           {
             paragrafo: 7,
             tabela: {
@@ -202,6 +205,7 @@ export const selecao: Capitulo = {
           "**Como prevenir e amenizar.** Faça a demonstração de ilusões no solo e mantenha o **voo por instrumentos** em dia. No simulador de desorientação, avise ao primeiro enjoo, e não use remédio que dá sono para voar depois (Veja M3V2 - II). Na centrífuga, vá com os exames em dia e o pescoço fortalecido. Antes da piscina, trate o resfriado e confira os ouvidos; depois do treino de escape, localize a **saída mais próxima** em cada voo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v3-3-cadeira.jpg'), legenda: "Na cadeira giratória, o labirinto engana em segurança; no voo, quem decide são os instrumentos." } },
           {
             paragrafo: 2,
             tabela: {
@@ -231,6 +235,7 @@ export const selecao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v3-3-escape.jpg'), legenda: "No treino de escape, a cabine afunda e vira: a saída se aprende de cabeça para baixo." } },
           {
             paragrafo: 7,
             tabela: {
@@ -291,6 +296,7 @@ export const selecao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v3-4-simulador.jpg'), legenda: "No treinamento baseado em evidências, o simulador treina competências escolhidas pelos dados de voo." } },
           { paragrafo: 6, midia: 'animacao-carreira' },
           {
             paragrafo: 7,
