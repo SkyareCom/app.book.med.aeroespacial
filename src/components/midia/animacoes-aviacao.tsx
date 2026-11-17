@@ -251,3 +251,48 @@ export function AnimacaoCarreira() {
 
 // FIM DO CONGELAMENTO M3V3 (17/11/2026). Animações de voos novos da Missão Aviação entram abaixo desta linha; tudo acima
 // está congelado (scripts/check-congelados.cjs) e só muda com autorização explícita do autor.
+
+// M3V4 · O queijo suíço de Reason: quatro camadas de defesa (organização, supervisão, precondições e atos inseguros),
+// cada uma com furos que se movem; o perigo só vira acidente quando os furos se alinham. Registro em
+// src/data/capitulos/fatores-humanos.ts (Reason, 1990; HFACS, DOT/FAA/AM-05/24). Esquema, sem escala.
+export function AnimacaoQueijo() {
+  const c = useCiclo(16000);
+  const t = c.fase;
+  const H = 214;
+  // furos: posição vertical (0 a 1) de cada camada ao longo do ciclo; no fim do ciclo, todos se alinham no centro
+  const alinha = t > 0.7 && t < 0.92;
+  const furo = (k: number) => (alinha ? 0.5 : 0.5 + 0.32 * Math.sin(2 * Math.PI * (t * (1 + k * 0.37) + k * 0.23)));
+  const passou = alinha ? 4 : (() => { for (let k = 0; k < 4; k++) if (Math.abs(furo(k) - 0.5) > 0.12) return k; return 4; })();
+  const segurou = ['A ORGANIZAÇÃO SEGUROU O PERIGO', 'A SUPERVISÃO SEGUROU O PERIGO', 'AS PRECONDIÇÕES SEGURARAM O PERIGO', 'A ÚLTIMA DEFESA SEGUROU O PERIGO', 'OS FUROS SE ALINHARAM: ACIDENTE'];
+  const linha1 = alinha ? 'OS FUROS SE ALINHARAM: ACIDENTE' : segurou[passou];
+  const linha2 = alinha ? 'FALHAS LATENTES + FALHA ATIVA NA CABINE' : 'CADA CAMADA TEM FUROS QUE MUDAM COM O TEMPO';
+  const cor = alinha ? Cores.erro : Cores.acerto;
+  return (
+    <Quadro titulo="O queijo suíço" instrucao="Esquema do modelo de Reason: cada camada de defesa tem furos; o perigo só chega ao acidente quando todos se alinham." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 26, x1 = w - 26, topo = 50, base = H - 30, alto = base - topo;
+        const xs = [0, 1, 2, 3].map((k) => x0 + 34 + ((x1 - x0 - 68) * k) / 3);
+        const yc = topo + alto * 0.5;
+        const limite = passou >= 4 ? x1 : xs[passou] - 8;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={20} fill={cor} fontSize={10} fontFamily={Fonte}>{linha1}</SvgText>
+            <SvgText x={10} y={36} fill={Cores.textoSuave} fontSize={9} fontFamily={Fonte}>{linha2}</SvgText>
+            {xs.map((x, k) => (
+              <G key={k}>
+                <Rect x={x - 7} y={topo} width={14} height={alto} rx={5} fill="#E8D27A" fillOpacity={0.85} />
+                <Rect x={x - 7} y={topo + alto * furo(k) - 11} width={14} height={22} rx={7} fill="#0A1626" />
+                <SvgText x={x} y={base + 14} fill={Cores.textoApagado} fontSize={7} fontFamily={Fonte} textAnchor="middle">{String(k + 1)}</SvgText>
+              </G>
+            ))}
+            <Path d={`M ${x0 - 14} ${yc} L ${limite} ${yc}`} stroke={cor} strokeWidth={2.5} strokeDasharray="6 4" />
+            <Circle cx={limite} cy={yc} r={5} fill={cor} />
+            <SvgText x={x0 - 18} y={yc - 8} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte}>PERIGO</SvgText>
+            <SvgText x={w / 2} y={base + 26} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">1 ORGANIZAÇÃO · 2 SUPERVISÃO · 3 PRECONDIÇÕES · 4 ATOS</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}

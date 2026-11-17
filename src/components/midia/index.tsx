@@ -28,7 +28,8 @@ import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/c
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
 import { ComandoSistema } from '@/components/midia/comando-sistemas';
 import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
-import { AnimacaoCamara, AnimacaoCarreira, AnimacaoMeiaVida, AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
+import { AnimacaoCamara, AnimacaoCarreira, AnimacaoMeiaVida, AnimacaoQueijo, AnimacaoRegra1 } from '@/components/midia/animacoes-aviacao';
+import { CorpoConsciencia, HfacsNiveis, NivelAutomacao, TemClassifica } from '@/components/midia/m3v4-graficos';
 import { CaminhoSelecao, ConscienciaUtil, LicencaPiloto, TreinoCorpo } from '@/components/midia/m3v3-graficos';
 import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
 import { CargaPescoco, GessoPrazo, OssosVoo, ProteseCertificacao, RemedioDorEspera } from '@/components/midia/m2v12-graficos';
@@ -251,6 +252,11 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'treino-corpo': () => <TreinoCorpo />,
   'licenca-piloto': () => <LicencaPiloto />,
   'animacao-carreira': () => <AnimacaoCarreira />,
+  'animacao-queijo': () => <AnimacaoQueijo />,
+  'hfacs-niveis': () => <HfacsNiveis />,
+  'corpo-consciencia': () => <CorpoConsciencia />,
+  'tem-classifica': () => <TemClassifica />,
+  'nivel-automacao': () => <NivelAutomacao />,
   'comando-hipoxia': () => <ComandoSistema chave="hipoxia" />,
   'comando-coracao': () => <ComandoSistema chave="coracao" />,
   'comando-ouvidos': () => <ComandoSistema chave="ouvidos" />,
@@ -484,6 +490,11 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'treino-corpo': 'O que cada treino cobra do corpo',
   'licenca-piloto': 'Do piloto privado à linha aérea',
   'animacao-carreira': 'Os degraus da carreira',
+  'animacao-queijo': 'O queijo suíço',
+  'hfacs-niveis': 'Os quatro níveis do HFACS',
+  'corpo-consciencia': 'O corpo e a consciência situacional',
+  'tem-classifica': 'Ameaça, erro ou estado indesejado?',
+  'nivel-automacao': 'Descer um nível',
   'comando-hipoxia': 'Comando nervoso e hormonal na altitude · respiração e oxigênio',
   'comando-coracao': 'Comando nervoso e hormonal na altitude · coração e circulação',
   'comando-ouvidos': 'Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face',

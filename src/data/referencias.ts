@@ -117,4 +117,11 @@ export const diretrizes: Referencia[] = [
   { titulo: 'FAA · fisiologia e qualificação', detalhe: 'AC 61-107B (voo acima de 25.000 ft, tempo de consciência útil e treino em câmara); folheto de desorientação espacial; Final Rule 78 FR 42324 (2013, copiloto com ATP)' },
   { titulo: 'Treino de hipóxia e de escape', detalhe: 'Self et al., Aviat Space Environ Med 2011 (hipóxia normobárica × câmara); Flight Safety Foundation, Human Factors & Aviation Medicine (2000); OPITO (BOSIET e FOET); AFRL (centrífuga da USAFSAM)' },
   { titulo: 'AAIASB · Helios 522', detalhe: 'Relatório 11/2006 (Grécia): incapacitação da tripulação por hipóxia, 2005' },
+  // M3V4 · Fatores humanos e CRM (17/11/2026).
+  { titulo: 'ICAO · fatores humanos', detalhe: 'Doc 9683, Human Factors Training Manual (modelo SHELL); Doc 9803, Line Operations Safety Audit (LOSA)' },
+  { titulo: 'Reason e HFACS', detalhe: 'Reason, Human Error (1990); Wiegmann et al., FAA DOT/FAA/AM-05/24 (2005): HFACS em 14.436 acidentes da aviação geral' },
+  { titulo: 'Consciência situacional', detalhe: 'Endsley e Rodgers, FAA DOT/FAA/AM-97/13 (1997)' },
+  { titulo: 'CRM', detalhe: 'Helmreich, Merritt e Wilhelm, Int J Aviat Psychol 1999; ANAC, IS 00-010 Revisão B (2025)' },
+  { titulo: 'Automação', detalhe: 'PARC/CAST Flight Deck Automation Working Group, Operational Use of Flight Path Management Systems (FAA, 2013)' },
+  { titulo: 'Investigações', detalhe: 'NTSB: United 173 (1978) e Asiana 214 (2013); BEA: Air France 447 (relatório final, 2012)' },
 ];

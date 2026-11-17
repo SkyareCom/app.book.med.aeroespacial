@@ -21,6 +21,7 @@ import { envelhecimento } from './capitulos/envelhecimento';
 import { certificacao } from './capitulos/certificacao';
 import { farmacologia } from './capitulos/farmacologia';
 import { selecao } from './capitulos/selecao';
+import { fatoresHumanos } from './capitulos/fatores-humanos';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -104,7 +105,7 @@ export const secoes: Secao[] = [
       certificacao,
       farmacologia,
       selecao,
-      cap(4, 'Fatores humanos e CRM', ['SHELL, Reason e HFACS', 'Consciência situacional', 'CRM e TEM', 'Automação']),
+      fatoresHumanos,
       cap(5, 'Segurança de voo', ['SMS', 'Cultura justa', 'Dados de voo', 'CENIPA', 'Incapacitação em voo']),
       cap(6, 'Ergonomia e cabine de comando', ['Antropometria', 'Integração humano-sistema', 'Cabine de comando', 'Equipamentos de voo', 'Comunicação']),
       cap(7, 'Medicina ocupacional', ['Riscos por função', 'PCMSO e PGR', 'Insalubridade e periculosidade', 'RBAC 120', 'Retorno ao voo']),
