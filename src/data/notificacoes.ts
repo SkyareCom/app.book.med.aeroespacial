@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 32;
+export const VERSAO_NOTIFICACOES = 33;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'fatores-humanos',
+    rotulo: 'Voo disponível',
+    titulo: 'Fatores humanos e CRM',
+    texto: 'O voo 4 da Missão Aviação chegou: SHELL, o queijo suíço e o HFACS, a consciência situacional, o CRM e o gerenciamento de ameaças e erros, e a automação, sempre com o corpo no centro.',
+    destino: '/capitulo/aviacao/4',
+  },
   {
     id: 'selecao',
     rotulo: 'Voo disponível',
