@@ -52,6 +52,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Use protetor auricular sempre que estiver perto de motores e equipamentos ligados. Na cabine, sente-se e prenda o cinto assim que o aviso de turbulência for dado, inclusive a tripulação. Peça ajuda e use equipamentos para cargas pesadas, dobrando os joelhos em vez das costas. Mantenha os exames ocupacionais em dia e conte ao médico do trabalho o que sente, mesmo que pareça pequeno.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-1-rampa.jpg'), legenda: "Na rampa, ruído, calor, carga e veículos fazem parte do trabalho de todo dia." } },
           {
             paragrafo: 2,
             tabela: {
@@ -68,6 +69,7 @@ export const medicinaOcupacional: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'riscos-funcao' },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m3v7-voo.mp4'), legenda: "Na rampa, o protetor auricular e o colete fazem parte do uniforme perto dos motores." } },
           {
             paragrafo: 7,
             tabela: {
@@ -99,6 +101,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Guarde as cópias do ASO e do CMA e acompanhe as datas dos dois. Antes de mudar de função ou de exposição, peça o exame de mudança de risco. Depois de 30 dias ou mais afastado, faça o exame de retorno antes de voltar. Na empresa, use o relatório analítico para achar os setores onde o risco escapa do controle e leve essa informação ao PGR.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-2-exame.jpg'), legenda: "O PCMSO define os exames de cada função a partir dos riscos que o PGR identificou." } },
           {
             paragrafo: 2,
             tabela: {
@@ -127,6 +130,7 @@ export const medicinaOcupacional: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-2-avaliacao.jpg'), legenda: "O inventário de riscos do PGR começa no local de trabalho, e não na sala do médico." } },
           {
             paragrafo: 7,
             tabela: {
@@ -158,6 +162,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Use o protetor auricular certo, bem colocado, durante toda a exposição ao ruído, e faça as audiometrias do PCMSO. Na área de abastecimento, siga os procedimentos, mantenha fontes de ignição longe e use o equipamento de proteção. Quando houver dúvida sobre o direito ao adicional, peça a perícia técnica no local. Na empresa, priorize reduzir o ruído e a exposição na fonte, antes de pagar por ela.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-3-abastecimento.jpg'), legenda: "Na área de abastecimento, o risco é súbito e grave: é o caso clássico de periculosidade." } },
           {
             paragrafo: 2,
             tabela: {
@@ -185,6 +190,7 @@ export const medicinaOcupacional: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v7-3-mecanico.jpg'), legenda: "Perto de motores ligados, o protetor auricular certo pode tirar o trabalhador da faixa de risco." } },
           {
             paragrafo: 7,
             tabela: {
@@ -243,6 +249,7 @@ export const medicinaOcupacional: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-4-conversa.jpg'), legenda: "Pedir ajuda antes do teste é o caminho mais seguro para voltar ao trabalho." } },
           {
             paragrafo: 7,
             tabela: {
@@ -274,6 +281,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Quando a aptidão diminuir, pare de voar e avise o examinador; não espere o próximo exame. Guarde laudos, exames e receitas do tratamento. Depois de 30 dias ou mais afastado, faça o exame de retorno da NR-7 e confirme que o CMA está válido. Combine com a empresa uma volta gradual, com simulador ou voo de readaptação, quando o afastamento for longo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-5-retorno.jpg'), legenda: "O que decide a volta é a aptidão, e não apenas o fim do atestado." } },
           {
             paragrafo: 2,
             tabela: {
