@@ -1,6 +1,7 @@
 // Missão 3 · Voo 7 — Medicina ocupacional. Ramo editorial voo/M3V7; fotos e vídeo entram depois da produção.
 // Os 5 itens previstos (riscos por função, PCMSO e PGR, insalubridade e periculosidade, RBAC 120 e retorno ao voo)
-// viraram 5 tópicos. Mesmo padrão do M3V1 ao M3V6 e do M3V15.
+// viraram 5 tópicos; a pedido do autor, entrou o tópico 7.5, Doenças ocupacionais relevantes na aviação, e o retorno
+// ao voo passou a 7.6. Mesmo padrão do M3V1 ao M3V6 e do M3V15.
 // REGISTRO DE REVISÃO · 18/11/2026. Fontes primárias conferidas:
 // NTSB, Preventing Turbulence-Related Injuries in Air Carrier Operations (2021), conforme Associated Press: 2009 a
 //   2018, 111 acidentes por turbulência com ao menos um ferido grave; comissários 78,9% dos feridos graves.
@@ -30,12 +31,24 @@
 // 14 CFR 61.57: 3 decolagens e 3 pousos nos 90 dias anteriores para levar passageiros.
 // Dicas sem número próprio (levar o ASO e o CMA em dia, proteger a audição na rampa, combinar a volta gradual) são
 //   aplicação das fontes acima e dos voos citados.
+// Tópico 7.5 (18/11/2026). Lei 8.213/1991, art. 20, I e II (doença profissional e doença do trabalho), conforme Conjur;
+//   art. 118: garantia de emprego por no mínimo 12 meses após o fim do auxílio-doença acidentário.
+// Ministério da Saúde, Portaria GM/MS 1.999 (27/11/2023): Lista de Doenças Relacionadas ao Trabalho atualizada, de 182
+//   para 347 códigos, com 165 novas doenças, entre elas burnout, ansiedade e depressão.
+// NR-7, Anexo II: PAINPSE; audiometria na admissão, anual e na demissão; repouso auditivo mínimo de 14 horas; a PAINPSE,
+//   por si só, não indica inaptidão para o trabalho.
+// Sanlorenzo M e colegas, JAMA Dermatology (2014), conforme Cancer Network: 19 estudos, mais de 266.431 participantes;
+//   melanoma SIR 2,22 (IC 95% 1,67 a 2,93) em pilotos e 2,09 (1,67 a 2,62) em comissários.
+// McNeely E e colegas, Environmental Health (25/06/2018), conforme Harvard Gazette: 5.366 comissários dos EUA; maior
+//   prevalência de câncer de mama, útero, colo do útero, gastrointestinal, tireoide, melanoma e pele não melanoma.
+// IARC, Monografia 124 (2019): trabalho noturno, grupo 2A (provavelmente cancerígeno).
+// Vibração e ruído em helicópteros: registro do M1V6.
 import type { Capitulo } from '../tipos';
 
 export const medicinaOcupacional: Capitulo = {
   numero: 7,
   titulo: 'Medicina ocupacional',
-  tempoLeituraMin: 14,
+  tempoLeituraMin: 17,
   topicos: [
     {
       id: '7.1',
@@ -270,6 +283,65 @@ export const medicinaOcupacional: Capitulo = {
     },
     {
       id: '7.5',
+      titulo: "Doenças ocupacionais relevantes na aviação",
+      pergunta: "Quais doenças o trabalho na aviação pode causar ou agravar, e como a lei separa a doença do trabalho das outras?",
+      conteudo: {
+        texto: [
+          "A lei brasileira chama de **doença ocupacional** duas situações. A **doença profissional** é a produzida pelo trabalho típico de uma atividade, como a perda auditiva de quem vive perto de motores. A **doença do trabalho** nasce das condições em que o trabalho é feito e se relaciona diretamente com ele. Em 2023, a **Lista de Doenças Relacionadas ao Trabalho** do Ministério da Saúde foi atualizada e ganhou 165 novas doenças, entre elas o **burnout**, a **ansiedade** e a **depressão**.",
+          "A doença ocupacional mais típica da aviação é a **perda auditiva induzida por ruído**, que a NR-7 chama de PAINPSE. Ela é lenta, sem dor, atinge primeiro os sons agudos e não volta (Veja M1V6 - II). Por isso a NR-7 exige **audiometria** na admissão, todo ano e na demissão para quem trabalha exposto, sempre depois de **14 horas de repouso auditivo**. A perda, sozinha, não torna a pessoa inapta: ela indica que a proteção precisa mudar.",
+          "Logo depois vêm as doenças da **coluna e das articulações**. O agente de rampa ergue malas dentro de porões baixos, o comissário empurra carrinhos pesados e o mecânico trabalha em posturas forçadas. Na cabine, horas sentado e a **vibração** cansam a coluna, sobretudo nos helicópteros (Veja M1V6 - IV e M2V12 - II). O explorador abaixo mostra quem mais se expõe a cada doença e qual o primeiro sinal.",
+          "A **pele** e o **câncer** pedem atenção especial. Uma revisão de 19 estudos, com mais de 266 mil pessoas, encontrou **melanoma** cerca de **2 vezes** mais frequente em pilotos e comissários do que na população geral. Um estudo de Harvard com 5.366 comissários dos Estados Unidos achou mais câncer de mama, de pele e de outros tipos. As causas ainda são discutidas: **radiação cósmica**, sol fora do trabalho e **ritmo biológico** desregulado (Veja M1V5 - III). A IARC classifica o **trabalho noturno** como provavelmente cancerígeno.",
+          "A **mente** e o **sono** também adoecem com o trabalho. Escalas noturnas, fusos e madrugadas seguidas desregulam o relógio do corpo e podem virar **insônia** e sonolência crônica (Veja M2V8 - VII). A pressão constante, a responsabilidade pela vida de outros e o tempo longe de casa podem levar ao **burnout**, à **ansiedade** e à **depressão**, agora reconhecidos na lista brasileira (Veja M2V7 - II). Pedir ajuda cedo protege a carreira (Veja M2V7 - VI).",
+          "Para o **passageiro**, cuidar dessas doenças é cuidar de quem pilota e de quem socorre a bordo. Para o **trabalhador**, reconhecer a doença como ocupacional muda direitos: a empresa emite a **CAT**, e quem recebe o benefício por doença do trabalho tem garantia do emprego por **12 meses** depois da alta. Para os **médicos**, o nexo nasce da história do trabalho, por isso a pergunta “o que você faz e onde?” vale tanto quanto o exame.",
+          "**Como prevenir e amenizar.** Use o protetor auricular sempre perto de motores e faça a audiometria em repouso auditivo. Use equipamentos de carga e técnica para erguer peso. Proteja a pele do sol e examine as pintas todo ano. Durma o que a escala permitir e procure ajuda cedo se o humor ou o sono mudarem. Conte ao médico onde e como você trabalha.",
+        ].join('\n\n'),
+        recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-5-audiometria.jpg'), legenda: "A audiometria periódica mostra a perda causada pelo ruído antes que ela atrapalhe a conversa." } },
+          {
+            paragrafo: 2,
+            tabela: {
+              titulo: "Doença profissional ou doença do trabalho",
+              colunas: ["Item", "Doença profissional", "Doença do trabalho"],
+              linhas: [
+                ["O que é", "Produzida pelo trabalho típico de uma atividade", "Ligada às condições em que o trabalho é feito"],
+                ["Exemplo na aviação", "Perda auditiva do mecânico perto de motores", "Dor lombar do agente de rampa que ergue malas no porão"],
+                ["Base legal", "Lei 8.213/1991, art. 20, I", "Lei 8.213/1991, art. 20, II"],
+              ],
+            },
+          },
+          { paragrafo: 3, midia: 'doencas-aviacao' },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: "O que os estudos mostram",
+              colunas: ["Estudo", "Quem", "Achado"],
+              linhas: [
+                ["Revisão em JAMA Dermatology, 2014", "Pilotos", "Melanoma cerca de 2,2 vezes o esperado"],
+                ["Revisão em JAMA Dermatology, 2014", "Comissários", "Melanoma cerca de 2,1 vezes o esperado"],
+                ["Harvard, Environmental Health, 2018", "5.366 comissários dos EUA", "Mais câncer de mama, útero, colo do útero, tireoide, aparelho digestivo e pele"],
+                ["IARC, 2019", "Trabalho noturno", "Provavelmente cancerígeno, grupo 2A"],
+              ],
+            },
+          },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-5-descanso.jpg'), legenda: "Escalas noturnas e fusos seguidos cobram do sono e do humor." } },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · doenças ocupacionais",
+              colunas: ["Quem", "O que fazer"],
+              linhas: [
+                ["Mecânico e agente de rampa", "Protetor auricular perto de motores e equipamentos para erguer carga"],
+                ["Tripulante", "Proteger a pele, examinar as pintas e cuidar do sono entre as escalas"],
+                ["Empresa", "Reduzir o ruído na fonte, avaliar escalas e oferecer apoio psicológico"],
+                ["Médico do trabalho", "Perguntar sobre o trabalho e emitir a CAT quando houver nexo"],
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      id: '7.6',
       titulo: "Retorno ao voo",
       pergunta: "Depois de uma doença, uma cirurgia ou um acidente, que passos o tripulante percorre até voltar a voar com segurança?",
       conteudo: {
@@ -283,7 +355,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Quando a aptidão diminuir, pare de voar e avise o examinador; não espere o próximo exame. Guarde laudos, exames e receitas do tratamento. Depois de 30 dias ou mais afastado, faça o exame de retorno da NR-7 e confirme que o CMA está válido. Combine com a empresa uma volta gradual, com simulador ou voo de readaptação, quando o afastamento for longo.",
         ].join('\n\n'),
         recursos: [
-          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-5-retorno.jpg'), legenda: "O que decide a volta é a aptidão, e não apenas o fim do atestado." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-6-retorno.jpg'), legenda: "O que decide a volta é a aptidão, e não apenas o fim do atestado." } },
           {
             paragrafo: 2,
             tabela: {
@@ -298,7 +370,7 @@ export const medicinaOcupacional: Capitulo = {
           },
           { paragrafo: 3, midia: 'animacao-retorno' },
           { paragrafo: 4, midia: 'retorno-situacoes' },
-          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-5-simulador.jpg'), legenda: "Depois de um afastamento longo, o simulador ajuda a recuperar a habilidade antes da escala completa." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-6-simulador.jpg'), legenda: "Depois de um afastamento longo, o simulador ajuda a recuperar a habilidade antes da escala completa." } },
           {
             paragrafo: 7,
             tabela: {
@@ -430,6 +502,30 @@ export const medicinaOcupacional: Capitulo = {
     },
     {
       topico: '7.5',
+      pergunta: "Pela NR-7, quando é feita a audiometria de quem trabalha exposto ao ruído?",
+      opcoes: [
+        "Só na admissão",
+        "Na admissão, todo ano e na demissão",
+        "A cada 5 anos",
+        "Só quando houver queixa",
+      ],
+      correta: 1,
+      explicacao: "O exame é feito depois de 14 horas de repouso auditivo, para medir a perda permanente e não o cansaço do ouvido.",
+    },
+    {
+      topico: '7.5',
+      pergunta: "Numa revisão de 19 estudos, quanto mais frequente foi o melanoma em pilotos e comissários do que na população geral?",
+      opcoes: [
+        "Igual",
+        "Cerca de 2 vezes",
+        "Cerca de 10 vezes",
+        "Menos frequente",
+      ],
+      correta: 1,
+      explicacao: "As causas ainda são discutidas: radiação cósmica, sol fora do trabalho e ritmo biológico desregulado.",
+    },
+    {
+      topico: '7.6',
       pergunta: "Pelo RBAC 67, o que o tripulante deve fazer quando percebe que a aptidão diminuiu?",
       opcoes: [
         "Esperar o próximo exame",
@@ -441,7 +537,7 @@ export const medicinaOcupacional: Capitulo = {
       explicacao: "Só volta quando a aptidão for recuperada; o fim do atestado não basta.",
     },
     {
-      topico: '7.5',
+      topico: '7.6',
       pergunta: "Quem paga os primeiros 15 dias de afastamento do empregado por doença?",
       opcoes: [
         "O INSS",

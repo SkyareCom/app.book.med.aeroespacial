@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 37;
+export const VERSAO_NOTIFICACOES = 38;
 
 export interface Notificacao {
   id: string;
@@ -17,7 +17,7 @@ export const notificacoes: Notificacao[] = [
     id: 'medicina-ocupacional',
     rotulo: 'Voo disponível',
     titulo: 'Medicina ocupacional',
-    texto: 'O voo 7 da Missão Aviação chegou: os riscos de cada função, o PCMSO e o PGR, a insalubridade e a periculosidade, o programa do RBAC 120 e o caminho de volta ao voo.',
+    texto: 'O voo 7 da Missão Aviação chegou: os riscos de cada função, o PCMSO e o PGR, a insalubridade e a periculosidade, o programa do RBAC 120, as doenças ocupacionais da aviação e o caminho de volta ao voo.',
     destino: '/capitulo/aviacao/7',
   },
   {

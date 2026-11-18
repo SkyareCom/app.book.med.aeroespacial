@@ -221,6 +221,7 @@ export type TipoMidia =
   | 'adicionais-aviacao'
   | 'testes-rbac120'
   | 'retorno-situacoes'
+  | 'doencas-aviacao'
   | 'animacao-retorno'
   | 'comando-hipoxia'
   | 'comando-coracao'

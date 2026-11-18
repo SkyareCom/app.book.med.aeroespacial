@@ -12,8 +12,10 @@ Padrão: pessoas fictícias, sem texto, logotipos ou insígnias legíveis; 16:9,
 | 6 | `m3v7-3-mecanico.jpg` | 7.3 Insalubridade e periculosidade | 6 | Mecânico com abafador de ruído inspecionando um motor na pista |
 | 7 | `m3v7-4-teste.jpg` | 7.4 RBAC 120 | 1 | Piloto entregando um frasco de coleta a uma profissional de saúde numa sala clínica |
 | 8 | `m3v7-4-conversa.jpg` | 7.4 RBAC 120 | 5 | Mecânico conversando com uma psicóloga numa sala tranquila, tom de apoio |
-| 9 | `m3v7-5-retorno.jpg` | 7.5 Retorno ao voo | 1 | Piloto conversando com o médico examinador, segurando exames, em consultório |
-| 10 | `m3v7-5-simulador.jpg` | 7.5 Retorno ao voo | 5 | Piloto no simulador de voo com um instrutor sentado atrás dele |
+| 9 | `m3v7-6-retorno.jpg` | 7.6 Retorno ao voo | 1 | Piloto conversando com o médico examinador, segurando exames, em consultório |
+| 10 | `m3v7-6-simulador.jpg` | 7.6 Retorno ao voo | 5 | Piloto no simulador de voo com um instrutor sentado atrás dele |
+| 11 | `m3v7-5-audiometria.jpg` | 7.5 Doenças ocupacionais | 1 | Mecânico com fone de audiometria dentro de uma cabine acústica, fonoaudióloga do lado de fora no equipamento |
+| 12 | `m3v7-5-descanso.jpg` | 7.5 Doenças ocupacionais | 5 | Comissária cansada sentada na galley à noite, olhos fechados, luz baixa |
 
 **Vídeo:** `m3v7-voo.mp4`, 7.1, após o parágrafo 4: agente de rampa com abafador e colete refletivo caminha perto dos
 motores de um avião estacionado e sinaliza a outro colega. 8 s, sem áudio, 16:9, H.264.

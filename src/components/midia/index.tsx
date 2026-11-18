@@ -32,7 +32,7 @@ import { AnimacaoCamara, AnimacaoCarreira, AnimacaoDuasChamadas, AnimacaoDuasInv
 import { AlcoolPosMorte, DuasInvestigacoes, DviFases, EtapasInvestigacao, LaudoPartes, SobrevivenciaFatores } from '@/components/midia/m3v15-graficos';
 import { ArvoreCulpa, EventosFdm, FatoresSipaer, IncapacitacaoChase, MatrizRisco } from '@/components/midia/m3v5-graficos';
 import { AjusteCabine, AlertasCabine, CompatibilidadeEquipamentos, Fraseologia, PrincipiosCabine } from '@/components/midia/m3v6-graficos';
-import { AdicionaisAviacao, ExamesPcmso, RetornoSituacoes, RiscosFuncao, TestesRbac120 } from '@/components/midia/m3v7-graficos';
+import { AdicionaisAviacao, DoencasAviacao, ExamesPcmso, RetornoSituacoes, RiscosFuncao, TestesRbac120 } from '@/components/midia/m3v7-graficos';
 import { CorpoConsciencia, HfacsNiveis, NivelAutomacao, TemClassifica } from '@/components/midia/m3v4-graficos';
 import { CaminhoSelecao, ConscienciaUtil, LicencaPiloto, TreinoCorpo } from '@/components/midia/m3v3-graficos';
 import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
@@ -285,6 +285,7 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'adicionais-aviacao': () => <AdicionaisAviacao />,
   'testes-rbac120': () => <TestesRbac120 />,
   'retorno-situacoes': () => <RetornoSituacoes />,
+  'doencas-aviacao': () => <DoencasAviacao />,
   'animacao-retorno': () => <AnimacaoRetorno />,
   'comando-hipoxia': () => <ComandoSistema chave="hipoxia" />,
   'comando-coracao': () => <ComandoSistema chave="coracao" />,
@@ -548,6 +549,7 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'adicionais-aviacao': 'Quem recebe o quê',
   'testes-rbac120': 'Os seis testes do RBAC 120',
   'retorno-situacoes': 'Voltar a voar, caso a caso',
+  'doencas-aviacao': 'Doenças ocupacionais na aviação',
   'animacao-retorno': 'O caminho de volta',
   'comando-hipoxia': 'Comando nervoso e hormonal na altitude · respiração e oxigênio',
   'comando-coracao': 'Comando nervoso e hormonal na altitude · coração e circulação',
