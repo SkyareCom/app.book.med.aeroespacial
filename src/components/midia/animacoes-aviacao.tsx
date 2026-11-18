@@ -474,3 +474,60 @@ export function AnimacaoRetorno() {
     </Quadro>
   );
 }
+
+// M3V8 · Do escapamento ao sangue: o monóxido sai por uma trinca, contamina o ar do aquecimento, chega à cabine e
+// ocupa a hemoglobina. Registro em src/data/capitulos/toxicologia.ts. Esquema, sem escala.
+export function AnimacaoMonoxido() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  const H = 220;
+  const passos = ['ESCAPAMENTO', 'AQUECIMENTO', 'CABINE', 'SANGUE'];
+  const notas = [
+    ['TRINCA NO ESCAPAMENTO:', 'O GÁS ESCAPA SEM CHEIRO'],
+    ['O AR DO AQUECIMENTO', 'RECEBE O MONÓXIDO'],
+    ['O GÁS CHEGA À CABINE:', 'SÓ O DETECTOR AVISA'],
+    ['O CO OCUPA A HEMOGLOBINA:', 'MENOS OXIGÊNIO NOS TECIDOS'],
+  ];
+  const k = Math.min(3, Math.floor(t * 4));
+  const ocupados = k < 3 ? 0 : Math.min(3, 1 + Math.floor((t - 0.75) * 12));
+  const sitios = [0, 1, 2, 3];
+  const particulas = [0, 1, 2, 3, 4];
+  return (
+    <Quadro titulo="Do escapamento ao sangue" instrucao="Esquema, sem escala: o caminho do monóxido até a hemoglobina." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 24, x1 = w - 24, y = 78;
+        const xs = passos.map((_, i) => x0 + ((x1 - x0) * i) / (passos.length - 1));
+        const cx = w / 2, yh = 168;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[k][0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[k][1]}</SvgText>
+            <Rect x={x0} y={y - 2} width={x1 - x0} height={4} rx={2} fill={Cores.linha} />
+            {particulas.map((i) => {
+              const f = ((t * 8 + i / particulas.length) % 1);
+              return <Circle key={i} cx={x0 + (xs[k] - x0) * f} cy={y + Math.sin(f * 12 + i) * 4} r={2.6} fill={Cores.erro} fillOpacity={k === 0 && f < 0.05 ? 0 : 0.85} />;
+            })}
+            {xs.map((x, i) => (
+              <G key={i}>
+                <Circle cx={x} cy={y} r={i === k ? 8 : 6} fill={i <= k ? (i === 3 ? Cores.erro : Cores.destaque) : Cores.linha} />
+                <SvgText x={x} y={i % 2 ? y + 24 : y - 14} fill={i === k ? Cores.texto : Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor={i === 0 ? 'start' : i === 3 ? 'end' : 'middle'}>{passos[i]}</SvgText>
+              </G>
+            ))}
+            <SvgText x={cx} y={yh - 26} fill={Cores.textoSuave} fontSize={8} fontFamily={Fonte} textAnchor="middle">HEMOGLOBINA</SvgText>
+            {sitios.map((i) => {
+              const co = i < ocupados;
+              const sx = cx + (i - 1.5) * 38;
+              return (
+                <G key={i}>
+                  <Circle cx={sx} cy={yh} r={15} fill={co ? Cores.erro : Cores.acerto} fillOpacity={0.9} />
+                  <SvgText x={sx} y={yh + 3.5} fill={Cores.fundo} fontSize={9.5} fontFamily={Fonte} textAnchor="middle">{co ? 'CO' : 'O2'}</SvgText>
+                </G>
+              );
+            })}
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
