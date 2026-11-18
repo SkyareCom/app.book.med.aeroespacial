@@ -1,49 +1,34 @@
 import { View } from 'react-native';
 
 import { Painel } from '@/components/cartoes';
+import { RelacionadosEspecial } from '@/components/especiais';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { Cores } from '@/constants/theme';
-import { diretrizes, normas, obras, porVoo, type Referencia } from '@/data/referencias';
-import { RelacionadosEspecial } from '@/components/especiais';
+import { REFERENCIAS } from '@/data/referencias';
 
-// Referências: lista única das obras e normas usadas em todo o app.
+// Referências: lista única das obras, normas e estudos usados em todo o app, no estilo Vancouver, numerada em sequência.
 export default function Referencias() {
+  let n = 0;
   return (
     <Tela titulo="Referências" rotulo="Obras e normas usadas no app">
       <Texto cor={Cores.textoSuave}>Todo o conteúdo do Papos de Altitude é baseado nestas obras e normas.</Texto>
-      <Lista rotulo="Obras de referência" itens={obras} />
-      <Lista rotulo="Normas e autoridades" itens={normas} />
-      <Lista rotulo="Diretrizes para passageiros e viajantes" itens={diretrizes} />
-      <Painel>
-        <Texto t="rotulo" cor={Cores.destaque}>Referências por voo</Texto>
-        {porVoo.map((g) => (
-          <View key={g.secao} style={{ gap: 8 }}>
-            <Texto t="item" cor={Cores.dourado}>{g.secao}</Texto>
-            {g.itens.map((r) => (
-              <View key={r.titulo} style={{ gap: 2 }}>
-                <Texto t="item">{r.titulo}</Texto>
-                <Texto cor={Cores.textoApagado}>{r.detalhe}</Texto>
+      <Texto cor={Cores.textoApagado}>Referências no estilo Vancouver.</Texto>
+      {REFERENCIAS.map((g) => (
+        <Painel key={g.rotulo}>
+          <Texto t="rotulo" cor={Cores.destaque}>{g.rotulo}</Texto>
+          {g.itens.map((r) => {
+            n += 1;
+            return (
+              <View key={r} style={{ flexDirection: 'row', gap: 8 }}>
+                <Texto cor={Cores.textoApagado} semTraducao style={{ minWidth: 28 }}>{`${n}.`}</Texto>
+                <Texto cor={Cores.textoSuave} style={{ flex: 1 }}>{r}</Texto>
               </View>
-            ))}
-          </View>
-        ))}
-      </Painel>
+            );
+          })}
+        </Painel>
+      ))}
       <RelacionadosEspecial id="referencias" />
     </Tela>
-  );
-}
-
-function Lista({ rotulo, itens }: { rotulo: string; itens: Referencia[] }) {
-  return (
-    <Painel>
-      <Texto t="rotulo" cor={Cores.destaque}>{rotulo}</Texto>
-      {itens.map((r) => (
-        <View key={r.titulo} style={{ gap: 2 }}>
-          <Texto t="item">{r.titulo}</Texto>
-          <Texto cor={Cores.textoApagado}>{r.detalhe}</Texto>
-        </View>
-      ))}
-    </Painel>
   );
 }
