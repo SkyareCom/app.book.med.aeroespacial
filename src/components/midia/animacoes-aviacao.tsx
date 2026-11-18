@@ -432,3 +432,45 @@ export function AnimacaoSegmentoVisual() {
     </Quadro>
   );
 }
+
+// M3V7 · Caminho do retorno: do afastamento ao voo, com a empresa nos primeiros 15 dias, o INSS depois, o exame de
+// retorno da NR-7 a partir de 30 dias, a aptidão do RBAC 67 e a volta gradual. Registro em
+// src/data/capitulos/medicina-ocupacional.ts. Esquema, sem escala de tempo.
+export function AnimacaoRetorno() {
+  const c = useCiclo(14000);
+  const t = c.fase;
+  const H = 220;
+  const passos = ['AFASTAMENTO', 'ATÉ 15 DIAS', 'INSS', 'EXAME DE RETORNO', 'APTIDÃO', 'VOLTA GRADUAL'];
+  const notas = [
+    ['A APTIDÃO DIMINUIU:', 'PARAR DE VOAR E AVISAR'],
+    ['OS PRIMEIROS 15 DIAS', 'FICAM COM A EMPRESA'],
+    ['DEPOIS, O BENEFÍCIO', 'VEM DO INSS'],
+    ['30 DIAS OU MAIS AFASTADO:', 'EXAME DE RETORNO DA NR-7'],
+    ['CMA VÁLIDO E APTIDÃO', 'RECUPERADA PELO RBAC 67'],
+    ['SIMULADOR OU VOO DE', 'READAPTAÇÃO ANTES DA ESCALA'],
+  ];
+  const k = Math.min(5, Math.floor(t * 6.2));
+  return (
+    <Quadro titulo="O caminho de volta" instrucao="Esquema: as etapas entre o afastamento e a volta ao voo, na ordem." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 22, x1 = w - 22, y = 112;
+        const xs = passos.map((_, i) => x0 + ((x1 - x0) * i) / (passos.length - 1));
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[k][0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[k][1]}</SvgText>
+            <Rect x={x0} y={y - 2} width={x1 - x0} height={4} rx={2} fill={Cores.linha} />
+            <Rect x={x0} y={y - 2} width={Math.max(0, xs[k] - x0)} height={4} rx={2} fill={Cores.acerto} />
+            {xs.map((x, i) => (
+              <G key={i}>
+                <Circle cx={x} cy={y} r={i === k ? 8 : 6} fill={i <= k ? (i === 0 ? Cores.erro : i === 5 ? Cores.acerto : Cores.destaque) : Cores.linha} />
+                <SvgText x={x} y={i === 3 ? y + 48 : i % 2 ? y + 30 : y - 18} fill={i === k ? Cores.texto : Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor={i === 0 ? 'start' : i === 5 ? 'end' : 'middle'}>{passos[i]}</SvgText>
+              </G>
+            ))}
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}

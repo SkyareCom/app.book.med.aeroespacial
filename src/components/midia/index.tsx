@@ -28,10 +28,11 @@ import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/c
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
 import { ComandoSistema } from '@/components/midia/comando-sistemas';
 import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
-import { AnimacaoCamara, AnimacaoCarreira, AnimacaoDuasChamadas, AnimacaoDuasInvestigacoes, AnimacaoMeiaVida, AnimacaoQueijo, AnimacaoRegra1, AnimacaoSegmentoVisual } from '@/components/midia/animacoes-aviacao';
+import { AnimacaoCamara, AnimacaoCarreira, AnimacaoDuasChamadas, AnimacaoDuasInvestigacoes, AnimacaoMeiaVida, AnimacaoQueijo, AnimacaoRegra1, AnimacaoRetorno, AnimacaoSegmentoVisual } from '@/components/midia/animacoes-aviacao';
 import { AlcoolPosMorte, DuasInvestigacoes, DviFases, EtapasInvestigacao, LaudoPartes, SobrevivenciaFatores } from '@/components/midia/m3v15-graficos';
 import { ArvoreCulpa, EventosFdm, FatoresSipaer, IncapacitacaoChase, MatrizRisco } from '@/components/midia/m3v5-graficos';
 import { AjusteCabine, AlertasCabine, CompatibilidadeEquipamentos, Fraseologia, PrincipiosCabine } from '@/components/midia/m3v6-graficos';
+import { AdicionaisAviacao, ExamesPcmso, RetornoSituacoes, RiscosFuncao, TestesRbac120 } from '@/components/midia/m3v7-graficos';
 import { CorpoConsciencia, HfacsNiveis, NivelAutomacao, TemClassifica } from '@/components/midia/m3v4-graficos';
 import { CaminhoSelecao, ConscienciaUtil, LicencaPiloto, TreinoCorpo } from '@/components/midia/m3v3-graficos';
 import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
@@ -279,6 +280,12 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'compatibilidade-equipamentos': () => <CompatibilidadeEquipamentos />,
   'fraseologia': () => <Fraseologia />,
   'animacao-segmento-visual': () => <AnimacaoSegmentoVisual />,
+  'riscos-funcao': () => <RiscosFuncao />,
+  'exames-pcmso': () => <ExamesPcmso />,
+  'adicionais-aviacao': () => <AdicionaisAviacao />,
+  'testes-rbac120': () => <TestesRbac120 />,
+  'retorno-situacoes': () => <RetornoSituacoes />,
+  'animacao-retorno': () => <AnimacaoRetorno />,
   'comando-hipoxia': () => <ComandoSistema chave="hipoxia" />,
   'comando-coracao': () => <ComandoSistema chave="coracao" />,
   'comando-ouvidos': () => <ComandoSistema chave="ouvidos" />,
@@ -536,6 +543,12 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'compatibilidade-equipamentos': 'Equipamentos que precisam combinar',
   'fraseologia': 'Frase fora do padrão, frase padrão',
   'animacao-segmento-visual': 'Segmento visual',
+  'riscos-funcao': 'Riscos por função',
+  'exames-pcmso': 'Os exames da NR-7',
+  'adicionais-aviacao': 'Quem recebe o quê',
+  'testes-rbac120': 'Os seis testes do RBAC 120',
+  'retorno-situacoes': 'Voltar a voar, caso a caso',
+  'animacao-retorno': 'O caminho de volta',
   'comando-hipoxia': 'Comando nervoso e hormonal na altitude · respiração e oxigênio',
   'comando-coracao': 'Comando nervoso e hormonal na altitude · coração e circulação',
   'comando-ouvidos': 'Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face',
