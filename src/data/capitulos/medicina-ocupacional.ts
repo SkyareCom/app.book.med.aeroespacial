@@ -70,6 +70,7 @@ export const medicinaOcupacional: Capitulo = {
           },
           { paragrafo: 3, midia: 'riscos-funcao' },
           { paragrafo: 4, video: { fonte: require('@/assets/videos/m3v7-voo.mp4'), legenda: "Na rampa, o protetor auricular e o colete fazem parte do uniforme perto dos motores." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-1-comissaria.jpg'), legenda: "Empurrar carrinhos e trabalhar em pé na turbulência fazem do comissário o tripulante que mais se fere." } },
           {
             paragrafo: 7,
             tabela: {
@@ -222,6 +223,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Conheça o programa da sua empresa e o nome do representante. Não trabalhe depois de beber nem sob efeito de qualquer substância, e guarde a receita dos remédios em uso para mostrar ao médico revisor. Se o uso estiver fora de controle, procure ajuda antes de um teste. Na empresa, treine supervisores, mantenha o sigilo dos resultados e apoie o tratamento indicado pelo especialista.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-4-teste.jpg'), legenda: "O teste aleatório alcança quem faz atividade de risco, e não só quem se envolveu num acidente." } },
           {
             paragrafo: 2,
             tabela: {
@@ -296,6 +298,7 @@ export const medicinaOcupacional: Capitulo = {
           },
           { paragrafo: 3, midia: 'animacao-retorno' },
           { paragrafo: 4, midia: 'retorno-situacoes' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-5-simulador.jpg'), legenda: "Depois de um afastamento longo, o simulador ajuda a recuperar a habilidade antes da escala completa." } },
           {
             paragrafo: 7,
             tabela: {
