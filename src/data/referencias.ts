@@ -137,4 +137,9 @@ export const diretrizes: Referencia[] = [
   { titulo: 'Dados de voo', detalhe: 'UK CAA, CAP 739, Flight Data Monitoring; ICAO, guia de programa de análise de dados de voo' },
   { titulo: 'SIPAER e CENIPA', detalhe: 'Decretos 69.565/1971 e 87.249/1982; filosofia SIPAER; guia do RELPREV (Sindicato Nacional dos Aeronautas, 2022)' },
   { titulo: 'Incapacitação em voo', detalhe: 'DeJohn CA et al., FAA DOT/FAA/AM-04/16 (2004); Transport Canada, TP 11629, Pilot Incapacitation' },
+  // M3V6 · Ergonomia e cabine de comando (17/11/2026).
+  { titulo: 'Cabine e certificação', detalhe: '14 CFR 25.777, 25.1302, 25.1322 e 25.1447; 14 CFR 121.542 (cabine estéril)' },
+  { titulo: 'Posição do piloto', detalhe: 'Airbus, Safety First, "Are you properly seated?"' },
+  { titulo: 'Óculos de sol para pilotos', detalhe: 'FAA, Pilot Safety Brochure, Sunglasses for Pilots' },
+  { titulo: 'Comunicação', detalhe: 'ICAO, Anexo 1, requisitos de proficiência linguística; acidente de Tenerife (1977); NTSB AAR-91/04, Avianca 52 (1990)' },
 ];

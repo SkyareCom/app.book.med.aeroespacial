@@ -396,3 +396,39 @@ export function AnimacaoDuasChamadas() {
     </Quadro>
   );
 }
+
+// M3V6 · Segmento visual: com o olho abaixo da referência, a borda do painel corta a visão para baixo e o trecho de pista
+// visível antes da neblina encurta. Registro em src/data/capitulos/ergonomia.ts (Airbus Safety First). Esquema, sem escala.
+export function AnimacaoSegmentoVisual() {
+  const c = useCiclo(9000);
+  const t = c.fase;
+  const H = 210;
+  const baixo = t > 0.5;
+  const s = baixo ? Math.min(1, (t - 0.5) * 6) : Math.max(0, 1 - t * 6);
+  const topo = baixo ? ['OLHO ABAIXO DA REFERÊNCIA:', 'O SEGMENTO VISUAL ENCURTA'] : ['OLHO NA REFERÊNCIA:', 'MAIS PISTA À VISTA'];
+  return (
+    <Quadro titulo="Segmento visual" instrucao="Esquema: compare quanto da pista o piloto vê com o olho na referência e abaixo dela." ciclo={c} altura={H}>
+      {(w) => {
+        const ex = 26, ey = 70 + 16 * s, gx = 66, gy = 104, chao = 176, fog = w - 18;
+        const xi = ex + ((gx - ex) * (chao - ey)) / (gy - ey);
+        const ini = Math.min(xi, fog);
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{topo[0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{topo[1]}</SvgText>
+            <Rect x={0} y={chao} width={w} height={H - chao} fill="#13233A" />
+            <Rect x={fog} y={40} width={w - fog} height={chao - 40} fill={Cores.textoApagado} fillOpacity={0.35} />
+            <SvgText x={fog - 4} y={52} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="end">NEBLINA</SvgText>
+            <Path d={`M ${gx - 22} ${gy} L ${gx} ${gy} L ${gx} ${gy + 26}`} stroke={Cores.textoSuave} strokeWidth={3} fill="none" />
+            <SvgText x={gx + 4} y={gy + 22} fill={Cores.textoApagado} fontSize={7.5} fontFamily={Fonte}>PAINEL</SvgText>
+            <Circle cx={ex} cy={ey} r={5} fill={baixo ? Cores.erro : Cores.acerto} />
+            <Path d={`M ${ex} ${ey} L ${ini} ${chao}`} stroke={Cores.destaque} strokeWidth={1.2} strokeDasharray="4 3" />
+            <Rect x={ini} y={chao - 3} width={Math.max(0, fog - ini)} height={6} rx={2} fill={Cores.destaque} />
+            <SvgText x={(ini + fog) / 2} y={chao + 18} fill={Cores.destaque} fontSize={8.5} fontFamily={Fonte} textAnchor="middle">SEGMENTO VISUAL</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
