@@ -148,4 +148,6 @@ export const diretrizes: Referencia[] = [
   { titulo: 'Substâncias psicoativas', detalhe: 'ANAC, RBAC 120' },
   { titulo: 'Turbulência e tripulantes', detalhe: 'NTSB, Preventing Turbulence-Related Injuries in Air Carrier Operations (2021)' },
   { titulo: 'Afastamento e retorno', detalhe: 'Lei 8.213/1991, art. 60; RBAC 67.15; 14 CFR 61.57' },
+  { titulo: 'Doenças ocupacionais', detalhe: 'Lei 8.213/1991, arts. 20 e 118; Ministério da Saúde, Portaria GM/MS 1.999/2023 (Lista de Doenças Relacionadas ao Trabalho); NR-7, Anexo II (audiometria)' },
+  { titulo: 'Câncer em tripulantes', detalhe: 'Sanlorenzo M e colegas, JAMA Dermatology (2014); McNeely E e colegas, Environmental Health (2018); IARC, Monografia 124 (2019)' },
 ];

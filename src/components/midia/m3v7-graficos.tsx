@@ -111,3 +111,17 @@ export function RetornoSituacoes() {
 const styles = StyleSheet.create({
   marca: { gap: 2, paddingLeft: Espaco.sm, borderLeftWidth: 2 },
 });
+
+// ---------------------------------------------------------------- Doenças ocupacionais na aviação
+const DOENCAS: Ficha[] = [
+  { nome: 'Perda auditiva por ruído', a: 'Mecânicos, agentes de rampa e pilotos de helicóptero e de avião leve.', b: 'Zumbido depois do turno e dificuldade de entender conversa no barulho.', c: 'Protetor auricular, plugue sob o fone e audiometria todo ano.' },
+  { nome: 'Dor nas costas e nos ombros', a: 'Agentes de rampa, comissários, mecânicos e pilotos de helicóptero.', b: 'Dor que piora no fim da jornada e melhora no descanso.', c: 'Equipamentos de carga, técnica para erguer peso e ajuste do assento.' },
+  { nome: 'Câncer de pele', a: 'Pilotos e comissários, com estudos que mostram melanoma cerca de 2 vezes mais frequente.', b: 'Pinta nova ou que muda de forma, cor ou tamanho.', c: 'Protetor solar, exame da pele todo ano e atenção ao sol fora do trabalho.' },
+  { nome: 'Distúrbios do sono', a: 'Tripulantes de escalas noturnas e voos longos, e controladores em turnos.', b: 'Insônia na folga e sono no trabalho.', c: 'Escalas avaliadas, descanso protegido e higiene do sono.' },
+  { nome: 'Burnout, ansiedade e depressão', a: 'Todas as funções, sobretudo com pressão constante e tempo longe de casa.', b: 'Cansaço que não passa com o descanso, irritação e perda de interesse.', c: 'Apoio por pares, apoio psicológico e pedir ajuda cedo.' },
+  { nome: 'Irritação da pele por fluidos', a: 'Mecânicos e abastecedores em contato com combustível e fluidos.', b: 'Pele vermelha, seca ou rachada nas mãos.', c: 'Luvas adequadas, lavar a pele logo após o contato e creme de proteção.' },
+];
+
+export function DoencasAviacao() {
+  return <Explorador titulo="Doenças ocupacionais na aviação" instrucao="Escolha uma doença para ver quem mais se expõe, o primeiro sinal e como prevenir." rotulos={['Quem mais se expõe', 'Primeiro sinal', 'Prevenção']} itens={DOENCAS} />;
+}
