@@ -296,6 +296,7 @@ export const medicinaOcupacional: Capitulo = {
           "**Como prevenir e amenizar.** Use o protetor auricular sempre perto de motores e faça a audiometria em repouso auditivo. Use equipamentos de carga e técnica para erguer peso. Proteja a pele do sol e examine as pintas todo ano. Durma o que a escala permitir e procure ajuda cedo se o humor ou o sono mudarem. Conte ao médico onde e como você trabalha.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v7-5-audiometria.jpg'), legenda: "A audiometria periódica mostra a perda causada pelo ruído antes que ela atrapalhe a conversa." } },
           {
             paragrafo: 2,
             tabela: {
@@ -322,6 +323,7 @@ export const medicinaOcupacional: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v7-5-descanso.jpg'), legenda: "Escalas noturnas e fusos seguidos cobram do sono e do humor." } },
           {
             paragrafo: 7,
             tabela: {
