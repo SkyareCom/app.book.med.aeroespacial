@@ -124,4 +124,11 @@ export const diretrizes: Referencia[] = [
   { titulo: 'CRM', detalhe: 'Helmreich, Merritt e Wilhelm, Int J Aviat Psychol 1999; ANAC, IS 00-010 Revisão B (2025)' },
   { titulo: 'Automação', detalhe: 'PARC/CAST Flight Deck Automation Working Group, Operational Use of Flight Path Management Systems (FAA, 2013)' },
   { titulo: 'Investigações', detalhe: 'NTSB: United 173 (1978) e Asiana 214 (2013); BEA: Air France 447 (relatório final, 2012)' },
+  // M3V15 · Investigação e perícia (17/11/2026).
+  { titulo: 'ICAO · investigação de acidentes', detalhe: 'Anexo 13, 10ª ed. (2010): objetivo de prevenção, independência, necropsia, proteção de registros e prazos' },
+  { titulo: 'Brasil · SIPAER', detalhe: 'Lei 12.970/2014 (Código Brasileiro de Aeronáutica, arts. 86-A a 88-Q); STF, ADI 5.667 (2024)' },
+  { titulo: 'Sobrevivência', detalhe: 'NTSB, SR-01-01 (2001): acidentes da aviação comercial dos EUA, 1983 a 2000; 14 CFR 25.803 (evacuação em 90 segundos)' },
+  { titulo: 'Identificação de vítimas', detalhe: 'INTERPOL, Disaster Victim Identification (guia e ficha FS-02, 2023)' },
+  { titulo: 'Toxicologia forense', detalhe: 'FAA DOT/FAA/AM-92/24 (álcool depois da morte, 1992) e DOT/FAA/AM-15/13 (álcool e drogas em pilotos mortos, 2015)' },
+  { titulo: 'Perícia no Brasil', detalhe: 'Código de Processo Penal (arts. 158 a 162); Lei 8.213/1991 (arts. 19 a 22); Código de Processo Civil (art. 473)' },
 ];

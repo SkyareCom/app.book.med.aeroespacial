@@ -296,3 +296,54 @@ export function AnimacaoQueijo() {
     </Quadro>
   );
 }
+
+// M3V15 · Duas investigações: o mesmo acidente abre a investigação do SIPAER (prevenção) e a da polícia e da Justiça
+// (responsabilidade), independentes; os dados do SIPAER só viram prova com decisão do juiz. Registro em
+// src/data/capitulos/investigacao.ts (Lei 12.970/2014; STF, ADI 5.667). Esquema, sem escala de tempo.
+export function AnimacaoDuasInvestigacoes() {
+  const c = useCiclo(14000);
+  const t = c.fase;
+  const H = 236;
+  const cima = ['LOCAL', 'ANÁLISE', 'RELATÓRIO', 'RECOMENDAÇÕES'];
+  const baixo = ['LOCAL', 'PERÍCIA', 'INQUÉRITO', 'PROCESSO'];
+  const passo = Math.min(3, Math.floor(t * 4.4));
+  const linhas = t < 0.25 ? ['O MESMO ACIDENTE', 'ABRE DUAS INVESTIGAÇÕES'] : t < 0.6 ? ['INDEPENDENTES: QUEM ATUA', 'EM UMA NÃO ATUA NA OUTRA'] : ['DADOS DO SIPAER SÓ VIRAM', 'PROVA COM DECISÃO DO JUIZ'];
+  return (
+    <Quadro titulo="Duas investigações" instrucao="Esquema: a investigação do SIPAER busca prevenir; a da polícia e da Justiça busca responsabilizar. Elas correm separadas." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 16, x1 = w - 22, yc = 82, yb = 182, ym = (yc + yb) / 2;
+        const xs = [0, 1, 2, 3].map((k) => x0 + 34 + ((x1 - x0 - 34) * k) / 3);
+        const u = Math.min(1, t * 1.15);
+        const xp = xs[0] + (xs[3] - xs[0]) * u;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{linhas[0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{linhas[1]}</SvgText>
+            <Circle cx={x0} cy={ym} r={7} fill={Cores.erro} />
+            <Path d={`M ${x0} ${ym} L ${xs[0]} ${yc}`} stroke={Cores.textoApagado} strokeWidth={1.5} />
+            <Path d={`M ${x0} ${ym} L ${xs[0]} ${yb}`} stroke={Cores.textoApagado} strokeWidth={1.5} />
+            <Rect x={xs[0]} y={ym - 1} width={xs[3] - xs[0]} height={2} fill={Cores.textoApagado} fillOpacity={0.6} />
+            <SvgText x={xs[0]} y={yc - 14} fill={Cores.acerto} fontSize={9} fontFamily={Fonte}>SIPAER · PREVENIR</SvgText>
+            <SvgText x={xs[0]} y={yb + 26} fill={Cores.destaque} fontSize={9} fontFamily={Fonte}>POLÍCIA E JUSTIÇA · RESPONSABILIZAR</SvgText>
+            {xs.map((x, k) => {
+              const ax = k === 0 ? 'start' : k === 3 ? 'end' : 'middle';
+              const lx = k === 0 ? x - 5 : k === 3 ? x + 5 : x;
+              return (
+              <G key={k}>
+                <Circle cx={x} cy={yc} r={5} fill={k <= passo ? Cores.acerto : Cores.linha} />
+                <Circle cx={x} cy={yb} r={5} fill={k <= passo ? Cores.destaque : Cores.linha} />
+                <SvgText x={lx} y={yc + (k % 2 ? 27 : 16)} fill={Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor={ax}>{cima[k]}</SvgText>
+                <SvgText x={lx} y={yb - (k % 2 ? 20 : 9)} fill={Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor={ax}>{baixo[k]}</SvgText>
+              </G>
+              );
+            })}
+            <Rect x={xs[0]} y={yc - 2} width={Math.max(0, xp - xs[0])} height={4} rx={2} fill={Cores.acerto} fillOpacity={0.7} />
+            <Rect x={xs[0]} y={yb - 2} width={Math.max(0, xp - xs[0])} height={4} rx={2} fill={Cores.destaque} fillOpacity={0.7} />
+            <SvgText x={(xs[1] + xs[2]) / 2} y={ym - 5} fill={Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor="middle">SEPARADAS</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}

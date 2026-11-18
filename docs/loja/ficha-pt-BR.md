@@ -7,17 +7,17 @@ Papos de Altitude
 ## Descrição curta (74/80)
 Medicina aeroespacial: o corpo humano na altitude, na aviação e no espaço.
 
-## Descrição completa (1890/4000)
+## Descrição completa (1915/4000)
 O Papos de Altitude é um app-book de medicina aeroespacial. Ele explica, do jeito mais claro possível, o que acontece com o corpo humano quando ele sobe: na cabine de um avião, no cockpit de um caça, numa montanha ou numa nave espacial.
 
-Hoje são 27 voos prontos, com 142 tópicos, 223 simuladores, calculadoras e gráficos interativos, 300 fotos, 28 vídeos e 296 questões de teste.
+Hoje são 28 voos prontos, com 148 tópicos, 230 simuladores, calculadoras e gráficos interativos, 312 fotos, 29 vídeos e 308 questões de teste.
 
 Cada voo junta texto progressivo, fotos, animações, tabelas práticas e um teste no final. Nos voos de sistemas do corpo, você encontra o que muda em altitude, como prevenir, quando dá para voar como passageiro ou tripulante e quais remédios combinam com o voo.
 
 Voos prontos
 Conceitos: Atmosfera e ambiente de voo · Pressurização e oxigênio suplementar · Descompressão · Temperatura e sobrevivência · Radiação cósmica · Ruído e vibração · Forças G · Impacto e ejeção
 Sistemas: Pulmões, oxigênio e hipóxia · Coração e vasos sanguíneos · Ouvidos, seios da face e dentes · Olhos e visão · Labirinto e orientação espacial · Cérebro e sistema nervoso · Saúde mental e comportamento · Sono, relógio biológico e fadiga · Hormônios e metabolismo · Estômago, intestino e fígado · Sangue, câncer e infecções · Coluna, ossos e músculos · Saúde da mulher · Rins e vias urinárias · Envelhecimento e limites de idade
-Aviação: Certificação e risco aeromédico · Farmacologia aeroespacial · Seleção e treinamento · Fatores humanos e CRM
+Aviação: Certificação e risco aeromédico · Farmacologia aeroespacial · Seleção e treinamento · Fatores humanos e CRM · Investigação e perícia
 
 Feito para pilotos, comissários, médicos, estudantes, passageiros e curiosos. O app tem também o Exame CMA, para se preparar para o exame médico aeronáutico, a Liberação para voo, o Laboratório com todos os interativos e um ranking de conhecimento. Disponível em português, inglês e espanhol.
 
