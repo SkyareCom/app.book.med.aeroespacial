@@ -23,6 +23,7 @@ import { farmacologia } from './capitulos/farmacologia';
 import { selecao } from './capitulos/selecao';
 import { fatoresHumanos } from './capitulos/fatores-humanos';
 import { investigacao } from './capitulos/investigacao';
+import { segurancaVoo } from './capitulos/seguranca-voo';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -107,7 +108,7 @@ export const secoes: Secao[] = [
       farmacologia,
       selecao,
       fatoresHumanos,
-      cap(5, 'Segurança de voo', ['SMS', 'Cultura justa', 'Dados de voo', 'CENIPA', 'Incapacitação em voo']),
+      segurancaVoo,
       cap(6, 'Ergonomia e cabine de comando', ['Antropometria', 'Integração humano-sistema', 'Cabine de comando', 'Equipamentos de voo', 'Comunicação']),
       cap(7, 'Medicina ocupacional', ['Riscos por função', 'PCMSO e PGR', 'Insalubridade e periculosidade', 'RBAC 120', 'Retorno ao voo']),
       cap(8, 'Toxicologia e higiene da aeronave', ['Monóxido de carbono', 'Fumaça na cabine', 'Ozônio', 'Combustíveis e fluidos', 'Desinsetização', 'Água e alimentos']),

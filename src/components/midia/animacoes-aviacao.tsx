@@ -347,3 +347,52 @@ export function AnimacaoDuasInvestigacoes() {
     </Quadro>
   );
 }
+
+// M3V5 · Regra das duas chamadas: na aproximação, o comandante deixa de responder a duas chamadas seguidas e o copiloto
+// assume. Registro em src/data/capitulos/seguranca-voo.ts (Transport Canada, TP 11629). Esquema, sem escala de tempo.
+export function AnimacaoDuasChamadas() {
+  const c = useCiclo(13000);
+  const t = c.fase;
+  const H = 230;
+  const etapa = t < 0.18 ? 0 : t < 0.38 ? 1 : t < 0.58 ? 2 : t < 0.78 ? 3 : 4;
+  const topo = [
+    ['APROXIMAÇÃO: O COPILOTO', 'FAZ AS CHAMADAS'],
+    ['PRIMEIRA CHAMADA:', 'O COMANDANTE RESPONDE'],
+    ['SEGUNDA CHAMADA:', 'SEM RESPOSTA'],
+    ['TERCEIRA CHAMADA:', 'DE NOVO SEM RESPOSTA'],
+    ['DUAS CHAMADAS SEM RESPOSTA:', 'SUSPEITE DE INCAPACITAÇÃO E AJA'],
+  ][etapa];
+  const fala = ['', '1.000 PÉS', '500 PÉS', 'MÍNIMOS', 'ASSUMO OS COMANDOS'][etapa];
+  const resposta = ['', 'CHECADO', '...', '...', ''][etapa];
+  return (
+    <Quadro titulo="Regra das duas chamadas" instrucao="Esquema: na aproximação, o comandante para de responder às chamadas e o copiloto assume." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 18, x1 = w - 18, y0 = 54, y1 = 120;
+        const u = Math.min(1, t * 1.1);
+        const xp = x0 + (x1 - x0) * u;
+        const yp = y0 + (y1 - y0) * u;
+        const xc = w * 0.3, xf = w * 0.7, yh = 176;
+        const cmtCor = etapa >= 2 ? Cores.erro : Cores.textoSuave;
+        const copCor = etapa === 4 ? Cores.acerto : Cores.destaque;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{topo[0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{topo[1]}</SvgText>
+            <Path d={`M ${x0} ${y0} L ${x1} ${y1}`} stroke={Cores.textoApagado} strokeWidth={1} strokeDasharray="4 4" />
+            <Rect x={x1 - 26} y={y1 + 2} width={30} height={3} fill={Cores.textoApagado} />
+            <Circle cx={xp} cy={yp} r={5} fill={Cores.destaque} />
+            <Circle cx={xc} cy={yh - 18} r={10} fill={cmtCor} fillOpacity={etapa >= 2 ? 0.5 : 0.9} />
+            <Rect x={xc - 14} y={yh - 6} width={28} height={22} rx={6} fill={cmtCor} fillOpacity={etapa >= 2 ? 0.5 : 0.9} />
+            <Circle cx={xf} cy={yh - 18} r={10} fill={copCor} />
+            <Rect x={xf - 14} y={yh - 6} width={28} height={22} rx={6} fill={copCor} />
+            <SvgText x={xc} y={yh + 30} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">COMANDANTE</SvgText>
+            <SvgText x={xf} y={yh + 30} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte} textAnchor="middle">COPILOTO</SvgText>
+            {fala ? <SvgText x={xf} y={yh - 36} fill={copCor} fontSize={9} fontFamily={Fonte} textAnchor="middle">{fala}</SvgText> : null}
+            {resposta ? <SvgText x={xc} y={yh - 36} fill={etapa >= 2 ? Cores.erro : Cores.acerto} fontSize={9} fontFamily={Fonte} textAnchor="middle">{resposta}</SvgText> : null}
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}

@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 34;
+export const VERSAO_NOTIFICACOES = 35;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'seguranca-voo',
+    rotulo: 'Voo disponível',
+    titulo: 'Segurança de voo',
+    texto: 'O voo 5 da Missão Aviação chegou: o SMS e a matriz de risco, a cultura justa, os dados de voo, o CENIPA e o SIPAER e a incapacitação do piloto em voo.',
+    destino: '/capitulo/aviacao/5',
+  },
   {
     id: 'investigacao',
     rotulo: 'Voo disponível',
