@@ -9,6 +9,8 @@
 // das animações da Missão Aviação passou a ser "FIM DO CONGELAMENTO M3V3".
 // Recongelado em 16/11/2026 com autorização do autor ("Autorizo"): comando nervoso e hormonal na altitude em M2V1 a
 // M2V15; src/data/comando-sistemas.ts e src/components/midia/comando-sistemas.tsx entram no retrato.
+// Recongelado em 18/11/2026 com autorização do autor ("Os dois ajustes"): receptores adrenérgicos e colinérgicos
+// nomeados em M2V1 a M2V15 e comando nervoso em M1V4, M1V7, M3V2 e M3V4.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -80,7 +82,7 @@ const chaves = Object.keys(en).filter((k) => es[k] !== undefined && literais.has
 const traducoes = {};
 for (const k of chaves) traducoes[k] = [en[k], es[k]];
 
-const manifesto = { autorizado: '12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026; M3V2 e M3V3 em 17/11/2026', voos: Object.keys(VOOS), arquivos, animacoes, animacoesAviacao, traducoes };
+const manifesto = { autorizado: '12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026; M3V2 e M3V3 em 17/11/2026; receptores adrenérgicos e colinérgicos em 18/11/2026', voos: Object.keys(VOOS), arquivos, animacoes, animacoesAviacao, traducoes };
 const saida = JSON.stringify(manifesto, null, 1) + '\n';
 fs.writeFileSync(path.join(ROOT, 'scripts/congelados.json'), saida);
 console.log(`congelados.json: ${Object.keys(arquivos).length} arquivos, ${chaves.length} traduções; assinatura ${crypto.createHash('sha1').update(saida).digest('hex')}`);

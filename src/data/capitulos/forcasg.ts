@@ -1,3 +1,7 @@
+// REGISTRO DE REVISÃO · 18/11/2026, autorizado pelo autor ("Os dois ajustes"): parágrafo, tabela e explorador "Comando
+// nervoso" no tópico Eixos G (simpático, parassimpático, receptores adrenérgicos e colinérgicos, centros do SNC,
+// hormônios e enzimas). Fontes: Guyton & Hall, Tratado de Fisiologia Médica; Katzung, Farmacologia Básica e Clínica;
+// Ernsting's Aviation and Space Medicine.
 // Missão 1 (Conceitos) · Voo 7 — Forças G.
 // Prosa única e progressiva, com destaques; cada tema num só lugar (referências cruzadas "Veja M_V_").
 // Foco no organismo (padrão de 30/10/2026): cada número vem com o efeito no corpo, os sistemas mais atingidos e a
@@ -86,11 +90,12 @@ export const forcasg: Capitulo = {
           "Numa **curva nivelada**, a carga cresce com a inclinação: a **60°**, o corpo sente **2 G**. Os aviões são certificados para limites de manobra: o avião de transporte, no mínimo **+2,5 G** e **−1 G**; o avião leve, até **3,8 G** na categoria normal, **4,4** na utilidade e **6 G** na acrobática.",
           "A direção também decide quanto G o corpo aguenta. No eixo **Gx**, a distância entre o coração e a cabeça é curta, e o corpo tolera **bem mais G** do que no **Gz**. Por isso os astronautas fazem o lançamento **deitados de costas**, e alguns caças têm o **assento inclinado para trás**: a carga passa a empurrar o peito, e não mais a puxar o sangue da cabeça para os pés (Veja M1V7 - II).",
           "**Caças e aviões acrobáticos chegam a 9 G**, e a catapulta de um porta-aviões leva o avião a mais de **250 km/h em menos de 2 segundos**. Pela FAA, o piloto civil também pode se **surpreender com G alto** numa curva fechada ou na recuperação de uma atitude anormal, e quase nunca tem traje anti-G.",
+          "Quem defende o cérebro no G é o **barorreflexo**. Os **barorreceptores** das carótidas e da aorta percebem a queda de pressão na cabeça e avisam o **núcleo do trato solitário**, no bulbo. O **simpático** solta **noradrenalina** nos receptores **adrenérgicos beta-1** do coração, que acelera, e **alfa-1** dos vasos, que se fecham; o **vago**, com **acetilcolina** nos receptores **colinérgicos M2**, recua. A **adrenalina** da suprarrenal reforça. Mas o reflexo leva cerca de **6 a 9 segundos**, e o G que sobe rápido chega antes dele (Veja M1V7 - II).",
           "**Como prevenir e amenizar.** No voo comercial, o G mal passa de 1,5; o que protege o passageiro é o **cinto afivelado**, porque a carga pode aparecer sem aviso na turbulência. Quem vai fazer um **voo acrobático** e tem pressão baixa, doença do coração ou da coluna conversa antes com o médico. O piloto respeita os **limites da categoria** do avião e evita curvas fechadas e recuperações bruscas, porque o corpo e a estrutura sentem a mesma carga.",
         ].join('\n\n'),
         recursos: [
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · força G",
               colunas: ['Situação', 'Passageiro', 'Tripulante'],
@@ -115,6 +120,21 @@ export const forcasg: Capitulo = {
           } },
           { paragrafo: 3, midia: 'curva-carga' },
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m1v7-1-acrobatico.jpg'), legenda: 'O avião acrobático também chega a 9 G. No loop, o +Gz empurra o sangue da cabeça para as pernas.' } },
+          { paragrafo: 6, midia: 'comando-forcasg' },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Comando nervoso e hormonal · forças G",
+              colunas: ["Comando", "Onde nasce e como chega", "O que o G faz"],
+              linhas: [
+                ["Sensores", "Barorreceptores das carótidas e da aorta, pelos nervos glossofaríngeo e vago", "No +Gz, a pressão na cabeça cai e eles disparam"],
+                ["Centro no sistema nervoso", "Núcleo do trato solitário e bulbo ventrolateral rostral", "Mais simpático e menos vago, em cerca de 6 a 9 segundos"],
+                ["Simpático", "Noradrenalina nos receptores adrenérgicos beta-1 do coração e alfa-1 dos vasos", "Coração mais rápido e forte; vasos das pernas e do abdômen mais fechados"],
+                ["Parassimpático", "Nervo vago, com acetilcolina nos receptores colinérgicos M2 do nó sinusal", "Recua no +Gz para o coração acelerar"],
+                ["Hormônios", "Adrenalina da suprarrenal", "Reforça o simpático, mas chega mais devagar do que os nervos"],
+              ],
+            },
+          },
         ],
       },
     },

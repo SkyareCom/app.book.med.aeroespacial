@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 38;
+export const VERSAO_NOTIFICACOES = 39;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,12 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'narracao',
+    rotulo: 'Atualização',
+    titulo: 'App-book narrado',
+    texto: 'Agora cada tópico pode ser ouvido em português, inglês ou espanhol, na voz do seu aparelho: toque em Ouvir no começo do texto. A narração segue o idioma escolhido no app.',
+  },
   {
     id: 'medicina-ocupacional',
     rotulo: 'Voo disponível',
@@ -197,7 +203,7 @@ export const notificacoes: Notificacao[] = [
   },
   {
     id: 'liberacao-voo',
-    rotulo: 'Novidade',
+    rotulo: 'Atualização',
     titulo: 'Liberação para voo seguro',
     texto: 'No fim da Missão Sistemas: formulário para passageiro, tripulante e médico especialista, com prazos de repouso e veredito. Cresce a cada voo da missão.',
     destino: '/liberacao-voo',
@@ -246,7 +252,7 @@ export const notificacoes: Notificacao[] = [
   },
   {
     id: 'organizacao',
-    rotulo: 'Novidade',
+    rotulo: 'Atualização',
     titulo: 'Nova organização das missões',
     texto: 'Agora são Conceitos, Sistemas, Aviação e Espaço: cada tema num só lugar, do básico ao avançado.',
     destino: '/conceitos',

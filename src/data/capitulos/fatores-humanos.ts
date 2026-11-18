@@ -1,3 +1,7 @@
+// REGISTRO DE REVISÃO · 18/11/2026, autorizado pelo autor ("Os dois ajustes"): parágrafo, tabela e explorador "Comando
+// nervoso" no tópico CRM e gerenciamento de ameaças e erros (simpático, parassimpático, receptores adrenérgicos e colinérgicos, centros do SNC,
+// hormônios e enzimas). Fontes: Guyton & Hall, Tratado de Fisiologia Médica; Katzung, Farmacologia Básica e Clínica;
+// Ernsting's Aviation and Space Medicine.
 // Missão 3 · Voo 4 — Fatores humanos e CRM. Ramo editorial voo/M3V4; fotos e vídeo entram depois da produção.
 // Mesmo padrão do M3V1 a M3V3: prosa progressiva, "Como prevenir e amenizar" com tabela, interativo por tópico,
 // animação em src/components/midia/animacoes-aviacao.tsx abaixo do marcador "FIM DO CONGELAMENTO M3V3", tabela final e
@@ -183,6 +187,7 @@ export const fatoresHumanos: Capitulo = {
           "A ICAO mede isso com a **auditoria de segurança em operação normal (LOSA)**: observadores treinados voam na cabine e registram ameaças e erros sem punir ninguém. Numa análise apresentada à ICAO, o controle de tráfego e o mau tempo apareceram como ameaças em **61%** dos voos, e problemas do avião em **52%**. Os erros mais comuns foram de **chamadas padronizadas**, de **checklist** e de **automação**; o erro de pilotagem manual foi o mais mal gerenciado, em **77%** das vezes.",
           "No Brasil, a ANAC exige o treinamento de CRM das empresas aéreas, do táxi aéreo e de outros operadores: pelo menos **16 horas-aula** de conceitos iniciais, uma fase prática de **4 horas** em até **6 meses** e o periódico de **8 horas-aula por ano** ou **16 a cada dois anos**. Participam pilotos, comissários, despachantes, mecânicos de voo e a manutenção de linha, e o programa inclui **estresse**, **fadiga** e os efeitos do **álcool** e das drogas.",
           "O corpo pesa no CRM. A **fadiga** deixa a atenção e a memória mais lentas (Veja M2V8 - V), o **medo** reduz a capacidade de pensar, e o **susto** enfraqueceu a divisão de tarefas no Air France 447 (Veja M3V4 - IV). Por isso o CRM põe fadiga e estresse no currículo: reconhecer em si e no colega os sinais de que o corpo está no limite e dizer isso em voz alta faz parte do gerenciamento de ameaças.",
+          "Por trás do **susto** e do **medo** está o alarme do corpo. A **amígdala** percebe a ameaça e aciona o **hipotálamo** e o **locus coeruleus**, no tronco cerebral, que espalha **noradrenalina** pelo cérebro. O **simpático** e a **adrenalina** da suprarrenal aceleram o coração e a respiração em segundos, pelos receptores **adrenérgicos beta**. Em minutos, o eixo **hipotálamo-hipófise-suprarrenal** solta o **cortisol**. Um pouco de alerta ajuda; alerta demais estreita a atenção e trava o raciocínio, e é aí que o CRM e os procedimentos padronizados protegem (Veja M2V7 - I).",
           "**Como prevenir e amenizar.** Faça o **briefing** com as ameaças do dia: tempo, aeroporto, cansaço e pane conhecida. Use as **chamadas padronizadas** e o checklist em voz alta. Se algo preocupa, fale de forma clara e direta, dizendo o que viu, o que preocupa e o que propõe; quem está no comando escuta e decide. Depois do voo, um **debriefing** curto transforma o erro de hoje na defesa de amanhã.",
         ].join('\n\n'),
         recursos: [
@@ -215,7 +220,7 @@ export const fatoresHumanos: Capitulo = {
           },
           { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v4-3-debriefing.jpg'), legenda: "O debriefing curto transforma o erro de hoje na defesa de amanhã." } },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: "Como prevenir e amenizar · CRM e TEM",
               colunas: ["Momento", "O que fazer"],
@@ -225,6 +230,21 @@ export const fatoresHumanos: Capitulo = {
                 ["Quando algo preocupa", "Dizer o que viu, o que preocupa e o que propõe; quem comanda escuta e decide"],
                 ["Corpo no limite", "Dizer em voz alta: cansaço, mal-estar e susto também são ameaças"],
                 ["Debriefing", "Rever o voo em poucos minutos e transformar o erro em defesa"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-fatores-humanos' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e hormonal · susto e estresse",
+              colunas: ["Comando", "Onde nasce e como chega", "O que o estresse faz no voo"],
+              linhas: [
+                ["Sensor de ameaça", "Amígdala, que recebe o que os olhos e os ouvidos captam", "Dispara antes de o raciocínio entender o que aconteceu"],
+                ["Centro no sistema nervoso", "Hipotálamo e locus coeruleus, com noradrenalina no cérebro", "Alerta alto e atenção estreita, presa ao problema"],
+                ["Simpático", "Noradrenalina e adrenalina nos receptores adrenérgicos beta-1 do coração e beta-2 dos brônquios", "Coração e respiração rápidos em segundos"],
+                ["Parassimpático", "Nervo vago, com acetilcolina nos receptores colinérgicos M2 do coração", "Recua no susto e volta quando a ameaça passa"],
+                ["Hormônios", "Cortisol, pelo eixo hipotálamo-hipófise-suprarrenal", "Sobe em minutos e mantém o corpo em alerta"],
               ],
             },
           },
