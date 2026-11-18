@@ -1,7 +1,7 @@
 // Comando nervoso e hormonal de cada sistema na altitude (inclusão autorizada pelo autor em 16/11/2026).
 // Os mesmos textos das tabelas "Comando nervoso e hormonal na altitude" do tópico de abertura de cada voo de Sistemas.
 // Fisiologia: Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
-export const COMANDO: Record<string, { titulo: string; linhas: [string, string, string][] }> = {
+export const COMANDO: Record<string, { titulo: string; efeito?: string; instrucao?: string; linhas: [string, string, string][] }> = {
   "hipoxia": {
     titulo: "Comando nervoso e hormonal na altitude · respiração e oxigênio",
     linhas: [
@@ -150,6 +150,54 @@ export const COMANDO: Record<string, { titulo: string; linhas: [string, string, 
       ["Parassimpático", "Nervo vago com menos força", "Menor variabilidade do ritmo do coração"],
       ["Sede e água", "Centro da sede no hipotálamo e hormônio antidiurético", "Sede menos sensível e rim que concentra menos: desidratação mais cedo"],
       ["Sono", "Glândula pineal e melatonina", "Menos melatonina e sono mais leve, que se ajusta mais devagar ao fuso"],
+    ],
+  },
+  "temperatura": {
+    titulo: "Comando nervoso e hormonal · calor e frio",
+    efeito: "O que o calor e o frio fazem",
+    instrucao: "Escolha o comando para ver onde ele nasce, como chega ao corpo e o que o calor e o frio fazem com ele.",
+    linhas: [
+      ["Sensores", "Receptores de calor e de frio da pele e do próprio hipotálamo", "Avisam o cérebro antes que a temperatura central mude muito"],
+      ["Centro no sistema nervoso", "Hipotálamo, na área pré-óptica", "No calor, manda perder calor; no frio, manda guardar e produzir calor"],
+      ["Simpático", "Noradrenalina nos receptores adrenérgicos alfa dos vasos da pele", "No frio, fecha os vasos da pele e guarda o calor no centro do corpo"],
+      ["Simpático colinérgico", "Fibras do simpático com acetilcolina nos receptores colinérgicos muscarínicos das glândulas de suor", "No calor, mais suor; na insolação, o suor pode parar e o calor sobe"],
+      ["Hormônios", "Hormônio da tireoide e adrenalina da suprarrenal", "No frio prolongado, aumentam o gasto de energia e o calor produzido"],
+    ],
+  },
+  "forcasg": {
+    titulo: "Comando nervoso e hormonal · forças G",
+    efeito: "O que o G faz",
+    instrucao: "Escolha o comando para ver onde ele nasce, como chega ao corpo e o que o G faz com ele.",
+    linhas: [
+      ["Sensores", "Barorreceptores das carótidas e da aorta, pelos nervos glossofaríngeo e vago", "No +Gz, a pressão na cabeça cai e eles disparam"],
+      ["Centro no sistema nervoso", "Núcleo do trato solitário e bulbo ventrolateral rostral", "Mais simpático e menos vago, em cerca de 6 a 9 segundos"],
+      ["Simpático", "Noradrenalina nos receptores adrenérgicos beta-1 do coração e alfa-1 dos vasos", "Coração mais rápido e forte; vasos das pernas e do abdômen mais fechados"],
+      ["Parassimpático", "Nervo vago, com acetilcolina nos receptores colinérgicos M2 do nó sinusal", "Recua no +Gz para o coração acelerar"],
+      ["Hormônios", "Adrenalina da suprarrenal", "Reforça o simpático, mas chega mais devagar do que os nervos"],
+    ],
+  },
+  "farmacologia": {
+    titulo: "Comando nervoso e remédios no voo",
+    efeito: "O que importa no voo",
+    instrucao: "Escolha o alvo para ver quais remédios agem nele e o que isso muda no voo.",
+    linhas: [
+      ["Simpático estimulado", "Descongestionantes nos receptores adrenérgicos alfa; broncodilatadores nos beta-2", "Desincham o nariz e abrem os brônquios, mas aceleram o coração e sobem a pressão"],
+      ["Simpático bloqueado", "Betabloqueadores nos receptores adrenérgicos beta-1 e beta-2", "Coração mais lento e menos resposta ao esforço"],
+      ["Parassimpático bloqueado", "Antialérgicos que dão sono e remédios de enjoo nos receptores colinérgicos muscarínicos", "Boca seca, visão turva e sono"],
+      ["Centro no sistema nervoso", "Remédios que atravessam até o cérebro, como os antialérgicos antigos e os calmantes", "Sono e reflexos mais lentos, piores com menos oxigênio"],
+      ["Enzimas", "Citocromo P450 do fígado", "Um remédio pode frear ou acelerar a quebra de outro e mudar o efeito"],
+    ],
+  },
+  "fatores-humanos": {
+    titulo: "Comando nervoso e hormonal · susto e estresse",
+    efeito: "O que o estresse faz no voo",
+    instrucao: "Escolha o comando para ver onde ele nasce, como chega ao corpo e o que o estresse faz com ele no voo.",
+    linhas: [
+      ["Sensor de ameaça", "Amígdala, que recebe o que os olhos e os ouvidos captam", "Dispara antes de o raciocínio entender o que aconteceu"],
+      ["Centro no sistema nervoso", "Hipotálamo e locus coeruleus, com noradrenalina no cérebro", "Alerta alto e atenção estreita, presa ao problema"],
+      ["Simpático", "Noradrenalina e adrenalina nos receptores adrenérgicos beta-1 do coração e beta-2 dos brônquios", "Coração e respiração rápidos em segundos"],
+      ["Parassimpático", "Nervo vago, com acetilcolina nos receptores colinérgicos M2 do coração", "Recua no susto e volta quando a ameaça passa"],
+      ["Hormônios", "Cortisol, pelo eixo hipotálamo-hipófise-suprarrenal", "Sobe em minutos e mantém o corpo em alerta"],
     ],
   },
 };

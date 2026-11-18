@@ -1,3 +1,7 @@
+// REGISTRO DE REVISÃO · 18/11/2026, autorizado pelo autor ("Os dois ajustes"): parágrafo, tabela e explorador "Comando
+// nervoso" no tópico O remédio no corpo que voa (simpático, parassimpático, receptores adrenérgicos e colinérgicos, centros do SNC,
+// hormônios e enzimas). Fontes: Guyton & Hall, Tratado de Fisiologia Médica; Katzung, Farmacologia Básica e Clínica;
+// Ernsting's Aviation and Space Medicine.
 // Missão 3 · Voo 2 — Farmacologia aeroespacial. Ramo editorial voo/M3V2; fotos e vídeo entram depois da produção.
 // Mesmo padrão do M3V1: prosa progressiva, "Como prevenir e amenizar" com tabela, interativo por tópico, animação em
 // src/components/midia/animacoes-aviacao.tsx abaixo do marcador do M3V1, tabela final e teste. Leitores: passageiro,
@@ -61,6 +65,7 @@ export const farmacologia: Capitulo = {
           "Os números mostram o tamanho do problema. O NTSB, que investiga acidentes nos Estados Unidos, analisou o sangue de **6.677** pilotos mortos em acidentes entre 1990 e 2012: a parte com remédios capazes de prejudicar o voo subiu de **11%** para **23%**. O mais encontrado foi a **difenidramina**, antialérgico que dá sono, presente em remédios para gripe, alergia e insônia. Nos grandes acidentes de linha aérea, nenhum piloto tinha usado drogas ilícitas pouco antes, mas alguns tinham tomado remédios que podem prejudicar o desempenho.",
           "Antes de qualquer remédio, o tripulante faz três perguntas: estou apto a voar com a condição que me fez tomar o remédio, preciso mesmo dele, e já o tomei no solo sem efeito colateral? A FAA pede que não se voe depois da primeira dose até passarem **48 horas** sem efeitos; a autoridade britânica fala em **alguns dias** de teste no solo, com orientação do examinador. Também vale avisar o médico e o farmacêutico de que se é piloto, porque a escolha do remédio pode mudar (Veja M3V2 - III).",
           "Para o **passageiro**, quase todo remédio de uso contínuo continua no voo, no horário combinado com o médico e na **bagagem de mão**. O cuidado maior é com o remédio para **dormir** a bordo: ele soma confusão e quedas no idoso e deixa a pessoa imóvel por horas, o que favorece a trombose nas pernas (Veja M2V15 - V e M2V11). O antialérgico antigo usado contra enjoo também dá sono e deve ser testado em casa antes da viagem.",
+          "Boa parte dos remédios que pesam no voo age no **sistema nervoso autônomo**. Os **descongestionantes** imitam o **simpático** nos receptores **adrenérgicos alfa** e aceleram o coração. Os **betabloqueadores**, da pressão alta e do coração, bloqueiam os receptores **adrenérgicos beta** e freiam a resposta ao esforço. Os **antialérgicos que dão sono** e os remédios de **enjoo** da mesma família também bloqueiam a **acetilcolina** nos receptores **colinérgicos muscarínicos**: boca seca, visão turva e sono. No fígado, as enzimas do **citocromo P450** desfazem a maioria dos remédios, e muitas **interações** nascem nelas (Veja M3V2 - IV).",
           "**Como prevenir e amenizar.** Antes do voo, o passageiro leva a lista de remédios e as doses na bagagem de mão e combina com o médico o horário no novo fuso; o tripulante testa todo remédio novo no solo, lê a composição dos produtos combinados e procura o examinador quando o tratamento for contínuo. Durante o voo, ninguém toma remédio cujo efeito ainda não conhece, e o tripulante não toma nenhum que dê sono. Depois, quem sentir sono, tontura ou visão alterada não volta ao comando até o efeito passar e o prazo de espera terminar.",
         ].join('\n\n'),
         recursos: [
@@ -96,7 +101,7 @@ export const farmacologia: Capitulo = {
           { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v2-1-farmaceutica.jpg'), legenda: "Avisar o médico e o farmacêutico de que se é piloto pode mudar a escolha do remédio." } },
           { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v2-voo.mp4'), legenda: "Remédio para dormir a bordo: no idoso, soma confusão, quedas e horas imóvel, o que favorece a trombose." } },
           {
-            paragrafo: 7,
+            paragrafo: 8,
             tabela: {
               titulo: "Como prevenir e amenizar · o remédio no corpo que voa",
               colunas: ["Momento", "Passageiro", "Tripulante"],
@@ -104,6 +109,21 @@ export const farmacologia: Capitulo = {
                 ["Antes do voo", "Lista de remédios e doses na bagagem de mão e horário combinado com o médico: o fuso muda o relógio do corpo", "Remédio novo testado no solo por 48 horas, no mínimo: o efeito colateral costuma aparecer nos primeiros dias"],
                 ["Durante o voo", "Nada novo para dormir e água ao longo do voo: o calmante e a desidratação somam queda de pressão e confusão", "Nenhum remédio que dê sono: a hipóxia da cabine aumenta o efeito sobre o cérebro"],
                 ["Depois do voo", "Retomar o horário das doses no novo fuso, como combinado com o médico", "Com sono, tontura ou visão alterada, não voltar ao comando: o efeito e o prazo de espera precisam terminar"],
+              ],
+            },
+          },
+          { paragrafo: 7, midia: 'comando-farmacologia' },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Comando nervoso e remédios no voo",
+              colunas: ["Comando", "Onde nasce e como chega", "O que importa no voo"],
+              linhas: [
+                ["Simpático estimulado", "Descongestionantes nos receptores adrenérgicos alfa; broncodilatadores nos beta-2", "Desincham o nariz e abrem os brônquios, mas aceleram o coração e sobem a pressão"],
+                ["Simpático bloqueado", "Betabloqueadores nos receptores adrenérgicos beta-1 e beta-2", "Coração mais lento e menos resposta ao esforço"],
+                ["Parassimpático bloqueado", "Antialérgicos que dão sono e remédios de enjoo nos receptores colinérgicos muscarínicos", "Boca seca, visão turva e sono"],
+                ["Centro no sistema nervoso", "Remédios que atravessam até o cérebro, como os antialérgicos antigos e os calmantes", "Sono e reflexos mais lentos, piores com menos oxigênio"],
+                ["Enzimas", "Citocromo P450 do fígado", "Um remédio pode frear ou acelerar a quebra de outro e mudar o efeito"],
               ],
             },
           },

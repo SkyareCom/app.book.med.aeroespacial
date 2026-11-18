@@ -1,3 +1,7 @@
+// REGISTRO DE REVISÃO · 18/11/2026, autorizado pelo autor ("Os dois ajustes"): parágrafo, tabela e explorador "Comando
+// nervoso" no tópico Calor (simpático, parassimpático, receptores adrenérgicos e colinérgicos, centros do SNC,
+// hormônios e enzimas). Fontes: Guyton & Hall, Tratado de Fisiologia Médica; Katzung, Farmacologia Básica e Clínica;
+// Ernsting's Aviation and Space Medicine.
 // Missão 1 (Conceitos) · Voo 4 — Temperatura e sobrevivência.
 // Prosa única e progressiva, com destaques; cada tema num só lugar (referências cruzadas "Veja M_V_").
 //
@@ -66,11 +70,12 @@ export const temperatura: Capitulo = {
           "O calor anda junto com a **desidratação**. Cerca de **dois terços do corpo são água**. A **sede só aparece quando já se perdeu cerca de 2% do peso**; por volta de 5%, chegam fadiga, náusea e instabilidade emocional. Com mais perda, aparecem dor de cabeça, confusão, delírio e falência dos rins.",
           "A prevenção é simples e diária: **beber antes da sede**, cerca de **1,9 litro por dia** como base, mais no calor e no esforço, e **manter a urina clara**. Álcool e cafeína aumentam a perda de água. Quem muda para um clima quente leva **uma a duas semanas para se aclimatar**.",
           "**Doenças, tratamentos e tipo de voo.** O calor tem três degraus de doença, e cada um tem o seu tratamento. No **estresse térmico**, a conduta é **expectante** e de hábito: sombra, pausa e água. Na **exaustão pelo calor**, o tratamento é **não invasivo**: deitar num lugar fresco, tirar o excesso de roupa, resfriar a pele e beber água com sais. A **insolação** é emergência: **resfriamento rápido**, de preferência em água fria, e tratamento **invasivo** no hospital, com **soro na veia** e vigilância dos rins e do cérebro. Quem teve insolação só volta a voar depois da recuperação e da avaliação médica; a exaustão pede ao menos o dia de descanso e a reidratação completa. No jato **pressurizado**, o risco está no solo, com a cabine parada ao sol; no avião leve **não pressurizado** e no **helicóptero**, a cabine envidraçada esquenta como estufa, o capacete e o macacão retêm calor, e o voo baixo não refresca.",
+          "Quem comanda a temperatura é o **hipotálamo**, o termostato do cérebro, que recebe a informação da pele e do sangue. No **calor**, ele abre os vasos da pele e manda suar: as glândulas de suor recebem fibras do **simpático**, mas o mensageiro é a **acetilcolina**, nos receptores **colinérgicos muscarínicos**. No **frio**, o simpático solta **noradrenalina** nos receptores **adrenérgicos alfa** e fecha os vasos da pele para guardar o calor, e o hipotálamo dispara o **tremor**. Mais devagar, o hormônio da **tireoide** e a **adrenalina** aumentam a produção de calor (Veja M2V9).",
           "**Como prevenir e amenizar.** Beba **antes da sede** e mantenha a **urina clara**. Use roupa leve e evite esperar no avião **parado ao sol** com as portas fechadas. Nas primeiras **uma a duas semanas** num clima quente, vá com calma, porque o corpo ainda não sua de forma eficiente. **Pele quente e seca, confusão ou desmaio** são emergência: resfrie a pessoa e chame socorro. O tripulante com sinais de **exaustão pelo calor** não voa até se recuperar, porque o calor tira atenção e julgamento antes de tirar a força.",
         ].join('\n\n'),
         recursos: [
           {
-            paragrafo: 6,
+            paragrafo: 7,
             tabela: {
               titulo: "Como prevenir e amenizar · calor",
               colunas: ['Situação', 'Passageiro', 'Tripulante'],
@@ -87,6 +92,21 @@ export const temperatura: Capitulo = {
           { paragrafo: 2, midia: 'termometro-corpo' },
           { paragrafo: 3, midia: 'desidratacao' },
           { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m1v4-hidratacao.jpg'), legenda: 'Beber antes da sede, ainda no solo: a hidratação começa antes da decolagem.' } },
+          { paragrafo: 6, midia: 'comando-temperatura' },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Comando nervoso e hormonal · calor e frio",
+              colunas: ["Comando", "Onde nasce e como chega", "O que o calor e o frio fazem"],
+              linhas: [
+                ["Sensores", "Receptores de calor e de frio da pele e do próprio hipotálamo", "Avisam o cérebro antes que a temperatura central mude muito"],
+                ["Centro no sistema nervoso", "Hipotálamo, na área pré-óptica", "No calor, manda perder calor; no frio, manda guardar e produzir calor"],
+                ["Simpático", "Noradrenalina nos receptores adrenérgicos alfa dos vasos da pele", "No frio, fecha os vasos da pele e guarda o calor no centro do corpo"],
+                ["Simpático colinérgico", "Fibras do simpático com acetilcolina nos receptores colinérgicos muscarínicos das glândulas de suor", "No calor, mais suor; na insolação, o suor pode parar e o calor sobe"],
+                ["Hormônios", "Hormônio da tireoide e adrenalina da suprarrenal", "No frio prolongado, aumentam o gasto de energia e o calor produzido"],
+              ],
+            },
+          },
         ],
       },
     },

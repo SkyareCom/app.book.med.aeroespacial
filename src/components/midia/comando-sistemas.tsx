@@ -9,6 +9,7 @@ import { COMANDO } from '@/data/comando-sistemas';
 
 // Explorador "Comando nervoso e hormonal na altitude", um por voo de Sistemas (inclusão autorizada pelo autor em
 // 16/11/2026). Os textos vêm de src/data/comando-sistemas.ts, os mesmos da tabela do tópico de abertura de cada voo.
+// 18/11/2026 (autorizado pelo autor, "Os dois ajustes"): também em M1V4, M1V7, M3V2 e M3V4, com rótulo e instrução próprios.
 // Fisiologia: Guyton & Hall, Tratado de Fisiologia Médica; West, Fisiologia Respiratória; Ernsting's Aviation and Space Medicine.
 
 function Bloco({ rotulo, cor, texto }: { rotulo: string; cor: string; texto: string }) {
@@ -28,10 +29,10 @@ export function ComandoSistema({ chave }: { chave: string }) {
   if (!dado) return null;
   const [, onde, efeito] = dado.linhas[i];
   return (
-    <MolduraMidia tipo="Explorador" titulo={dado.titulo} instrucao="Escolha o comando para ver onde ele nasce, como chega ao órgão e o que a hipóxia e a baixa pressão fazem com ele.">
+    <MolduraMidia tipo="Explorador" titulo={dado.titulo} instrucao={dado.instrucao ?? "Escolha o comando para ver onde ele nasce, como chega ao órgão e o que a hipóxia e a baixa pressão fazem com ele."}>
       <Opcoes itens={dado.linhas.map((l, j) => [j, l[0]] as [number, string])} valor={i} onChange={setI} />
       <Bloco rotulo="Onde nasce e como chega" cor={Cores.destaque} texto={onde} />
-      <Bloco rotulo="O que a hipóxia e a baixa pressão fazem" cor={Cores.dourado} texto={efeito} />
+      <Bloco rotulo={dado.efeito ?? "O que a hipóxia e a baixa pressão fazem"} cor={Cores.dourado} texto={efeito} />
     </MolduraMidia>
   );
 }
