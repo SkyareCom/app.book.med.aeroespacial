@@ -63,6 +63,7 @@ export const investigacao: Capitulo = {
           "**Como prevenir e amenizar.** Notifique incidentes e situações de risco, mesmo sem dano. Diante de um acidente, só mexa nos destroços para **salvar vidas** ou evitar novo perigo, e anote o que viu enquanto a memória está fresca. O médico que atende vítimas ou examina tripulantes mantém o prontuário completo e legível e preserva amostras quando houver morte, porque elas podem ser a única resposta sobre o que aconteceu com o corpo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v15-1-destrocos.jpg'), legenda: "A investigação de segurança busca prevenir o próximo acidente, não apontar culpados." } },
           {
             paragrafo: 2,
             tabela: {
@@ -78,6 +79,8 @@ export const investigacao: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'etapas-investigacao' },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m3v15-voo.mp4'), legenda: "O gravador de voo guarda o que a tripulação ouviu e fez; a lei o protege para que sirva à prevenção." } },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v15-1-relatorio.jpg'), legenda: "O relatório final é público e termina em recomendações de segurança." } },
           {
             paragrafo: 7,
             tabela: {
@@ -109,6 +112,7 @@ export const investigacao: Capitulo = {
           "**Como prevenir e amenizar.** Use o cinto **baixo e firme sobre a pelve** sempre que estiver sentado, leia o cartão de segurança e conte as fileiras até as duas saídas mais próximas. Na emergência, adote a posição de impacto recomendada (Veja M1V8 - II), deixe a bagagem e saia. Depois, procure avaliação médica mesmo sem dor, e o tripulante só volta ao voo depois de liberado.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v15-2-cabine.jpg'), legenda: "Na maioria dos acidentes, a maioria das pessoas sobrevive." } },
           {
             paragrafo: 1,
             tabela: {
@@ -135,6 +139,7 @@ export const investigacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v15-2-sobrevivente.jpg'), legenda: "O exame do sobrevivente explica a dinâmica do acidente, e o relato dele é protegido como fonte." } },
           {
             paragrafo: 7,
             tabela: {
@@ -166,6 +171,7 @@ export const investigacao: Capitulo = {
           "**Como prevenir e amenizar.** Mantenha em dia o tratamento e o prontuário do **dentista** e guarde exames de imagem e descrições de cirurgias, sobretudo com prótese ou implante. O médico examinador registra com clareza cicatrizes, tatuagens e próteses no exame. Diante de um desastre, a família procura a equipe oficial de identificação e aguarda a confirmação por digital, arcada ou DNA, sem se apoiar só no reconhecimento visual.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v15-3-patologia.jpg'), legenda: "A necropsia do piloto responde se ele estava apto quando o avião caiu." } },
           {
             paragrafo: 2,
             tabela: {
@@ -193,6 +199,7 @@ export const investigacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v15-3-odontologia.jpg'), legenda: "O prontuário do dentista e a radiografia antiga viram identidade na fase ante mortem." } },
           {
             paragrafo: 7,
             tabela: {
@@ -224,6 +231,7 @@ export const investigacao: Capitulo = {
           "**Como prevenir e amenizar.** Para o tripulante, a prevenção é a mesma do voo vivo: respeitar os prazos de cada remédio e do álcool e declarar ao examinador o que usa (Veja M3V2 - III). Para quem colhe as amostras, colher **cedo**, colher **várias** (sangue, urina, humor vítreo e tecidos), refrigerar e registrar a cadeia de custódia. Para quem interpreta, nunca concluir só por um número no sangue.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v15-4-laboratorio.jpg'), legenda: "A toxicologia busca álcool e drogas nas amostras dos pilotos mortos em acidentes." } },
           {
             paragrafo: 2,
             tabela: {
@@ -263,6 +271,7 @@ export const investigacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v15-4-amostras.jpg'), legenda: "Cada amostra precisa de cadeia de custódia para valer na investigação e no processo." } },
           {
             paragrafo: 7,
             tabela: {
@@ -293,6 +302,7 @@ export const investigacao: Capitulo = {
           "**Como prevenir e amenizar.** O médico examinador registra tudo com clareza: exames, declarações, pareceres e o motivo de cada decisão. O tripulante mantém o certificado médico, a declaração de saúde e o diário de bordo corretos e verdadeiros. Quem chega primeiro ao local preserva os vestígios, salvo para salvar vidas, e o perito documenta cada passo da cadeia de custódia.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v15-5-local.jpg'), legenda: "Um acidente com mortos abre duas investigações: uma para prevenir e outra para responsabilizar." } },
           { paragrafo: 1, midia: 'animacao-duas-investigacoes' },
           {
             paragrafo: 2,
@@ -322,6 +332,7 @@ export const investigacao: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v15-5-perito.jpg'), legenda: "O prontuário do exame aeromédico é peça da perícia." } },
           {
             paragrafo: 7,
             tabela: {
@@ -353,6 +364,7 @@ export const investigacao: Capitulo = {
           "**Como prevenir e amenizar.** O tripulante guarda os exames periódicos, as audiometrias, os certificados médicos e o registro das jornadas, e comunica qualquer acidente ou sintoma ligado ao voo. A empresa emite a CAT no prazo. O médico que atende registra a história de exposição e, se a empresa não comunicar, pode emitir a CAT. O perito responde a todos os quesitos, com método e linguagem simples.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v15-6-pericia.jpg'), legenda: "Para o aeronauta, o acidente em voo a serviço é acidente do trabalho." } },
           {
             paragrafo: 2,
             tabela: {
@@ -368,6 +380,7 @@ export const investigacao: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'laudo-partes' },
+          { paragrafo: 4, figura: { imagem: require('@/assets/images/topicos/m3v15-6-laudo.jpg'), legenda: "Todo processo termina num laudo, que precisa responder a todos os quesitos com método." } },
           {
             paragrafo: 5,
             tabela: {
