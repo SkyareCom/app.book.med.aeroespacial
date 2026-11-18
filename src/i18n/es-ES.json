@@ -2001,7 +2001,6 @@
 "Nova York–Tóquio":"Nueva York–Tokio",
 "Nova York–Tóquio, 13 horas a até 43.000 ft":"Nueva York–Tokio, 13 horas a hasta 43.000 ft",
 "Nova organização das missões":"Nueva organización de las misiones",
-"Novidade":"Novedad",
 "Novidades do app":"Novedades de la app",
 "Novos voos a caminho":"Nuevos vuelos en camino",
 "Num cruzeiro noturno, a radiação que chega do espaço é invisível: o avião voa sob uma camada de ar bem mais fina que a do solo.":"En un crucero nocturno, la radiación que llega del espacio es invisible: el avión vuela bajo una capa de aire mucho más delgada que la del suelo.",
@@ -19417,5 +19416,13 @@
 "Recua no susto e volta quando a ameaça passa":"Retrocede en el sobresalto y vuelve cuando pasa la amenaza",
 "Cortisol, pelo eixo hipotálamo-hipófise-suprarrenal":"Cortisol, por el eje hipotálamo-hipófisis-suprarrenal",
 "Sobe em minutos e mantém o corpo em alerta":"Sube en minutos y mantiene el cuerpo en alerta",
-"Escolha o comando para ver onde ele nasce, como chega ao corpo e o que o estresse faz com ele no voo.":"Elija el control para ver dónde nace, cómo llega al cuerpo y qué le hace el estrés en el vuelo."
+"Escolha o comando para ver onde ele nasce, como chega ao corpo e o que o estresse faz com ele no voo.":"Elija el control para ver dónde nace, cómo llega al cuerpo y qué le hace el estrés en el vuelo.",
+"Ouvir":"Escuchar",
+"Pausar":"Pausar",
+"Continuar":"Continuar",
+"Parar":"Detener",
+"Parágrafo {0} de {1}":"Párrafo {0} de {1}",
+"Narração do tópico":"Narración del tema",
+"App-book narrado":"App-book narrado",
+"Agora cada tópico pode ser ouvido em português, inglês ou espanhol, na voz do seu aparelho: toque em Ouvir no começo do texto. A narração segue o idioma escolhido no app.":"Ahora cada tema puede escucharse en portugués, inglés o español, con la voz de su dispositivo: toque Escuchar al comienzo del texto. La narración sigue el idioma elegido en la app."
 }

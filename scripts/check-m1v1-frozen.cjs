@@ -111,7 +111,8 @@ const ARQUIVOS = Object.freeze({
   'assets/images/topicos/m1v3-pele-marmorizada.jpg': '60195898c00ba7a9',
   // Congelamento M1V4 e M2V1 — autorizado pelo autor em 29/10/2026 ("Resolva todos os itens").
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/temperatura.ts': '46d518ee9bced2cd',
+  // 18/11/2026: autorizado pelo autor ("Os dois ajustes"; pedido "As orientações de inserir informações sobre os estímulos nervosos parassimpáticos e simpáticos e enzimas, estímulos adrenérgicos"): receptores nomeados como adrenérgicos e colinérgicos e, onde fez sentido, bloco "Comando nervoso" (M1V4 e M1V7); hash novo.
+  'src/data/capitulos/temperatura.ts': 'db4a772a6b214ed0',
   'src/components/midia/m1v4-graficos.tsx': '5673a269f5b6358b',
   'assets/videos/m1v4-frio.mp4': '99d9b1c4488079cb',
   'assets/images/topicos/m1v4-agua-gelada.jpg': '4fb9590b788e704f',
@@ -138,7 +139,8 @@ const ARQUIVOS = Object.freeze({
   //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante das
   //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
   // 16/11/2026: autorizado pelo autor ("Autorizo"; pedido "Em todos os sistemas agregar informações sobre estímulos noradrenérgicos e beta-adrenérgicos, simpático ou parassimpático, locais do cérebro e do SNC que comandam cada sistema, enzimas e hormônios estimulados pela hipóxia, altitude e hipobarismo"): parágrafo, tabela "Comando nervoso e hormonal na altitude" e explorador no tópico de abertura; hash novo.
-  'src/data/capitulos/hipoxia.ts': '8b033bf8e0c9c6fc',
+  // 18/11/2026: autorizado pelo autor ("Os dois ajustes"; pedido "As orientações de inserir informações sobre os estímulos nervosos parassimpáticos e simpáticos e enzimas, estímulos adrenérgicos"): receptores nomeados como adrenérgicos e colinérgicos e, onde fez sentido, bloco "Comando nervoso" (M1V4 e M1V7); hash novo.
+  'src/data/capitulos/hipoxia.ts': 'd72a0afa2c8e79e2',
   // 12/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Todos os topicos dos sistemas entram com formulários
   //   no card especial"): cinco perguntas novas na liberação, uma para cada tópico I a V, e a do mergulho ligada ao tópico IX; hash novo.
   'src/data/liberacao/respiratorio.ts': 'c1cf63692c68f6f5',
@@ -228,7 +230,8 @@ const ARQUIVOS = Object.freeze({
   'assets/images/capas/temporada-fisiologia.jpg': '82d71e88e8415748',
   // Congelamento M1V7 — combinado com o autor ao receber as fotos e o vídeo (01/11/2026).
   // 05/11/2026: autorizado pelo autor ("Nas tabelas semelhantes, sempre explicar o motivo", junto com "Em todo app"): só a coluna "O que acontece" da tabela "Sistemas do corpo mais atingidos" ganhou o motivo fisiológico; hash novo.
-  'src/data/capitulos/forcasg.ts': '30c500e565cac6b7',
+  // 18/11/2026: autorizado pelo autor ("Os dois ajustes"; pedido "As orientações de inserir informações sobre os estímulos nervosos parassimpáticos e simpáticos e enzimas, estímulos adrenérgicos"): receptores nomeados como adrenérgicos e colinérgicos e, onde fez sentido, bloco "Comando nervoso" (M1V4 e M1V7); hash novo.
+  'src/data/capitulos/forcasg.ts': '14e36422e06ef6b4',
   'src/components/midia/m1v7-graficos.tsx': 'da9ba71eaa9f1b6a',
   'assets/videos/m1v7-centrifuga.mp4': '98b7204996818516',
   'assets/images/topicos/m1v7-1-caca-curva.jpg': '5caa935d0c757a67',

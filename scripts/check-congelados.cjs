@@ -11,6 +11,8 @@
 //   - as traduções EN e ES de todos os textos dos voos das Missões Conceitos e Sistemas.
 //   - o comando nervoso e hormonal na altitude (autorizado pelo autor em 16/11/2026, "Autorizo"): parágrafo, tabela
 //     e explorador no tópico de abertura de M2V1 a M2V15 (src/data/comando-sistemas.ts e comando-sistemas.tsx); retrato refeito.
+//   - 18/11/2026 (autorizado pelo autor, "Os dois ajustes"): receptores adrenérgicos e colinérgicos nomeados em M2V1 a
+//     M2V15 e comando nervoso em M1V4, M1V7, M3V2 e M3V4; retrato refeito.
 // M1V1 a M1V8 e M2V1 seguem em check-m1v1-frozen.cjs; M2V10 em check-m2v10-frozen.cjs.
 // Voos novos (Missões Aviação e Espaço) põem as animações num arquivo próprio e acrescentam traduções sem mudar as
 // existentes. Qualquer divergência bloqueia o CI. Só autorização explícita do autor permite regenerar o retrato
@@ -19,7 +21,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const ROOT = path.resolve(__dirname, '..');
-const MANIFESTO = '9130a5d301205829d8fd235a4810ce0c7c9559ab';
+const MANIFESTO = '22f9c7b262702a06dd1acd7ef670746c80818e8c';
 let falhas = 0;
 const erro = (m) => { console.error('CONGELAMENTO VIOLADO: ' + m); falhas++; };
 const ler = (p) => {

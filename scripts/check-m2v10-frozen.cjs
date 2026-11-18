@@ -14,6 +14,7 @@
 // em cada tópico, o comparador "tipo de voo" e uma pergunta de tratamentos na liberação. As traduções congeladas não
 // mudaram; hashes de digestivo.ts e liberacao/digestivo.ts refeitos.
 // 16/11/2026: autorizado pelo autor ("Autorizo"; pedido "Em todos os sistemas agregar informações sobre estímulos noradrenérgicos e beta-adrenérgicos, simpático ou parassimpático, locais do cérebro e do SNC que comandam cada sistema, enzimas e hormônios estimulados pela hipóxia, altitude e hipobarismo"): parágrafo, tabela "Comando nervoso e hormonal na altitude" e explorador no tópico de abertura; hash de digestivo.ts refeito.
+// 18/11/2026: autorizado pelo autor ("Os dois ajustes"; pedido "As orientações de inserir informações sobre os estímulos nervosos parassimpáticos e simpáticos e enzimas, estímulos adrenérgicos"): receptores nomeados como adrenérgicos e colinérgicos e, onde fez sentido, bloco "Comando nervoso" (M1V4 e M1V7); hash de digestivo.ts refeito.
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -35,7 +36,7 @@ const BLOBS = Object.freeze({
   "src/components/midia/m2v10-graficos.tsx": "a24fda2cacc86652a96ed97eacdf9efc99299cea",
   // 10/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Nas tabelas em que houver Tripulantes e passageiros
   //   sempre justificar ou apresentar os motivos de adiar voos ou permitir"): colunas Passageiro e Tripulante com motivo; hash novo.
-  "src/data/capitulos/digestivo.ts": "0a28fecd9ded1a92380c4c337932720a6613f2b0",
+  "src/data/capitulos/digestivo.ts": "83d6a50f8f0f250c1d5e0ac8c21306849b9241cf",
   "src/data/liberacao/digestivo.ts": "70f7c1305e9eaae119abb29bd7382439c47f4c05"
 });
 const I18N = Object.freeze({ 'en-US': 'cecadaf95f7ebe84', 'es-ES': '70993fbf45253697' });
