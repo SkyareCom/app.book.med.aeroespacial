@@ -12,6 +12,10 @@ export const obras: Referencia[] = [
   { titulo: 'Handbook of Aviation and Space Medicine', detalhe: 'Manual de bolso de medicina de aviação e espacial' },
   { titulo: 'Fisiologia Aeroespacial', detalhe: 'Russomano et al.' },
   { titulo: 'A Gravidade, Esta Grande Escultora', detalhe: 'Vernikos e Russomano' },
+  { titulo: "Guyton & Hall", detalhe: "Tratado de Fisiologia Médica" },
+  { titulo: "West", detalhe: "Fisiologia Respiratória" },
+  { titulo: "Katzung", detalhe: "Farmacologia Básica e Clínica" },
+  { titulo: "Goodman & Gilman", detalhe: "As Bases Farmacológicas da Terapêutica" },
 ];
 
 export const normas: Referencia[] = [
@@ -150,4 +154,106 @@ export const diretrizes: Referencia[] = [
   { titulo: 'Afastamento e retorno', detalhe: 'Lei 8.213/1991, art. 60; RBAC 67.15; 14 CFR 61.57' },
   { titulo: 'Doenças ocupacionais', detalhe: 'Lei 8.213/1991, arts. 20 e 118; Ministério da Saúde, Portaria GM/MS 1.999/2023 (Lista de Doenças Relacionadas ao Trabalho); NR-7, Anexo II (audiometria)' },
   { titulo: 'Câncer em tripulantes', detalhe: 'Sanlorenzo M e colegas, JAMA Dermatology (2014); McNeely E e colegas, Environmental Health (2018); IARC, Monografia 124 (2019)' },
+];
+
+// Referências por voo (18/11/2026, pedido do autor: "Todas as fontes devem ser inseridas no card Referências"): obras, normas,
+// estudos e manuais citados nos registros de revisão dos voos que ainda não estavam nas listas acima.
+export const porVoo: { secao: string; itens: Referencia[] }[] = [
+  {
+    secao: "M1V1 · Atmosfera",
+    itens: [
+      { titulo: "Atmosfera padrão", detalhe: "ICAO, Doc 7488 (Manual of the ICAO Standard Atmosphere); U.S. Standard Atmosphere (1976); AMS, Glossary of Meteorology" },
+      { titulo: "FAA · atmosfera e tempo", detalhe: "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C), cap. 4; Aviation Weather (AC 00-6B); Contact Lens Use in the Civil Airman Population (relatório 02/06)" },
+      { titulo: "Umidade e cabine", detalhe: "NOAA NESDIS, What Is Humidity?; EASA CS 25.841 (pressurização da cabine)" },
+    ],
+  },
+  {
+    secao: "M1V2 · Pressurização",
+    itens: [
+      { titulo: "Altitude de cabine", detalhe: "Muhm JM et al., N Engl J Med 2007;357(1):18-27" },
+      { titulo: "FAA · pressurização e oxigênio", detalhe: "AC 61-107B; AC 25-20 (máscaras e gerador químico); 14 CFR 25.841 e 91.211" },
+      { titulo: "Oxigênio de aviação", detalhe: "SAE AS8010 (oxigênio respiratório de aviação)" },
+    ],
+  },
+  {
+    secao: "M1V3 · Descompressão",
+    itens: [
+      { titulo: "Treino em câmara de altitude", detalhe: "Nakdimon I, Ben-Ari O, Aerosp Med Hum Perform 2022;93(11):811-5" },
+      { titulo: "Mergulho e voo", detalhe: "DAN Europe, Alert Diver, \"Dispelling Misunderstandings\"; UHMS; US Navy Diving Manual, rev. 7" },
+      { titulo: "Voo depois da câmara hiperbárica", detalhe: "St Leger Dowse M, Bryson P, Gunby A, Fife W, \"Time to fly after treatment for DCI\", DDRC (2005); University of Iowa Health Care, riscos da oxigenoterapia hiperbárica" },
+    ],
+  },
+  {
+    secao: "M1V4 · Temperatura e sobrevivência",
+    itens: [
+      { titulo: "Calor e desidratação", detalhe: "Flight Safety Foundation, Human Factors & Aviation Medicine, vol. 48, n. 4 (2001), \"Dehydration Presents Unique Risks for Pilots\"" },
+      { titulo: "Hipotermia e água fria", detalhe: "Wilderness Medical Society, resumo em Am Fam Physician 2020;102(9):571; Giesbrecht G, McGill Office for Science and Society, \"Professor Popsicle's physiological proof\"" },
+      { titulo: "FAA · sobrevivência", detalhe: "CAMI, Basic Survival for Aviation (OK-06-033); General Aviation Survival (GAJSC); AM-400-09/1 (calor)" },
+    ],
+  },
+  {
+    secao: "M1V5 · Radiação",
+    itens: [
+      { titulo: "FAA · radiação", detalhe: "AC 120-61B; CAMI, What Aircrews Should Know About Their Occupational Exposure to Ionizing Radiation (2026); DOT/FAA/AM-03/16 (2003)" },
+      { titulo: "Clima espacial e limites", detalhe: "Radioprotection 2017;52(3); ICRP, Publicação 118 (2012)" },
+      { titulo: "Tripulações brasileiras", detalhe: "Federico CA, Gonçalez OL, Pazianotto MT et al., ICDA-3, Lisboa (2019); CNEN, relatório final do GT-Aero (2018); Rochedo ERR, Alves VA, Wasserman MAV, Braz J Radiat Sci 2020;8(1):1-10" },
+    ],
+  },
+  {
+    secao: "M1V6 · Ruído e vibração",
+    itens: [
+      { titulo: "FAA · ruído", detalhe: "CAMI, Hearing and Noise in Aviation (AM-400-98/3), Antuñano MJ e Spanyers JP" },
+      { titulo: "Ruído na cabine", detalhe: "Canadian Acoustics, \"In-cabin noise levels during commercial aircraft flights\"; Lower MC, Bagshaw M, Proc. Internoise 96; NIOSH, Occupational Noise Exposure (1998, publicação 98-126)" },
+      { titulo: "Ruído no Brasil", detalhe: "Falcão TP et al., Rev Saúde Pública 2014;48(5):790-6; Nota Técnica 1/2022/SADP/DPA; ANAC, IS 67-004B (2020)" },
+      { titulo: "Vibração", detalhe: "Smith SD, Smith JA, Proc. 43rd SAFE Symposium (2005); Tamer A et al., CEAS Aeronaut J 2021;12(2):427-40; Kåsin JI, Mansfield N, Wagstaff A, Aviat Space Environ Med 2011;82:790-6" },
+    ],
+  },
+  {
+    secao: "M1V7 · Forças G",
+    itens: [
+      { titulo: "FAA · aceleração", detalhe: "CAMI, Acceleration in Aviation: G-Force (OK-21-0375, 2021); AM-400-09/2; 14 CFR 23.337 e 25.337" },
+      { titulo: "G-LOC e A-LOC", detalhe: "StatPearls, Aerospace Gravitational Effects (2023); Whinnery JE, TCU Magazine (2008); Jones M-L et al., Aerosp Med Hum Perform 2026;97(4):257-63" },
+      { titulo: "Manobra anti-G e centrífuga", detalhe: "Pollock RD et al., Aerosp Med Hum Perform 2019;90(11):925-33; Gowda A et al., Ind J Aerospace Med 2013;57(2):9-13; Renjhen P, Agarwal A, Ind J Aerospace Med 2011;55(1):35-8; USAF, AFI 11-404; Saab e Defesa Aérea & Naval (Gripen)" },
+      { titulo: "Dor cervical", detalhe: "Shiri R et al., Occup Environ Med 2015;72(2):145-50" },
+    ],
+  },
+  {
+    secao: "M1V8 · Impacto e ejeção",
+    itens: [
+      { titulo: "Tolerância ao impacto", detalhe: "Eiband AM, NASA Memo 5-19-59E (1959); Smithsonian National Air and Space Museum (2018), John Paul Stapp; critérios da AFAMRL (relatório PUC_1746_14)" },
+      { titulo: "Assentos e retenção", detalhe: "Taylor AM, DeWeese RL, Moorcroft DM, DOT/FAA/AM-15/17 (2015); FAA AC 121-24D; 14 CFR 25.562 e 91.205; ANAC, RBAC 25 (Resolução 777/2025)" },
+      { titulo: "Ejeção", detalhe: "Zivkovic MM et al., Aerosp Med Hum Perform 2024;95(11):862-6; Lewis ME, J R Army Med Corps 2002;148(1):22-6; Epstein D et al., Injury 2020;51(7); Crowley JS, J Occup Med 1991;33:766-9; USAARL report 93-2; Martin-Baker" },
+    ],
+  },
+  {
+    secao: "Missão Sistemas · fontes complementares",
+    itens: [
+      { titulo: "Coração e trombose", detalhe: "Canadian Cardiovascular Society, Flying: Cardiovascular Conditions; British Heart Foundation (2010), via GPnotebook; ACCP e ASH (prevenção de trombose)" },
+      { titulo: "Passageiros mais velhos", detalhe: "FAA, McNeely E, Spengler J, Watson J, Health Effects of Aircraft Cabin Pressure in Older and Vulnerable Passengers (RITE-ACER-CoE-2011-1); American Geriatrics Society, Health in Aging, Safe Travel Tips for Older Adults (2019)" },
+      { titulo: "Adaptação à altitude", detalhe: "OpenAnesthesia, Physiologic changes at high altitude; Brown e Grocott, Contin Educ Anaesth Crit Care Pain 2013;13(1):17-22; Ainslie e Donnelly, Open Textbook of Exercise Physiology; Luks et al., High Altitude Medicine and Physiology, 6ª ed. (2021); Moulson et al., ACC (2021); FAA CAMI, Aviation Physiology" },
+      { titulo: "Ouvidos", detalhe: "NHS Worcestershire, Myringotomy and grommets; Zadik Y (barodontalgia)" },
+      { titulo: "Desorientação e enjoo", detalhe: "FAA, Airman Education (Spatial Disorientation; Visual Illusions); CAMI, AM-400-03/1 e Alcohol and Flying; CDC Yellow Book 2026, Motion Sickness (Golding JF)" },
+      { titulo: "Saúde mental", detalhe: "Elmenhorst et al., Thorax (2024): álcool e sono na pressão da cabine; Psychiatric Times, Travel and serious mental illness; FAA Safety Briefing, Fit to Fly (2023); AOPA Pilot Protection Services (HIMS); AIN Online (protocolo de antidepressivos, 2024)" },
+      { titulo: "Sono", detalhe: "J Clin Sleep Med (2026), diretriz de tratamento da insônia crônica, com nota da AASM; mapa com contornos Natural Earth" },
+      { titulo: "Infecções", detalhe: "OMS, Tuberculosis and air travel: guidelines for prevention and control, 3ª ed. (2013)" },
+      { titulo: "Rins e vias urinárias", detalhe: "EAU Guidelines on Urolithiasis; Clark JY, Aviat Space Environ Med 1990;61(8):744-7; Royal Berkshire NHS, ESWL aftercare (2023); Kidney Care UK, guia de viagem; National Kidney Foundation, \"Have Transplant, Will Travel\"" },
+      { titulo: "Idade e licenças", detalhe: "EASA, Pilots' Age Limits Study (Vegers J, AsMA, 2019); 49 U.S.C. 44729 (Fair Treatment for Experienced Pilots Act, 2007); 14 CFR 121.383; Federal Register 80 FR 33397 (2015)" },
+      { titulo: "Gestação", detalhe: "NICE, Antenatal care; IFALPA, 18HUPBL02" },
+      { titulo: "Laser e olhos", detalhe: "ICAO, Doc 9815 (Manual on Laser Emitters and Flight Safety)" },
+      { titulo: "Complementos regulatórios", detalhe: "FAA, 14 CFR 121.333 (máscara de colocação rápida) e OTC Medications for Pilots (OK-20-0302); CAA da Nova Zelândia, MIS 021 (cálculo renal); Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)" },
+    ],
+  },
+  {
+    secao: "Missão Aviação · fontes complementares",
+    itens: [
+      { titulo: "Certificação", detalhe: "FAA Reauthorization Act (2024) e BasicMed; ANAC, RBAC 67, Emendas 01 (Resolução 420/2017) e 05 (Resolução 636/2021)" },
+      { titulo: "Remédios no voo", detalhe: "CASA (Austrália), Clinical Practice Guideline: Ground trial for medication; OHS Online (2014)" },
+      { titulo: "Seleção e treinamento", detalhe: "Aviation Safety Network; Pub. L. 111-216 (2010)" },
+      { titulo: "Fatores humanos e CRM", detalhe: "Edwards E, modelo SHEL (1972); Klinect J, LOSA e TEM (ICAO, 2008); ANAC, IS 00-010 Revisão B (Portaria 16.471/SPO, 2025); Aviation Week (Asiana 214)" },
+      { titulo: "Segurança de voo", detalhe: "ANAC, PSOE-ANAC (Resolução 352/2015); ICAO APAC, guia de análise de dados de voo; Flight Safety Foundation, AeroSafety World (2007)" },
+      { titulo: "Ergonomia", detalhe: "US Air Force, conforme Defense News (2017): F-35A e peso do piloto; SKYbrary (Tenerife, 1977)" },
+      { titulo: "Medicina ocupacional · fontes de apoio", detalhe: "ICAO, Anexo 6, Parte I, 4.3.7 (abastecimento com passageiros a bordo); UNSCEAR; MTE, Análise de Impacto Regulatório do Anexo 2 da NR-16 (2026), conforme CNI; Associated Press, Guia Trabalhista, Conjur, Cancer Network e Harvard Gazette (resumos de normas e estudos)" },
+      { titulo: "Investigação e perícia", detalhe: "Chaturvedi AK et al., DOT/FAA/AM-15/13 (2015); Canfield DV, Kupiec TC, Huffine EF, DOT/FAA/AM-92/24 (1992); Flight Safety Digest (out. 2001); Decreto 3.048/1999 (nexo técnico epidemiológico)" },
+    ],
+  },
 ];

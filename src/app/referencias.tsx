@@ -4,7 +4,7 @@ import { Painel } from '@/components/cartoes';
 import { Tela } from '@/components/tela';
 import { Texto } from '@/components/texto';
 import { Cores } from '@/constants/theme';
-import { diretrizes, normas, obras, type Referencia } from '@/data/referencias';
+import { diretrizes, normas, obras, porVoo, type Referencia } from '@/data/referencias';
 import { RelacionadosEspecial } from '@/components/especiais';
 
 // Referências: lista única das obras e normas usadas em todo o app.
@@ -15,6 +15,20 @@ export default function Referencias() {
       <Lista rotulo="Obras de referência" itens={obras} />
       <Lista rotulo="Normas e autoridades" itens={normas} />
       <Lista rotulo="Diretrizes para passageiros e viajantes" itens={diretrizes} />
+      <Painel>
+        <Texto t="rotulo" cor={Cores.destaque}>Referências por voo</Texto>
+        {porVoo.map((g) => (
+          <View key={g.secao} style={{ gap: 8 }}>
+            <Texto t="item" cor={Cores.dourado}>{g.secao}</Texto>
+            {g.itens.map((r) => (
+              <View key={r.titulo} style={{ gap: 2 }}>
+                <Texto t="item">{r.titulo}</Texto>
+                <Texto cor={Cores.textoApagado}>{r.detalhe}</Texto>
+              </View>
+            ))}
+          </View>
+        ))}
+      </Painel>
       <RelacionadosEspecial id="referencias" />
     </Tela>
   );
