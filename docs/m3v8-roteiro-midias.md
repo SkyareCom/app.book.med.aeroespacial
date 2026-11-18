@@ -1,7 +1,7 @@
 # M3V8 · Toxicologia e higiene da aeronave — roteiro de mídias
 
 Padrão: pessoas fictícias, sem texto, logotipos ou insígnias legíveis; 16:9, 1600 × 893, JPEG 85; vídeo H.264, 8 s, sem áudio.
-Cada mídia já tem a linha pronta, comentada com `// FOTO:` ou `// VÍDEO:`, em `src/data/capitulos/toxicologia.ts`: ao receber o arquivo, basta descomentar. As legendas já estão traduzidas.
+Todas as mídias foram recebidas do autor em 18/11/2026 e integradas em `src/data/capitulos/toxicologia.ts`. Vídeo cortado para 8 s, sem áudio, com dragonas e brevê desfocados.
 
 | # | Arquivo | Tópico | Parágrafo | Legenda |
 |---|---|---|---|---|

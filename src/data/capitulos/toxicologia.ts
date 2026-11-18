@@ -1,5 +1,4 @@
-// Missão 3 · Voo 8 — Toxicologia e higiene da aeronave. Ramo editorial voo/M3V8. As fotos e o vídeo entram depois da
-// produção: as linhas prontas estão comentadas com "FOTO:" e "VÍDEO:" nos recursos de cada tópico.
+// Missão 3 · Voo 8 — Toxicologia e higiene da aeronave. Ramo editorial voo/M3V8, com as 12 fotos e o vídeo do autor.
 // Os 6 itens previstos viraram 6 tópicos, no mesmo padrão do M3V1 ao M3V7 e do M3V15.
 // REGISTRO DE REVISÃO · 18/11/2026. Fontes conferidas:
 // 8.1 Monóxido. EASA SIB 2020-01R1 (19/10/2021): fontes, faixas de COHb e sintomas, detector ativo, conduta do piloto.
@@ -55,7 +54,7 @@ export const toxicologia: Capitulo = {
           "**Como prevenir e amenizar.** Inspecione **escapamento, silencioso e aquecimento** nos prazos do fabricante e não adie o reparo de uma trinca. Leve um **detector ativo** em condição de uso, com alarme que se ouça sob o fone. Trate dor de cabeça ou sono inesperados em voo como **possível CO**, sobretudo com o aquecimento ligado. Não volte a voar no mesmo avião antes de um **mecânico** achar e corrigir a causa.",
         ].join('\n\n'),
         recursos: [
-          // FOTO: { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-1-escapamento.jpg'), legenda: "Antes do voo, olhar o escapamento e o silencioso é parte da defesa contra o monóxido." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-1-escapamento.jpg'), legenda: "Antes do voo, olhar o escapamento e o silencioso é parte da defesa contra o monóxido." } },
           {
             paragrafo: 2,
             tabela: {
@@ -71,7 +70,7 @@ export const toxicologia: Capitulo = {
           },
           { paragrafo: 3, midia: 'niveis-cohb' },
           { paragrafo: 4, midia: 'animacao-monoxido' },
-          // FOTO: { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-1-detector.jpg'), legenda: "Um detector com alarme avisa o que o nariz não consegue perceber." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-1-detector.jpg'), legenda: "Um detector com alarme avisa o que o nariz não consegue perceber." } },
           {
             paragrafo: 7,
             tabela: {
@@ -104,7 +103,7 @@ export const toxicologia: Capitulo = {
           "**Como prevenir e amenizar.** O tripulante deve **treinar** o uso da máscara e do equipamento de proteção respiratória e conhecer os cheiros e sinais descritos pela empresa. O passageiro deve ouvir a tripulação, **localizar a saída mais próxima** antes da decolagem, deixar a bagagem e manter-se **abaixado** se houver fumaça. Depois de um evento, anote a hora, o local, o cheiro e os sintomas, e informe tudo ao médico.",
         ].join('\n\n'),
         recursos: [
-          // FOTO: { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-2-odor.jpg'), legenda: "Um cheiro diferente perto da saída de ar merece atenção e aviso imediato à cabine de comando." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-2-odor.jpg'), legenda: "Um cheiro diferente perto da saída de ar merece atenção e aviso imediato à cabine de comando." } },
           {
             paragrafo: 2,
             tabela: {
@@ -119,8 +118,8 @@ export const toxicologia: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'sinais-cabine' },
-          // VÍDEO: { paragrafo: 4, video: { fonte: require('@/assets/videos/m3v8-voo.mp4'), legenda: "Na dúvida sobre o ar da cabine, a máscara vem antes da explicação." } },
-          // FOTO: { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v8-2-protecao.jpg'), legenda: "O equipamento de proteção respiratória permite agir onde a fumaça impediria respirar." } },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m3v8-voo.mp4'), legenda: "Na dúvida sobre o ar da cabine, a máscara vem antes da explicação." } },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v8-2-protecao.jpg'), legenda: "O equipamento de proteção respiratória permite agir onde a fumaça impediria respirar." } },
           {
             paragrafo: 7,
             tabela: {
@@ -153,7 +152,7 @@ export const toxicologia: Capitulo = {
           "**Como prevenir e amenizar.** Quem tem asma deve levar o **broncodilatador na bagagem de mão** e manter o tratamento em dia. Lubrificante ocular e boa hidratação aliviam o desconforto, embora não removam o gás. Para a empresa, a proteção está em **conversores em bom estado**, planejamento de rota e registro das queixas. Tripulantes com sintomas repetidos devem levá-los ao **médico do trabalho** (Veja M3V7 - II).",
         ].join('\n\n'),
         recursos: [
-          // FOTO: { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-3-cruzeiro.jpg'), legenda: "No cruzeiro, o avião voa perto da região onde o ar é mais rico em ozônio." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-3-cruzeiro.jpg'), legenda: "No cruzeiro, o avião voa perto da região onde o ar é mais rico em ozônio." } },
           {
             paragrafo: 2,
             tabela: {
@@ -167,7 +166,7 @@ export const toxicologia: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'ozonio-cabine' },
-          // FOTO: { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-3-passageira.jpg'), legenda: "Olhos irritados no cruzeiro podem vir do ar seco, do ozônio ou da soma dos dois." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-3-passageira.jpg'), legenda: "Olhos irritados no cruzeiro podem vir do ar seco, do ozônio ou da soma dos dois." } },
           {
             paragrafo: 7,
             tabela: {
@@ -199,7 +198,7 @@ export const toxicologia: Capitulo = {
           "**Como prevenir e amenizar.** Use **luvas e óculos** indicados na ficha de segurança de cada produto e troque na hora a roupa molhada. Lave a pele com água e sabão, sem usar combustível ou solvente para limpar as mãos. Mantenha ventilação, afaste-se da névoa na partida a frio e proteja a **audição**. Conte ao **médico do trabalho** sobre lesões de pele, tontura ou mudança na atenção depois do turno (Veja M3V7 - V).",
         ].join('\n\n'),
         recursos: [
-          // FOTO: { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-4-amostra.jpg'), legenda: "Quem coleta e confere combustível precisa proteger a pele e evitar respirar os vapores." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-4-amostra.jpg'), legenda: "Quem coleta e confere combustível precisa proteger a pele e evitar respirar os vapores." } },
           {
             paragrafo: 2,
             tabela: {
@@ -212,8 +211,8 @@ export const toxicologia: Capitulo = {
               ],
             },
           },
-          { paragrafo: 3, midia: 'fluidos-bordo' },
-          // FOTO: { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v8-4-hidraulico.jpg'), legenda: "Luvas e óculos fazem parte do serviço em sistemas hidráulicos." } },
+          { paragrafo: 4, midia: 'fluidos-bordo' },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v8-4-hidraulico.jpg'), legenda: "Luvas e óculos fazem parte do serviço em sistemas hidráulicos." } },
           {
             paragrafo: 7,
             tabela: {
@@ -246,7 +245,7 @@ export const toxicologia: Capitulo = {
           "**Como prevenir e amenizar.** Antes de um voo internacional, confira com a empresa se haverá **spray na cabine**. Leve o **remédio de resgate** na bagagem de mão se tiver asma. Em áreas com mosquitos, a proteção pessoal continua valendo: repelente, roupas adequadas e **vacinas** indicadas para o destino (Veja M2V11 - VI). Para tripulantes, **treinamento** e registro das aplicações ajudam a medir a exposição ao longo da carreira.",
         ].join('\n\n'),
         recursos: [
-          // FOTO: { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-5-aerossol.jpg'), legenda: "Em alguns destinos, a cabine recebe inseticida em aerossol antes da decolagem." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-5-aerossol.jpg'), legenda: "Em alguns destinos, a cabine recebe inseticida em aerossol antes da decolagem." } },
           {
             paragrafo: 2,
             tabela: {
@@ -261,7 +260,7 @@ export const toxicologia: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'metodos-desinsetizacao' },
-          // FOTO: { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-5-residual.jpg'), legenda: "No método residual, as superfícies são tratadas com o avião vazio." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-5-residual.jpg'), legenda: "No método residual, as superfícies são tratadas com o avião vazio." } },
           {
             paragrafo: 7,
             tabela: {
@@ -293,7 +292,7 @@ export const toxicologia: Capitulo = {
           "**Como prevenir e amenizar.** Respeite qualquer aviso de **água não potável** e, nesse caso, use água lacrada e álcool em gel. Lave ou higienize as mãos antes de comer. Pilotos devem comer **refeições diferentes** e avisar logo se surgirem náusea ou cólicas. Tripulante com diarreia, vômitos ou **lesão infectada nas mãos** não deve manipular alimentos. Reponha líquidos e procure atendimento se houver sangue nas fezes, febre alta ou sinais de desidratação.",
         ].join('\n\n'),
         recursos: [
-          // FOTO: { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-6-agua.jpg'), legenda: "O abastecimento de água passa por caminhão, mangueira e tanque: todos precisam estar limpos." } },
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v8-6-agua.jpg'), legenda: "O abastecimento de água passa por caminhão, mangueira e tanque: todos precisam estar limpos." } },
           {
             paragrafo: 2,
             tabela: {
@@ -308,7 +307,7 @@ export const toxicologia: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'agua-alimentos' },
-          // FOTO: { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-6-cozinha.jpg'), legenda: "Na cozinha de bordo, higiene das mãos e controle da temperatura protegem centenas de refeições." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v8-6-cozinha.jpg'), legenda: "Na cozinha de bordo, higiene das mãos e controle da temperatura protegem centenas de refeições." } },
           {
             paragrafo: 7,
             tabela: {
