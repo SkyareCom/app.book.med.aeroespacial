@@ -52,6 +52,7 @@ export const ergonomia: Capitulo = {
           "**Como prevenir e amenizar.** Regule o assento pela referência do olho antes de cada voo, ajuste os pedais para o curso completo e confira de novo antes da aproximação. Apoie o braço com o punho reto, o que reduz comandos sem querer na turbulência. Quando o corpo mudar, por gestação, cirurgia, ganho de peso ou lesão, teste o alcance de todos os comandos e procure o médico examinador antes de voltar a voar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v6-1-assento.jpg'), legenda: "Cada piloto regula o assento até os olhos ficarem na posição de projeto da cabine." } },
           {
             paragrafo: 2,
             tabela: {
@@ -80,6 +81,8 @@ export const ergonomia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v6-1-pedais.jpg'), legenda: "Pedais regulados para o curso completo e a frenagem total." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v6-voo.mp4'), legenda: "Antes do voo, o piloto regula a altura do assento e os pedais e só então coloca o fone." } },
           {
             paragrafo: 7,
             tabela: {
@@ -111,6 +114,7 @@ export const ergonomia: Capitulo = {
           "**Como prevenir e amenizar.** Conheça a lógica do seu avião: o que cada modo faz, como cada alerta soa e onde fica cada comando, para não depender da memória do momento. Relate telas confusas, botões mal posicionados e alertas que enganam. Use os óculos de perto quando precisar e trate a perda auditiva cedo. Na empresa, envolva pilotos reais na escolha e na avaliação de equipamentos novos.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v6-2-projeto.jpg'), legenda: "A integração humano-sistema testa o projeto com pessoas reais antes de o avião voar." } },
           {
             paragrafo: 2,
             tabela: {
@@ -142,6 +146,7 @@ export const ergonomia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v6-2-avaliacao.jpg'), legenda: "Pilotos avaliam no simulador se a tela é clara mesmo sob carga de trabalho alta." } },
           {
             paragrafo: 7,
             tabela: {
@@ -173,6 +178,7 @@ export const ergonomia: Capitulo = {
           "**Como prevenir e amenizar.** Respeite a cabine estéril e combine no briefing o que pode interromper as fases críticas. Trate cada alerta vermelho como imediato, mesmo que já tenha tocado antes, e relate os alertas que tocam à toa. Regule a luz da cabine para a noite, beba água e mexa as pernas nos voos longos. Os comissários chamam a cabine nas fases críticas só por segurança, com frases curtas e claras.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v6-3-cabine.jpg'), legenda: "Na cabine escura, uma luz acesa já é um sinal: o olho procura a diferença." } },
           {
             paragrafo: 2,
             tabela: {
@@ -199,6 +205,7 @@ export const ergonomia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v6-3-alerta.jpg'), legenda: "Diante de um alerta âmbar, o piloto aponta, lê em voz alta e abre o procedimento." } },
           {
             paragrafo: 7,
             tabela: {
@@ -230,6 +237,7 @@ export const ergonomia: Capitulo = {
           "**Como prevenir e amenizar.** Antes do voo, confira a máscara de oxigênio, teste o fone e deixe os óculos de reserva à mão. Escolha óculos de sol cinza, não polarizados, com armação fina que não levante a vedação do fone nem da máscara. Mantenha o volume do rádio baixo e prefira fone com cancelamento de ruído. Na aviação militar, ajuste capacete e traje antes de cada missão e treine com o conjunto completo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v6-4-equipamentos.jpg'), legenda: "Máscara, fone e óculos são escolhidos como conjunto: um não pode atrapalhar o outro." } },
           {
             paragrafo: 2,
             tabela: {
@@ -259,6 +267,7 @@ export const ergonomia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v6-4-capacete.jpg'), legenda: "Na aviação militar, cada grama do capacete pesa no pescoço sob forças G." } },
           {
             paragrafo: 7,
             tabela: {
@@ -290,6 +299,7 @@ export const ergonomia: Capitulo = {
           "**Como prevenir e amenizar.** Use a fraseologia padrão, leia de volta toda autorização e pergunte de novo quando houver dúvida. Numa emergência, diga **Mayday** ou **Pan-Pan**; não deixe que o controle precise adivinhar. Fale quando algo parecer errado e escute quem fala. Mantenha o idioma em dia, proteja a audição e procure o médico se o rádio ficar difícil de entender.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v6-5-radio.jpg'), legenda: "No rádio, uma palavra fora do padrão pode mudar o destino de um voo." } },
           {
             paragrafo: 2,
             tabela: {
@@ -314,6 +324,7 @@ export const ergonomia: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v6-5-controlador.jpg'), legenda: "A leitura de volta fecha o ciclo: o controle confirma que o piloto entendeu o que foi dito." } },
           {
             paragrafo: 7,
             tabela: {
