@@ -2,7 +2,7 @@ import type { Href } from 'expo-router';
 
 // Novidades do app mostradas em Notificações. Ao incluir uma novidade, aumente VERSAO_NOTIFICACOES
 // para o ponto de "não lida" voltar a aparecer no sino.
-export const VERSAO_NOTIFICACOES = 39;
+export const VERSAO_NOTIFICACOES = 40;
 
 export interface Notificacao {
   id: string;
@@ -13,6 +13,13 @@ export interface Notificacao {
 }
 
 export const notificacoes: Notificacao[] = [
+  {
+    id: 'toxicologia',
+    rotulo: 'Voo disponível',
+    titulo: 'Toxicologia e higiene da aeronave',
+    texto: 'O voo 8 da Missão Aviação chegou: monóxido de carbono, fumaça na cabine, ozônio, combustíveis e fluidos, desinsetização, água e alimentos, com o que cada um faz ao corpo e como se proteger.',
+    destino: '/capitulo/aviacao/8',
+  },
   {
     id: 'narracao',
     rotulo: 'Atualização',
