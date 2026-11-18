@@ -142,4 +142,10 @@ export const diretrizes: Referencia[] = [
   { titulo: 'Posição do piloto', detalhe: 'Airbus, Safety First, "Are you properly seated?"' },
   { titulo: 'Óculos de sol para pilotos', detalhe: 'FAA, Pilot Safety Brochure, Sunglasses for Pilots' },
   { titulo: 'Comunicação', detalhe: 'ICAO, Anexo 1, requisitos de proficiência linguística; acidente de Tenerife (1977); NTSB AAR-91/04, Avianca 52 (1990)' },
+  // M3V7 · Medicina ocupacional (18/11/2026).
+  { titulo: 'Normas regulamentadoras', detalhe: 'NR-1 (PGR), NR-7 (PCMSO), NR-15 (insalubridade) e NR-16 (periculosidade)' },
+  { titulo: 'Adicionais na aviação', detalhe: 'CLT, arts. 192 e 193; TST, Súmula 447 (2013)' },
+  { titulo: 'Substâncias psicoativas', detalhe: 'ANAC, RBAC 120' },
+  { titulo: 'Turbulência e tripulantes', detalhe: 'NTSB, Preventing Turbulence-Related Injuries in Air Carrier Operations (2021)' },
+  { titulo: 'Afastamento e retorno', detalhe: 'Lei 8.213/1991, art. 60; RBAC 67.15; 14 CFR 61.57' },
 ];

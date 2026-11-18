@@ -25,6 +25,7 @@ import { fatoresHumanos } from './capitulos/fatores-humanos';
 import { investigacao } from './capitulos/investigacao';
 import { segurancaVoo } from './capitulos/seguranca-voo';
 import { ergonomia } from './capitulos/ergonomia';
+import { medicinaOcupacional } from './capitulos/medicina-ocupacional';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -111,7 +112,7 @@ export const secoes: Secao[] = [
       fatoresHumanos,
       segurancaVoo,
       ergonomia,
-      cap(7, 'Medicina ocupacional', ['Riscos por função', 'PCMSO e PGR', 'Insalubridade e periculosidade', 'RBAC 120', 'Retorno ao voo']),
+      medicinaOcupacional,
       cap(8, 'Toxicologia e higiene da aeronave', ['Monóxido de carbono', 'Fumaça na cabine', 'Ozônio', 'Combustíveis e fluidos', 'Desinsetização', 'Água e alimentos']),
       cap(9, 'Saúde do passageiro', ['Aptidão para voar', 'MEDIF', 'Mobilidade reduzida', 'Turbulência e evacuação']),
       cap(10, 'Emergências médicas a bordo', ['Epidemiologia', 'Kits médicos', 'Telemedicina', 'Protocolos', 'Ética e lei', 'Desvio']),
