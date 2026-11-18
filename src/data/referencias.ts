@@ -131,4 +131,10 @@ export const diretrizes: Referencia[] = [
   { titulo: 'Identificação de vítimas', detalhe: 'INTERPOL, Disaster Victim Identification (guia e ficha FS-02, 2023)' },
   { titulo: 'Toxicologia forense', detalhe: 'FAA DOT/FAA/AM-92/24 (álcool depois da morte, 1992) e DOT/FAA/AM-15/13 (álcool e drogas em pilotos mortos, 2015)' },
   { titulo: 'Perícia no Brasil', detalhe: 'Código de Processo Penal (arts. 158 a 162); Lei 8.213/1991 (arts. 19 a 22); Código de Processo Civil (art. 473)' },
+  // M3V5 · Segurança de voo (17/11/2026).
+  { titulo: 'ICAO · gerenciamento da segurança', detalhe: 'Anexo 19 (2013, 2ª ed. 2016) e Doc 9859, 4ª ed.: componentes do SMS e matriz de risco' },
+  { titulo: 'Cultura justa', detalhe: 'Reason J, Managing the Risks of Organizational Accidents (1997); Regulamento (UE) 376/2014' },
+  { titulo: 'Dados de voo', detalhe: 'UK CAA, CAP 739, Flight Data Monitoring; ICAO, guia de programa de análise de dados de voo' },
+  { titulo: 'SIPAER e CENIPA', detalhe: 'Decretos 69.565/1971 e 87.249/1982; filosofia SIPAER; guia do RELPREV (Sindicato Nacional dos Aeronautas, 2022)' },
+  { titulo: 'Incapacitação em voo', detalhe: 'DeJohn CA et al., FAA DOT/FAA/AM-04/16 (2004); Transport Canada, TP 11629, Pilot Incapacitation' },
 ];
