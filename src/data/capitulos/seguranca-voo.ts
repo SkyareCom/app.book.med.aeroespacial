@@ -54,6 +54,7 @@ export const segurancaVoo: Capitulo = {
           "**Como prevenir e amenizar.** Trate o próprio corpo como parte do sistema: sono, remédios, álcool e doença são perigos que você conhece antes de qualquer outra pessoa. Relate as situações de risco, mesmo as que terminaram bem. Na empresa, avalie o risco de cada mudança de escala ou de rota antes de começar e acompanhe os indicadores. O médico leva ao SMS os padrões que vê nos exames, sem identificar ninguém.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v5-1-reuniao.jpg'), legenda: "O SMS procura o perigo antes que ele vire acidente." } },
           {
             paragrafo: 2,
             tabela: {
@@ -81,6 +82,7 @@ export const segurancaVoo: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v5-1-briefing.jpg'), legenda: "A avaliação de risco começa no briefing, antes de cada voo." } },
           {
             paragrafo: 7,
             tabela: {
@@ -112,6 +114,7 @@ export const segurancaVoo: Capitulo = {
           "**Como prevenir e amenizar.** Relate erros, quase acidentes e situações de risco enquanto a memória está fresca. Declare quando não estiver em condições de voar, por cansaço, doença ou remédio. Na empresa, publique antes quais condutas não serão toleradas, responda a cada relato e use o teste de substituição antes de qualquer punição. O médico explica ao piloto o que acontece com cada informação e procura caminhos de tratamento que mantenham a pessoa no voo quando for seguro.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v5-2-relato.jpg'), legenda: "Ninguém relata o que pode lhe custar o emprego; a cultura justa muda essa conta." } },
           {
             paragrafo: 2,
             tabela: {
@@ -140,6 +143,7 @@ export const segurancaVoo: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v5-2-conversa.jpg'), legenda: "Cultura justa é retorno: quem relatou fica sabendo o que mudou." } },
           {
             paragrafo: 7,
             tabela: {
@@ -171,6 +175,7 @@ export const segurancaVoo: Capitulo = {
           "**Como prevenir e amenizar.** Quando for chamado para conversar sobre um evento, conte também como estava o corpo: sono, fome, doença, remédio. Faça um relato junto, porque isso amplia a proteção. Na empresa, publique a política de proteção dos dados, cruze os eventos com as escalas e leve as tendências ao treinamento. O médico usa os padrões coletivos, sem nomes, para orientar a prevenção da fadiga.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v5-3-analista.jpg'), legenda: "O programa de dados de voo analisa voos normais para encontrar o risco antes do acidente." } },
           {
             paragrafo: 2,
             tabela: {
@@ -199,6 +204,7 @@ export const segurancaVoo: Capitulo = {
               ],
             },
           },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v5-3-conversa.jpg'), legenda: "Aparecer num evento é a chance de uma conversa confidencial, não uma acusação." } },
           {
             paragrafo: 7,
             tabela: {
@@ -230,6 +236,7 @@ export const segurancaVoo: Capitulo = {
           "**Como prevenir e amenizar.** Conheça o Elo SIPAER da sua empresa, escola ou aeroclube e use o RELPREV para qualquer situação de risco. Leia os relatórios finais e as recomendações do seu tipo de aviação. Na aviação particular, adote por conta própria o que a aviação comercial é obrigada a fazer: checklist, planejamento, limites pessoais e honestidade sobre o próprio corpo. O médico registra com clareza o que examinou e o que orientou.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v5-4-curso.jpg'), legenda: "O SIPAER coordena a prevenção na aviação militar e civil desde 1971." } },
           {
             paragrafo: 2,
             tabela: {
@@ -259,6 +266,7 @@ export const segurancaVoo: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v5-4-hangar.jpg'), legenda: "O relatório final termina em recomendações que chegam ao hangar, à escala e ao treinamento." } },
           {
             paragrafo: 7,
             tabela: {
@@ -290,6 +298,7 @@ export const segurancaVoo: Capitulo = {
           "**Como prevenir e amenizar.** Não voe com sintomas novos, de estômago, de cabeça ou do peito, e diga ao colega quando não estiver bem. Combine as chamadas no briefing e aplique a regra das duas chamadas sem constrangimento. Treine o CHASE e o papel dos comissários. O médico investiga desmaios, dor no peito e hipoglicemia antes de liberar o voo, e o piloto que tomou remédio novo espera o efeito ser conhecido (Veja M3V2 - III).",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v5-5-cabine.jpg'), legenda: "Na incapacitação sutil, o piloto continua sentado, mas deixa de responder como antes." } },
           {
             paragrafo: 2,
             tabela: {
@@ -306,6 +315,8 @@ export const segurancaVoo: Capitulo = {
           },
           { paragrafo: 3, midia: 'animacao-duas-chamadas' },
           { paragrafo: 4, midia: 'incapacitacao-chase' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v5-5-comissaria.jpg'), legenda: "O comissário prende o piloto ao assento e oferece oxigênio enquanto o colega voa." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v5-voo.mp4'), legenda: "O copiloto percebe que o comandante não responde, assume os comandos e chama a tripulação." } },
           {
             paragrafo: 7,
             tabela: {
