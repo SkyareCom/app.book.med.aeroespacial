@@ -17,5 +17,9 @@ Cada foto entra no parágrafo indicado em `src/data/capitulos/emergencias-bordo.
 | 10 | `m3v10-5-registro.jpg` | 10.5 Ética e lei | 5 | Registrar o que foi feito protege o passageiro e quem atendeu. |
 | 11 | `m3v10-6-cabine.jpg` | 10.6 Desvio | 1 | O comandante decide o desvio, depois de ouvir o médico de solo e o despachante. |
 | 12 | `m3v10-6-resgate.jpg` | 10.6 Desvio | 5 | No desvio, a equipe de resgate espera o avião no aeroporto. |
+| 13 | `m3v10-7-oceano.jpg` | 10.7 Responsabilidade e óbito | 1 | Sobre o oceano, a jurisdição principal a bordo é a do país onde o avião está registrado. |
+| 14 | `m3v10-7-desembarque.jpg` | 10.7 Responsabilidade e óbito | 5 | Os outros passageiros desembarcam primeiro; a autoridade local recebe o voo. |
+| 15 | `m3v10-8-pas.jpg` | 10.8 Suporte avançado | 1 | Ligado, o DEA orienta cada passo em voz alta; as pás vão no peito nu e seco. |
+| 16 | `m3v10-8-oxigenio.jpg` | 10.8 Suporte avançado | 5 | Os cilindros de bordo liberam 2 ou 4 litros de oxigênio por minuto. |
 
 **Vídeo:** `m3v10-voo.mp4`, 10.6, após o parágrafo 4: O desvio leva o passageiro ao aeroporto adequado mais próximo.

@@ -124,3 +124,28 @@ const DESVIO: Ficha[] = [
 export function DesvioDecisao() {
   return <Explorador titulo="Pousar ou seguir?" instrucao="Escolha um cenário para ver a tendência da decisão e quem decide." rotulos={["Tendência", "Por quê"]} itens={DESVIO} colunas={1} nota="Em todos os casos, quem decide é o comandante." />;
 }
+
+// ---------------------------------------------------------------- Quem responde pelo quê
+const RESP: Ficha[] = [
+  { nome: "Voluntário que erra", a: "Culpa por negligência, imprudência ou imperícia", b: "Nos EUA, proteção da lei de 1998, salvo negligência grave" },
+  { nome: "Profissional que se omite", a: "Omissão de socorro, Código Penal, art. 135", b: "No Brasil, detenção de 1 a 6 meses ou multa" },
+  { nome: "Tripulação que não segue o protocolo", a: "Evento incomum, pela Convenção de Montreal", b: "Júri de 2025: US$ 9,6 milhões por AVC sem desvio" },
+  { nome: "Médico de solo que não recomenda desvio", a: "Se a conduta foi incomum", b: "Caso de 2019 enviado a júri nos EUA" },
+  { nome: "Médico que cobra pelo atendimento", a: "Caráter humanitário, segundo o CFM", b: "Cobrança contra a companhia julgada improcedente no Rio" },
+];
+
+export function QuemResponde() {
+  return <Explorador titulo="Quem responde pelo quê" instrucao="Escolha uma situação para ver o critério e um exemplo real." rotulos={["Critério", "Exemplo"]} itens={RESP} colunas={1} nota="Recurso educativo: não substitui orientação jurídica." />;
+}
+
+// ---------------------------------------------------------------- Reanimação por idade
+const IDADE: Ficha[] = [
+  { nome: "Adulto", a: "100 a 120 por minuto, pelo menos 5 cm, 30:2", b: "DEA comum e adrenalina 1 mg a cada 3 a 5 minutos" },
+  { nome: "Criança até 8 anos", a: "Um terço do tórax, cerca de 5 cm, 15:2 com dois socorristas", b: "DEA com atenuador, 2 J/kg e depois 4 J/kg no manual, adrenalina 0,01 mg/kg" },
+  { nome: "Bebê", a: "Um terço do tórax, cerca de 4 cm, dois polegares, 15:2 com dois socorristas", b: "Desfibrilador manual ou DEA com atenuador, adrenalina 0,01 mg/kg" },
+  { nome: "Criança sem pá pediátrica", a: "A massagem da idade", b: "DEA comum: o choque é melhor do que nenhum" },
+];
+
+export function ReanimacaoIdade() {
+  return <Explorador titulo="Reanimação por idade" instrucao="Escolha a idade para ver a massagem, o choque e a adrenalina." rotulos={["Massagem", "Choque e adrenalina"]} itens={IDADE} colunas={1} nota="Diretrizes de 2025 da American Heart Association. Recurso educativo." />;
+}

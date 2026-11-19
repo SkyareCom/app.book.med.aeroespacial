@@ -35,7 +35,7 @@ import { AjusteCabine, AlertasCabine, CompatibilidadeEquipamentos, Fraseologia, 
 import { AdicionaisAviacao, DoencasAviacao, ExamesPcmso, RetornoSituacoes, RiscosFuncao, TestesRbac120 } from '@/components/midia/m3v7-graficos';
 import { AguaAlimentos, FluidosBordo, MetodosDesinsetizacao, NiveisCohb, OzonioCabine, SinaisCabine } from '@/components/midia/m3v8-graficos';
 import { AptidaoSituacoes, BebeIdadeVoo, EvacuacaoPosicao, TurbulenciaOndeEstou } from '@/components/midia/m3v9-graficos';
-import { ConsultaSolo, DesvioDecisao, DeverSocorro, EmergenciasFrequentes, KitsBordo, ProtocoloBordo } from '@/components/midia/m3v10-graficos';
+import { ConsultaSolo, DesvioDecisao, DeverSocorro, EmergenciasFrequentes, KitsBordo, ProtocoloBordo, QuemResponde, ReanimacaoIdade } from '@/components/midia/m3v10-graficos';
 import { CorpoConsciencia, HfacsNiveis, NivelAutomacao, TemClassifica } from '@/components/midia/m3v4-graficos';
 import { CaminhoSelecao, ConscienciaUtil, LicencaPiloto, TreinoCorpo } from '@/components/midia/m3v3-graficos';
 import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
@@ -309,6 +309,8 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'dever-socorro': () => <DeverSocorro />,
   'desvio-decisao': () => <DesvioDecisao />,
   'animacao-dea': () => <AnimacaoDea />,
+  'quem-responde': () => <QuemResponde />,
+  'reanimacao-idade': () => <ReanimacaoIdade />,
   'comando-hipoxia': () => <ComandoSistema chave="hipoxia" />,
   'comando-coracao': () => <ComandoSistema chave="coracao" />,
   'comando-ouvidos': () => <ComandoSistema chave="ouvidos" />,
@@ -596,6 +598,8 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'dever-socorro': 'Atender é obrigatório?',
   'desvio-decisao': 'Pousar ou seguir?',
   'animacao-dea': 'Cada minuto conta',
+  'quem-responde': 'Quem responde pelo quê',
+  'reanimacao-idade': 'Reanimação por idade',
   'comando-hipoxia': 'Comando nervoso e hormonal na altitude · respiração e oxigênio',
   'comando-coracao': 'Comando nervoso e hormonal na altitude · coração e circulação',
   'comando-ouvidos': 'Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face',

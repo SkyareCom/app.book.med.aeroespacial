@@ -242,6 +242,8 @@ export type TipoMidia =
   | 'dever-socorro'
   | 'desvio-decisao'
   | 'animacao-dea'
+  | 'quem-responde'
+  | 'reanimacao-idade'
   | 'comando-hipoxia'
   | 'comando-coracao'
   | 'comando-ouvidos'

@@ -33,12 +33,38 @@
 //   a 200 mil por desvio. AP (2013): CDI com cinco choques sobre o Atlântico, recomendação de pouso na Terra Nova.
 // Normas estrangeiras são citadas como tais e não viram regra brasileira. Condutas sem número próprio (deitar, elevar as
 // pernas, oxigênio, açúcar pela boca, proteger a cabeça, registrar) são aplicação das fontes e do conteúdo do kit.
+// Ampliação 19/11/2026, a pedido do autor: 10.7 Responsabilidade e óbito e 10.8 Suporte avançado; a tabela
+//   "Sistemas do corpo mais atingidos" passou de 10.6 para 10.8, o último tópico.
+// 10.7 Convenção de Tóquio (1963), art. 3: país de registro; Protocolo de Montreal de 2014 (ICAO Doc 10034), em vigor em
+//   01/01/2020: país de pouso e do operador. Código Penal, art. 5º, §§ 1º e 2º. CF, art. 109, IX. Convenção de Montreal
+//   (1999), art. 17; Air France v. Saks (1985): evento inesperado ou incomum, externo ao passageiro; Olympic Airways v.
+//   Husain (2004): recusa incomum de ajudar. Baillie v. MedAire (9th Cir. 2019): questão enviada a júri. Plasencia v.
+//   American Airlines (N.D. Cal., set. 2025): US$ 13,3 mi reduzidos a US$ 9,6 mi, 27,5% de culpa do passageiro (Texas
+//   Lawbook, Law360). Christman v. United (2018): pancreatite, cerca de 7 h, alegação de desvio ignorado (Claims Journal).
+//   AAFP 2021 (carta) e de Caprariis 2021: a lei de 1998 não impede o processo; padrão de cuidado; seguro pode não cobrir;
+//   compensação, milhas, upgrade e vale podem comprometer a proteção. Martin-Gill 2018: um médico processado, caso
+//   arquivado sem audiência; sem jurisprudência sobre compensação; formulários padronizados. Código Civil, art. 951;
+//   CEM, art. 1º. Parecer CFM 52/2016 (ementa). TJRJ manteve improcedência da cobrança de honorários contra a TAM (voo
+//   Rio–Nova York). PL 2740/2026 (Senado, Doutor Hiran). IATA, Death on board (2018). Flight Safety Foundation, Cabin
+//   Crew Safety 1999;33(4): morte declarada depois, em terra. CBA, art. 173. Correio Braziliense (2022): PF registra e
+//   arquiva se a autópsia confirmar causa natural. Anexo 13 da OACI: exclui lesões de causa natural. Cremeb, Processo
+//   Consulta 10/2021: causa externa, IML.
+// 10.8 AHA 2025, algoritmos de parada no adulto e na criança: 100-120/min, pelo menos 5 cm, 30:2, troca a cada 2 min,
+//   pausas < 10 s, adrenalina 1 mg a cada 3-5 min (após o primeiro choque no ritmo chocável), amiodarona 300/150 mg ou
+//   lidocaína; criança: 1/3 do tórax, 15:2 com dois socorristas antes da puberdade, 30:2 sozinho, adrenalina 0,01 mg/kg
+//   (máx. 1 mg), 2 J/kg e 4 J/kg; dois polegares no bebê; engasgo (5 golpes + 5 compressões abdominais na criança;
+//   5 + 5 torácicas no bebê). Cruz Vermelha (PALS 2025): ~5 cm na criança, ~3,8 cm no bebê. AHA, AED fact sheet: pás
+//   pediátricas de 1 a 8 anos; manual no bebê ou atenuador. 14 CFR Parte 121, Apêndice A: adrenalina 1:10.000, lidocaína
+//   20 mg/mL, broncodilatador, cânula pediátrica, soro fisiológico 500 mL. Martin-Gill 2018: O2 2 ou 4 L/min, SpO2 < 95%,
+//   >= 4 L/min em terra, albuterol, causas; lidocaína 100 mg; encerrar após 20-30 min; abdome: sinais de alarme, gases
+//   ~30%; anafilaxia infantil 0,15 mL (1 mg/mL) IM, difenidramina 1 mg/kg. Nable et al. 2017 (CCJM): vômito e infarto,
+//   vômito bilioso e obstrução, sem antiemético no kit da FAA.
 import type { Capitulo } from '../tipos';
 
 export const emergenciasBordo: Capitulo = {
   numero: 10,
   titulo: 'Emergências médicas a bordo',
-  tempoLeituraMin: 18,
+  tempoLeituraMin: 24,
   topicos: [
     {
       id: '10.1',
@@ -322,8 +348,161 @@ export const emergenciasBordo: Capitulo = {
               ],
             },
           },
+        ],
+      },
+    },
+    {
+      id: '10.7',
+      titulo: "Responsabilidade e óbito",
+      pergunta: "Que lei vale a bordo, quem responde por erros e o que acontece quando alguém morre durante o voo?",
+      conteudo: {
+        texto: [
+          "Um avião cruza vários países, mas leva consigo uma regra principal. Pela **Convenção de Tóquio**, de **1963**, o **país de registro** da aeronave tem jurisdição sobre o que acontece a bordo. O **Protocolo de Montreal de 2014**, em vigor desde **1º de janeiro de 2020** para os países que o ratificaram, acrescentou o **país de pouso** e o **país do operador**. No Brasil, o **Código Penal** considera extensão do território as aeronaves brasileiras mercantes ou privadas no espaço aéreo correspondente ou em alto-mar (art. 5º, § 1º) e aplica a lei brasileira às aeronaves estrangeiras privadas em pouso no país ou em voo no espaço aéreo brasileiro (§ 2º). Os crimes cometidos a bordo são julgados pela **Justiça Federal**. Para danos ao passageiro em voo internacional, vale a **Convenção de Montreal de 1999**.",
+          "Processos contra quem ajudou são **raros**, mas existem. Nos Estados Unidos, a lei de 1998 **não impede** que o passageiro ou a família processem: para ter a proteção, o profissional precisa mostrar que seguiu o padrão de cuidado, e ela não vale em **negligência grave** ou má conduta intencional. A revisão do JAMA de 2018 cita um médico processado por ajudar, com o caso arquivado sem audiência; ainda assim, quem passa por isso relata gastos, horas de depoimento e muito estresse. O seguro profissional pode **não cobrir** o atendimento em voo. No Brasil, o médico responde civilmente quando há **culpa**, isto é, negligência, imprudência ou imperícia (Código Civil, art. 951), e o Código de Ética Médica proíbe causar dano ao paciente, por ação ou omissão, dessas formas.",
+          "A companhia também pode ser processada. Pela **Convenção de Montreal** (art. 17), ela responde por morte ou lesão causada por **acidente** a bordo, e os tribunais entendem acidente como um **evento inesperado ou incomum, externo ao passageiro**: a doença em si não basta. A conduta da tripulação, porém, pode ser esse evento. Em **2004**, a Suprema Corte americana considerou acidente a recusa incomum de ajudar um passageiro asmático. Em **2019**, um tribunal federal de apelação mandou a júri a dúvida sobre se a falta de recomendação de desvio por um serviço de médico de solo, num infarto em voo, foi incomum. Em **2025**, um júri na Califórnia condenou uma companhia a pagar **US$ 9,6 milhões** a um passageiro com **AVC** num voo transatlântico: a tripulação não seguiu os próprios protocolos e o voo não foi desviado. O total de US$ 13,3 milhões foi reduzido porque o júri atribuiu **27,5%** da culpa ao passageiro.",
+          "E o médico pode **cobrar** pelo atendimento? Nos Estados Unidos, aceitar **pagamento, milhas, upgrade ou vale-viagem** pode comprometer a proteção da lei de 1998, embora nenhuma decisão judicial tenha tratado disso; por isso a orientação dada aos médicos é recusar. No Brasil, o **Conselho Federal de Medicina** afirmou, no parecer **52/2016**, que o atendimento de emergência em aeronaves comerciais tem **caráter humanitário** e deve ser prestado com os recursos de bordo. Um médico que cobrou da companhia por atender num voo do Rio a Nova York teve o pedido julgado **improcedente** pela Justiça do Rio de Janeiro. Em **2026**, foi apresentado no Senado o **PL 2740/2026**, que propõe alterar o Código Brasileiro de Aeronáutica para prever compensação ao médico, por seguro ou por milhas e upgrade.",
+          "Quando a reanimação não funciona, a **IATA** orienta manter a massagem até que a circulação volte, que continuar fique inseguro, que todos estejam exaustos, que o avião pouse e a equipe de terra assuma, ou depois de **30 minutos** sem sinais de vida e sem choque indicado pelo DEA, quando a morte pode ser **presumida**. O comandante é avisado na hora e informa o aeroporto de destino para que as autoridades esperem o voo. A pessoa vai para um assento com poucos passageiros por perto ou volta ao seu, presa pelo cinto, com os olhos fechados e coberta até o pescoço. Os outros passageiros desembarcam primeiro, a família fica com o corpo, e ele só sai quando a autoridade local chegar. Muitas vezes a morte só é **declarada** depois, por um médico em terra. Desviar depois que a reanimação falhou nem sempre atende à família ou aos outros passageiros.",
+          "No Brasil, o **comandante** registra no **diário de bordo** os nascimentos e óbitos ocorridos na viagem e extrai cópia para os fins legais (Código Brasileiro de Aeronáutica, art. 173). Em terra, a **Polícia Federal** registra a ocorrência; num caso de 2022 em Pernambuco, a PF informou que o registro seria arquivado se a autópsia confirmasse **causa natural**. A morte por doença **não é acidente aeronáutico**: o Anexo 13 da OACI exclui as lesões de causa natural, e por isso não há investigação aeronáutica. Se houver suspeita de **causa externa**, o corpo segue para o **Instituto Médico Legal**, e um eventual crime a bordo é apurado pela Polícia Federal.",
+          "**Como prevenir e amenizar.** Antes de voar, saiba que a regra muda com o país da companhia e do pouso. Ao atender, atue dentro da sua competência, use o **formulário da companhia** e guarde uma cópia do registro. Recuse pagamento ou brindes quando isso puder tirar sua proteção legal, e confirme se o seu seguro cobre atendimento em voo. Em caso de óbito, siga a orientação da tripulação, preserve a **dignidade** do passageiro e entregue o registro às autoridades no pouso.",
+        ].join('\n\n'),
+        recursos: [
+          {
+            paragrafo: 2,
+            tabela: {
+              titulo: "Que lei vale a bordo",
+              colunas: ["Situação", "Regra", "Quem apura"],
+              linhas: [
+                ["Crime em avião brasileiro no espaço aéreo correspondente ou sobre o mar", "Código Penal, art. 5º, § 1º", "Polícia Federal e Justiça Federal"],
+                ["Crime em avião estrangeiro no espaço aéreo brasileiro", "Código Penal, art. 5º, § 2º", "Polícia Federal e Justiça Federal"],
+                ["Fato a bordo em voo internacional", "Convenção de Tóquio e Protocolo de 2014", "País de registro, de pouso ou do operador"],
+                ["Dano ao passageiro em voo internacional", "Convenção de Montreal de 1999, art. 17", "Justiça civil"],
+                ["Morte por doença", "Não é acidente aeronáutico, pelo Anexo 13 da OACI", "Polícia no pouso, com arquivamento se a causa for natural"],
+              ],
+            },
+          },
+          { paragrafo: 3, midia: 'quem-responde' },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: "Cobrar ou não cobrar",
+              colunas: ["Onde", "Referência", "O que diz"],
+              linhas: [
+                ["Estados Unidos", "Lei de Assistência Médica na Aviação, 1998", "Aceitar dinheiro, milhas ou upgrade pode tirar a proteção"],
+                ["Brasil", "CFM, parecer 52/2016", "Atendimento humanitário, com os recursos de bordo"],
+                ["Brasil", "Justiça do Rio de Janeiro", "Cobrança de honorários da companhia julgada improcedente"],
+                ["Brasil", "PL 2740/2026, Senado", "Propõe compensação por seguro, milhas ou upgrade"],
+              ],
+            },
+          },
           {
             paragrafo: 6,
+            tabela: {
+              titulo: "Óbito a bordo · passo a passo",
+              colunas: ["Etapa", "O que fazer", "Quem"],
+              linhas: [
+                ["Reanimação", "Manter até a circulação voltar ou por 30 minutos sem sinais de vida e sem choque indicado", "Voluntário e tripulação"],
+                ["Aviso", "Informar o comandante, que avisa o aeroporto de destino", "Tripulação"],
+                ["Lugar", "Assento com poucos passageiros por perto ou o próprio, preso pelo cinto", "Tripulação"],
+                ["Respeito", "Fechar os olhos e cobrir até o pescoço", "Tripulação"],
+                ["Registro", "Assento no diário de bordo e cópia para fins legais", "Comandante"],
+                ["Pouso", "Desembarque dos outros primeiro e saída do corpo com a autoridade local", "Autoridade e equipe de terra"],
+              ],
+            },
+          },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · responsabilidade e óbito",
+              colunas: ["Quando", "O que fazer", "Por quê"],
+              linhas: [
+                ["Antes de voar", "Saber que a regra muda com o país da companhia e do pouso", "Dever e proteção não são iguais em todo lugar"],
+                ["Ao atender", "Atuar dentro da competência e usar o formulário da companhia", "O registro mostra o cuidado prestado"],
+                ["Depois do atendimento", "Guardar uma cópia do registro", "Serve de defesa se houver processo"],
+                ["Se oferecerem brinde", "Recusar quando puder tirar a proteção legal", "Pagamento pode descaracterizar a ajuda voluntária"],
+                ["Em caso de óbito", "Seguir a tripulação e preservar a dignidade", "A família e os outros passageiros também precisam de cuidado"],
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      id: '10.8',
+      titulo: "Suporte avançado",
+      pergunta: "Como usar o DEA e conduzir a reanimação no adulto e na criança, e o que fazer na falta de ar e na dor abdominal a bordo?",
+      conteudo: {
+        texto: [
+          "O **DEA** foi feito para ser usado por leigos: ao ligar, ele **fala** cada passo. Confirme que a pessoa **não responde** e não respira normalmente, peça o DEA e comece a **massagem** sem esperar. Ligue o aparelho, deixe o peito **nu e seco** e cole as **pás** na posição do desenho. Afaste todos durante a análise e o choque. Depois do choque, ou se ele não for indicado, volte à massagem por **2 minutos** até nova análise. As pausas na massagem devem durar **menos de 10 segundos**, porque a chance de sobreviver cai a cada minuto sem choque (Veja M3V10 - IV).",
+          "Com mais de um profissional, a reanimação segue o **suporte avançado** das diretrizes de **2025** da American Heart Association. Massagem de **100 a 120 por minuto**, com pelo menos **5 cm** de profundidade, retorno completo do tórax e troca de quem comprime a cada **2 minutos**. Sem via aérea avançada, **30 compressões para 2 ventilações** com máscara e AMBU. A **adrenalina** é de **1 mg** na veia a cada **3 a 5 minutos**; no ritmo chocável, ela entra depois do primeiro choque sem sucesso. Na fibrilação que persiste, as diretrizes aceitam **amiodarona** ou **lidocaína**; o kit exigido nos Estados Unidos traz **lidocaína** e adrenalina **1:10.000**, e não amiodarona. Pense nas causas reversíveis, como hipovolemia e pneumotórax hipertensivo. Sem retorno da circulação, encerrar pode ser apropriado depois de **20 a 30 minutos** (Veja M3V10 - VII).",
+          "Na **criança e no bebê**, o suporte avançado pediátrico (**PALS**) muda os números. A massagem comprime **um terço** da profundidade do tórax, cerca de **4 cm** no bebê e **5 cm** na criança, também de **100 a 120 por minuto**. Com dois socorristas, antes da puberdade, são **15 compressões para 2 ventilações**; sozinho, 30 para 2. No bebê, use os **dois polegares** envolvendo o tórax: a técnica de dois dedos deixou de ser recomendada em 2025. A **adrenalina** é de **0,01 mg/kg** (concentração de 0,1 mg/mL), no máximo 1 mg, a cada 3 a 5 minutos. O choque manual começa em **2 J/kg** e sobe para **4 J/kg**. No DEA, de **1 a 8 anos** use pás pediátricas com **atenuador**; no bebê, prefere-se o desfibrilador manual e, na falta dele, o atenuador. Sem nada disso, use o DEA comum: o choque é melhor do que nenhum.",
+          "Outras emergências da criança também têm passos próprios. No **engasgo** da criança consciente, alterne **5 golpes nas costas** e **5 compressões abdominais**; no bebê, 5 golpes nas costas e **5 compressões no peito**, sem compressão abdominal. Na **anafilaxia** da criança, a revisão do JAMA de 2018 cita **adrenalina 0,15 mL** da apresentação de 1 mg/mL no músculo e **difenidramina 1 mg/kg**. O kit tem cânula orofaríngea **pediátrica**, mas poucos remédios em forma infantil: os pais devem levar os da criança na bagagem de mão.",
+          "A cabine é pressurizada como se estivesse entre **1.500 e 2.400 metros**, e quem já respira com dificuldade sente primeiro (Veja M1V2). Na **insuficiência respiratória**, pergunte por asma, DPOC, mergulho recente, inchaço nas pernas e sintomas de infecção, e meça a saturação se houver oxímetro. Ofereça **oxigênio** para falta de ar persistente ou saturação abaixo de **95%**. Os cilindros de bordo liberam **2 ou 4 litros por minuto**: em geral bastam na altitude de cruzeiro, mas não atendem quem está em insuficiência respiratória. Quem usa **4 L/min ou mais** em terra pode precisar de mais do que o avião tem. No broncoespasmo, use o **broncodilatador inalatório** do kit. Pense também em pneumonia, trombose, embolia gasosa e intoxicação.",
+          "Na **dor abdominal**, pergunte quando começou, onde dói, como é a dor e se há náusea, vômito, diarreia ou sangramento. Os gases do intestino **expandem cerca de 30%** na altitude da cabine (Veja M1V1 - II). Sinais de alarme pedem contato com o médico de solo: dor **intensa**, abdome **rígido** ou doloroso ao toque e **sangue** no vômito ou nas fezes. O vômito pode ser sinal de **infarto**, e vômito bilioso com barriga distendida sugere **obstrução intestinal**. Hidrate pela boca se houver tolerância; se não, o kit americano tem **soro fisiológico** para a veia, mas não tem antiemético. Má digestão só é diagnóstico depois de afastar o resto. Num caso nos Estados Unidos, um passageiro com **pancreatite aguda** passou cerca de sete horas com dor intensa e processou a companhia, alegando que ela ignorou a recomendação de desvio do médico a bordo.",
+          "**Como prevenir e amenizar.** Se você é profissional de saúde e voa, mantenha em dia o **suporte básico e avançado**, do adulto e da criança, e saiba onde ficam o **DEA** e o kit ao embarcar. Quem tem doença pulmonar deve levar o concentrador aprovado e os remédios na bagagem de mão (Veja M3V9). Pais devem levar remédios na forma infantil e saber o **peso** da criança, que define as doses. Diante de falta de ar que não melhora ou de dor abdominal com sinais de alarme, avise a tripulação cedo, porque o desvio leva tempo (Veja M3V10 - VI).",
+        ].join('\n\n'),
+        recursos: [
+          {
+            paragrafo: 2,
+            tabela: {
+              titulo: "Reanimação do adulto a bordo",
+              colunas: ["Item", "Diretriz de 2025", "O que há a bordo"],
+              linhas: [
+                ["Massagem", "100 a 120 por minuto, pelo menos 5 cm", "Troca de quem comprime a cada 2 minutos"],
+                ["Ventilação", "30:2 sem via aérea avançada", "Máscara e AMBU"],
+                ["Choque", "DEA assim que chegar", "DEA na cabine de passageiros"],
+                ["Adrenalina", "1 mg na veia a cada 3 a 5 minutos", "Adrenalina 1:10.000 no kit americano"],
+                ["Antiarrítmico", "Amiodarona ou lidocaína na fibrilação persistente", "Lidocaína no kit americano, sem amiodarona"],
+                ["Encerrar", "Pode ser apropriado após 20 a 30 minutos sem retorno da circulação", "Pela IATA, morte presumida após 30 minutos sem sinais e sem choque indicado"],
+              ],
+            },
+          },
+          { paragrafo: 3, midia: 'reanimacao-idade' },
+          {
+            paragrafo: 4,
+            tabela: {
+              titulo: "Engasgo e anafilaxia na criança",
+              colunas: ["Situação", "Conduta", "Observação"],
+              linhas: [
+                ["Engasgo na criança", "5 golpes nas costas e 5 compressões abdominais", "Repetir até desobstruir ou a criança deixar de responder"],
+                ["Engasgo no bebê", "5 golpes nas costas e 5 compressões no peito", "Sem compressão abdominal"],
+                ["Anafilaxia na criança", "Adrenalina 0,15 mL da apresentação de 1 mg/mL no músculo", "Dose citada na revisão do JAMA de 2018"],
+                ["Alergia na criança", "Difenidramina 1 mg/kg", "Calcular pelo peso"],
+                ["Via aérea", "Cânula orofaríngea pediátrica do kit", "Remédios infantis costumam faltar a bordo"],
+              ],
+            },
+          },
+          {
+            paragrafo: 6,
+            tabela: {
+              titulo: "Sinais de alarme na respiração e no abdome",
+              colunas: ["Sinal", "O que pode ser", "O que fazer"],
+              linhas: [
+                ["Falta de ar persistente ou saturação abaixo de 95%", "Asma, DPOC, pneumonia ou trombose", "Oxigênio e médico de solo"],
+                ["Uso de 4 L/min ou mais em terra", "Necessidade acima do que o avião oferece", "Avisar cedo a tripulação"],
+                ["Chiado", "Broncoespasmo", "Broncodilatador inalatório"],
+                ["Dor abdominal intensa ou abdome rígido", "Causa grave no abdome", "Médico de solo"],
+                ["Sangue no vômito ou nas fezes", "Sangramento digestivo", "Médico de solo"],
+                ["Vômito bilioso com barriga distendida", "Obstrução intestinal", "Médico de solo e hidratação na veia"],
+                ["Vômito com mal-estar no peito", "Infarto", "Sinais vitais e médico de solo"],
+              ],
+            },
+          },
+          {
+            paragrafo: 7,
+            tabela: {
+              titulo: "Como prevenir e amenizar · suporte avançado",
+              colunas: ["Quem", "O que fazer", "Por quê"],
+              linhas: [
+                ["Profissional de saúde", "Manter em dia o suporte básico e avançado, adulto e pediátrico", "Os números mudam a cada diretriz"],
+                ["Profissional de saúde", "Saber onde ficam o DEA e o kit", "Cada minuto sem choque pesa"],
+                ["Passageiro com doença pulmonar", "Levar o concentrador aprovado e os remédios na bagagem de mão", "O oxigênio de bordo é limitado"],
+                ["Pais", "Levar remédios na forma infantil e saber o peso da criança", "O kit tem poucos remédios pediátricos"],
+                ["Todos", "Avisar cedo a tripulação se o quadro piora", "O desvio leva tempo"],
+              ],
+            },
+          },
+          {
+            paragrafo: 7,
             tabela: {
               titulo: "Sistemas do corpo mais atingidos",
               colunas: ["Sistema", "Efeito", "Mecanismo"],
@@ -485,6 +664,54 @@ export const emergenciasBordo: Capitulo = {
       ],
       correta: 3,
       explicacao: "A maioria das emergências se resolve a bordo; parada cardíaca, problemas obstétricos e AVC foram os que mais levaram ao desvio.",
+    },
+    {
+      topico: '10.7',
+      pergunta: "Pela Convenção de Tóquio, qual país tem jurisdição sobre o que acontece a bordo?",
+      opcoes: [
+        "O país de registro da aeronave",
+        "O país de nascimento do passageiro",
+        "Sempre o país sobrevoado",
+        "Nenhum país",
+      ],
+      correta: 0,
+      explicacao: "O Protocolo de Montreal de 2014 acrescentou o país de pouso e o país do operador.",
+    },
+    {
+      topico: '10.7',
+      pergunta: "Pela orientação da IATA, quando a morte pode ser presumida a bordo?",
+      opcoes: [
+        "Após 5 minutos sem pulso",
+        "Após 30 minutos de reanimação sem sinais de vida e sem choque indicado",
+        "Assim que o passageiro desmaia",
+        "Só depois do pouso, sempre",
+      ],
+      correta: 1,
+      explicacao: "Depois disso, o comandante avisa o destino, e a morte costuma ser declarada por um médico em terra.",
+    },
+    {
+      topico: '10.8',
+      pergunta: "Na criança antes da puberdade, com dois socorristas, qual é a relação entre compressões e ventilações?",
+      opcoes: [
+        "30:2",
+        "5:1",
+        "15:2",
+        "3:1",
+      ],
+      correta: 2,
+      explicacao: "Sozinho, o socorrista usa 30:2 em qualquer idade; depois da puberdade, 30:2 também com dois.",
+    },
+    {
+      topico: '10.8',
+      pergunta: "Que vazões de oxigênio os cilindros de bordo costumam oferecer?",
+      opcoes: [
+        "10 ou 15 litros por minuto",
+        "0,5 litro por minuto",
+        "Fluxo ilimitado",
+        "2 ou 4 litros por minuto",
+      ],
+      correta: 3,
+      explicacao: "Bastam na maioria dos casos, mas não na insuficiência respiratória; quem usa 4 L/min ou mais em terra pode precisar de mais.",
     },
   ],
 };
