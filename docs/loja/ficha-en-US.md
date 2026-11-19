@@ -7,17 +7,17 @@ Papos de Altitude
 ## Descrição curta (73/80)
 Aerospace medicine: the human body at altitude, in aviation and in space.
 
-## Descrição completa (2036/4000)
+## Descrição completa (2055/4000)
 Papos de Altitude is an aerospace medicine app-book. It explains, as clearly as possible, what happens to the human body when it goes up: in an airliner cabin, in a fighter cockpit, on a mountain or in a spacecraft.
 
-There are now 32 flights ready, with 170 topics, 260 interactive simulators, calculators and charts, 356 photos, 33 videos and 352 test questions.
+There are now 33 flights ready, with 174 topics, 265 interactive simulators, calculators and charts, 364 photos, 34 videos and 364 test questions.
 
 Each flight combines progressive text, photos, animations, practical tables and a final test. In the body-systems flights you will find what changes at altitude, how to prevent problems, when it is fine to fly as a passenger or crew member and which medicines are compatible with flying.
 
 Ready flights
 Concepts: Atmosphere and flight environment · Pressurization and supplemental oxygen · Decompression · Temperature and survival · Cosmic radiation · Noise and vibration · G forces · Impact and ejection
 Systems: Lungs, oxygen and hypoxia · Heart and blood vessels · Ears, sinuses and teeth · Eyes and vision · Inner ear and spatial orientation · Brain and nervous system · Mental health and behavior · Sleep, body clock and fatigue · Hormones and metabolism · Stomach, intestine and liver · Blood, cancer and infections · Spine, bones and muscles · Women's health · Kidneys and urinary tract · Aging and age limits
-Aviation: Certification and aeromedical risk · Aerospace pharmacology · Selection and training · Human factors and CRM · Flight safety · Ergonomics and the cockpit · Occupational medicine · Toxicology and aircraft hygiene · Investigation and forensics
+Aviation: Certification and aeromedical risk · Aerospace pharmacology · Selection and training · Human factors and CRM · Flight safety · Ergonomics and the cockpit · Occupational medicine · Toxicology and aircraft hygiene · Passenger health · Investigation and forensics
 
 Made for pilots, flight attendants, physicians, students, passengers and the curious. The app also includes the CMA exam, to prepare for the aviation medical exam, Flight clearance, the Lab with every interactive, and a knowledge ranking. Available in Portuguese, English and Spanish.
 

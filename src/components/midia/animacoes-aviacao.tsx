@@ -531,3 +531,57 @@ export function AnimacaoMonoxido() {
     </Quadro>
   );
 }
+
+// M3V9 · Com cinto e sem cinto: o mesmo tranco vertical em dois passageiros. O sem cinto sobe com G negativo e cai de
+// volta com G positivo; o com cinto fica no assento. Sequência do relatório preliminar do SQ321 (TSIB), registrada em
+// src/data/capitulos/saude-passageiro.ts. Esquema, sem escala.
+export function AnimacaoCinto() {
+  const c = useCiclo(9000);
+  const t = c.fase;
+  const H = 210;
+  const fase = t < 0.3 ? 0 : t < 0.55 ? 1 : t < 0.8 ? 2 : 0;
+  const notas = [
+    ['CRUZEIRO ESTÁVEL', 'O CINTO SEGURA'],
+    ['G NEGATIVO:', 'O CORPO SOLTO SOBE'],
+    ['G POSITIVO:', 'O CORPO CAI DE VOLTA'],
+  ];
+  const sobe = t < 0.3 ? 0 : t < 0.55 ? Math.sin(((t - 0.3) / 0.25) * (Math.PI / 2)) : t < 0.8 ? Math.cos(((t - 0.55) / 0.25) * (Math.PI / 2)) : 0;
+  const tremor = fase === 0 ? 0 : Math.sin(t * 160) * 1.5;
+  const g = fase === 1 ? '−1,5 G' : fase === 2 ? '+1,5 G' : '+1 G';
+  return (
+    <Quadro titulo="Com cinto e sem cinto" instrucao="Esquema, sem escala: o mesmo tranco vertical em dois passageiros." ciclo={c} altura={H}>
+      {(w) => {
+        const teto = 46, piso = 186;
+        const xs = [w * 0.3, w * 0.7];
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[fase][0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[fase][1]}</SvgText>
+            <SvgText x={w - 10} y={24} fill={fase === 1 ? Cores.erro : Cores.textoSuave} fontSize={11} fontFamily={Fonte} textAnchor="end">{g}</SvgText>
+            <Rect x={8} y={teto + tremor} width={w - 16} height={4} rx={2} fill={Cores.linha} />
+            <SvgText x={w / 2} y={teto - 4 + tremor} fill={Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor="middle">TETO</SvgText>
+            {xs.map((x, i) => {
+              const solto = i === 1;
+              const dy = solto ? -sobe * 78 : 0;
+              const bate = solto && sobe > 0.95;
+              return (
+                <G key={i}>
+                  <Rect x={x - 22} y={piso - 44 + tremor} width={10} height={44} rx={3} fill={Cores.linha} />
+                  <Rect x={x - 22} y={piso - 8 + tremor} width={46} height={8} rx={3} fill={Cores.linha} />
+                  <G>
+                    <Circle cx={x} cy={piso - 70 + dy + tremor} r={9} fill={bate ? Cores.erro : Cores.texto} />
+                    <Rect x={x - 7} y={piso - 60 + dy + tremor} width={14} height={30} rx={5} fill={bate ? Cores.erro : Cores.texto} />
+                    <Rect x={x - 7} y={piso - 30 + dy + tremor} width={26} height={8} rx={4} fill={Cores.texto} />
+                  </G>
+                  {!solto ? <Rect x={x - 10} y={piso - 30 + tremor} width={20} height={4} rx={2} fill={Cores.acerto} /> : null}
+                  <SvgText x={x} y={H - 6} fill={solto ? Cores.erro : Cores.acerto} fontSize={8} fontFamily={Fonte} textAnchor="middle">{solto ? 'SEM CINTO' : 'COM CINTO'}</SvgText>
+                </G>
+              );
+            })}
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
