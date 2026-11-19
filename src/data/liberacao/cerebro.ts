@@ -206,8 +206,8 @@ export const liberacaoCerebro: PerguntaLiberacao[] = [
       },
       {
         rotulo: 'Insolação, hipotermia grave ou congelamento',
-        passageiro: e('avaliar', 'Voe só depois da alta e da liberação do médico.', 'Avaliar rins, cérebro e lesões de tecido; prazo conforme a recuperação [confirmar na referência].', ''),
-        tripulante: e('nao-voar', 'Não voe até a recuperação e a avaliação médica.', 'Retorno após avaliação clínica e exames normais [confirmar na referência].', ''),
+        passageiro: e('avaliar', 'Voe só depois da alta e da liberação do médico.', 'Avaliar rins, cérebro e lesões de tecido; prazo conforme a recuperação.', ''),
+        tripulante: e('nao-voar', 'Não voe até a recuperação e a avaliação médica.', 'Retorno após avaliação clínica e exames normais.', ''),
       },
     ],
   },

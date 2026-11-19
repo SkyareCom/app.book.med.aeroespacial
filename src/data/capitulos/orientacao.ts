@@ -415,7 +415,7 @@ export const orientacao: Capitulo = {
               titulo: 'Remédios e voo · enjoo de movimento',
               colunas: ['Remédio ou classe', 'Efeito que importa no voo', 'Tripulante (FAA/ANAC)'],
               linhas: [
-                ["Escopolamina", "Previne bem; boca seca, visão borrada e sono", "Não usar em voo sem o examinador, porque dá sono e borra a visão de perto [confirmar na referência]"],
+                ["Escopolamina", "Previne bem; boca seca, visão borrada e sono", "Não usar em voo sem o examinador, porque dá sono e borra a visão de perto"],
                 ["Dimenidrinato e meclizina", "Previnem; dão sono", "FAA: esperar 5 intervalos de dose, porque dão sono e atrasam a reação"],
                 ["Prometazina", "A que mais dá sono", "Não voar sob efeito; decisão do examinador, porque dá muito sono"],
                 ["Difenidramina", "Dá sono", "FAA: 60 horas, porque o sono e a lentidão duram muito além da sensação"],

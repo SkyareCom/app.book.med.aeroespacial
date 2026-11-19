@@ -52,7 +52,7 @@ export const liberacaoOrientacao: PerguntaLiberacao[] = [
       {
         rotulo: 'Sim, escopolamina (comprimido ou adesivo)',
         passageiro: e('cuidados', 'Pode voar. Pode dar boca seca, visão borrada e sono; não use se tiver glaucoma.', 'CDC Yellow Book 2026: contraindicada em glaucoma e risco de retenção urinária; evitar em crianças.', '5.6'),
-        tripulante: e('nao-voar', 'Não voe sob efeito do remédio. Fale com o examinador.', 'Efeitos anticolinérgicos (visão borrada, sono); sem prazo próprio na lista da FAA [confirmar na referência].', '5.6'),
+        tripulante: e('nao-voar', 'Não voe sob efeito do remédio. Fale com o examinador.', 'Efeitos anticolinérgicos (visão borrada, sono); sem prazo próprio na lista da FAA.', '5.6'),
       },
     ],
   },

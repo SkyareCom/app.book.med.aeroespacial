@@ -153,7 +153,7 @@ export default function ExameCMA() {
       <Painel>
         <Texto t="rotulo" cor={Cores.textoApagado}>Aviso</Texto>
         <Texto cor={Cores.textoApagado}>
-          Ferramenta de apoio à decisão. Não substitui o exame clínico nem o julgamento do médico ou da clínica credenciada, e a palavra final é da ANAC. Limiares sem fonte consultada aparecem como [confirmar na referência].
+          Ferramenta de apoio à decisão. Não substitui o exame clínico nem o julgamento do médico ou da clínica credenciada, e a palavra final é da ANAC.
         </Texto>
       </Painel>
       <RelacionadosEspecial id="exame-cma" />

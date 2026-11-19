@@ -105,7 +105,7 @@ export const liberacaoSono: PerguntaLiberacao[] = [
       },
       {
         rotulo: 'Cirurgia para apneia do sono',
-        passageiro: e('avaliar', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo pós-operatório: conforme o cirurgião [confirmar na referência].', '8.7'),
+        passageiro: e('avaliar', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo pós-operatório: conforme o cirurgião.', '8.7'),
         tripulante: e('avaliar', 'Volte a voar quando o tratamento se mostrar eficaz.', 'FAA (OSA): certificação após tratamento eficaz comprovado; Doc 8984 17.6.', '8.7'),
       },
       {

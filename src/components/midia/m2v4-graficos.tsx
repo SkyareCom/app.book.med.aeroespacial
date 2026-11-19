@@ -326,7 +326,7 @@ function prazo(c: Cir, q: Quem, d: number): { texto: string; cor: string } {
   }
   if (c === 'lasik' || c === 'prk' || c === 'catarata') return { texto: '3 meses recuperado, sem remédio e sem sintomas; antes, só com o relatório do oftalmologista', cor: Cores.dourado };
   if (c === 'sf6' || c === 'c3f8') return { texto: 'Descolamento corrigido pode ser aceito com avaliação especializada', cor: Cores.dourado };
-  return { texto: 'Relatório do oftalmologista [confirmar na referência]', cor: Cores.textoSuave };
+  return { texto: 'Relatório do oftalmologista', cor: Cores.textoSuave };
 }
 
 export function PrazoCirurgiaOlho() {

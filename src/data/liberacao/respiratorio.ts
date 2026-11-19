@@ -98,17 +98,17 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
       {
         rotulo: 'Cirurgia no tórax, dreno retirado há menos de 4 semanas',
         passageiro: e('nao-voar', 'Espere 4 semanas depois da retirada do dreno (2 semanas, se a viagem for essencial).', 'Cirurgia torácica, incluindo VATS: 4 semanas após retirar o dreno para viagem não essencial; 2 semanas se essencial (BTS 2022).', '3.8'),
-        tripulante: e('nao-voar', 'Não voe como tripulante até o médico examinador liberar.', 'Prazo de retorno do tripulante após cirurgia torácica: [confirmar na referência]; após cirurgia por pneumotórax, FAA em geral 3 meses.', '3.8'),
+        tripulante: e('nao-voar', 'Não voe como tripulante até o médico examinador liberar.', 'Após cirurgia por pneumotórax, FAA em geral 3 meses.', '3.8'),
       },
       {
         rotulo: 'Biópsia de pulmão, procedimento na pleura ou broncoscopia há menos de 1 semana',
         passageiro: e('nao-voar', 'Espere 1 semana (contada da resolução, se tiver havido pneumotórax).', '1 semana sem pneumotórax no raio X; 1 semana após a resolução se houve pneumotórax (BTS 2022).', '3.8'),
-        tripulante: e('nao-voar', 'Não voe como tripulante até o médico examinador liberar.', 'Prazo do tripulante: [confirmar na referência].', '3.8'),
+        tripulante: e('nao-voar', 'Não voe como tripulante até o médico examinador liberar.', 'Liberação pelo médico examinador.', '3.8'),
       },
       {
         rotulo: 'Sim, mas já passou esse prazo',
         passageiro: e('cuidados', 'Leve o último raio X e o relatório do procedimento.', 'Prazo cumprido; documentar a data e o raio X de controle.', '3.8'),
-        tripulante: e('avaliar', 'Leve o relatório ao médico examinador antes de voltar a voar.', 'Retorno a critério do examinador [confirmar na referência].', '3.8'),
+        tripulante: e('avaliar', 'Leve o relatório ao médico examinador antes de voltar a voar.', 'Retorno a critério do examinador.', '3.8'),
       },
     ],
   },
@@ -130,7 +130,7 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
       {
         rotulo: 'Trombose ou embolia pulmonar',
         passageiro: e('nao-voar', 'Espere 2 semanas depois do diagnóstico para voar.', 'TVP ou TEP recentes: adiar o voo por 2 semanas (BTS 2022).', '3.9'),
-        tripulante: e('nao-voar', 'Não voe como tripulante até o médico examinador liberar.', 'Retorno do tripulante após TEV: [confirmar na referência]; anticoagulação é avaliada no sistema do sangue (Veja M2V11).', '3.9'),
+        tripulante: e('nao-voar', 'Não voe como tripulante até o médico examinador liberar.', 'Anticoagulação é avaliada no sistema do sangue (Veja M2V11).', '3.9'),
       },
     ],
   },
@@ -152,7 +152,7 @@ export const liberacaoRespiratorio: PerguntaLiberacao[] = [
       },
       {
         rotulo: 'Sim, operado (vias aéreas, estimulador implantado ou cirurgia bariátrica)',
-        passageiro: e('cuidados', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo após cirurgia das vias aéreas: conforme o cirurgião [confirmar na referência]; cirurgia bariátrica: cerca de 10 dias (UK CAA, Veja M2V10).', '3.7'),
+        passageiro: e('cuidados', 'Viaje com a liberação do cirurgião; leve o CPAP se ainda o usa.', 'Prazo após cirurgia das vias aéreas: conforme o cirurgião; cirurgia bariátrica: cerca de 10 dias (UK CAA, Veja M2V10).', '3.7'),
         tripulante: e('avaliar', 'Volte a voar só quando o novo estudo do sono mostrar o tratamento eficaz.', 'FAA (OSA): certificação após tratamento eficaz comprovado; UK CAA: cirurgia bariátrica, inapto por até 3 meses.', '3.7'),
       },
       {

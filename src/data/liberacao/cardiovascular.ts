@@ -80,7 +80,7 @@ export const liberacaoCardiovascular: PerguntaLiberacao[] = [
       },
       {
         rotulo: 'Fiz ablação ou cardioversão no último mês',
-        passageiro: e('avaliar', 'Pergunte ao seu cardiologista se o ritmo já está estável para viajar.', 'Após ablação ou cardioversão: liberar quando estável [confirmar na referência o prazo do passageiro].', '2.4'),
+        passageiro: e('avaliar', 'Pergunte ao seu cardiologista se o ritmo já está estável para viajar.', 'Após ablação ou cardioversão: liberar quando estável.', '2.4'),
         tripulante: e('nao-voar', 'Não voe como tripulante ainda.', 'FAA: ablação 3 meses; cardioversão 1 mês. RBAC 67.79(a)(12): ablação de via anômala ≥ 3 meses com reestudo normal. ICAO: flutter ablado, 3 meses, restrito.', '2.4'),
       },
     ],
