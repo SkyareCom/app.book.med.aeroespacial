@@ -292,6 +292,7 @@ export const emergenciasBordo: Capitulo = {
           "**Como prevenir e amenizar.** Ao atender, diga **cedo** à tripulação se o quadro pode exigir hospital: o desvio leva tempo para ser planejado. Dê ao médico de solo os dados que sustentam a recomendação. Respeite a decisão do comandante, que vê o que você não vê. Mantenha o passageiro monitorado até a chegada da equipe de terra e entregue o registro por escrito.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v10-6-cabine.jpg'), legenda: "O comandante decide o desvio, depois de ouvir o médico de solo e o despachante." } },
           {
             paragrafo: 2,
             tabela: {
