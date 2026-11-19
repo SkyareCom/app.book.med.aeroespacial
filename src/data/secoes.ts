@@ -27,6 +27,7 @@ import { segurancaVoo } from './capitulos/seguranca-voo';
 import { ergonomia } from './capitulos/ergonomia';
 import { medicinaOcupacional } from './capitulos/medicina-ocupacional';
 import { toxicologia } from './capitulos/toxicologia';
+import { saudePassageiro } from './capitulos/saude-passageiro';
 import { orientacao } from './capitulos/orientacao';
 import { hipoxia } from './capitulos/hipoxia';
 import { pressurizacao } from './capitulos/pressurizacao';
@@ -115,7 +116,7 @@ export const secoes: Secao[] = [
       ergonomia,
       medicinaOcupacional,
       toxicologia,
-      cap(9, 'Saúde do passageiro', ['Aptidão para voar', 'MEDIF', 'Mobilidade reduzida', 'Turbulência e evacuação']),
+      saudePassageiro,
       cap(10, 'Emergências médicas a bordo', ['Epidemiologia', 'Kits médicos', 'Telemedicina', 'Protocolos', 'Ética e lei', 'Desvio']),
       cap(11, 'Transporte aeromédico', ['Asa fixa e asa rotativa', 'UTI aérea', 'Planejamento', 'Transferências prolongadas', 'Evacuação militar']),
       cap(12, 'Aviação militar', ['Aviação de caça', 'Trajes de proteção', 'Sobrevivência', 'Operações especiais']),

@@ -28,12 +28,13 @@ import { CalculoFaa, CancerUroFaa, ProstataRemedios, RinsVoo, TfgVoo } from '@/c
 import { IdadeVoo, LimiteIdade, PassageiroIdoso, ValidadeCma, VisaoIdade } from '@/components/midia/m2v15-graficos';
 import { ComandoSistema } from '@/components/midia/comando-sistemas';
 import { ClasseCertificado, QuemExamina, RegulacaoComparar, RequisitosClasse, TriagemCoronaria } from '@/components/midia/m3v1-graficos';
-import { AnimacaoCamara, AnimacaoCarreira, AnimacaoDuasChamadas, AnimacaoDuasInvestigacoes, AnimacaoMeiaVida, AnimacaoMonoxido, AnimacaoQueijo, AnimacaoRegra1, AnimacaoRetorno, AnimacaoSegmentoVisual } from '@/components/midia/animacoes-aviacao';
+import { AnimacaoCamara, AnimacaoCarreira, AnimacaoDuasChamadas, AnimacaoDuasInvestigacoes, AnimacaoCinto, AnimacaoMeiaVida, AnimacaoMonoxido, AnimacaoQueijo, AnimacaoRegra1, AnimacaoRetorno, AnimacaoSegmentoVisual } from '@/components/midia/animacoes-aviacao';
 import { AlcoolPosMorte, DuasInvestigacoes, DviFases, EtapasInvestigacao, LaudoPartes, SobrevivenciaFatores } from '@/components/midia/m3v15-graficos';
 import { ArvoreCulpa, EventosFdm, FatoresSipaer, IncapacitacaoChase, MatrizRisco } from '@/components/midia/m3v5-graficos';
 import { AjusteCabine, AlertasCabine, CompatibilidadeEquipamentos, Fraseologia, PrincipiosCabine } from '@/components/midia/m3v6-graficos';
 import { AdicionaisAviacao, DoencasAviacao, ExamesPcmso, RetornoSituacoes, RiscosFuncao, TestesRbac120 } from '@/components/midia/m3v7-graficos';
 import { AguaAlimentos, FluidosBordo, MetodosDesinsetizacao, NiveisCohb, OzonioCabine, SinaisCabine } from '@/components/midia/m3v8-graficos';
+import { AptidaoSituacoes, BebeIdadeVoo, EvacuacaoPosicao, TurbulenciaOndeEstou } from '@/components/midia/m3v9-graficos';
 import { CorpoConsciencia, HfacsNiveis, NivelAutomacao, TemClassifica } from '@/components/midia/m3v4-graficos';
 import { CaminhoSelecao, ConscienciaUtil, LicencaPiloto, TreinoCorpo } from '@/components/midia/m3v3-graficos';
 import { CombinaRemedio, EsperaRemedio, RemedioVoo, SemaforoRemedio } from '@/components/midia/m3v2-graficos';
@@ -295,6 +296,11 @@ export const MIDIAS: Record<TipoMidia, () => ReactElement> = {
   'metodos-desinsetizacao': () => <MetodosDesinsetizacao />,
   'agua-alimentos': () => <AguaAlimentos />,
   'animacao-monoxido': () => <AnimacaoMonoxido />,
+  'aptidao-situacoes': () => <AptidaoSituacoes />,
+  'bebe-idade-voo': () => <BebeIdadeVoo />,
+  'turbulencia-onde-estou': () => <TurbulenciaOndeEstou />,
+  'evacuacao-posicao': () => <EvacuacaoPosicao />,
+  'animacao-cinto': () => <AnimacaoCinto />,
   'comando-hipoxia': () => <ComandoSistema chave="hipoxia" />,
   'comando-coracao': () => <ComandoSistema chave="coracao" />,
   'comando-ouvidos': () => <ComandoSistema chave="ouvidos" />,
@@ -570,6 +576,11 @@ export const NOME_MIDIA: Record<TipoMidia, string> = {
   'metodos-desinsetizacao': 'Os métodos de desinsetização',
   'agua-alimentos': 'Quando a água ou a comida falham',
   'animacao-monoxido': 'Do escapamento ao sangue',
+  'aptidao-situacoes': 'Antes de comprar a passagem',
+  'bebe-idade-voo': 'O bebê pode voar?',
+  'turbulencia-onde-estou': 'Onde você está quando o avião sacode?',
+  'evacuacao-posicao': 'Posição de proteção e ajuda',
+  'animacao-cinto': 'Com cinto e sem cinto',
   'comando-hipoxia': 'Comando nervoso e hormonal na altitude · respiração e oxigênio',
   'comando-coracao': 'Comando nervoso e hormonal na altitude · coração e circulação',
   'comando-ouvidos': 'Comando nervoso e hormonal na altitude · ouvidos, nariz e seios da face',
