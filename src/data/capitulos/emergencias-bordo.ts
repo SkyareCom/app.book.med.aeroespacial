@@ -54,6 +54,7 @@ export const emergenciasBordo: Capitulo = {
           "**Como prevenir e amenizar.** Antes de viajar, mantenha a doença crônica controlada e leve os remédios na bagagem de mão. No voo, coma e beba água com regularidade, levante-se para caminhar quando permitido e avise a tripulação **logo no início** de um mal-estar. Se for profissional de saúde, saiba que a chance de ser chamado é real: conheça o kit de bordo e o caminho até o médico de solo antes que a emergência aconteça.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v10-1-chamado.jpg'), legenda: "Quando alguém passa mal, a tripulação pergunta se há um profissional de saúde a bordo." } },
           {
             paragrafo: 2,
             tabela: {
@@ -70,6 +71,7 @@ export const emergenciasBordo: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'emergencias-frequentes' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v10-1-ambulancia.jpg'), legenda: "Cerca de um em cada quatro passageiros atendidos segue para o hospital depois do pouso." } },
           {
             paragrafo: 6,
             tabela: {
@@ -100,6 +102,7 @@ export const emergenciasBordo: Capitulo = {
           "**Como prevenir e amenizar.** Se você tem doença que pode precisar de remédio de urgência — **adrenalina autoinjetável**, **broncodilatador**, **glicose** ou anticonvulsivante prescrito —, leve o seu na bagagem de mão: o kit de bordo pode não ter. Profissional de saúde que voa com frequência deve conhecer a lista mínima e suas lacunas. Ao atender, peça o **DEA** junto com o kit sempre que houver perda de consciência.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v10-2-kit.jpg'), legenda: "O conjunto médico de emergência reúne remédios e equipamentos para uso por profissional de saúde." } },
           {
             paragrafo: 2,
             tabela: {
@@ -117,6 +120,7 @@ export const emergenciasBordo: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'kits-bordo' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v10-2-dea.jpg'), legenda: "O desfibrilador fica na cabine de passageiros, ao alcance da tripulação." } },
           {
             paragrafo: 6,
             tabela: {
@@ -147,6 +151,7 @@ export const emergenciasBordo: Capitulo = {
           "**Como prevenir e amenizar.** Ao atender a bordo, peça **cedo** que a tripulação acione o médico de solo, mesmo se o caso parecer simples. Anote horários, sinais vitais e remédios dados. Passe as informações na ordem da tabela, sem pressa e sem jargão. Se a companhia exigir a consulta antes de abrir o kit, siga a regra: ela também protege você.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v10-3-interfone.jpg'), legenda: "A tripulação passa os dados ao médico de solo, que orienta sem ver o paciente." } },
           {
             paragrafo: 2,
             tabela: {
@@ -161,6 +166,7 @@ export const emergenciasBordo: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'consulta-solo' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v10-3-solo.jpg'), legenda: "Em terra, o médico de solo ajuda a decidir entre seguir viagem e desviar." } },
           {
             paragrafo: 6,
             tabela: {
@@ -191,6 +197,7 @@ export const emergenciasBordo: Capitulo = {
           "**Como prevenir e amenizar.** Antes de se oferecer, confirme que está em condições. Identifique-se, peça o **kit e o DEA** juntos quando houver perda de consciência e acione o médico de solo cedo. Trate o que conhece, com o que existe a bordo. Anote horários, sinais vitais e remédios, e entregue esse registro à equipe que receber o passageiro em terra.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v10-4-sinais.jpg'), legenda: "O voluntário se identifica e mede os sinais vitais antes de tratar." } },
           {
             paragrafo: 2,
             tabela: {
@@ -208,6 +215,7 @@ export const emergenciasBordo: Capitulo = {
           },
           { paragrafo: 3, midia: 'protocolo-bordo' },
           { paragrafo: 4, midia: 'animacao-dea' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v10-4-massagem.jpg'), legenda: "Na parada cardíaca, a massagem começa no chão e o DEA chega o quanto antes." } },
           {
             paragrafo: 6,
             tabela: {
@@ -238,6 +246,7 @@ export const emergenciasBordo: Capitulo = {
           "**Como prevenir e amenizar.** Se é médico e voa, leia a cartilha do CFM e conheça a regra do país da companhia que vai usar. Ao ser chamado, apresente-se se estiver em condições, atue dentro da sua competência, peça consentimento, fale baixo e anote tudo. Se não puder ajudar por estar sob efeito de álcool ou remédio, diga isso à tripulação: é uma decisão ética, não uma omissão.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v10-5-identificacao.jpg'), legenda: "Ao se oferecer, o profissional informa sua formação à tripulação." } },
           {
             paragrafo: 2,
             tabela: {
@@ -252,6 +261,7 @@ export const emergenciasBordo: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'dever-socorro' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v10-5-registro.jpg'), legenda: "Registrar o que foi feito protege o passageiro e quem atendeu." } },
           {
             paragrafo: 6,
             tabela: {
@@ -296,6 +306,8 @@ export const emergenciasBordo: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'desvio-decisao' },
+          { paragrafo: 4, video: { fonte: require('@/assets/videos/m3v10-voo.mp4'), legenda: "O desvio leva o passageiro ao aeroporto adequado mais próximo." } },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v10-6-resgate.jpg'), legenda: "No desvio, a equipe de resgate espera o avião no aeroporto." } },
           {
             paragrafo: 6,
             tabela: {
