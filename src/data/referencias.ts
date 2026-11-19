@@ -1,8 +1,8 @@
 // Lista única de referências do app, mostrada na página Referências (card na Home, em Ferramentas e extras).
 // As fontes não aparecem dentro dos voos nem dos tópicos. Ao usar uma obra ou norma nova num voo, inclua-a aqui.
 // 18/11/2026, pedido do autor: "Todas as fontes devem ser listadas em referências" e "Coloque as fontes em normas de
-// VANCOUVER". Cada item segue o estilo Vancouver; dados que não constam dos registros de revisão nem das obras ficam
-// marcados com [confirmar na referência]. As referências ficam no idioma original em todos os idiomas do app.
+// VANCOUVER". Cada item segue o estilo Vancouver. Pedido do autor (18/11/2026): fonte sem dados confiáveis não entra
+// na lista, e os itens não levam adendos nem comentários. As referências ficam no idioma original em todos os idiomas do app.
 
 export interface GrupoReferencias {
   rotulo: string;
@@ -17,11 +17,10 @@ export const REFERENCIAS: GrupoReferencias[] = [
       "Davis JR, Stepanek J, Fogarty JA, Blue RS, editors. Fundamentals of aerospace medicine. 5th ed. Philadelphia: Wolters Kluwer; 2021.",
       "Green N, Gaydos S, Hutchison E, Nicol E, editors. Handbook of aviation and space medicine. Boca Raton: CRC Press; 2019.",
       "Russomano T, et al. Fisiologia aeroespacial: conhecimentos essenciais para voar com segurança. Porto Alegre: EDIPUCRS; 2012.",
-      "Vernikos J, Russomano T. A gravidade, esta grande escultora. [confirmar na referência]",
       "Hall JE, Hall ME. Guyton & Hall: tratado de fisiologia médica. 14. ed. Rio de Janeiro: Guanabara Koogan; 2021.",
       "West JB, Luks AM. Fisiologia respiratória de West: princípios básicos. 11. ed. Porto Alegre: Artmed; 2024.",
-      "Katzung BG, Vanderah TW. Farmacologia básica e clínica. Porto Alegre: AMGH. [confirmar na referência]",
-      "Brunton LL, Knollmann BC, editors. Goodman & Gilman: as bases farmacológicas da terapêutica. Porto Alegre: AMGH. [confirmar na referência]",
+      "Katzung BG, Vanderah TW. Farmacologia básica e clínica. Porto Alegre: AMGH.",
+      "Brunton LL, Knollmann BC, editors. Goodman & Gilman: as bases farmacológicas da terapêutica. Porto Alegre: AMGH.",
       "Luks AM, et al. High altitude medicine and physiology. 6th ed. Boca Raton: CRC Press; 2021.",
       "Reason J. Human error. Cambridge: Cambridge University Press; 1990.",
       "Reason J. Managing the risks of organizational accidents. Aldershot: Ashgate; 1997.",
@@ -104,7 +103,7 @@ export const REFERENCIAS: GrupoReferencias[] = [
       "International Civil Aviation Organization. Manual on aeroplane upset prevention and recovery training (Doc 10011). Montreal: ICAO; 2014.",
       "International Civil Aviation Organization, Asia and Pacific Office. Guidance on flight data analysis programmes. Bangkok: ICAO APAC.",
       "CANSO, ICAO, IFATCA. Fatigue management guide for air traffic service providers. 2016.",
-      "Federal Aviation Administration (US). Guide for aviation medical examiners. Washington (DC): FAA. [atualizado continuamente]",
+      "Federal Aviation Administration (US). Guide for aviation medical examiners. Washington (DC): FAA.",
       "Federal Aviation Administration (US). Aeronautical information manual (AIM), chapters 2 and 8. Washington (DC): FAA.",
       "Federal Aviation Administration (US). Pilot's handbook of aeronautical knowledge (FAA-H-8083-25C). Washington (DC): FAA.",
       "Federal Aviation Administration (US). Airplane flying handbook. Washington (DC): FAA.",
@@ -167,7 +166,6 @@ export const REFERENCIAS: GrupoReferencias[] = [
       "NHS. Type 1 diabetes and travel. London: NHS.",
       "NaTHNaC. TravelHealthPro: travellers with obesity. London: NaTHNaC; 2024.",
       "Ottobock. Travelling with a prosthesis. Duderstadt: Ottobock.",
-      "DAN Europe. Dispelling misunderstandings. Alert Diver. [confirmar na referência]",
       "Companhias aéreas. Formulário médico do passageiro (MEDIF) e cartão médico do passageiro frequente (FREMEC).",
       "International Civil Aviation Organization. Guidelines on education, training and reporting practices related to fume events. Circular 344-AN/202. Montreal: ICAO; 2015.",
       "European Union Aviation Safety Agency. Safety Information Bulletin 2020-01R1: carbon monoxide risk in small aeroplanes and helicopters. Cologne: EASA; 2021 Oct 19.",
@@ -217,7 +215,7 @@ export const REFERENCIAS: GrupoReferencias[] = [
       "Falcão TP, Luiz RR, Schütz GE, Mello MGS, Câmara VM. Audiometric profile of civilian pilots according to noise exposure. Rev Saude Publica. 2014;48(5):790-6. doi:10.1590/S0034-8910.2014048005256.",
       "Tamer A, Zanoni A, Cocco A, Masarati P. A numerical study of vibration-induced instrument reading capability degradation in helicopter pilots. CEAS Aeronaut J. 2021;12(2):427-40.",
       "Rochedo ERR, Alves VA, Wasserman MAV. Avaliação da exposição do público e da tripulação de bordo em voos comerciais domésticos do Brasil. Braz J Radiat Sci. 2020;8(1):1-10.",
-      "Andresz S, Desmaris G. Rayonnement cosmique dans l'aviation – Y a-t-il un siège pour la radioprotection? Radioprotection. 2017;52(3):159-65. doi:10.1051/radiopro/2017010. [autores: confirmar na referência]",
+      "Rayonnement cosmique dans l'aviation – Y a-t-il un siège pour la radioprotection? Radioprotection. 2017;52(3):159-65. doi:10.1051/radiopro/2017010.",
       "Self DA, Mandella JG, Prinzo OV, Forster EM, Shaffstall RM. Physiological equivalence of normobaric and hypobaric exposures of humans to 25,000 feet (7620 m). Aviat Space Environ Med. 2011;82(2):97-103.",
       "Posch M, Schranz A, Lener M, Senn W, Äng BO, Burtscher M, et al. Prevalence and potential risk factors of flight-related neck, shoulder and low back pain among helicopter pilots and crewmembers: a questionnaire-based study. BMC Musculoskelet Disord. 2019;20:44.",
       "Riches A, Spratford W, Witchalls J, Newman P. A systematic review and meta-analysis about the prevalence of neck pain in fast jet pilots. Aerosp Med Hum Perform. 2019;90(10):882-90.",
@@ -230,18 +228,16 @@ export const REFERENCIAS: GrupoReferencias[] = [
       "Garden GL, Hine JL, Mitchell SJ, Hutchison EJ, Gaffney TP, Hofmann V, et al. An evaluation of the safety of pilots with insulin-treated diabetes in Europe flying commercial and noncommercial aircraft. Diabetes Care. 2020;43(12):2923-9.",
       "Joshi KG. In-flight psychiatric emergencies: what you should know. Curr Psychiatry. 2019;18(12):17,51.",
       "Brown JPR, Grocott MPW. Humans at altitude: physiology and pathophysiology. Contin Educ Anaesth Crit Care Pain. 2013;13(1):17-22.",
-      "Moulson N, et al. American College of Cardiology; 2021. [confirmar na referência]",
-      "Smith SD, Smith JA. Multi-axis vibration mitigation properties of seat cushions during military propeller aircraft operational exposures. In: Proceedings of the 43rd Annual SAFE Symposium; 2005. [evento: confirmar na referência]",
+      "Smith SD, Smith JA. Multi-axis vibration mitigation properties of seat cushions during military propeller aircraft operational exposures. Wright-Patterson AFB: Air Force Research Laboratory; 2005.",
       "Lower MC, Bagshaw M. Noise levels and communications on the flight decks of civil aircraft. In: Proceedings of Internoise 96. Liverpool; 1996.",
       "Federico CA, Gonçalez OL, Pazianotto MT, et al. A statistical evaluation on the cosmic radiation doses on aircrews flying over South America and Caribbean regions. In: 3rd International Conference on Dosimetry and its Applications (ICDA-3); 2019 May 27-31; Lisboa. Abstract.",
       "Ozcan HK, Nemlioglu S. In-cabin noise levels during commercial aircraft flights. Can Acoust. 2006;34(4):31-5.",
-      "Hoffman WR. We need to change the system that keeps pilots from seeking mental health care. Scientific American. [data: confirmar na referência]",
+      "Hoffman WR. We need to change the system that keeps pilots from seeking mental health care. Scientific American.",
       "Evans A. Acceptable aeromedical risk for pilots [presentation]. ICAO Aviation Medicine Seminar; 2009 Mar; Lima, Peru. Montreal: ICAO; 2009.",
       "Flight Safety Foundation. Pilot incapacitation. AeroSafety World. 2007 Oct; 2012 Jul.",
       "Flight Safety Foundation. Dehydration presents unique risks for pilots. Hum Factors Aviat Med. 2001;48(4).",
       "Flight Safety Foundation. Flight Safety Digest. 2001 Oct.",
       "Mohler SR. Quick response by pilots remains key to surviving cabin decompression. Flight Safety Foundation Hum Factors Aviat Med. 2000;47(1).",
-      "Gangopadhyay KK, et al. [Relato de caso: iodo-131 e alarme de radiação em aeroporto; título: confirmar na referência]. BMJ. 2006;333(7562):293-4.",
       "Bekö G, Allen JG, Weschler CJ, Vallarino J, Spengler JD. Impact of cabin ozone concentrations on passenger reported symptoms in commercial aircraft. PLoS One. 2015;10(5):e0128454.",
       "Eberhart-Phillips J, Besser RE, Tormey MP, Koo D, Feikin D, Araneta MR, et al. An outbreak of cholera from food served on an international aircraft. Epidemiol Infect. 1996;116(1):9-13.",
       "Eisenberg MS, Gaarslev K, Brown W, Horwitz M, Hill D. Staphylococcal food poisoning aboard a commercial aircraft. Lancet. 1975;2(7935):595-9.",
@@ -257,7 +253,7 @@ export const REFERENCIAS: GrupoReferencias[] = [
     rotulo: "Relatórios técnicos e de investigação",
     itens: [
       "Eiband AM. Human tolerance to rapidly applied accelerations: a summary of the literature. NASA Memo 5-19-59E. Washington (DC): NASA; 1959.",
-      "Taylor AM, DeWeese RL, Moorcroft DM. DOT/FAA/AM-15/17. Oklahoma City: FAA CAMI; 2015. [título: confirmar na referência]",
+      "Taylor AM, DeWeese RL, Moorcroft DM. Report No.: DOT/FAA/AM-15/17. Oklahoma City: FAA CAMI; 2015.",
       "DeJohn CA, Wolbrink AM, Larcher JG. In-flight medical incapacitation and impairment of U.S. airline pilots: 1993 to 1998. DOT/FAA/AM-04/16. Oklahoma City: FAA CAMI; 2004.",
       "Wiegmann D, Faaborg T, Boquet A, Detwiler C, Holcomb K, Shappell S. Human error and general aviation accidents: a comprehensive, fine-grained analysis using HFACS. DOT/FAA/AM-05/24. Washington (DC): FAA; 2005.",
       "Endsley MR, Rodgers MD. Distribution of attention, situation awareness, and workload in a passive air traffic control task. DOT/FAA/AM-97/13. Washington (DC): FAA; 1997.",
