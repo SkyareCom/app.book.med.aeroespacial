@@ -153,7 +153,7 @@ export default function LiberacaoVoo() {
       <Painel>
         <Texto t="rotulo" cor={Cores.textoApagado}>Aviso</Texto>
         <Texto cor={Cores.textoApagado}>
-          Ferramenta de apoio à decisão. Não substitui a consulta médica, o médico examinador credenciado, a autoridade aeronáutica (ANAC, FAA) nem as regras da companhia aérea. O formulário cresce a cada voo da Missão Sistemas. Prazos sem fonte consultada aparecem como [confirmar na referência].
+          Ferramenta de apoio à decisão. Não substitui a consulta médica, o médico examinador credenciado, a autoridade aeronáutica (ANAC, FAA) nem as regras da companhia aérea. O formulário cresce a cada voo da Missão Sistemas.
         </Texto>
       </Painel>
       <RelacionadosEspecial id="liberacao-voo" />

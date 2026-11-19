@@ -237,10 +237,10 @@ export function ImcVoo() {
 
 // ---------------------------------------------------------------- Remédios para emagrecer e voo
 type Peso = 'glp1' | 'orlistate' | 'fentermina' | 'internet';
-const PESO: Record<Peso, { nome: string; faa: string; uk: string; ok: boolean }> = {
+const PESO: Record<Peso, { nome: string; faa: string; uk?: string; ok: boolean }> = {
   glp1: { nome: 'Semaglutida, liraglutida ou tirzepatida', faa: '1 semana no início; 48 h a cada aumento', uk: '2 semanas no início, com avaliação; 72 h a cada ajuste', ok: true },
-  orlistate: { nome: 'Orlistate', faa: '48 h no início', uk: '[confirmar na referência]', ok: true },
-  fentermina: { nome: 'Fentermina ou naltrexona com bupropiona', faa: 'Não aceito', uk: '[confirmar na referência]', ok: false },
+  orlistate: { nome: 'Orlistate', faa: '48 h no início', ok: true },
+  fentermina: { nome: 'Fentermina ou naltrexona com bupropiona', faa: 'Não aceito', ok: false },
   internet: { nome: 'Comprado sem receita, pela internet', faa: 'Fora da lista aceita: consultar a FAA', uk: 'Desqualifica', ok: false },
 };
 
@@ -254,10 +254,12 @@ export function RemediosPeso() {
         <Texto t="rotulo" cor={Cores.textoApagado}>FAA</Texto>
         <Marca cor={k.ok ? Cores.acerto : Cores.erro}>{k.faa}</Marca>
       </View>
-      <View style={{ gap: 4 }}>
-        <Texto t="rotulo" cor={Cores.textoApagado}>Reino Unido</Texto>
-        <Marca cor={k.ok ? Cores.acerto : Cores.erro}>{k.uk}</Marca>
-      </View>
+      {k.uk ? (
+        <View style={{ gap: 4 }}>
+          <Texto t="rotulo" cor={Cores.textoApagado}>Reino Unido</Texto>
+          <Marca cor={k.ok ? Cores.acerto : Cores.erro}>{k.uk}</Marca>
+        </View>
+      ) : null}
       <Marca cor={Cores.textoSuave}>Com náusea, vômito ou tontura, não se voa, qualquer que seja o remédio.</Marca>
     </MolduraMidia>
   );

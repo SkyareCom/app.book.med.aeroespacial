@@ -119,7 +119,7 @@ export const liberacaoMente: PerguntaLiberacao[] = [
       { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
       {
         rotulo: 'Eletroconvulsoterapia',
-        passageiro: e('avaliar', 'Combine a data da viagem com o psiquiatra.', 'Tratamento sob anestesia; prazo de viagem: [confirmar na referência].', '7.2'),
+        passageiro: e('avaliar', 'Combine a data da viagem com o psiquiatra.', 'Tratamento sob anestesia.', '7.2'),
         tripulante: e('nao-voar', 'Não voe; a volta depende do psiquiatra e da autoridade.', 'FAA, AME Guide (antidepressivos): história de eletroconvulsoterapia exclui a via do ISRS pelo examinador; RBAC 67.75(c).', '7.2'),
       },
       {

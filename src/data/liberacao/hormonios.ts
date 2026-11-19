@@ -181,7 +181,7 @@ export const liberacaoHormonios: PerguntaLiberacao[] = [
       { rotulo: 'Não', passageiro: ok(), tripulante: ok() },
       {
         rotulo: 'Cirurgia da tireoide',
-        passageiro: e('avaliar', 'Viaje com a liberação do cirurgião.', 'Prazo do passageiro: conforme a recuperação e o cirurgião [confirmar na referência].', '9.4'),
+        passageiro: e('avaliar', 'Viaje com a liberação do cirurgião.', 'Prazo do passageiro: conforme a recuperação e o cirurgião.', '9.4'),
         tripulante: e('nao-voar', 'Não voe até a recuperação e a função da tireoide estável.', 'UK CAA Thyroid Dysfunction: cirurgia, inapto até a recuperação e eutireoideo; exame anual.', '9.4'),
       },
       {
@@ -191,7 +191,7 @@ export const liberacaoHormonios: PerguntaLiberacao[] = [
       },
       {
         rotulo: 'Procedimento endoscópico para emagrecer',
-        passageiro: e('cuidados', 'Confirme o prazo com o médico que fez o procedimento.', 'Prazo conforme o procedimento [confirmar na referência].', '9.5'),
+        passageiro: e('cuidados', 'Confirme o prazo com o médico que fez o procedimento.', 'Prazo conforme o procedimento.', '9.5'),
         tripulante: e('avaliar', 'Fale com o examinador; o prazo costuma ser bem menor.', 'UK CAA Obesity information sheet: procedimentos endoscópicos reduzem bastante o período de inaptidão.', '9.5'),
       },
     ],

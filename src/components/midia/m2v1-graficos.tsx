@@ -70,14 +70,14 @@ export function BateriasCPAP() {
 
 // ---------------------------------------------------------------- Pulmão: quando o passageiro pode voar
 type Evento = 'pneumo' | 'cirurgia' | 'cirurgiaEssencial' | 'biopsia' | 'dpoc' | 'pneumonia' | 'tev';
-const PRAZOS: Record<Evento, { nome: string; dias: number; conta: string; tripulante: string }> = {
+const PRAZOS: Record<Evento, { nome: string; dias: number; conta: string; tripulante?: string }> = {
   pneumo: { nome: 'Pneumotórax', dias: 7, conta: 'Conta-se a partir da resolução completa no raio X.', tripulante: 'Tripulante: pela FAA, espontâneo com decisão da FAA após a resolução e sem bolhas; traumático, 3 meses.' },
-  cirurgia: { nome: 'Cirurgia no tórax', dias: 28, conta: 'Conta-se a partir da retirada do dreno.', tripulante: 'Tripulante: a critério do médico examinador [confirmar na referência].' },
-  cirurgiaEssencial: { nome: 'Cirurgia, viagem essencial', dias: 14, conta: 'Conta-se a partir da retirada do dreno.', tripulante: 'Tripulante: a critério do médico examinador [confirmar na referência].' },
-  biopsia: { nome: 'Biópsia ou broncoscopia', dias: 7, conta: 'Conta-se a partir do procedimento ou, se houve pneumotórax, da resolução.', tripulante: 'Tripulante: [confirmar na referência].' },
+  cirurgia: { nome: 'Cirurgia no tórax', dias: 28, conta: 'Conta-se a partir da retirada do dreno.', tripulante: 'Tripulante: a critério do médico examinador.' },
+  cirurgiaEssencial: { nome: 'Cirurgia, viagem essencial', dias: 14, conta: 'Conta-se a partir da retirada do dreno.', tripulante: 'Tripulante: a critério do médico examinador.' },
+  biopsia: { nome: 'Biópsia ou broncoscopia', dias: 7, conta: 'Conta-se a partir do procedimento ou, se houve pneumotórax, da resolução.' },
   dpoc: { nome: 'Piora da DPOC', dias: 42, conta: 'Conta-se a partir da piora. O prazo é prudente, com poucos dados.', tripulante: 'Tripulante: não voar; nova avaliação do médico examinador.' },
   pneumonia: { nome: 'Pneumonia com saturação abaixo de 94%', dias: 7, conta: 'Conta-se a partir do diagnóstico, para viagem não essencial.', tripulante: 'Tripulante: não apto enquanto a infecção estiver ativa (RBAC 67).' },
-  tev: { nome: 'Trombose ou embolia', dias: 14, conta: 'Conta-se a partir do diagnóstico.', tripulante: 'Tripulante: [confirmar na referência].' },
+  tev: { nome: 'Trombose ou embolia', dias: 14, conta: 'Conta-se a partir do diagnóstico.' },
 };
 
 export function PrazoVooPulmao() {
@@ -96,7 +96,7 @@ export function PrazoVooPulmao() {
       </View>
       <View style={[styles.marca, { borderLeftColor: cor }]}>
         <Texto>{p.conta}</Texto>
-        <Texto cor={Cores.textoSuave}>{p.tripulante}</Texto>
+        {p.tripulante ? <Texto cor={Cores.textoSuave}>{p.tripulante}</Texto> : null}
       </View>
     </MolduraMidia>
   );

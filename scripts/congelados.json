@@ -1,5 +1,5 @@
 {
- "autorizado": "12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026; M3V2 e M3V3 em 17/11/2026; receptores adrenérgicos e colinérgicos em 18/11/2026",
+ "autorizado": "12/11/2026; M3V1 em 15/11/2026; comando dos sistemas em 16/11/2026; M3V2 e M3V3 em 17/11/2026; receptores adrenérgicos e colinérgicos em 18/11/2026; retirada do marcador de pendência em 19/11/2026",
  "voos": [
   "M2V2",
   "M2V3",
@@ -21,7 +21,7 @@
  "arquivos": {
   "src/data/capitulos/coracao.ts": "8d6bec13717be133dce634177a191027cb56eee6",
   "src/components/midia/m2v2-graficos.tsx": "45a7aba40e9ca0e05e2152dd779117bde476a0cc",
-  "src/data/liberacao/cardiovascular.ts": "85529893a356525dfcacc5279c0c69382a63de08",
+  "src/data/liberacao/cardiovascular.ts": "35a453752371187b38bd007b45517e48cf2526e1",
   "assets/images/topicos/m2v2-1-cabine.jpg": "a3ba4be8d603abe72183c841e27f5a8e71d83714",
   "assets/videos/m2v2-coracao.mp4": "a20207ebcb4f3739cee075bf01c55d3074cb7bf2",
   "assets/images/topicos/m2v2-1-ecg.jpg": "b314c9fb7be8cc3893ab501f4b68508858793b75",
@@ -54,7 +54,7 @@
   "assets/images/topicos/m2v3-6-dentista.jpg": "677659537ff416e8c1452a985a14d6d5e57f2010",
   "assets/images/topicos/m2v3-6-radiografia.jpg": "8d99d606983d5e8db09abc64103a5599b5f2d688",
   "src/data/capitulos/olhos.ts": "68433a9fed0c4594b1679002e4320f99849b68c5",
-  "src/components/midia/m2v4-graficos.tsx": "64b82529fc53f1d9c6b10086db96dc9fc0bdfcf5",
+  "src/components/midia/m2v4-graficos.tsx": "a87f02b52365459a0522eb66118477a02301ea36",
   "src/data/liberacao/olhos.ts": "54b9460e1243938a2ab035612140363f8a4af770",
   "assets/images/topicos/m2v4-1-nuvens.jpg": "5efec3c178bfd721785b64ac02cfca32e4f29aa5",
   "assets/images/topicos/m2v4-1-colirio.jpg": "b3338c48e86566b93df239ebcc7bf4a55fd19509",
@@ -73,9 +73,9 @@
   "assets/images/topicos/m2v4-7-tonometria.jpg": "cb197e6e8f302a15ee334ffe4aa3f2ee5a6347f3",
   "assets/images/topicos/m2v4-8-laser.jpg": "9b8dc1692022c8a07fc61c870ade2ef748111308",
   "assets/images/topicos/m2v4-8-protetor.jpg": "af0810575b9367100f5ea1449a57d35868464300",
-  "src/data/capitulos/orientacao.ts": "396ef4e8903db0ee149c06f4536cb52a2f8e5322",
+  "src/data/capitulos/orientacao.ts": "55d19d58567f6a63755be9d5c31fa954db45b7b8",
   "src/components/midia/m2v5-graficos.tsx": "75ab6cf010b4d81f07968f618305c6224667412b",
-  "src/data/liberacao/orientacao.ts": "c2325f686c7b560def01ff22cb3727206be6b8c7",
+  "src/data/liberacao/orientacao.ts": "58bffa045378620b0e392f52cb56fe918453a02f",
   "assets/images/topicos/m2v5-1-horizonte.jpg": "a4674a23e6125aa85652267df0154865f9d5fa44",
   "assets/images/topicos/m2v5-1-nuvem.jpg": "315313af03ed0566a7e4ee2b591b69d63204c019",
   "assets/images/topicos/m2v5-2-atitude.jpg": "dab5b9758861887b31788638ea3a3edaaea8ed29",
@@ -92,7 +92,7 @@
   "assets/images/topicos/m2v5-6-janela.jpg": "4ab44a9a8b4265f9077b87e2a03c22554f5c2822",
   "src/data/capitulos/cerebro.ts": "c5515d089013065aedd8c7d4b07cc391e7390b34",
   "src/components/midia/m2v6-graficos.tsx": "2c462589ed4722de0938ad7af7ea6bf7f5532f13",
-  "src/data/liberacao/cerebro.ts": "d93a6d2c03ab8bdf37fbfcf366a0ca459dc83752",
+  "src/data/liberacao/cerebro.ts": "36727ae51e002b415e4da25bf266269f77fe882f",
   "assets/images/topicos/m2v6-1-piloto.jpg": "df68001c58157b2a18a73e3a766a7836610557a0",
   "assets/images/topicos/m2v6-1-noite.jpg": "cfb29eb1156247d788784bcbfa8d8a86eece422c",
   "assets/images/topicos/m2v6-2-neurologista.jpg": "23145ab6b9fe8e3392e5fd7b9a9b7b0a760b01d6",
@@ -110,7 +110,7 @@
   "assets/images/topicos/m2v6-7-cadeira.jpg": "a122a1a84fd1fa89f89a8aa91b2a6edc70e83cc1",
   "src/data/capitulos/mente.ts": "649d67d524d68addf2ad00181d384f7f5376c001",
   "src/components/midia/m2v7-graficos.tsx": "8c9da546de78edae1e1465bc70276b2d83134399",
-  "src/data/liberacao/mente.ts": "c09644ff797728ccb88b65aafb7b7151740b0c36",
+  "src/data/liberacao/mente.ts": "fb8a7df9a7f252528afb92db0b7580145b9e3d27",
   "assets/images/topicos/m2v7-1-checklist.jpg": "2b2ceda139847f408bea1cee5f5097b0d1ec5d3b",
   "assets/images/topicos/m2v7-1-hotel.jpg": "031963a7ee3c9eb39cb2e1f3797d363bac4393dc",
   "assets/images/topicos/m2v7-2-consulta.jpg": "df8a0f89e74b5045ece40491535a02432163f18d",
@@ -126,7 +126,7 @@
   "assets/images/topicos/m2v7-6-telefone.jpg": "0e97882059dcb72d6ac6231bbd7315ec48963421",
   "src/data/capitulos/sono.ts": "0bc7877d7add4c7a1c0ad0966b8f6363328def4f",
   "src/components/midia/m2v8-graficos.tsx": "b94485af5ce2dd4bb4296f7663a605e5ec3a6d6b",
-  "src/data/liberacao/sono.ts": "83ad2434d31558f7fe7a70d8a17127836ac77569",
+  "src/data/liberacao/sono.ts": "2126d280ce2b72da0f7b8a09376a73039a0ed622",
   "assets/images/topicos/m2v8-1-amanhecer.jpg": "e6994bf215a04272cf0288f3610605040dab8821",
   "assets/images/topicos/m2v8-1-beliche.jpg": "acd0fc7e7b3275667c5b7bebf128753d6f6eb9c1",
   "assets/images/topicos/m2v8-2-luz.jpg": "00fe652bc5756cfe841a0dbf6b740f1a84029099",
@@ -143,9 +143,9 @@
   "assets/images/topicos/m2v8-6-revezamento.jpg": "e0a7c2151cd7d6fca7815d5e834447baf64d5e1a",
   "assets/images/topicos/m2v8-7-quarto.jpg": "33fb5962824076020d7d167b63f887dc979169cb",
   "assets/images/topicos/m2v8-7-estudo.jpg": "f8cb14a11cf96507b137e9b59876b856d9c29e5b",
-  "src/data/capitulos/hormonios.ts": "00a0d61faa2e086b744bfbf2c6b996c966a91755",
-  "src/components/midia/m2v9-graficos.tsx": "f0f4d3c1abcdc072902d0118e7504791ebac134d",
-  "src/data/liberacao/hormonios.ts": "2d06211a08383338de11d71af20c5852ef292366",
+  "src/data/capitulos/hormonios.ts": "0bc5f095fe69ca6a090c0f6348cdc455356487d7",
+  "src/components/midia/m2v9-graficos.tsx": "042684d0f53438e95ccabbcc7912dca742865d65",
+  "src/data/liberacao/hormonios.ts": "f5c01ba991c75a126bba9c26c25e8bf4ca5f7177",
   "assets/images/topicos/m2v9-1-refeicao.jpg": "0761602359fd98770f2ea96d28f1985ff967b07a",
   "assets/images/topicos/m2v9-1-corredor.jpg": "2e56c5358a2bdc1668f7a919f750f9bbe1fca69d",
   "assets/images/topicos/m2v9-2-glicosimetro.jpg": "a56f3af64a9c90d7caf08ebed6b22bd8ba6f88c8",
@@ -159,7 +159,7 @@
   "assets/images/topicos/m2v9-5-cpap.jpg": "c947fa96df05def4f743342fa0007b9ecf9050a8",
   "src/data/capitulos/sangue-imunidade.ts": "25c22c3d97233614b6b485244f1fba18996f9fa1",
   "src/components/midia/m2v11-graficos.tsx": "53bf8bda57722a2b18f05e7066c172dac25ede27",
-  "src/data/liberacao/sangue-imunidade.ts": "985d39b00b15a963bfca67792722659d45c247ae",
+  "src/data/liberacao/sangue-imunidade.ts": "a5b50e929ba2029884277962e4993c7c2d027592",
   "assets/images/topicos/m2v11-1-sangue-altitude.jpg": "d3bea0cf4dfbfed0331e4a4e714369dbed3eb122",
   "assets/videos/m2v11-sangue-voo.mp4": "7045066795e7541b3e9d9eaef68007b4b5cf7720",
   "assets/images/topicos/m2v11-1-planejamento-voo.jpg": "5e000c7f5c9d10f46b0a95c29d68085d914ccefc",
@@ -218,7 +218,7 @@
   "assets/images/topicos/m2v14-5-exame.jpg": "6515d3b077a82bac5af89e0c04432a504d7b1ef9",
   "assets/images/topicos/m2v14-5-recuperacao.jpg": "1d0798d640f4e7a3496e641d36bbd7c5cccfb7e2",
   "assets/images/topicos/m2v14-5-relatorio.jpg": "d63635ea86380b91a4bb5885a3b137ccde4b5485",
-  "src/data/capitulos/envelhecimento.ts": "6f813c9032659c774fe0fd6eaf19500eca09eca2",
+  "src/data/capitulos/envelhecimento.ts": "416f79d376d89385be714ded3a97443978f91e1c",
   "src/components/midia/m2v15-graficos.tsx": "714bb4996e151264f3232534828346093aca0052",
   "src/data/liberacao/envelhecimento.ts": "48370999184b7daf7bf3292ee1d379e8bc61cad9",
   "assets/images/topicos/m2v15-1-janela.jpg": "8c044df24729953fbc0bdb1b1c3b2c61c120ee4c",
@@ -269,7 +269,7 @@
   "assets/images/topicos/m3v3-3-escape.jpg": "2cf78edf7ea85dcbfb3d015d2d3a8dfef7893dbb",
   "assets/images/topicos/m3v3-4-aluna.jpg": "57ad331b2883231ad092d6123f096ea7a42b1b96",
   "assets/images/topicos/m3v3-4-simulador.jpg": "71c197008828c959f57b9ba0217eedfc3c49df0e",
-  "src/app/liberacao-voo.tsx": "26312840acdaaf0a205485c1b3a2c581f2ea8199",
+  "src/app/liberacao-voo.tsx": "ab99419534bbb1afe757276b554f34c7eae82e73",
   "src/lib/liberacao.ts": "f9c5b2fbf949ad6bc21c27a01d550d163b3e0f7d",
   "src/data/comando-sistemas.ts": "4e12b9721af2fd9a37436d556ef17522fb5482c1",
   "src/components/midia/comando-sistemas.tsx": "523af4006018ca4f2b0b23c8f79b8439314f33f7"
@@ -281,9 +281,17 @@
    "1",
    "1"
   ],
+  "2": [
+   "2",
+   "2"
+  ],
   "3": [
    "3",
    "3"
+  ],
+  "4": [
+   "4",
+   "4"
   ],
   "5": [
    "5",
@@ -2221,6 +2229,10 @@
    "20 °C and 760 hPa",
    "20 °C y 760 hPa"
   ],
+  "20% a 30%": [
+   "20% to 30%",
+   "20% al 30%"
+  ],
   "20.000 ft": [
    "20,000 ft",
    "20.000 ft"
@@ -3733,9 +3745,9 @@
    "An honest conversation with the examiner weighs more than any test.",
    "La conversación honesta con el examinador pesa más que cualquier prueba."
   ],
-  "A critério do examinador, depois da recuperação da força e da respiração [confirmar na referência]": [
-   "At the examiner's discretion, after recovery of strength and breathing [confirm in the reference]",
-   "A criterio del examinador, después de la recuperación de la fuerza y de la respiración [confirmar en la referencia]"
+  "A critério do examinador, depois da recuperação da força e da respiração": [
+   "At the examiner's discretion, after recovery of strength and breathing",
+   "A criterio del examinador, después de la recuperación de la fuerza y de la respiración"
   ],
   "A curva A pesa as frequências como o ouvido as percebe; a NR-15 manda medir em dB(A), perto do ouvido.": [
    "The A curve weights frequencies the way the ear perceives them; NR-15 requires measuring in dB(A), close to the ear.",
@@ -4872,6 +4884,10 @@
   "APTIDÃO": [
    "FITNESS",
    "APTITUD"
+  ],
+  "AQUECIMENTO": [
+   "HEATING",
+   "CALEFACCIÓN"
   ],
   "AR RETIDO NO INTESTINO": [
    "AIR TRAPPED IN THE INTESTINE",
@@ -6601,6 +6617,10 @@
    "Coumarin oral anticoagulation",
    "Anticoagulación oral cumarínica"
   ],
+  "Anticoagulação é avaliada no sistema do sangue (Veja M2V11).": [
+   "Anticoagulation is assessed in the blood system (See M2V11).",
+   "La anticoagulación se evalúa en el sistema de la sangre (Ver M2V11)."
+  ],
   "Anticonvulsivante preventivo": [
    "Preventive anticonvulsant",
    "Anticonvulsivo preventivo"
@@ -6981,13 +7001,17 @@
    "After 60 days with glucose above 69 and below 140 mg/dL; maximum validity of 6 months, in Class 2 for pilots only",
    "Tras 60 días con la glucemia por encima de 69 y por debajo de 140 mg/dL; validez máxima de 6 meses, en la 2.ª clase solo para pilotos"
   ],
-  "Após ablação ou cardioversão: liberar quando estável [confirmar na referência o prazo do passageiro].": [
-   "After ablation or cardioversion: clear when stable [confirm in the reference the passenger's waiting period].",
-   "Después de ablación o cardioversión: liberar cuando esté estable [confirmar en la referencia el plazo del pasajero]."
+  "Após ablação ou cardioversão: liberar quando estável.": [
+   "After ablation or cardioversion: clear when stable.",
+   "Después de ablación o cardioversión: liberar cuando esté estable."
   ],
   "Após ablação: no mínimo 3 meses e reestudo eletrofisiológico sem a via": [
    "After ablation: at least 3 months and an electrophysiology restudy without the pathway",
    "Tras la ablación: al menos 3 meses y reestudio electrofisiológico sin la vía"
+  ],
+  "Após cirurgia por pneumotórax, FAA em geral 3 meses.": [
+   "After surgery for pneumothorax, FAA usually 3 months.",
+   "Tras cirugía por neumotórax, FAA en general 3 meses."
   ],
   "Após laparoscopia, evita-se voar por cerca de 24 horas, pelo gás que sobrou no abdome; após cirurgia abdominal aberta, por 10 dias.": [
    "After laparoscopy, flying is avoided for about 24 hours, because of gas left in the abdomen; after open abdominal surgery, for 10 days.",
@@ -7921,9 +7945,9 @@
    "Assess clinical recovery and complications before boarding",
    "Evaluar la recuperación clínica y las complicaciones antes del embarque"
   ],
-  "Avaliar rins, cérebro e lesões de tecido; prazo conforme a recuperação [confirmar na referência].": [
-   "Assess kidneys, brain and tissue injury; interval depends on recovery [confirm in the reference].",
-   "Evaluar riñones, cerebro y lesiones de tejido; plazo según la recuperación [confirmar en la referencia]."
+  "Avaliar rins, cérebro e lesões de tecido; prazo conforme a recuperação.": [
+   "Assess kidneys, brain and tissue injury; interval depends on recovery.",
+   "Evaluar riñones, cerebro y lesiones de tejido; plazo según la recuperación."
   ],
   "Avaliar risco infeccioso, desempenho e protocolo operacional.": [
    "Assess infectious risk, performance and operational protocol.",
@@ -8917,9 +8941,9 @@
    "CDC Yellow Book: live vaccine may be contraindicated in severe immunosuppression; check destination and alternatives.",
    "Libro amarillo de los CDC: la vacuna viva puede estar contraindicada en casos de inmunosupresión grave; consultar destino y alternativas."
   ],
-  "CDC: adiar com hemoglobina < 8,5 g/dL, salvo anemia crônica estável; prazo após transfusão: [confirmar na referência].": [
-   "CDC: postpone with haemoglobin < 8.5 g/dL, except stable chronic anaemia; interval after transfusion: [confirm in the reference].",
-   "CDC: aplazar con hemoglobina < 8,5 g/dL, salvo anemia crónica estable; plazo tras transfusión: [confirmar en la referencia]."
+  "CDC: adiar com hemoglobina < 8,5 g/dL, salvo anemia crônica estável.": [
+   "CDC: postpone with haemoglobin < 8.5 g/dL, except stable chronic anaemia.",
+   "CDC: aplazar con hemoglobina < 8,5 g/dL, salvo anemia crónica estable."
   ],
   "CDC: em geral adiar, salvo crônica estável avaliada: com tão pouca hemoglobina, a cabine deixa o oxigênio dos tecidos baixo demais": [
    "CDC: usually postpone, except assessed stable chronic anaemia: with so little haemoglobin, the cabin leaves tissue oxygen too low",
@@ -11825,9 +11849,9 @@
    "As the surgeon advises: the laser leaves no gas or open wound",
    "Según el cirujano: el láser no deja gas ni herida abierta"
   ],
-  "Conforme o cirurgião: o pescoço operado pode sangrar ou inchar [confirmar na referência]": [
-   "As the surgeon advises: the operated neck can bleed or swell [confirm in the reference]",
-   "Según el cirujano: el cuello operado puede sangrar o hincharse [confirmar en la referencia]"
+  "Conforme o cirurgião: o pescoço operado pode sangrar ou inchar": [
+   "As the surgeon advises: the operated neck can bleed or swell",
+   "Según el cirujano: el cuello operado puede sangrar o hincharse"
   ],
   "Conforme o comportamento: o que pesa é a segurança a bordo": [
    "Depending on behaviour: what matters is safety on board",
@@ -14225,6 +14249,10 @@
    "From engine bleed air",
    "Del aire de sangrado del motor"
   ],
+  "Do escapamento ao sangue": [
+   "From the exhaust to the blood",
+   "Del escape a la sangre"
+  ],
   "Do labirinto": [
    "From the inner ear",
    "Del laberinto"
@@ -14989,6 +15017,10 @@
    "NON-LINEAR SCALE",
    "ESCALA NO LINEAL"
   ],
+  "ESCAPAMENTO": [
+   "EXHAUST",
+   "ESCAPE"
+  ],
   "ESPAÇO": [
    "SPACE",
    "ESPACIO"
@@ -15033,9 +15065,9 @@
    "Effect that matters in flight",
    "Efecto que importa en el vuelo"
   ],
-  "Efeitos anticolinérgicos (visão borrada, sono); sem prazo próprio na lista da FAA [confirmar na referência].": [
-   "Anticholinergic effects (blurred vision, drowsiness); no specific wait time on the FAA list [confirmar na referência].",
-   "Efectos anticolinérgicos (visión borrosa, sueño); sin plazo propio en la lista de la FAA [confirmar na referência]."
+  "Efeitos anticolinérgicos (visão borrada, sono); sem prazo próprio na lista da FAA.": [
+   "Anticholinergic effects (blurred vision, drowsiness); no specific wait time on the FAA list.",
+   "Efectos anticolinérgicos (visión borrosa, sueño); sin plazo propio en la lista de la FAA."
   ],
   "Efeitos aparecem nas primeiras semanas": [
    "Side effects appear in the first weeks",
@@ -16105,9 +16137,9 @@
    "Wait for the air to be absorbed; neurosurgeon's clearance",
    "Esperar a que se absorba el aire; autorización del neurocirujano"
   ],
-  "Esperar a estabilidade com o anticoagulante e a decisão da autoridade (Veja M2V2 - VII) [confirmar na referência]": [
-   "Wait for stability on anticoagulation and the authority's decision (See M2V2 - VII) [confirm in the reference]",
-   "Esperar la estabilidad con el anticoagulante y la decisión de la autoridad (Ver M2V2 - VII) [confirmar en la referencia]"
+  "Esperar a estabilidade com o anticoagulante e a decisão da autoridade (Veja M2V2 - VII)": [
+   "Wait for stability on anticoagulation and the authority's decision (See M2V2 - VII)",
+   "Esperar la estabilidad con el anticoagulante y la decisión de la autoridad (Ver M2V2 - VII)"
   ],
   "Esperar a reabsorção do ar: 10 a 14 dias": [
    "Wait for the air to be reabsorbed: 10 to 14 days",
@@ -16121,9 +16153,9 @@
    "Wait at least 24 h: tissues hold more nitrogen",
    "Esperar al menos 24 h: los tejidos guardan más nitrógeno"
   ],
-  "Esperar o mesmo prazo e a causa da biópsia estar esclarecida [confirmar na referência]": [
-   "Wait the same interval and for the reason for the biopsy to be clarified [confirm in the reference]",
-   "Esperar el mismo plazo y que la causa de la biopsia esté aclarada [confirmar en la referencia]"
+  "Esperar o mesmo prazo e a causa da biópsia estar esclarecida": [
+   "Wait the same interval and for the reason for the biopsy to be clarified",
+   "Esperar el mismo plazo y que la causa de la biopsia esté aclarada"
   ],
   "Esperar o pouso sem fazer nada": [
    "Wait for landing without doing anything",
@@ -16240,6 +16272,10 @@
   "Esquema qualitativo: a pressão parcial do O₂ cai na altitude de cabine. A quantidade de hemácias não cai automaticamente.": [
    "Qualitative scheme: the partial pressure of O₂ drops at cabin altitude. The number of red blood cells does not automatically drop.",
    "Esquema cualitativo: la presión parcial de O₂ cae a la altura de la cabina. La cantidad de glóbulos rojos no disminuye automáticamente."
+  ],
+  "Esquema, sem escala: o caminho do monóxido até a hemoglobina.": [
+   "Diagram, not to scale: the path of carbon monoxide to hemoglobin.",
+   "Esquema, sin escala: el camino del monóxido hasta la hemoglobina."
   ],
   "Esquema: as etapas entre o afastamento e a volta ao voo, na ordem.": [
    "Diagram: the stages between absence and return to flying, in order.",
@@ -18121,9 +18157,9 @@
    "Wounds",
    "Heridas"
   ],
-  "Ferramenta de apoio à decisão. Não substitui a consulta médica, o médico examinador credenciado, a autoridade aeronáutica (ANAC, FAA) nem as regras da companhia aérea. O formulário cresce a cada voo da Missão Sistemas. Prazos sem fonte consultada aparecem como [confirmar na referência].": [
-   "Decision-support tool. It does not replace a medical consultation, the designated medical examiner, the aviation authority (ANAC, FAA) or the airline's rules. The form grows with each flight of the Systems Mission. Periods without a consulted source appear as [confirm in the reference].",
-   "Herramienta de apoyo a la decisión. No sustituye la consulta médica, al médico examinador acreditado, a la autoridad aeronáutica (ANAC, FAA) ni las reglas de la aerolínea. El formulario crece con cada vuelo de la Misión Sistemas. Los plazos sin fuente consultada aparecen como [confirmar en la referencia]."
+  "Ferramenta de apoio à decisão. Não substitui a consulta médica, o médico examinador credenciado, a autoridade aeronáutica (ANAC, FAA) nem as regras da companhia aérea. O formulário cresce a cada voo da Missão Sistemas.": [
+   "Decision-support tool. It does not replace a medical consultation, the designated medical examiner, the aviation authority (ANAC, FAA) or the airline's rules. The form grows with each flight of the Systems Mission.",
+   "Herramienta de apoyo a la decisión. No sustituye la consulta médica, al médico examinador acreditado, a la autoridad aeronáutica (ANAC, FAA) ni las reglas de la aerolínea. El formulario crece con cada vuelo de la Misión Sistemas."
   ],
   "Ferro e hemoglobina conferida antes do voo": [
    "Iron and haemoglobin checked before the flight",
@@ -18828,6 +18864,10 @@
   "Gônadas e descendência": [
    "Gonads and offspring",
    "Gónadas y descendencia"
+  ],
+  "HEMOGLOBINA": [
+   "HEMOGLOBIN",
+   "HEMOGLOBINA"
   ],
   "HIC (lesão da cabeça)": [
    "HIC (head injury)",
@@ -21693,6 +21733,10 @@
    "Clearance to fly · alcohol and substances",
    "Liberación para el vuelo · alcohol y sustancias"
   ],
+  "Liberação pelo médico examinador.": [
+   "Clearance by the medical examiner.",
+   "Liberación por el médico examinador."
+  ],
   "Licença": [
    "Licence",
    "Licencia"
@@ -22040,6 +22084,10 @@
   "MELATONINA": [
    "MELATONIN",
    "MELATONINA"
+  ],
+  "MENOS OXIGÊNIO NOS TECIDOS": [
+   "LESS OXYGEN IN THE TISSUES",
+   "MENOS OXÍGENO EN LOS TEJIDOS"
   ],
   "METADE DA PRESSÃO": [
    "HALF THE PRESSURE",
@@ -23997,9 +24045,9 @@
    "Level the wings first, then correct the altitude",
    "Nivelar las alas primero, después corregir la altitud"
   ],
-  "No **Brasil**, o RBAC 61 traz os limites para o **transporte aéreo público internacional**: o piloto em comando até os **60 anos**, salvo com segundo piloto mais jovem, e nenhuma função nesse transporte depois dos **65**. O texto que exige o segundo piloto abaixo dos 60 é anterior à mudança da ICAO e deve ser conferido na emenda em vigor [confirmar na referência]. Na Europa, as regras seguem a ICAO, e um estudo europeu de 2019 recomendou manter os 65 anos com **medidas adicionais** de saúde.": [
-   "In **Brazil**, RBAC 61 sets the limits for **international public air transport**: the pilot in command until **60**, unless with a younger second pilot, and no duty in that transport after **65**. The text requiring the second pilot to be under 60 predates the ICAO change and must be checked in the amendment in force [check against the reference]. In Europe, the rules follow ICAO, and a 2019 European study recommended keeping age 65 with **additional health measures**.",
-   "En **Brasil**, el RBAC 61 trae los límites para el **transporte aéreo público internacional**: el piloto al mando hasta los **60 años**, salvo con segundo piloto más joven, y ninguna función en ese transporte después de los **65**. El texto que exige el segundo piloto menor de 60 es anterior al cambio de la OACI y debe comprobarse en la enmienda vigente [confirmar en la referencia]. En Europa, las reglas siguen a la OACI, y un estudio europeo de 2019 recomendó mantener los 65 años con **medidas adicionales** de salud."
+  "No **Brasil**, o RBAC 61 traz os limites para o **transporte aéreo público internacional**: o piloto em comando até os **60 anos**, salvo com segundo piloto mais jovem, e nenhuma função nesse transporte depois dos **65**. Na Europa, as regras seguem a ICAO, e um estudo europeu de 2019 recomendou manter os 65 anos com **medidas adicionais** de saúde.": [
+   "In **Brazil**, RBAC 61 sets the limits for **international public air transport**: the pilot in command until **60**, unless with a younger second pilot, and no duty in that transport after **65**. In Europe, the rules follow ICAO, and a 2019 European study recommended keeping age 65 with **additional health measures**.",
+   "En **Brasil**, el RBAC 61 trae los límites para el **transporte aéreo público internacional**: el piloto al mando hasta los **60 años**, salvo con segundo piloto más joven, y ninguna función en ese transporte después de los **65**. En Europa, las reglas siguen a la OACI, y un estudio europeo de 2019 recomendó mantener los 65 años con **medidas adicionales** de salud."
   ],
   "No **Parkinson**, os sinais são tremor em repouso, **rigidez** e **lentidão** dos movimentos, com progressão lenta em uns e rápida em outros. Na **esclerose múltipla**, o sistema imune ataca a mielina do cérebro e da medula, em geral entre os **20 e 40 anos**, com surtos e melhoras: formigamento, fraqueza, alteração da visão, fala ou bexiga. Na **demência**, o problema é a memória e o julgamento; na **amnésia global transitória**, a pessoa perde a memória recente por até **24 horas** e depois volta ao normal.": [
    "In **Parkinson's**, the signs are resting tremor, **stiffness** and **slowness** of movement, progressing slowly in some and quickly in others. In **multiple sclerosis**, the immune system attacks the myelin of the brain and spinal cord, usually between **20 and 40 years** of age, with relapses and remissions: tingling, weakness, changes in vision, speech or bladder. In **dementia**, the problem is memory and judgment; in **transient global amnesia**, the person loses recent memory for up to **24 hours** and then returns to normal.",
@@ -25569,9 +25617,9 @@
    "Do not use in flight",
    "No usar en vuelo"
   ],
-  "Não usar em voo sem o examinador, porque dá sono e borra a visão de perto [confirmar na referência]": [
-   "Do not use in flight without the examiner, because it causes sleepiness and blurs near vision [confirm in the reference]",
-   "No usar en vuelo sin el examinador, porque da sueño y empaña la visión de cerca [confirmar en la referencia]"
+  "Não usar em voo sem o examinador, porque dá sono e borra a visão de perto": [
+   "Do not use in flight without the examiner, because it causes sleepiness and blurs near vision",
+   "No usar en vuelo sin el examinador, porque da sueño y empaña la visión de cerca"
   ],
   "Não usar para esconder febre e trabalhar, porque a doença continua": [
    "Do not use to hide fever and keep working, because the disease continues",
@@ -26717,6 +26765,10 @@
    "67.79(b)(1) requires at least 1 year, with satisfactory tests; the result is fit with restriction, with validity of up to 6 months.",
    "El 67.79(b)(1) exige al menos 1 año, con exámenes satisfactorios; el resultado es apto con restricción, con validez de hasta 6 meses."
   ],
+  "O AR DO AQUECIMENTO": [
+   "THE HEATING AIR",
+   "EL AIRE DE CALEFACCIÓN"
+  ],
   "O Anexo 1 fixa a **validade** contada da data do exame: **12 meses** para as licenças comercial, de tripulação múltipla e de linha aérea, **60 meses** para o piloto privado, de planador e de balão e **48 meses** para o controlador e o piloto remoto. Com a idade, os prazos encurtam: **6 meses** a partir dos 40 para o piloto comercial que leva passageiros sozinho e a partir dos 60 no transporte comercial, e **24 meses** para o privado, o controlador e o piloto remoto depois dos 40. O Anexo 1 também pede que os Estados apliquem **gestão da segurança** ao exame médico, analisando os casos de incapacitação em voo, e promovam a saúde de quem voa.": [
    "Annex 1 sets **validity** counted from the date of the examination: **12 months** for commercial, multi-crew and airline transport licences, **60 months** for private, glider and balloon pilots and **48 months** for controllers and remote pilots. With age, the periods shorten: **6 months** from 40 for commercial pilots carrying passengers alone and from 60 in commercial air transport, and **24 months** for private pilots, controllers and remote pilots after 40. Annex 1 also asks States to apply **safety management** to medical assessment, analysing in-flight incapacitation events, and to promote the health of those who fly.",
    "El Anexo 1 fija la **validez** contada desde la fecha del examen: **12 meses** para las licencias comercial, de tripulación múltiple y de transporte de línea aérea, **60 meses** para el piloto privado, de planeador y de globo y **48 meses** para el controlador y el piloto a distancia. Con la edad, los plazos se acortan: **6 meses** a partir de los 40 para el piloto comercial que lleva pasajeros solo y a partir de los 60 en el transporte comercial, y **24 meses** para el privado, el controlador y el piloto a distancia después de los 40. El Anexo 1 también pide que los Estados apliquen **gestión de la seguridad** a la evaluación médica, analizando los casos de incapacitación en vuelo, y promuevan la salud de quien vuela."
@@ -26732,6 +26784,10 @@
   "O CDC recomenda adiar viagem após crise recente; converse com seu médico.": [
    "CDC recommends postponing travel after recent crisis; talk to your doctor.",
    "CDC recomienda posponer viajes tras crisis reciente; habla con tu médico."
+  ],
+  "O CO OCUPA A HEMOGLOBINA:": [
+   "CO OCCUPIES HEMOGLOBIN:",
+   "EL CO OCUPA LA HEMOGLOBINA:"
   ],
   "O CPAP vai na bagagem de mão e deve ser usado nos voos noturnos; álcool e calmantes ficam de fora por 12 horas.": [
    "The CPAP goes in hand luggage and should be used on overnight flights; alcohol and sedatives are avoided for 12 hours.",
@@ -26756,6 +26812,14 @@
   "O G-LOC tira o piloto do comando. Em 500 pessoas na centrífuga, a **inconsciência** durou em média **12 segundos**, e a **confusão** depois dela, mais **16**: cerca de **28 segundos** sem controle do avião. Na volta, podem surgir **abalos musculares** de alguns segundos e **sonhos curtos**. A Força Aérea dos EUA atribui ao G-LOC cerca de **20 mortes**. Antes do apagão completo há o **A-LOC**, a quase perda de consciência, com o piloto confuso e lento, mas acordado.": [
    "G-LOC takes the pilot out of command. In 500 people in the centrifuge, **unconsciousness** lasted on average **12 seconds**, and the **confusion** after it, another **16**: about **28 seconds** without control of the airplane. On recovery, **muscle jerks** lasting a few seconds and **short dreams** may appear. The US Air Force attributes about **20 deaths** to G-LOC. Before the complete blackout there is **A-LOC**, almost loss of consciousness, with the pilot confused and slow, but awake.",
    "El G-LOC saca al piloto del mando. En 500 personas en la centrífuga, la **inconsciencia** duró en promedio **12 segundos**, y la **confusión** posterior, otros **16**: cerca de **28 segundos** sin control del avión. Al volver, pueden surgir **sacudidas musculares** de algunos segundos y **sueños cortos**. La Fuerza Aérea de los EE. UU. atribuye al G-LOC cerca de **20 muertes**. Antes del apagón completo está el **A-LOC**, la casi pérdida de conciencia, con el piloto confuso y lento, pero despierto."
+  ],
+  "O GÁS CHEGA À CABINE:": [
+   "THE GAS REACHES THE CABIN:",
+   "EL GAS LLEGA A LA CABINA:"
+  ],
+  "O GÁS ESCAPA SEM CHEIRO": [
+   "THE GAS ESCAPES WITHOUT ODOR",
+   "EL GAS SALE SIN OLOR"
   ],
   "O HIV não se transmite pelo ar da cabine. A avaliação clínica deve respeitar a privacidade.": [
    "HIV is not transmitted through cabin air. Clinical assessment must respect privacy.",
@@ -33337,17 +33401,17 @@
    "Waiting time",
    "Plazo"
   ],
-  "Prazo após cirurgia das vias aéreas: conforme o cirurgião [confirmar na referência]; cirurgia bariátrica: cerca de 10 dias (UK CAA, Veja M2V10).": [
-   "Interval after airway surgery: as advised by the surgeon [confirm in the reference]; bariatric surgery: about 10 days (UK CAA, See M2V10).",
-   "Plazo tras cirugía de las vías aéreas: según el cirujano [confirmar en la referencia]; cirugía bariátrica: cerca de 10 días (UK CAA, Ver M2V10)."
+  "Prazo após cirurgia das vias aéreas: conforme o cirurgião; cirurgia bariátrica: cerca de 10 dias (UK CAA, Veja M2V10).": [
+   "Interval after airway surgery: as advised by the surgeon; bariatric surgery: about 10 days (UK CAA, See M2V10).",
+   "Plazo tras cirugía de las vías aéreas: según el cirujano; cirugía bariátrica: cerca de 10 días (UK CAA, Ver M2V10)."
   ],
   "Prazo conforme a recuperação e o cirurgião: o pescoço operado pode sangrar ou inchar": [
    "Interval depends on recovery and the surgeon: the operated neck can bleed or swell",
    "Plazo según la recuperación y el cirujano: el cuello operado puede sangrar o hincharse"
   ],
-  "Prazo conforme o procedimento [confirmar na referência].": [
-   "Interval depends on the procedure [confirm in the reference].",
-   "Plazo según el procedimiento [confirmar en la referencia]."
+  "Prazo conforme o procedimento.": [
+   "Interval depends on the procedure.",
+   "Plazo según el procedimiento."
   ],
   "Prazo cumprido, se não houver dor, inchaço nem sangramento.": [
    "Waiting time met, if there is no pain, swelling or bleeding.",
@@ -33377,10 +33441,6 @@
    "Waiting period reviewed by the doctor and ground trial repeated after 45",
    "Plazo de espera revisado por el médico y prueba repetida en tierra después de los 45 años"
   ],
-  "Prazo de retorno do tripulante após cirurgia torácica: [confirmar na referência]; após cirurgia por pneumotórax, FAA em geral 3 meses.": [
-   "Crew return period after thoracic surgery: [confirm in the reference]; after surgery for pneumothorax, FAA usually 3 months.",
-   "Plazo de regreso del tripulante tras cirugía torácica: [confirmar en la referencia]; tras cirugía por neumotórax, FAA en general 3 meses."
-  ],
   "Prazo do cirurgião (sem número nas fontes consultadas); meia de compressão 15 a 30 mmHg no risco alto (CDC).": [
    "Surgeon's interval (no number in the sources consulted); compression stockings 15 to 30 mmHg at high risk (CDC).",
    "Plazo del cirujano (sin número en las fuentes consultadas); media de compresión de 15 a 30 mmHg en el riesgo alto (CDC)."
@@ -33409,13 +33469,9 @@
    "The ophthalmologist's interval: with no gas in the eye, the cabin poses no risk to the cornea",
    "Plazo del oftalmólogo: sin gas en el ojo, la cabina no ofrece riesgo a la córnea"
   ],
-  "Prazo do passageiro: conforme a recuperação e o cirurgião [confirmar na referência].": [
-   "Passenger interval: depends on recovery and the surgeon [confirm in the reference].",
-   "Plazo del pasajero: según la recuperación y el cirujano [confirmar en la referencia]."
-  ],
-  "Prazo do tripulante: [confirmar na referência].": [
-   "Crew waiting period: [confirm in the reference].",
-   "Plazo del tripulante: [confirmar en la referencia]."
+  "Prazo do passageiro: conforme a recuperação e o cirurgião.": [
+   "Passenger interval: depends on recovery and the surgeon.",
+   "Plazo del pasajero: según la recuperación y el cirujano."
   ],
   "Prazo menor, conforme o médico: não há corte na parede do abdome": [
    "Shorter interval, as the doctor advises: there is no cut in the abdominal wall",
@@ -33429,9 +33485,9 @@
    "Time limit for flying",
    "Plazo para volar"
   ],
-  "Prazo pós-operatório: conforme o cirurgião [confirmar na referência].": [
-   "Post-operative interval: as advised by the surgeon [confirm in the reference].",
-   "Plazo posoperatorio: según el cirujano [confirmar en la referencia]."
+  "Prazo pós-operatório: conforme o cirurgião.": [
+   "Post-operative interval: as advised by the surgeon.",
+   "Plazo posoperatorio: según el cirujano."
   ],
   "Prazos": [
    "Waiting times",
@@ -35469,6 +35525,10 @@
    "RE-FAMILIARISATION BEFORE THE ROSTER",
    "READAPTACIÓN ANTES DE LA PROGRAMACIÓN"
   ],
+  "RECEBE O MONÓXIDO": [
+   "PICKS UP CARBON MONOXIDE",
+   "RECIBE EL MONÓXIDO"
+  ],
   "RECUPERADA PELO RBAC 67": [
    "RESTORED UNDER RBAC 67",
    "RECUPERADA SEGÚN EL RBAC 67"
@@ -35997,9 +36057,9 @@
    "United Kingdom: grounded for at least 2 weeks after starting or increasing; FAA: after a stable final dose, without side effects",
    "Reino Unido: en tierra al menos 2 semanas tras el inicio o el aumento; FAA: tras dosis final estable, sin efectos"
   ],
-  "Reino Unido: não desqualificam sem efeito colateral, porque o risco raro é a queda das defesas do sangue; FAA [confirmar na referência]": [
-   "United Kingdom: do not disqualify without side effects, because the rare risk is a drop in white blood cells; FAA [confirm in the reference]",
-   "Reino Unido: no descalifican sin efecto colateral, porque el riesgo raro es la caída de las defensas de la sangre; FAA [confirmar en la referencia]"
+  "Reino Unido: não desqualificam sem efeito colateral, porque o risco raro é a queda das defesas do sangue": [
+   "United Kingdom: do not disqualify without side effects, because the rare risk is a drop in white blood cells",
+   "Reino Unido: no descalifican sin efecto colateral, porque el riesgo raro es la caída de las defensas de la sangre"
   ],
   "Reino Unido: prazo bem menor, porque a recuperação é mais rápida": [
    "United Kingdom: much shorter interval, because recovery is quicker",
@@ -37121,25 +37181,21 @@
    "Return after recovery and occupational criteria.",
    "Regreso tras la recuperación y criterios ocupacionales."
   ],
-  "Retorno a critério do examinador [confirmar na referência].": [
-   "Return at the examiner's discretion [confirm in the reference].",
-   "Regreso a criterio del examinador [confirmar en la referencia]."
+  "Retorno a critério do examinador.": [
+   "Return at the examiner's discretion.",
+   "Regreso a criterio del examinador."
   ],
   "Retorno ao voo só com função recuperada e concordância do examinador.": [
    "Return to flying only with recovered function and examiner agreement.",
    "Retorno al vuelo solo con función recuperada y acuerdo del examinador."
   ],
-  "Retorno após avaliação clínica e exames normais [confirmar na referência].": [
-   "Return after clinical assessment and normal tests [confirm in the reference].",
-   "Retorno tras evaluación clínica y exámenes normales [confirmar en la referencia]."
+  "Retorno após avaliação clínica e exames normais.": [
+   "Return after clinical assessment and normal tests.",
+   "Retorno tras evaluación clínica y exámenes normales."
   ],
   "Retorno com função recuperada e concordância do examinador; manter condicionamento.": [
    "Return with recovered function and examiner agreement; maintain conditioning.",
    "Retorno con función recuperada y acuerdo del examinador; mantener el acondicionamiento."
-  ],
-  "Retorno do tripulante após TEV: [confirmar na referência]; anticoagulação é avaliada no sistema do sangue (Veja M2V11).": [
-   "Crew return after VTE: [confirm in the reference]; anticoagulation is assessed in the blood system (See M2V11).",
-   "Regreso del tripulante tras TEV: [confirmar en la referencia]; la anticoagulación se evalúa en el sistema de la sangre (Ver M2V11)."
   ],
   "Retorno pelo programa (HIMS ou PPSP), porque testes e acompanhamento evitam a recaída escondida": [
    "Return through the programme (HIMS or PPSP), because testing and follow-up prevent hidden relapse",
@@ -37472,6 +37528,10 @@
   "Rádio e alarmes mal ouvidos": [
    "Radio and alarms poorly heard",
    "Radio y alarmas mal oídas"
+  ],
+  "SANGUE": [
+   "BLOOD",
+   "SANGRE"
   ],
   "SANGUE DESCE PARA AS PERNAS": [
    "BLOOD MOVES DOWN TO THE LEGS",
@@ -39641,6 +39701,10 @@
    "ONLY 10% OF THE FLIGHT IS A CRITICAL PHASE",
    "SOLO EL 10% DEL VUELO ES FASE CRÍTICA"
   ],
+  "SÓ O DETECTOR AVISA": [
+   "ONLY THE DETECTOR WARNS",
+   "SOLO AVISA EL DETECTOR"
+  ],
   "São 1.500 horas como piloto de avião, com 21 anos e CMA de 1ª classe; no Brasil, o RBAC 61 pede o mesmo total.": [
    "It is 1,500 hours as an aeroplane pilot, at age 21 and with a Class 1 medical; in Brazil, RBAC 61 requires the same total.",
    "Son 1.500 horas como piloto de avión, con 21 años y certificado de 1.ª clase; en Brasil, el RBAC 61 pide el mismo total."
@@ -40000,6 +40064,10 @@
   "TRACEJADA: O QUE O CORPO SENTE": [
    "DASHED: WHAT THE BODY FEELS",
    "PUNTEADA: LO QUE SIENTE EL CUERPO"
+  ],
+  "TRINCA NO ESCAPAMENTO:": [
+   "CRACK IN THE EXHAUST:",
+   "GRIETA EN EL ESCAPE:"
   ],
   "TRIPULANTE": [
    "CREW",
@@ -40853,9 +40921,9 @@
    "Treatment over several sessions",
    "Tratamiento en varias sesiones"
   ],
-  "Tratamento sob anestesia; prazo de viagem: [confirmar na referência].": [
-   "Treatment under anaesthesia; travel interval: [confirm in the reference].",
-   "Tratamiento bajo anestesia; plazo de viaje: [confirmar en la referencia]."
+  "Tratamento sob anestesia.": [
+   "Treatment under anaesthesia.",
+   "Tratamiento bajo anestesia."
   ],
   "Tratar a anemia; na suspeita de monóxido, oxigênio e pouso": [
    "Treat anemia; if carbon monoxide is suspected, oxygen and landing",
@@ -42437,9 +42505,9 @@
    "Flying with uncontrolled blood pressure means flying with a higher chance of **stroke** and **heart attack** far from care. Crew members who know their condition has worsened and keep flying break the rule: under RBAC 67, they must **inform ANAC or the examiner** and stop exercising the licence until a new assessment, and the FAA prohibits acting with a condition that prevents meeting the certificate requirements.",
    "Volar con la presión descontrolada es volar con más probabilidad de **ACV** e **infarto** lejos de la atención. El tripulante que sabe del empeoramiento y sigue volando incumple la regla: según el RBAC 67, debe **informar a la ANAC o al examinador** y dejar de ejercer la licencia hasta un nuevo juicio, y la FAA prohíbe actuar con una condición que impida cumplir los requisitos del certificado."
   ],
-  "Voar com a tireoide descontrolada é somar cansaço ou taquicardia ao voo. Para o tripulante, esconder o diagnóstico ou a troca de remédio é infração e pode invalidar o certificado. O prazo de afastamento depois da cirurgia da tireoide é definido pela recuperação e pelo cirurgião [confirmar na referência].": [
-   "Flying with an uncontrolled thyroid adds tiredness or tachycardia to the flight. For crew, hiding the diagnosis or a medicine change is a violation and may invalidate the certificate. The grounding period after thyroid surgery is set by recovery and by the surgeon [confirm in the reference].",
-   "Volar con la tiroides descontrolada es sumar cansancio o taquicardia al vuelo. Para el tripulante, ocultar el diagnóstico o el cambio de medicamento es una infracción y puede invalidar el certificado. El plazo de apartamiento después de la cirugía de tiroides lo definen la recuperación y el cirujano [confirmar en la referencia]."
+  "Voar com a tireoide descontrolada é somar cansaço ou taquicardia ao voo. Para o tripulante, esconder o diagnóstico ou a troca de remédio é infração e pode invalidar o certificado. O prazo de afastamento depois da cirurgia da tireoide é definido pela recuperação e pelo cirurgião.": [
+   "Flying with an uncontrolled thyroid adds tiredness or tachycardia to the flight. For crew, hiding the diagnosis or a medicine change is a violation and may invalidate the certificate. The grounding period after thyroid surgery is set by recovery and by the surgeon.",
+   "Volar con la tiroides descontrolada es sumar cansancio o taquicardia al vuelo. Para el tripulante, ocultar el diagnóstico o el cambio de medicamento es una infracción y puede invalidar el certificado. El plazo de apartamiento después de la cirugía de tiroides lo definen la recuperación y el cirujano."
   ],
   "Voar com apneia sem tratamento é voar com **sono acumulado**, que derruba a atenção e os reflexos. O tripulante que sabe da condição e voa sem tratá-la descumpre a regra que proíbe atuar com condição médica que o impeça de cumprir os requisitos do certificado (FAA) ou com a aptidão diminuída (ANAC).": [
    "Flying with untreated apnea means flying with **accumulated sleep debt**, which lowers attention and reflexes. A crew member who knows about the condition and flies without treating it breaks the rule that forbids operating with a medical condition that prevents meeting the certificate requirements (FAA) or with decreased fitness (ANAC).",
@@ -43036,10 +43104,6 @@
   "Zumbido ou ouvido abafado depois do voo": [
    "Ringing or muffled ear after the flight",
    "Zumbido u oído apagado después del vuelo"
-  ],
-  "[confirmar na referência]": [
-   "[confirm in the reference]",
-   "[confirmar en la referencia]"
   ],
   "até 8,8 µSv por voo": [
    "up to 8.8 µSv per flight",

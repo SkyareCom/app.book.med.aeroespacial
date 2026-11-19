@@ -388,7 +388,7 @@ export const liberacaoSangue: PerguntaLiberacao[] = [
         passageiro: {
           nivel: "avaliar",
           leigo: "Confirme com o médico se a hemoglobina e os sintomas permitem voar.",
-          medico: "CDC: adiar com hemoglobina < 8,5 g/dL, salvo anemia crônica estável; prazo após transfusão: [confirmar na referência].",
+          medico: "CDC: adiar com hemoglobina < 8,5 g/dL, salvo anemia crônica estável.",
           topico: "11.2"
         },
         tripulante: {

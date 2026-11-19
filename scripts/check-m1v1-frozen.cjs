@@ -10,6 +10,8 @@
 // M1V4 - I e II, M1V5 - III, M1V6 - II e IV, M1V7 - II, M1V8 - I), comparadores "tipo de voo", perguntas novas na
 // liberação (mergulho), vídeos cortados para 8 s (m1v2-mascaras, m1v3-nevoa, m1v4-frio, m1v6-rotor); no M2V1, parágrafo também nos
 // tópicos V e IX; hashes refeitos.
+// 19/11/2026: autorizado pelo autor ("Autorizado"): retirada do marcador [confirmar na referência] dos textos visíveis
+//   (hipoxia.ts, liberacao/respiratorio.ts, m2v1-graficos.tsx); dado sem fonte confiável deixa de aparecer; hashes refeitos.
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -140,11 +142,11 @@ const ARQUIVOS = Object.freeze({
   //   tabelas de liberação, remédios e prevenção passaram a trazer decisão + motivo; hash novo.
   // 16/11/2026: autorizado pelo autor ("Autorizo"; pedido "Em todos os sistemas agregar informações sobre estímulos noradrenérgicos e beta-adrenérgicos, simpático ou parassimpático, locais do cérebro e do SNC que comandam cada sistema, enzimas e hormônios estimulados pela hipóxia, altitude e hipobarismo"): parágrafo, tabela "Comando nervoso e hormonal na altitude" e explorador no tópico de abertura; hash novo.
   // 18/11/2026: autorizado pelo autor ("Os dois ajustes"; pedido "As orientações de inserir informações sobre os estímulos nervosos parassimpáticos e simpáticos e enzimas, estímulos adrenérgicos"): receptores nomeados como adrenérgicos e colinérgicos e, onde fez sentido, bloco "Comando nervoso" (M1V4 e M1V7); hash novo.
-  'src/data/capitulos/hipoxia.ts': 'd72a0afa2c8e79e2',
+  'src/data/capitulos/hipoxia.ts': 'c81621cf9000bcc5',
   // 12/11/2026: autorizado pelo autor ("Autorizo todos"; pedido "Todos os topicos dos sistemas entram com formulários
   //   no card especial"): cinco perguntas novas na liberação, uma para cada tópico I a V, e a do mergulho ligada ao tópico IX; hash novo.
-  'src/data/liberacao/respiratorio.ts': 'c1cf63692c68f6f5',
-  'src/components/midia/m2v1-graficos.tsx': '62f392182d882e99',
+  'src/data/liberacao/respiratorio.ts': 'c92521e395aa5086',
+  'src/components/midia/m2v1-graficos.tsx': 'aa5cc0e11ca009b8',
   'assets/images/topicos/m2v1-6-bombinha.jpg': 'a92bf195fe28ee30',
   'assets/images/topicos/m2v1-6-espirometria.jpg': '6d40f50ca00797ad',
   'assets/images/topicos/m2v1-7-cpap-aviao.jpg': '9aec7eb88be3509e',
