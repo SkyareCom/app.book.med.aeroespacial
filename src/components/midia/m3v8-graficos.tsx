@@ -77,8 +77,8 @@ export function SinaisCabine() {
 const OZONIO: Ficha[] = [
   { nome: "Acima do FL 320", a: "0,25 ppm a qualquer momento", b: "É o teto de pico da norma americana de projeto" },
   { nome: "Acima do FL 270", a: "Média de 0,1 ppm em 3 horas", b: "Controla a exposição que se prolonga" },
-  { nome: "Com conversor", a: "Remoção de cerca de 85%", b: "A proteção depende do bom estado do catalisador" },
-  { nome: "Sem conversor", a: "Cabines com frequência acima de 50 ppb", b: "A rota e o plano de voo pesam mais" },
+  { nome: "Com conversor", a: "Pico médio de 4,7 ppb nos voos medidos", b: "A proteção depende do bom estado do catalisador" },
+  { nome: "Sem conversor", a: "Pico médio de 47 ppb; 8 de 46 voos passaram de 100 ppb", b: "A rota e o plano de voo pesam mais" },
   { nome: "Na pele e nas roupas", a: "Reações formam outros compostos", b: "A exposição não se resume ao ozônio medido" },
 ];
 
@@ -92,6 +92,8 @@ const FLUIDOS: Ficha[] = [
   { nome: "Querosene na pele", a: "Respingo e roupa encharcada", b: "Vermelhidão, dermatite e mais absorção", c: "Luvas adequadas, troca da roupa e lavagem" },
   { nome: "Querosene na boca", a: "Acidente ou sucção por mangueira", b: "Aspiração e inflamação do pulmão", c: "Nunca aspirar com a boca; sem provocar vômito" },
   { nome: "Fluido hidráulico", a: "Vazamento ou serviço no sistema", b: "Irritação de pele e olhos e possível alergia", c: "Óculos, luvas e 15 minutos de lavagem" },
+  { nome: "Gasolina com chumbo", a: "Fumos e partículas em motores a pistão", b: "Chumbo no sangue, pressão, rins e gestação", c: "Ventilação, higiene das mãos e avaliação do médico do trabalho" },
+  { nome: "Fluido de degelo", a: "Névoa e respingos na aplicação", b: "Irritação; estudos com propilenoglicol divergem", c: "Óculos, roupa de proteção e distância da névoa" },
   { nome: "Combustível e ruído", a: "Rampa e hangar no mesmo turno", b: "Audição", c: "Protetor auricular e audiometria" },
 ];
 
@@ -102,8 +104,8 @@ export function FluidosBordo() {
 // ---------------------------------------------------------------- Os métodos de desinsetização
 const METODOS: Ficha[] = [
   { nome: "Blocks away", a: "Tripulação aplica com passageiros a bordo, portas fechadas, antes da decolagem", b: "D-fenotrina a 2%, 35 g por 100 m³" },
-  { nome: "Pré-voo", a: "Aplicação antes do embarque, no máximo 1 hora antes de fechar as portas", b: "Permetrina a 2%" },
-  { nome: "Início da descida", a: "Nova aplicação quando o avião começa a descer", b: "Aerossol recomendado para a etapa" },
+  { nome: "Pré-voo", a: "Aplicação antes do embarque, no máximo 1 hora antes de fechar as portas", b: "Permetrina a 2%, 35 g por 100 m³" },
+  { nome: "Início da descida", a: "Nova aplicação quando o avião começa a descer", b: "D-fenotrina a 2%" },
   { nome: "Residual", a: "Superfícies internas tratadas sem passageiros, em intervalos de até 8 semanas", b: "Permetrina a 2%, fora das áreas de alimentos" },
 ];
 
