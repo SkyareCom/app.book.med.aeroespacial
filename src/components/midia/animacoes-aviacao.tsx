@@ -585,3 +585,45 @@ export function AnimacaoCinto() {
     </Quadro>
   );
 }
+
+// M3V10 · Cada minuto conta: colapso, chamado, massagem e DEA, com a chance de sobreviver caindo cerca de 10% a cada
+// minuto sem choque (comunicado da UT Southwestern sobre Page et al., 2000). Registro em
+// src/data/capitulos/emergencias-bordo.ts. Esquema, sem escala.
+export function AnimacaoDea() {
+  const c = useCiclo(12000);
+  const t = c.fase;
+  const H = 210;
+  const passos = ['COLAPSO', 'CHAMAR', 'MASSAGEM', 'DEA'];
+  const k = Math.min(3, Math.floor(t * 4));
+  const minutos = Math.min(10, t * 10);
+  const chance = Math.max(0, 100 - minutos * 10);
+  const notas = k < 3 ? ['CERCA DE 10% A MENOS', 'A CADA MINUTO SEM CHOQUE'] : ['MASSAGEM SEGURA O CÉREBRO;', 'O CHOQUE REINICIA O CORAÇÃO'];
+  return (
+    <Quadro titulo="Cada minuto conta" instrucao="Esquema, sem escala: a chance de sobreviver cai a cada minuto sem choque." ciclo={c} altura={H}>
+      {(w) => {
+        const x0 = 24, x1 = w - 24, y = 70;
+        const xs = passos.map((_, i) => x0 + ((x1 - x0) * i) / (passos.length - 1));
+        const bx = 24, bw = w - 48, by = 140, bh = 16;
+        return (
+          <G>
+            <Rect x={0} y={0} width={w} height={H} rx={8} fill="#0A1626" />
+            <SvgText x={10} y={18} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[0]}</SvgText>
+            <SvgText x={10} y={30} fill={Cores.dourado} fontSize={9} fontFamily={Fonte}>{notas[1]}</SvgText>
+            <Rect x={x0} y={y - 2} width={x1 - x0} height={4} rx={2} fill={Cores.linha} />
+            {xs.map((x, i) => (
+              <G key={i}>
+                <Circle cx={x} cy={y} r={i === k ? 9 : 6} fill={i <= k ? (i === 3 ? Cores.acerto : Cores.destaque) : Cores.linha} />
+                <SvgText x={x} y={i % 2 ? y + 24 : y - 14} fill={i === k ? Cores.texto : Cores.textoApagado} fontSize={7.5} fontFamily={Fonte} textAnchor={i === 0 ? 'start' : i === 3 ? 'end' : 'middle'}>{passos[i]}</SvgText>
+              </G>
+            ))}
+            <SvgText x={bx} y={by - 8} fill={Cores.textoSuave} fontSize={8} fontFamily={Fonte}>CHANCE DE SOBREVIVER</SvgText>
+            <Rect x={bx} y={by} width={bw} height={bh} rx={4} fill={Cores.linha} />
+            <Rect x={bx} y={by} width={(bw * chance) / 100} height={bh} rx={4} fill={chance > 50 ? Cores.acerto : chance > 20 ? Cores.dourado : Cores.erro} />
+            <SvgText x={bx} y={by + bh + 16} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte}>{Math.floor(minutos)}</SvgText>
+            <SvgText x={bx + 16} y={by + bh + 16} fill={Cores.textoApagado} fontSize={8} fontFamily={Fonte}>MIN</SvgText>
+          </G>
+        );
+      }}
+    </Quadro>
+  );
+}
