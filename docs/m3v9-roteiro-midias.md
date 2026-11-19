@@ -1,7 +1,7 @@
 # M3V9 · Saúde do passageiro — roteiro de mídias
 
 Padrão: pessoas fictícias, ambiente civil, sem texto, logotipos ou insígnias legíveis; 16:9, mínimo 1600 × 900, JPEG 85; vídeo H.264, 8 s, 1280 × 720, sem áudio, em laço.
-Pedidas uma por vez, depois da aprovação do texto. Cada foto entra no parágrafo indicado em `src/data/capitulos/saude-passageiro.ts`.
+Todas as mídias foram recebidas do autor em 19/11/2026 e integradas em `src/data/capitulos/saude-passageiro.ts`. Vídeo cortado para 8 s, sem áudio.
 
 | # | Arquivo | Tópico | Parágrafo | Legenda |
 |---|---|---|---|---|

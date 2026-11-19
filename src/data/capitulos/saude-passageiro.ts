@@ -60,6 +60,7 @@ export const saudePassageiro: Capitulo = {
           "**Como prevenir e amenizar.** Converse com o médico **antes de comprar a passagem** se tiver doença crônica, cirurgia recente ou necessidade de oxigênio. Peça a **carta médica** e, se a companhia exigir, envie o **MEDIF** com antecedência. Com sintomas de **infecção respiratória**, adie a viagem. Leve os remédios na bagagem de mão, com folga para atrasos, e informe a tripulação se passar mal a bordo.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v9-1-consulta.jpg'), legenda: "Antes de comprar a passagem, a conversa com o médico define se a reserva do corpo basta para a cabine." } },
           {
             paragrafo: 2,
             tabela: {
@@ -75,6 +76,7 @@ export const saudePassageiro: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'aptidao-situacoes' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v9-1-bordo.jpg'), legenda: "A bordo, a ajuda se limita ao kit médico e ao treinamento da tripulação." } },
           {
             paragrafo: 7,
             tabela: {
@@ -107,6 +109,7 @@ export const saudePassageiro: Capitulo = {
           "**Como prevenir e amenizar.** Confira a **idade mínima** exigida pela companhia e, para prematuros ou bebês com doença do pulmão ou do coração, fale antes com o **pediatra**. Compre **assento próprio** e leve uma cadeirinha certificada para aeronaves, adequada ao peso. Ofereça **peito, mamadeira ou chupeta** na subida e, principalmente, na descida, e deixe a criança acordada nessa fase. Não use antialérgico ou descongestionante para a dor de ouvido. Com febre ou infecção respiratória, adie a viagem.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v9-2-bebe.jpg'), legenda: "A idade mínima para o bebê voar é definida por cada companhia aérea." } },
           {
             paragrafo: 2,
             tabela: {
@@ -133,6 +136,7 @@ export const saudePassageiro: Capitulo = {
               ],
             },
           },
+          { paragrafo: 6, figura: { imagem: require('@/assets/images/topicos/m3v9-2-mamada.jpg'), legenda: "Mamar na descida ajuda a abrir a tuba auditiva e alivia a dor de ouvido." } },
           {
             paragrafo: 7,
             tabela: {
@@ -165,6 +169,7 @@ export const saudePassageiro: Capitulo = {
           "**Como prevenir e amenizar.** Mantenha o **cinto afivelado** durante todo o tempo sentado, baixo e firme. Volte ao assento assim que o aviso acender e evite ficar de pé sem necessidade. Prenda a criança em **cadeirinha aprovada** no assento próprio. Guarde objetos pesados no bagageiro ou sob o assento e use tampa nas bebidas quentes. Depois de um tranco forte, observe sinais de **lesão na cabeça ou na coluna** e procure atendimento ao pousar.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v9-3-cinto.jpg'), legenda: "Cinto baixo e firme sempre que estiver sentado, mesmo com o aviso apagado." } },
           {
             paragrafo: 2,
             tabela: {
@@ -179,6 +184,7 @@ export const saudePassageiro: Capitulo = {
           },
           { paragrafo: 3, midia: 'turbulencia-onde-estou' },
           { paragrafo: 4, midia: 'animacao-cinto' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v9-3-corredor.jpg'), legenda: "De pé no corredor, não há onde se segurar quando o avião sacode." } },
           {
             paragrafo: 7,
             tabela: {
@@ -211,6 +217,7 @@ export const saudePassageiro: Capitulo = {
           "**Como prevenir e amenizar.** Ouça a demonstração e leia o **cartão de segurança**, que traz a posição de proteção daquele avião. **Conte as fileiras** até as duas saídas mais próximas, na frente e atrás. Mantenha o cinto baixo e firme na decolagem e no pouso. Na evacuação, **deixe tudo para trás**, siga a tripulação, não pule da porta nem da asa e afaste-se do avião ao chegar ao chão. Se precisar de ajuda para sair, avise a tripulação **antes da decolagem**.",
         ].join('\n\n'),
         recursos: [
+          { paragrafo: 1, figura: { imagem: require('@/assets/images/topicos/m3v9-4-cartao.jpg'), legenda: "O cartão de segurança traz a posição de proteção daquele avião." } },
           {
             paragrafo: 2,
             tabela: {
@@ -225,6 +232,8 @@ export const saudePassageiro: Capitulo = {
             },
           },
           { paragrafo: 3, midia: 'evacuacao-posicao' },
+          { paragrafo: 5, figura: { imagem: require('@/assets/images/topicos/m3v9-4-escorregador.jpg'), legenda: "No escorregador, a tripulação orienta a descida; pular da porta ou da asa causa as lesões mais graves." } },
+          { paragrafo: 6, video: { fonte: require('@/assets/videos/m3v9-voo.mp4'), legenda: "Na evacuação, a bagagem fica para trás e a saída é pelo escorregador." } },
           {
             paragrafo: 7,
             tabela: {
